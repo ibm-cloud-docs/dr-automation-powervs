@@ -1,26 +1,37 @@
 #  Name your file `toc.yaml`
 #  Make sure you include all nav file coding requirements, as defined in https://test.cloud.ibm.com/docs-internal/writing?topic=writing-code-nav
 #  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
----
 toc:
   properties:
     subcollection: dr-automation
-    path: dr-automation-powervs
-    href: https://cloud.ibm.com/docs/dr-automation-powervs
-    service-name: service-name # Replace
+    href: /docs/dr-automation
+    path: dr-automation
     audience: solution
-    category: virtualservers
-    label: dr automation
+    category: solution_docs
+    content-type: solution
+    industry: Software and platform applications
+    use-case: Cloud
+    description: 128 characters or less. The description should expand upon the name, but don't add extra marketese words that inflate the length. Focus on keywords that users would be skimming and/or searching for, including any key IBM branded terms covered in the solution. # Replace
+    label: Docs subcollection title # Replace
   entries:
   - navgroup:
-      id: learn
+      id: overview
       topics:
-      - getting-started.md
       - topicgroup:
           label: topic-group-label
           topics:
-          - topic.md
-      - release-notes.md
+          - index.md
+      - topic.md
+  - navgroup:
+      id: architecture
+      topics:
+      - reference-architecture.md
+  - navgroup:
+      id: plan
+      topics:
+      - topic-1.md
+      - topic: topic-2.md
+        navtitle: A shorter navtitle
   - navgroup:
       id: tutorial
       topics:
@@ -29,30 +40,7 @@ toc:
       id: howto
       topics:
       - how-to.md
-#  Links to your REST API docs should be included in the Reference navigation group. For details on publishing API docs, see https://test.cloud.ibm.com/docs/api-docs.
-#  Links to your command line reference docs should be included in the Reference navigation group.
-  - navgroup:
-      id: reference
-      topics:
-      - topicgroup:
-          label: API reference
-          links:
-          - link:
-              label: My V2 API docs
-              href: https://{DomainName}/apidocs/my-api/my-api-v2
-          - link:
-              label: My V1 API docs
-              href: https://{DomainName}/apidocs/my-api/my-api-v1
-      - topicgroup:
-          label: Command reference
-          topics:
-          - include: ../my-cli-repo/cli-topic.md
   - navgroup:
       id: help
       topics:
-      - get-help.md
       - faqs.md
-      - topicgroup:
-          label: Troubleshooting
-          topics:
-          - troubleshoot.md
