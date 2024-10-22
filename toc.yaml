@@ -12,7 +12,7 @@ toc:
     industry: Software and platform applications
     use-case: Cloud
     description: 128 characters or less. The description should expand upon the name, but don't add extra marketese words that inflate the length. Focus on keywords that users would be skimming and/or searching for, including any key IBM branded terms covered in the solution. # Replace
-    label: Docs subcollection title # Replace
+    label: DR Automation
   entries:
   - navgroup:
       id: overview
@@ -39,7 +39,7 @@ toc:
   - navgroup:
       id: howto
       topics:
-      - how-to.md
+      - create-instance-power-virtual-server.md
   - navgroup:
       id: help
       topics:
