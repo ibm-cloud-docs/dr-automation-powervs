@@ -1,8 +1,8 @@
 
 {
   "version": 2,
-  "title": "<Solution name>",
-  "introduction": "This is a description of what the user will be able to find in the content for your solution.",
+  "title": "<DR Automation for PowerVS>",
+  "introduction": "DR automation for powerVS is a cloud soolution for managing your virtual servers.",
   "product_page": "https://ibm.com/cloud/solution-page",
   "deployment_url": "https://cloud.ibm.com/catalog/content/url/to/deploy",
   "section_topics": {
