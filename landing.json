@@ -1,8 +1,8 @@
 
 {
   "version": 2,
-  "title": "<DR Automation for PowerVS>",
-  "introduction": "DR automation for powerVS is a cloud soolution for managing your virtual servers.",
+  "title": "DR Automation for PowerVS",
+  "introduction": "DR automation for powerVS is a cloud solution for managing your virtual servers.",
   "product_page": "https://ibm.com/cloud/solution-page",
   "deployment_url": "https://cloud.ibm.com/catalog/content/url/to/deploy",
   "section_topics": {
