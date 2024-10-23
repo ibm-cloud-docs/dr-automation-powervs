@@ -17,5 +17,5 @@ toc:
   - navgroup:
       id: howto
       topics:
-        - create-instance-powervs.md
+        - create-instance-powerVS.md
         - deploying-the-orchestrator.md
