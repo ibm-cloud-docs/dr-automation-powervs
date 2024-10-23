@@ -18,3 +18,4 @@ toc:
       id: howto
       topics:
         - create-instance-powervs.md
+        - deploying-the-orchestrator.md
