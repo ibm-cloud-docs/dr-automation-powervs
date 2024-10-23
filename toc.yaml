@@ -11,7 +11,7 @@ toc:
     content-type: solution
     industry: Software and platform applications
     use-case: Cloud
-    description: 128 characters or less. The description should expand upon the name, but don't add extra marketese words that inflate the length. Focus on keywords that users would be skimming and/or searching for, including any key IBM branded terms covered in the solution. # Replace
+    description: The description should expand upon the name, but don't add extra marketese words that inflate the length. Focus on keywords that users would be skimming and/or searching for, including any key IBM branded terms covered in the solution. # Replace
     label: DR Automation
   entries:
   - navgroup:
