@@ -40,6 +40,7 @@ toc:
       id: howto
       topics:
       - create-instance-power-virtual-server.md
+
   - navgroup:
       id: help
       topics:
