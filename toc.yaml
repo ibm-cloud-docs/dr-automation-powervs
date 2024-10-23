@@ -4,7 +4,7 @@
 toc:
   properties:
     subcollection: dr-automation
-    href: /docs/<subcollection-dr-automation-powervs>
+    href: /docs/dr-automation-powervs
     path: dr-automation
     audience: solution
     category: solution_docs
@@ -15,33 +15,6 @@ toc:
     label: DR Automation
   entries:
   - navgroup:
-      id: overview
-      topics:
-      - topicgroup:
-          label: topic-group-label
-          topics:
-          - index.md
-      - topic.md
-  - navgroup:
-      id: architecture
-      topics:
-      - reference-architecture.md
-  - navgroup:
-      id: plan
-      topics:
-      - topic-1.md
-      - topic: topic-2.md
-        navtitle: A shorter navtitle
-  - navgroup:
-      id: tutorial
-      topics:
-      - tutorial.md
-  - navgroup:
       id: howto
       topics:
-      - create-instance-power-virtual-server.md
-
-  - navgroup:
-      id: help
-      topics:
-      - faqs.md
+        - create-instance-powervs.md

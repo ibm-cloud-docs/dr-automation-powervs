@@ -2,6 +2,7 @@
 front_matter_title: "Create an instance for Power Virtual Server"
 lastupdated: "2024-10-23"
 copyright: "2023, 2024"
+subcollection: dr-automation
 ---
 
 # Create an instance for Power Virtual Server{: #create-instance-power-virtual-server }
