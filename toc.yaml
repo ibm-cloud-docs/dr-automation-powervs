@@ -3,7 +3,7 @@
 #  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
 toc:
   properties:
-    subcollection: dr-automation
+    subcollection: dr-automation-powervs
     href: /docs/dr-automation-powervs
     path: dr-automation
     audience: solution
