@@ -5,7 +5,7 @@ toc:
   properties:
     subcollection: dr-automation-powervs
     href: /docs/dr-automation-powervs
-    path: dr-automation
+    path: dr-automation-powervs
     audience: solution
     category: network_vpc
     content-type: solution
