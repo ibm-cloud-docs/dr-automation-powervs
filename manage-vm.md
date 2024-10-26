@@ -4,7 +4,7 @@ lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation
 ---
-# Manage Virtual Servers
+# Manage virtual servers
 
 **Manage Virtual Servers** within the Disaster Recovery (DR) Automation for PowerVS enables administrators to monitor and control the virtual server instances that are part of the disaster recovery environment. Through this interface, users can manage existing virtual servers, check their current statuses, and perform actions such as adding or removing servers to maintain optimal DR operations. This tool ensures that all servers involved in the DR plan are properly orchestrated and functional, safeguarding business continuity in the event of failures.
 
