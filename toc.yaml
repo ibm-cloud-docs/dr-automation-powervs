@@ -19,3 +19,4 @@ toc:
       topics:
         - create-instance-powervs.md
         - deploying-the-orchestrator.md
+        - monitoring-vm-status.md
