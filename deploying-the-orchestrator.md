@@ -1,5 +1,5 @@
 ---
-front_matter_title: "Deploying the Orchestrator"
+front_matter_title: "Deploying the orchestrator"
 lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation

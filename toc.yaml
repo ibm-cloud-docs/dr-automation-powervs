@@ -20,3 +20,4 @@ toc:
         - create-instance-powervs.md
         - deploying-the-orchestrator.md
         - monitoring-vm-status.md
+        - orchestrator-deployment-overview.md
