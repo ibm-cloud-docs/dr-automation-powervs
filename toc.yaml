@@ -15,6 +15,10 @@ toc:
     label: DR Automation
   entries:
   - navgroup:
+      id: overview
+      topics:
+      - create-instance-powervs.md
+  - navgroup:
       id: howto
       topics:
         - create-instance-powervs.md
