@@ -16,12 +16,29 @@ Get started with **DR automation for PowerVS** today to ensure reliable and effi
 
 ## Terminology
 
-**IBM Cloud account** - You can log on to the IBM Cloud dashboard by using an IBM Cloud account to access various IBM Cloud solutions, services, and offerings. To create an IBM Cloud account, see [Signing up for the IBM Cloud](https://cloud.ibm.com/registration).
+- **IBM Cloud account** - You can log on to the IBM Cloud dashboard by using an IBM Cloud account to access various IBM Cloud solutions, services, and offerings. To create an IBM Cloud account, see [Signing up for the IBM Cloud](https://cloud.ibm.com/registration).
 
-**Location and region** - The global network of locations in IBM Cloud provides three tiers of regions: multizone regions (MZR), single-campus multizone regions, and data centers. To achieve low application latency, choose your nearest location and region. For details about the available IBM Cloud regions and data centers, review [Region and data center locations for resource deployment](https://cloud.ibm.com/docs/overview?topic=overview-locations).
+- **Location and region** - The global network of locations in IBM Cloud provides three tiers of regions: multizone regions (MZR), single-campus multizone regions, and data centers. To achieve low application latency, choose your nearest location and region. For details about the available IBM Cloud regions and data centers, review [Region and data center locations for resource deployment](https://cloud.ibm.com/docs/overview?topic=overview-locations).
 
-**Workspace** - A workgroup is a logical grouping of virtual machines, storage volumes, network configurations, and other resources within a defined geographic region. Workgroups are accessible from the Power Virtual Server user interface, allowing users to organize and manage multiple Power Virtual Server instances for specific purposes, such as production or development testing. Within each designated site, users can establish multiple workgroups to facilitate environment-specific operations, streamline resource allocation, and ensure seamless disaster recovery processes, including failover and failback capabilities.
+- **Workspace** - A workgroup is a logical grouping of virtual machines, storage volumes, network configurations, and other resources within a defined geographic region. Workgroups are accessible from the Power Virtual Server user interface, allowing users to organize and manage multiple Power Virtual Server instances for specific purposes, such as production or development testing. Within each designated site, users can establish multiple workgroups to facilitate environment-specific operations, streamline resource allocation, and ensure seamless disaster recovery processes, including failover and failback capabilities.
 
-**DR Service Broker** - The DR Service Broker provides a centralized interface within IBM Cloud to manage and coordinate the DR services and resources across multiple environments. It simplifies DR configurations, resource allocations, and service accessibility, streamlining disaster recovery setup and maintenance across PowerVS instances.
+- **DR Service Broker** - The DR Service Broker provides a centralized interface within IBM Cloud to manage and coordinate the DR services and resources across multiple environments. It simplifies DR configurations, resource allocations, and service accessibility, streamlining disaster recovery setup and maintenance across PowerVS instances.
 
-**DR Orchestrator (KSYS)** - The DR Orchestrator, also known as KSYS, is the central management component responsible for automating disaster recovery processes within PowerVS. KSYS manages and coordinates failover, failback, and synchronization of resources across sites, ensuring efficient and reliable DR operations.
+- **DR Orchestrator (KSYS)** - The DR Orchestrator, also known as KSYS, is the central management component responsible for automating disaster recovery processes within PowerVS. KSYS manages and coordinates failover, failback, and synchronization of resources across sites, ensuring efficient and reliable DR operations.
+
+### Before you Begin
+
+Before you create your first instance, review the following prerequisites:
+
+1. Create an IBM Cloud account. To create an IBM Cloud account, see [Signing up for the IBM Cloud](https://cloud.ibm.com/registration).
+
+2. Review the Identity and Access Management (IAM) information at [Managing DR Automation (IAM)][def].
+
+3. Create a public and private SSH key to securely connect to your Power Virtual Server. For instructions on creating a public and private SSH key, see Adding an SSH key.
+
+4. Plan and specify your infrastructure requirements and review the estimated cost using the Power Virtual Server Estimate pricing tool. Identify whether you want a Power Virtual Server, Private Cloud infrastructure, or both.
+
+5. Review the lifecycles of Power Virtual Server instances on IBM Power Virtual Server Private Cloud and IBM Power Virtual Server.
+
+
+[def]: https://test.cloud.ibm.com/docs/dr-automation-powervs?topic=dr-automation-powervs-getting-started-with-ibm-dr-automation-for-powervs
