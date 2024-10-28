@@ -5,11 +5,11 @@ copyright: "2023, 2024"
 subcollection: dr-automation
 ---
 
-# Create an instance for Power Virtual Server{: #create-instance-power-virtual-server }
+# Create an instance for Power Virtual Server
 
 Creating an instance for Power Virtual Server in IBM Cloud allows you to set up disaster recovery configurations, including resource allocation and high availability options. This instance serves as a failover mechanism in case of a disaster recovery event. By following the procedure below, you can deploy the orchestrator with the necessary configurations to meet your disaster recovery requirements.
 
-## Procedure {: #procedure }
+## Procedure
 
 Follow these steps to create a Power Virtual Server instance for disaster recovery:
 
