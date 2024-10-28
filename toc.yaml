@@ -17,7 +17,7 @@ toc:
   - navgroup:
       id: overview
       topics:
-      - create-instance-powervs.md
+      - getting-started-with-powerVS.md
   - navgroup:
       id: howto
       topics:
