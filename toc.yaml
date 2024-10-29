@@ -21,9 +21,12 @@ toc:
   - navgroup:
       id: howto
       topics:
-        - create-instance-powervs.md
-        - deploying-the-orchestrator.md
-        - monitoring-vm-status.md
-        - orchestrator-deployment.md
-        - manage-vm.md
-        - verify-events.md
+      - topicgroup:
+              label: Manage, Create, deploy
+              topics:
+              - create-instance-powervs.md
+              - deploying-the-orchestrator.md
+              - monitoring-vm-status.md
+              - orchestrator-deployment.md
+              - manage-vm.md
+              - verify-events.md
