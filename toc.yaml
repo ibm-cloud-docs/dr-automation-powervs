@@ -18,11 +18,12 @@ toc:
       id: overview
       topics:
       - getting-started-with-powerVS.md
+      - what-is-drautomation.md
   - navgroup:
       id: howto
       topics:
       - topicgroup:
-              label: Manage, Create, deploy
+              label: Create, Manage, Deploy
               topics:
               - create-instance-powervs.md
               - deploying-the-orchestrator.md
