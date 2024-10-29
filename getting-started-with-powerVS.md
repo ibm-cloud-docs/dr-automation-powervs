@@ -14,7 +14,7 @@ You get robust, automated management that continuously monitors DR operations, r
 
 Get started with **DR automation for PowerVS** today to ensure reliable and efficient disaster recovery for your business workloads. For frequently asked questions about DR automation, see the (FAQ)[].
 
-# Terminology
+## Terminology
 
 - **IBM Cloud account** - You can log on to the IBM Cloud dashboard by using an IBM Cloud account to access various IBM Cloud solutions, services, and offerings. To create an IBM Cloud account, see [Signing up for the IBM Cloud](https://cloud.ibm.com/registration).
 
@@ -26,7 +26,7 @@ Get started with **DR automation for PowerVS** today to ensure reliable and effi
 
 - **DR Orchestrator (KSYS)** - The DR Orchestrator, also known as KSYS, is the central management component responsible for automating disaster recovery processes within PowerVS. KSYS manages and coordinates failover, failback, and synchronization of resources across sites, ensuring efficient and reliable DR operations.
 
-# Before you Begin
+### Before you Begin
 
 Before you create your first instance, review the following prerequisites:
 
