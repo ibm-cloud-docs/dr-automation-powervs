@@ -32,7 +32,7 @@ Before you create your first instance, review the following prerequisites:
 
 1. Create an IBM Cloud account. To create an IBM Cloud account, see [Signing up for the IBM Cloud](https://cloud.ibm.com/registration).
 
-2. Review the Identity and Access Management (IAM) information at [Managing DR Automation (IAM)][def].
+2. Review the Identity and Access Management (IAM) information at [Managing DR Automation (IAM)](iam-for-dr-autoamtion.md).
 
 3. Create a public and private SSH key to securely connect to your Power Virtual Server. For instructions on creating a public and private SSH key, see Adding an SSH key.
 
