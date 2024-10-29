@@ -6,7 +6,7 @@ subcollection: dr-automation
 ---
 # Getting started with IBM® DR Automation for PowerVS
 
-IBM® VM Recovery Manager (VMRM) **DR automation** is an IBM PowerVS disaster recovery offering. You can use {{site.data.keyword.drautomation_**DR automation for PowerVS**}} to automate disaster recovery (DR) processes for virtualized environments, ensuring continuity of operations with minimal manual intervention in the event of disasters or disruptions.
+IBM® VM Recovery Manager (VMRM) **DR automation** is an IBM PowerVS disaster recovery offering. You can use **DR automation for PowerVS** to automate disaster recovery (DR) processes for virtualized environments, ensuring continuity of operations with minimal manual intervention in the event of disasters or disruptions.
 
 With **DR automation**, you can quickly deploy a disaster recovery solution from the IBM Cloud Catalog UI, which provides an intuitive interface to select and configure recovery services. The solution automates the recovery of virtual machines (VMs) and workloads, leveraging IBM Cloud infrastructure to offer a flexible, scalable, and efficient DR process. You can provision DR capabilities that synchronize data and manage replication between sites to secure critical workloads.
 
