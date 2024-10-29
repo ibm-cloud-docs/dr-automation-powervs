@@ -38,7 +38,6 @@ Before you create your first instance, review the following prerequisites:
 
 4. Plan and specify your infrastructure requirements and review the estimated cost using the Power Virtual Server Estimate pricing tool. Identify whether you want a Power Virtual Server, Private Cloud infrastructure, or both.
 
-5. Review the lifecycles of Power Virtual Server instances on IBM Power Virtual Server Private Cloud and IBM Power Virtual Server.
+5. Review the lifecycles of Power Virtual Server instances on IBM DR Automation for PowerVS.
 
-
-[def]: https://test.cloud.ibm.com/docs/dr-automation-powervs?topic=dr-automation-powervs-getting-started-with-ibm-dr-automation-for-powervs
+#### Lifecycle of a Power Virtual Server
