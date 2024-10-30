@@ -9,4 +9,7 @@ subcollection: dr-automation
 IBM® DR automation for PowerVS (DR automation) is designed to enhance resilience for IBM Power server environments. With DR automation, you can deploy disaster recovery solutions swiftly, enabling rapid recovery of enterprise workloads on IBM Power Virtual Server environments Off-premises.
 Review this information to understand the IBM DR automation for PowerVS architecture (Off-premises) and to identify essential hardware and software requirements.
 
-[IBM DR Automation for powerVS]()
+[IBM DR Automation for powerVS][def]
+
+
+[def]: architecture-dr-automation.md
