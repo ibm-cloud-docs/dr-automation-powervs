@@ -20,7 +20,7 @@ toc:
       - getting-started-with-powerVS.md
       - what-is-drautomation.md
       - architecture-dr-automation.md
-      - location.md
+      - cloud-regions.md
   - navgroup:
       id: howto
       topics:
