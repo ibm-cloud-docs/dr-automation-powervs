@@ -20,6 +20,7 @@ toc:
       - getting-started-with-powerVS.md
       - what-is-drautomation.md
       - architecture-dr-automation.md
+      - location.md
   - navgroup:
       id: howto
       topics:
