@@ -4,9 +4,15 @@ lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation
 ---
-# Getting started with IBM® DR Automation for PowerVS
 
-IBM® VM Recovery Manager (VMRM) **DR automation** is an IBM PowerVS disaster recovery offering. You can use {{site.data.keyword.DR automation for PowerVS}} to automate disaster recovery (DR) processes for virtualized environments, ensuring continuity of operations with minimal manual intervention in the event of disasters or disruptions.
+{{site.data.keyword.attribute-definition-list}}
+
+
+# Getting started with IBM® DR Automation for PowerVS
+{: #get-drauto}
+
+
+IBM® VM Recovery Manager (VMRM) **DR automation** is an IBM PowerVS disaster recovery offering. You can use {{site.data.keyword.DRautomationforPowerVS}} to automate disaster recovery (DR) processes for virtualized environments, ensuring continuity of operations with minimal manual intervention in the event of disasters or disruptions.
 
 With **DR automation**, you can quickly deploy a disaster recovery solution from the IBM Cloud Catalog UI, which provides an intuitive interface to select and configure recovery services. The solution automates the recovery of virtual machines (VMs) and workloads, leveraging IBM Cloud infrastructure to offer a flexible, scalable, and efficient DR process. You can provision DR capabilities that synchronize data and manage replication between sites to secure critical workloads.
 
@@ -14,7 +20,10 @@ You get robust, automated management that continuously monitors DR operations, r
 
 Get started with **DR automation for PowerVS** today to ensure reliable and efficient disaster recovery for your business workloads. For frequently asked questions about DR automation, see the (FAQ)[].
 
+
 ## Terminology
+{: #term}
+
 
 - **IBM Cloud account** - You can log on to the IBM Cloud dashboard by using an IBM Cloud account to access various IBM Cloud solutions, services, and offerings. To create an IBM Cloud account, see [Signing up for the IBM Cloud](https://cloud.ibm.com/registration).
 
@@ -26,7 +35,9 @@ Get started with **DR automation for PowerVS** today to ensure reliable and effi
 
 - **DR Orchestrator (KSYS)** - The DR Orchestrator, also known as KSYS, is the central management component responsible for automating disaster recovery processes within PowerVS. KSYS manages and coordinates failover, failback, and synchronization of resources across sites, ensuring efficient and reliable DR operations.
 
-### Before you Begin
+
+## Before you Begin
+{: #bub} 
 
 Before you create your first instance, review the following prerequisites:
 

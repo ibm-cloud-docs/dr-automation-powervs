@@ -4,7 +4,7 @@ lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation
 ---
-# DR Automation for PowerVS Architecture Overview
+# Architecture for IBM DR Automation for PowerVS
 
 IBM® DR Automation for PowerVS is a robust disaster recovery solution integrated within IBM’s data centers, distinct from general IBM Cloud resources. It offers dedicated network configurations and direct-attached storage to ensure secure and reliable DR capabilities.
 
