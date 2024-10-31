@@ -21,6 +21,11 @@ toc:
       - what-is-drautomation.md
       - architecture-dr-automation.md
       - cloud-regions.md
+      - topicgroup:
+              label: Pricing
+              topics:
+              - genrate-estimate.md
+
   - navgroup:
       id: howto
       topics:
