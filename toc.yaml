@@ -25,6 +25,7 @@ toc:
               label: Pricing
               topics:
               - genrate-estimate.md
+              - pricing-for-cores.md
 
   - navgroup:
       id: howto
