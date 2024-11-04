@@ -37,6 +37,7 @@ toc:
       - topicgroup:
               label: Create, Manage, Deploy
               topics:
+              - iam-autoamtion.md
               - create-instance-powervs.md
               - deploying-the-orchestrator.md
               - monitoring-vm-status.md
@@ -44,3 +45,7 @@ toc:
               - manage-vm.md
               - verify-events.md
               - manage-product-cus-resource.md
+  - navgroup:
+      id: help
+      topics:
+       - getting-started-with-powerVS.md
