@@ -46,6 +46,11 @@ toc:
               - verify-events.md
               - manage-product-cus-resource.md
   - navgroup:
+      id: reference
+      topics:
+       - cloud-regions.md
+  - navgroup:
       id: help
       topics:
-       - getting-started-with-powerVS.md
+      - cloud-regions.md
+ 
