@@ -26,6 +26,10 @@ toc:
               topics:
               - genrate-estimate.md
               - pricing-for-cores.md
+      - topicgroup:
+              label: Replication
+              topics:
+              - grs-replication.md
 
   - navgroup:
       id: howto
