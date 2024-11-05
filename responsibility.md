@@ -1,9 +1,11 @@
 ---
 front_matter_title: "Responsibilities"
+title: "Understanding your responsibilities when you use DR Automation for PowerVS"
 lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation
 ---
+
 # Understanding your responsibilities when you use DR Automation for PowerVS
 
 Learn about the management responsibilities and terms and conditions that you have when you use DR Automation for PowerVS deployable architecture.
@@ -25,22 +27,26 @@ The DR Automation for PowerVS deployable architectures do not identify specific 
 
 Identity and access management includes tasks such as authentication, authorization, access control policies, and approving, granting, and revoking access.
 
+### Table 1: Responsibilities for identity and access management
+
 | Task | IBM Responsibilities | Your Responsibilities |
 |------|-----------------------|-----------------------|
 | **Secure with least privilege** | Document the minimal IAM access requirements to run the deployable architecture. | |
 | **Manage secrets** | | Generate necessary secrets (e.g., IAM API keys, SSH keys) required for the deployable architecture and manage them following secure best practices. |
-_Table 1: Responsibilities for identity and access management_
+
 
 ## Security and Regulation Compliance
 
 Security and regulation compliance includes tasks such as security controls implementation and compliance certification.
+
+### Table 2: Responsibilities for security and regulation compliance
 
 | Task | IBM Responsibilities | Your Responsibilities |
 |------|-----------------------|-----------------------|
 | **Meet security and compliance objectives** | Provide a deployable architecture that complies with the predefined set of controls. These controls may not cover the entire IBM Cloud Framework for Financial Services profile. | |
 | **Verify configuration changes** | | Understand the impact of user-initiated changes on security and compliance, and run IBM Cloud Security and Compliance Center checks if necessary. |
 | **Ensure that the operating system image does not contain vulnerabilities** | IBM provides verified OS images, updates them post-deployment, and uses RHEL repositories for additional components. | Ensure the OS remains secure and compliant after deployment. |
-_Table 2: Responsibilities for security and regulation compliance_
+
 
 ## Disaster Recovery
 
