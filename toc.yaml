@@ -48,7 +48,7 @@ toc:
   - navgroup:
       id: reference
       topics:
-       - cloud-regions.md
+       - responsibility.md
   - navgroup:
       id: help
       topics:

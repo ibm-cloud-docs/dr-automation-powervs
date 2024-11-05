@@ -1,5 +1,5 @@
 ---
-front_matter_title: "Roles and responsibilities.md"
+front_matter_title: "Roles and responsibilities"
 lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation
