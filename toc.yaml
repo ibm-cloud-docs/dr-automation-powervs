@@ -44,7 +44,7 @@ toc:
               - orchestrator-deployment.md
               - manage-vm.md
               - verify-events.md
-              - manage-product-cus-resource.md
+              - roles-and-responsibilities.md
   - navgroup:
       id: reference
       topics:
