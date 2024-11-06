@@ -21,6 +21,7 @@ toc:
       - what-is-drautomation.md
       - architecture-dr-automation.md
       - cloud-regions.md
+      - data-isolation.md
       - topicgroup:
               label: Pricing
               topics:
