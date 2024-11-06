@@ -31,7 +31,6 @@ toc:
               label: Replication
               topics:
               - grs-replication.md
-
   - navgroup:
       id: howto
       topics:
@@ -46,6 +45,11 @@ toc:
               - manage-vm.md
               - verify-events.md
               - roles-and-responsibilities.md
+      - topicgroup:
+              label: Observability
+              topics:
+              - activity-tracker-events.md
+
   - navgroup:
       id: reference
       topics:
