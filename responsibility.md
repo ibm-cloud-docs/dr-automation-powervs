@@ -1,6 +1,5 @@
 ---
 front_matter_title: "Responsibilities"
-title: "Understanding your responsibilities when you use DR Automation for PowerVS"
 lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation
