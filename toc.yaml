@@ -31,6 +31,7 @@ toc:
               label: Replication
               topics:
               - grs-replication.md
+
   - navgroup:
       id: howto
       topics:
@@ -48,6 +49,7 @@ toc:
       - topicgroup:
               label: Observability
               topics:
+              - monitor-metrics.md
               - activity-tracker-events.md
 
   - navgroup:
