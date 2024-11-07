@@ -17,7 +17,9 @@ Data isolation in IBM Cloud is essential for protecting customer data in multi-t
 IBM Cloud’s **Virtual Private Cloud (VPC)** provides an isolated network environment for managing DR Automation resources securely. It enables you to control IP address ranges, subnets, routing, and access, ensuring that DR resources are isolated from other IBM Cloud customers.
 
 - **Private IP Addressing**: Resources receive private IP addresses, making them accessible only within the VPC or through configured access.
+
 - **Subnets**: Organize resources into public or private subnets, further isolating sensitive DR applications.
+
 - **Peering and VPN Connections**: VPC peering and VPNs secure connections across on-premises and cloud environments, maintaining data isolation.
 
 ### Dedicated Cloud and Private Infrastructure
@@ -40,8 +42,7 @@ Data encryption ensures that sensitive DR data is secure and isolated.
 **IBM Cloud IAM** provides role-based access control for DR resources, ensuring that only authorized users and systems can access critical DR functions.
 
 - **Role-Based Access Control (RBAC)**: Controls access to specific DR resources by defining roles and permissions.
-- **Multi-Factor Authentication (MFA)**: Adds another layer of security, especially for access to sensitive DR automation components.
-- **Federated Identity**: Integrates with enterprise identity systems (LDAP, Active Directory) for enforcing identity policies.
+
 
 ### Cloud Object Storage for Bucket-Level Isolation
 
