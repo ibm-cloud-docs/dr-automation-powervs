@@ -4,13 +4,13 @@ lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation
 ---
-# Data Isolation in IBM Cloud for Disaster Recovery (DR) Automation for PowerVS
+# Data Isolation
 
 ## Overview
 
 Data isolation in IBM Cloud is essential for protecting customer data in multi-tenant cloud environments, especially for Disaster Recovery (DR) Automation in PowerVS. IBM Cloud offers a suite of tools and services that ensure data remains segregated, secure, and compliant with regulatory standards. This document details key strategies and components that work together to provide robust data isolation within the DR Automation framework for PowerVS.
 
-## Key Data Isolation Strategies in IBM Cloud for DR Automation
+## Key Data Isolation Strategies
 
 ### Virtual Private Cloud (VPC)
 
@@ -99,20 +99,19 @@ IBM’s **Code Engine** is used for job scheduling and executing DR tasks based 
 
 The **IBM Cloud Container Registry** (ICR) manages container images essential for DR workloads. It ensures that recovery images are consistently accessible in isolated environments, with vulnerability scanning for security assurance.
 
-## Monitoring and Logging for Data Isolation in DR Automation
+## Monitoring and Logging
 
 IBM Cloud’s monitoring and logging services enhance data isolation by capturing detailed records of access and events.
 
 - **IBM Cloud Monitoring**: Tracks DR operations and flags unusual activities that could indicate potential security issues.
 - **IBM Cloud Logging**: Logs access events, detailing which user or service accessed specific DR data, ensuring auditability.
 
-## Best Practices for Data Isolation in DR Automation for PowerVS
+## Best Practices for Data Isolation
 
 - **Use VPCs for Network Isolation**: VPCs provide isolated networks essential for data security in DR.
 - **Implement Robust IAM Policies**: Apply IAM to enforce role-based access, limiting who can access DR resources.
 - **Encrypt Data at Rest and in Transit**: Both encryption types are essential for protecting DR data.
 - **Use Private Endpoints and VPNs**: To ensure isolated communication between DR resources and sites.
 - **Select Appropriate Regions for Data Residency**: Align data storage with regulatory requirements for data residency.
-
 
 IBM Cloud’s data isolation strategies for DR Automation in PowerVS ensure that customer data is protected, compliant, and ready for recovery in secure environments. By leveraging dedicated infrastructure, IAM, VPC, and encryption, IBM Cloud provides a robust environment for disaster recovery, preserving data isolation at every stage.
