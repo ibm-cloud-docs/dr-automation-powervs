@@ -6,9 +6,9 @@ subcollection: dr-automation
 ---
 # Architecture for IBM DR Automation for PowerVS
 
-IBM® DR Automation for PowerVS is a robust disaster recovery solution integrated within IBM’s data centers, distinct from general IBM Cloud resources. It offers dedicated network configurations and direct-attached storage to ensure secure and reliable DR capabilities.
+IBM® DR Automation for PowerVS is a robust disaster recovery solution specifically designed for IBM data centers, distinct from general IBM Cloud resources. This solution leverages dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.
 
-The **IBM Cloud Service Framework** enables seamless deployment and management of DR Automation for PowerVS by integrating essential components such as the **IBM Cloud Service Broker**, **Resource Management Controller (RMC)**, and the **IBM Cloud Catalog**. This framework simplifies the DR setup process, enhances security, and ensures compliance, delivering a reliable DR solution within the IBM Cloud environment.
+The IBM Cloud Service Framework facilitates seamless deployment and management of DR Automation for PowerVS by integrating key components such as the Service Broker, Resource Management Controller (RMC), and IBM Cloud Catalog. This framework streamlines the DR setup process, enhances security, and ensures compliance, delivering a comprehensive DR solution within the IBM Cloud infrastructure.
 
 Explore the following sections to understand the DR Automation for PowerVS architecture, features, hardware requirements, and network configurations.
 
@@ -25,9 +25,14 @@ Explore the following sections to understand the DR Automation for PowerVS archi
 
 ## High-Level Architecture
 
-The DR Automation for PowerVS system is hosted in IBM data centers, separate from the IBM Cloud environment, with isolated networks and dedicated storage solutions. With this system, users can automate disaster recovery (DR) processes, ensuring fast and reliable recovery of workloads in the event of failures.
+The **DR Automation for PowerVS** system operates within IBM data centers, isolated from the core IBM Cloud environment. Utilizing dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
 
-The **IBM Cloud Service Framework** plays a central role in DR Automation for PowerVS, enabling customers to select DR services from the IBM Cloud Catalog and provide deployment details. The **Resource Management Controller (RMC)** manages provisioning, image import, and VM configuration, while maintaining security and compliance through stringent controls. This architecture also includes components such as **Activity Tracker**, **Cloud Object Storage**, and **Key Management** to enhance security, auditability, and resilience.
+Central to this architecture is the **Service Broker**, which manages compute, storage, and network resources to streamline and automate DR processes. It simplifies recovery setup, enabling customers to quickly deploy and manage DR services through an intuitive interface.
+
+The **Orchestrator (KSYS)** is crucial in coordinating DR workflows, ensuring Virtual Machines (VMs) are brought online in the correct order during recovery. This automation minimizes downtime and data loss, helping organizations confidently meet their **Recovery Time Objectives (RTOs)** and **Recovery Point Objectives (RPOs)**.
+
+This setup provides a secure, seamless DR solution that integrates with your production environment, enabling smooth failover and failback to maintain business continuity in case of unexpected events.
+
 
 ---
 
@@ -48,7 +53,9 @@ Define recovery priorities and configurations for different VMs or applications.
 
 ### IBM Cloud Service Framework Integration
 
-The IBM Cloud Service Framework provides a streamlined experience, with the **IBM Cloud Service Broker** allowing users to choose services from the catalog and specify deployment parameters. The **Resource Management Controller (RMC)** automates provisioning tasks and VM configurations for DR, ensuring a smooth and intuitive user experience. Additional IBM Cloud services, like **Activity Tracker**, **Cloud Object Storage**, and **Key Management**, provide a secure and compliant environment, with reliable connectivity through redundant network connections.
+The **IBM Cloud Service Framework** provides a streamlined experience for disaster recovery (DR) automation. At the heart of this framework, the **Service Broker** manages resources for compute, storage, and network, enabling users to select DR services from the **IBM Cloud Catalog** and specify deployment parameters with ease. The **Resource Management Controller (RMC)** automates provisioning tasks and configures VMs for DR, ensuring a seamless and intuitive user experience.
+
+Additional IBM Cloud services, such as Activity Tracker, IBM LogDNA, Cloud Object Storage (COS), and Key Management, support the DR solution by enhancing security, auditability, and compliance. These services are interconnected through secure, redundant network paths, providing a reliable and resilient environment for business continuity.
 
 ### Flexible Billing Model
 
@@ -58,19 +65,20 @@ DR Automation for PowerVS follows a usage-based billing model, with flexible opt
 
 ## IBM Cloud Service Framework
 
-The IBM Cloud Service Framework enhances DR Automation for PowerVS by enabling seamless service deployment and management. Key components include:
 
-- **IBM Cloud Service Broker**:
-Select services from the IBM Cloud Catalog and configure DR deployment details.
+The **IBM Cloud Service Framework** enhances DR Automation for PowerVS by enabling seamless service deployment and management. Key components include:
 
-- **Resource Management Controller (RMC)**:
-Handles VM provisioning, image import, and configuration, making DR deployment efficient and straightforward.
-- **Security and Compliance**:
-Ensures compliance through robust controls, monitoring, and IBM Cloud security services.
+- **Service Broker**: Manages compute, storage, and network resources, allowing users to select DR services from the IBM Cloud Catalog and configure deployment details. This component plays a central role in streamlining and automating DR processes.
 
-- **Reliable Connectivity**: Leverages redundant network connections to maintain continuous, secure access to DR resources.
+- **Resource Management Controller (RMC)**: Automates provisioning, image import, and VM configuration, making DR deployment efficient and straightforward for users.
 
-This integrated framework leverages IBM Cloud services like **Activity Tracker** (for monitoring), **Cloud Object Storage** (for secure storage), and **Key Management** (for data security), providing a secure, compliant, and efficient DR solution.
+- **Orchestrator (KSYS)**: Coordinates DR workflows and ensures that VMs recover in a defined sequence, minimizing downtime and data loss.
+
+- **Security and Compliance**: Ensures a secure, compliant environment through robust controls and monitoring. This includes IBM Cloud services like Activity Tracker (for monitoring) Cloud Object Storage (COS) (for secure storage), and Key Management (for data security).
+
+- **Reliable Connectivity**: Maintains continuous, secure access to DR resources through redundant network connections, enhancing reliability and resilience.
+
+This integrated framework provides a secure, compliant, and efficient DR solution that aligns closely with the high-level architecture for DR Automation in IBM data centers.
 
 ---
 
