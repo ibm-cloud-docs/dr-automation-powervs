@@ -132,6 +132,6 @@ Use Direct Link Connect for secure, low-latency communication between DR environ
 3. **Configure Resources**: Set up storage, compute, and network resources according to DR needs.
 4. **Monitor and Test**: Schedule DR tests and monitor system health.
 
----
+![DR Autoamtion Block Diagram](dr-automation-powervs/images/dr-automation-blockdiagram.jpg "DR Autoamtion Block Diagram")
 
-This document reflects the integration of the IBM Cloud Service Framework in DR Automation for PowerVS, ensuring seamless deployment, secure management, and a smooth user experience. Let me know if any additional customization is needed.
+---
