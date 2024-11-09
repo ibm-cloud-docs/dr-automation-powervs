@@ -199,12 +199,16 @@ You can create an activity tracker instance and provision it in the same region 
 
 The following table shows the data center and its corresponding regions where you can deploy an activity tracker instance:
 
-| Datacenter | Current activity tracker region |
-|------------|--------------------------------|
-|            |                                |
-|            |                                |
-|            |                                |
-|            |                                |
-|            |                                |
-
-Table 18. List of DCs and their corresponding AT instance region
+| Datacenter | New Activity Tracker Region |
+|------------|-----------------------------|
+| WDC04      | us-east                     |
+| WDC06      | us-east                     |
+| WDC07      | us-east                     |
+| MON01      | ca-tor                      |
+| TOR04      | ca-tor                      |
+| SAO01      | br-sao                      |
+| SAO04      | br-sao                      |
+| LON04      | eu-gb                       |
+| LON06      | eu-gb                       |
+| OSA21      | jp-osa                      |
+ List of DCs and their corresponding AT instance region
