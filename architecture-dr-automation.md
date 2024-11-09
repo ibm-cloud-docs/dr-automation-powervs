@@ -75,7 +75,6 @@ The Service Broker’s provisioning capabilities allow KSYS to be configured wit
 
 For enhanced resilience, KSYS supports a High Availability (HA) setup, ensuring continuous operation and reducing single points of failure.
 
-
 ## Key Features
 
 ### Simplified Disaster Recovery Management

@@ -144,49 +144,51 @@ The following code snippets show the differences between the old and new activit
 
 ### Log Message
 
+```json
 {
-  "logSourceCRN": "HA_test801",
-  "saveServiceCopy": true,
-  "dataEvent": false,
-  "outcome": "success",
-  "eventTime": "2024-10-23T10:23:24.49+0000",
-  "action": "dr-service-broker.provision.create",
-  "correlationId": "8165ab0e-e7de-45f6-8620-bf4381618745",
-  "severity": "normal",
-  "initiator": {
-    "id": "admin",
-    "name": "",
-    "typeURI": "service/security/account/user",
-    "authnId": "",
-    "authnName": "",
-    "host": {
-      "agent": "curl/7.61.1",
-      "address": "127.0.0.1",
-      "addressType": "IPv4"
+    "logSourceCRN": "crn:v1:staging:public:pvs-dr-auto-cap-vmrm-grs4:global:a/dxxxxxxxxx:8c77xxx-c2xx-43xx-bac9-d1exxd7b2ecxxx::",
+    "saveServiceCopy": true,
+    "dataEvent": false,
+    "outcome": "success",
+    "eventTime": "2024-11-07T08:35:23.62+0000",
+    "action": "dr-service-broker.provision.create",
+    "correlationId": "23b8916b-39be-49fa-82f2-9e0eaf78a32e",
+    "severity": "normal",
+    "initiator": {
+        "id": "admin",
+        "name": "xxxxm@us.ibm.com",
+        "typeURI": "service/security/account/user",
+        "authnId": "",
+        "authnName": "",
+        "host": {
+            "agent": "curl/7.61.1",
+            "address": "127.0.0.1",
+            "addressType": "IPv4"
+        },
+        "credential": {
+            "type": "user"
+        }
     },
-    "credential": {
-      "type": "user"
+    "target": {
+        "id": "crn:v1:staging:public:pvs-dr-auto-cap-vmrm-grs4:global:a/xxxx6ca48d5f4b2899c26829b5e0xxxx:8c77xxxx-c2xx-43xx-baxx-d1e19xxxxec5556::",
+        "name": "disaster-recovery-service",
+        "typeURI": "dr-service-broker/provision",
+        "resourceGroupId": ""
+    },
+    "reason": {
+        "reasonCode": 200,
+        "reasonType": "OK"
+    },
+    "requestData": null,
+    "responseData": {
+        "dashboard_url": "https://dra-ui-dev.1lcv1smi8d9z.us-south.codeengine.appdomain.cloud/overview?instance_id=crn:v1:staging:public:pvs-dr-auto-cap-vmrm-grs4:global:a/d8ab6ca48d5f4b2899c26829b5e0e304:8c77c634-c2cf-4313-bac9-d1e19d7b2ec5556::"
+    },
+    "message": "disaster-recovery-service: create provision disaster-recovery-service",
+    "observer": {
+        "name": "ActivityTracker"
     }
-  },
-  "target": {
-    "id": "HA_test801",
-    "name": "",
-    "typeURI": "dr-service-broker/provision",
-    "resourceGroupId": ""
-  },
-  "reason": {
-    "reasonCode": 200,
-    "reasonType": "OK"
-  },
-  "requestData": null,
-  "responseData": {
-    "dashboard_url": "https://dra-ui-dev.1lcv1smi8d9z.us-south.codeengine.appdomain.cloud/overview?instance_id=HA_test801"
-  },
-  "message": "disaster-recovery-service: create provision disaster-recovery-service",
-  "observer": {
-    "name": "ActivityTracker"
-  }
 }
+```
 
 
 ## Activity Tracker Regions
