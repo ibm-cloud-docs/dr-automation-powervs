@@ -35,6 +35,47 @@ This setup provides a secure, seamless DR solution that integrates with your pro
 
 ![DR Autoamtion Architecture](dr-automation-powervs/images/dr-automation-arch.jpg "DR Autoamtion Architecture")
 
+## DR Service Broker Architecture
+
+The **DR Service Broker** within IBM Cloud is central to provisioning and managing DR orchestration for PowerVS. Operating as a dedicated component, it handles critical functions, including billing, resource management, and service orchestration.
+
+### Service Provisioning
+
+The Service Broker deploys the DR Orchestrator (KSYS) VM within the PowerVS workspace, utilizing PowerVS APIs to establish and manage DR operations. This process enables seamless integration of DR orchestration capabilities specific to each user account.
+
+### Connectivity and Communication
+
+Through IBM Cloud’s VPN and VPC services, the Service Broker communicates securely with the DR Orchestrator. Connections from external clients or users are routed through IBM’s secure networking layers to ensure high availability and low latency during DR operations.
+
+### Resource Management and Billing Integration
+
+The Service Broker updates DR metrics to IBM’s billing system (BSS) based on individual instances, providing granular billing data per customer. It ensures that usage is reported accurately for each instance and maintains a high level of automation in resource accounting.
+
+### Interface Accessibility
+
+The DR Automation Service Broker, accessible via the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with IBM’s broader catalog for resource provisioning.
+
+## DR Orchestrator (KSYS) Architecture
+
+The **DR Orchestrator (KSYS)**, acting as the operational core within user accounts, is critical in executing and managing DR workflows, specifically for PowerVS instances. This component manages the deployment, configuration, and operation of VMs required during DR.
+
+### VM Orchestration and Workflow Management
+
+KSYS brings VMs online in the required sequence during a disaster, minimizing RTO and RPO. This workflow automation ensures systematic failover and recovery, essential for maintaining business continuity.
+
+### Custom Metrics and Monitoring
+
+KSYS regularly updates custom DR metrics, securely transmitting these to the Service Broker using IBM’s API services and adhering to authentication protocols. This allows ongoing monitoring and helps identify and address anomalies in real-time.
+
+### Provisioning and Configuration Management
+
+The Service Broker’s provisioning capabilities allow KSYS to be configured with essential user inputs and monitored to ensure alignment with the recovery environment. Additionally, it offers a GUI URL accessible through IBM’s catalog, enabling users to monitor and manage configurations in real-time.
+
+### High Availability (Optional)
+
+For enhanced resilience, KSYS supports a High Availability (HA) setup, ensuring continuous operation and reducing single points of failure.
+
+
 ## Key Features
 
 ### Simplified Disaster Recovery Management
@@ -139,6 +180,4 @@ Use Direct Link Connect for secure, low-latency communication between DR environ
 3. **Configure Resources**: Set up storage, compute, and network resources according to DR needs.
 4. **Monitor and Test**: Schedule DR tests and monitor system health.
 
-![DR Automation Block Diagram](https://github.ibm.com/cloud-docs/dr-automation-powervs/blob/a1e61b070cb3aea84b5aeee77cbeb0e2e9330fac/images/dr-automation-blockdiagram.jpg "DR Automation Block Diagram")
-
----
+--
