@@ -29,7 +29,7 @@ The **DR Automation for PowerVS** system operates within IBM data centers, isola
 
 Central to this architecture is the **Service Broker**, which manages compute, storage, and network resources to streamline and automate DR processes. It simplifies recovery setup, enabling customers to quickly deploy and manage DR services through an intuitive interface.
 
-The **Orchestrator (KSYS)** is crucial in coordinating DR workflows, ensuring Virtual Machines (VMs) are brought online in the correct order during recovery. This automation minimizes downtime and data loss, helping organizations confidently meet their **Recovery Time Objectives (RTOs)** and **Recovery Point Objectives (RPOs)**.
+The **Orchestrator (KSYS)** is crucial in coordinating DR workflows, ensuring Virtual Machines (VMs) are brought online in the correct order during recovery. This automation minimizes downtime and data loss, helping organizations confidently meet their Recovery Time Objectives (RTOs) and Recovery Point Objectives (RPOs).
 
 This setup provides a secure, seamless DR solution that integrates with your production environment, enabling smooth failover and failback to maintain business continuity in case of unexpected events.
 
@@ -139,6 +139,6 @@ Use Direct Link Connect for secure, low-latency communication between DR environ
 3. **Configure Resources**: Set up storage, compute, and network resources according to DR needs.
 4. **Monitor and Test**: Schedule DR tests and monitor system health.
 
-![DR Automation Block Diagram](https://github.ibm.com/cloud-docs/dr-automation-powervs/blob/source/images/dr-automation-blockdiagram.jpg "DR Automation Block Diagram")
+![DR Automation Block Diagram](https://github.ibm.com/cloud-docs/dr-automation-powervs/blob/a1e61b070cb3aea84b5aeee77cbeb0e2e9330fac/images/dr-automation-blockdiagram.jpg "DR Automation Block Diagram")
 
 ---
