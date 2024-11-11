@@ -4,7 +4,7 @@ lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation
 ---
-# aManaging identity and access management (IAM)
+# Managing identity and access management (IAM)
 
 IAM enables you to securely authenticate users, control access to Power® Virtual Server resources with resource groups, and allow access to specific resources for a set of users with access groups. IAM is your one-stop shop for all user and resource management in the IBM Cloud.
 
