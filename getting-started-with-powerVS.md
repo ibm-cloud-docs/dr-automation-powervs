@@ -53,6 +53,6 @@ Before you create your first instance, review the following prerequisites:
 
 5. Review the lifecycles of Power Virtual Server instances on IBM DR Automation for PowerVS.
 
-### Lifecycle of DR Autoamtion for PowerVS
+## Lifecycle of DR Autoamtion for PowerVS
 
 ![DR Autoamtion life Cycle](images/dr-automation-blockdiagram.svg "DR Autoamtion life Cycle"){: caption="DR Autoamtion life Cycle" caption-side="bottom"}
