@@ -148,6 +148,7 @@ DR Automation for PowerVS offers storage with configurable IOPS levels to meet d
 | **Tier 0** | 25 IOPS/GB | High performance for critical workloads    |
 | **Tier 1** | 10 IOPS/GB | Balanced performance for general workloads |
 | **Tier 3** | 3 IOPS/GB  | Cost-effective for non-critical applications |
+{: caption="Tier and IOPS mapping" caption-side="bottom"}
 
 With the IBM Cloud Service Framework, storage is allocated based on deployment needs, ensuring efficient usage of resources and seamless management.
 
