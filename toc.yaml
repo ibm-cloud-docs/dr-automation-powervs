@@ -55,7 +55,10 @@ toc:
   - navgroup:
       id: reference
       topics:
-       - responsibility.md
+      - topicgroup:
+              label: Roles and Responsibility
+              topics:
+                - responsibility.md
   - navgroup:
       id: help
       topics:
