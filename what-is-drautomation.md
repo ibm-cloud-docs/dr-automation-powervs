@@ -10,3 +10,4 @@ IBM® DR automation for PowerVS (DR automation) is designed to enhance resilienc
 Review this information to understand the IBM DR automation for PowerVS architecture (Off-premises) and to identify essential hardware and software requirements.
 
 [IBM DR Automation for powerVS](architecture-dr-automation.md)
+[IBM DR Automation for powerVS](cloud-docs/dr-automation-powervs/architecture-dr-automation.md)
