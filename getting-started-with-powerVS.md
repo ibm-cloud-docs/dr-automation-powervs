@@ -7,7 +7,6 @@ subcollection: dr-automation
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Getting started with IBM® DR Automation for PowerVS
 
 {: #get-drauto}
@@ -23,6 +22,7 @@ Get started with **DR automation for PowerVS** today to ensure reliable and effi
 
 
 ## Terminology
+
 {: #term}
 
 
@@ -38,18 +38,21 @@ Get started with **DR automation for PowerVS** today to ensure reliable and effi
 
 
 ## Before you Begin
+
 {: #bub} 
 
 Before you create your first instance, review the following prerequisites:
 
 1. Create an IBM Cloud account. To create an IBM Cloud account, see [Signing up for the IBM Cloud](https://cloud.ibm.com/registration).
 
-2. Review the Identity and Access Management (IAM) information at [Managing DR Automation (IAM)](iam-for-dr-autoamtion.md).
+2. Review the Identity and Access Management (IAM) information at [Managing DR Automation (IAM)](iam-autoamtion.md).
 
 3. Create a public and private SSH key to securely connect to your Power Virtual Server. For instructions on creating a public and private SSH key, see Adding an SSH key.
 
-4. Plan and specify your infrastructure requirements and review the estimated cost using the Power Virtual Server Estimate pricing tool. Identify whether you want a Power Virtual Server, Private Cloud infrastructure, or both.
+4. Plan and specify your infrastructure requirements and review the estimated cost using the [DR Automation Estimate pricing tool](https://test.cloud.ibm.com/catalog/services/dr-automation-test-7).
 
 5. Review the lifecycles of Power Virtual Server instances on IBM DR Automation for PowerVS.
 
-#### Lifecycle of a Power Virtual Server
+### Lifecycle of DR Autoamtion for PowerVS
+
+![DR Autoamtion life Cycle](images/dr-automation-blockdiagram.svg "DR Autoamtion life Cycle"){: caption="DR Autoamtion life Cycle" caption-side="bottom"}

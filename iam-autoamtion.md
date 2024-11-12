@@ -30,7 +30,7 @@ Table 1. IAM platform access roles
 | Editor               | View instances, list instances, create instances, and delete instances.                                  |
 | Administrator        | View instances, list instances, create instances, delete instances, and assign policies to other users.   |
 
-### Service access roles {Verify}
+### Service access roles
 
 You can use the service access roles to define the actions that the users can perform on Power Virtual Server resources. The following table displays the IAM service access roles and the corresponding actions that a user can complete by using the Dr Autaomtion for PowerVS:
 
