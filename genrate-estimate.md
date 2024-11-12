@@ -1,10 +1,10 @@
 ---
-front_matter_title: "Generating an Estimate for DR Automation on IBM Power Virtual Server"
+front_matter_title: "Generating an Estimate for Power Virtual Server DR Automation"
 lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation
 ---
-# Generating an Estimate for DR Automation on IBM Power Virtual Server
+# Generating an Estimate for Power Virtual Server DR Automation
 
 Use the cost estimator tool to evaluate potential costs for DR Automation resources before deployment. This tool allows customization of configurations to align with your disaster recovery needs.
 
@@ -23,9 +23,9 @@ Use the cost estimator tool to evaluate potential costs for DR Automation resour
 1. **Log in to IBM Cloud Catalog**  
    - Use your IBM credentials to access the IBM Cloud catalog.
 
-2. **Select DR Automation for Power Virtual Server**  
-   - In the search box, type **DR Automation for Power Virtual Server**.
-   - Click on the **DR Automation for Power Virtual Server** tile.
+2. **Select Power Virtual Server DR Automation**  
+   - In the search box, type **Power Virtual Server DR Automation**.
+   - Click on **Power Virtual Server DR Automation** tile.
 
 ---
 

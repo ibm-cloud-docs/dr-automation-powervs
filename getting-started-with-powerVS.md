@@ -1,16 +1,12 @@
 ---
-front_matter_title: "Getting started with IBM DR automation for PowerVS"
+front_matter_title: "Getting started with IBM Power Virtual Server DR Automation"
 lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation
 ---
-
-{{site.data.keyword.attribute-definition-list}}
-
-# Getting started with IBM® DR Automation for PowerVS
+# Getting started with IBM® Power Virtual Server DR Automation
 
 {: #get-drauto}
-
 
 IBM Power Virtual Server DR Automation is an disaster recovery offering. You can use Power Virtual Server DR Automation to automate disaster recovery (DR) processes for virtualized environments, ensuring continuity of operations with minimal manual intervention in the event of disasters or disruptions.
 
@@ -32,9 +28,9 @@ Get started with DR automation today to ensure reliable and efficient disaster r
 
 - **Workspace** - A workgroup is a logical grouping of virtual machines, storage volumes, network configurations, and other resources within a defined geographic region. Workgroups are accessible from the Power Virtual Server user interface, allowing users to organize and manage multiple Power Virtual Server instances for specific purposes, such as production or development testing. Within each designated site, users can establish multiple workgroups to facilitate environment-specific operations, streamline resource allocation, and ensure seamless disaster recovery processes, including failover and failback capabilities.
 
-- **DR Service Broker** - The DR Service Broker provides a centralized interface within IBM Cloud to manage and coordinate the DR services and resources across multiple environments. It simplifies DR configurations, resource allocations, and service accessibility, streamlining disaster recovery setup and maintenance across PowerVS instances.
+- **DR Service Broker** - The DR Service Broker provides a centralized interface within IBM Cloud to manage and coordinate the DR services and resources across multiple environments. It simplifies DR configurations, resource allocations, and service accessibility, streamlining disaster recovery setup and maintenance across DR Automation instances.
 
-- **DR Orchestrator (KSYS)** - The DR Orchestrator, also known as KSYS, is the central management component responsible for automating disaster recovery processes within PowerVS. KSYS manages and coordinates failover, failback, and synchronization of resources across sites, ensuring efficient and reliable DR operations.
+- **DR Orchestrator (KSYS)** - The DR Orchestrator, also known as KSYS, is the central management component responsible for automating disaster recovery processes within DR Automation. Orchestrator(KSYS) manages and coordinates failover, failback, and synchronization of resources across sites, ensuring efficient and reliable DR operations.
 
 
 ## Before you Begin
@@ -51,8 +47,8 @@ Before you create your first instance, review the following prerequisites:
 
 4. Plan and specify your infrastructure requirements and review the estimated cost using the [DR Automation Estimate pricing tool](https://test.cloud.ibm.com/catalog/services/dr-automation-test-7).
 
-5. Review the lifecycles of Power Virtual Server instances on IBM DR Automation for PowerVS.
+5. Review the lifecycles of Power Virtual Server instances on IBM Power Virtual Server DR Automation.
 
-## Lifecycle of DR Autoamtion for PowerVS
+## Lifecycle of Power Virtual Server DR Automation
 
-![DR Autoamtion life Cycle](images/dr-automation-blockdiagram.svg "DR Autoamtion life Cycle"){: caption="DR Autoamtion life Cycle" caption-side="bottom"}
+![DR Automation life Cycle](images/dr-automation-blockdiagram.svg "DR Automation life Cycle"){: caption="DR Automation life Cycle" caption-side="bottom"}
