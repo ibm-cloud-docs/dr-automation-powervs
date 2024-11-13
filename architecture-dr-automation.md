@@ -33,7 +33,7 @@ The **Orchestrator (KSYS)** is crucial in coordinating DR workflows, ensuring Vi
 
 This setup provides a secure, seamless DR solution that integrates with your production environment, enabling smooth failover and failback to maintain business continuity in case of unexpected events.
 
-![DR Automation Architecture](images/dr-automation-arch.jpg "DR Automation Architecture")
+![DR Automation Architecture](images/dr-automation-arch.svg "DR Automation Architecture")
 {: caption="DR Automation Architecture" caption-side="bottom"}
 
 ## DR Service Broker Architecture
@@ -55,7 +55,6 @@ The Service Broker updates DR metrics to IBM’s billing system (BSS) based on i
 ### Interface Accessibility
 
 The DR Automation Service Broker, accessible via the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with IBM’s broader catalog for resource provisioning.
-
 
 ## DR Orchestrator (KSYS) Architecture
 
