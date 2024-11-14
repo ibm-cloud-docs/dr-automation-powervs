@@ -31,6 +31,7 @@ toc:
               label: Replication
               topics:
               - grs-replication.md
+
   - navgroup:
       id: howto
       topics:
@@ -58,10 +59,6 @@ toc:
               label: Roles and Responsibility
               topics:
                 - responsibility.md
-      - topicgroup:
-              label: Commands
-              topics:
-                - ksysmgr.md
 
   - navgroup:
       id: help
