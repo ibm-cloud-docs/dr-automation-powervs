@@ -8,13 +8,13 @@ subcollection: dr-automation
 
 ## Overview
 
-Data isolation in IBM Cloud is essential for protecting customer data in multi-tenant cloud environments, especially for Disaster Recovery (DR) Automation in PowerVS. IBM Cloud offers a suite of tools and services that ensure data remains segregated, secure, and compliant with regulatory standards. This document details key strategies and components that work together to provide robust data isolation within the DR Automation framework for PowerVS.
+Data isolation in IBM Cloud is essential for protecting customer data in multi-tenant cloud environments, especially for {{site.data.keyword.DR_full}}. IBM Cloud offers a suite of tools and services that ensure data remains segregated, secure, and compliant with regulatory standards. This document details key strategies and components that work together to provide robust data isolation within the {{site.data.keyword.DR_full_notm}} framework .
 
 ## Key Data Isolation Strategies
 
 ### Virtual Private Cloud (VPC)
 
-IBM Cloud’s **Virtual Private Cloud (VPC)** provides an isolated network environment for managing DR Automation resources securely. It enables you to control IP address ranges, subnets, routing, and access, ensuring that DR resources are isolated from other IBM Cloud customers.
+IBM Cloud’s Virtual Private Cloud (VPC) provides an isolated network environment for managing {{site.data.keyword.DR_short}} resources securely. It enables you to control IP address ranges, subnets, routing, and access, ensuring that DR resources are isolated from other IBM Cloud customers.
 
 - **Private IP Addressing**: Resources receive private IP addresses, making them accessible only within the VPC or through configured access.
 
@@ -24,7 +24,7 @@ IBM Cloud’s **Virtual Private Cloud (VPC)** provides an isolated network envir
 
 ### Dedicated Cloud and Private Infrastructure
 
-IBM Cloud offers **dedicated cloud** options for exclusive access to physical servers, ideal for DR Automation’s sensitive workloads.
+IBM Cloud offers **dedicated cloud** options for exclusive access to physical servers, ideal for {{site.data.keyword.DR_short}}’s sensitive workloads.
 
 - **IBM Cloud Dedicated** provides physical isolation, ensuring no shared infrastructure with other tenants.
 - **IBM Cloud Bare Metal Servers** and **Virtual Servers** deliver single-tenant environments, enhancing data isolation by controlling compute resources directly.
@@ -42,7 +42,6 @@ Data encryption ensures that sensitive DR data is secure and isolated.
 **IBM Cloud IAM** provides role-based access control for DR resources, ensuring that only authorized users and systems can access critical DR functions.
 
 - **Role-Based Access Control (RBAC)**: Controls access to specific DR resources by defining roles and permissions.
-
 
 ### Cloud Object Storage for Bucket-Level Isolation
 
@@ -66,7 +65,7 @@ IBM Cloud’s compliance tools and certifications help meet regional and regulat
 - **Data Residency**: Allows data to be stored in specific geographic regions to comply with regulations.
 - **Compliance Certifications**: IBM Cloud is certified for standards like ISO 27001, SOC 2, and PCI-DSS.
 
-## DR Automation-Specific Data Isolation Components
+## {{site.data.keyword.DR_short}}-Specific Data Isolation Components
 
 ### KSYS (DR Orchestrator)
 
@@ -78,7 +77,7 @@ The **DR Service Broker** provides a centralized interface for managing DR servi
 
 ### Control Plane
 
-The **Control Plane** manages DR automation operations within PowerVS, handling resource monitoring, API requests, and synchronization across sites. It ensures isolated DR processes by controlling data flow and access between primary and secondary sites.
+The **Control Plane** manages {{site.data.keyword.DR_short}} operations within PowerVS, handling resource monitoring, API requests, and synchronization across sites. It ensures isolated DR processes by controlling data flow and access between primary and secondary sites.
 
 ### Replication Services
 
@@ -115,4 +114,4 @@ IBM Cloud’s monitoring and logging services enhance data isolation by capturin
 - **Use Private Endpoints and VPNs**: To ensure isolated communication between DR resources and sites.
 - **Select Appropriate Regions for Data Residency**: Align data storage with regulatory requirements for data residency.
 
-IBM Cloud’s data isolation strategies for DR Automation in PowerVS ensure that customer data is protected, compliant, and ready for recovery in secure environments. By leveraging dedicated infrastructure, IAM, VPC, and encryption, IBM Cloud provides a robust environment for disaster recovery, preserving data isolation at every stage.
+IBM Cloud’s data isolation strategies for {{site.data.keyword.DR_short}} in PowerVS ensure that customer data is protected, compliant, and ready for recovery in secure environments. By leveraging dedicated infrastructure, IAM, VPC, and encryption, IBM Cloud provides a robust environment for disaster recovery, preserving data isolation at every stage.

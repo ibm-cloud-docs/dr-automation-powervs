@@ -12,7 +12,7 @@ You can use IBM Cloud Activity Tracker Event Routing, a platform service, to rou
 
 You can use IBM Cloud Logs to visualize and alert on events that are generated in your account and routed by IBM Cloud Activity Tracker Event Routing to an IBM Cloud Logs instance.
 
-<strong>Important:</strong> As of <strong>28 March 2024</strong>, the IBM Cloud Activity Tracker service is deprecated and will no longer be supported as of <strong>30 March 2025</strong>. Customers will need to migrate to IBM Cloud Logs before <strong>30 March 2025</strong>. During the migration period, customers can use IBM Cloud Activity Tracker along with IBM Cloud Logs. Activity tracking events are the same for both services. For information about migrating from IBM Cloud Activity Tracker to IBM Cloud Logs and running the services in parallel, see [link_to_migration_planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
+> **Important**: As of <strong>28 March 2024</strong>, the IBM Cloud Activity Tracker service is deprecated and will no longer be supported as of <strong>30 March 2025</strong>. Customers will need to migrate to IBM Cloud Logs before <strong>30 March 2025</strong>. During the migration period, customers can use IBM Cloud Activity Tracker along with IBM Cloud Logs. Activity tracking events are the same for both services. For information about migrating from IBM Cloud Activity Tracker to IBM Cloud Logs and running the services in parallel, see [link_to_migration_planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
 
 Activity Tracker Event Routing records user-initiated activities that change the state of a service in IBM Cloud. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see the [Getting started tutorial for Activity Tracker Event Routing](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
@@ -213,16 +213,16 @@ You can create an activity tracker instance and provision it in the same region 
 
 The following table shows the data center and its corresponding regions where you can deploy an activity tracker instance:
 
-| Datacenter | New Activity Tracker Region |
-|------------|-----------------------------|
-| WDC04      | us-east                     |
-| WDC06      | us-east                     |
-| WDC07      | us-east                     |
-| MON01      | ca-tor                      |
-| TOR04      | ca-tor                      |
-| SAO01      | br-sao                      |
-| SAO04      | br-sao                      |
-| LON04      | eu-gb                       |
-| LON06      | eu-gb                       |
-| OSA21      | jp-osa                      |
+| Datacenter | Activity Tracker Region |
+|------------|-------------------------|
+| WDC04      | us-east                 |
+| WDC06      | us-east                 |
+| WDC07      | us-east                 |
+| MON01      | ca-tor                  |
+| TOR04      | ca-tor                  |
+| SAO01      | br-sao                  |
+| SAO04      | br-sao                  |
+| LON04      | eu-gb                   |
+| LON06      | eu-gb                   |
+| OSA21      | jp-osa                  |
 {: caption="List of DCs and their corresponding AT instance region" caption-side="bottom"}
