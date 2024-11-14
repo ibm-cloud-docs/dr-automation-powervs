@@ -6,28 +6,33 @@ subcollection: dr-automation
 ---
 # Activity tracker events
 
-As a security officer, auditor, or manager, you can use the Activity Tracker Event Routing service to track how users and applications interact with the IBM® DR® Autoamtion for PowerVS in IBM Cloud®.
+Activity tracking events report on activities that change the state of a service in IBM Cloud. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
 
-Activity Tracker Event Routing records user-initiated activities that change the state of a service in IBM Cloud. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see the [Getting started tutorial for Activity Tracker Event Routing](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-getting-started).
+You can use IBM Cloud Activity Tracker Event Routing, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see [Getting started tutorial for Activity Tracker Event Routing](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-getting-started).
 
-IBM® DR® Autoamtion Server automatically generates events so that you can track activity on your service.
+You can use IBM Cloud Logs to visualize and alert on events that are generated in your account and routed by IBM Cloud Activity Tracker Event Routing to an IBM Cloud Logs instance.
+
+<strong>Important:</strong> As of <strong>28 March 2024</strong>, the IBM Cloud Activity Tracker service is deprecated and will no longer be supported as of <strong>30 March 2025</strong>. Customers will need to migrate to IBM Cloud Logs before <strong>30 March 2025</strong>. During the migration period, customers can use IBM Cloud Activity Tracker along with IBM Cloud Logs. Activity tracking events are the same for both services. For information about migrating from IBM Cloud Activity Tracker to IBM Cloud Logs and running the services in parallel, see [link_to_migration_planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
+
+Activity Tracker Event Routing records user-initiated activities that change the state of a service in IBM Cloud. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see the [Getting started tutorial for Activity Tracker Event Routing](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
 ## Management events
 
-This document provides details on various events relevant to DR automation. These events help administrators manage instance readiness, images, network configurations, and security policies required for effective disaster recovery.
+This document provides details on various events relevant to {{site.data.keyword.DR_short}}. These events help administrators manage instance readiness, images, network configurations, and security policies required for effective disaster recovery.
 
 ## 1. Instance Events
 
-Instance events are essential for assessing the status and readiness of instances for failover within DR automation. These events allow administrators to list and monitor instances to ensure they are prepared for rapid recovery during a disaster scenario.
+Instance events are essential for assessing the status and readiness of instances for failover within {{site.data.keyword.DR_short}}. These events allow administrators to list and monitor instances to ensure they are prepared for rapid recovery during a disaster scenario.
 
 | **Action**                | **Description**                                       |
 |---------------------------|-------------------------------------------------------|
 | `dr-instance.list`        | Lists all instances that are configured for failover. |
 | `dr-instance.read`        | Reads the status of a specified instance for readiness verification. |
+{: caption="List of events: Instance" caption-side="bottom"}
 
 ### Example Use Case
 
-In preparation for disaster recovery testing, an administrator may use `dr-instance.list` to retrieve all instances under DR automation. By reading the status of each instance, they ensure that all critical systems are in a ready state for immediate failover.
+In preparation for disaster recovery testing, an administrator may use `dr-instance.list` to retrieve all instances under {{site.data.keyword.DR_short}}. By reading the status of each instance, they ensure that all critical systems are in a ready state for immediate failover.
 
 ---
 
@@ -40,9 +45,10 @@ Image events support the creation and management of system images necessary for 
 | `dr-image.create`         | Creates a new image of a configured instance.  |
 | `dr-image.list`           | Lists all images available for recovery.       |
 | `dr-image.delete`         | Deletes an outdated image to manage storage.   |
+{: caption="List of events: Images" caption-side="bottom"}
 
 **Example Use Case**
-During the setup of DR automation, an administrator may use `dr-image.create` to capture a backup image of an instance. This image can then be listed and validated to ensure it is available for future recovery operations.
+During the setup of {{site.data.keyword.DR_short}}, an administrator may use `dr-image.create` to capture a backup image of an instance. This image can then be listed and validated to ensure it is available for future recovery operations.
 
 ---
 
@@ -55,6 +61,7 @@ Network events are critical for configuring and managing network paths that faci
 | `dr-network.list`         | Lists all network paths configured for DR operations.         |
 | `dr-network.create`       | Establishes a network path essential for failover.            |
 | `dr-network.update`       | Updates the configuration of an existing DR network path.     |
+{: caption="List of events: Network" caption-side="bottom"}
 
 **Example Use Case**
 To prepare for a potential failover, an administrator can use `dr-network.list` to confirm that network paths are active. If additional configuration is needed, `dr-network.create` can establish the required connectivity.
@@ -63,13 +70,14 @@ To prepare for a potential failover, an administrator can use `dr-network.list` 
 
 ## 4. Power Virtual Server Events
 
-For DR automation, these events provide control over virtual server instances, allowing administrators to start, stop, or capture snapshots for recovery purposes.
+For {{site.data.keyword.DR_short}}, these events provide control over virtual server instances, allowing administrators to start, stop, or capture snapshots for recovery purposes.
 
 | **Action**                         | **Description**                                       |
 |------------------------------------|-------------------------------------------------------|
 | `dr-instance.start`                | Starts a virtual server instance for failover.        |
 | `dr-instance.stop`                 | Stops an instance that is no longer required.         |
 | `dr-instance.snapshot`             | Captures a snapshot of an instance for backup.        |
+{: caption="List of events: Power Virtual Server" caption-side="bottom"}
 
 **Example Use Case**
 During a failover drill, an administrator can issue `dr-instance.start` to activate all necessary instances in the backup environment. Additionally, `dr-instance.snapshot` can be used to capture a real-time backup.
@@ -85,6 +93,7 @@ Managing data volumes ensures that critical storage resources are available and 
 | `dr-volume.create`        | Creates a new data volume for DR purposes.                |
 | `dr-volume.attach`        | Attaches a data volume to an instance in the backup site. |
 | `dr-volume.detach`        | Detaches a data volume after a failover test.             |
+{: caption="List of events: Data Volume Events" caption-side="bottom"}
 
 **Example Use Case**
 In the event of a failover, an administrator may use `dr-volume.attach` to ensure that critical storage volumes are available to the restored instances at the backup site.
@@ -100,6 +109,7 @@ Cloud connection events facilitate secure connectivity between the primary and b
 | `dr-cloud-connection.list`| Lists all cloud connections between primary and backup sites.     |
 | `dr-cloud-connection.create`| Establishes a secure connection between DR sites.               |
 | `dr-cloud-connection.update`| Updates the configuration of an existing cloud connection.     |
+{: caption="List of events: Cloud Connections" caption-side="bottom"}
 
 **Example Use Case**
 To ensure continuity during a failover, an administrator uses `dr-cloud-connection.list` to verify all connections between the primary and backup sites are active. If needed, `dr-cloud-connection.update` can modify the connection parameters.
@@ -115,24 +125,27 @@ Security-related events are critical to maintaining secure connections during a 
 | `dr-vpn.list`                       | Lists all VPN configurations for secure DR paths.    |
 | `dr-ike-policy.create`              | Creates an IKE policy to secure DR data transfer.    |
 | `dr-ipsec-policy.update`            | Updates an IPsec policy for secure site connectivity.|
+{: caption="List of events: Security-Related" caption-side="bottom"}
 
 **Example Use Case**
 For secure data transfer, an administrator can use `dr-vpn.list` to confirm active VPN connections. To enhance security, `dr-ike-policy.create` and `dr-ipsec-policy.update` can be applied as required.
 
 ---
 
-## Viewing DR Automation Events
+## Viewing {{site.data.keyword.DR_short}} Events
 
-Disaster Recovery (DR) Automation events are automatically forwarded to specific geographic locations based on data center regions. You can access the activity tracker logs for DR automation as follows:
+Disaster Recovery (DR) Automation events are automatically forwarded to specific geographic locations based on data center regions. You can access the activity tracker logs for {{site.data.keyword.DR_short}} as follows:
 
 - All North America and South America data centers from Dallas.
 - All Europe data centers from Frankfurt.
 - All Sydney data center from Sydney.
 - All Japan data center from Tokyo.
 
-For a comprehensive list of locations where DR automation events are enabled to send logs to IBM Cloud Logs, see [IBM Cloud services that generate Activity Tracker events](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-cloud_services_locations&interface=cli#cloud_services_locations_power-iaas).
+For a comprehensive list of locations where {{site.data.keyword.DR_short}}
+ events are enabled to send logs to IBM Cloud Logs, see [IBM Cloud services that generate Activity Tracker events](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-cloud_services_locations&interface=cli#cloud_services_locations_power-iaas).
 
-The Activity Tracker service supports only one instance per location. To view DR automation events, you must access the Activity Tracker web UI in the same location where your DR service instance is deployed. For additional guidance, see [Launching the web UI through the IBM Cloud UI](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-launch).
+The Activity Tracker service supports only one instance per location. To view {{site.data.keyword.DR_short}}
+ events, you must access the Activity Tracker web UI in the same location where your DR service instance is deployed. For additional guidance, see [Launching the web UI through the IBM Cloud UI](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-launch).
 
 ## Activity Tracker Sample Response Format
 
@@ -195,7 +208,8 @@ The following code snippets show the differences between the old and new activit
 
 You can create an activity tracker instance and provision it in the same region where your data center is located.
 
-> **Important:** The DR Automation workspaces that run in various regions or data centers will send events to activity tracker instances in their respective regions effective from 29 January 2024. You must create and provision instances of activity tracker in the respective regions where your workspaces reside for continued access to DR Automation activity tracker events. If you want to export activity tracker events, see [Exporting Activity Tracker events](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-export).
+> **Important:** The {{site.data.keyword.DR_short}} workspaces that run in various regions or data centers will send events to activity tracker instances in their respective regions effective from 29 January 2024. You must create and provision instances of activity tracker in the respective regions where your workspaces reside for continued access to {{site.data.keyword.DR_short}}
+ activity tracker events. If you want to export activity tracker events, see [Exporting Activity Tracker events](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-export).
 
 The following table shows the data center and its corresponding regions where you can deploy an activity tracker instance:
 
@@ -211,4 +225,4 @@ The following table shows the data center and its corresponding regions where yo
 | LON04      | eu-gb                       |
 | LON06      | eu-gb                       |
 | OSA21      | jp-osa                      |
- List of DCs and their corresponding AT instance region
+{: caption="List of DCs and their corresponding AT instance region" caption-side="bottom"}

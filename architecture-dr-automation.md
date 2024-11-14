@@ -4,13 +4,13 @@ lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation
 ---
-# Architecture for IBM Power Virtual Server DR Automation
+# Architecture for {{site.data.keyword.DR_full}}
 
-IBM® Power Virtual Server DR Automation is a robust disaster recovery solution specifically designed for IBM data centers, distinct from general IBM Cloud resources. This solution leverages dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.
+{{site.data.keyword.DR_full}} is a robust disaster recovery solution specifically designed for IBM data centers, distinct from general IBM Cloud resources. This solution leverages dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.
 
-The IBM Cloud Service Framework facilitates seamless deployment and management of Power Virtual Server DR Automation by integrating key components such as the Service Broker, Resource Management Controller (RMC), and IBM Cloud Catalog. This framework streamlines the DR setup process, enhances security, and ensures compliance, delivering a comprehensive DR solution within the IBM Cloud infrastructure.
+The IBM Cloud Service Framework facilitates seamless deployment and management of {{site.data.keyword.DR_full_notm}} by integrating key components such as the Service Broker, Resource Management Controller (RMC), and IBM Cloud Catalog. This framework streamlines the DR setup process, enhances security, and ensures compliance, delivering a comprehensive DR solution within the IBM Cloud infrastructure.
 
-Explore the following sections to understand the Power Virtual Server DR Automation architecture, features, hardware requirements, and network configurations.
+Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} architecture, features, hardware requirements, and network configurations.
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ Explore the following sections to understand the Power Virtual Server DR Automat
 
 ## High-Level Architecture
 
-The **Power Virtual Server DR Automation** system operates within IBM data centers, isolated from the core IBM Cloud environment. Utilizing dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
+The **{{site.data.keyword.DR_full_notm}}** system operates within IBM data centers, isolated from the core IBM Cloud environment. Utilizing dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
 
 Central to this architecture is the **Service Broker**, which manages compute, storage, and network resources to streamline and automate DR processes. It simplifies recovery setup, enabling customers to quickly deploy and manage DR services through an intuitive interface.
 
@@ -54,7 +54,7 @@ The Service Broker updates DR metrics to IBM’s billing system (BSS) based on i
 
 ### Interface Accessibility
 
-The DR Automation Service Broker, accessible via the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with IBM’s broader catalog for resource provisioning.
+The {{site.data.keyword.DR_short}} Service Broker, accessible via the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with IBM’s broader catalog for resource provisioning.
 
 ## DR Orchestrator (KSYS) Architecture
 
@@ -83,7 +83,7 @@ For enhanced resilience, KSYS supports a High Availability (HA) setup, ensuring 
 
 ### Simplified Disaster Recovery Management
 
-Power Virtual Server DR Automation provides a single interface to manage DR processes for IBM PowerVS environments. Key features include:
+{{site.data.keyword.DR_short}} provides a single interface to manage DR processes for IBM PowerVS environments. Key features include:
 
 - **Automated Failover and Failback**:
 Automate the failover process, ensuring that workloads resume quickly in the backup environment.
@@ -96,14 +96,14 @@ Define recovery priorities and configurations for different VMs or applications.
 
 ### Flexible Billing Model
 
-Power Virtual Server DR Automation follows a usage-based billing model, with flexible options based on the selected resources and configurations.
+{{site.data.keyword.DR_short}} follows a usage-based billing model, with flexible options based on the selected resources and configurations.
 The IBM Cloud Service Framework supports accurate billing and comprehensive reporting, ensuring customers have clear visibility into DR-related costs.
 
 ---
 
 ## IBM Cloud Service Framework
 
-The **IBM Cloud Service Framework** enhances Power Virtual Server DR Automation by enabling seamless service deployment and management. Key components include:
+The **IBM Cloud Service Framework** enhances {{site.data.keyword.DR_short}} by enabling seamless service deployment and management. Key components include:
 
 - **Service Broker**: Manages compute, storage, and network resources, allowing users to select DR services from the IBM Cloud Catalog and configure deployment details.
 This component plays a central role in streamlining and automating DR processes.
@@ -117,13 +117,13 @@ This includes IBM Cloud services like Activity Tracker (for monitoring) Cloud Ob
 
 - **Reliable Connectivity**: Maintains continuous, secure access to DR resources through redundant network connections, enhancing reliability and resilience.
 
-This integrated framework provides a secure, compliant, and efficient DR solution that aligns closely with the high-level architecture for DR Automation in IBM data centers.
+This integrated framework provides a secure, compliant, and efficient DR solution that aligns closely with the high-level architecture for {{site.data.keyword.DR_short}} in IBM data centers.
 
 ---
 
 ## Hardware Specifications
 
-IBM Power servers supported by Power Virtual Server DR Automation include:
+IBM Power servers supported by {{site.data.keyword.DR_full_notm}} include:
 
 - **IBM Power S922** (9009-22A)
 - **IBM Power S922** (9009-22G)
@@ -136,7 +136,7 @@ For more details, refer to the specific data sheets and hardware overview table.
 
 ## Supported Storage Tiers
 
-Power Virtual Server DR Automation offers storage with configurable IOPS levels to meet diverse DR requirements:
+{{site.data.keyword.DR_short}} offers storage with configurable IOPS levels to meet diverse DR requirements:
 
 | Tier Level | IOPS       | Performance                                |
 |------------|------------|--------------------------------------------|
@@ -153,7 +153,7 @@ With the IBM Cloud Service Framework, storage is allocated based on deployment n
 
 ### Public Network
 
-Power Virtual Server DR Automation offers public network connectivity for seamless access and configuration.
+{{site.data.keyword.DR_short}} offers public network connectivity for seamless access and configuration.
 IBM configures the network environment for secure public connections, including firewall protection and support for SSH, HTTPS, and IBM i terminal emulation.
 
 ### Private Network
@@ -168,10 +168,10 @@ Use Direct Link Connect for secure, low-latency communication between DR environ
 
 ---
 
-## Setting Up DR Automation
+## Setting Up {{site.data.keyword.DR_short}}
 
 1. **Create IBM Cloud Account**: Log in to your IBM Cloud account.
-2. **Access DR Automation in IBM Catalog**: Locate the Power Virtual Server DR Automation tile.
+2. **Access {{site.data.keyword.DR_full_notm}} in IBM Catalog**: Locate the {{site.data.keyword.DR_full_notm}} tile.
 3. **Configure Resources**: Set up storage, compute, and network resources according to DR needs.
 4. **Monitor and Test**: Schedule DR tests and monitor system health.
 
