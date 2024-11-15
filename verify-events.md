@@ -12,7 +12,7 @@ The **Events** in the {{site.data.keyword.DR_full}} interface provides an overvi
 
 You can access a maximum of 400 events for the current and previous months in the IBM Cloud console. To see the event logs, complete the following steps:
 
-1. Log in to the IBM Cloud catalog with your credentials.
+1. Log in to the [IBM Cloud catalog](https://cloud.ibm.com/catalog) with your credentials.
 2. In the catalog's search box, type IBM® Power® Virtual Server, and click the Workspace for IBM® Power® Virtual Server tile.
 3. Click Select workspace on the left navigation under workspace of the {{site.data.keyword.DR_full}} user  interface to select from a list of previously created workspaces. If you do not have a workspace, click Create a workspace.
 4. Click Event logs to see the list of event logs and notifications.
