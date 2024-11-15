@@ -26,5 +26,3 @@ In this section, administrators can view detailed records of the virtual server 
 - **Date**: The exact time and date the event was logged, helping track the sequence of activities.
 
 - **Severity**: The importance level of the event, which could range from informative (Info) to critical warnings (Caution).
-
------
