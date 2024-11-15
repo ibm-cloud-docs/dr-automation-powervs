@@ -8,7 +8,7 @@ subcollection: dr-automation
 
 The **Events** in the {{site.data.keyword.DR_full}} interface provides an overview of the key activities and status changes within your virtual server instances. This log of events enables administrators to track and review significant actions, such as server stops, starts, and any alerts or warnings that may require attention. Monitoring these events ensures that the disaster recovery environment functions optimally and that any potential issues can be promptly addressed.
 
-# Accessing the event logs
+## Accessing the event logs
 
 You can access a maximum of 400 events for the current and previous months in the IBM Cloud console. To see the event logs, complete the following steps:
 
@@ -26,3 +26,5 @@ In this section, administrators can view detailed records of the virtual server 
 - **Date**: The exact time and date the event was logged, helping track the sequence of activities.
 
 - **Severity**: The importance level of the event, which could range from informative (Info) to critical warnings (Caution).
+
+-----
