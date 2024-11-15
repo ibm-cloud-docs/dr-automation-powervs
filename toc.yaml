@@ -45,7 +45,6 @@ toc:
               - orchestrator-deployment.md
               - manage-vm.md
               - verify-events.md
-              - roles-and-responsibilities.md
       - topicgroup:
               label: Observability
               topics:
