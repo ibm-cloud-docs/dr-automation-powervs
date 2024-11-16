@@ -44,6 +44,7 @@ toc:
               - monitoring-vm-status.md
               - orchestrator-deployment.md
               - manage-vm.md
+              - manage-external-orch.md
               - verify-events.md
       - topicgroup:
               label: Observability
