@@ -13,6 +13,6 @@ When adding virtual servers, you are redirected to the external orchestrator int
 1. Enter your login credentials and click **Log In**. Use the credentials configured on your system.
 
 2. To Save Login credentials, check **Remember Me** option that enable the system to remember your login credentials for up to 24 hours.
-   - If **Remember Me** option is not checked, the credentials will be remembered for 10 hours.
+   - The credentials will be remembered for 10 hours, if **Remember Me** option is unchecked.
 
-After successfully logging into the VM Recovery Manager HA/DR GUI, you are redirected to the [KSYS (Orchestrator) cluster creation]() screen.
+After successfully logging into the VM Recovery Manager HA/DR GUI, you are redirected to the [KSYS (Orchestrator) cluster creation]() screen where you will be adding the KSYS cluster.
