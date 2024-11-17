@@ -47,6 +47,7 @@ toc:
               - manage-external-orch.md
               - create-ksys-cluster.md
               - setting-target-source.md
+              - manage-vm-vmrm.md
               - verify-events.md
       - topicgroup:
               label: Observability
