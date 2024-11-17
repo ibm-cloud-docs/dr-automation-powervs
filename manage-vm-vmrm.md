@@ -4,7 +4,7 @@ lastupdated: "2024-11-17"
 copyright: "2023, 2024"
 subcollection: dr-automation
 ---
-# Managing VM Sessions in GUI
+# Managing VM sessions in GUI
 
 Efficiently set up and manage VM sessions by creating new sessions, organizing virtual machines into WorkGroups, and saving configurations for streamlined virtual machine management.
 
@@ -18,7 +18,6 @@ To create and manage virtual machines, complete the following steps:
 
 3. Display only the selected virtual machines for the session.
 
-4. To create the Target Workspace, search for or select the virtual machines according to your requirements, and then click **Save & Next**.
+4. To create the Target Workspace, search for or select the virtual machines according to your requirements, and click **Save & Next**.
 
 > **Note**: The WorkGroup name is auto-generated based on the VM name. You can modify it if necessary.
-
