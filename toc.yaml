@@ -49,10 +49,11 @@ toc:
               topics:
               - manage-external-orch.md
               - create-ksys-cluster.md
-              - setting-target-source.md
+              - setting-target-source.mdc
               - manage-vm-vmrm.md
               - network-paring.md
               - configure-summary.md
+              - disocvery-operation.md
               - verify-events.md
       - topicgroup:
               label: Observability
