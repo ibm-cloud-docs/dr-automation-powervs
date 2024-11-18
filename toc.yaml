@@ -49,6 +49,7 @@ toc:
               - setting-target-source.md
               - manage-vm-vmrm.md
               - network-paring.md
+              - configure-summary.md
               - verify-events.md
       - topicgroup:
               label: Observability
