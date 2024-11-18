@@ -44,6 +44,9 @@ toc:
               - monitoring-vm-status.md
               - orchestrator-deployment.md
               - manage-vm.md
+      - topicgroup:
+              label: External orchestrator
+              topics:
               - manage-external-orch.md
               - create-ksys-cluster.md
               - setting-target-source.md
