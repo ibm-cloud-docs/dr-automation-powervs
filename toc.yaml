@@ -48,7 +48,7 @@ toc:
               - create-ksys-cluster.md
               - setting-target-source.md
               - manage-vm-vmrm.md
-              - network-paring.mdn
+              - network-paring.md
               - verify-events.md
       - topicgroup:
               label: Observability
