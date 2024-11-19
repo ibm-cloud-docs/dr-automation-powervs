@@ -57,6 +57,7 @@ toc:
               - discover-operation.md
               - system-status-interface.md
               - move-site.md
+              - navigation-panel.md
               - verify-events.md
       - topicgroup:
               label: Observability
