@@ -20,3 +20,20 @@ To complete the network pairing, follow these steps:
 6. To clear the pairing, click **Clear Selection** and confirm to unpair the network configuration.
 
 > **Note**: When confirming network pairings for one VM within a shared workspace and network setup, the confirmation is automatically applied to other VMs with similar configurations.
+
+## Network Details on Dashboard
+
+To view the network details, follow these steps:
+
+1. Select the workspace to view its network details.
+2. Click the **Network Information** tab on the main screen to see the associated networks.
+3. Click the **View Networks** button next to the desired workspace for detailed network data.
+
+Following are the details about the selected network, including:
+
+- **Network Name:** The name assigned to the network.
+- **VM Name:** Lists the names of the virtual machines connected to the network.
+- **Network ID:** A unique identifier for the network.
+- **Subnet Range:** Specifies the range of IP addresses within the subnet.
+- **Gateway:** Displays the gateway IP address.
+- **VLAN ID:** Shows the VLAN ID associated with the network.

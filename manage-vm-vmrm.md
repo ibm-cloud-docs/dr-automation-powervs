@@ -6,6 +6,8 @@ subcollection: dr-automation
 ---
 # Managing VM sessions
 
+## Create a new VM session
+
 Efficiently set up and manage VM sessions by creating new sessions, organizing virtual machines into WorkGroups, and saving configurations for streamlined virtual machine management.
 
 After creating the sites, you must create a new VM session if you are managing the virtual machine for the first time. If the virtual machine has already been managed, you can proceed directly to [manage the VM](#manage-vm) and [unmange VM](#unmanage-vm) the sessions.
