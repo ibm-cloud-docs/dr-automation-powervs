@@ -54,6 +54,7 @@ toc:
               - network-paring.md
               - configure-summary.md
               - disocvery-operation.md
+              - Discover-operation.md
               - verify-events.md
       - topicgroup:
               label: Observability
