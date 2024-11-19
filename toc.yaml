@@ -55,7 +55,6 @@ toc:
               - configure-summary.md
               - disocvery-operation.md
               - discover-operation.md
-              - manage-unmanage.md
               - verify-events.md
       - topicgroup:
               label: Observability
