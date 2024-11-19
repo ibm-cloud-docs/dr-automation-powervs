@@ -40,7 +40,7 @@ To manage the VMs, complete the following steps:
    - Source Workspace
    - Target Workspace
 
-   **Note:** The WorkGroup name is auto-generated based on the VM name. You can change it as per your requirements.
+> **Note:** The WorkGroup name is auto-generated based on the VM name. You can change it as per your requirements.
 
 ---
 
@@ -56,6 +56,6 @@ To unmanage the VMs, complete the following steps:
 
    After this operation, the WorkGroup is removed from the list.
 
-   **Note:**
-   - Each WorkGroup is associated with only one VM.  
-   - You can unmanage a VM even if it has not been managed previously.
+  >  **Note:**
+   > - Each WorkGroup is associated with only one VM.  
+   >  - You can unmanage a VM even if it has not been managed previously.
