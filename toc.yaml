@@ -60,7 +60,7 @@ toc:
               - navigation-panel.md
               - verify-events.md
       - topicgroup:
-              label: AIXa
+              label: AIX
               topics:
               - aix-vm.md       
       - topicgroup:
