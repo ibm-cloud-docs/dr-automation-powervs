@@ -60,6 +60,10 @@ toc:
               - navigation-panel.md
               - verify-events.md
       - topicgroup:
+              label: AIXa
+              topics:
+              - aix-vm.md       
+      - topicgroup:
               label: Observability
               topics:
               - monitor-metrics.md
