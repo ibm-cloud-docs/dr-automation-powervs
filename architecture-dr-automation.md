@@ -1,5 +1,5 @@
 ---
-front_matter_title: "Power Virtual Server DR Automation Architecture"
+front_matter_title: "Architecture"
 lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation
@@ -58,7 +58,7 @@ The {{site.data.keyword.DR_short}} Service Broker, accessible via the IBM Cloud 
 
 ## DR Orchestrator (KSYS) Architecture
 
-The **DR Orchestrator (KSYS)**, acting as the operational core within user accounts, is critical in executing and managing DR workflows, specifically for PowerVS instances. This component manages the deployment, configuration, and operation of VMs required during DR.
+- The **DR Orchestrator (KSYS)**, acting as the operational core within user accounts, is critical in executing and managing DR workflows, specifically for PowerVS instances. This component manages the deployment, configuration, and operation of VMs required during DR.
 
 ### VM Orchestration and Workflow Management
 
@@ -132,6 +132,12 @@ IBM Power servers supported by {{site.data.keyword.DR_full_notm}} include:
 
 For more details, refer to the specific data sheets and hardware overview table.
 
+## Software Requirment
+
+- The Orchestrator(KSYS) LPAR requires a minimum of 1 core CPU and 8 GB of memory, though larger environments with over 100 VMs may require more resources.
+- The KSYS logical partition must run IBM® AIX® 7.3 with Technology Level 1 Service Pack 1 (7300-01-01), or later.
+- Each Cloud LPAR in the host must have the following operating systems:
+  -   AIX Version 7.3, and later
 ---
 
 ## Supported Storage Tiers
