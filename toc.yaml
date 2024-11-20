@@ -76,5 +76,7 @@ toc:
   - navgroup:
       id: help
       topics:
+      - FAQs.md
       - support-center.md
+      - troubleshooting.md
  
