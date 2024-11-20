@@ -12,26 +12,26 @@
         "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-getting-started-with-ibm-power-virtual-server-dr-automation"
       },
       {
-        "title": "Topic title",
-        "href": "/docs/overview?topic=overview-get-started-checklist"
+        "title": "High Level Architecture",
+        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-architecture-for-ibm-power-virtual-server-dr-automation"
       },
       {
-        "title": "Topic title",
-        "href": "/docs/overview?topic=overview-get-started-checklist"
+        "title": "Pricing",
+        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-pricing-for-ibm-dr-automation-for-powervs"
       },
       {
-        "title": "Topic title",
-        "href": "/docs/overview?topic=overview-get-started-checklist"
+        "title": "External Orchestrator",
+        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-managing-external-orchestrator"
       },
       {
-        "title": "Topic title",
-        "href": "/docs/overview?topic=overview-get-started-checklist"
+        "title": "FAQs",
+        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs"
       }
     ]
   },
   "section_highlights": [
     {
-      "title": "Resource title",
+      "title": "Power Virtual Server DR Automation",
       "description": "Short description of resource content.",
       "href": "https://www.example.ibm.com/link/to/resource",
       "type": "blog"
