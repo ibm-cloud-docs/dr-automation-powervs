@@ -72,17 +72,17 @@ toc:
               topics:
               - monitor-metrics.md
               - activity-tracker-events.md
-
   - navgroup:
       id: reference
       topics:
        - topicgroup:
-              topics:
-                - commands-ksys.md
               label: Roles and Responsibility
               topics:
                 - responsibility.md
- 
+
+
+
+        
 
   - navgroup:
       id: help
