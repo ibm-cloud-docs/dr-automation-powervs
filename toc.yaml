@@ -36,7 +36,6 @@ toc:
               topics:
               - workload-migration.md
               - additonal-migration.md       
-
   - navgroup:
       id: howto
       topics:
@@ -78,9 +77,12 @@ toc:
       id: reference
       topics:
        - topicgroup:
+              topics:
+                - commands-ksys.md
               label: Roles and Responsibility
               topics:
                 - responsibility.md
+ 
 
   - navgroup:
       id: help
