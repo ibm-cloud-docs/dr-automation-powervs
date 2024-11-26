@@ -31,6 +31,11 @@ toc:
               label: Replication
               topics:
               - grs-replication.md
+      - topicgroup:
+              label: Migration Strategies
+              topics:
+              - workload-migration.md
+              - additonal-migration.md       
 
   - navgroup:
       id: howto
@@ -72,7 +77,7 @@ toc:
   - navgroup:
       id: reference
       topics:
-      - topicgroup:
+       - topicgroup:
               label: Roles and Responsibility
               topics:
                 - responsibility.md
