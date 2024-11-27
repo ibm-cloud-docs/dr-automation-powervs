@@ -184,7 +184,7 @@ An output that is similar to the following example is displayed:
 
 ### Cluster configuration examples
 
-#### To add a KSYS cluster:
+### To add a KSYS cluster:
 
 ```
 ksysmgr add ksyscluster
@@ -213,7 +213,7 @@ KSYS subsystem has started. You can begin adding site definitions, etc
 **Note**: By default, the value of type variable is DR cluster type. 
 ```
 
-#### To query the KSYS cluster:
+### To query the KSYS cluster:
 
 ```
 ksysmgr query ksyscluster <ksysclustername>
@@ -230,7 +230,7 @@ Ksysnodes: ksys804p.aus.stglabs.ibm.com:1:Online
 KsysState: ksys804p.aus.stglabs.ibm.com:1:Online
 ```
 
-#### To remove a KSYS cluster:
+### To remove a KSYS cluster:
 
 ```
 ksysmgr [-f] delete ksyscluster <ksysclustername>
@@ -241,6 +241,7 @@ ksyscluster => ksysclu*, clu*
 When you delete a KSYS cluster, the **ksysmgr** command prompts for your confirmation. The **ksysmgr** command also recommends to create a snapshot at this point. 
 
 An output that is similar to the following example is displayed:
+
 ```
 **WARNING**: This action will remove all configuration and destroy the KSYS setup. It's recommended to create a backup with "ksysmgr add snapshot -h"
 ```
@@ -306,7 +307,7 @@ IBM.VMR process stopped successfully
 
 Peer domain was removed successfully
 
-#### To modify a KSYS cluster:
+### To modify a KSYS cluster:
 
 ```
 ksysmgr modify ksyscluster <ksysclustername> [glnode=<ksysnode>]
@@ -322,7 +323,7 @@ ksyscluster => ksysclu*, clu*
 Site configuration examples
 ```
 
-#### To add a site in the KSYS subsystem:
+### To add a site in the KSYS subsystem:
 
 ```
 ksysmgr add site <sitename> region=<regionname>
@@ -344,7 +345,7 @@ Site dal10 added successfully
 **Note**: dal10 partner GRS Region is us-east
 ```
 
-#### To query the details about a specific sites:
+### To query the details about a specific sites:
 
 ```
 ksysmgr query site [<sitename>]
@@ -365,7 +366,7 @@ ActiveWorkgroups: Maheshwari_WG, SivaKrishna_WG, vmrm_dev_01_WG
 
 By default, the replication type of the site is async.
 
-#### To discover a site:
+### To discover a site:
 
 ```
 ksysmgr discover site <sitename>
@@ -376,7 +377,9 @@ The KSYS subsystem discovers all the hosts and virtual machines from all the hos
 
 An output that is similar to the following example is displayed:
 
+
 ```
+
 Waiting for update of Workspaces ...
 Update of Workspaces are successful
 Refresh VMs list of VMRM-Dal10 workspace started
@@ -388,11 +391,11 @@ Refresh VMs list of VMRM-TEST-DAL10 workspace completed
 Refresh Networks list of VMRM-TEST-DAL10 workspace started
 Refresh Networks list of VMRM-TEST-DAL10 workspace completed
 Site dal10 added successfully
+**Note**: dal10 partner GRS Region is us-east```
 
-**Note**: dal10 partner GRS Region is us-east
-```
 
-#### To delete a site:
+### To delete a site:
+
 ```
 ksysmgr delete site <sitename>
 delete => de*, remove, rm, erase
@@ -403,9 +406,7 @@ An output that is similar to the following example is displayed:
 
 ```
 ksysmgr del site us-east
-
 **ERROR:** Deleting Site us-east is not allowed when workspace(s) vms are in managed state, unmanage following vms before deleting the site.
-
 Maheshwari
 ksysmgr del site us-east
 Workspace VMRM-wdc was removed
@@ -413,7 +414,7 @@ Site us-east was removed
 Workgroup configuration example
 ```
 
-#### To move a workgroup from one site to another site, run the following command:
+### To move a workgroup from one site to another site, run the following command:
 
 ```
 ksysmgr move workgroup <name>
@@ -424,7 +425,8 @@ move => mov*, mv, swi*
 workgroup => workg*, work_g*, wg
 ```
 
-To query the details about a specific workgroup:
+### To query the details about a specific workgroup:
+
 ```
 ksysmgr query workgroup [ name ]
 [status [monitor=<no|yes>] | disk_group_view]
@@ -457,7 +459,7 @@ CGState: consistent_copying
 Progress: 99.0
 ```
 
-##### To discover and verify all VMs in a specific work group:
+### To discover and verify all VMs in a specific work group:
 
 ```
 ksysmgr discover workgroup <name>
@@ -484,79 +486,63 @@ ksysmgr -t discover wg Maheshwari_WG
 1 out of 1 managed VMs have been successfully discovered
 ```
 
-##### To modify a workgroup:
+### To modify a workgroup:
 
+```
 ksysmgr modify workgroup <name>
-
 [priority=<Low|Medium|High>]
-
 [SkipAutoResync=<ON|OFF>]
-
 workgroup => workg*, work_g*, wg
-
 An output that is similar to the following example is displayed: 
-
 ksysmgr modify workgroup <name>
-
 [priority=<Low|Medium|High>]
-
 [SkipAutoResync=<ON|OFF>]
-
 workgroup => workg*, work_g*, wg
+```
 
-To resync a workgroup:
+### To resync a workgroup:
 
+```
 ksysmgr [-f] resync workgroup <workgroup_name>
-
 resync => resy*
-
 workgroup => workg*, work_g*, wg
+```
 
 An output that is similar to the following example is displayed: 
 
+```
 ksysmgr resync wg IBMiWG
-
 Workgroup IBMiWG resync has started
-
 05:24:38 Shutdown has started for VM neha_IBMi
-
 05:24:54 Shutdown has completed for VM neha_IBMi
-
 05:24:57 Resync is in progress for Workgroup IBMiWG
-
 05:26:08 Resync has completed for Workgroup IBMiWG
+```
 
-LPAR configuration examples
+### LPAR configuration examples
 
 To include or exclude a specific virtual machine from the KSYS configuration:
 
+```
 ksysmgr unmanage vm <vmname> | name=<vmname> | vmuuid=<uuid>
-
 [workspace=<workspacename | ID>]
-
 [force=<true|false>]
-
 unmanage => unman*, umg
-
 vm => lp*, VM
+```
 
 An output that is similar to the following example is displayed:
 
+```
 ksysmgr unmanage vm Maheshwari
-
 07:16:47 Unmanage vm has started, this may take a few minutes...
-
 07:16:53 Maheshwari_WG Workgroup stop VG has started
-
 07:16:53 Maheshwari_WG Workgroup stop VG has completed
-
 07:16:53 Removal of VG disks from Maheshwari_WG Workgroup has started
-
 07:16:53 Removal of VG disks from Maheshwari_WG Workgroup has completed
-
 07:16:53 Workgroup Maheshwari_WG was removed
-
 VM Maheshwari was successfully unmanaged
+```
 
 The ksysmgr unmanage ALL host=<hostname> command will unmanage all virtual machines in the host <hostname>. The ksysmgr unmanage ALL host_group=HG1 command will unmanage all virtual machines in the host group HG1.
 
@@ -566,22 +552,21 @@ The preceding command syntax can be used for targeted VM management. The exclude
 
 Notes: Including or excluding a virtual machine, you must run the discovery and verification commands to rediscover the resources and validate the modified configuration setting.
 
-To update the priority of virtual machines:
+### To update the priority of virtual machines:
 
+```
 ksysmgr modify vm <vmname>
-
 [targetsystem=<target_system_type>]
-
 modify => mod*, ch*, set
-
 vm => lp*, vm
-
 Note: The display_all option can be used before performing the first discovery operation to display only minimum information about the VMs that are added to the KSYS configuration. To display the current information about a VM, use the ksysmgr query vm command without the display_all option.
+```
 
-Discovery and verification examples
+## Discovery and verification examples
 
-To discover the resources in a site:
+### To discover the resources in a site:
 
+```
 ksysmgr discover site <sitename>
 
 discover => di*
