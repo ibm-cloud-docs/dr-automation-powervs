@@ -1355,3 +1355,224 @@ An output that is similar to the following example is displayed:
 ksysmgr delete notify user="siva" 
 Successfully deleted user info.
 ```
+
+## Snapshot configuration example
+
+### To add a snapshot, run the following command:
+
+```
+ksysmgr add snapshot 
+[filepath=<full file prefix path | file prefix>]
+add => ad*, cr*, make, mk
+snapshot => snap*
+```
+
+An output that is similar to the following example is displayed:
+
+```
+ksysmgr add snapshot 
+Taking snapshot...
+Created: /var/ksys/snapshots/snap.xml_DETAILED_2024-07-30_05:37:50.xml.tar.gz 
+Successfully created a configuration snapshot: /var/ksys/snapshots/snap.xml_DETAILED_2024-07-30_05:37:50.xml.tar.gz
+```
+
+## Workspace pairing and refreshing example
+
+### To pair a workspace, run the following command:
+
+```
+ksysmgr pair workspace <home_workspacename | ID>
+
+         pair=<target_workspacename | ID> | pair=none
+pair => map
+workspace => works*, work_s*, ws
+An output that is similar to the following example is displayed:
+ksysmgr pair ws VMRM-Dal10 pair=VMRM-wdc
+Workspace VMRM-Dal10 was paired with VMRM-wdc
+```
+
+## To refresh a workspace, run the following command:
+
+```
+ksysmgr refresh workspace <workspacename>
+refresh => ref*
+workspace => works*, work_s*, ws
+```
+
+An output that is similar to the following example is displayed:
+
+```
+ksysmgr refresh workspace VMRM-wdc
+Refresh workspaces to update Networks and VMs list completed.
+```
+
+## Network pairing example
+
+### To pair a network, run the following command:
+
+```
+ksysmgr pair network <source_network_name>
+      pair=<target_network_name> | pair=none
+      [home_workspace=<home_workspacename>]
+      [target_workspace=<target_workspacename>]
+      [ip_range=<start_ip_addressend_ip_address>]
+       pair => map
+       network => net*, net_w, nw
+```
+
+An output that is similar to the following example is displayed:
+
+```
+ksysmgr pair network VMRM-Dal10-Network01 pair=vmrm-wdc-network01
+Network VMRM-Dal10-Network01 was paired with vmrm-wdc-network01
+```
+
+## Site discovery example
+
+### To discover a site, run the following command:
+
+```
+ksysmgr discover site <sitename>
+discover => di*
+site => sit*
+```
+
+An output that is similar to the following example is displayed:
+
+```
+ksysmgr -t discover site us-east
+02:33:39 Running discovery on entire site this may take a few minutes...
+02:33:49 Discovery has started for Workgroup Surendar_WG
+02:33:49 Discovery has started for Workgroup Maheshwari_WG
+02:34:01 Discovery has finished for us-east
+2 out of 2 managed VMs have been successfully discovered
+```
+
+## Workgroup discovery and resync example
+
+### To discover a workgroup, run the following command:
+
+```
+ksysmgr discover workgroup <name>
+      [monitor=<yes|no>]
+discover => di*
+workgroup => workg*, work_g*, wg
+```
+
+An output that is similar to the following example is displayed:
+
+```
+ksysmgr -t discover wg Maheshwari_WG
+04:49:54 Running discovery on Workgroup Maheshwari_WG this may take a few minutes...
+04:51:52 Discovery has finished for Maheshwari_WG
+1 out of 1 managed VMs have been successfully discovered
+```
+
+### To resync a workgroup, run the following command:
+
+```
+ksysmgr [-f] resync workgroup <workgroup_name>
+resync => resy*
+workgroup => workg*, work_g*, wg
+```
+
+An output that is similar to the following example is displayed:
+
+```
+ksysmgr resync wg IBMiWG
+Resync has completed for Workgroup IBMiWG
+```
+
+## System query example
+
+### To query the system, run the following command:
+
+```
+ksysmgr query system [ properties ]
+query => q*, ls, get, sh*
+system => sys*
+```
+
+An output that is similar to the following example is displayed:
+```
+ksysmgr q system
+System-Wide Persistent Attributes
+BaseUrl: test.cloud.ibm.com
+Regions: us-east
+dal10
+api_key: #####1543D972B94F...
+```
+
+## VM query and refresh example
+
+### To query a virtual machine, run the following command:
+
+```
+ksysmgr query vm [vmname1|lparuuid1...]
+      [state=manage|unmanage]
+      [status [monitor=<no|yes>]]
+query => q*, ls, get, sh*
+vm => lp*, vm
+```
+
+An output that is similar to the following example is displayed:
+
+```
+Name: Maheshwari
+UUID: 6aae01cd-0960-4c7e-b5bd-f274bcd53792
+State: INIT
+Status: ACTIVE
+IPAddresses: 10.160.0.64
+```
+
+### To refresh a virtual machine, run the following command:
+
+```
+ksysmgr refresh vm <vmname>
+refresh => ref*
+vm => lp*, vm
+```
+
+An output that is similar to the following example is displayed:
+
+```
+ksysmgr refresh vm Maheshwari
+Refresh VM info completed successfully.
+```
+
+## Event query example
+
+### To query events, run the following command:
+
+```
+ksysmgr query event [type=<error|warning|info>]
+query => q*, ls, get, sh*
+event => ev*
+```
+
+An output that is similar to the following example is displayed:
+
+```
+ksysmgr q event type=error
+Event Name: DISCOVERY_FAILED
+Event Type: error
+Description: Discovery has failed.
+```
+
+## Script deletion example
+
+### To delete a script, run the following command:
+
+```
+ksysmgr delete script entity=<workgroup|site|vm>
+ script_name=<script_name>
+delete => de*, remove, rm, erase
+script => scr*
+```
+
+An output that is similar to the following example is displayed:
+
+```
+ksysmgr delete script entity=site script_name=pre_discovery
+KSYS site has been updated
+```
