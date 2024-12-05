@@ -78,7 +78,7 @@ The following ```CLASS``` objects are supported:
 
 ```ksyscluster (alias: cl*, ksyscl*)```
 
-- ```site (alias: sit*)```
+ ```site (alias: sit*)```
 
 ```vm (alias: lp*, vm*)```
 

@@ -42,27 +42,30 @@ toc:
       - topicgroup:
               label: Create, Manage, Deploy
               topics:
-              - iam-autoamtion.md
-              - create-instance-powervs.md
-              - deploying-the-orchestrator.md
-              - monitoring-vm-status.md
-              - orchestrator-deployment.md
-              - manage-vm.md
+                        - iam-autoamtion.md
+                        - create-instance-powervs.md
+                        - deploying-the-orchestrator.md
+                        - monitoring-vm-status.md
+                        - orchestrator-deployment.md
+                        - manage-vm.md
       - topicgroup:
-              label: External orchestrator      
+              label: External orchestrator
               topics:
-              - manage-external-orch.md
-              - create-ksys-cluster.md
-              - setting-target-source.mdc
-              - manage-vm-vmrm.md
-              - network-paring.md
-              - configure-summary.md
-              - disocvery-operation.md
-              - discover-operation.md
-              - system-status-interface.md
-              - move-site.md
-              - navigation-panel.md
-              - verify-events.md
+                - topicgroup:
+                     label: UI   
+                     topics:
+                        - manage-external-orch.md
+                        - create-ksys-cluster.md
+                        - setting-target-source.mdc
+                        - manage-vm-vmrm.md
+                        - network-paring.md
+                        - configure-summary.md
+                        - disocvery-operation.md
+                        - discover-operation.md
+                        - system-status-interface.md
+                        - move-site.md
+                        - navigation-panel.md
+                        - verify-events.md
       - topicgroup:
               label: AIX
               topics:
