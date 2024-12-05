@@ -52,7 +52,7 @@ toc:
               label: External orchestrator
               topics:
                 - topicgroup:
-                     label: UI   
+                     label: UI elements  
                      topics:
                         - manage-external-orch.md
                         - create-ksys-cluster.md
