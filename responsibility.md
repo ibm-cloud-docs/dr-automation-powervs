@@ -16,13 +16,13 @@ Learn about the management responsibilities and terms and conditions that you ha
 
 Review the following sections for the specific responsibilities for you and for IBM when you use DR Automation for PowerVS.
 
-## Incident and Operations Management
+## Incident and operations management
 
 Incident and operations management includes tasks such as monitoring, event management, high availability, problem determination, recovery, and full state backup and recovery.
 
 The DR Automation for PowerVS deployable architectures do not identify specific responsibilities in this area.
 
-## Identity and Access Management
+## Identity and access management
 
 Identity and access management includes tasks such as authentication, authorization, access control policies, and approving, granting, and revoking access.
 
@@ -34,7 +34,7 @@ Identity and access management includes tasks such as authentication, authorizat
 | **Manage secrets** | | Generate necessary secrets (e.g., IAM API keys, SSH keys) required for the deployable architecture and manage them following secure best practices. |
 
 
-## Security and Regulation Compliance
+## Security and regulation compliance
 
 Security and regulation compliance includes tasks such as security controls implementation and compliance certification.
 
@@ -47,7 +47,7 @@ Security and regulation compliance includes tasks such as security controls impl
 | **Ensure that the operating system image does not contain vulnerabilities** | IBM provides verified OS images, updates them post-deployment, and uses RHEL repositories for additional components. | Ensure the OS remains secure and compliant after deployment. |
 
 
-## Disaster Recovery
+## Disaster recovery
 
 Disaster recovery encompasses tasks such as establishing DR sites, configuring backup environments, data replication, and failover management during disaster events.
 
