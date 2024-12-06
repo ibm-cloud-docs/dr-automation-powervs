@@ -21,7 +21,7 @@ To complete the network pairing, follow these steps:
 
 > **Note**: When confirming network pairings for one VM within a shared workspace and network setup, the confirmation is automatically applied to other VMs with similar configurations.
 
-## Network Details on Dashboard
+## Network details on dashboard
 
 To view the network details, follow these steps:
 

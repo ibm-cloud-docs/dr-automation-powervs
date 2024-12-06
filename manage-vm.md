@@ -10,7 +10,7 @@ subcollection: dr-automation
 
 To set up additional virtual server instances and manage them within the {{site.data.keyword.DR_full_notm}} framework, users can either add virtual servers directly or access the external orchestrator interface for advanced configurations.
 
-## Add Virtual Servers
+## Add virtual servers
 
 1. Navigate to the **Manage Virtual Servers** tab.
 2. Click **Add Virtual Server** button.

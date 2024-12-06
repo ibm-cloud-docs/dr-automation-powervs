@@ -10,9 +10,9 @@ subcollection: dr-automation
 
 Data isolation in IBM Cloud is essential for protecting customer data in multi-tenant cloud environments, especially for {{site.data.keyword.DR_full}}. IBM Cloud offers a suite of tools and services that ensure data remains segregated, secure, and compliant with regulatory standards. This document details key strategies and components that work together to provide robust data isolation within the {{site.data.keyword.DR_full_notm}} framework .
 
-## Key Data Isolation Strategies
+## Key data isolation strategies
 
-### Virtual Private Cloud (VPC)
+### Virtual Private Cloud
 
 IBM Cloud’s Virtual Private Cloud (VPC) provides an isolated network environment for managing {{site.data.keyword.DR_short}} resources securely. It enables you to control IP address ranges, subnets, routing, and access, ensuring that DR resources are isolated from other IBM Cloud customers.
 
@@ -37,7 +37,7 @@ Data encryption ensures that sensitive DR data is secure and isolated.
 - **Encryption in Transit**: Transport Layer Security (TLS) protects data during transmission.
 - **IBM Key Protect**: Centralized key management for encryption keys, supporting Bring Your Own Key (BYOK) capabilities, is essential for DR data replication and storage.
 
-### Identity and Access Management (IAM)
+### Identity and Access Management
 
 **IBM Cloud IAM** provides role-based access control for DR resources, ensuring that only authorized users and systems can access critical DR functions.
 

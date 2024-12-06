@@ -8,7 +8,7 @@ subcollection: dr-automation
 
 When adding virtual servers, you are redirected to the external orchestrator interface (VM Recovery Manager HA/DR GUI). This interface guides you through the necessary steps to configure and include virtual servers in your disaster recovery setup.
 
-## Steps to Access the External Orchestrator
+## Steps to Access the external orchestrator
 
 1. Enter your login credentials and click **Log In**. Use the credentials configured on your system.
 

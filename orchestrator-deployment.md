@@ -9,7 +9,7 @@ subcollection: dr-automation
 
 The Disaster Recovery (DR) orchestrator is successfully deployed in IBM Cloud Power Virtual Server (PowerVS). The **Orchestrator Details** and **Service Details** sections provide comprehensive technical insights that help administrators and cloud engineers monitor and manage disaster recovery automation for their infrastructure. Each element within these sections offers critical operational information, ensuring that the DR setup is correctly configured and ready for failover scenarios.
 
-## Orchestrator Details
+## Orchestrator details
 
 This section highlights the orchestrator's operational status and key identifiers:
 
@@ -25,7 +25,7 @@ This section highlights the orchestrator's operational status and key identifier
 
 - **Schematics Workspace Connection Status**: Shows whether the orchestrator is successfully connected to the Schematics workspace. A “Running” status indicates successful infrastructure automation.
 
-## Service Details
+## Service details
 
 The **Service Details** section provides a comprehensive overview of the disaster recovery (DR) service setup within IBM Cloud PowerVS, ensuring that the correct infrastructure is in place to support high availability and business continuity in the event of a disaster. It includes:
 

@@ -263,10 +263,10 @@ Do you wish to proceed? [y|n]
 
 `y`
 
-This may take a few minutes to remove the ksyscluster
+This may take a few minutes to remove the `ksyscluster`
 
 The following log entries detail the process of stopping and removing various workgroups, along with the associated tasks:
-
+```
 Automatic deep discovery disabled
 
 Automatic quick discovery disabled
@@ -306,6 +306,7 @@ Successfully created ksys logs backup /tmp/ksyscluster_logs_2024-07-29_06:36:05.
 IBM.VMR process stopped successfully
 
 Peer domain was removed successfully
+```
 
 ### To modify a KSYS cluster:
 

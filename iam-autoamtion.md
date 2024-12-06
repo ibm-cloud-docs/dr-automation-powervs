@@ -49,7 +49,7 @@ Table 2. IAM service access roles
 
 To see the complete list of actions for each specific role, see the [IAM roles and actions page](https://cloud.ibm.com/docs/account?topic=account-iam-service-roles-actions#power-iaas-roles) in IBM Cloud documentation.
 
-#### Access Role Requirements for DR Automation for PowerVS {Verify}
+#### Access role requirements for DR Automation for PowerVS {Verify}
 
 DR automation for PowerVS requires additional access for certain network and infrastructure features, including Direct Link, Transit Gateway, and Virtual Private Cloud (VPC) services. These access roles may be needed depending on the recovery and network requirements of your DR solution. For example, configuring network redundancy during failover might require access to Direct Link services.
 

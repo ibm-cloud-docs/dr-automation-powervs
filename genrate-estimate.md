@@ -4,11 +4,11 @@ lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation
 ---
-# Generating an Estimate for Power Virtual Server DR Automation
+# Generating an estimate for Power Virtual Server DR Automation
 
 Use the cost estimator tool to evaluate potential costs for DR Automation resources before deployment. This tool allows customization of configurations to align with your disaster recovery needs.
 
-## Use the Cost Estimator Tool For
+## Use the cost estimator tool for
 
 - Creating an estimate for DR automation resources
 - Saving and reviewing your estimate
@@ -16,9 +16,9 @@ Use the cost estimator tool to evaluate potential costs for DR Automation resour
 
 ---
 
-## Steps to Generate an Estimate for DR Automation
+## Steps to generate an estimate for DR Automation
 
-### Step 1: Accessing the Cost Estimator
+### Step 1: Accessing the cost estimator
 
 1. **Log in to IBM Cloud Catalog**  
    - Use your IBM credentials to access the IBM Cloud catalog.
@@ -29,7 +29,7 @@ Use the cost estimator tool to evaluate potential costs for DR Automation resour
 
 ---
 
-### Step 2: Creating an Estimate for Resources
+### Step 2: Creating an estimate for resources
 
 You can generate an estimate by specifying the necessary configurations for DR resources, such as the number of cores. This process allows you to review projected costs before making deployment decisions.
 
@@ -45,28 +45,28 @@ You can generate an estimate by specifying the necessary configurations for DR r
 
 ---
 
-### Step 3: Adding to Estimate and Viewing Summary
+### Step 3: Adding to estimate and viewing summary
 
 - **Add to Estimate**: Click **Add to estimate** to save your configured DR resources.
 - Review the **Total Estimated Cost** on the right panel, which includes core-based charges for DR software licenses.
 
 ---
 
-### Step 4: Saving and Viewing the Estimate
+### Step 4: Saving and viewing the estimate
 
 1. After configuring, save the estimate with a unique name and optional description.
 2. **View Estimate**: Access your saved estimate to review the detailed cost breakdown.
 
 ---
 
-### Step 5: Exporting the Estimate
+### Step 5: Exporting the estimate
 
 1. **Download**: Export the saved estimate as an **XLSX**, **CSV**, or **PDF** file.
 2. This allows for offline review and sharing with stakeholders.
 
 ---
 
-## DR Automation Configuration Summary
+## DR Automation configuration summary
 
 | Field                          | Description                                                                                           |
 |--------------------------------|-------------------------------------------------------------------------------------------------------|
@@ -76,7 +76,7 @@ You can generate an estimate by specifying the necessary configurations for DR r
 
 ---
 
-## Creating, Saving, and Viewing an Estimate
+## Creating, Saving, and viewing an estimate
 
 1. **Add to Estimate**  
    - After configuring your DR Automation resources, click **Add to estimate**.
@@ -90,7 +90,7 @@ You can generate an estimate by specifying the necessary configurations for DR r
 
 ---
 
-## Exporting the Estimate
+## Exporting the estimate
 
 - **Download**  
   - Click **Download** to export the saved estimate in **XLSX**, **CSV**, or **PDF** format.

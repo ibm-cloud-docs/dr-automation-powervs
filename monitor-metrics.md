@@ -8,7 +8,7 @@ subcollection: dr-automation
 
 Create an IBM Cloud Monitoring instance and enable the platform metrics to capture various performance metrics.
 
-## Steps to Create an IBM Cloud Monitoring Instance
+## Steps to Create an IBM cloud monitoring instance
 
 To monitor platform metrics, select the region where your Power Virtual Server workspace is provisioned.
 
@@ -20,7 +20,7 @@ To monitor platform metrics, select the region where your Power Virtual Server w
 
 You can also create the IBM Cloud Monitoring instance from the **Integration (Optional)** section when you create a workspace, if no IBM Cloud Monitoring instance is already created for that region.
 
-## Viewing Metrics
+## Viewing metrics
 
 To view the metrics dashboards, access the user interface of IBM Cloud Monitoring in the following ways:
 
@@ -29,7 +29,7 @@ To view the metrics dashboards, access the user interface of IBM Cloud Monitorin
 
 To view metrics in your dashboard, you must enable the platform metrics of the IBM Cloud Monitoring instance.
 
-### Accessing Metrics from DR Automation Workspace
+### Accessing metrics from DR Automation workspace
 
 From the left navigation menu of the Power Virtual Server user interface, complete the following steps:
 
@@ -38,7 +38,7 @@ From the left navigation menu of the Power Virtual Server user interface, comple
 3. From the workspace details page, click **Launch monitoring**. The IBM Cloud Monitoring dashboard opens.
 4. Click **Dashboards > Dashboard Library > IBM** and select your dashboard to view.
 
-### Accessing Metrics from the Observability Page
+### Accessing metrics from the observability page
 
 To access the dashboard, complete the following steps:
 
@@ -50,6 +50,6 @@ To access the dashboard, complete the following steps:
 6. Click **Open dashboard**. The IBM Cloud Monitoring dashboard opens.
 7. Click **Dashboards > Dashboard Library > IBM** and select your dashboard to view.
 
-## Additional Information
+## Additional information
 
 - See the [IBM Cloud Monitoring documentation](https://cloud.ibm.com/docs/monitoring) in IBM Cloud.

@@ -25,7 +25,7 @@ To open a support ticket for {{site.data.keyword.DR_short}}, complete the follow
 11. (Optional) To get the email notifications, select Email me updates about this case checkbox.
 12. Review your support ticket summary, and click Submit case. You will receive an email verification Follow the instructions on the email for further communication on the issue.
 
-## Opening Operating System (AIX®, Linux®, or IBM i) related cases
+## Opening operating system (AIX®, Linux®, or IBM i) related cases
 
 If you are facing any AIX, Linux, or IBM i operating system-specific issue, you must directly engage with the operating system support by using the portal as follows:
 

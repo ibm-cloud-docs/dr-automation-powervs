@@ -20,7 +20,7 @@ Activity Tracker Event Routing records user-initiated activities that change the
 
 This document provides details on various events relevant to {{site.data.keyword.DR_short}}. These events help administrators manage instance readiness, images, network configurations, and security policies required for effective disaster recovery.
 
-## 1. Instance Events
+## 1. Instance events
 
 Instance events are essential for assessing the status and readiness of instances for failover within {{site.data.keyword.DR_short}}. These events allow administrators to list and monitor instances to ensure they are prepared for rapid recovery during a disaster scenario.
 
@@ -30,13 +30,13 @@ Instance events are essential for assessing the status and readiness of instance
 | `dr-instance.read`        | Reads the status of a specified instance for readiness verification. |
 {: caption="List of events: Instance" caption-side="bottom"}
 
-### Example Use Case
+### Example use case
 
 In preparation for disaster recovery testing, an administrator may use `dr-instance.list` to retrieve all instances under {{site.data.keyword.DR_short}}. By reading the status of each instance, they ensure that all critical systems are in a ready state for immediate failover.
 
 ---
 
-## 2. Images Events
+## 2. Images events
 
 Image events support the creation and management of system images necessary for backup and recovery. This is crucial in DR scenarios, where the availability of up-to-date images allows for rapid restoration of workloads.
 
@@ -47,12 +47,12 @@ Image events support the creation and management of system images necessary for 
 | `dr-image.delete`         | Deletes an outdated image to manage storage.   |
 {: caption="List of events: Images" caption-side="bottom"}
 
-**Example Use Case**
+**Example use case**
 During the setup of {{site.data.keyword.DR_short}}, an administrator may use `dr-image.create` to capture a backup image of an instance. This image can then be listed and validated to ensure it is available for future recovery operations.
 
 ---
 
-## 3. Network Events
+## 3. Network events
 
 Network events are critical for configuring and managing network paths that facilitate connectivity between primary and backup sites, ensuring uninterrupted communication during a DR event.
 
@@ -63,12 +63,12 @@ Network events are critical for configuring and managing network paths that faci
 | `dr-network.update`       | Updates the configuration of an existing DR network path.     |
 {: caption="List of events: Network" caption-side="bottom"}
 
-**Example Use Case**
+**Example use case**
 To prepare for a potential failover, an administrator can use `dr-network.list` to confirm that network paths are active. If additional configuration is needed, `dr-network.create` can establish the required connectivity.
 
 ---
 
-## 4. Power Virtual Server Events
+## 4. Power virtual server events
 
 For {{site.data.keyword.DR_short}}, these events provide control over virtual server instances, allowing administrators to start, stop, or capture snapshots for recovery purposes.
 
@@ -79,12 +79,12 @@ For {{site.data.keyword.DR_short}}, these events provide control over virtual se
 | `dr-instance.snapshot`             | Captures a snapshot of an instance for backup.        |
 {: caption="List of events: Power Virtual Server" caption-side="bottom"}
 
-**Example Use Case**
+**Example use case**
 During a failover drill, an administrator can issue `dr-instance.start` to activate all necessary instances in the backup environment. Additionally, `dr-instance.snapshot` can be used to capture a real-time backup.
 
 ---
 
-## 5. Data Volumes Events
+## 5. Data volumes events
 
 Managing data volumes ensures that critical storage resources are available and can be quickly attached or detached as needed during failover operations.
 
@@ -95,12 +95,12 @@ Managing data volumes ensures that critical storage resources are available and 
 | `dr-volume.detach`        | Detaches a data volume after a failover test.             |
 {: caption="List of events: Data Volume Events" caption-side="bottom"}
 
-**Example Use Case**
+**Example use case**
 In the event of a failover, an administrator may use `dr-volume.attach` to ensure that critical storage volumes are available to the restored instances at the backup site.
 
 ---
 
-## 6. Cloud Connections Events
+## 6. Cloud connections events
 
 Cloud connection events facilitate secure connectivity between the primary and backup environments, which is crucial for data replication and failover communication.
 
@@ -111,12 +111,12 @@ Cloud connection events facilitate secure connectivity between the primary and b
 | `dr-cloud-connection.update`| Updates the configuration of an existing cloud connection.     |
 {: caption="List of events: Cloud Connections" caption-side="bottom"}
 
-**Example Use Case**
+**Example use case**
 To ensure continuity during a failover, an administrator uses `dr-cloud-connection.list` to verify all connections between the primary and backup sites are active. If needed, `dr-cloud-connection.update` can modify the connection parameters.
 
 ---
 
-## 7. Security-Related Events
+## 7. Security related events
 
 Security-related events are critical to maintaining secure connections during a DR failover, particularly through VPN, IKE, and IPsec configurations.
 
@@ -127,12 +127,12 @@ Security-related events are critical to maintaining secure connections during a 
 | `dr-ipsec-policy.update`            | Updates an IPsec policy for secure site connectivity.|
 {: caption="List of events: Security-Related" caption-side="bottom"}
 
-**Example Use Case**
+**Example use case**
 For secure data transfer, an administrator can use `dr-vpn.list` to confirm active VPN connections. To enhance security, `dr-ike-policy.create` and `dr-ipsec-policy.update` can be applied as required.
 
 ---
 
-## Viewing {{site.data.keyword.DR_short}} Events
+## Viewing {{site.data.keyword.DR_short}} events
 
 Disaster Recovery (DR) Automation events are automatically forwarded to specific geographic locations based on data center regions. You can access the activity tracker logs for {{site.data.keyword.DR_short}} as follows:
 
@@ -147,7 +147,7 @@ For a comprehensive list of locations where {{site.data.keyword.DR_short}}
 The Activity Tracker service supports only one instance per location. To view {{site.data.keyword.DR_short}}
  events, you must access the Activity Tracker web UI in the same location where your DR service instance is deployed. For additional guidance, see [Launching the web UI through the IBM Cloud UI](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-launch).
 
-## Activity Tracker Sample Response Format
+## Activity tracker sample response format
 
 The new response format that is used in activity tracking adheres to the CADF (Cloud Auditing Data Federation) standard. Hence, auditing events can be collected and routed in a standardized format, ensuring consistency and interoperability across different cloud platforms.
 
@@ -155,7 +155,7 @@ The new response format that is used in activity tracking adheres to the CADF (C
 
 The following code snippets show the differences between the old and new activity tracker response format.
 
-### Log Message
+### Log message
 
 ```json
 {
@@ -204,7 +204,7 @@ The following code snippets show the differences between the old and new activit
 ```
 
 
-## Activity Tracker Regions
+## Activity tracker regions
 
 You can create an activity tracker instance and provision it in the same region where your data center is located.
 

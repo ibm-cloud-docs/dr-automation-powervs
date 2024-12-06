@@ -8,7 +8,7 @@ subcollection: dr-automation
 
 Configure your **IBM_PVS_DR** environment by adding the KSYS (Orchestrator) Cluster, specifying host details, and selecting the appropriate deployment type. If the KSYS Cluster is not already added to your **IBM_PVS_DR** environment, you will be redirected to the **Add KSYS Subsystem** page upon logging into the GUI.
 
-## Steps to Add the KSYS Cluster
+## Steps to add the KSYS cluster
 
 1. Navigate to the **Add KSYS Subsystem** page if it does not open automatically.
 

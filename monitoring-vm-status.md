@@ -11,7 +11,7 @@ When creating one or multiple VMs in **DR Automation for Power Virtual Server** 
 
 By following the outlined statuses below, you can effectively monitor the progress of your VM creation and ensure it aligns with your deployment goals.
 
-## Statuses for Creating a Single VM
+## Statuses for creating a single VM
 
 - **Configure Status**  
   *The service instance is in the configuration phase.*  
@@ -80,7 +80,7 @@ By following the outlined statuses below, you can effectively monitor the progre
   **Status**: `active`  
   **Details**: The multiple VMs are now ready for use.
 
-### Failure Statuses
+### Failure status
 
 - **Provision Failed During Configuration**  
   *The configuration process has failed.*  

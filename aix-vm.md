@@ -17,7 +17,7 @@ In this example, the user created a public key on a Linux-based IBM Cloud comput
 
 You can create an AIX VM instance with a configured SSH key by using the VM Recovery Manager DR CLI or the console. When you use an AIX stock image as your boot volume, the root password is not set. You must connect to the AIX VM and set the root password for the system. Without completing this step, SSH login as root appears as being disabled. If you have public network access to the AIX VM, you can use telnet from a private cloud system and set the root password. For more information, see [IBM AIX V7.3 documentation](https://www.ibm.com/docs/en/aix/7.3).
 
-## Creating an AIX VM with a Configured SSH Key Using UI
+## Creating an AIX VM with a configured SSH key using UI
 
 You must [generate a public SSH key](#) before you can create an AIX VM with a configured SSH key.
 
@@ -37,6 +37,6 @@ You must [generate a public SSH key](#) before you can create an AIX VM with a c
 
 ---
 
-## Creating an AIX VM with a Configured SSH Key Using CLI
+## Creating an AIX VM with a configured SSH key using CLI
 
 You can create a new VM with the public key by using the following command (replacing the options with your own):

@@ -121,7 +121,7 @@ This integrated framework provides a secure, compliant, and efficient DR solutio
 
 ---
 
-## Hardware Specifications
+## Hardware specifications
 
 IBM Power servers supported by {{site.data.keyword.DR_full_notm}} include:
 
@@ -132,15 +132,16 @@ IBM Power servers supported by {{site.data.keyword.DR_full_notm}} include:
 
 For more details, refer to the specific data sheets and hardware overview table.
 
-## Software Requirment
+## Software requirment
 
 - The Orchestrator(KSYS) LPAR requires a minimum of 1 core CPU and 8 GB of memory, though larger environments with over 100 VMs may require more resources.
 - The KSYS logical partition must run IBM® AIX® 7.3 with Technology Level 1 Service Pack 1 (7300-01-01), or later.
 - Each Cloud LPAR in the host must have the following operating systems:
   -   AIX Version 7.3, and later
+
 ---
 
-## Supported Storage Tiers
+## Supported storage tiers
 
 {{site.data.keyword.DR_short}} offers storage with configurable IOPS levels to meet diverse DR requirements:
 
@@ -155,21 +156,21 @@ With the IBM Cloud Service Framework, storage is allocated based on deployment n
 
 ---
 
-## Network Configurations
+## Network configurations
 
-### Public Network
+### Public network
 
 {{site.data.keyword.DR_short}} offers public network connectivity for seamless access and configuration.
 IBM configures the network environment for secure public connections, including firewall protection and support for SSH, HTTPS, and IBM i terminal emulation.
 
-### Private Network
+### Private network
 
 A private network setup is recommended for secure communication between PowerVS instances in primary and DR sites. This configuration supports:
 
-- **IBM Cloud Resources Access**:
+- **IBM cloud resources access**:
 Enable access to IBM Cloud Bare Metal Servers, Kubernetes containers, and Cloud Object Storage.
 
-- **Direct Link Connect**:
+- **Direct link connect**:
 Use Direct Link Connect for secure, low-latency communication between DR environments.
 
 ---
