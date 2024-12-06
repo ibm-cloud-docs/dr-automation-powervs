@@ -51,9 +51,6 @@ toc:
       - topicgroup:
               label: External orchestrator
               topics:
-                  - topicgroup:
-                     label: ui elements  
-                     topics:
                         - manage-external-orch.md
                         - create-ksys-cluster.md
                         - setting-target-source.mdc
@@ -69,12 +66,12 @@ toc:
       - topicgroup:
               label: AIX
               topics:
-              - aix-vm.md       
+                        - aix-vm.md       
       - topicgroup:
               label: Observability
               topics:
-              - monitor-metrics.md
-              - activity-tracker-events.md          
+                        - monitor-metrics.md
+                        - activity-tracker-events.md          
   - navgroup:
       id: reference
       topics:
