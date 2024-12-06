@@ -51,8 +51,9 @@ toc:
       - topicgroup:
               label: External orchestrator
               topics:
-                - topicgroup:
-                     label: UI elements  
+                 - manage-vm.md
+      - topicgroup:
+                     label: UI Elements  
                      topics:
                         - manage-external-orch.md
                         - create-ksys-cluster.md
