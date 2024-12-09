@@ -4,7 +4,7 @@ lastupdated: "2024-10-26"
 copyright: "2023, 2024"
 subcollection: dr-automation
 ---
-# System status interface
+# System Status Interface
 
 ## WorkGroup staus
 

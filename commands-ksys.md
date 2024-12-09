@@ -860,8 +860,8 @@ ksysmgr modify notify
 oldcontact=<user name | user email>
 newcontact=<user name | user email>
 ksysmgr modify notify
-oldscript=<script>
-newscript=<script>
+oldscript=<custom_script>
+newscript=<custom_script>
 modify => mod*, ch*, set
 notify => rn, remote_not*, noti*
 ```
@@ -1566,7 +1566,7 @@ Description: Discovery has failed.
 
 ```
 ksysmgr delete script entity=<workgroup|site|vm>
- script_name=<script_name>
+script_name=<custom_script_name>
 delete => de*, remove, rm, erase
 script => scr*
 ```
