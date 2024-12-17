@@ -12,7 +12,7 @@ The IBM Cloud Service Framework facilitates seamless deployment and management o
 
 Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} architecture, features, hardware requirements, and network configurations.
 
-## Table of Contents
+## Table of contents
 
 - [High-Level Architecture](#high-level-architecture)
 - [Key Features](#key-features)
@@ -23,7 +23,7 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 
 ---
 
-## High-Level Architecture
+## High-Level architecture
 
 The **{{site.data.keyword.DR_full_notm}}** system operates within IBM data centers, isolated from the core IBM Cloud environment. Utilizing dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
 
@@ -36,86 +36,83 @@ This setup provides a secure, seamless DR solution that integrates with your pro
 ![DR Automation Architecture](images/dr-automation-arch.svg "DR Automation Architecture")
 {: caption="DR Automation Architecture" caption-side="bottom"}
 
-## DR Service Broker Architecture
+## DR Service broker architecture
 
 The **DR Service Broker** within IBM Cloud is central to provisioning and managing DR orchestration for PowerVS. Operating as a dedicated component, it handles critical functions, including billing, resource management, and service orchestration.
 
-### Service Provisioning
+### Service provisioning
 
 The Service Broker deploys the DR Orchestrator (KSYS) VM within the PowerVS workspace, utilizing PowerVS APIs to establish and manage DR operations. This process enables seamless integration of DR orchestration capabilities specific to each user account.
 
-### Connectivity and Communication
+### Connectivity and communication
 
 Through IBM Cloud’s VPN and VPC services, the Service Broker communicates securely with the DR Orchestrator. Connections from external clients or users are routed through IBM’s secure networking layers to ensure high availability and low latency during DR operations.
 
-### Resource Management and Billing Integration
+### Resource management and billing integration
 
 The Service Broker updates DR metrics to IBM’s billing system (BSS) based on individual instances, providing granular billing data per customer. It ensures that usage is reported accurately for each instance and maintains a high level of automation in resource accounting.
 
-### Interface Accessibility
+### Interface accessibility
 
 The {{site.data.keyword.DR_short}} Service Broker, accessible via the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with IBM’s broader catalog for resource provisioning.
 
-## DR Orchestrator (KSYS) Architecture
+## DR Orchestrator (KSYS) architecture
 
-- The **DR Orchestrator (KSYS)**, acting as the operational core within user accounts, is critical in executing and managing DR workflows, specifically for PowerVS instances. This component manages the deployment, configuration, and operation of VMs required during DR.
+The **DR Orchestrator (KSYS)**, acting as the operational core within user accounts, is critical in executing and managing DR workflows, specifically for PowerVS instances. This component manages the deployment, configuration, and operation of VMs required during DR.
 
-### VM Orchestration and Workflow Management
+### VM Orchestration and workflow management
 
 KSYS brings VMs online in the required sequence during a disaster, minimizing RTO and RPO. This workflow automation ensures systematic failover and recovery, essential for maintaining business continuity.
 
-### Custom Metrics and Monitoring
+### Custom metrics and monitoring
 
 KSYS regularly updates custom DR metrics, securely transmitting these to the Service Broker using IBM’s API services and adhering to authentication protocols. This allows ongoing monitoring and helps identify and address anomalies in real-time.
 
-### Provisioning and Configuration Management
+### Provisioning and configuration management
 
 The Service Broker’s provisioning capabilities allow KSYS to be configured with essential user inputs and monitored to ensure alignment with the recovery environment. Additionally, it offers a GUI URL accessible through IBM’s catalog, enabling users to monitor and manage configurations in real-time.
 
-### High Availability (Optional)
+### High availability (Optional)
 
 For enhanced resilience, KSYS supports a High Availability (HA) setup, ensuring continuous operation and reducing single points of failure.
 
-![DR Service Broker and Orchestrator Architecture](images/dr-orcehstrator-service broker.jpg "DR Service Broker and Orchestrator Architecture")
-{: caption="Connection between DR Service Broker and Orchestrator" caption-side="bottom"}
+## Key features
 
-## Key Features
-
-### Simplified Disaster Recovery Management
+### Simplified disaster recovery management
 
 {{site.data.keyword.DR_short}} provides a single interface to manage DR processes for IBM PowerVS environments. Key features include:
 
-- **Automated Failover and Failback**:
+- **Automated failover and failback**:
 Automate the failover process, ensuring that workloads resume quickly in the backup environment.
 
-- **Scheduling and Monitoring**:
+- **Scheduling and monitoring**:
 Schedule DR operations and monitor the health and status of DR sites.
 
-- **Customizable Recovery Settings**:
+- **Customizable recovery settings**:
 Define recovery priorities and configurations for different VMs or applications.
 
-### Flexible Billing Model
+### Flexible billing model
 
 {{site.data.keyword.DR_short}} follows a usage-based billing model, with flexible options based on the selected resources and configurations.
 The IBM Cloud Service Framework supports accurate billing and comprehensive reporting, ensuring customers have clear visibility into DR-related costs.
 
 ---
 
-## IBM Cloud Service Framework
+## IBM cloud service framework
 
 The **IBM Cloud Service Framework** enhances {{site.data.keyword.DR_short}} by enabling seamless service deployment and management. Key components include:
 
-- **Service Broker**: Manages compute, storage, and network resources, allowing users to select DR services from the IBM Cloud Catalog and configure deployment details.
+- **Service broker**: Manages compute, storage, and network resources, allowing users to select DR services from the IBM Cloud Catalog and configure deployment details.
 This component plays a central role in streamlining and automating DR processes.
 
-- **Resource Management Controller (RMC)**: Automates provisioning, image import, and VM configuration, making DR deployment efficient and straightforward for users.
+- **Resource management controller (RMC)**: Automates provisioning, image import, and VM configuration, making DR deployment efficient and straightforward for users.
 
 - **Orchestrator (KSYS)**: Coordinates DR workflows and ensures that VMs recover in a defined sequence, minimizing downtime and data loss.
 
-- **Security and Compliance**: Ensures a secure, compliant environment through robust controls and monitoring.
+- **Security and compliance**: Ensures a secure, compliant environment through robust controls and monitoring.
 This includes IBM Cloud services like Activity Tracker (for monitoring) Cloud Object Storage (COS) (for secure storage), and Key Management (for data security).
 
-- **Reliable Connectivity**: Maintains continuous, secure access to DR resources through redundant network connections, enhancing reliability and resilience.
+- **Reliable connectivity**: Maintains continuous, secure access to DR resources through redundant network connections, enhancing reliability and resilience.
 
 This integrated framework provides a secure, compliant, and efficient DR solution that aligns closely with the high-level architecture for {{site.data.keyword.DR_short}} in IBM data centers.
 
