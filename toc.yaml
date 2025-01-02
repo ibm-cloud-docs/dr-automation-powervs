@@ -32,6 +32,10 @@ toc:
               topics:
               - grs-replication.md
       - topicgroup:
+              label: Security and compliance
+              topics:
+              - GDPR.md
+      - topicgroup:
               label: Migration Strategies
               topics:
               - workload-migration.md
