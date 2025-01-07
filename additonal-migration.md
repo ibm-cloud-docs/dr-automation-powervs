@@ -11,7 +11,7 @@ You can engage IBM teams and services to assist you throughout the migration lif
 Expert Labs
 IBM Services for Cloud Migration
 
-## IBM Cloud Object Storage
+## IBM cloud object storage
 
 Cloud Object Storage can be used as an intermediary location to store files from your On-premises environment. You can retrieve and send your files to the Power Virtual Server environment from this location. You must create Cloud Object Storage buckets to transfer data over the public internet or privately secured links. For more information, see [IBM Cloud Object Storage: FAQ](https://www.ibm.com/cloud/object-storage/faq).
 

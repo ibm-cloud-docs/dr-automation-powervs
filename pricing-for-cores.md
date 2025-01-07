@@ -9,7 +9,6 @@ subcollection: dr-automation
 
 DR Automation for PowerVS is available in select regions with scale-out logical partitions (LPAR). The systems supporting DR Automation have theoretical maximums for memory and processors, varying by server model and data center resources.
 
-Table 1. Theoretical maximum memory
 
 | Power Systems         | Processors | Memory            |
 |-----------------------|------------|-------------------|
@@ -17,6 +16,7 @@ Table 1. Theoretical maximum memory
 | S922 (9009-22A)       | 15         | Up to 942 GB     |
 | S1022 (9105-22A)      | 33         | Up to 1984 GB    |
 | E1080 (9080-HEX)      | 240        | Up to 64 TB      |
+{: caption="Theoretical maximum memory" caption-side="bottom"}
 
 > **Notes**
     Memory Limits by Data Center: In certain data centers, such as **DAL12, DAL13, OSA21, SAO01, TOK04, WDC04, and WDC06, E980** systems can support up to 23,070 GB of memory.
@@ -24,7 +24,7 @@ Table 1. Theoretical maximum memory
 
 ---
 
-## Processor Types
+## Processor types
 
 DR Automation for PowerVS uses a single, consistent pricing model across all processor types. Billing is based on the number of cores used, with the following processor options available:
 
@@ -35,7 +35,6 @@ For information on different processor type functions, see [FAQ]().
 
 All processor types are billed uniformly, regardless of configuration.
 
-Table 2. All processors type pricing
 
 | Number of cores | Hourly rate (All processor types) | Monthly cost (730 hours) |
 |-----------------|-----------------------------------|---------------------------|
@@ -44,6 +43,8 @@ Table 2. All processors type pricing
 | 3               | $1.89                             | $1,379.70                 |
 | 4               | $2.52                             | $1,839.60                 |
 | 5               | $3.15                             | $2,299.50                 |
+{: caption="All processors type pricing" caption-side="bottom"}
+
 
    > **Notes**
     Uniform Rate : All processor types, including dedicated, shared uncapped, and shared capped configurations, are billed at the same hourly rate.
@@ -52,7 +53,7 @@ Table 2. All processors type pricing
 
 ---
 
-## End of Billing
+## End of billing
 
 The billing cycle for DR Automation for PowerVS ends when the Logical Partition (LPAR) is deleted. If you scale your infrastructure in response to workload demands, billing adjusts accordingly. **Stopping the LPAR alone does not end billing**; you must delete the LPAR to stop the billing cycle.
 
@@ -61,7 +62,7 @@ Charges continue if the VM is suspended. To reduce costs for inactive VMs, use D
 
 ---
 
-## Pricing Disclaimer
+## Pricing disclaimer
 
 This document provides a comprehensive overview of DR Automation pricing and usage for PowerVS, ensuring customers have accurate information for budgeting their DR solutions.
 

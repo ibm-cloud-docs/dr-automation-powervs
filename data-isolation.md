@@ -37,7 +37,7 @@ Data encryption ensures that sensitive DR data is secure and isolated.
 - **Encryption in Transit**: Transport Layer Security (TLS) protects data during transmission.
 - **IBM Key Protect**: Centralized key management for encryption keys, supporting Bring Your Own Key (BYOK) capabilities, is essential for DR data replication and storage.
 
-### Identity and Access Management
+### Identity and access management
 
 **IBM Cloud IAM** provides role-based access control for DR resources, ensuring that only authorized users and systems can access critical DR functions.
 

@@ -4,7 +4,7 @@ lastupdated: "2024-10-23"
 copyright: "2023, 2024"
 subcollection: dr-automation
 ---
-# IBM Cloud regions
+# IBM cloud regions
 
 The following table displays the appropriate region for your workspace:
 

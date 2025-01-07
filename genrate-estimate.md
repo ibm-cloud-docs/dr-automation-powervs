@@ -24,8 +24,8 @@ Use the cost estimator tool to evaluate potential costs for DR Automation resour
    - Use your IBM credentials to access the IBM Cloud catalog.
 
 2. **Select Power Virtual Server DR Automation**  
-   - In the search box, type **Power Virtual Server DR Automation**.
-   - Click on **Power Virtual Server DR Automation** tile.
+   - In the search box, type IBM {{site.data.keyword.DR_full}}.
+   - Click {{site.data.keyword.DR_full_notm}} tile.
 
 ---
 
@@ -36,64 +36,64 @@ You can generate an estimate by specifying the necessary configurations for DR r
 > **Note**: Creating an estimate incurs no charges. Resources are billed only upon deployment.
 
 1. **Select the Location Type**  
-   - Choose the **DR Automation setup** as it is hosted within IBM’s data centers.
+   - Choose the {{site.data.keyword.DR_short}} setup as it is hosted within IBM’s data centers.
 
 2. **Configure DR-Specific Parameters**  
-   - **Disaster Recovery Location**: Choose the IBM Cloud region where the DR resources will be hosted.
-   - **Total Managed Cores**: Define the number of cores required for DR.
-   - **Orchestrator HA**: Enable this option if high availability is needed for your orchestrator. Additional charges may apply.
+   - Disaster Recovery Location: Choose the IBM Cloud region where the DR resources will be hosted.
+   - Total Managed Cores: Define the number of cores required for DR.
+   - Orchestrator HA: Enable this option if high availability is needed for your orchestrator. Additional charges may apply.
 
 ---
 
 ### Step 3: Adding to estimate and viewing summary
 
-- **Add to Estimate**: Click **Add to estimate** to save your configured DR resources.
-- Review the **Total Estimated Cost** on the right panel, which includes core-based charges for DR software licenses.
+- Add to Estimate: Click Add to estimate to save your configured DR resources.
+- Review the Total Estimated Cost on the right panel, which includes core-based charges for DR software licenses.
 
 ---
 
 ### Step 4: Saving and viewing the estimate
 
 1. After configuring, save the estimate with a unique name and optional description.
-2. **View Estimate**: Access your saved estimate to review the detailed cost breakdown.
+2. View Estimate: Access your saved estimate to review the detailed cost breakdown.
 
 ---
 
 ### Step 5: Exporting the estimate
 
-1. **Download**: Export the saved estimate as an **XLSX**, **CSV**, or **PDF** file.
+1. Download: Export the saved estimate as an **XLSX**, **CSV**, or **PDF** file.
 2. This allows for offline review and sharing with stakeholders.
 
 ---
 
-## DR Automation configuration summary
+## {{site.data.keyword.DR_short}} configuration summary
 
 | Field                          | Description                                                                                           |
 |--------------------------------|-------------------------------------------------------------------------------------------------------|
-| **Disaster Recovery Location**  | Select the IBM Cloud region for DR replication.                                                      |
-| **Total Managed Cores**         | Define the number of cores necessary for your DR setup.                                             |
-| **Orchestrator HA**             | Optional: Enable high availability for the orchestrator if required.                                |
-
+| Disaster Recovery Location  | Select the IBM Cloud region for DR replication.                                                      |
+| Total Managed Cores         | Define the number of cores necessary for your DR setup.                                             |
+| Orchestrator HA             | Optional: Enable high availability for the orchestrator if required.                                |
+Configuration Parameters for {{site.data.keyword.DR_short}}
 ---
 
 ## Creating, Saving, and viewing an estimate
 
 1. **Add to Estimate**  
-   - After configuring your DR Automation resources, click **Add to estimate**.
+   - After configuring your DR Automation resources, click Add to estimate.
 
 2. **Estimate Window Options**  
-   - In the **Estimate** window, you can choose to add this configuration to an existing estimate or create a new one.
-   - To create a new estimate, specify a name and optional description, then click **Create**.
+   - In the Estimate window, you can choose to add this configuration to an existing estimate or create a new one.
+   - To create a new estimate, specify a name and optional description, then click Create.
 
 3. **Save and View Estimate**  
-   - Save your estimate, and you can view it anytime in the IBM Cloud console under **View estimate**. This provides a quick overview of your configured resources and estimated costs.
+   - Save your estimate, and you can view it anytime in the IBM Cloud console under View estimate. This provides a quick overview of your configured resources and estimated costs.
 
 ---
 
 ## Exporting the estimate
 
 - **Download**  
-  - Click **Download** to export the saved estimate in **XLSX**, **CSV**, or **PDF** format.
+  - Click Download to export the saved estimate in **XLSX**, **CSV**, or **PDF** format.
   - This feature allows you to keep a record of your estimate and share it with relevant stakeholders for planning and budgeting.
 
 This process ensures that customers have a clear understanding of DR Automation costs on Power Virtual Server, providing transparency and control over anticipated expenses.
