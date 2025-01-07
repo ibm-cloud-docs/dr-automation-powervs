@@ -62,7 +62,7 @@ To access the dashboard, complete the following steps:
 | Metric Name |
 |-----------|
 | [Number of Managed VMs](#ibm_power_dr_automation_managed_vm_count) | 
-{: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+{: caption="Metrics Available by Plan Names" caption-side="top"}
 
 ### Number of Managed VMs
 {: #ibm_power_dr_automation_managed_vm_count}
@@ -75,7 +75,7 @@ Number of Managed VMs Count
 | `Metric Type` | `gauge` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 2: Number of Managed VMs metric metadata" caption-side="top"}
+{: caption=" Number of Managed VMs metric metadata" caption-side="top"}
 
 ## Attributes for Segmentation
 {: attributes}
@@ -95,6 +95,7 @@ The following attributes are available for segmenting all of the metrics listed 
 | `Resource group` | `ibm_resource_group_name` | The resource group where the service instance was created |
 | `Scope` | `ibm_scope` | The scope is the account, organization or space GUID associated with this metric |
 | `Service name` | `ibm_service_name` | Name of the service generating this metric |
+{: caption="Segmenting all of the Metrics" caption-side="top"}
 
 ### Additional attributes
 
@@ -106,3 +107,4 @@ The following attributes are available for segmenting one or more attributes as 
 |-----------|----------------|-----------------------|
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance the metric is associated with |
 | `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance which isn't necessarily a unique value depending on the name provided by the user. |
+{: caption="Segmentation options" caption-side="top"}
