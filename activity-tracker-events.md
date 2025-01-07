@@ -20,7 +20,7 @@ Activity Tracker Event Routing records user-initiated activities that change the
 
 This document provides details on various events relevant to {{site.data.keyword.DR_short}}. These events help administrators manage instance readiness, images, network configurations, and security policies required for effective disaster recovery.
 
-# {{site.data.keyword.DR_full}} Service Events Documentation
+## {{site.data.keyword.DR_full}} Service Events Documentation
 
 This document provides details of the key events and their respective API operations in the **{{site.data.keyword.DR_short}} Service**. Use the given screenshots as a reference for style and formatting.
 
@@ -35,8 +35,6 @@ This document provides details of the key events and their respective API operat
 
 **Example use case**: When a new disaster recovery environment is required, administrators can use `PUT /service-instance` to provision a new service instance. They can later update its status using `PUT /service-instance/status` or remove it with `DELETE /service-instance` if no longer needed.
 
----
-
 ## 2. DrEvents
 
 | Action                     | Description                                                                 |
@@ -45,8 +43,6 @@ This document provides details of the key events and their respective API operat
 | `GET /events/{eventId}`    | Retrieves details of a specific event.                                      |
 
 **Example use case**: To troubleshoot issues during a failover event, administrators can use `GET /events` to review all recent events or `GET /events/{eventId}` to investigate a specific event in detail.
-
----
 
 ## 3. DrAutomationTunable
 
@@ -58,8 +54,6 @@ This document provides details of the key events and their respective API operat
 
 **Example use case**: Administrators can fine-tune the disaster recovery environment by fetching specific tunable settings using `GET /tunables/{id}` and updating them via `UPDATE /tunables` to ensure optimal performance.
 
----
-
 ## 4. DrAutomationManageKsys
 
 | Action                     | Description                                                                 |
@@ -67,8 +61,6 @@ This document provides details of the key events and their respective API operat
 | `POST /manage-ksys`        | Creates a managed DR service instance.                                      |
 
 **Example use case**: During the initial setup of {{site.data.keyword.DR_short}}, an administrator can use `POST /manage-ksys` to configure and manage a new KSYS service instance, ensuring seamless orchestration of recovery tasks.
-
----
 
 ## 5. DrAutomationMetering
 
@@ -79,7 +71,6 @@ This document provides details of the key events and their respective API operat
 
 **Example use case**: To monitor and analyze resource usage, administrators can use `POST /metering-handlers` to manage metering data and `GET /cos-info` to gather relevant storage information for billing or optimization.
 
----
 
 ## 6. DrAutomationTenant
 
@@ -92,8 +83,6 @@ This document provides details of the key events and their respective API operat
 
 **Example use case**: When onboarding a new organization to {{site.data.keyword.DR_short}}, administrators can use `POST /tenant` to add the tenant and later modify their details using `PUT /tenant`. To remove an inactive tenant, they can use `DELETE /tenant/{accountId}`.
 
-
----
 
 ## Viewing {{site.data.keyword.DR_short}} events
 
