@@ -20,115 +20,78 @@ Activity Tracker Event Routing records user-initiated activities that change the
 
 This document provides details on various events relevant to {{site.data.keyword.DR_short}}. These events help administrators manage instance readiness, images, network configurations, and security policies required for effective disaster recovery.
 
-## 1. Instance events
+# {{site.data.keyword.DR_full}} Service Events Documentation
 
-Instance events are essential for assessing the status and readiness of instances for failover within {{site.data.keyword.DR_short}}. These events allow administrators to list and monitor instances to ensure they are prepared for rapid recovery during a disaster scenario.
+This document provides details of the key events and their respective API operations in the **{{site.data.keyword.DR_short}} Service**. Use the given screenshots as a reference for style and formatting.
 
-| **Action**                | **Description**                                       |
-|---------------------------|-------------------------------------------------------|
-| `dr-instance.list`        | Lists all instances that are configured for failover. |
-| `dr-instance.read`        | Reads the status of a specified instance for readiness verification. |
-{: caption="List of events: Instance" caption-side="bottom"}
+## 1. DrAutomationServiceInstance
 
-### Example use case
+| Action                      | Description                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------|
+| `PUT /service-instance`      | Creates a new service instance for DR automation.                          |
+| `PUT /service-instance/status`| Updates the status of an existing service instance.                       |
+| `DELETE /service-instance`   | Removes an existing service instance.                                      |
+| `GET /service-instance/last-operation` | Retrieves the status of the last operation performed on the service instance. |
 
-In preparation for disaster recovery testing, an administrator may use `dr-instance.list` to retrieve all instances under {{site.data.keyword.DR_short}}. By reading the status of each instance, they ensure that all critical systems are in a ready state for immediate failover.
-
----
-
-## 2. Images events
-
-Image events support the creation and management of system images necessary for backup and recovery. This is crucial in DR scenarios, where the availability of up-to-date images allows for rapid restoration of workloads.
-
-| **Action**                | **Description**                                |
-|---------------------------|------------------------------------------------|
-| `dr-image.create`         | Creates a new image of a configured instance.  |
-| `dr-image.list`           | Lists all images available for recovery.       |
-| `dr-image.delete`         | Deletes an outdated image to manage storage.   |
-{: caption="List of events: Images" caption-side="bottom"}
-
-**Example use case**
-During the setup of {{site.data.keyword.DR_short}}, an administrator may use `dr-image.create` to capture a backup image of an instance. This image can then be listed and validated to ensure it is available for future recovery operations.
+**Example use case**: When a new disaster recovery environment is required, administrators can use `PUT /service-instance` to provision a new service instance. They can later update its status using `PUT /service-instance/status` or remove it with `DELETE /service-instance` if no longer needed.
 
 ---
 
-## 3. Network events
+## 2. DrEvents
 
-Network events are critical for configuring and managing network paths that facilitate connectivity between primary and backup sites, ensuring uninterrupted communication during a DR event.
+| Action                     | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| `GET /events`              | Fetches all events from a specified timestamp.                              |
+| `GET /events/{eventId}`    | Retrieves details of a specific event.                                      |
 
-| **Action**                | **Description**                                               |
-|---------------------------|---------------------------------------------------------------|
-| `dr-network.list`         | Lists all network paths configured for DR operations.         |
-| `dr-network.create`       | Establishes a network path essential for failover.            |
-| `dr-network.update`       | Updates the configuration of an existing DR network path.     |
-{: caption="List of events: Network" caption-side="bottom"}
-
-**Example use case**
-To prepare for a potential failover, an administrator can use `dr-network.list` to confirm that network paths are active. If additional configuration is needed, `dr-network.create` can establish the required connectivity.
+**Example use case**: To troubleshoot issues during a failover event, administrators can use `GET /events` to review all recent events or `GET /events/{eventId}` to investigate a specific event in detail.
 
 ---
 
-## 4. Power virtual server events
+## 3. DrAutomationTunable
 
-For {{site.data.keyword.DR_short}}, these events provide control over virtual server instances, allowing administrators to start, stop, or capture snapshots for recovery purposes.
+| Action                     | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| `GET /tunables/{id}`       | Retrieves tunable settings based on the specified ID.                       |
+| `UPDATE /tunables`         | Modifies the tunable settings.                                              |
+| `GET /tunables`            | Fetches all tunable settings.                                               |
 
-| **Action**                         | **Description**                                       |
-|------------------------------------|-------------------------------------------------------|
-| `dr-instance.start`                | Starts a virtual server instance for failover.        |
-| `dr-instance.stop`                 | Stops an instance that is no longer required.         |
-| `dr-instance.snapshot`             | Captures a snapshot of an instance for backup.        |
-{: caption="List of events: Power Virtual Server" caption-side="bottom"}
-
-**Example use case**
-During a failover drill, an administrator can issue `dr-instance.start` to activate all necessary instances in the backup environment. Additionally, `dr-instance.snapshot` can be used to capture a real-time backup.
+**Example use case**: Administrators can fine-tune the disaster recovery environment by fetching specific tunable settings using `GET /tunables/{id}` and updating them via `UPDATE /tunables` to ensure optimal performance.
 
 ---
 
-## 5. Data volumes events
+## 4. DrAutomationManageKsys
 
-Managing data volumes ensures that critical storage resources are available and can be quickly attached or detached as needed during failover operations.
+| Action                     | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| `POST /manage-ksys`        | Creates a managed DR service instance.                                      |
 
-| **Action**                | **Description**                                           |
-|---------------------------|-----------------------------------------------------------|
-| `dr-volume.create`        | Creates a new data volume for DR purposes.                |
-| `dr-volume.attach`        | Attaches a data volume to an instance in the backup site. |
-| `dr-volume.detach`        | Detaches a data volume after a failover test.             |
-{: caption="List of events: Data Volume Events" caption-side="bottom"}
-
-**Example use case**
-In the event of a failover, an administrator may use `dr-volume.attach` to ensure that critical storage volumes are available to the restored instances at the backup site.
+**Example use case**: During the initial setup of {{site.data.keyword.DR_short}}, an administrator can use `POST /manage-ksys` to configure and manage a new KSYS service instance, ensuring seamless orchestration of recovery tasks.
 
 ---
 
-## 6. Cloud connections events
+## 5. DrAutomationMetering
 
-Cloud connection events facilitate secure connectivity between the primary and backup environments, which is crucial for data replication and failover communication.
+| Action                     | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| `POST /metering-handlers`  | Manages metering data for KSYS instances.                                   |
+| `GET /cos-info`            | Retrieves information on COS (Cloud Object Storage).                        |
 
-| **Action**                | **Description**                                                   |
-|---------------------------|-------------------------------------------------------------------|
-| `dr-cloud-connection.list`| Lists all cloud connections between primary and backup sites.     |
-| `dr-cloud-connection.create`| Establishes a secure connection between DR sites.               |
-| `dr-cloud-connection.update`| Updates the configuration of an existing cloud connection.     |
-{: caption="List of events: Cloud Connections" caption-side="bottom"}
-
-**Example use case**
-To ensure continuity during a failover, an administrator uses `dr-cloud-connection.list` to verify all connections between the primary and backup sites are active. If needed, `dr-cloud-connection.update` can modify the connection parameters.
+**Example use case**: To monitor and analyze resource usage, administrators can use `POST /metering-handlers` to manage metering data and `GET /cos-info` to gather relevant storage information for billing or optimization.
 
 ---
 
-## 7. Security related events
+## 6. DrAutomationTenant
 
-Security-related events are critical to maintaining secure connections during a DR failover, particularly through VPN, IKE, and IPsec configurations.
+| Action                     | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| `POST /tenant`             | Adds a new tenant to the DR automation system.                              |
+| `PUT /tenant`              | Updates details of an existing tenant.                                      |
+| `DELETE /tenant/{accountId}`| Removes a tenant based on the provided account ID.                          |
+| `GET /tenant/{accountId}`  | Retrieves details of a tenant using the account ID.                         |
 
-| **Action**                          | **Description**                                      |
-|-------------------------------------|------------------------------------------------------|
-| `dr-vpn.list`                       | Lists all VPN configurations for secure DR paths.    |
-| `dr-ike-policy.create`              | Creates an IKE policy to secure DR data transfer.    |
-| `dr-ipsec-policy.update`            | Updates an IPsec policy for secure site connectivity.|
-{: caption="List of events: Security-Related" caption-side="bottom"}
+**Example use case**: When onboarding a new organization to {{site.data.keyword.DR_short}}, administrators can use `POST /tenant` to add the tenant and later modify their details using `PUT /tenant`. To remove an inactive tenant, they can use `DELETE /tenant/{accountId}`.
 
-**Example use case**
-For secure data transfer, an administrator can use `dr-vpn.list` to confirm active VPN connections. To enhance security, `dr-ike-policy.create` and `dr-ipsec-policy.update` can be applied as required.
 
 ---
 
