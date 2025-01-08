@@ -136,7 +136,9 @@ For more details, refer to the specific data sheets and hardware overview table.
 - Each Cloud LPAR in the host must have the following operating systems:
   -   AIX Version 7.3, and later
 
----
+## API key
+
+In {{site.data.keyword.DR_short}}, user can set up cross-account API keys to allow secure and restricted access between different IBM Cloud accounts. Cross-account API keys enable scenarios where resources or services in one account need to interact with those in another account, ensuring proper identity and access management with [IBM cloud guidelines](https://cloud.ibm.com/docs/account?topic=account-create-trusted-profile&interface=ui).
 
 ## Supported storage tiers
 
