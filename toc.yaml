@@ -18,6 +18,7 @@ toc:
       id: overview
       topics:
       - getting-started-with-powerVS.md
+      - release.md
       - what-is-drautomation.md
       - architecture-dr-automation.md
       - cloud-regions.md

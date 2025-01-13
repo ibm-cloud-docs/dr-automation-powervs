@@ -13,29 +13,29 @@ The Disaster Recovery (DR) orchestrator is successfully deployed in IBM Cloud Po
 
 This section highlights the orchestrator's operational status and key identifiers:
 
-- **Orchestrator Name**: The unique identifier for the orchestrator instance responsible for managing failover, failback, and replication processes between the primary and DR sites.
+- Orchestrator Name: The unique identifier for the orchestrator instance responsible for managing failover, failback, and replication processes between the primary and DR sites.
   
-- **Orchestrator Status**: Displays the current health and state of the orchestrator, such as "Running." The orchestrator must be operational for DR functions to be ready.
+- Orchestrator Status: Displays the current health and state of the orchestrator, such as "Running." The orchestrator must be operational for DR functions to be ready.
 
-- **IBM Cloud SSH Key Secret**: Refers to the secure IBM Cloud SSH key used for authenticated and encrypted communication between the orchestrator and the managed VMs involved in DR.
+- IBM Cloud SSH Key Secret: Refers to the secure IBM Cloud SSH key used for authenticated and encrypted communication between the orchestrator and the managed VMs involved in DR.
 
-- **SSH Key Name**: Indicates the SSH key linked to the orchestrator for remote access to VMs. Proper configuration is crucial for secure VM operations.
+- SSH Key Name: Indicates the SSH key linked to the orchestrator for remote access to VMs. Proper configuration is crucial for secure VM operations.
 
-- **Schematics Workspace**: The Infrastructure as Code (IaC) environment that automates the provisioning of DR resources, leveraging Terraform templates to define workflows for automation.
+- Schematics Workspace: The Infrastructure as Code (IaC) environment that automates the provisioning of DR resources, leveraging Terraform templates to define workflows for automation.
 
-- **Schematics Workspace Connection Status**: Shows whether the orchestrator is successfully connected to the Schematics workspace. A “Running” status indicates successful infrastructure automation.
+- Schematics Workspace Connection Status: Shows whether the orchestrator is successfully connected to the Schematics workspace. A “Running” status indicates successful infrastructure automation.
 
 ## Service details
 
-The **Service Details** section provides a comprehensive overview of the disaster recovery (DR) service setup within IBM Cloud PowerVS, ensuring that the correct infrastructure is in place to support high availability and business continuity in the event of a disaster. It includes:
+The Service Details section provides a comprehensive overview of the disaster recovery (DR) service setup within IBM Cloud PowerVS, ensuring that the correct infrastructure is in place to support high availability and business continuity in the event of a disaster. It includes:
 
-- **Service Name**: Identifies the DR service configured in IBM Cloud for the orchestrator, linking it to the correct DR environment.
+- Service Name: Identifies the DR service configured in IBM Cloud for the orchestrator, linking it to the correct DR environment.
 
-- **Disaster Recovery Location**: Specifies the region or data center, such as "Dallas 12," where the DR resources are hosted and where failover will occur.
+- Disaster Recovery Location: Specifies the region or data center, such as "Dallas 12," where the DR resources are hosted and where failover will occur.
 
-- **Resource Group**: Displays the IBM Cloud resource group managing the DR resources, allowing for resource-level permissions and management.
+- Resource Group: Displays the IBM Cloud resource group managing the DR resources, allowing for resource-level permissions and management.
 
-- **CRN (Cloud Resource Name)**: A globally unique identifier for the DR service within IBM Cloud, enabling resource tracking and auditing across cloud environments using APIs.
+- CRN (Cloud Resource Name): A globally unique identifier for the DR service within IBM Cloud, enabling resource tracking and auditing across cloud environments using APIs.
 
 ---
 
