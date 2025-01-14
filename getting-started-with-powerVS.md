@@ -1,0 +1,54 @@
+---
+front_matter_title: "Getting started"
+lastupdated: "2025-01-13"
+copyright: "2024, 2025"
+subcollection: dr-automation
+---
+# Getting started with IBM {{site.data.keyword.DR_full_notm}}
+
+{: #get-drauto}
+
+{{site.data.keyword.DR_full}} is an disaster recovery offering. You can use {{site.data.keyword.DR_full_notm}} to automate disaster recovery (DR) processes for virtualized environments, ensuring continuity of operations with minimal manual intervention in the event of disasters or disruptions.
+
+With {{site.data.keyword.DR_short}}, you can quickly deploy a disaster recovery solution from the IBM Cloud Catalog UI, which provides an intuitive interface to select and configure recovery services. The solution automates the recovery of virtual machines (VMs) and workloads, leveraging IBM Cloud infrastructure to offer a flexible, scalable, and efficient DR process. You can provision DR capabilities that synchronize data and manage replication between sites to secure critical workloads.
+
+You get robust, automated management that continuously monitors DR operations, reduces manual processes, and minimizes downtime. The DR automation solution supports IBM Cloud's global regions, offering low-latency failover capabilities and high availability options to meet your specific DR needs across multiple IBM Cloud locations. By using DR automation , you can simplify the DR setup and operation, leveraging IBM Cloud’s infrastructure to enhance business resilience.
+
+Get started with {{site.data.keyword.DR_short}} today to ensure reliable and efficient disaster recovery for your business workloads.
+
+
+## Terminology
+
+{: #term}
+
+
+- **IBM Cloud account** - You can log on to the IBM Cloud dashboard by using an IBM Cloud account to access various IBM Cloud solutions, services, and offerings. To create an IBM Cloud account, see [Signing up for the IBM Cloud](https://cloud.ibm.com/registration).
+
+- **Location and region** - The global network of locations in IBM Cloud provides three tiers of regions: multizone regions (MZR), single-campus multizone regions, and data centers. To achieve low application latency, choose your nearest location and region. For details about the available IBM Cloud regions and data centers, review [Region and data center locations for resource deployment](https://cloud.ibm.com/docs/overview?topic=overview-locations).
+
+- **Workspace** - A workgroup is a logical grouping of virtual machines, storage volumes, network configurations, and other resources within a defined geographic region. Workgroups are accessible from the Power Virtual Server user interface, allowing users to organize and manage multiple Power Virtual Server instances for specific purposes, such as production or development testing. Within each designated site, users can establish multiple workgroups to facilitate environment-specific operations, streamline resource allocation, and ensure seamless disaster recovery processes, including failover and failback capabilities.
+
+- **DR Service Broker** - The DR Service Broker provides a centralized interface within IBM Cloud to manage and coordinate the DR services and resources across multiple environments. It simplifies DR configurations, resource allocations, and service accessibility, streamlining disaster recovery setup and maintenance across DR Automation instances.
+
+- **DR Orchestrator (KSYS)** - The DR Orchestrator, also known as KSYS, is the central management component responsible for automating disaster recovery processes within DR Automation. Orchestrator(KSYS) manages and coordinates failover, failback, and synchronization of resources across sites, ensuring efficient and reliable DR operations.
+
+
+## Before you Begin
+
+{: #bub} 
+
+Before you create your first instance, review the following prerequisites:
+
+1. Create an IBM Cloud account. To create an IBM Cloud account, see [Signing up for the IBM Cloud](https://cloud.ibm.com/registration).
+
+2. Review the Identity and Access Management (IAM) information at [Managing DR Automation (IAM)](iam-autoamtion.md).
+
+3. Create a public and private SSH key to securely connect to your Power Virtual Server. For instructions on creating a public and private SSH key, see Adding an SSH key.
+
+4. Plan and specify your infrastructure requirements and review the estimated cost using the [DR Automation Estimate pricing tool](https://test.cloud.ibm.com/catalog/services/dr-automation-test-7).
+
+5. Review the lifecycles of Power Virtual Server instances on IBM Power Virtual Server DR Automation.
+
+## Lifecycle of Power Virtual Server DR Automation
+
+![DR Automation life Cycle](images/dr-automation-blockdiagram.svg "DR Automation life Cycle"){: caption="DR Automation life Cycle" caption-side="bottom"}
