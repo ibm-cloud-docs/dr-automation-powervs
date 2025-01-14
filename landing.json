@@ -1,10 +1,9 @@
-
 {
   "version": 2,
   "title": "Power Virtual Server DR Automation",
   "introduction": "Power Virtual Server DR Automation is a cloud solution for managing your virtual servers.",
   "product_page": "https://ibm.com/cloud/solution-page",
-  "deployment_url": "https://cloud.ibm.com/catalog/content/url/to/deploy",
+  "console_page": "/relative/console/path",
   "section_topics": {
     "links": [
       {
@@ -44,28 +43,11 @@
       "recommended": true
     }
   ],
-  "section_architectures": [
-    {
-      "title": "Acme Test on VPC",
-      "href": "/docs/acme-test?topic=acme-test-reference-architecture",
-      "deployable": true
-    },
-    {
-      "title": "Acme Test on Power Virtual Servers",
-      "href": "/docs/acme-test?topic=acme-test-reference-architecture",
-      "deployable": true
-    },
-    {
-      "title": "Acme Test on Power Virtual Servers",
-      "href": "/docs/acme-test?topic=acme-test-reference-architecture",
-      "deployable": true
-    },
-    {
-      "title": "Acme Test on Power Virtual Servers",
-      "href": "/docs/acme-test?topic=acme-test-reference-architecture",
-      "deployable": true
-    }
-  ],
+  "section_devtools": {
+    "api": "/apidocs/acme-test-v1/acme-test-v1.2.0",
+    "cli": "/docs/acme-test",
+    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/iam_access_group"
+  },
   "section_updates": {
     "view_more": "/docs/overview?topic=overview-whatsnew",
     "tiles": [
