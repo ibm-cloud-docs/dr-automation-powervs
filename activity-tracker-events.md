@@ -5,7 +5,7 @@ copyright: "2023, 2024"
 subcollection: dr-automation
 ---
 # Activity tracker events
-
+{: #ate} 
 Activity tracking events report on activities that change the state of a service in IBM Cloud. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
 
 You can use IBM Cloud Activity Tracker Event Routing, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see [Getting started tutorial for Activity Tracker Event Routing](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-getting-started).
@@ -17,6 +17,7 @@ You can use IBM Cloud Logs to visualize and alert on events that are generated i
 Activity Tracker Event Routing records user-initiated activities that change the state of a service in IBM Cloud. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see the [Getting started tutorial for Activity Tracker Event Routing](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
 ## Management events
+{: #manag events} 
 
 This document provides details on various events relevant to {{site.data.keyword.DR_short}}. These events help administrators manage instance readiness, images, network configurations, and security policies required for effective disaster recovery.
 
@@ -29,42 +30,42 @@ This document provides details of the key events and their respective API operat
 | Action                                    | Description                                             |
 |-------------------------------------------|---------------------------------------------------------|
 | `power-dr-automation.cloud-instance.modify` | Modify an existing service instance for DR automation.   |
-
+{: caption="cloud-instance" caption-side="bottom"}
 
 ## 2. Validate-dr
 
 | Action                                   | Description                                              |
 |------------------------------------------|----------------------------------------------------------|
 | `power-dr-automation.validate-dr.read`   | Fetch all DR validation events from a specified timestamp. |
-
+{: caption="Validate-dr" caption-side="bottom"}
 
 ## 3. Region
 
 | Action                                | Description                                                 |
 |---------------------------------------|-------------------------------------------------------------|
 | `power-dr-automation.region.read`     | Retrieve tunable settings for DR automation by region ID.    |
-
+{: caption="Region" caption-side="bottom"}
 
 ## 4. dr-operation
 
 | Action                                   | Description                                           |
 |------------------------------------------|-------------------------------------------------------|
 | `power-dr-automation.dr-operation.read` | Create and manage a DR service instance.             |
-
+{: caption="dr-operation" caption-side="bottom"}
 
 ## 5. dr-summary
 
 | Action                                   | Description                                       |
 |------------------------------------------|---------------------------------------------------|
 | `power-dr-automation.dr-summary.read`   | Manage and access KSYS metering data.            |
-
+{: caption="dr-summary" caption-side="bottom"}
 
 ## 6. manage-dr
 
 | Action                                   | Description                                                |
 |------------------------------------------|------------------------------------------------------------|
 | `power-dr-automation.manage-dr.read`    | Add a new tenant to the DR automation system.              |
-
+{: caption="manage-dr" caption-side="bottom"}
 
 ## 7. event
 
@@ -72,7 +73,7 @@ This document provides details of the key events and their respective API operat
 |------------------------------------------|------------------------------------------------------------|
 | `power-dr-automation.event.list`        | Retrieve a list of all event logs from the DR automation system. |
 | `power-dr-automation.event.read`        | Access specific event details for auditing and troubleshooting. |
-
+{: caption="event" caption-side="bottom"}
 
 ## 8. KSYS
 
@@ -80,9 +81,10 @@ This document provides details of the key events and their respective API operat
 |------------------------------------------|------------------------------------------------------------|
 | `power-dr-automation.ksys.put`          | Add a new KSYS instance to the DR automation system.       |
 | `power-dr-automation.ksys.read`         | Retrieve information about existing KSYS instances.        |
-
+{: caption="KSYS" caption-side="bottom"}
 
 ## Viewing {{site.data.keyword.DR_short}} events
+{: #view}
 
 Disaster Recovery (DR) Automation events are automatically forwarded to specific geographic locations based on data center regions. You can access the activity tracker logs for {{site.data.keyword.DR_short}} as follows:
 
@@ -98,6 +100,7 @@ The Activity Tracker service supports only one instance per location. To view {{
  events, you must access the Activity Tracker web UI in the same location where your DR service instance is deployed. For additional guidance, see [Launching the web UI through the IBM Cloud UI](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-launch).
 
 ## Activity tracker sample response format
+{: #at tracker}
 
 The new response format that is used in activity tracking adheres to the CADF (Cloud Auditing Data Federation) standard. Hence, auditing events can be collected and routed in a standardized format, ensuring consistency and interoperability across different cloud platforms.
 
@@ -106,6 +109,7 @@ The new response format that is used in activity tracking adheres to the CADF (C
 The following code snippets show the differences between the old and new activity tracker response format.
 
 ### Log message
+{: #log msg}
 
 ```json
 {
@@ -155,6 +159,7 @@ The following code snippets show the differences between the old and new activit
 
 
 ## Activity tracker regions
+{: #at trackerregions}
 
 You can create an activity tracker instance and provision it in the same region where your data center is located.
 
@@ -175,8 +180,4 @@ The following table shows the data center and its corresponding regions where yo
 | LON04      | eu-gb                   |
 | LON06      | eu-gb                   |
 | OSA21      | jp-osa                  |
-<<<<<<< Updated upstream
 {: caption="List of DCs and their corresponding AT instance region" caption-side="bottom"}
-=======
-{: caption="List of DCs and their corresponding AT instance region" caption-side="bottom"}
->>>>>>> Stashed changes
