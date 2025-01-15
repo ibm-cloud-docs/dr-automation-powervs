@@ -1,11 +1,12 @@
 ---
 front_matter_title: "Activity tracker events"
-lastupdated: "2024-10-23"
-copyright: "2023, 2024"
+lastupdated: "2025-01-15"
+copyright: "2025"
 subcollection: dr-automation
 ---
 # Activity tracker events
 {: #ate} 
+
 Activity tracking events report on activities that change the state of a service in IBM Cloud. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
 
 You can use IBM Cloud Activity Tracker Event Routing, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see [Getting started tutorial for Activity Tracker Event Routing](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-getting-started).
