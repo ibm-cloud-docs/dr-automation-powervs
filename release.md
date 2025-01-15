@@ -1,6 +1,6 @@
 ---
 front_matter_title: "Release note"
-lastupdated: "2025-01-14"
+lastupdated: "2025-01-15"
 copyright: "2025"
 subcollection: dr-automation
 navtitle: "Release notes"
@@ -9,7 +9,7 @@ navtitle: "Release notes"
 # Release notes
 {: #relnote}
 
-## 01 January 2024
+## 31 January 2024
 {: #subcollection-jan0124}
 {: release-note}
  
