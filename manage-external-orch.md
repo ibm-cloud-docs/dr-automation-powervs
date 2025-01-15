@@ -1,8 +1,13 @@
 ---
-front_matter_title: "VMRM"
-lastupdated: "2024-11-16"
-copyright: "2023, 2024"
+
+copyright:
+  years: 2025
+lastupdated: "2025-01-15"
+
 subcollection: dr-automation
+
+keywords: manage external
+
 ---
 # Managing external orchestrator
 

@@ -1,18 +1,27 @@
 ---
-front_matter_title: "Data isolation"
-lastupdated: "2024-10-23"
-copyright: "2023, 2024"
+copyright:
+  years: 2025
+lastupdated: "2025-01-15"
+
 subcollection: dr-automation
+
+keywords: data isolation
+
 ---
 # Data Isolation
+{: #di}
 
 ## Overview
+{: #ovr}
 
-Data isolation in IBM Cloud is essential for protecting customer data in multi-tenant cloud environments, especially for {{site.data.keyword.DR_full}}. IBM Cloud offers a suite of tools and services that ensure data remains segregated, secure, and compliant with regulatory standards. This document details key strategies and components that work together to provide robust data isolation within the {{site.data.keyword.DR_full_notm}} framework .
+Data isolation in IBM Cloud is essential for protecting customer data in multi-tenant cloud environments, especially for {{site.data.keyword.DR_full}}. IBM Cloud offers a suite of tools and services that ensure data remains segregated, secure, and compliant with regulatory standards. This document details key strategies and components that work together to provide robust data isolation within the {{site.data.keyword.DR_full_notm}} framework.
+{:shortdesc: .shortdesc}
 
 ## Key data isolation strategies
+{: #keydata}
 
 ### Virtual Private Cloud
+{: #vpc}
 
 IBM Cloud’s Virtual Private Cloud (VPC) provides an isolated network environment for managing {{site.data.keyword.DR_short}} resources securely. It enables you to control IP address ranges, subnets, routing, and access, ensuring that DR resources are isolated from other IBM Cloud customers.
 
@@ -30,6 +39,7 @@ IBM Cloud offers **dedicated cloud** options for exclusive access to physical se
 - **IBM Cloud Bare Metal Servers** and **Virtual Servers** deliver single-tenant environments, enhancing data isolation by controlling compute resources directly.
 
 ### Data Encryption
+{: #daen}
 
 Data encryption ensures that sensitive DR data is secure and isolated.
 
@@ -68,38 +78,47 @@ IBM Cloud’s compliance tools and certifications help meet regional and regulat
 ## {{site.data.keyword.DR_short}}-Specific Data Isolation Components
 
 ### KSYS (DR Orchestrator)
+{: #orch}
 
 The **KSYS** orchestrates disaster recovery operations, coordinating failover and failback across sites, ensuring that virtual machines and resources are synchronized and recovered securely. KSYS enforces isolation by managing access and operations at both source and target sites, preserving data integrity during DR events.
 
 ### DR Service Broker
+{: #drsb}
 
 The **DR Service Broker** provides a centralized interface for managing DR services across PowerVS instances. It allows streamlined access to DR resources, configurations, and policies while maintaining isolated operations for each customer environment.
 
 ### Control Plane
+{: #cp}
 
 The **Control Plane** manages {{site.data.keyword.DR_short}} operations within PowerVS, handling resource monitoring, API requests, and synchronization across sites. It ensures isolated DR processes by controlling data flow and access between primary and secondary sites.
 
 ### Replication Services
+{: #rs}
 
 **Replication Services** manage policy-based replication of data between sites, ensuring data consistency for DR. Isolation is maintained by controlling data transfer policies, synchronizing only the required data, and securing it across network boundaries.
 
 ### VM Recovery Manager Agents
+{: #vmrma}
 
 The **VM Recovery Manager Agents** are installed on nodes to manage site-level and VM-level DR tasks, including resource monitoring and event logging. They contribute to data isolation by performing dedicated DR orchestration functions within isolated environments.
 
 ### IBM Cloud Monitoring
+{: #ibmcm}
 
 **IBM Cloud Monitoring** tracks the health and performance of DR resources, monitoring key metrics related to DR readiness and synchronization. Monitoring enhances data isolation by identifying potential vulnerabilities or unauthorized access to DR resources.
 
 ### Code Engine
+{: #ce}
 
 IBM’s **Code Engine** is used for job scheduling and executing DR tasks based on events or schedules. Code Engine supports event-driven execution, allowing DR processes to be triggered automatically in response to specific conditions, ensuring timely and isolated DR operations.
 
 ### IBM Cloud Container Registry (ICR)
+{: #icr}
 
 The **IBM Cloud Container Registry** (ICR) manages container images essential for DR workloads. It ensures that recovery images are consistently accessible in isolated environments, with vulnerability scanning for security assurance.
 
 ## Monitoring and Logging
+{: #mal}
 
 IBM Cloud’s monitoring and logging services enhance data isolation by capturing detailed records of access and events.
 
@@ -107,6 +126,7 @@ IBM Cloud’s monitoring and logging services enhance data isolation by capturin
 - **IBM Cloud Logging**: Logs access events, detailing which user or service accessed specific DR data, ensuring auditability.
 
 ## Best Practices for Data Isolation
+{: #bpdi}
 
 - **Use VPCs for Network Isolation**: VPCs provide isolated networks essential for data security in DR.
 - **Implement Robust IAM Policies**: Apply IAM to enforce role-based access, limiting who can access DR resources.

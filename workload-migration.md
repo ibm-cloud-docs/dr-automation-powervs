@@ -1,18 +1,27 @@
 ---
-front_matter_title: "Migration"
-lastupdated: "2024-10-29"
-copyright: "2023, 2024"
+
+copyright:
+  years: 2025
+lastupdated: "2025-01-15"
+
 subcollection: dr-automation
+
+keywords: migration
+
 ---
+
 # Planning a workload migration to {{site.data.keyword.DR_full}}
+{: #plan-work-load}
 
 When workloads are deployed on a new system, you must pay attention to its configuration and tuning to achieve the expected performance. {{site.data.keyword.DR_full_notm}} uses different IBM Power Systems: E980 (9080-M9S), S922 (9009-22A), S1022 (9105-22A), and E1080 (9080-HEX).
+{:shortdesc: .shortdesc}
 
 For more information on hardware specifications that you might need, see [Hardware specifications for {{site.data.keyword.DR_full_notm}}](/docs-draft/dr-automation-powervs?topic=dr-automation-powervs-architecture-for-ibm-power-virtual-server-dr-automation#hardware-specifications).
 
 For AIX, {{site.data.keyword.DR_full_notm}} supports only AIX 7.3, or later. If you use an unsupported version, it is subject to outages during planned maintenance windows with no advanced notification given. Your current AIX level and POWER processor family can help determine which migration path to follow.
 
 ## Migration checklist
+{: #check-list}
 
 Before you migrate to a newer IBM Power, review the following checklist:
 
@@ -23,9 +32,6 @@ Before you migrate to a newer IBM Power, review the following checklist:
 5. Consider contacting [IBM Technology Expert Labs](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-system-migration#lab-services) to ease the migration process.
 
 ## Lab services
+{: #lab-service}
 
-<<<<<<< Updated upstream
 [IBM Technology Expert Labs](https://www.ibm.com/products/expertlabs) has service offerings available to assist you with resolving system, application, and database performance problems. Formal and informal training opportunities are also available where you can learn how to use performance tools and resolve issues on your own.
-=======
-[IBM Technology Expert Labs](https://www.ibm.com/products/expertlabs) has service offerings available to assist you with resolving system, application, and database performance problems. Formal and informal training opportunities are also available where you can learn how to use performance tools and resolve issues on your own.
->>>>>>> Stashed changes

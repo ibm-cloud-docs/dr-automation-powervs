@@ -1,17 +1,26 @@
 ---
-front_matter_title: "Additonal Migration"
-lastupdated: "2024-10-23"
-copyright: "2023, 2024"
+
+copyright:
+  years: 2025
+lastupdated: "2025-01-15"
+
 subcollection: dr-automation
+
+keywords: add migration
+
 ---
+
 # Additonal migration strategies
+{: #add-work-load}
 
 You can engage IBM teams and services to assist you throughout the migration lifecycle.
+{:shortdesc: .shortdesc}
 
 Expert Labs
 IBM Services for Cloud Migration
 
 ## IBM cloud object storage
+{: #ibm-clou-sto}
 
 Cloud Object Storage can be used as an intermediary location to store files from your On-premises environment. You can retrieve and send your files to the Power Virtual Server environment from this location. You must create Cloud Object Storage buckets to transfer data over the public internet or privately secured links. For more information, see [IBM Cloud Object Storage: FAQ](https://www.ibm.com/cloud/object-storage/faq).
 

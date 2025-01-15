@@ -1,17 +1,17 @@
 ---
-front_matter_title: "Cloud regions"
-lastupdated: "2024-10-23"
-copyright: "2023, 2024"
+copyright:
+  years: 2025
+lastupdated: "2025-01-15"
+
 subcollection: dr-automation
+
+keywords: cloud regions
+
 ---
 # IBM cloud regions
+{: #cloudre}
 
-The following table displays the appropriate region for your workspace:
+IBM {{site.data.keyword.DR_full}} supports a global network of IBM Cloud regions to enable efficient and reliable disaster recovery (DR) operations. This solution ensures low-latency failover and high availability by allowing you to deploy workloads in regions that align with your business continuity goals.
+{:shortdesc: .shortdesc}
 
-| Location   | DR Automation Region | DR Region | Primary Zone | DR Zone |
-|------------|-----------------------|-----------|--------------|---------|
-| Dallas     | us-south              | us-east   | dal10        | wdc06   |
-| Sao Paulo  | br-sao                | br-rio    | sao01        | rio01   |
-| Toronto    | ca-tor                | ca-mon    | tor01        | mon01   |
-| Washington | us-east               | us-west   | wdc04        | sjc03   |
-{: caption="regions and zones" caption-side="bottom"}
+To review all available IBM Cloud regions and data centers, For more information, see [IBM Cloud Regions](https://cloud.ibm.com/docs/overview?topic=overview-services_region).
