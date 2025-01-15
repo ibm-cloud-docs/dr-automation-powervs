@@ -53,19 +53,19 @@
     "tiles": [
       {
         "date": "31 Janunary 2025",
-        "title": "Experimental: Access resources from the Resources tab"
+        "title": "You can now automate complex recovery workflows through the improved GUI interface, reducing manual intervention and minimizing Recovery Time Objectives (RTO)"
       },
       {
         "date": "31 January 2025",
-        "title": "View counts for all resources in the resource summary widget"
+        "title": "The DR Orchestrator (KSYS) now supports high availability in additional regions, enabling continuous operations during failover"
       },
       {
-        "date": "17 June 2024",
-        "title": "Experimental: Using AI to answer your questions about IBM Cloud"
+        "date": "31 January 2025",
+        "title": "DR Automation now supports IBM Power E1080 (9080-HEX) systems with up to 64 TB of memory, allowing for recovery of large-scale workloads."
       },
       {
-        "date": "17 June 2024",
-        "title": "Changes to IBM Cloud projects API method to list all deployed resources"
+        "date": "31 January 2025",
+        "title": "Virtual Private Cloud (VPC) configurations and private endpoint support have been enhanced, ensuring better data security and regulatory compliance."
       }
     ]
   }
