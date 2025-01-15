@@ -24,64 +24,62 @@ This document provides details on various events relevant to {{site.data.keyword
 
 This document provides details of the key events and their respective API operations in the **{{site.data.keyword.DR_short}} Service**. Use the given screenshots as a reference for style and formatting.
 
-## 1. DrAutomationServiceInstance
+## 1. cloud-instance
 
-| Action                      | Description                                                                 |
-|-----------------------------|-----------------------------------------------------------------------------|
-| `PUT /service-instance`      | Creates a new service instance for DR automation.                          |
-| `PUT /service-instance/status`| Updates the status of an existing service instance.                       |
-| `DELETE /service-instance`   | Removes an existing service instance.                                      |
-| `GET /service-instance/last-operation` | Retrieves the status of the last operation performed on the service instance. |
-
-**Example use case**: When a new disaster recovery environment is required, administrators can use `PUT /service-instance` to provision a new service instance. They can later update its status using `PUT /service-instance/status` or remove it with `DELETE /service-instance` if no longer needed.
-
-## 2. DrEvents
-
-| Action                     | Description                                                                 |
-|----------------------------|-----------------------------------------------------------------------------|
-| `GET /events`              | Fetches all events from a specified timestamp.                              |
-| `GET /events/{eventId}`    | Retrieves details of a specific event.                                      |
-
-**Example use case**: To troubleshoot issues during a failover event, administrators can use `GET /events` to review all recent events or `GET /events/{eventId}` to investigate a specific event in detail.
-
-## 3. DrAutomationTunable
-
-| Action                     | Description                                                                 |
-|----------------------------|-----------------------------------------------------------------------------|
-| `GET /tunables/{id}`       | Retrieves tunable settings based on the specified ID.                       |
-| `UPDATE /tunables`         | Modifies the tunable settings.                                              |
-| `GET /tunables`            | Fetches all tunable settings.                                               |
-
-**Example use case**: Administrators can fine-tune the disaster recovery environment by fetching specific tunable settings using `GET /tunables/{id}` and updating them via `UPDATE /tunables` to ensure optimal performance.
-
-## 4. DrAutomationManageKsys
-
-| Action                     | Description                                                                 |
-|----------------------------|-----------------------------------------------------------------------------|
-| `POST /manage-ksys`        | Creates a managed DR service instance.                                      |
-
-**Example use case**: During the initial setup of {{site.data.keyword.DR_short}}, an administrator can use `POST /manage-ksys` to configure and manage a new KSYS service instance, ensuring seamless orchestration of recovery tasks.
-
-## 5. DrAutomationMetering
-
-| Action                     | Description                                                                 |
-|----------------------------|-----------------------------------------------------------------------------|
-| `POST /metering-handlers`  | Manages metering data for KSYS instances.                                   |
-| `GET /cos-info`            | Retrieves information on COS (Cloud Object Storage).                        |
-
-**Example use case**: To monitor and analyze resource usage, administrators can use `POST /metering-handlers` to manage metering data and `GET /cos-info` to gather relevant storage information for billing or optimization.
+| Action                                    | Description                                             |
+|-------------------------------------------|---------------------------------------------------------|
+| `power-dr-automation.cloud-instance.modify` | Modify an existing service instance for DR automation.   |
 
 
-## 6. DrAutomationTenant
+## 2. Validate-dr
 
-| Action                     | Description                                                                 |
-|----------------------------|-----------------------------------------------------------------------------|
-| `POST /tenant`             | Adds a new tenant to the DR automation system.                              |
-| `PUT /tenant`              | Updates details of an existing tenant.                                      |
-| `DELETE /tenant/{accountId}`| Removes a tenant based on the provided account ID.                          |
-| `GET /tenant/{accountId}`  | Retrieves details of a tenant using the account ID.                         |
+| Action                                   | Description                                              |
+|------------------------------------------|----------------------------------------------------------|
+| `power-dr-automation.validate-dr.read`   | Fetch all DR validation events from a specified timestamp. |
 
-**Example use case**: When onboarding a new organization to {{site.data.keyword.DR_short}}, administrators can use `POST /tenant` to add the tenant and later modify their details using `PUT /tenant`. To remove an inactive tenant, they can use `DELETE /tenant/{accountId}`.
+
+## 3. Region
+
+| Action                                | Description                                                 |
+|---------------------------------------|-------------------------------------------------------------|
+| `power-dr-automation.region.read`     | Retrieve tunable settings for DR automation by region ID.    |
+
+
+## 4. dr-operation
+
+| Action                                   | Description                                           |
+|------------------------------------------|-------------------------------------------------------|
+| `power-dr-automation.dr-operation.read` | Create and manage a DR service instance.             |
+
+
+## 5. dr-summary
+
+| Action                                   | Description                                       |
+|------------------------------------------|---------------------------------------------------|
+| `power-dr-automation.dr-summary.read`   | Manage and access KSYS metering data.            |
+
+
+## 6. manage-dr
+
+| Action                                   | Description                                                |
+|------------------------------------------|------------------------------------------------------------|
+| `power-dr-automation.manage-dr.read`    | Add a new tenant to the DR automation system.              |
+
+
+## 7. event
+
+| Action                                   | Description                                                |
+|------------------------------------------|------------------------------------------------------------|
+| `power-dr-automation.event.list`        | Retrieve a list of all event logs from the DR automation system. |
+| `power-dr-automation.event.read`        | Access specific event details for auditing and troubleshooting. |
+
+
+## 8. KSYS
+
+| Action                                   | Description                                                |
+|------------------------------------------|------------------------------------------------------------|
+| `power-dr-automation.ksys.put`          | Add a new KSYS instance to the DR automation system.       |
+| `power-dr-automation.ksys.read`         | Retrieve information about existing KSYS instances.        |
 
 
 ## Viewing {{site.data.keyword.DR_short}} events
