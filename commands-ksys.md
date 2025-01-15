@@ -1,14 +1,22 @@
 ---
-front_matter_title: "KSYS Commands"
-lastupdated: "2024-10-23"
-copyright: "2023, 2024"
+copyright:
+  years: 2025
+lastupdated: "2025-01-15"
+
 subcollection: dr-automation
+
+keywords: commands
+
 ---
 # ksysmgr command(Orchestrator)
 
+{: #comm}
+
 The command provides a consistent interface to configure the controller system (KSYS) and to perform IBM® VM Recovery Manager DR operations by using a terminal or script.
+{:shortdesc: .shortdesc}
 
 ## syntax
+{: #syn}
 
     ksysmgr [-v] [-f] [-l {low|max}] [-i] 
     [-a {<ATTR#1>,<ATTR#2>,...}] <ACTION> <CLASS> [<NAME>]
@@ -37,10 +45,11 @@ The basic format for using the ksysmgr command is as follows:
 > - You cannot display help information from the command line for each of the ksysmgr command's ATTRIBUTES.
 
 ## Description
-
+{: #des}
 All ksysmgr command operations are logged in the ```/var/ksys/log/ksysmgr.oplog``` file, including the name of the executed command, start time, process ID for the ksysmgr operation, the command with arguments, and overall return code.
 
 ## ACTION
+{: #ac}
 
 The ```ACTION``` flags are not case-sensitive. All ```ACTION``` flags provide a shorter alias. For example, ```rm``` is an alias for ```delete```. Aliases are provided for convenience from the command line and must not be used in scripts.
 
@@ -71,6 +80,7 @@ The following ```ACTION``` flags are available:
 ```refresh```
 
 ## CLASS
+{: #cla}
 
 Specifies the type of object on which the ```ACTION``` is performed. The ```CLASS``` flags are not case-sensitive.
 
@@ -103,6 +113,7 @@ The following ```CLASS``` objects are supported:
 ```region```
 
 ## NAME
+{: #nam}
 
 Specifies the particular object, of type **CLASS** , on which the **ACTION** must be performed. The NAME flags are case-sensitive.
 
@@ -147,6 +158,7 @@ Performs high tracing operations such as adding the routine function and the uti
 Displays maximum verbosity in the output.
 
 ### Exit status
+{: #exit}
 
 **RC_UNKNOWN (Exit value = -1)**
 
@@ -173,6 +185,7 @@ Required input is missing.
 Detected input is incorrect.
 
 ## Examples
+{: #example}
 
 To get help information about the ksyscluster class, enter the following command:
 
@@ -183,8 +196,10 @@ An output that is similar to the following example is displayed:
 ```Available actions for ksyscluster: add delete modify query sync verify```
 
 ### Cluster configuration examples
+{: #clu}
 
 ### To add a KSYS cluster:
+{: #ksysclu}
 
 ```
 ksysmgr add ksyscluster
@@ -214,6 +229,7 @@ KSYS subsystem has started. You can begin adding site definitions, etc
 ```
 
 ### To query the KSYS cluster:
+{: #quer}
 
 ```
 ksysmgr query ksyscluster <ksysclustername>
@@ -231,7 +247,7 @@ KsysState: ksys804p.aus.stglabs.ibm.com:1:Online
 ```
 
 ### To remove a KSYS cluster:
-
+{: #removeksys}
 ```
 ksysmgr [-f] delete ksyscluster <ksysclustername>
 delete => de*, remove, rm, erase
@@ -309,6 +325,7 @@ Peer domain was removed successfully
 ```
 
 ### To modify a KSYS cluster:
+{: #modksys}
 
 ```
 ksysmgr modify ksyscluster <ksysclustername> [glnode=<ksysnode>]
@@ -325,6 +342,7 @@ Site configuration examples
 ```
 
 ### To add a site in the KSYS subsystem:
+{: #subsyste}
 
 ```
 ksysmgr add site <sitename> region=<regionname>
@@ -347,6 +365,7 @@ Site dal10 added successfully
 ```
 
 ### To query the details about a specific sites:
+{: #details}
 
 ```
 ksysmgr query site [<sitename>]
@@ -368,6 +387,7 @@ ActiveWorkgroups: Maheshwari_WG, SivaKrishna_WG, vmrm_dev_01_WG
 By default, the replication type of the site is async.
 
 ### To discover a site:
+{: #site}
 
 ```
 ksysmgr discover site <sitename>
@@ -396,6 +416,7 @@ Site dal10 added successfully
 
 
 ### To delete a site:
+{: #delets}
 
 ```
 ksysmgr delete site <sitename>
@@ -416,6 +437,7 @@ Workgroup configuration example
 ```
 
 ### To move a workgroup from one site to another site, run the following command:
+{: #movework}
 
 ```
 ksysmgr move workgroup <name>
@@ -427,6 +449,7 @@ workgroup => workg*, work_g*, wg
 ```
 
 ### To query the details about a specific workgroup:
+{: #quer}
 
 ```
 ksysmgr query workgroup [ name ]
@@ -461,6 +484,7 @@ Progress: 99.0
 ```
 
 ### To discover and verify all VMs in a specific work group:
+{: #dis}
 
 ```
 ksysmgr discover workgroup <name>
@@ -488,6 +512,7 @@ ksysmgr -t discover wg Maheshwari_WG
 ```
 
 ### To modify a workgroup:
+{: #mow}
 
 ```
 ksysmgr modify workgroup <name>
@@ -502,6 +527,7 @@ workgroup => workg*, work_g*, wg
 ```
 
 ### To resync a workgroup:
+{: #resyn}
 
 ```
 ksysmgr [-f] resync workgroup <workgroup_name>
@@ -521,6 +547,7 @@ Workgroup IBMiWG resync has started
 ```
 
 ### LPAR configuration examples
+{: #lpar}
 
 To include or exclude a specific virtual machine from the KSYS configuration:
 
@@ -554,6 +581,7 @@ The preceding command syntax can be used for targeted VM management. The exclude
 Notes: Including or excluding a virtual machine, you must run the discovery and verification commands to rediscover the resources and validate the modified configuration setting.
 
 ### To update the priority of virtual machines:
+{: #provirt}
 
 ```
 ksysmgr modify vm <vmname>
@@ -564,8 +592,10 @@ Note: The display_all option can be used before performing the first discovery o
 ```
 
 ## Discovery and verification examples
+{: #disvery}
 
 ### To discover the resources in a site:
+{: #resdis}
 
 ```
 ksysmgr discover site <sitename>
@@ -600,6 +630,7 @@ ksysmgr -t discover site us-east
 ```
 
 ### Script configuration examples
+{: #scricon}
 
 To add a script for automatic execution before or after the discovery and verification operations:
 ```
@@ -621,8 +652,10 @@ Note: The pre_verify and post_verify scripts can be run only at site level.
 ```
 
 ## Events query examples
+{: #abv}
 
 ### To query the event
+{: #bvc}
 
 ```
 ksysmgr query event [type=<error|warning|info>]
@@ -821,6 +854,7 @@ Note: The value in the sa_ping_timer attribute and the hmc_ping_timer attribute 
 ```
 
 ### Quick discovery example
+{: #qwe}
 
 To enable or disable the quick-discovery feature:
 ```
@@ -833,8 +867,10 @@ KSYS quick_discovery_interval has been updated
 ```
 
 ## Notification configuration examples
+{: #asf}
 
 ### To add an email or SMS notification for a specific user:
+{: #ghj}
 
 ```
 ksysmgr add notify
@@ -854,6 +890,7 @@ ksysmgr add notify script=/surendar/a.sh event=DISCOVERY_STARTED successfully ad
 ```
 
 ### To modify an email address or SMS number for a specific user:
+{: #memail}
 
 ```
 ksysmgr modify notify
@@ -883,6 +920,7 @@ Event: DISCOVERY_STARTED
 ```
 
 ### To query all the registered contact details:
+{: #regis}
 
 ```
 ksysmgr query notify [ contact | script ]
@@ -903,6 +941,7 @@ Event: DISCOVERY_STARTED
 ```
 
 ### To delete all the contact information for a specific user:
+{: #delet}
 
 ```
 ksysmgr delete notify
@@ -922,6 +961,7 @@ successfully deleted user info
 ```
 
 ### To add a script for a predefined set of notifications and subsequent actions for a specific event:
+{: #scrion}
 
 ```
 ksysmgr add notify script=full_path_script event=event_name
@@ -933,12 +973,14 @@ ksysmgr add notify script=/surendar/a.sh event=DISCOVERY_STARTED successfully ad
 ```
 
 ### To modify a script:
+{: #rfvn}
 
 ```
 ksysmgr modify notify oldscript=old_file_name newscript=new_file_name
 ```
 
 ### To remove a script:
+{: #ujm}
 
 ```
 ksysmgr delete notify
@@ -952,14 +994,18 @@ Also, User can give Only script name to remove notify for all events listed with
 ```
 
 ### To query a script:
+{: ikm}
 
 ```
 ksysmgr query notify script
 ```
 
 ## System-wide attributes configuration
+{: #dfg}
+
 
 ### To query details about system-wide attributes:
+{: #opi}
 
 ```
 ksysmgr query system [ properties ]
@@ -996,6 +1042,7 @@ User Scripts for VM: None
 ```
 
 ### To enable the KSYS subsystem to rediscover the resources at noon every day automatically:
+{: #asd}
 
 ```
 ksysmgr modify system
@@ -1065,20 +1112,24 @@ KSYS custom_script_timeout has been updated
 ```
 
 ### To change the notification level of your system to receive notification for all critical errors and warnings of all events:
+{: #zsx}
 
 ```
 ksysmgr modify system notification_level=medium
 ```
 
 ### To change the duplicate event processing option to receive notification for all events, even if the events are duplicated:
+{: #xdr}
 
 ```
 ksysmgr modify system dup_event_processing=no
 ```
 
 ## Disaster recovery operation examples
+{: #tgf}
 
 ### To initiate a site-switch operation:
+{: #isw}
 
 ```
 ksysmgr [-f] move site
@@ -1094,8 +1145,11 @@ Note: dr_type=planned is the default
 If you do not specify the cleanup attribute, for a planned disaster recovery operation, the KSYS subsystem automatically cleans up the source site from where the site-switch operation was initiated.
 
 ## Snapshot examples
+{: #snpe}
 
 ### To save a snapshot of the KSYS cluster configuration and resources:
+{: #save}
+
 
 ```
 ksysmgr add snapshot
@@ -1114,6 +1168,8 @@ Successfully created a configuration snapshot: /var/ksys/snapshots/snap.xml_DETA
 ```
 
 ### To view a snapshot, use the following command syntax:
+{: #visnuse}
+
 
 ```
 ksysmgr query snapshot
@@ -1138,6 +1194,7 @@ Type: IBM_PVS_DR
 ```
 
 ### To restore the configuration data on a KSYS node:
+{: #data}
 
 ```
 ksysmgr restore snapshot
@@ -1174,8 +1231,10 @@ INFO: Restore completed successfully
 This command decompresses and unarchives the snapshot file, and then applies the configuration settings to the KSYS node.
 
 ## VM auto discovery
+{: #disauto}
 
 ### To check whether the VM auto-discovery property is enabled or disabled to manage discovered resources across the site automatically, run the following command:
+{: #siteauto}
 
 ```
 ksysmgr modify system auto_discovery_time=12:39
@@ -1188,14 +1247,17 @@ KSYS auto_discovery_time has been updated
 ```
 
 ## Disk group status example
+{: #groupstat}
 
 ### To query status of a specific disk group, run the following command:
+{: #speci}
 
 ```
 ksysmgr query disk_group disk_group_name status=yes
 ```
 
 ### To query status of all disk groups, run the following command:
+{: #alldis}
 
 ```
 ksysmgr query disk_group status=yes
@@ -1210,8 +1272,10 @@ Name: VMRDG_DR_Site1 Site: Site1 Hosts: <Hosts> Storages: saremote_emc CG: CG1 S
 >**Note**: The SVC storage agent, EMC storage agent, Hitachi storage agent, and EMC Unity storage agent supports the status attribute with the yes option, that is status=yes.
 
 ## Viewing disk details
+{: #diskdetail}
 
 ### To view the details of a disk, run the following command:
+{: #runfollow}
 
 ```
 ksysmgr query disk
@@ -1226,8 +1290,10 @@ ksysmgr q disk vm=Test_sivar1 CGName: rccg-a70e-d249f CGState: consistent_copyin
 ```
 
 ## KSYS spooling
+{: #spooling}
 
 ### To query a KSYS spooling:
+{: #query}
 
 ```
 ksysmgr query system [ properties ]
@@ -1265,6 +1331,7 @@ User Scripts for VM: None
 ```
 
 ### To enable KSYS spooling:
+{: #to}
 
 ```
 ksysmgr modify system ksys_spooling=enable
@@ -1273,6 +1340,7 @@ Note: If you enable the ksys_spooling and the spool_dest_dir value is not set fo
 ```
 
 ### To modify the KSYS spool_dir_max_size:
+{: #dirmix}
 
 ```
 ksysmgr modify system spool_dir_max_size=<value>
@@ -1291,6 +1359,7 @@ trace_file_size: 25 MB ksys_spooling: enable spool_dest_dir: /S1 spool_dir_max_s
 >**Note**: You will get an error message if the spool_dir_max_size value is greater than 10240 MB (10 GB).
 
 ### To modify the ksys_spooling, trace_file_size, and spool_dest_dir:
+{: #trace}
 
 ```
 ksysmgr modify system trace_file_size=<value> ksys_spooling=<enable/disable> spool_dest_dir=<path>
@@ -1303,8 +1372,10 @@ vlanmap: Not currently set vswitchmap: Not currently set drvlanmap: Not currentl
 ```
 
 ## Notification configuration and query example
+{: #quexconf}
 
 ### To add a notification, run the following command:
+{: #vqwe}
 
 ```
 ksysmgr add notify 
@@ -1325,6 +1396,7 @@ Successfully added script for event
 ```
 
 ### To query notification details, run the following command:
+{: #commae}
 
 ```
 ksysmgr query notify [ contact | script ]
@@ -1345,6 +1417,7 @@ Event: DISCOVERY_STARTED
 ```
 
 ### To delete a notification, run the following command:
+{: #todelete}
 
 ```
 ksysmgr delete notify
@@ -1358,8 +1431,10 @@ Successfully deleted user info.
 ```
 
 ## Snapshot configuration example
+{: #snapshot}
 
 ### To add a snapshot, run the following command:
+{: #visnuserun}
 
 ```
 ksysmgr add snapshot 
@@ -1378,8 +1453,10 @@ Successfully created a configuration snapshot: /var/ksys/snapshots/snap.xml_DETA
 ```
 
 ## Workspace pairing and refreshing example
+{: #referesh}
 
 ### To pair a workspace, run the following command:
+{: #pairs}
 
 ```
 ksysmgr pair workspace <home_workspacename | ID>
@@ -1393,6 +1470,7 @@ Workspace VMRM-Dal10 was paired with VMRM-wdc
 ```
 
 ## To refresh a workspace, run the following command:
+{: #refereshert}
 
 ```
 ksysmgr refresh workspace <workspacename>
@@ -1408,8 +1486,10 @@ Refresh workspaces to update Networks and VMs list completed.
 ```
 
 ## Network pairing example
+{: #netpair}
 
 ### To pair a network, run the following command:
+{: #runfollow}
 
 ```
 ksysmgr pair network <source_network_name>
@@ -1429,8 +1509,10 @@ Network VMRM-Dal10-Network01 was paired with vmrm-wdc-network01
 ```
 
 ## Site discovery example
+{: #disco}
 
 ### To discover a site, run the following command:
+{: #sitedis}
 
 ```
 ksysmgr discover site <sitename>
@@ -1450,8 +1532,10 @@ ksysmgr -t discover site us-east
 ```
 
 ## Workgroup discovery and resync example
+{: #wdr}
 
 ### To discover a workgroup, run the following command:
+{: #dwr}
 
 ```
 ksysmgr discover workgroup <name>
@@ -1470,6 +1554,7 @@ ksysmgr -t discover wg Maheshwari_WG
 ```
 
 ### To resync a workgroup, run the following command:
+{: #rwr}
 
 ```
 ksysmgr [-f] resync workgroup <workgroup_name>
@@ -1485,8 +1570,10 @@ Resync has completed for Workgroup IBMiWG
 ```
 
 ## System query example
+{: #sqe}
 
 ### To query the system, run the following command:
+{: #qsre}
 
 ```
 ksysmgr query system [ properties ]
@@ -1505,8 +1592,11 @@ api_key: #####1543D972B94F...
 ```
 
 ## VM query and refresh example
+{: #qre}
+
 
 ### To query a virtual machine, run the following command:
+{: #qvm}
 
 ```
 ksysmgr query vm [vmname1|lparuuid1...]
@@ -1527,6 +1617,7 @@ IPAddresses: 10.160.0.64
 ```
 
 ### To refresh a virtual machine, run the following command:
+{: #rvm}
 
 ```
 ksysmgr refresh vm <vmname>
@@ -1542,8 +1633,10 @@ Refresh VM info completed successfully.
 ```
 
 ## Event query example
+{: #eqe}
 
 ### To query events, run the following command:
+{: #rfc}
 
 ```
 ksysmgr query event [type=<error|warning|info>]
@@ -1561,8 +1654,10 @@ Description: Discovery has failed.
 ```
 
 ## Script deletion example
+{: #sde}
 
 ### To delete a script, run the following command:
+{: #dsr}
 
 ```
 ksysmgr delete script entity=<workgroup|site|vm>
@@ -1576,8 +1671,4 @@ An output that is similar to the following example is displayed:
 ```
 ksysmgr delete script entity=site script_name=pre_discovery
 KSYS site has been updated
-<<<<<<< Updated upstream
 ```
-=======
-```
->>>>>>> Stashed changes
