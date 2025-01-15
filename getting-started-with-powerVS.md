@@ -1,8 +1,13 @@
 ---
-front_matter_title: "Getting started"
-lastupdated: "2025-01-14"
-copyright: "2025"
+
+copyright:
+  years: 2025
+lastupdated: "2025-01-15"
+
 subcollection: dr-automation
+
+keywords: getting started
+
 ---
 
 # Getting started with IBM {{site.data.keyword.DR_full_notm}}
