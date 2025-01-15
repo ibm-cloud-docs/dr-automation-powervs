@@ -2,7 +2,7 @@
   "version": 2,
   "title": "Power Virtual Server DR Automation",
   "introduction": "Power Virtual Server DR Automation is a cloud solution for managing your virtual servers.",
-  "product_page": "https://ibm.com/cloud/solution-page",
+  "product_page": "https://power-dra.cloud.ibm.com/",
   "console_page": "/relative/console/path",
   "section_topics": {
     "links": [
