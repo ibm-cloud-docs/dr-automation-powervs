@@ -1,21 +1,19 @@
 #  Name your file `toc.yaml`
 #  Make sure you include all nav file coding requirements, as defined in https://test.cloud.ibm.com/docs-internal/writing?topic=writing-code-nav
 #  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
+---
 toc:
   properties:
     subcollection: dr-automation-powervs
-    href: /docs/dr-automation-powervs
     path: dr-automation-powervs
+    href: /docs/dr-automation-powervs
+    service-name: service-name # Replace
     audience: solution
-    category: compute
-    content-type: solution
-    industry: Software and platform applications
-    use-case: Cloud
-    description: Power Virtual Server DR Automation is a cloud solution for managing your virtual servers.
-    label: Power Virtual Server DR Automation
+    category: virtualservers
+    label: Power Virtual Server DR Automations
   entries:
   - navgroup:
-      id: overview
+      id: learn
       topics:
       - getting-started-with-powerVS.md
       - release.md
