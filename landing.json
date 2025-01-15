@@ -53,11 +53,11 @@
     "tiles": [
       {
         "date": "31 Janunary 2025",
-        "title": "You can now automate complex recovery workflows through the improved GUI interface, reducing manual intervention and minimizing Recovery Time Objectives (RTO)"
+        "title": "You can now automate complex recovery workflows through the improved GUI interface, reducing manual intervention and minimizing Recovery Time Objectives (RTO)."
       },
       {
         "date": "31 January 2025",
-        "title": "The DR Orchestrator (KSYS) now supports high availability in additional regions, enabling continuous operations during failover"
+        "title": "The DR Orchestrator (KSYS) now supports high availability in additional regions, enabling continuous operations during failover."
       },
       {
         "date": "31 January 2025",
