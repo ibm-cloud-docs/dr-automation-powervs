@@ -1,18 +1,26 @@
 ---
-front_matter_title: "Architecture"
-lastupdated: "2024-10-23"
-copyright: "2023, 2024"
+copyright:
+  years: 2025
+lastupdated: "2025-01-15"
+
 subcollection: dr-automation
+
+keywords: architecture
+
 ---
+
 # Architecture for {{site.data.keyword.DR_full}}
+{: #arch} 
 
 {{site.data.keyword.DR_full}} is a robust disaster recovery solution specifically designed for IBM data centers, distinct from general IBM Cloud resources. This solution leverages dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.
+{:shortdesc: .shortdesc}
 
 The IBM Cloud Service Framework facilitates seamless deployment and management of {{site.data.keyword.DR_full_notm}} by integrating key components such as the Service Broker, Resource Management Controller (RMC), and IBM Cloud Catalog. This framework streamlines the DR setup process, enhances security, and ensures compliance, delivering a comprehensive DR solution within the IBM Cloud infrastructure.
 
 Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} architecture, features, hardware requirements, and network configurations.
 
 ## Table of contents
+{: #toc} 
 
 - [High-Level Architecture](#high-level-architecture)
 - [Key Features](#key-features)
@@ -21,9 +29,9 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 - [Supported Storage Tiers](#supported-storage-tiers)
 - [Network Configurations](#network-configurations)
 
----
 
 ## High-Level architecture
+{: #high} 
 
 The **{{site.data.keyword.DR_full_notm}}** system operates within IBM data centers, isolated from the core IBM Cloud environment. Utilizing dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
 
@@ -37,48 +45,60 @@ This setup provides a secure, seamless DR solution that integrates with your pro
 {: caption="DR Automation Architecture" caption-side="bottom"}
 
 ## DR Service broker architecture
+{: #service broker} 
 
 The **DR Service Broker** within IBM Cloud is central to provisioning and managing DR orchestration for PowerVS. Operating as a dedicated component, it handles critical functions, including billing, resource management, and service orchestration.
 
 ### Service provisioning
+{: #serv pro} 
 
 The Service Broker deploys the DR Orchestrator (KSYS) VM within the PowerVS workspace, utilizing PowerVS APIs to establish and manage DR operations. This process enables seamless integration of DR orchestration capabilities specific to each user account.
 
 ### Connectivity and communication
+{: #Conn} 
 
 Through IBM Cloud’s VPN and VPC services, the Service Broker communicates securely with the DR Orchestrator. Connections from external clients or users are routed through IBM’s secure networking layers to ensure high availability and low latency during DR operations.
 
 ### Resource management and billing integration
+{: #resource} 
 
 The Service Broker updates DR metrics to IBM’s billing system (BSS) based on individual instances, providing granular billing data per customer. It ensures that usage is reported accurately for each instance and maintains a high level of automation in resource accounting.
 
 ### Interface accessibility
+{: #inter} 
 
 The {{site.data.keyword.DR_short}} Service Broker, accessible via the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with IBM’s broader catalog for resource provisioning.
 
 ## DR Orchestrator (KSYS) architecture
+{: #ksys arch} 
 
 The **DR Orchestrator (KSYS)**, acting as the operational core within user accounts, is critical in executing and managing DR workflows, specifically for PowerVS instances. This component manages the deployment, configuration, and operation of VMs required during DR.
 
 ### VM Orchestration and workflow management
+{: #vmorch}
 
 KSYS brings VMs online in the required sequence during a disaster, minimizing RTO and RPO. This workflow automation ensures systematic failover and recovery, essential for maintaining business continuity.
 
 ### Custom metrics and monitoring
+{: #custom}
 
 KSYS regularly updates custom DR metrics, securely transmitting these to the Service Broker using IBM’s API services and adhering to authentication protocols. This allows ongoing monitoring and helps identify and address anomalies in real-time.
 
 ### Provisioning and configuration management
+{: #provision}
 
 The Service Broker’s provisioning capabilities allow KSYS to be configured with essential user inputs and monitored to ensure alignment with the recovery environment. Additionally, it offers a GUI URL accessible through IBM’s catalog, enabling users to monitor and manage configurations in real-time.
 
 ### High availability (Optional)
+{: #ha}
 
 For enhanced resilience, KSYS supports a High Availability (HA) setup, ensuring continuous operation and reducing single points of failure.
 
 ## Key features
+{: #key}
 
 ### Simplified disaster recovery management
+{: #simplify}
 
 {{site.data.keyword.DR_short}} provides a single interface to manage DR processes for IBM PowerVS environments. Key features include:
 
@@ -92,13 +112,14 @@ Schedule DR operations and monitor the health and status of DR sites.
 Define recovery priorities and configurations for different VMs or applications.
 
 ### Flexible billing model
+{: #flex}
 
 {{site.data.keyword.DR_short}} follows a usage-based billing model, with flexible options based on the selected resources and configurations.
 The IBM Cloud Service Framework supports accurate billing and comprehensive reporting, ensuring customers have clear visibility into DR-related costs.
 
----
 
 ## IBM cloud service framework
+{: #cloudservice}
 
 The **IBM Cloud Service Framework** enhances {{site.data.keyword.DR_short}} by enabling seamless service deployment and management. Key components include:
 
@@ -116,9 +137,9 @@ This includes IBM Cloud services like Activity Tracker (for monitoring) Cloud Ob
 
 This integrated framework provides a secure, compliant, and efficient DR solution that aligns closely with the high-level architecture for {{site.data.keyword.DR_short}} in IBM data centers.
 
----
 
 ## Hardware specifications
+{: #hs}
 
 IBM Power servers supported by {{site.data.keyword.DR_full_notm}} include:
 
@@ -130,6 +151,7 @@ IBM Power servers supported by {{site.data.keyword.DR_full_notm}} include:
 For more details, refer to the specific data sheets and hardware overview table.
 
 ## Software requirment
+{: #sr}
 
 - The Orchestrator(KSYS) LPAR requires a minimum of 1 core CPU and 8 GB of memory, though larger environments with over 100 VMs may require more resources.
 - The KSYS logical partition must run IBM® AIX® 7.3 with Technology Level 1 Service Pack 1 (7300-01-01), or later.
@@ -137,10 +159,12 @@ For more details, refer to the specific data sheets and hardware overview table.
   -   AIX Version 7.3, and later
 
 ## API key
+{: #apikey}
 
 In {{site.data.keyword.DR_short}}, user can set up cross-account API keys to allow secure and restricted access between different IBM Cloud accounts. Cross-account API keys enable scenarios where resources or services in one account need to interact with those in another account, ensuring proper identity and access management with [IBM cloud guidelines](https://cloud.ibm.com/docs/account?topic=account-create-trusted-profile&interface=ui).
 
 ## Supported storage tiers
+{: #sst}
 
 {{site.data.keyword.DR_short}} offers storage with configurable IOPS levels to meet diverse DR requirements:
 
@@ -153,16 +177,18 @@ In {{site.data.keyword.DR_short}}, user can set up cross-account API keys to all
 
 With the IBM Cloud Service Framework, storage is allocated based on deployment needs, ensuring efficient usage of resources and seamless management.
 
----
 
 ## Network configurations
+{: #ns}
 
 ### Public network
+{: #pn}
 
 {{site.data.keyword.DR_short}} offers public network connectivity for seamless access and configuration.
 IBM configures the network environment for secure public connections, including firewall protection and support for SSH, HTTPS, and IBM i terminal emulation.
 
 ### Private network
+{: #privatenet}
 
 A private network setup is recommended for secure communication between PowerVS instances in primary and DR sites. This configuration supports:
 
@@ -172,13 +198,10 @@ Enable access to IBM Cloud Bare Metal Servers, Kubernetes containers, and Cloud 
 - **Direct link connect**:
 Use Direct Link Connect for secure, low-latency communication between DR environments.
 
----
-
 ## Setting Up {{site.data.keyword.DR_short}}
+{: #setup}
 
 1. **Create IBM Cloud Account**: Log in to your IBM Cloud account.
 2. **Access {{site.data.keyword.DR_full_notm}} in IBM Catalog**: Locate the {{site.data.keyword.DR_full_notm}} tile.
 3. **Configure Resources**: Set up storage, compute, and network resources according to DR needs.
 4. **Monitor and Test**: Schedule DR tests and monitor system health.
-
---

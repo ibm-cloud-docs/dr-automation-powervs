@@ -1,9 +1,13 @@
 ---
-front_matter_title: "Release note"
+
+copyright:
+  years: 2025
 lastupdated: "2025-01-15"
-copyright: "2025"
+
 subcollection: dr-automation
-navtitle: "Release notes"
+
+keywords: release notes
+
 ---
 
 # Release notes
