@@ -1,9 +1,15 @@
 ---
-front_matter_title: "Activity tracker events"
+
+copyright:
+  years: 2025
 lastupdated: "2025-01-15"
-copyright: "2025"
+
 subcollection: dr-automation
+
+keywords: events
+
 ---
+
 # Activity tracker events
 {: #ate} 
 
