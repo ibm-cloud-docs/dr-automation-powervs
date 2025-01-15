@@ -14,9 +14,4 @@ subcollection: dr-automation
 3. Before unmanaging a disk in the KSYS environment, ensure the VM configuration is refreshed to include any newly added volumes. Run a discovery operation to update KSYS with the latest resource details linked to the VM. If discovery is not performed before unmanaging, the following error may occur:
 
     Volume does not belong to the specified Workgroup. Query the resource class to view the configured resources.
-
-<<<<<<< Updated upstream
     >Note: To avoid above error run command `ksysmgr refresh vm <vmname>`
-=======
-    >Note: To avoid above error run command `ksysmgr refresh vm <vmname>`
->>>>>>> Stashed changes
