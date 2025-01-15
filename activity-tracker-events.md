@@ -32,49 +32,37 @@ This document provides details on various events relevant to {{site.data.keyword
 
 This document provides details of the key events and their respective API operations in the **{{site.data.keyword.DR_short}} Service**. Use the given screenshots as a reference for style and formatting.
 
-## 1. cloud-instance
+## cloud-instance
 
 | Action                                    | Description                                             |
 |-------------------------------------------|---------------------------------------------------------|
-| `power-dr-automation.cloud-instance.modify` | Modify an existing service instance for DR automation.   |
+| `power-dr-automation.modify` | Modify an existing service instance for DR automation.   |
 {: caption="cloud-instance" caption-side="bottom"}
 
-## 2. Validate-dr
 
-| Action                                   | Description                                              |
-|------------------------------------------|----------------------------------------------------------|
-| `power-dr-automation.validate-dr.read`   | Fetch all DR validation events from a specified timestamp. |
-{: caption="Validate-dr" caption-side="bottom"}
-
-## 3. Region
-
-| Action                                | Description                                                 |
-|---------------------------------------|-------------------------------------------------------------|
-| `power-dr-automation.region.read`     | Retrieve tunable settings for DR automation by region ID.    |
-{: caption="Region" caption-side="bottom"}
-
-## 4. dr-operation
+## dr-operation
 
 | Action                                   | Description                                           |
 |------------------------------------------|-------------------------------------------------------|
 | `power-dr-automation.dr-operation.read` | Create and manage a DR service instance.             |
 {: caption="dr-operation" caption-side="bottom"}
 
-## 5. dr-summary
+## dr-summary
 
 | Action                                   | Description                                       |
 |------------------------------------------|---------------------------------------------------|
 | `power-dr-automation.dr-summary.read`   | Manage and access KSYS metering data.            |
 {: caption="dr-summary" caption-side="bottom"}
 
-## 6. manage-dr
+## manage-dr
 
 | Action                                   | Description                                                |
 |------------------------------------------|------------------------------------------------------------|
 | `power-dr-automation.manage-dr.read`    | Add a new tenant to the DR automation system.              |
+| `power-dr-automation.manage-dr.modify` | Modify an existing service instance for DR automation.   |
 {: caption="manage-dr" caption-side="bottom"}
 
-## 7. event
+## Event
 
 | Action                                   | Description                                                |
 |------------------------------------------|------------------------------------------------------------|
@@ -82,12 +70,12 @@ This document provides details of the key events and their respective API operat
 | `power-dr-automation.event.read`        | Access specific event details for auditing and troubleshooting. |
 {: caption="event" caption-side="bottom"}
 
-## 8. KSYS
+## Orchestrator(KSYS)
 
 | Action                                   | Description                                                |
 |------------------------------------------|------------------------------------------------------------|
-| `power-dr-automation.ksys.put`          | Add a new KSYS instance to the DR automation system.       |
-| `power-dr-automation.ksys.read`         | Retrieve information about existing KSYS instances.        |
+| `power-dr-automation.orchestrator.put`          | Add a new Orchestrator instance to the DR automation system.       |
+| `power-dr-automation.orchestrator.read`         | Retrieve information about existing Orchestrator instances.        |
 {: caption="KSYS" caption-side="bottom"}
 
 ## Viewing {{site.data.keyword.DR_short}} events
