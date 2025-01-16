@@ -5,11 +5,11 @@ lastupdated: "2025-01-16"
 
 subcollection: dr-automation
 
-keywords: faq
+keywords: faqs
 
 ---
 # FAQs
-{: #gdpr}
+{: #faqs}
 
 The FAQ section provides concise answers to common questions about {{site.data.keyword.DR_full}} for PowerVS, covering its features, billing model, components, deployment across regions, prerequisites, monitoring tools, security, and more. It aims to help users understand and efficiently use DR Automation for disaster recovery in IBM Power Virtual Server environments.
 {:shortdesc: .shortdesc}

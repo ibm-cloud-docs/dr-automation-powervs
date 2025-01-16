@@ -100,8 +100,7 @@ this provides a quick overview of your configured resources and estimated costs.
 ## Exporting the estimate
 {: #est}
 
-
-  1. Click Download to export the saved estimate in **XLSX**, **CSV**, or **PDF** format.
-  2. This feature allows you to keep a record of your estimate and share it with relevant stakeholders for planning and budgeting.
+1. Click Download to export the saved estimate in **XLSX**, **CSV**, or **PDF** format.
+2. This feature allows you to keep a record of your estimate and share it with relevant stakeholders for planning and budgeting.
 
 This process ensures that customers have a clear understanding of DR Automation costs on Power Virtual Server, providing transparency and control over anticipated expenses.
