@@ -8,8 +8,9 @@ subcollection: dr-automation
 keywords: troubleshooting, API key, DR automation
 
 ---
+# Troubleshooting
 
-# Why can't I rotate the API key?  
+## Why can't I rotate the API key?  
 {: #rotate-api-key}  
 {: troubleshoot}  
 
@@ -27,7 +28,7 @@ The API key might be expired or improperly configured, leading to a failure in r
 4. Click **Regenerate** to create a new API key.  
 5. Save the changes to securely apply the new key.  
 
-# How does the service work?  
+## How does the service work?  
 {: #how-service-works}  
 {: troubleshoot}  
 
@@ -45,7 +46,7 @@ The architecture and components of the service may not be fully understood.
 - **Global Replication Services (GRS)** facilitates data replication between primary and backup sites.  
 - Users can configure and monitor the DR environment through the **IBM Cloud GUI** and manage VMs via the **VM Recovery Manager HA/DR interface**.  
 
-# Why am I unable to perform IAM actions with the service?  
+## Why am I unable to perform IAM actions with the service?  
 {: #iam-actions}  
 {: troubleshoot}  
 
@@ -63,7 +64,7 @@ This issue occurs due to insufficient permissions or improper configurations in 
 4. Simulate an IAM action (e.g., assigning a role) and check logs in the **Activity Tracker** for details.  
 5. If issues persist, rotate the API key in the **Policies** tab by clicking **Regenerate** and save the changes.  
 
-# Why is there an error retrieving the access token during provisioning?  
+## Why is there an error retrieving the access token during provisioning?  
 {: #access-token-error}  
 {: troubleshoot}  
 
@@ -83,7 +84,7 @@ The service is unable to authenticate due to an expired or invalid API key, or i
 5. Confirm that IAM roles and permissions for the DR automation service are correctly assigned.  
 6. Retry the provisioning operation and monitor the logs for success.  
 
-# Why does the "orchestrator password format is incorrect" error occur?  
+## Why does the "orchestrator password format is incorrect" error occur?  
 {: #password-format-error}  
 {: troubleshoot}  
 
@@ -104,7 +105,7 @@ The password provided does not comply with the security standards required by th
    - At least one number and one special character (e.g., @, #, $).  
 5. Save the changes and retry the update operation.  
 
-# Why am I unable to delete the provisioned disaster recovery service?  
+## Why am I unable to delete the provisioned disaster recovery service?  
 {: #delete-service-error}  
 {: troubleshoot}  
 
