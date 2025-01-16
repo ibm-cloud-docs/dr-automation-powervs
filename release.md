@@ -17,13 +17,13 @@ keywords: release
 {: #subcollection-jan0124}
 {: release-note}
  
-- The DR Orchestrator (KSYS) now supports high availability in additional regions, enabling continuous operations during failover. For details, see [DR Orchestrator High Availability](#ha).
+- The DR Orchestrator (KSYS) now supports high availability in additional regions, enabling continuous operations during failover. For details, see [DR Orchestrator High Availability](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch#ksys-arch).
 
-- Virtual Private Cloud (VPC) configurations and private endpoint support have been enhanced, ensuring better data security and regulatory compliance. For details, see [VPC Configurations](#vpc).
+- Virtual Private Cloud (VPC) configurations and private endpoint support have been enhanced, ensuring better data security and regulatory compliance. For details, see [Data isolation](/docs/dr-automation-powervs?topic=dr-automation-powervs-di).
 
-- You can now automate complex recovery workflows through the improved GUI interface, reducing manual intervention and minimizing Recovery Time Objectives (RTO). For details, see [GUI Workflow Automation](#cinstance).
+- You can now automate complex recovery workflows through the improved GUI interface, reducing manual intervention and minimizing Recovery Time Objectives (RTO). For details, see [GUI Workflow Automation](/docs/dr-automation-powervs?topic=dr-automation-powervs-cinstance).
 
-- DR Automation now supports IBM Power E1080 (9080-HEX) systems with up to 64 TB of memory, allowing for recovery of large-scale workloads. For details, see [Supported Systems](#hs).
+- DR Automation now supports IBM Power E1080 (9080-HEX) systems with up to 64 TB of memory, allowing for recovery of large-scale workloads. For details, see [Hardware specifications](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch).
 
 - The external orchestrator GUI has been updated with new navigation and monitoring features for simplified DR setup and operation. For details, see [Orchestrator GUI Updates](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter).
 
