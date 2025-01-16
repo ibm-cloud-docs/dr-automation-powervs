@@ -1,17 +1,24 @@
 ---
-front_matter_title: "Monitoring vm status"
-lastupdated: "2024-10-23"
-copyright: "2023, 2024"
+copyright:
+  years: 2025
+lastupdated: "2025-01-16"
+
 subcollection: dr-automation
+
+keywords: monitor status
+
 ---
 
 # Monitoring vm status
+{: #moni-vm-stat}
 
 When creating one or multiple VMs in **DR Automation for Power Virtual Server** (PowerVS), the process includes various stages indicating the configuration, provisioning, and status of the virtual machines. Each status provides insights into the progress and highlights any potential issues that may arise during the VM creation process.
+{:shortdesc: .shortdesc}
 
 By following the outlined statuses below, you can effectively monitor the progress of your VM creation and ensure it aligns with your deployment goals.
 
 ## Statuses for creating a single VM
+{: #moni-vm-stat-creat}
 
 - **Configure Status**  
   *The service instance is in the configuration phase.*  
@@ -43,7 +50,8 @@ By following the outlined statuses below, you can effectively monitor the progre
   **Status**: `active`  
   **Details**: The VM is now ready for use.
 
-### Statuses for Creating Multiple VMs
+## Statuses for creating multiple VMs
+{: #moni-vm-stat-sing}
 
 - **Configure Status**  
   *The service instance is in the configuration phase.*  
@@ -80,7 +88,8 @@ By following the outlined statuses below, you can effectively monitor the progre
   **Status**: `active`  
   **Details**: The multiple VMs are now ready for use.
 
-### Failure status
+## Failure status
+{: #moni-vm-stat-fail}
 
 - **Provision Failed During Configuration**  
   *The configuration process has failed.*  

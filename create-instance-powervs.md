@@ -1,8 +1,12 @@
 ---
-front_matter_title: "Create an instance"
-lastupdated: "2024-10-23"
-copyright: "2023, 2024"
+copyright:
+  years: 2025
+lastupdated: "2025-01-16"
+
 subcollection: dr-automation
+
+keywords: iam
+
 ---
 
 # Create an instance for {{site.data.keyword.DR_full_notm}}
