@@ -22,7 +22,9 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 ## Table of contents
 {: #toc} 
 
-- [High-Level Architecture](#high) 
+- [High-Level Architecture](#high)
+- [DR Service broker architecture](#service-broker)
+- [DR Orchestrator (KSYS) architecture](#ksys-arch)
 - [Key Features](#key)
 - [IBM Cloud Service Framework](#cloudservice)
 - [Hardware Specifications](#hs)
@@ -45,7 +47,7 @@ This setup provides a secure, seamless DR solution that integrates with your pro
 {: caption="DR Automation Architecture" caption-side="bottom"}
 
 ## DR Service broker architecture
-{: #service broker} 
+{: #service-broker} 
 
 The **DR Service Broker** within IBM Cloud is central to provisioning and managing DR orchestration for PowerVS. Operating as a dedicated component, it handles critical functions, including billing, resource management, and service orchestration.
 
@@ -70,7 +72,7 @@ The Service Broker updates DR metrics to IBM’s billing system (BSS) based on i
 The {{site.data.keyword.DR_short}} Service Broker, accessible via the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with IBM’s broader catalog for resource provisioning.
 
 ## DR Orchestrator (KSYS) architecture
-{: #ksys arch} 
+{: #ksys-arch} 
 
 The **DR Orchestrator (KSYS)**, acting as the operational core within user accounts, is critical in executing and managing DR workflows, specifically for PowerVS instances. This component manages the deployment, configuration, and operation of VMs required during DR.
 
