@@ -1,14 +1,17 @@
 ---
-
 copyright:
   years: 2025
 lastupdated: "2025-01-16"
 
 subcollection: dr-automation
 
-keywords: release
+"section_updates": {
+    "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
+}
 
+keywords: release
 ---
+
 
 # Release notes
 {: #relnote}
