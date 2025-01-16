@@ -13,6 +13,7 @@ keywords: monitor
 {: monitor met-ibm}
 
 Create an IBM Cloud Monitoring instance and enable the platform metrics to capture various performance metrics.
+{:shortdesc: .shortdesc}
 
 ## Steps to Create an IBM cloud monitoring instance
 {: instance}

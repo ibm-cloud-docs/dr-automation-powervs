@@ -2,11 +2,11 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-15"
+lastupdated: "2025-01-16"
 
 subcollection: dr-automation
 
-keywords: release notes
+keywords: release
 
 ---
 

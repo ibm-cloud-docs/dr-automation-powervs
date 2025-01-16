@@ -59,13 +59,13 @@ This document provides details of the key events and their respective API operat
 | `power-dr-automation.dr-summary.read`   | Manage and access KSYS metering data.            |
 {: caption="dr-summary" caption-side="bottom"}
 
-## manage-dr
+## Orchestration-settings
 {: #manage}
 
 | Action                                   | Description                                                |
 |------------------------------------------|------------------------------------------------------------|
-| `power-dr-automation.manage-dr.read`    | Add a new tenant to the DR automation system.              |
-| `power-dr-automation.manage-dr.modify` | Modify an existing service instance for DR automation.   |
+| `power-dr-automation.orchestration-settings.read`    | Read th DR automation instances.              |
+| `power-dr-automation.orchestration-settings.config` | configure the service instance for DR automation.   |
 {: caption="manage-dr" caption-side="bottom"}
 
 ## Event
@@ -82,8 +82,8 @@ This document provides details of the key events and their respective API operat
 
 | Action                                   | Description                                                |
 |------------------------------------------|------------------------------------------------------------|
-| `power-dr-automation.orchestrator.put`          | Add a new Orchestrator instance to the DR automation system.       |
-| `power-dr-automation.orchestrator.read`         | Retrieve information about existing Orchestrator instances.        |
+| `power-dr-automation.orchestrator-vm.update`          | Update the orchestrator instance to the DR automation system.       |
+| `power-dr-automation.orchestrator-vm.read`         | Retrieve information about existing Orchestrator instances.        |
 {: caption="KSYS" caption-side="bottom"}
 
 ## Viewing {{site.data.keyword.DR_short}} events
