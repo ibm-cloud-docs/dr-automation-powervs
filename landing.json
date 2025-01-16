@@ -43,11 +43,6 @@
       "recommended": true
     }
   ],
-  "section_devtools": {
-    "api": "/apidocs/acme-test-v1/acme-test-v1.2.0",
-    "cli": "/docs/dr-automation-powervs?topic=dr-automation-powervs-ksysmgr-commandorchestrator",
-    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/iam_access_group"
-  },
   "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote",
     "tiles": [
