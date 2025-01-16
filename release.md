@@ -25,6 +25,6 @@ keywords: release
 
 - DR Automation now supports IBM Power E1080 (9080-HEX) systems with up to 64 TB of memory, allowing for recovery of large-scale workloads. For details, see [Supported Systems](#hs).
 
-- The external orchestrator GUI has been updated with new navigation and monitoring features for simplified DR setup and operation. For details, see [Orchestrator GUI Updates](#manage-exter).
+- The external orchestrator GUI has been updated with new navigation and monitoring features for simplified DR setup and operation. For details, see [Orchestrator GUI Updates](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter).
 
 For more details, see the official documentation at [IBM DR Automation Documentation](https://cloud.ibm.com/docs/dr-automation-powervs).
