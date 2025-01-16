@@ -19,7 +19,7 @@ Efficiently set up and manage VM sessions by creating new sessions, organizing v
 ## Create a new VM session
 {: #create-vm-ses}
 
-After creating the sites, you must create a new VM session if you are managing the virtual machine for the first time. If the virtual machine has already been managed, you can proceed directly to [manage the VM](#manage-vm) and [unmange VM](#unmanage-vm) the sessions.
+After creating the sites, you must create a new VM session if you are managing the virtual machine for the first time. If the virtual machine has already been managed, you can proceed directly to [manage the VM](#vm-ses) and [unmange VM](#um-manage-ses) the sessions.
 
 To create and manage virtual machines, complete the following steps:
 
@@ -43,8 +43,7 @@ To manage the VMs, complete the following steps:
 1. In the navigation pane of the VM Recovery Manager DR, click **Site > WorkSpace > Managed this VM**.
 2. Select the VM.
 3. Click **Manage this VM**.
-
-   You are redirected to the Managed VM tab, where you can view details such as:
+4. You are redirected to the Managed VM tab, where you can view the following details:
    - VM Name
    - WorkGroup
    - Source Workspace
@@ -63,8 +62,7 @@ To unmanage the VMs, complete the following steps:
 1. In the navigation pane of the VM Recovery Manager DR, click **Site > WorkSpace > Unmanaged this VM**.
 2. Select the VM.
 3. Click **Unmanage this VM**.
-
-   After this operation, the WorkGroup is removed from the list.
+4. After this operation, the WorkGroup is removed from the list.
 
   >  **Note:**
    > - Each WorkGroup is associated with only one VM.  

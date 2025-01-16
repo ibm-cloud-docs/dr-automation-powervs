@@ -20,7 +20,7 @@ After creating the resource deploying the orchestrator for DR Automation is crit
 
 Following the procedure below, you can deploy the orchestrator with the necessary configurations to meet your disaster recovery requirements.
 
-# Deploying the orchestrator for disaster recovery
+## Deploying the orchestrator for disaster recovery
 {: #dep-the-orch-dis-re}
 
 Following the procedure below, you can deploy the orchestrator with the necessary configurations to meet your disaster recovery requirements.

@@ -17,16 +17,16 @@ Creating an instance for {{site.data.keyword.DR_full}} in IBM Cloud allows you t
 
 Follow these steps to create a Power Virtual Server instance for disaster recovery:
 
-1. Log in to the IBM Cloud catalog with your credentials.
-2. In the search box, type {{site.data.keyword.DR_full}} and click the corresponding tile.
+1. Log in to the [**IBM Cloud catalog**](https://cloud.ibm.com/catalog) with your credentials.
+2. In the **search box**, type {{site.data.keyword.DR_full}} and click the corresponding tile.
 3. Select the Disaster Recovery location from the drop-down list.
    - This is where the virtual server instances will replicate for disaster recovery.
 4. In the Configure details section, provide a name for the instance and select the appropriate resource group.
-   - You can create a new resource group if needed by clicking Create resource group.
-5. (Optional) You can add user tags for better instance management (e.g., `env:dev`, `version-1`).
-6. If you want to enable high availability for the orchestrator, check the box labeled Deploy orchestrator with HA.
-   > **Note**: If you select Deploy orchestrator with HA, two virtual machines will be created—one as the primary and the other as a standby for disaster recovery events.
-7. Once you've entered all the necessary information, review the details and click Create Resource.
-8. You will be redirected to the Workspaces page, where you can manage your newly created DR instance.
+   - You can create a new resource group if needed by clicking **Create resource group**.
+5. *(Optional)* You can add user tags for better instance management (e.g., `env:dev`, `version-1`).
+6. If you want to enable **High Availability(HA)** for the orchestrator, check the box labeled **Deploy orchestrator with HA**.
+   > **Note**: If you select **Deploy orchestrator with HA**, two virtual machines will be created—one as the primary and the other as a standby for disaster recovery events.
+7. Once you've entered all the necessary information, review the details and **click** Create Resource.
+8. You will be redirected to the **Workspaces** page, where you can manage your newly created DR instance.
 
 For more information about the appropriate region for your workspace, see [IBM Cloud regions](https://cloud.ibm.com/docs/overview?topic=overview-locations).
