@@ -22,12 +22,12 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 ## Table of contents
 {: #toc} 
 
-- [High-Level Architecture](#high-level-architecture){: #high} 
-- [Key Features](#key-features){: #key}
-- [IBM Cloud Service Framework](#ibm-cloud-service-framework){: #cloudservice}
-- [Hardware Specifications](#hardware-specifications){: #hs}
-- [Supported Storage Tiers](#supported-storage-tiers){: #sst}
-- [Network Configurations](#network-configurations){: #ns}
+- [High-Level Architecture](#high) 
+- [Key Features](#key)
+- [IBM Cloud Service Framework](#cloudservice)
+- [Hardware Specifications](#hs)
+- [Supported Storage Tiers](#sst)
+- [Network Configurations](#ns)
 
 
 ## High-Level architecture
@@ -201,7 +201,7 @@ Use Direct Link Connect for secure, low-latency communication between DR environ
 ## Setting Up {{site.data.keyword.DR_short}}
 {: #setup}
 
-1. **Create IBM Cloud Account**: Log in to your IBM Cloud account.
-2. **Access {{site.data.keyword.DR_full_notm}} in IBM Catalog**: Locate the {{site.data.keyword.DR_full_notm}} tile.
-3. **Configure Resources**: Set up storage, compute, and network resources according to DR needs.
-4. **Monitor and Test**: Schedule DR tests and monitor system health.
+1. Log in to your [IBM Cloud account](https://cloud.ibm.com/).
+2. Locate the {{site.data.keyword.DR_full_notm}} tile.
+3. Set up storage, compute, and network resources according to DR needs.
+4. Schedule DR tests and monitor system health.
