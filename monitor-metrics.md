@@ -1,14 +1,21 @@
 ---
-front_matter_title: "Monitoring metrics for IBM DR Automation"
-lastupdated: "2024-10-23"
-copyright: "2023, 2024"
+copyright:
+  years: 2025
+lastupdated: "2025-01-16"
+
 subcollection: dr-automation
+
+keywords: monitor
+
 ---
+
 # Monitoring metrics for IBM DR Automation
+{: monitor met-ibm}
 
 Create an IBM Cloud Monitoring instance and enable the platform metrics to capture various performance metrics.
 
 ## Steps to Create an IBM cloud monitoring instance
+{: instance}
 
 To monitor platform metrics, select the region where your Power Virtual Server workspace is provisioned.
 
@@ -21,6 +28,7 @@ To monitor platform metrics, select the region where your Power Virtual Server w
 You can also create the IBM Cloud Monitoring instance from the **Integration (Optional)** section when you create a workspace, if no IBM Cloud Monitoring instance is already created for that region.
 
 ## Viewing metrics
+{: view-metrics}
 
 To view the metrics dashboards, access the user interface of IBM Cloud Monitoring in the following ways:
 
@@ -30,6 +38,7 @@ To view the metrics dashboards, access the user interface of IBM Cloud Monitorin
 To view metrics in your dashboard, you must enable the platform metrics of the IBM Cloud Monitoring instance.
 
 ### Accessing metrics from DR Automation workspace
+{: metrics-workspace}
 
 From the left navigation menu of the Power Virtual Server user interface, complete the following steps:
 
@@ -39,6 +48,7 @@ From the left navigation menu of the Power Virtual Server user interface, comple
 4. Click **Dashboards > Dashboard Library > IBM** and select your dashboard to view.
 
 ### Accessing metrics from the observability page
+{: access-metric}
 
 To access the dashboard, complete the following steps:
 
@@ -56,7 +66,6 @@ To access the dashboard, complete the following steps:
 
 
 ## Metrics available by service plan
-
 {: metrics-by-plan}
 
 | Metric Name |

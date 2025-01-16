@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-15"
+lastupdated: "2025-01-16"
 
 subcollection: dr-automation
 
@@ -14,6 +14,7 @@ keywords: events
 {: #ate} 
 
 Activity tracking events report on activities that change the state of a service in IBM Cloud. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
+{:shortdesc: .shortdesc}
 
 You can use IBM Cloud Activity Tracker Event Routing, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see [Getting started tutorial for Activity Tracker Event Routing](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-getting-started).
 
@@ -29,10 +30,12 @@ Activity Tracker Event Routing records user-initiated activities that change the
 This document provides details on various events relevant to {{site.data.keyword.DR_short}}. These events help administrators manage instance readiness, images, network configurations, and security policies required for effective disaster recovery.
 
 ## {{site.data.keyword.DR_full}} Service Events Documentation
+{: #site events}
 
 This document provides details of the key events and their respective API operations in the **{{site.data.keyword.DR_short}} Service**. Use the given screenshots as a reference for style and formatting.
 
 ## cloud-instance
+{: #cloud-events}
 
 | Action                                    | Description                                             |
 |-------------------------------------------|---------------------------------------------------------|
@@ -41,6 +44,7 @@ This document provides details of the key events and their respective API operat
 
 
 ## dr-operation
+{: #dr-events}
 
 | Action                                   | Description                                           |
 |------------------------------------------|-------------------------------------------------------|
@@ -48,6 +52,7 @@ This document provides details of the key events and their respective API operat
 {: caption="dr-operation" caption-side="bottom"}
 
 ## dr-summary
+{: #summ-events}
 
 | Action                                   | Description                                       |
 |------------------------------------------|---------------------------------------------------|
@@ -55,6 +60,7 @@ This document provides details of the key events and their respective API operat
 {: caption="dr-summary" caption-side="bottom"}
 
 ## manage-dr
+{: #manage}
 
 | Action                                   | Description                                                |
 |------------------------------------------|------------------------------------------------------------|
@@ -63,6 +69,7 @@ This document provides details of the key events and their respective API operat
 {: caption="manage-dr" caption-side="bottom"}
 
 ## Event
+{: #eevents}
 
 | Action                                   | Description                                                |
 |------------------------------------------|------------------------------------------------------------|
@@ -71,6 +78,7 @@ This document provides details of the key events and their respective API operat
 {: caption="event" caption-side="bottom"}
 
 ## Orchestrator(KSYS)
+{: #orch-eve}
 
 | Action                                   | Description                                                |
 |------------------------------------------|------------------------------------------------------------|
@@ -162,6 +170,9 @@ You can create an activity tracker instance and provision it in the same region 
  activity tracker events. If you want to export activity tracker events, see [Exporting Activity Tracker events](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-export).
 
 The following table shows the data center and its corresponding regions where you can deploy an activity tracker instance:
+
+## Data center
+{: #data-cents}
 
 | Datacenter | Activity Tracker Region |
 |------------|-------------------------|
