@@ -27,7 +27,7 @@ To perform a Planned Move or Unplanned Move of the site, follow these steps:
 
 4. Choose **Yes** or **No**.
 
-> **Note:** This step includes a force-move option. If an unplanned recovery is necessary, you can select this option to forcibly transfer the VMs from the active site to the backup site.
+  > **Note:** This step includes a force-move option. If an unplanned recovery is necessary, you can select this option to forcibly transfer the VMs from the active site to the backup site.
 
 5. Specify the **Target Site** to which the VMs will be moved.
 6. Click **Move Site** to initiate the relocation process.

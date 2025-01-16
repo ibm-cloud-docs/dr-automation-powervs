@@ -65,7 +65,6 @@ toc:
                         - move-site.md
                         - navigation-panel.md
                         - verify-events.md
-                        - KSYS-events.md
       - topicgroup:
               label: AIX
               topics:

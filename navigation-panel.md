@@ -1,33 +1,41 @@
 ---
-front_matter_title: "Nav"
-lastupdated: "2024-10-23"
-copyright: "2023, 2024"
+
+copyright:
+  years: 2025
+lastupdated: "2025-01-16"
+
 subcollection: dr-automation
+
+keywords: navigation-pane
+
 ---
 
-# Navigation Panel
+# Navigation panel
+{: #nav-pan}
 
 On the left of the dashboard, the navigation panel displays KSYS clusters, sites, workspaces, and site-specific details. This panel also provides the **overall count** of associated workspaces, workgroups, and unmanaged VMs, offering a quick overview of available resources.
+{:shortdesc: .shortdesc}
 
-1. **KSYS Cluster Navigation**:
+- **KSYS Cluster Navigation**:
    - Displays the KSYS cluster type, cluster name (e.g., `ksysclusterTest`), and the overall count of associated workspaces.
    - Expand this section to view specific details and take actions related to the cluster.
 
-2. **Site Navigation (e.g., Site-2)**:
+- **Site Navigation (e.g., Site-2)**:
    - Lists regions (e.g., USA, India) with their respective overall counts of associated workspaces, workgroups, and unmanaged VMs.
    - Expand a site to explore specific resources.
 
-3. **Workspace Navigation**:
+- **Workspace Navigation**:
    - Displays the workspace details along with the overall count of associated workgroups and unmanaged VMs for the selected workspace.
    - For example, you can view the count for `VMRM-wdc` and `VMRM-TEST-DAL10`.
 
-4. **Unmanaged VMs and Workgroups**:
+- **Unmanaged VMs and Workgroups**:
    - Provides the total count of unmanaged VMs and Workgroups that are not yet managed by the system.
    - Expand these sections to perform actions like managing the VMs or viewing additional details.
 
 **Tip:** Use the search box at the bottom of the navigation panel to quickly locate specific VMs or Workgroups.
 
 ## Summary
+{: #summ}
 
 To access the Summary tab and view ongoing issues, follow these steps:
 
@@ -37,13 +45,13 @@ To access the Summary tab and view ongoing issues, follow these steps:
 
 **Features:**
 
-- **Critical Events**: Displays a count of critical events. Hover over the count to view detailed issues.
-- **Warnings**: Highlights potential problems requiring attention.
-- **Configuration Status**: Indicates the health of Workgroups and unmanaged VMs.
+- Displays a count of **critical events**. Hover over the count to view detailed issues.
+- Highlights potential **Warnings** requiring attention.
+- Indicates the health of **Workgroups** and **unmanaged VMs**.
 
----
 
 ## Events
+{: #nav-pan-eve}
 
 To analyze detailed information about events in your environment:
 
@@ -53,13 +61,13 @@ To analyze detailed information about events in your environment:
 
 **Features:**
 
-- **Event Details**: Shows the time of occurrence, a description, and the severity of each event.
-- **Filter Events**: Use filters to display specific event types, such as critical events or warnings.
-- **View Details**: Click on an event to view its full details, including potential resolutions.
+- Shows the time of occurrence, a description, and the severity of each event.
+- Use filters to display specific event types, such as critical events or warnings.
+- Click on an event to view its full details, including potential resolutions.
 
----
 
-## Tunable Policies
+## Tunable policies
+{: #tun-poli}
 
 To view and update system tunable attributes in the **Policies** tab:
 
@@ -70,6 +78,7 @@ To view and update system tunable attributes in the **Policies** tab:
 5. Click **Save & Update** to apply changes.
 
 ### Policies
+{: #polices}
 
 - **Auto Discovery Time**: Configures the frequency (in hours) for the system to automatically discover new resources in the cluster.
 - **Duplicate Event Processing**: Indicates whether duplicate events should be processed (Yes/No).
@@ -84,28 +93,32 @@ To view and update system tunable attributes in the **Policies** tab:
 - **Quick Discovery**: Toggles the quick discovery process to monitor resource updates more frequently.
 - **Cleanup Files Interval**: Defines the time interval (in days) for cleaning up temporary or obsolete files in the system.
 
-## Disk Mapping
+## Disk mapping
+{: #disk-map}
 
 The Disk Mapping feature is applicable at the Workgroup level and provides a detailed view of disk configurations between the source and target sites. It allows users to understand the mapping of disks and their relationships in disaster recovery operations.
 
-### Key Details
+### Key details
+{: #key-detai}
 
-1. **Source and Target Sites**: Displays disk mapping information for both the source and target sites.
-2. **Consistency Group and Volume Group**: For each site, the associated **Consistency Group** name and **Volume Group** name are shown, enabling better tracking and management.
-3. **Source Site Information**:
+- **Source and Target Sites**: Displays disk mapping information for both the source and target sites.
+- **Consistency Group and Volume Group**: For each site, the associated **Consistency Group** name and **Volume Group** name are shown, enabling better tracking and management.
+- **Source Site Information**:
    - **Disk ID**: Lists the disk identifiers for the source site.
    - **Active VM**: Displays the name of the VM currently active at the source site.
-4. **Target Site Information**:
+- **Target Site Information**:
    - **Disk ID**: Lists the disk identifiers for the target site.
    - **Partner VM**: Displays the name of the partner (backup) VM at the target site.
 
-### Steps to Access Disk Mapping
+### Steps to access disk mapping
+{: #user-scrip-disk-map}
 
 1. Select the desired Workgroup from the navigation panel.
 2. Click on the **Disk Mapping** tab in the main interface.
 3. Review the displayed mapping between the source and target sites, including disk details, Consistency Groups, and Volume Groups.
 
-## User Scripts Tab
+## User scripts tab
+{: #user-scrip}
 
 To manage custom scripts for automating processes in the DR environment:
 
@@ -115,7 +128,8 @@ To manage custom scripts for automating processes in the DR environment:
 4. Edit the paths for scripts such as Before Shutdown, After Online, or Before Network Configuration.
 5. Save your changes to apply the modifications.
 
-## KSYS Details
+## KSYS details
+{: #ksys-set-tab-detai}
 
 To manage nodes in the KSYS cluster:
 
@@ -127,7 +141,8 @@ To manage nodes in the KSYS cluster:
    - **Registering a Node**: Click the **Register** button next to an unregistered node, add the required details, and click **Register**.
    - **Unregistering a Node**: Click the **Unregister** button next to the node.
 
-## KSYS Settings Tab
+## KSYS settings tab
+{: #ksys-set-tab}
 
 To manage KSYS settings:
 
@@ -139,7 +154,8 @@ To manage KSYS settings:
    - Remove KSYS Cluster
    - Update Notification Preferences
 
-## Inventory Tab
+## Inventory tab
+{: #inventory-tab}
 
 The Inventory tab provides a detailed overview of the resources attached to the KSYS cluster, segmented by sites (e.g., USA, DAL). It is used to monitor and manage the resources associated with each site, such as system types, managed VMs, and cores.
 
@@ -147,20 +163,21 @@ This information allows users to track resource utilization efficiently across s
 
 Following are the details:
 
-1. **Site-Specific Inventory**:
+- **Site-Specific Inventory**:
    - Displays information for each site separately (e.g., USA, DAL).
    - Each site is categorized by system type (e.g., `s922`).
 
-2. **Managed VMs**:
+- **Managed VMs**:
    - Shows the total number of managed VMs for each system type in the site.
 
-3. **Managed Cores**:
+- **Managed Cores**:
    - Displays the total number of managed cores for each system type.
 
-4. **Consolidated View**:
+- **Consolidated View**:
    - Provides a total count of managed VMs and cores for all system types within a site.
 
-### Steps to Access Inventory
+### Steps to access inventory
+{: #steps}
 
 1. Select the desired **KSYS Cluster** from the navigation panel.
 2. Click on **Inventory** in the top navigation bar.
@@ -170,6 +187,7 @@ Following are the details:
    - Check the **Total** row for a consolidated count of managed resources in the site.
 
 ### Example
+{: #example}
 
 - **Site: USA**
   - **System Type**: `s922`
@@ -183,7 +201,8 @@ Following are the details:
   - **Number of Managed Cores**: 3
   - **Total**: 2 Managed VMs and 3 Managed Cores
 
-## Workgroup Active and Partner VMs
+## Workgroup active and partner VMs
+{: #work-grou-active}
 
 To view details about Active and Partner VMs for a Workgroup:
 
