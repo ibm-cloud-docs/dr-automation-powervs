@@ -1,12 +1,20 @@
 ---
-front_matter_title: "Network Paring"
-lastupdated: "2024-10-26"
-copyright: "2023, 2024"
+
+copyright:
+  years: 2025
+lastupdated: "2025-01-16"
+
 subcollection: dr-automation
+
+keywords: network-pairing
+
 ---
+
 # Creating network pairing (Optional)
+{: #network-pairing}
 
 Network pairing establishes communication links between network devices or systems to ensure seamless data transmission and operational connectivity. This is an **optional setup** and is typically performed after managing virtual machines (VMs) and organizing them into WorkGroups. After completing the VM management process, the GUI navigates you to the **Network Pairing** page.
+{:shortdesc: .shortdesc}
 
 All VMs added to the WorkGroup are automatically populated on the **Network Pairing** page.
 
@@ -22,6 +30,7 @@ To complete the network pairing, follow these steps:
 > **Note**: When confirming network pairings for one VM within a shared workspace and network setup, the confirmation is automatically applied to other VMs with similar configurations.
 
 ## Network details on dashboard
+{: #network-details}
 
 To view the network details, follow these steps:
 

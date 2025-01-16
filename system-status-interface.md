@@ -1,14 +1,23 @@
 ---
-front_matter_title: "System"
-lastupdated: "2024-10-26"
-copyright: "2023, 2024"
-subcollection: dr-automation
----
-# System Status Interface
 
-## WorkGroup staus
+copyright:
+  years: 2025
+lastupdated: "2025-01-16"
+
+subcollection: dr-automation
+
+keywords: sys-status-imter
+
+---
+
+# System status interface
+{: #sys-stat-inter}
 
 The system status interface provides a comprehensive overview of the workgroup's operational conditions. By displaying the following statuses, it helps identify any issues that may require troubleshooting or corrective actions to maintain smooth system operation.
+{:shortdesc: .shortdesc}
+
+## WorkGroup status
+{: #workgroou}
 
 The following are the available statuses:
 
@@ -22,8 +31,9 @@ The following are the available statuses:
 - The ongoing operation has encountered an issue and failed.
 
 ## WorkGroup deletion
+{: #workgroup-delete}
 
-To delete a WorkGroup in the VMRM DR for PowerVS GUI:
+To delete a WorkGroup in the {{site.data.keyword.DR_full_notm}} GUI:
 
 1. Navigate to the Work Groups section.
 2. Select the WorkGroup you wish to delete.

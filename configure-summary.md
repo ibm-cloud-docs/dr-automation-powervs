@@ -1,12 +1,20 @@
 ---
-front_matter_title: "Cloud regions"
-lastupdated: "2024-10-23"
-copyright: "2023, 2024"
+
+copyright:
+  years: 2025
+lastupdated: "2025-01-16"
+
 subcollection: dr-automation
+
+keywords: config-summary
+
 ---
+
 # Configuration summary
+{: #config-sum}
 
 After completing all the necessary setup steps, you are redirected to the **Summary** page. This page provides a comprehensive overview of the VM configurations, ensuring that all virtual machines are correctly configured and ready for seamless operation. The summary includes details such as the VM Name, Source Workspace, Target Workspace, Workgroup, Source Network, and Target Network.
+{:shortdesc: .shortdesc}
 
 The following details are displayed in the summary:
 

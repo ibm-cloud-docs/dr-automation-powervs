@@ -1,15 +1,22 @@
 ---
-front_matter_title: "Target and Source"
-lastupdated: "2024-10-26"
-copyright: "2023, 2024"
+
+copyright:
+  years: 2025
+lastupdated: "2025-01-16"
+
 subcollection: dr-automation
+
+keywords: sites ksys
+
 ---
 
-# Adding sites to the KSYS(Orcehstrator)
+# Adding sites to the KSYS
+{: #add-site-ksys}
 
 Configure your environment by adding the Source and Target sites, specifying region names, and saving the configurations to enable seamless data replication.
+{:shortdesc: .shortdesc}
 
-After adding the KSYS (Orchestrator) , you are required to add the **Source and Target sites**. Upon completing the KSYS (Orchestrator) setup, the GUI automatically redirects you to the **Add Sites** page. To add sites to the External Orchstrator UI , follow these steps:
+After adding the KSYS (Orchestrator) , you are required to add the **Source and Target sites**. Upon completing the KSYS setup, the GUI automatically redirects you to the **Add Sites** page. To add sites to the External Orchstrator UI , follow these steps:
 
 1. On the **Add Sites** page, click the **Add Sites** button to begin the configuration.
 
