@@ -32,13 +32,13 @@
     {
       "title": "Power Virtual Server DR Automation",
       "description": "Power Virtual Server DR Automation is a cloud solution for managing your virtual servers.",
-      "href": "https://www.power-dra.cloud.ibm.com/link/to/resource",
+      "href": "https://www.ibm.com/blog/?q=disaster+recovery+as+a+service&lang=en&cc=us",
       "type": "blog"
     },
     {
-      "title": "Db2 Optimization Techniques for SAP Database Migration to the Cloud",
-      "description": "This IBM Redbook provides in-depth recommendations for the source system database export.",
-      "href": "https://www.redbooks.ibm.com/abstracts/sg248531.html",
+      "title": "Planning and Building Disaster Recovery Solutions",
+      "description": "This course introduces the concepts of disaster recovery and high availability and how they relate to IBM Cloud.",
+      "href": "https://www.ibm.com/training/course/planning-and-building-disaster-recovery-solutions-DL70505G",
       "type": "redbook",
       "recommended": true
     }
