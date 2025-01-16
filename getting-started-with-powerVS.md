@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-15"
+lastupdated: "2025-01-16"
 
 subcollection: dr-automation
 
@@ -44,11 +44,11 @@ Before you create your first instance, review the following prerequisites:
 
 1. Create an IBM Cloud account. To create an IBM Cloud account, see [Signing up for the IBM Cloud](https://cloud.ibm.com/registration).
 
-2. Review the Identity and Access Management (IAM) information at [Managing DR Automation (IAM)](iam-autoamtion.md).
+2. Review the Identity and Access Management (IAM) information at [Managing DR Automation (IAM)](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage).
 
 3. Create a public and private SSH key to securely connect to your Power Virtual Server. For instructions on creating a public and private SSH key, see Adding an SSH key.
 
-4. Plan and specify your infrastructure requirements and review the estimated cost using the [DR Automation Estimate pricing tool](https://test.cloud.ibm.com/catalog/services/dr-automation-test-7).
+4. Plan and specify your infrastructure requirements and review the estimated cost using the [DR Automation Estimate pricing tool](https://cloud.ibm.com/catalog/services/power-virtual-server-dr-automation).
 
 5. Review the lifecycles of Power Virtual Server instances on IBM Power Virtual Server DR Automation.
 
