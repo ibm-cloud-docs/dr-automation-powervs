@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-15"
+lastupdated: "2025-01-16"
 
 subcollection: dr-automation
 
@@ -22,12 +22,12 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 ## Table of contents
 {: #toc} 
 
-- [High-Level Architecture](#high-level-architecture)
-- [Key Features](#key-features)
-- [IBM Cloud Service Framework](#ibm-cloud-service-framework)
-- [Hardware Specifications](#hardware-specifications)
-- [Supported Storage Tiers](#supported-storage-tiers)
-- [Network Configurations](#network-configurations)
+- [High-Level Architecture](#high-level-architecture){: #high} 
+- [Key Features](#key-features){: #key}
+- [IBM Cloud Service Framework](#ibm-cloud-service-framework){: #cloudservice}
+- [Hardware Specifications](#hardware-specifications){: #hs}
+- [Supported Storage Tiers](#supported-storage-tiers){: #sst}
+- [Network Configurations](#network-configurations){: #ns}
 
 
 ## High-Level architecture
