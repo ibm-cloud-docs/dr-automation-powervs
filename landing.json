@@ -8,23 +8,23 @@
     "links": [
       {
         "title": "Getting Started",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-getting-started-with-ibm-power-virtual-server-dr-automation"
+        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-get-drauto"
       },
       {
         "title": "High Level Architecture",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-architecture-for-ibm-power-virtual-server-dr-automation"
+        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-arch"
       },
       {
         "title": "Pricing",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-pricing-for-ibm-dr-automation-for-powervs"
+        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-price"
       },
       {
         "title": "External Orchestrator",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-managing-external-orchestrator"
+        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter"
       },
       {
         "title": "FAQs",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs"
+        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-gdpr"
       }
     ]
   },
