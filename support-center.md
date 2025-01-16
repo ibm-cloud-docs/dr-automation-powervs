@@ -21,7 +21,7 @@ If you experience problems with IBM Cloud®, you have several options to get hel
 To open a support ticket for {{site.data.keyword.DR_short}}, complete the following steps:
 
 1. Log in to the [IBM Cloud](https://cloud.ibm.com/catalog) with your IBM Cloud account credentials.
-2. In the menu bar, click **Help (Help)** icon. Select the **Support center** option.  
+2. In the menu bar, click **(Help)** icon. Select the **Support center** option.  
 3. On the **Support Center** page, click **Create a case**. The **Create a case** page opens.  
 4. From the **Topic** menu, select **Workspace for Power Virtual Server** option.  
 5. From the **Subtopic** menu, select the topic that is related to your issue. For example, **Power VS Compute Related** or **Power VS On-Premises Related**.  

@@ -17,7 +17,7 @@ The FAQ section provides concise answers to common questions about {{site.data.k
  ## **What is {{site.data.keyword.DR_full}} for PowerVS?**  
  
 DR Automation for PowerVS is a solution for automating disaster recovery operations for IBM Power Virtual Server environments. It ensures seamless failover, failback, and data synchronization between primary and backup sites. This service is integrated with the IBM Cloud Catalog UI, enabling users to deploy and manage DR solutions efficiently.  
-[Learn more about {{site.data.keyword.DR_short}}](/docs/dr-automation-powervs?topic=dr-automation-powervs-architecture-for-ibm-power-virtual-server-dr-auto)
+[Learn more about {{site.data.keyword.DR_short}}](/docs/dr-automation-powervs)
 
  ## **How does {{site.data.keyword.DR_full_notm}} simplify DR processes?**
  {: #how to}  

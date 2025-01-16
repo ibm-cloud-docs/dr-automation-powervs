@@ -74,10 +74,8 @@ To access the dashboard, complete the following steps:
 | [Number of Managed VMs](#ibm_power_dr_automation_managed_vm_count) | 
 {: caption="Metrics Available by Plan Names" caption-side="top"}
 
-### Number of Managed VMs
+### Number of Managed VMs count
 {: #ibm_power_dr_automation_managed_vm_count}
-
-Number of Managed VMs Count
 
 | Metadata | Description |
 |----------|-------------|
@@ -90,11 +88,10 @@ Number of Managed VMs Count
 ## Attributes for Segmentation
 {: attributes}
 
-### Global attributes
-
-{: global-attributes}
-
 The following attributes are available for segmenting all of the metrics listed above
+
+### Global attributes
+{: global-attributes}
 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
@@ -108,10 +105,10 @@ The following attributes are available for segmenting all of the metrics listed 
 {: caption="Segmenting all of the Metrics" caption-side="top"}
 
 ### Additional attributes
-
 {: additional-attributes}
 
-The following attributes are available for segmenting one or more attributes as described in the reference above.  Please see the individual metrics for segmentation options.
+The following attributes are available for segmenting one or more attributes as described in the reference above. Please see the individual metrics for segmentation options.
+
 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|

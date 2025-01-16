@@ -23,6 +23,6 @@ When adding virtual servers, you are redirected to the external orchestrator int
 
 2. To Save login credentials, check **Remember Me** option that enable the system to remember your login credentials for up to 24 hours.
 
- >Note: The credentials will be remembered for 10 hours, if **Remember Me** option is unchecked.
+ >**Note:** The credentials will be remembered for 10 hours, if **Remember Me** option is unchecked.
 
-3. After successfully logging into the {{site.data.keyword.DR_full_notm}} GUI, you are redirected to the [KSYS (Orchestrator) cluster creation](https://10.32.150.93:3000/login?byCloud=true) screen where you will be adding the KSYS cluster.
+3. After successfully logging into the {{site.data.keyword.DR_full_notm}} GUI, you are redirected to the [KSYS (Orchestrator) cluster creation](https://10.32.150.93:3000/login?byCloud=true) screen where you can add the KSYS cluster.

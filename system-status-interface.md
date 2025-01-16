@@ -35,9 +35,9 @@ The following are the available statuses:
 
 To delete a WorkGroup in the {{site.data.keyword.DR_full_notm}} GUI:
 
-1. Navigate to the Work Groups section.
+1. Navigate to the **Work Groups** section.
 2. Select the WorkGroup you wish to delete.
 3. Click the **Delete WorkGroup** button.
-4. Confirm the deletion that appears in the dialog.
+4. **Confirm** the deletion that appears in the dialog.
 
 This will remove the selected Work Group from the system.

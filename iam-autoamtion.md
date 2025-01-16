@@ -62,7 +62,7 @@ You can use the service access roles to define the actions that the users can pe
 
 To see the complete list of actions for each specific role, see the [IAM roles and actions page](https://cloud.ibm.com/docs/account?topic=account-iam-service-roles-actions#power-iaas-roles) in IBM Cloud documentation.
 
-#### Access role requirements for DR Automation for PowerVS {Verify}
+#### Access role requirements for DR Automation for PowerVS
 {: #ser-acc-role-dr-auto}
 
 

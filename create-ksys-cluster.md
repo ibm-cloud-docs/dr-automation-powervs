@@ -27,9 +27,7 @@ Configure your **IBM_PVS_DR** environment by adding the KSYS (Orchestrator) Clus
 
 4. From the KSYS Deployment Type drop-down menu, select **IBM_PVS_DR** as the deployment type.
 
-5. Enter KSYS Cluster Details:  
-   - Fill in the required KSYS details.  
-   - Specify the KSYS cluster details.
+5. Enter **KSYS Cluster** Details.
 
 6. Click **Save & Next** to save your configuration and proceed.
 

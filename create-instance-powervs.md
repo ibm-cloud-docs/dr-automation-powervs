@@ -5,15 +5,18 @@ lastupdated: "2025-01-16"
 
 subcollection: dr-automation
 
-keywords: iam
+keywords: create instance
 
 ---
 
 # Create an instance for {{site.data.keyword.DR_full_notm}}
+{: #cinstance}
 
 Creating an instance for {{site.data.keyword.DR_full}} in IBM Cloud allows you to set up disaster recovery configurations, including resource allocation and high availability options. This instance serves as a failover mechanism in case of a disaster recovery event. By following the procedure below, you can deploy the orchestrator with the necessary configurations to meet your disaster recovery requirements.
+{:shortdesc: .shortdesc}
 
 ## Procedure
+{: #procedure}
 
 Follow these steps to create a Power Virtual Server instance for disaster recovery:
 
