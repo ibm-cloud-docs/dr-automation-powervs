@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-20"
 
 subcollection: dr-automation
 
@@ -12,7 +12,7 @@ keywords: deploy the orch
 # Deploying the orchestrator
 {: #idep-the-orch}
 
-After creating the resource deploying the orchestrator for DR Automation is critical in ensuring your Power Virtual Server environment is protected against disaster events. The orchestrator coordinates disaster recovery operations, including replication, failover, and failback of virtual machines. On this screen, you will configure the orchestrator's network connectivity, high availability (HA) settings, authentication keys, and resource allocation. Once deployed, the orchestrator can manage multiple virtual servers and ensure continuous availability.
+After creating the resource deploying the orchestrator for DR Automation is critical in ensuring your Power Virtual Server environment is protected against disaster events. The orchestrator coordinates disaster recovery operations, including replication, failover, and failback of virtual machines. On this screen, high availability (HA) settings, authentication keys, and resource allocation. Once deployed, the orchestrator can manage multiple virtual servers and ensure continuous availability.
 {:shortdesc: .shortdesc}
 
 ## Procedure 
@@ -25,7 +25,7 @@ Following the procedure below, you can deploy the orchestrator with the necessar
 
 Following the procedure below, you can deploy the orchestrator with the necessary configurations to meet your disaster recovery requirements.
 
-1. After completing the **Create resource** step, click **Manage** to proceed with the deployment.
+1. After completing the **Create resource** step, you are redirected to **Manage** tab to proceed with the deployment.
 
 2. In the **Configure primary orchestrator** section, enter the **Primary orchestrator name** and set a password in the **Orchestrator password** field. Confirm the password to secure access to the external orchestrator interface.
 
