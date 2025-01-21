@@ -7,7 +7,7 @@ toc:
     subcollection: dr-automation-powervs
     path: dr-automation-powervs
     href: /docs/dr-automation-powervs
-    service-name: service-name # Replace
+    service-name: service-name
     audience: solution
     category: virtualservers
     label: Power Virtual Server DR Automations
