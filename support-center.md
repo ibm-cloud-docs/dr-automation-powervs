@@ -1,5 +1,4 @@
 ---
-
 copyright:
   years: 2025
 lastupdated: "2025-01-21"
@@ -7,8 +6,6 @@ lastupdated: "2025-01-21"
 subcollection: dr-automation
 
 keywords: help and support
-
-{{site.data.keyword.attribute-definition-list}}
 
 ---
 
