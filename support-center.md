@@ -1,4 +1,5 @@
 ---
+
 copyright:
   years: 2025
 lastupdated: "2025-01-21"
@@ -6,6 +7,8 @@ lastupdated: "2025-01-21"
 subcollection: dr-automation
 
 keywords: help and support
+
+{{site.data.keyword.attribute-definition-list}}
 
 ---
 
@@ -15,10 +18,10 @@ keywords: help and support
 If you experience problems with {{site.data.keyword.DR_full}}, you can use the following resources before you open a support case.
 {: shortdesc}
 
-- **Review the [FAQs](/docs/linktoyourfaqtopic)** in the product documentation.
-- **Review the [troubleshooting documentation](/docs/linktoyourfirsttroubleshootingtopic)** to troubleshoot and resolve common issues.
-- Check the status of the IBM Cloud platform and resources by visiting the **[Status page](https://cloud.ibm.com/status){: external}.**
-- Explore **[Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external}** to see if other users have encountered similar issues. When asking a question, tag it with `ibm-cloud` and `dr-automation` to ensure visibility by the IBM Cloud development teams.
+- Review the [FAQs](/docs/linktoyourfaqtopic) in the product documentation.
+- Review the [troubleshooting documentation](/docs/linktoyourfirsttroubleshootingtopic) to troubleshoot and resolve common issues.
+- Check the status of the IBM Cloud platform and resources by visiting the [Status page](https://cloud.ibm.com/status){: external}.
+- Explore [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see if other users have encountered similar issues. When asking a question, tag it with `ibm-cloud` and `dr-automation`, so that it's seen by the {{site.data.keyword.Bluemix_notm}} development teams.
 
 If you still can't resolve the problem, you can open a support case. For more information, see [Creating support cases](/docs/account?topic=account-open-case&interface=ui). If you're looking to provide feedback, see [Submitting feedback](/docs/overview?topic=overview-feedback).
 
