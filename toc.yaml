@@ -16,10 +16,10 @@ toc:
       id: learn
       topics:
       - getting-started-with-powerVS.md
-      - release.md
       - architecture-dr-automation.md
       - cloud-regions.md
       - data-isolation.md
+      - release.md
       - topicgroup:
               label: Pricing
               topics:
