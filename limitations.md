@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-21"
 
 subcollection: dr-automation
 
@@ -13,6 +13,9 @@ keywords: known issues
 # Known limitations
 {: #knowlim}
 
+IBM® strives to keep issues in {{site.data.keyword.DR_full}} to a minimum, but occasionally they can't be avoided. Learn about the known issues in this version. IBM is aware of these issues and is working hard to address them as quickly as possible.
+{:shortdesc: .shortdesc}
+
 ## External orchestrator
 {: #ext}
 
@@ -21,4 +24,4 @@ keywords: known issues
 3. Before unmanaging a disk in the KSYS environment, ensure the VM configuration is refreshed to include any newly added volumes. Run a discovery operation to update KSYS with the latest resource details linked to the VM. If discovery is not performed before unmanaging, the following error may occur:
 
 - Volume does not belong to the specified Workgroup. Query the resource class to view the configured resources.
-    >**Note:** To avoid above error run command `ksysmgr refresh vm <vmname>`
+    >{: shortdesc}**Note:** To avoid above error run command `ksysmgr refresh vm <vmname>`
