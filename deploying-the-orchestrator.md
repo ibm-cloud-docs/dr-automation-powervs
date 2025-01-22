@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-20"
+lastupdated: "2025-01-22"
 
 subcollection: dr-automation
 
@@ -25,7 +25,7 @@ Following the procedure below, you can deploy the orchestrator with the necessar
 
 Following the procedure below, you can deploy the orchestrator with the necessary configurations to meet your disaster recovery requirements.
 
-1. After completing the **Create resource** step, you are redirected to **Manage** tab to proceed with the deployment.
+1. After completing the **Create** resource step, you are redirected to **Manage** tab to proceed with the deployment.
 
 2. In the **Configure primary orchestrator** section, enter the **Primary orchestrator name** and set a password in the **Orchestrator password** field. Confirm the password to secure access to the external orchestrator interface.
 
