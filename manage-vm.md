@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-23"
 
 subcollection: dr-automation
 
@@ -12,7 +12,7 @@ keywords: manage vm
 # Managing virtual servers
 {: #manage-vm-ser}
 
-**Manage Virtual Servers** within the {{site.data.keyword.DR_full}} enables administrators to monitor and control the virtual server instances that are part of the disaster recovery environment. Through this interface, users can manage existing virtual servers, check their current statuses, and perform actions such as adding or removing servers to maintain optimal DR operations. This tool ensures that all servers involved in the DR plan are properly orchestrated and functional, safeguarding business continuity in the event of failures.
+Manage Virtual Servers within the {{site.data.keyword.DR_full}} enables administrators to monitor and control the virtual server instances that are part of the disaster recovery environment. Through this interface, users can manage existing virtual servers, check their current statuses, and perform actions such as adding or removing servers to maintain optimal DR operations. This tool ensures that all servers involved in the DR plan are properly orchestrated and functional, safeguarding business continuity in the event of failures.
 
 To set up additional virtual server instances and manage them within the {{site.data.keyword.DR_full_notm}} framework, users can either add virtual servers directly or access the external orchestrator interface for advanced configurations.
 
