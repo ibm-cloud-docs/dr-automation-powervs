@@ -48,7 +48,7 @@ toc:
                         - deploying-the-orchestrator.md
                         - monitoring-vm-status.md
                         - orchestrator-deployment.md
-                        - manage-vm.md
+                        - manage-vm.md                     
       - topicgroup:
               label: External orchestrator
               topics:
