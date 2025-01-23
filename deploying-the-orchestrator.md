@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-22"
+lastupdated: "2025-01-23"
 
 subcollection: dr-automation
 
@@ -29,18 +29,22 @@ Following the procedure below, you can deploy the orchestrator with the necessar
 
 2. In the **Configure primary orchestrator** section, enter the **Primary orchestrator name** and set a password in the **Orchestrator password** field. Confirm the password to secure access to the external orchestrator interface.
 
-3. In the **Schematics workspace** field, select an appropriate workspace for the orchestrator. If required, create a [**VPC landing zone**](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) to define the Power Virtual Server workspace where the primary orchestrator will be deployed.
+3. You should provide the **IBM Cloud API key**, and if it is valid then you can provide the remaining fields.
 
-4. Choose a **Public SSH key** and **IBM Cloud API key** from the **Secrets Manager** or upload new keys if necessary to ensure secure connections.
+4. In the **Schematics workspace** field, select an appropriate workspace for the orchestrator. If required, create a [**VPC landing zone**](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) to define the Power Virtual Server workspace where the primary orchestrator will be deployed.
 
-5. Expand the **Advanced Configuration** section to adjust additional settings for storage tiers and machine types, if applicable.
+5. Provide either **Public SSH key** or Select from **Secrets Manager**.
 
-6. To enable high availability, configure a **Standby orchestrator name** and select a **Secondary Power Virtual Server workspace** to define where the standby orchestrator will be deployed. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
+6. Choose a **Public SSH key** and **IBM Cloud API key** from the **Secrets Manager** or upload new keys if necessary to ensure secure connections.
 
-7. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VM.
+7. Expand the **Advanced Configuration** section to adjust additional settings for storage tiers and machine types, if applicable.
 
-8. Once the orchestrator is deployed, manage the service through the [**orchestrator interface**](https://10.32.150.93:3000/login?byCloud=true) and configure additional virtual server instances for disaster recovery.
+8. To enable high availability, configure a **Standby orchestrator name** and select a **Secondary Power Virtual Server workspace** to define where the standby orchestrator will be deployed. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
-9. If any issues occur during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
+9. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VM.
+
+10. Once the orchestrator is deployed, manage the service through the [**orchestrator interface**](https://10.32.150.93:3000/login?byCloud=true) and configure additional virtual server instances for disaster recovery.
+
+11. If any issues occur during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
 
 By following this process, you ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers, providing a resilient environment that supports business continuity in case of unforeseen events.

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-15"
+lastupdated: "2025-01-23"
 
 subcollection: dr-automation
 
@@ -59,11 +59,11 @@ The following ```ACTION``` flags are available:
 
 ```query (alias: q*, ls, get, sh*)```
 
-```add (alias: ad*, create, cr*, make, mk, bu*, bld)```
+```add (alias: ad*, cr*, make, mk)```
 
 ```delete (alias: de*, remov*, rm, er*)```
 
-```modify (alias: mod*, ch*, set, sets)```
+```modify (alias: mod*, ch*, set)```
 
 ```restore (alias: rest*)```
 
@@ -736,7 +736,7 @@ query => q*, ls, get, sh*
 system => sys*
 ```
 ```
-sysmgr q system
+ksysmgr q system
 ```
 An output that is similar to the following example is displayed:
 ```
