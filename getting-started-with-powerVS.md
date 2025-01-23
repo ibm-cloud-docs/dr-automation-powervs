@@ -23,7 +23,7 @@ completion-time: 10m
 {: toc-services=""}
 {: toc-completion-time="10m"}
 
-Set up {{site.data.keyword.DR_short}} to protect your workloads and ensure business continuity during disasters. This tutorial guides you through configuring orchestrators and preparing for disaster recovery (DR) processes.
+Set up {{site.data.keyword.DR_full}} to automate disaster recovery (DR) processes for virtualized environments and ensure business continuity with minimal manual intervention. Deploy {{site.data.keyword.DR_short}} from the IBM Cloud Catalog UI, which provides an intuitive interface for selecting and configuring recovery services. The solution automates the recovery of virtual machines (VMs) and workloads, synchronizing data and managing replication between sites to protect critical operations. With robust automation, {{site.data.keyword.DR_short}} minimizes downtime, reduces manual tasks, and enhances business resilience. Leveraging IBM Cloud's global regions, it offers low-latency failover and high availability options to effectively meet your DR requirements.
 {: shortdesc}
 
 ## Before you begin
@@ -48,8 +48,8 @@ Complete the following prerequisites:
    - Orchestrator name.
    - IBM Cloud API key.
    - SSH key (upload or select from Secrets Manager).
-3. Optional: Adjust advanced settings, such as storage tiers or workspace configurations.
-4. For High Availability (HA), configure a standby orchestrator and define a secondary workspace.
+3. ***Optional***: Adjust advanced settings, such as storage tiers or workspace configurations.
+4. For **High Availability (HA)**, configure a standby orchestrator and define a secondary workspace.
 5. Click **Deploy orchestrator** to finalize setup.
 
 ## Lifecycle of Power Virtual Server DR Automation

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-23"
 
 subcollection: dr-automation
 
@@ -21,14 +21,14 @@ The system status interface provides a comprehensive overview of the workgroup's
 
 The following are the available statuses:
 
-- Quick Discovery initiated.
-- Quick Discovery completed.
-- Exploration of VM resources in progress.
-- Exploration of VM resources completed.
-- Removal of disks from the workgroup's volume group.
-- Exploration of VM resources in progress.
-- Exploration of VM resources completed.
-- The ongoing operation has encountered an issue and failed.
+- `Quick Discovery initiated`.
+- `Quick Discovery completed`.
+- `Exploration of VM resources in progress`.
+- `Exploration of VM resources completed`.
+- `Removal of disks from the workgroup's volume group`.
+- `Exploration of VM resources in progress`.
+- `Exploration of VM resources completed`.
+- `The ongoing operation has encountered an issue and failed`.
 
 ## WorkGroup deletion
 {: #workgroup-delete}
