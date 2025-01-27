@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-27"
 
 subcollection: dr-automation
 
@@ -66,9 +66,26 @@ To see the complete list of actions for each specific role, see the [IAM roles a
 {: #ser-acc-role-dr-auto}
 
 
-DR automation for PowerVS requires additional access for certain network and infrastructure features, including Direct Link, Transit Gateway, and Virtual Private Cloud (VPC) services. These access roles may be needed depending on the recovery and network requirements of your DR solution. For example, configuring network redundancy during failover might require access to Direct Link services.
+{{site.data.keyword.DR_short}} requires additional access to various network and infrastructure features to ensure seamless failover, recovery, and redundancy. These access roles are determined by the specific recovery and network requirements of your DR solution. For instance, setting up redundancy for storage replication or configuring network routes during failover may require access to services like VPC, Transit Gateway, or Cloud Object Storage.
 
-The following table lists the additional access roles required for DR automation for PowerVS, along with the corresponding services:
+The following table outlines the additional access roles required for DR automation, along with the corresponding resources and attributes:
+
+## Resources and attributes
+{: #res-atri}
+
+| **Additional Access Roles**         | **Resources and Attributes**                    |
+|-------------------------------------|------------------------------------------------|
+| **Editor, Manager**                 | Power Virtual Server service                   |
+| **Reader, Viewer**                  | VPC Infrastructure Services service            |
+| **Manager**                         | Transit Gateway service                        |
+| **Reader, Viewer**                  | All resources in account (including future IAM-enabled services) |
+| **Viewer**                          | All resource groups                            |
+| **Manager**                         | Cloud Object Storage                           |
+| **Manager**                         | Schematics                                     |
+| **Manager**                         | Secret Manager                                 |
+{: caption="Additional access roles" caption-side="bottom"}
+
+
 
 ## Additional access roles for DR automation for PowerVS
 {: #add-ser-acc-ro}
