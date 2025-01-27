@@ -75,6 +75,7 @@ The following table outlines the additional access roles required for DR automat
 
 | **Additional Access Roles**         | **Resources and Attributes**                    |
 |-------------------------------------|------------------------------------------------|
+| **Reader, Viewer, Editor, Manager**                 | DR automation for PowerVS service                   |
 | **Editor, Manager**                 | Power Virtual Server service                   |
 | **Reader, Viewer**                  | VPC Infrastructure Services service            |
 | **Manager**                         | Transit Gateway service                        |
@@ -84,22 +85,6 @@ The following table outlines the additional access roles required for DR automat
 | **Manager**                         | Schematics                                     |
 | **Manager**                         | Secret Manager                                 |
 {: caption="Additional access roles" caption-side="bottom"}
-
-
-
-## Additional access roles for DR automation for PowerVS
-{: #add-ser-acc-ro}
-
-| Additional access role                     | Resource attributes for DR automation                                                                           |
-|--------------------------------------------|------------------------------------------------------------------------------------------------------------------|
-| Editor, Manager, Operator, Reader, Viewer  | DR automation for PowerVS service                                                                               |
-| Editor, Manager, Operator, Reader, Viewer, VPN Client | VPC Infrastructure Services for network management and configuration                                 |
-| Editor, Operator, Viewer                   | Transit Gateway service for routing traffic between recovery environments                                        |
-| Reader, Viewer                             | All resources within the account (including future IAM-enabled services that may be needed for DR)              |
-| Editor, Operator, Viewer                   | Direct Link service for establishing connections between on-premises and DR sites                               |
-| Viewer                                     | All resource groups for basic monitoring and visibility across resources                                        |
-| Viewer                                     | Satellite service On-premises for managing hybrid cloud resources within DR scenarios                           |
-{: caption="Additional access roles for DR automation for PowerVS" caption-side="bottom"}
 
 
 ### User access scenarios
