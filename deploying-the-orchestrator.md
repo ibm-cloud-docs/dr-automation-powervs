@@ -39,7 +39,7 @@ Following the procedure below, you can deploy the orchestrator with the necessar
 
 7. Expand the **Advanced Configuration** section to adjust additional settings for storage tiers and machine types, if applicable.
 
-8. To enable **High Availability**, configure a Standby orchestrator name and select a **Secondary Power Virtual Server workspace** to define where the standby orchestrator will be deployed. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
+8. To enable **High Availability**, configure a standby orchestrator name and select a **Secondary Power Virtual Server workspace** to define where the standby orchestrator will be deployed. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
 9. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VM.
 

@@ -36,26 +36,19 @@ Complete the following prerequisites:
 3. **SSH keys or Secrete Manager**: Generate a public and private SSH key or Choose a **Public SSH key** and **IBM Cloud API key** from the Secrets Manager . For details, see [Adding an SSH key](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui).
 4. **Plan infrastructure**: Define your DR requirements and estimate costs using the [DR Automation Estimate pricing tool](https://cloud.ibm.com/estimator).
 
-## Configuring IBM {{site.data.keyword.DR_full_notm}}
-{: #config-drauto}
-{: step}
-
-### Step 1: Set up the orchestrator
-{: #setup-orchestrator}
-
-1. Go to the **Manage** tab in your {{site.data.keyword.DR_short}} service instance.
-2. Provide the following details:
-   - Orchestrator name.
-   - IBM Cloud API key.
-   - SSH key (upload or select from Secrets Manager).
-3. ***Optional***: Adjust advanced settings, such as storage tiers or workspace configurations.
-4. For **High Availability (HA)**, configure a standby orchestrator and define a secondary workspace.
-5. Click **Deploy orchestrator** to finalize setup.
-
 ## Lifecycle of Power Virtual Server DR Automation
 {: #lpvsdrauto} 
 
 ![DR Automation life Cycle](images/dr-automation-blockdiagram.svg "DR Automation life Cycle"){: caption="DR Automation life Cycle" caption-side="bottom"}
+
+### Step 1: Set up the orchestrator
+{: #setup-orchestrator}
+
+1. On the **Manage** tab, configure the **Primary orchestrator name** and set a password to secure access.
+2. Provide a valid **IBM Cloud API key**, then complete additional fields, including the **Schematics workspace** and **Public SSH key** or keys from **Secrets Manager**.
+3. (Optional) Expand the **Advanced Configuration** section to enable High Availability by configuring a **Standby orchestrator** and selecting a secondary workspace.
+4. Review all settings and click **Deploy orchestrator** to begin the deployment.
+
 
 ## Next steps
 {: #next-steps}
