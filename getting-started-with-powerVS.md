@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-23"
+lastupdated: "2025-01-27"
 
 keywords: getting started, disaster recovery, PowerVS
 
@@ -33,7 +33,7 @@ Complete the following prerequisites:
 
 1. **IBM Cloud account**: Ensure you have an IBM Cloud account. [Sign up for IBM Cloud](https://cloud.ibm.com/registration) if needed.
 2. **IAM setup**: Configure Identity and Access Management (IAM) roles. See [Managing DR Automation (IAM)](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage).
-3. **SSH keys**: Generate a public and private SSH key. For details, see [Adding an SSH key](https://cloud.ibm.com/docs/key-management?topic=key-management-get-started).
+3. **SSH keys or Secrete Manager**: Generate a public and private SSH key or Choose a **Public SSH key** and **IBM Cloud API key** from the Secrets Manager . For details, see [Adding an SSH key](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui).
 4. **Plan infrastructure**: Define your DR requirements and estimate costs using the [DR Automation Estimate pricing tool](https://cloud.ibm.com/estimator).
 
 ## Configuring IBM {{site.data.keyword.DR_full_notm}}

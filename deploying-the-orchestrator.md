@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-23"
+lastupdated: "2025-01-27"
 
 subcollection: dr-automation
 
@@ -52,35 +52,35 @@ By following this process, you ensure that your orchestrator is fully equipped t
 ## Orchestrator details
 {: #orc-det}
 
-**Orchestrator instance identifier**
+**Orchestrator instance identifier:**
 The unique identifier for the orchestrator instance is responsible for managing failover, failback, and replication processes between the primary and DR sites.
 
-**Orchestrator health status**
+**Orchestrator health status:**
 Displays the current health and state of the orchestrator, such as "Running." The orchestrator must be operational for DR functions to be ready.
 
-**IBM Cloud SSH key**
+**IBM Cloud SSH key:**
 Refers to the secure IBM Cloud SSH key used for authenticated and encrypted communication between the orchestrator and the managed VMs involved in DR.
 
-**Linked SSH Key for remote access**
+**Linked SSH Key for remote access:**
 Indicates the SSH key linked to the orchestrator for remote access to VMs. Proper configuration is crucial for secure VM operations.
 
-**Infrastructure as Code (IaC) Environment**
+**Infrastructure as Code (IaC) Environment:**
 The IaC environment automates the provisioning of DR resources, leveraging Terraform templates to define workflows for automation.
 
-**Schematics workspace connection**
+**Schematics workspace connection:**
 Shows whether the orchestrator is successfully connected to the Schematics workspace. A “Running” status indicates successful infrastructure automation.
 
 ## Service details
 {: #service-det}
 
-**Disaster recovery service configuration**
+**Disaster recovery service configuration:**
 Identifies the DR service configured in IBM Cloud for the orchestrator, linking it to the correct DR environment.
 
-**Data center location**
+**Data center location:**
 Specifies the region or data center, such as "Dallas 12," where the DR resources are hosted and where failover will occur.
 
-**Resource group**
+**Resource group:**
 Displays the IBM Cloud resource group managing the DR resources, allowing for resource-level permissions and management.
 
-**Globally unique identifier**
+**Globally unique identifier:**
 A globally unique identifier for the DR service within IBM Cloud, enabling resource tracking and auditing across cloud environments using APIs.
