@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-27"
 
 subcollection: dr-automation
 
@@ -145,10 +145,9 @@ This integrated framework provides a secure, compliant, and efficient DR solutio
 
 IBM Power servers supported by {{site.data.keyword.DR_full_notm}} include:
 
-- **IBM Power S922** (9009-22A)
-- **IBM Power S922** (9009-22G)
-- **IBM Power E980** (9080-M9S)
-- **IBM Power E1080** (9080-HEX)
+- **IBM Power S922**
+- **IBM Power E980**
+- **IBM Power E1080**
 
 For more details, refer to the specific data sheets and hardware overview table.
 
