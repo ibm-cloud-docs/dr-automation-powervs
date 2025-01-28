@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-27"
+lastupdated: "2025-01-28"
 
 subcollection: dr-automation
 
@@ -171,7 +171,6 @@ In {{site.data.keyword.DR_short}}, user can set up cross-account API keys to all
 
 | Tier Level | IOPS       | Performance                                |
 |------------|------------|--------------------------------------------|
-| **Tier 0** | 25 IOPS/GB | High performance for critical workloads    |
 | **Tier 1** | 10 IOPS/GB | Balanced performance for general workloads |
 | **Tier 3** | 3 IOPS/GB  | Cost-effective for non-critical applications |
 {: caption="Tier and IOPS mapping" caption-side="bottom"}
