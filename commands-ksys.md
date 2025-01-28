@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-23"
+lastupdated: "2025-01-28"
 
 subcollection: dr-automation
 
@@ -78,6 +78,8 @@ The following ```ACTION``` flags are available:
 ```pair (alias: map)```
 
 ```refresh```
+```resync```
+```update```
 
 ## CLASS
 {: #cla}
@@ -193,7 +195,23 @@ To get help information about the ksyscluster class, enter the following command
 
 An output that is similar to the following example is displayed:
 
-```Available actions for ksyscluster: add delete modify query sync verify```
+```
+Available actions for ksyscluster:
+- add 
+- delete 
+- modify 
+- query 
+```
+
+### To update license:
+{: #update-lic}
+```
+ksysmgr update license -h
+
+ksysmgr update license <vmname>
+    update => upd*
+    license => lic*
+```
 
 ### Cluster configuration examples
 {: #clu}
@@ -226,6 +244,19 @@ Starting KSYS subsystem ...
 KSYS subsystem has started. You can begin adding site definitions, etc
 
 **Note**: By default, the value of type variable is DR cluster type. 
+```
+
+### To update staticIp modification
+{: #stats-modi}
+
+```
+ksysmgr modify vm -h
+
+ksysmgr modify vm <vmname>
+      [targetsystem=<target_system_type>]
+      [staticIPMap=<srcip1-tgtip1,[srcip2-tgtip2,...]>]
+    modify => mod*, ch*, set
+    vm => lp*, vm*
 ```
 
 ### To query the KSYS cluster:
@@ -334,11 +365,17 @@ ksysmgr modify ksyscluster <ksysclustername> [glnode=<ksysnode>]
 [apikey=<apikey>]
 [proxy=<ipaddress:portnumber>]
 ksyscluster => ksysclu*, clu*
-To check the version of the KSYS software:
-ksysmgr query ksyscluster <ksysclustername>
-query => q*, ls, get, sh*
-ksyscluster => ksysclu*, clu*
-Site configuration examples
+```
+
+### To check the version of the KSYS software:
+
+```
+ksysmgr q ksyscluster IBM_powervs
+Name:                IBM_powervs
+State:               Online
+Type:                IBM_PVS_DR
+Ksysnodes:           pbrazos01-ksys39.aix-test.tadn.ibm.com:1:Online
+KsysState:           pbrazos01-ksys39.aix-test.tadn.ibm.com:1:Online
 ```
 
 ### To add a site in the KSYS subsystem:
@@ -380,11 +417,10 @@ Name: us-east
 Region: us-east
 Workspaces: VMRM-wdc
 ActiveWorkgroups: Maheshwari_WG, SivaKrishna_WG, vmrm_dev_01_WG
-
-**Note**: Active means which site the VMs in host_group/workgroup are running, HG/WG are only active on one site at a time
 ```
 
-By default, the replication type of the site is async.
+> **Note**: Active means which site the VMs in host_group/workgroup are running, wg can be active on both sites.
+
 
 ### To discover a site:
 {: #site}
@@ -393,14 +429,11 @@ By default, the replication type of the site is async.
 ksysmgr discover site <sitename>
 discover => di*
 site => sit*
-
-The KSYS subsystem discovers all the hosts and virtual machines from all the host groups across both sites. The discovery operation might take a few minutes to a few hours to complete depending on the scale of the environment. By using the `-t` flag with the discover, verify, or move command, you can get timestamps for every step of progress.
+```
 
 An output that is similar to the following example is displayed:
 
-
 ```
-
 Waiting for update of Workspaces ...
 Update of Workspaces are successful
 Refresh VMs list of VMRM-Dal10 workspace started
@@ -412,7 +445,8 @@ Refresh VMs list of VMRM-TEST-DAL10 workspace completed
 Refresh Networks list of VMRM-TEST-DAL10 workspace started
 Refresh Networks list of VMRM-TEST-DAL10 workspace completed
 Site dal10 added successfully
-**Note**: dal10 partner GRS Region is us-east```
+```
+ >**Note**: dal10 partner GRS Region is us-east
 
 
 ### To delete a site:
@@ -427,9 +461,6 @@ site => sit*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr del site us-east
-**ERROR:** Deleting Site us-east is not allowed when workspace(s) vms are in managed state, unmanage following vms before deleting the site.
-Maheshwari
 ksysmgr del site us-east
 Workspace VMRM-wdc was removed
 Site us-east was removed
@@ -452,35 +483,31 @@ workgroup => workg*, work_g*, wg
 {: #quer}
 
 ```
+ksysmgr q wg -h
+
 ksysmgr query workgroup [ name ]
-[status [monitor=<no|yes>] | disk_group_view]
-query => q*, ls, get, sh*
-workgroup => workg*, work_g*, wg
+      [status [monitor=<no|yes>]]
+    query => q*, ls, get, sh*
+    workgroup => workg*, work_g*, wg
 ```
 
 An output that is similar to the following example is displayed: 
 
 ```
-ksysmgr q wg Maheshwari_WG
-Name: Maheshwari_WG
-ID: 3
-VMs: Maheshwari
-State: INIT
-Priority: Medium
-SkipAutoResync: OFF
-HomeWorkSpace: VMRM-wdc
-BackupWorkSpace: VMRM-Dal10
-ActiveWorkspace: VMRM-wdc
-Networks: vmrm-wdc-network01<-> VMRM-Dal10-Network01
-ksysmgr q wg Maheshwari_WG status monitor=yes
-Workgroup Maheshwari_WG is currently in INIT state
-Monitoring status...
-Press Q to quit monitoring for activity.q.
-ksysmgr q wg Maheshwari_WG disk_group_view
-Name: Maheshwari_WG
-CGName: rccg-04ac-d1bf0
-CGState: consistent_copying
-Progress: 99.0
+ksysmgr q wg vmrm_IBMi_WG
+Name:                vmrm_IBMi_WG
+ID:                  2
+VMs:                 vmrm_IBMi
+PartnerVM:           vmrm_IBMi_BackUp
+State:               READY_TO_MOVE
+Priority:            Medium
+SkipAutoResync:      OFF
+HomeWorkSpace:       vmrm_powervsdr_dal12
+BackupWorkSpace:     vmrm_powervsdr_wdc06
+ActiveWorkspace:     vmrm_powervsdr_wdc06
+Networks:            vmrm_dal12_network01 <-> vmrm_dal12_network01
+CGName:              rccg-3b3d-b61c7
+
 ```
 
 ### To discover and verify all VMs in a specific work group:
@@ -519,11 +546,7 @@ ksysmgr modify workgroup <name>
 [priority=<Low|Medium|High>]
 [SkipAutoResync=<ON|OFF>]
 workgroup => workg*, work_g*, wg
-An output that is similar to the following example is displayed: 
-ksysmgr modify workgroup <name>
-[priority=<Low|Medium|High>]
-[SkipAutoResync=<ON|OFF>]
-workgroup => workg*, work_g*, wg
+
 ```
 
 ### To resync a workgroup:
@@ -572,23 +595,21 @@ ksysmgr unmanage vm Maheshwari
 VM Maheshwari was successfully unmanaged
 ```
 
-The ksysmgr unmanage ALL host=<hostname> command will unmanage all virtual machines in the host <hostname>. The ksysmgr unmanage ALL host_group=HG1 command will unmanage all virtual machines in the host group HG1.
-
-ksysmgr unmanage vm <vmname|lparuuid,....> unmanage => unman*, umg vm => lp*, vm
-
 The preceding command syntax can be used for targeted VM management. The excluded virtual machine is not moved to the backup site when a site-switch operation is initiated.
 
-Notes: Including or excluding a virtual machine, you must run the discovery and verification commands to rediscover the resources and validate the modified configuration setting.
+> **Notes:** Including or excluding a virtual machine, you must run the discovery commands to rediscover the resources and validate the modified configuration setting.
 
-### To update the priority of virtual machines:
+### To update virtual machines:
 {: #provirt}
 
 ```
+ksysmgr modify vm -h
+
 ksysmgr modify vm <vmname>
-[targetsystem=<target_system_type>]
-modify => mod*, ch*, set
-vm => lp*, vm
-Note: The display_all option can be used before performing the first discovery operation to display only minimum information about the VMs that are added to the KSYS configuration. To display the current information about a VM, use the ksysmgr query vm command without the display_all option.
+      [targetsystem=<target_system_type>]
+      [staticIPMap=<srcip1-tgtip1,[srcip2-tgtip2,...]>]
+    modify => mod*, ch*, set
+    vm => lp*, vm*
 ```
 
 ## Discovery and verification examples
@@ -649,7 +670,14 @@ add => ad*, cr*, make, mk
 script => scr*
 Note: Network Configuration scripts are associated only with VM!
 Note: The pre_verify and post_verify scripts can be run only at site level.
+Note: pre_online and post_offline scripts are not required at Site level!
 ```
+
+> **Note:** 
+      > - Network Configuration scripts are associated only with VM!.
+      > - The pre_verify and post_verify scripts can be run only at site level.
+      > - pre_online and post_offline scripts are not required at Site level!.
+
 
 ## Events query examples
 {: #abv}
@@ -869,7 +897,7 @@ KSYS quick_discovery_interval has been updated
 ## Notification configuration examples
 {: #asf}
 
-### To add an email or SMS notification for a specific user:
+### To add an email for a specific user:
 {: #ghj}
 
 ```
@@ -1008,38 +1036,78 @@ ksysmgr query notify script
 {: #opi}
 
 ```
-ksysmgr query system [ properties ]
-query => q*, ls, get, sh*
-system => sys*
+ksysmgr q system -h
+
+ksysmgr query system [ properties | status ]
+    query => q*, ls, get, sh*
+    system => sys*
 ```
 
 An output that is similar to the following example is displayed:
 ```
 ksysmgr q system
 System-Wide Persistent Attributes
-BaseUrl: test.cloud.ibm.com
-Regions: us-east
-dal10
-dal10
-dal12
-api_key: #####1543D972B94F CA61956C2392ED6B9AE5E6761 6197B2FBFFF42893275F2F9EBBCB5CF8C1A60E17EFCE765 9993178BC3B8E72FB68 CBC3D
-trace_file_size: 1 MB
-ksys_spooling: enable
-spool_dest_dir: /tmp/ksys/rm
-spool_dir_max_size: 1 MB
-quick_discovery_interval: 60 minutes
-quick_discovery: enable
-deep_discovery: enable
-cleanup_files_interval: 7 days
+BaseUrl:                     cloud.ibm.com
+Regions:                     wdc06
+                             dal12
+                             tok04
+                             sao04
+                             sao01
+api_key:                     #####59E1857FA85240FDD689AC8AD81BC0F4CBBA447E7745DE85DFCD9DFEAB2D65D2B5 CB19CA18DEC1AC6E6A640BD2738ED9A 346C315CD9
+staticipenable:              default
+trace_file_size:             not set
+ksys_spooling:               not set
+spool_dest_dir:              not set
+spool_dir_max_size:          not set
+quick_discovery_interval:    60 minutes
+quick_discovery:             enable
+deep_discovery:              enable
+cleanup_files_interval:      7 days
 ksys_lang:
-auto_discovery_time: 00:00 hours
-custom_script_timeout: none
-notification_level: low
-dup_event_processing: yes
+auto_discovery_time:         00:00 hours
+custom_script_timeout:       none
+notification_level:          low
+dup_event_processing:        yes
 User Scripts for Site: None
 User Scripts for Workgroup: None
 User Scripts for VM: None
 ```
+
+Following is the output of modify system:
+
+```
+ksysmgr modify system -h
+
+ksysmgr modify system
+      [auto_discovery_time=<hh:mm>]
+        hh - hour:   00 to 23
+        mm - minute: 00 to 59
+      [quick_discovery_interval=<mm>]
+        mm - minute: 5 to 480
+      [quick_discovery=<enable | disable>]
+      [deep_discovery=<enable | disable>]
+      [trace_file_size=<MB>]
+        MB - Megabyte: Between 1 and 50 for single node KSYS cluster
+                       Between 1 and 25 for Multiple node KSYS cluster
+      [ksys_spooling=<enable | disable>]
+      [spool_dest_dir=<path>]
+      [spool_dir_max_size=<MB>]
+        MB - Megabyte: Between 1 and 10240
+      [cleanup_files_interval=<disable | (1-30) days>]
+      [ksys_lang=<language>]
+      [notification_level=<low | medium | high | disable>]
+      [dup_event_processing=<yes | no>]
+      [custom_script_timeout=<sec>]
+        sec - seconds: Any positive integer
+      [staticipenable=<yes|no|default>]
+    modify => mod*, ch*, set
+    system => sys*
+```
+> **Note:** 
+      > - Not advisable to modify `quick_discovery_interval` with values less than `60 mins`.
+      > - If `custom_script_timeout` value is set to `0`, it will be considered as no timeout is set.
+      > - Supported locales for `ksys_lang` are `DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_ES, IT_IT, ZH_CN, en_US`, by default language is considered to be `en_US`
+
 
 ### To enable the KSYS subsystem to rediscover the resources at noon every day automatically:
 {: #asd}
@@ -1246,15 +1314,16 @@ An output that is similar to the following example is displayed:
 KSYS auto_discovery_time has been updated
 ```
 
-## Disk group status example
+## Disk group example
 {: #groupstat}
 
-### To query status of a specific disk group, run the following command:
+### To query disk group, run the following command:
 {: #speci}
 
 ```
-ksysmgr query disk_group disk_group_name status=yes
+ksysmgr query disk_group -h
 ```
+
 
 ### To query status of all disk groups, run the following command:
 {: #alldis}
@@ -1286,7 +1355,17 @@ query => q*, ls, get, sh*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr q disk vm=Test_sivar1 CGName: rccg-a70e-d249f CGState: consistent_copying Progress: 99.0 Volume Details: Volume CGName State Progress ======================================================================================================================= Test_sivar1-078d9efc-00008120-boot-0 rccg-a70e-d249f consistent_copying 99
+ksysmgr q disk vm=vmrm_rhel
+VM:                  vmrm_rhel <-> vmrm_rhel_BackUp
+CGName:              rccg-a382-d35ba
+CGState:             consistent_copying
+Progress:            99.0
+DiskIDs:             volume-vmrm_rhel-8852d59e-000269ee-boot-0-34b22e2b-0aaf -> 34b22e2b-0aaf-4124-ad8e-4f76cdfb4cf8
+Volume Details:
+| Volume                                                                      | State                 | Progress (%) |
+|----------------------------------------------------------------------------|-----------------------|--------------|
+| volume-vmrm_rhel-8852d59e-000269... <-> aux_mrm_rhel-8852d59e-000269ee-b... | consistent_copying    | 99           |
+
 ```
 
 ## KSYS spooling
@@ -1523,12 +1602,22 @@ site => sit*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr -t discover site us-east
-02:33:39 Running discovery on entire site this may take a few minutes...
-02:33:49 Discovery has started for Workgroup Surendar_WG
-02:33:49 Discovery has started for Workgroup Maheshwari_WG
-02:34:01 Discovery has finished for us-east
-2 out of 2 managed VMs have been successfully discovered
+ksysmgr discover site DAL
+05:31:41  Running discovery on entire site, this may take a few minutes...
+        05:31:59  Discovery has started for Workgroup vmrm_rhel_WG
+        05:31:59  Discovery has started for VM vmrm_rhel
+        05:32:09  Discovery for VM vmrm_rhel is complete
+        05:32:09  Replication enablement for volumes has started for VM vmrm_rhel
+        05:32:18  Replication enablement for volumes has completed for VM vmrm_rhel
+        05:32:18  Backup VM creation has started for VM vmrm_rhel
+        05:32:18  Network Configuration has completed for VM vmrm_rhel
+        05:32:38  Backup VM vmrm_rhel_BackUp creation has completed
+        05:32:38  Backup VM configuration update has started for VM vmrm_rhel_BackUp
+        05:32:58  Backup VM configuration update has completed for VM vmrm_rhel_BackUp
+        05:32:58  Discovery for Workgroup vmrm_rhel_WG is complete
+        05:32:58  Replication is going on in background. Please use "ksysmgr query Workgroup <wgname> status monitor=yes " to track the progress of the operation.
+05:32:58  Discovery has finished for DAL
+1 out of 1 managed VMs have been successfully discovered
 ```
 
 ## Workgroup discovery and resync example
@@ -1547,9 +1636,21 @@ workgroup => workg*, work_g*, wg
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr -t discover wg Maheshwari_WG
-04:49:54 Running discovery on Workgroup Maheshwari_WG this may take a few minutes...
-04:51:52 Discovery has finished for Maheshwari_WG
+ksysmgr discover wg vmrm_rhel_WG
+04:10:41  Running discovery on Workgroup vmrm_rhel_WG, this may take a few minutes...
+        04:10:54  Discovery has started for Workgroup vmrm_rhel_WG
+        04:10:54  Discovery has started for VM vmrm_rhel
+        04:11:09  Discovery for VM vmrm_rhel is complete
+        04:11:09  Replication enablement for volumes has started for VM vmrm_rhel
+        04:11:12  Replication enablement for volumes has completed for VM vmrm_rhel
+        04:11:12  Backup VM creation has started for VM vmrm_rhel
+        04:11:12  Network Configuration has completed for VM vmrm_rhel
+        04:11:43  Backup VM vmrm_rhel_BackUp creation has completed
+        04:11:43  Backup VM configuration update has started for VM vmrm_rhel_BackUp
+        04:12:05  Backup VM configuration update has completed for VM vmrm_rhel_BackUp
+        04:12:05  Discovery for Workgroup vmrm_rhel_WG is complete
+        04:12:05  Replication is going on in background. Please use "ksysmgr query Workgroup <wgname> status monitor=yes " to track the progress of the operation.
+04:12:05  Discovery has finished for vmrm_rhel_WG
 1 out of 1 managed VMs have been successfully discovered
 ```
 
@@ -1565,8 +1666,12 @@ workgroup => workg*, work_g*, wg
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr resync wg IBMiWG
-Resync has completed for Workgroup IBMiWG
+# ksysmgr resync wg vmrm_testvm_WG
+Workgroup vmrm_testvm_WG resync has started
+        23:49:17  Shutdown has started for VM vmrm_testvm_BackUp
+        23:49:34  Resync is in progress for Workgroup vmrm_testvm_WG
+        23:49:34  Shutdown has completed for VM vmrm_testvm_BackUp
+        23:50:56  Resync has completed for Workgroup vmrm_testvm_WG
 ```
 
 ## System query example
