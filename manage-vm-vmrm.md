@@ -25,18 +25,18 @@ To create and manage virtual machines, complete the following steps:
 
 1. Click **Create New Session**.
 
-2. To create WorkGroups, search for or select the virtual machines based on your requirements.
+2. To create WorkGroups, search for or select the virtual machines that are based on your requirements.
 
 3. Display only the selected virtual machines for the session.
 
-4. To create the Target Workspace, search for or select the virtual machines according to your requirements, and click **Save & Next**.
+4. To create the target workspace, search for or select the virtual machines according to your requirements, and click **Save & Next**.
 
-> **Note**: The WorkGroup name is auto-generated based on the VM name. You can modify it if necessary.
+> **Note**: The WorkGroup name is auto-generated and is based on the VM name. You can modify it if necessary.
 
 ## Manage VM
 {: #vm-ses}
 
-You can view and manage VMs using the VM Recovery Manager DR (GUI). Managing a VM allows it to be included in disaster recovery operations and monitored effectively.
+You can view and manage VMs by using the VM Recovery Manager DR (GUI). Managing a VM allows be included in disaster recovery operations and monitored effectively.
 
 To manage the VMs, complete the following steps:
 
@@ -49,15 +49,15 @@ To manage the VMs, complete the following steps:
    - Source Workspace
    - Target Workspace
 
-> **Note:** The WorkGroup name is auto-generated based on the VM name. You can change it as per your requirements.
+> **Note:** The WorkGroup name is auto-generated and is based on the VM name. You can change it as per your requirements.
 
 
 ## Unmanage VM
 {: #um-manage-ses}
 
-You can view and unmanage VMs using the VM Recovery Manager DR (GUI). Unmanaging a VM removes it from disaster recovery operations and monitoring.
+You can view and unmanage VMs by using the VM Recovery Manager DR (GUI). Unmanaging a VM removes the VM from disaster recovery operations and monitoring.
 
-To unmanage the VMs, complete the following steps:
+To unmanage VMs, complete the following steps:
 
 1. In the navigation pane of the VM Recovery Manager DR, click **Site > WorkSpace > Unmanaged this VM**.
 2. Select the VM.

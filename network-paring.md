@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-29"
 
 subcollection: dr-automation
 
@@ -16,7 +16,7 @@ keywords: network-pairing
 Network pairing establishes communication links between network devices or systems to ensure seamless data transmission and operational connectivity. This is an **optional setup** and is typically performed after managing virtual machines (VMs) and organizing them into WorkGroups. After completing the VM management process, the GUI navigates you to the **Network Pairing** page.
 {:shortdesc: .shortdesc}
 
-All VMs added to the WorkGroup are automatically populated on the **Network Pairing** page.
+All VMs that are added to the WorkGroup are automatically populated on the **Network Pairing** page.
 
 To complete the network pairing, follow these steps:
 
@@ -34,14 +34,14 @@ To complete the network pairing, follow these steps:
 
 To view the network details, follow these steps:
 
-1. Select the workspace to view its network details.
-2. Click the **Network Information** tab on the main screen to see the associated networks.
-3. Click the **View Networks** button next to the desired workspace for detailed network data.
+1. Select the workspace to view network details.
+2. Click **Network Information** on the main screen to see the associated networks.
+3. Click **View Networks** next to the desired workspace for detailed network data.
 
-Following are the details about the selected network, including:
+You can see the following details about the selected network:
 
-- **Network Name:** The name assigned to the network.
-- **VM Name:** Lists the names of the virtual machines connected to the network.
+- **Network Name:** The name that is assigned to the network.
+- **VM Name:** Lists the names of the virtual machines that are connected to the network.
 - **Network ID:** A unique identifier for the network.
 - **Subnet Range:** Specifies the range of IP addresses within the subnet.
 - **Gateway:** Displays the gateway IP address.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-29"
 
 subcollection: dr-automation
 
@@ -13,7 +13,7 @@ keywords: cluster creation
 # Creating the KSYS cluster
 {: #create-orch-ksys}
 
-Configure your **IBM_PVS_DR** environment by adding the KSYS (Orchestrator) Cluster, specifying host details, and selecting the appropriate deployment type. If the KSYS Cluster is not already added to your **IBM_PVS_DR** environment, you will be redirected to the **Add** KSYS Subsystem page upon logging into the GUI.
+Configure your **IBM_PVS_DR** environment by adding the KSYS (Orchestrator) Cluster, specifying host details, and selecting the appropriate deployment type. If the KSYS Cluster is not already added to your **IBM_PVS_DR** environment, you are redirected to the **Add** KSYS Subsystem page after logging into the GUI.
 {:shortdesc: .shortdesc}
 
 ## Steps to add the KSYS cluster

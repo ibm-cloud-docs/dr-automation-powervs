@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-29"
 
 subcollection: dr-automation
 
@@ -17,11 +17,11 @@ On the left of the dashboard, the navigation panel displays KSYS clusters, sites
 {:shortdesc: .shortdesc}
 
 - **KSYS Cluster Navigation**:
-   - Displays the KSYS cluster type, cluster name (e.g., `ksysclusterTest`), and the overall count of associated workspaces.
-   - Expand this section to view specific details and take actions related to the cluster.
+   - Displays the KSYS cluster type, cluster name (for example, `ksysclusterTest`), and the overall count of associated workspaces.
+   - Expand this section to view specific details and take actions that are related to the cluster.
 
-- **Site Navigation (e.g., Site-2)**:
-   - Lists regions (e.g., USA, India) with their respective overall counts of associated workspaces, workgroups, and unmanaged VMs.
+- **Site Navigation (for example, Site-2)**:
+   - Lists regions (for example, `USA`, `India`) with their respective overall counts of associated workspaces, workgroups, and unmanaged VMs.
    - Expand a site to explore specific resources.
 
 - **Workspace Navigation**:
@@ -39,7 +39,7 @@ On the left of the dashboard, the navigation panel displays KSYS clusters, sites
 
 To access the Summary tab and view ongoing issues, follow these steps:
 
-1. Select the cluster (e.g., `ksysclusterTest`) from the navigation panel.
+1. Select the cluster (for example, `ksysclusterTest`) from the navigation panel.
 2. Click on **Summary** in the top navigation bar.
 3. View critical events, warnings, and configuration status of Workgroups and unmanaged VMs.
 
@@ -53,7 +53,7 @@ To access the Summary tab and view ongoing issues, follow these steps:
 ## Events
 {: #nav-pan-eve}
 
-To analyze detailed information about events in your environment:
+To analyze detailed information about events in your environment,  follow these steps:
 
 1. Select the cluster from the navigation panel.
 2. Click on **Summary** in the top navigation bar.
@@ -81,14 +81,14 @@ To view and update system tunable attributes in the **Policies** tab:
 {: #polices}
 
 - **Auto Discovery Time**: Configures the frequency (in hours) for the system to automatically discover new resources in the cluster.
-- **Duplicate Event Processing**: Indicates whether duplicate events should be processed (Yes/No).
+- **Duplicate Event Processing**: Indicates whether duplicate events must be processed (Yes or No).
 - **Quick Discovery Interval**: Specifies the interval (in minutes) for quick scans of cluster resources to detect any changes.
 - **Trace File Size**: Sets the maximum allowable size (in MB) for trace files generated during system operations.
 - **Deep Discovery**: Enables or disables a comprehensive scan of cluster resources for detailed insights.
 - **KSYS Spooling**: Allows configuration of the spooling path for KSYS logs or system outputs.
-- **API Key**: Displays or configures the API key used for secure authentication with the DR system.
-- **KSYS Language**: Specifies the language used for KSYS operations and system notifications.
-- **Notification Level**: Sets the severity level of notifications issued by the system (Low, Medium, or High).
+- **API Key**: Displays or configures the API keythat is used for secure authentication with the DR system.
+- **KSYS Language**: Specifies the language that is used for KSYS operations and system notifications.
+- **Notification Level**: Sets the severity level of notifications that are issued by the system (Low, Medium, or High).
 - **Custom Script Timeout**: Configures the timeout duration (in seconds) for executing custom scripts during operations.
 - **Quick Discovery**: Toggles the quick discovery process to monitor resource updates more frequently.
 - **Cleanup Files Interval**: Defines the time interval (in days) for cleaning up temporary or obsolete files in the system.
@@ -96,7 +96,7 @@ To view and update system tunable attributes in the **Policies** tab:
 ## Disk mapping
 {: #disk-map}
 
-The Disk Mapping feature is applicable at the Workgroup level and provides a detailed view of disk configurations between the source and target sites. It allows users to understand the mapping of disks and their relationships in disaster recovery operations.
+The Disk Mapping feature is applicable at the Workgroup level and provides a detailed view of disk configurations between the source and target sites. This feature allows you to understand the mapping of disks and their relationships in disaster recovery operations.
 
 ### Key details
 {: #key-detai}
@@ -120,10 +120,10 @@ The Disk Mapping feature is applicable at the Workgroup level and provides a det
 ## User scripts tab
 {: #user-scrip}
 
-To manage custom scripts for automating processes in the DR environment:
+To manage custom scripts for automating processes in the DR environment, follow these steps:
 
 1. Select the cluster from the navigation panel.
-2. Click on **User Scripts** in the top navigation bar.
+2. Click **User Scripts** in the top navigation bar.
 3. Navigate to the **User Scripts** tab.
 4. Edit the paths for scripts such as Before Shutdown, After Online, or Before Network Configuration.
 5. Save your changes to apply the modifications.
@@ -131,23 +131,23 @@ To manage custom scripts for automating processes in the DR environment:
 ## KSYS details
 {: #ksys-set-tab-detai}
 
-To manage nodes in the KSYS cluster:
+To manage nodes in the KSYS cluster, follow these steps:
 
 1. Select the cluster from the navigation panel.
 2. Click on **KSYS Details** in the top navigation bar.
 3. Perform the desired action:
    - **Adding a Node**: Click **Add Node**, enter the node details, and click **Add**.
    - **Deleting a Node**: Select the node, click **Delete Node**, and confirm the deletion.
-   - **Registering a Node**: Click the **Register** button next to an unregistered node, add the required details, and click **Register**.
-   - **Unregistering a Node**: Click the **Unregister** button next to the node.
+   - **Registering a Node**: Click **Register** next to an unregistered node, add the required details, and click **Register**.
+   - **Unregistering a Node**: Click **Unregister** next to the node.
 
 ## KSYS settings tab
 {: #ksys-set-tab}
 
-To manage KSYS settings:
+To manage KSYS settings, follow these steps:
 
 1. Select the cluster from the navigation panel.
-2. Click on **KSYS Details** in the top navigation bar.
+2. Click **KSYS Details** in the top navigation bar.
 3. Click **Settings** in the top right corner.
 4. Choose one of the available actions:
    - Unregister KSYS
@@ -157,15 +157,15 @@ To manage KSYS settings:
 ## Inventory tab
 {: #inventory-tab}
 
-The Inventory tab provides a detailed overview of the resources attached to the KSYS cluster, segmented by sites (e.g., USA, DAL). It is used to monitor and manage the resources associated with each site, such as system types, managed VMs, and cores.
+The Inventory tab provides a detailed overview of the resources that are attached to the KSYS cluster, segmented by sites (for example, USA, DAL). This tab is used to monitor and manage the resources associated with each site, such as system types, managed VMs, and cores.
 
 This information allows users to track resource utilization efficiently across sites and system types.
 
-Following are the details:
+The following list provides details for each option:
 
 - **Site-Specific Inventory**:
-   - Displays information for each site separately (e.g., USA, DAL).
-   - Each site is categorized by system type (e.g., `s922`).
+   - Displays information for each site separately (for example, USA, DAL).
+   - Each site is categorized by system type (for example, `s922`).
 
 - **Managed VMs**:
    - Shows the total number of managed VMs for each system type in the site.
@@ -180,9 +180,9 @@ Following are the details:
 {: #steps}
 
 1. Select the desired **KSYS Cluster** from the navigation panel.
-2. Click on **Inventory** in the top navigation bar.
+2. Click **Inventory** in the top navigation bar.
 3. View the site-specific inventory details:
-   - Identify the **System Type** for each site (e.g., `s922`).
+   - Identify the **System Type** for each site (for example, `s922`).
    - Review the **Number of Managed VMs** and **Number of Managed Cores** for each system type.
    - Check the **Total** row for a consolidated count of managed resources in the site.
 
@@ -204,7 +204,7 @@ Following are the details:
 ## Workgroup active and partner VMs
 {: #work-grou-active}
 
-To view details about Active and Partner VMs for a Workgroup:
+To view details about Active and Partner VMs for a Workgroup, follow these steps:
 
 1. Expand the Workgroup from the navigation panel.
 2. View the details under the Workgroup Summary section.
