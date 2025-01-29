@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-29"
 
 subcollection: dr-automation
 
@@ -19,7 +19,7 @@ Efficiently set up and manage VM sessions by creating new sessions, organizing v
 ## Create a new VM session
 {: #create-vm-ses}
 
-After creating the sites, you must create a new VM session if you are managing the virtual machine for the first time. If the virtual machine has already been managed, you can proceed directly to [manage the VM](#vm-ses) and [unmange VM](#um-manage-ses) the sessions.
+After creating the sites, you must create a new VM session if you are managing the virtual machine for the first time. If the virtual machine is already managed, you can proceed directly to [manage the VM](#vm-ses) and [unmange VM](#um-manage-ses) sessions.
 
 To create and manage virtual machines, complete the following steps:
 

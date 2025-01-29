@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-28"
+lastupdated: "2025-01-29"
 
 subcollection: dr-automation
 
@@ -78,7 +78,9 @@ The following ```ACTION``` flags are available:
 ```pair (alias: map)```
 
 ```refresh```
+
 ```resync```
+
 ```update```
 
 ## CLASS
@@ -205,6 +207,7 @@ Available actions for ksyscluster:
 
 ### To update license:
 {: #update-lic}
+
 ```
 ksysmgr update license -h
 
@@ -231,8 +234,8 @@ apikey=<apikey>
 add => ad*, cr*, make, mk
 ksyscluster => ksysclu*, clu*
 
- **Note**: apikey, baseurl and proxy are applicable only for `IBM_PVS_DR cluster` 
 ```
+ >**Note:** apikey, baseurl and proxy are applicable only for `IBM_PVS_DR cluster.`
 
 An output that is similar to the following example is displayed:
 ```
@@ -242,9 +245,9 @@ Ksyscluster has been verified, running sync now
 Stopping KSYS subsystem ...
 Starting KSYS subsystem ...
 KSYS subsystem has started. You can begin adding site definitions, etc
-
-**Note**: By default, the value of type variable is DR cluster type. 
+ 
 ```
+ >**Note:** By default, the value of type variable is DR cluster type.
 
 ### To update staticIp modification
 {: #stats-modi}
@@ -398,8 +401,8 @@ Refresh Networks list of VMRM-TEST-DAL10 workspace started
 Refresh Networks list of VMRM-TEST-DAL10 workspace completed
 Site dal10 added successfully
 
-**Note**: dal10 partner GRS Region is us-east
 ```
+ >**Note**: dal10 partner GRS Region is us-east.
 
 ### To query the details about a specific sites:
 {: #details}
@@ -812,8 +815,10 @@ quick_discovery
 Sets the quick_discovery variable to enable/disable.
 deep_discovery
 Sets the deep_discovery variable to enable/disable.
-Note: If the network_isolation attribute is set to ALL, the action attribute must have delete value. This will delete all the IP's.
 ```
+
+>**Note:** If the network_isolation attribute is set to ALL, the action attribute must have delete value. This will delete all the IP's.
+
 
 To modify the system wide persistent attribute for the ksysmgr command:
 ```
@@ -909,8 +914,9 @@ script=<full path script>
 event=<event name>
 add => ad*, cr*, make, mk
 notify => rn, remote_not*, noti*
-Note: contact should be email address
 ```
+>**Note:** Contact should be email address
+
 
 An output that is similar to the following example is displayed:
 ```
@@ -1017,9 +1023,10 @@ ksysmgr delete notify
 script=<full path script> [ event=<event name> ]
 delete => de*, remove, rm, erase
 notify => rn, remote_not*, noti*
-Note: User can give script name along with event name to remove notify for particular event.
-Also, User can give Only script name to remove notify for all events listed with that script name
 ```
+ >**Note:** User can give script name along with event name to remove notify for particular event.
+Also, User can give Only script name to remove notify for all events listed with that script name
+
 
 ### To query a script:
 {: ikm}
@@ -1136,11 +1143,12 @@ MB - Megabyte: Between 1 and 10240
 sec - seconds: Any positive integer
 modify => mod*, ch*, set
 system => sys*
-Note: Not advisable to modify quick_discovery_interval with values less than 60 mins.
-Note: If custom_script_timeout value is set to 0, it will be considered as no timeout is set.
-Note: Supported locales for ksys_lang are DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_ES, IT_IT, ZH_CN, en_US
-By default language is considered to be en_US
 ```
+> **Note:** 
+      > - Not advisable to modify `quick_discovery_interval` with values less than `60 mins`.
+      > - If `custom_script_timeout` value is set to `0`, it will be considered as no timeout is set.
+      > - Supported locales for `ksys_lang` are `DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_ES, IT_IT,    ZH_CN, en_US`, by default language is considered to be `en_US`.
+
 
 An output that is similar to the following example is displayed:
 ```
@@ -1207,8 +1215,9 @@ to=<sitename>
 [dr_type=<planned|unplanned>]
 move => mov*, mv, swi*
 site => sit*
-Note: dr_type=planned is the default
 ```
+> **Note:** dr_type=planned is the default
+
 
 If you do not specify the cleanup attribute, for a planned disaster recovery operation, the KSYS subsystem automatically cleans up the source site from where the site-switch operation was initiated.
 
@@ -1293,8 +1302,10 @@ Successfully restored registry files!
 Starting VMR daemon...
 Successfully restored snapshot:/var/ksys/snapshots/snap.xml_DETAILED_2024-07-28_01:15:14.xml!
 Please run discovery to apply changes.
-INFO: Restore completed successfully
 ```
+
+ >**INFO:** Restore completed successfully
+
 
 This command decompresses and unarchives the snapshot file, and then applies the configuration settings to the KSYS node.
 
@@ -1414,9 +1425,10 @@ User Scripts for VM: None
 
 ```
 ksysmgr modify system ksys_spooling=enable
-
-Note: If you enable the ksys_spooling and the spool_dest_dir value is not set for the KSYS spooling, then the spool_dest_dir will get a default value as /tmp/ksys/rm.
 ```
+
+ >**Note:** If you enable the ksys_spooling and the spool_dest_dir value is not set for the KSYS spooling, then the spool_dest_dir will get a default value as /tmp/ksys/rm.
+
 
 ### To modify the KSYS spool_dir_max_size:
 {: #dirmix}
