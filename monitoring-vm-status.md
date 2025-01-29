@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-23"
+lastupdated: "2025-01-29"
 
 subcollection: dr-automation
 
@@ -17,7 +17,7 @@ When creating one or multiple VMs in DR Automation for Power Virtual Server, the
 
 By following the outlined statuses below, you can effectively monitor the progress of your VM creation and ensure it aligns with your deployment goals.
 
-## Statuses for creating a single VM
+## Status for creating a single VM
 {: #moni-vm-stat-creat}
 
 - **Configure Status**  
