@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-01-30"
 
 subcollection: dr-automation
 
@@ -12,7 +12,7 @@ keywords: commands
 
 {: #comm}
 
-The command provides a consistent interface to configure the controller system (KSYS) and to perform IBM® VM Recovery Manager DR operations by using a terminal or script.
+The command provides a consistent interface to configure the controller system (KSYS) and to perform {{site.data.keyword.DR_full}} operations by using a terminal or script.
 {:shortdesc: .shortdesc}
 
 ## syntax
@@ -77,9 +77,9 @@ The following ```ACTION``` flags are available:
 
 ```pair (alias: map)```
 
-```refresh```
+```refresh (ref*)```
 
-```resync```
+```resync (resy*)```
 
 ```update```
 
@@ -100,21 +100,23 @@ The following ```CLASS``` objects are supported:
 
 ```snapshot (alias: snap*)```
 
-```script```
+```script (scr*)```
 
-```workgroup```
+```workgroup (workg*, work_g*, wg)```
 
 ```disk```
 
-```event```
+```disk_group (dg, disk_g*)```
+
+```event (ev*)```
 
 ```system (alias: sys*)```
 
-```workspace```
+```workspace (works*, work_s*, ws)```
 
-```network```
+```network (netw*, nw, net_work, net_w*)```
 
-```region```
+```region (regio*)```
 
 ## NAME
 {: #nam}
@@ -129,7 +131,7 @@ Specifies an optional flag that has attribute pairs and value pairs that are spe
 
 Displays only the specified attributes. This flag must be used with the query ACTION flag. For example:
 
-```ksysmgr -a name,sitetype query site```
+```ksysmgr -a name, query site```
 
 `-f`
 
@@ -215,6 +217,7 @@ ksysmgr update license <vmname>
     update => upd*
     license => lic*
 ```
+ >**Note:** Only supports IBM i VM 
 
 ### Cluster configuration examples
 {: #clu}
@@ -293,17 +296,17 @@ When you delete a KSYS cluster, the **ksysmgr** command prompts for your confirm
 An output that is similar to the following example is displayed:
 
 ```
-**WARNING**: This action will remove all configuration and destroy the KSYS setup. It's recommended to create a backup with "ksysmgr add snapshot -h"
+WARNING: This action will remove all configuration and destroy the KSYS setup. It's recommended to create a backup with "ksysmgr add snapshot -h"
 ```
 
+```
 Do you want a backup to be created now ? [y|n]
 
 `y`
-```
+
 Taking snapshot...
 Created: /var/ksys/snapshots/oldclust_DETAILED_2024-07-29_06:35:30.xml.tar.gz
 Successfully created a configuration snapshot: /var/ksys/snapshots/oldclust_DETAILED_2024-07-29_06:35:30.xml.tar.gz
-```
 
 Do you wish to store the logs on successful cluster deletion? [y|n]
 
@@ -315,46 +318,26 @@ Do you wish to proceed? [y|n]
 
 This may take a few minutes to remove the `ksyscluster`
 
-The following log entries detail the process of stopping and removing various workgroups, along with the associated tasks:
-```
+
 Automatic deep discovery disabled
-
 Automatic quick discovery disabled
-
 User_WG Workgroup stop VG has started
-
 User_WG Workgroup stop VG has completed
-
 Removal of VG disks from User_WG Workgroup has started
-
 Removal of VG disks from User_WG Workgroup has completed
-
 Workgroup User_WG was removed
-
 vmrm_dev_01_WG Workgroup stop VG has started
-
 vmrm_dev_01_WG Workgroup stop VG has completed
-
 Removal of VG disks from vmrm_dev_01_WG Workgroup has started
-
 Removal of VG disks from vmrm_dev_01_WG Workgroup has completed
-
 Workgroup vmrm_dev_01_WG was removed
-
 User_WG Workgroup stop VG has started
-
 User_WG Workgroup stop VG has completed
-
 Removal of VG disks from User_WG Workgroup has started
-
 Removal of VG disks from User_WG Workgroup has completed
-
 Workgroup User_WG was removed
-
 Successfully created ksys logs backup /tmp/ksyscluster_logs_2024-07-29_06:36:05.tar.gz
-
 IBM.VMR process stopped successfully
-
 Peer domain was removed successfully
 ```
 
@@ -369,18 +352,6 @@ ksysmgr modify ksyscluster <ksysclustername> [glnode=<ksysnode>]
 [proxy=<ipaddress:portnumber>]
 ksyscluster => ksysclu*, clu*
 ```
-
-### To check the version of the KSYS software:
-
-```
-ksysmgr q ksyscluster IBM_powervs
-Name:                IBM_powervs
-State:               Online
-Type:                IBM_PVS_DR
-Ksysnodes:           pbrazos01-ksys39.aix-test.tadn.ibm.com:1:Online
-KsysState:           pbrazos01-ksys39.aix-test.tadn.ibm.com:1:Online
-```
-
 ### To add a site in the KSYS subsystem:
 {: #subsyste}
 
@@ -419,39 +390,9 @@ An output that is similar to the following example is displayed:
 Name: us-east
 Region: us-east
 Workspaces: VMRM-wdc
-ActiveWorkgroups: Maheshwari_WG, SivaKrishna_WG, vmrm_dev_01_WG
+ActiveWorkgroups: vmrm_dev_02_WG, vmrm_dev_03_WG, vmrm_dev_01_WG
+Note: Active indicates the site where a WorkGroup's VMs are running. The same WorkGroup cannot be active on both sites, but others can be.
 ```
-
-> **Note**: Active means which site the VMs in host_group/workgroup are running, wg can be active on both sites.
-
-
-### To discover a site:
-{: #site}
-
-```
-ksysmgr discover site <sitename>
-discover => di*
-site => sit*
-```
-
-An output that is similar to the following example is displayed:
-
-```
-Waiting for update of Workspaces ...
-Update of Workspaces are successful
-Refresh VMs list of VMRM-Dal10 workspace started
-Refresh VMs list of VMRM-Dal10 workspace completed
-Refresh Networks list of VMRM-Dal10 workspace started
-Refresh Networks list of VMRM-Dal10 workspace completed
-Refresh VMs list of VMRM-TEST-DAL10 workspace started
-Refresh VMs list of VMRM-TEST-DAL10 workspace completed
-Refresh Networks list of VMRM-TEST-DAL10 workspace started
-Refresh Networks list of VMRM-TEST-DAL10 workspace completed
-Site dal10 added successfully
-```
- >**Note**: dal10 partner GRS Region is us-east
-
-
 ### To delete a site:
 {: #delets}
 
@@ -513,8 +454,8 @@ CGName:              rccg-3b3d-b61c7
 
 ```
 
-### To discover and verify all VMs in a specific work group:
-{: #dis}
+### To discover all VMS in a specific workgroup for Dr readiness:
+{: #dis-dr-read}
 
 ```
 ksysmgr discover workgroup <name>
@@ -615,7 +556,7 @@ ksysmgr modify vm <vmname>
     vm => lp*, vm*
 ```
 
-## Discovery and verification examples
+## Discovery examples
 {: #disvery}
 
 ### To discover the resources in a site:
@@ -671,16 +612,10 @@ ksysmgr add script entity=<workgroup|site|vm>
 [post_storage_replication=<full path to the script file>]
 add => ad*, cr*, make, mk
 script => scr*
-Note: Network Configuration scripts are associated only with VM!
-Note: The pre_verify and post_verify scripts can be run only at site level.
+Note: Network Configuration scripts are associated only with vm!
+Note: Storage Replication scripts are associated only with workgroup!
 Note: pre_online and post_offline scripts are not required at Site level!
 ```
-
-> **Note:** 
-      > - Network Configuration scripts are associated only with VM!.
-      > - The pre_verify and post_verify scripts can be run only at site level.
-      > - pre_online and post_offline scripts are not required at Site level!.
-
 
 ## Events query examples
 {: #abv}
@@ -817,10 +752,7 @@ deep_discovery
 Sets the deep_discovery variable to enable/disable.
 ```
 
->**Note:** If the network_isolation attribute is set to ALL, the action attribute must have delete value. This will delete all the IP's.
-
-
-To modify the system wide persistent attribute for the ksysmgr command:
+#### To modify the system wide persistent attribute for the ksysmgr command:
 ```
 ksysmgr modify system
 [auto_discovery_time=<hh:mm>]
@@ -849,11 +781,21 @@ Note: Not advisable to modify quick_discovery_interval with values less than 60 
 Note: If custom_script_timeout value is set to 0, it will be considered as no timeout is set.
 Note: Supported locales for ksys_lang are DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_ES, IT_IT, ZH_CN, en_US
 By default language is considered to be en_US
+```
+
+
 An output that is similar to the following example is displayed:
+
+
+```
 ksysmgr modify system auto_discovery_time=07:31:28
 KSYS auto_discovery_time has been updated
+```
+```
 ksysmgr modify system quick_discovery_interval=32
 KSYS quick_discovery_interval has been updated
+```
+```
 ksysmgr mod system quick_discovery=enable
 KSYS quick_discovery has been updated
 ksysmgr mod system quick_discovery=disable
@@ -891,7 +833,8 @@ Note: The value in the sa_ping_timer attribute and the hmc_ping_timer attribute 
 
 To enable or disable the quick-discovery feature:
 ```
-ksysmgr modify system quick_discovery_interval=6
+ksysmgr modify system quick_discovery=enable
+KSYS quick_discovery has been updated
 ```
 
 To set the time duration for the quick-discovery operation:
@@ -923,7 +866,7 @@ An output that is similar to the following example is displayed:
 ksysmgr add notify script=/surendar/a.sh event=DISCOVERY_STARTED successfully added script for event
 ```
 
-### To modify an email address or SMS number for a specific user:
+### To modify an email address or script for a specific user:
 {: #memail}
 
 ```
@@ -1116,39 +1059,18 @@ ksysmgr modify system
       > - Supported locales for `ksys_lang` are `DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_ES, IT_IT, ZH_CN, en_US`, by default language is considered to be `en_US`
 
 
-### To enable the KSYS subsystem to rediscover the resources at noon every day automatically:
+### To enable the KSYS subsystem to rediscover the resources every day automatically:
 {: #asd}
 
 ```
-ksysmgr modify system
-[auto_discovery_time=<hh:mm>]
-hh - hour: 00 to 23
-mm - minute: 00 to 59
-[quick_discovery_interval=<mm>]
-mm - minute: 5 to 480
-[quick_discovery=<enable | disable>]
-[deep_discovery=<enable | disable>]
-[trace_file_size=<MB>]
-MB - Megabyte: Between 1 and 50 for single node KSYS cluster
-Between 1 and 25 for Multiple node KSYS cluster
-[ksys_spooling=<enable | disable>]
-[spool_dest_dir=<path>]
-[spool_dir_max_size=<MB>]
-MB - Megabyte: Between 1 and 10240
-[cleanup_files_interval=<disable | (1-30) days>]
-[ksys_lang=<language>]
-[notification_level=<low | medium | high | disable>]
-[dup_event_processing=<yes | no>]
-[custom_script_timeout=<sec>]
-sec - seconds: Any positive integer
-modify => mod*, ch*, set
-system => sys*
+ksysmgr modify system deep_discovery=enable
+KSYS deep_discovery has been updated
 ```
-> **Note:** 
-      > - Not advisable to modify `quick_discovery_interval` with values less than `60 mins`.
-      > - If `custom_script_timeout` value is set to `0`, it will be considered as no timeout is set.
-      > - Supported locales for `ksys_lang` are `DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_ES, IT_IT,    ZH_CN, en_US`, by default language is considered to be `en_US`.
 
+```
+ksysmgr modify system quick_discovery=enable
+KSYS quick_discovery has been updated
+```
 
 An output that is similar to the following example is displayed:
 ```
@@ -1191,7 +1113,7 @@ KSYS custom_script_timeout has been updated
 {: #zsx}
 
 ```
-ksysmgr modify system notification_level=medium
+ksysmgr modify system notification_level=high
 ```
 
 ### To change the duplicate event processing option to receive notification for all events, even if the events are duplicated:
@@ -1215,9 +1137,8 @@ to=<sitename>
 [dr_type=<planned|unplanned>]
 move => mov*, mv, swi*
 site => sit*
+Note: dr_type=planned is the default
 ```
-> **Note:** dr_type=planned is the default
-
 
 If you do not specify the cleanup attribute, for a planned disaster recovery operation, the KSYS subsystem automatically cleans up the source site from where the site-switch operation was initiated.
 
@@ -1266,7 +1187,7 @@ Time: 06:35:30
 Cluster:
 --------
 Name: pvs_dr
-Node: ksys804p.aus.stglabs.ibm.com
+Node: hostname.com
 Type: IBM_PVS_DR
 ```
 
@@ -1302,28 +1223,11 @@ Successfully restored registry files!
 Starting VMR daemon...
 Successfully restored snapshot:/var/ksys/snapshots/snap.xml_DETAILED_2024-07-28_01:15:14.xml!
 Please run discovery to apply changes.
-```
-
- >**INFO:** Restore completed successfully
+INFO: Restore completed successfully
+ ```
 
 
 This command decompresses and unarchives the snapshot file, and then applies the configuration settings to the KSYS node.
-
-## VM auto discovery
-{: #disauto}
-
-### To check whether the VM auto-discovery property is enabled or disabled to manage discovered resources across the site automatically, run the following command:
-{: #siteauto}
-
-```
-ksysmgr modify system auto_discovery_time=12:39
-```
-
-An output that is similar to the following example is displayed:
-
-```
-KSYS auto_discovery_time has been updated
-```
 
 ## Disk group example
 {: #groupstat}
@@ -1332,24 +1236,24 @@ KSYS auto_discovery_time has been updated
 {: #speci}
 
 ```
-ksysmgr query disk_group -h
+ksysmgr query disk_group [wg=<wgname>]
+    query => q*, ls, get, sh*
+    disk_group => dg, disk_g*
 ```
 
-
-### To query status of all disk groups, run the following command:
-{: #alldis}
-
 ```
-ksysmgr query disk_group status=yes
-```
-
+ksysmgr q disk_group
+WGName:              vmrm_rhel_WG
+CGName:              rccg-a382-d35ba
+CGState:             consistent_copying
+Progress:            99.0
+HomeWorkSpace:       vmrm_powervsdr_dal12
+BackupWorkSpace:     vmrm_powervsdr_wdc06
+ActiveWorkspace:     vmrm_powervsdr_dal12
+Active Site:         DAL
+VolumeDiskGroup:     vmrm_rhel_WG_VG <-> rccg-a382-d35ba
 An output that is similar to the following example is displayed:
-
 ```
-Name: VMRDG_DR_Site1 Site: Site1 Hosts: <Hosts> Storages: saremote_emc CG: CG1 State: SYNC (saremote_emc) Name: VMRDG_DR_Site2 Site: Site2 Hosts: <Hosts> Storages: salocal_emc CG: CG2 State: SYNC (salocal_emc)
-```
-
->**Note**: The SVC storage agent, EMC storage agent, Hitachi storage agent, and EMC Unity storage agent supports the status attribute with the yes option, that is status=yes.
 
 ## Viewing disk details
 {: #diskdetail}
@@ -1394,30 +1298,12 @@ system => sys*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr q system
-System-Wide Persistent Attributes
-BaseUrl: test.cloud.ibm.com
-Regions: us-east
-dal10
-dal10
-dal12
-api_key: #####1543D972B94F CA61956C2392ED6B9AE5E6761 6197B2FBFFF42893275F2F9EBBCB5CF8C1A60E17EFCE765 9993178BC3B8E72FB68 CBC3D
-trace_file_size: 1 MB
-ksys_spooling: enable
-spool_dest_dir: /tmp/ksys/rm
-spool_dir_max_size: 1 MB
-quick_discovery_interval: 60 minutes
-quick_discovery: enable
-deep_discovery: enable
-cleanup_files_interval: 7 days
-ksys_lang:
-auto_discovery_time: 00:00 hours
-custom_script_timeout: none
-notification_level: low
-dup_event_processing: yes
-User Scripts for Site: None
-User Scripts for Workgroup: None
-User Scripts for VM: None
+ksysmgr modify system trace_file_size=30 ksys_spooling=enable spool_dest_dir=/tmp
+KSYS spool_dest_dir,ksys_spooling,trace_file_size has been updated
+
+trace_file_size:             30 MB
+ksys_spooling:               enable
+spool_dest_dir:              /tmp
 ```
 
 ### To enable KSYS spooling:
@@ -1459,7 +1345,12 @@ ksysmgr modify system trace_file_size=<value> ksys_spooling=<enable/disable> spo
 An output that is similar to the following example is displayed:
 
 ```
-vlanmap: Not currently set vswitchmap: Not currently set drvlanmap: Not currently set drvswitchmap: Not currently set trace_file_size: 30 MB ksys_spooling: enable spool_dest_dir: /S1
+ksysmgr modify system trace_file_size=30 ksys_spooling=enable spool_dest_dir=/tmp
+KSYS spool_dest_dir,ksys_spooling,trace_file_size has been updated
+
+trace_file_size:             30 MB
+ksys_spooling:               enable
+spool_dest_dir:              /tmp
 ```
 
 ## Notification configuration and query example
@@ -1587,9 +1478,12 @@ ksysmgr pair network <source_network_name>
       pair=<target_network_name> | pair=none
       [home_workspace=<home_workspacename>]
       [target_workspace=<target_workspacename>]
-      [ip_range=<start_ip_addressend_ip_address>]
-       pair => map
-       network => net*, net_w, nw
+      [ip_range=<start_ip_address,end_ip_address>]
+      [cidr=<cidr>]
+      [dns=<dns>]
+    pair => map
+    network => net*, net_w, nw
+Note: pair=none for unpairing the network
 ```
 
 An output that is similar to the following example is displayed:
