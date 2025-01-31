@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-31"
 
 subcollection: dr-automation
 
@@ -23,7 +23,7 @@ Use the cost estimator tool to evaluate potential costs for DR Automation resour
 - Exporting estimates for record-keeping
 
 
-## Steps to generate an estimate for DR Automation
+## Generate an estimate for DR Automation
 {: #stg}
 
 ### Step 1: Accessing the cost estimator
@@ -41,37 +41,37 @@ Use the cost estimator tool to evaluate potential costs for DR Automation resour
 
 You can generate an estimate by specifying the necessary **configurations** for DR resources, such as the number of **cores**. This process allows you to review projected costs before making deployment decisions.
 
-> **Note**: Creating an estimate incurs no charges, resources are billed only upon deployment.
+ >**Note**: Creating an estimate incurs no charges, resources are billed only upon deployment.
 
-- Choose the **{{site.data.keyword.DR_short}}** setup as it is hosted within IBM’s data centers.
+1. Choose the **{{site.data.keyword.DR_short}}** setup as it is hosted within IBM’s data centers.
 
-- Choose the **IBM Cloud region** where the DR resources will be hosted.
+2. Choose the **IBM Cloud region** where the DR resources will be hosted.
 
-- Define the number of cores required for DR.
+3. Define the number of cores required for DR.
 
-- Enable **Orchestrator HA** option if high availability is needed for your orchestrator. Additional charges may apply.
+4. Enable **Orchestrator HA** option if high availability is needed for your orchestrator. Additional charges may apply.
 
 
-### Step 3: Adding to estimate and viewing summary
+### Step 3: Add to estimate and viewing summary
 {: #stps}
 
-- Click **Add** to estimate to **save** your configured DR resources.
-- Review the Total Estimated Cost on the right panel, which includes core-based charges for DR software licenses.
+1. Click **Add** to estimate to **save** your configured DR resources.
+2. Review the Total Estimated Cost on the right panel, which includes core-based charges for DR software licenses.
 
 
 ### Step 4: Saving and viewing the estimate
 {: #stepss}
 
-- After configuring, **save** the estimate with a **unique name** and optional description.
-- Access your saved estimate to review the detailed cost breakdown.
+1. After configuring, **save** the estimate with a **unique name** and optional description.
+2. Access your saved estimate to review the detailed cost breakdown.
 
 
 ### Step 5: Exporting the estimate
 {: #ete}
 
-- Export the saved estimate as an **XLSX**, **CSV**, or **PDF** file.
+1. Export the saved estimate as an **XLSX**, **CSV**, or **PDF** file.
 
-- This allows for offline review and sharing with stakeholders.
+2. This allows for offline review and sharing with stakeholders.
 
 
 ## {{site.data.keyword.DR_short}} configuration summary

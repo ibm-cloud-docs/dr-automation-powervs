@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-31"
 
 subcollection: dr-automation
 
@@ -20,7 +20,6 @@ DR Automation for PowerVS is available in select regions with scale-out logical 
 |-----------------------|------------|-------------------|
 | E980 (9080-M9S)       | 143        | Up to 15,307 GB  |
 | S922 (9009-22A)       | 15         | Up to 942 GB     |
-| S1022 (9105-22A)      | 33         | Up to 1984 GB    |
 | E1080 (9080-HEX)      | 240        | Up to 64 TB      |
 {: caption="Theoretical maximum memory" caption-side="bottom"}
 
@@ -42,14 +41,16 @@ For information on different processor type functions, see [FAQ](/docs/dr-automa
 
 All processor types are billed uniformly, regardless of configuration.
 
+## All processors type pricing
 
-| Number of cores | Hourly rate (All processor types) | Monthly cost (730 hours) |
-|-----------------|-----------------------------------|---------------------------|
-| 1               | $0.63                             | $459.90                   |
-| 2               | $1.26                             | $919.80                   |
-| 3               | $1.89                             | $1,379.70                 |
-| 4               | $2.52                             | $1,839.60                 |
-| 5               | $3.15                             | $2,299.50                 |
+| Number of cores | Hourly rate (Updated) | Monthly cost (730 hours) |
+|----------------|----------------------|--------------------------|
+| 1              | $0.06849              | $50.00                   |
+| 2              | $0.13698              | $100.00                  |
+| 3              | $0.20547              | $149.99                  |
+| 4              | $0.27396              | $199.99                  |
+| 5              | $0.34245              | $249.99                  |
+
 {: caption="All processors type pricing" caption-side="bottom"}
 
 
