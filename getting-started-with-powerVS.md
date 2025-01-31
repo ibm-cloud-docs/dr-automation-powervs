@@ -39,7 +39,7 @@ Complete the following prerequisites:
 ## Lifecycle of Power Virtual Server DR Automation
 {: #lpvsdrauto} 
 
-![DR Automation life Cycle](images/dr-automation-life-cycle.svg "DR Automation life Cycle"){: caption="DR Automation life Cycle" caption-side="bottom"}
+![DR Automation life Cycle](images/DR-Automation-life-Cycle2.svg "DR Automation life Cycle"){: caption="DR Automation life Cycle" caption-side="bottom"}
 
 ### Step 1: Set up the orchestrator
 {: #setup-orchestrator}
