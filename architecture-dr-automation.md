@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-28"
+lastupdated: "2025-01-31"
 
 subcollection: dr-automation
 
@@ -154,7 +154,7 @@ For more details, refer to the specific data sheets and hardware overview table.
 ## Software requirment
 {: #sr}
 
-- The Orchestrator(KSYS) LPAR requires a minimum of 1 core CPU and 8 GB of memory, though larger environments with over 100 VMs may require more resources.
+- The Orchestrator(KSYS) LPAR requires a minimum of 0.5 core CPU and 4 GB of memory, though larger environments with over 100 VMs may require more resources.
 - The KSYS logical partition must run IBM® AIX® 7.3 with Technology Level 1 Service Pack 1 (7300-01-01), or later.
 - Each Cloud LPAR in the host must have the following operating systems:
   -   AIX Version 7.3, and later
