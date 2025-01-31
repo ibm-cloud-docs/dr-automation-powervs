@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-01-31"
 
 keywords: getting started, disaster recovery, PowerVS
 
@@ -39,15 +39,17 @@ Complete the following prerequisites:
 ## Lifecycle of Power Virtual Server DR Automation
 {: #lpvsdrauto} 
 
-![DR Automation life Cycle](images/dr-automation-blockdiagram.svg "DR Automation life Cycle"){: caption="DR Automation life Cycle" caption-side="bottom"}
+![DR Automation life Cycle](images/dr-automation-life-cycle.svg "DR Automation life Cycle"){: caption="DR Automation life Cycle" caption-side="bottom"}
 
 ### Step 1: Set up the orchestrator
 {: #setup-orchestrator}
 
-1. On the **Manage** tab, configure the **Primary orchestrator name** and set a password to secure access.
+1. On the **Manage** tab, configure the **orchestrator name** and set a password to secure access.
 2. Provide a valid **IBM Cloud API key**, then complete additional fields, including the **Schematics workspace** and **Public SSH key** or keys from **Secrets Manager**.
-3. (Optional) Expand the **Advanced Configuration** section to enable **High Availability** by configuring a Standby orchestrator and selecting a secondary workspace.
-4. Review all settings and click **Deploy Orchestrator** to begin the deployment.
+3. (Optional) Expand the **Advanced Configuration** to select configruations for orchestrator.
+
+4. Provide standby orchestrator details ,if you have enabled **Deploy Orchestrator with HA** on provision page.
+5. Review all settings and click **Deploy Orchestrator** to begin the deployment.
 
 
 ## Next steps
