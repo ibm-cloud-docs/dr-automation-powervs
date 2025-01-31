@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-01-31"
 
 subcollection: dr-automation
 
@@ -216,8 +216,8 @@ ksysmgr update license -h
 ksysmgr update license <vmname>
     update => upd*
     license => lic*
+ Note: Only supports IBM i VM 
 ```
- >**Note:** Only supports IBM i VM 
 
 ### Cluster configuration examples
 {: #clu}
@@ -236,11 +236,11 @@ apikey=<apikey>
 [proxy=<ipaddress:portnumber>]
 add => ad*, cr*, make, mk
 ksyscluster => ksysclu*, clu*
-
+ Note: apikey, baseurl and proxy are applicable only for `IBM_PVS_DR cluster.`
 ```
- >**Note:** apikey, baseurl and proxy are applicable only for `IBM_PVS_DR cluster.`
 
 An output that is similar to the following example is displayed:
+
 ```
 Adding node to current cluster configuration
 Ksyscluster has been created, running verify now
@@ -248,9 +248,8 @@ Ksyscluster has been verified, running sync now
 Stopping KSYS subsystem ...
 Starting KSYS subsystem ...
 KSYS subsystem has started. You can begin adding site definitions, etc
- 
+Note: By default, the value of type variable is DR cluster type.
 ```
- >**Note:** By default, the value of type variable is DR cluster type.
 
 ### To update staticIp modification
 {: #stats-modi}
@@ -279,8 +278,8 @@ An output that is similar to the following example is displayed:
 Name: pvs_dr
 State: Online
 Type: IBM_PVS_DR
-Ksysnodes: ksys804p.aus.stglabs.ibm.com:1:Online
-KsysState: ksys804p.aus.stglabs.ibm.com:1:Online
+Ksysnodes: test.dev.com:1:Online
+KsysState: test.dev.com:1:Online
 ```
 
 ### To remove a KSYS cluster:
@@ -347,7 +346,7 @@ Peer domain was removed successfully
 ```
 ksysmgr modify ksyscluster <ksysclustername> [glnode=<ksysnode>]
 [add|remove]
-[ksysnodes=<ksysnode1[,ksysnode2,...]>
+[ksysnodes=<ksysnode1][,ksysnode2,...]>
 [apikey=<apikey>]
 [proxy=<ipaddress:portnumber>]
 ksyscluster => ksysclu*, clu*
@@ -371,9 +370,8 @@ Refresh VMs list of VMRM-TEST-DAL10 workspace completed
 Refresh Networks list of VMRM-TEST-DAL10 workspace started
 Refresh Networks list of VMRM-TEST-DAL10 workspace completed
 Site dal10 added successfully
-
+Note: dal10 partner GRS Region is us-east.
 ```
- >**Note**: dal10 partner GRS Region is us-east.
 
 ### To query the details about a specific sites:
 {: #details}
@@ -393,6 +391,7 @@ Workspaces: VMRM-wdc
 ActiveWorkgroups: vmrm_dev_02_WG, vmrm_dev_03_WG, vmrm_dev_01_WG
 Note: Active indicates the site where a WorkGroup's VMs are running. The same WorkGroup cannot be active on both sites, but others can be.
 ```
+
 ### To delete a site:
 {: #delets}
 
@@ -466,19 +465,19 @@ workgroup => workg*, work_g*, wg
 An output that is similar to the following example is displayed: 
 
 ```
-ksysmgr -t discover wg Maheshwari_WG
-04:49:54 Running discovery on Workgroup Maheshwari_WG, this may take a few minutes...
-04:49:55 Discovery has started for Workgroup Maheshwari_WG
-04:49:55 Discovery has started for VM Maheshwari
-04:49:55 Discovery for VM Maheshwari is complete
-04:49:55 Replication enablement for volumes has started for VM Maheshwari
-04:51:01 Replication enablement for volumes has completed for VM Maheshwari
-04:51:01 Backup VM creation has started for VM Maheshwari
-04:51:01 Network Configuration has completed for VM Maheshwari
-04:51:47 Backup VM Maheshwari_BackUp creation has completed
-04:51:52 Discovery for Workgroup Maheshwari_WG is complete
+ksysmgr -t discover wg User_test_WG
+04:49:54 Running discovery on Workgroup User_test_WG, this may take a few minutes...
+04:49:55 Discovery has started for Workgroup User_test_WG
+04:49:55 Discovery has started for VM User_test
+04:49:55 Discovery for VM User_test is complete
+04:49:55 Replication enablement for volumes has started for VM User_test
+04:51:01 Replication enablement for volumes has completed for VM User_test
+04:51:01 Backup VM creation has started for VM User_test
+04:51:01 Network Configuration has completed for VM User_test
+04:51:47 Backup VM User_test_BackUp creation has completed
+04:51:52 Discovery for Workgroup User_test_WG is complete
 04:51:52 Replication is going on in background. Please use "ksysmgr query Workgroup status monitor=yes " to track the progress of the operation.
-04:51:52 Discovery has finished for Maheshwari_WG
+04:51:52 Discovery has finished for User_test_WG
 1 out of 1 managed VMs have been successfully discovered
 ```
 
@@ -529,14 +528,14 @@ vm => lp*, VM
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr unmanage vm Maheshwari
+ksysmgr unmanage vm User_test
 07:16:47 Unmanage vm has started, this may take a few minutes...
-07:16:53 Maheshwari_WG Workgroup stop VG has started
-07:16:53 Maheshwari_WG Workgroup stop VG has completed
-07:16:53 Removal of VG disks from Maheshwari_WG Workgroup has started
-07:16:53 Removal of VG disks from Maheshwari_WG Workgroup has completed
-07:16:53 Workgroup Maheshwari_WG was removed
-VM Maheshwari was successfully unmanaged
+07:16:53 User_test_WG Workgroup stop VG has started
+07:16:53 User_test_WG Workgroup stop VG has completed
+07:16:53 Removal of VG disks from User_test_WG Workgroup has started
+07:16:53 Removal of VG disks from User_test_WG Workgroup has completed
+07:16:53 Workgroup User_test_WG was removed
+VM User_test was successfully unmanaged
 ```
 
 The preceding command syntax can be used for targeted VM management. The excluded virtual machine is not moved to the backup site when a site-switch operation is initiated.
@@ -572,23 +571,23 @@ An output that is similar to the following example is displayed:
 ```
 ksysmgr -t discover site us-east
 02:33:39  Running discovery on entire site, this may take a few minutes...
-        02:33:49  Discovery has started for Workgroup Surendar_WG
-        02:33:49  Discovery has started for Workgroup Maheshwari_WG
-        02:33:50  Discovery has started for VM Surendar
-       02:33:50  Discovery for VM Surendar is complete
-        02:33:50  Replication enablement for volumes has started for VM Surendar
-        02:33:50  Replication enablement for volumes has completed for VM Surendar
-        02:33:50  Backup VM creation has started for VM Surendar
-        02:33:50  Network Configuration has completed for VM Surendar
-        02:33:50  Discovery has started for VM Maheshwari
-        02:33:50  Discovery for VM Maheshwari is complete
-        02:33:50  Replication enablement for volumes has started for VM Maheshwari
-        02:33:50  Replication enablement for volumes has completed for VM Maheshwari
-        02:33:50  Backup VM creation has started for VM Maheshwari
-        02:33:50  Network Configuration has completed for VM Maheshwari
-        02:34:01  Backup VM Surendar_BackUp creation has completed
-        02:34:01  Backup VM Maheshwari_BackUp creation has completed
-        02:34:01  Discovery for Workgroup Maheshwari_WG is complete
+        02:33:49  Discovery has started for Workgroup User_test_WG
+        02:33:49  Discovery has started for Workgroup User_test_WG
+        02:33:50  Discovery has started for VM User_test
+       02:33:50  Discovery for VM User_test is complete
+        02:33:50  Replication enablement for volumes has started for VM User_test
+        02:33:50  Replication enablement for volumes has completed for VM User_test
+        02:33:50  Backup VM creation has started for VM User_test
+        02:33:50  Network Configuration has completed for VM User_test
+        02:33:50  Discovery has started for VM User_test
+        02:33:50  Discovery for VM User_test is complete
+        02:33:50  Replication enablement for volumes has started for VM User_test
+        02:33:50  Replication enablement for volumes has completed for VM User_test
+        02:33:50  Backup VM creation has started for VM User_test
+        02:33:50  Network Configuration has completed for VM User_test
+        02:34:01  Backup VM User_test_BackUp creation has completed
+        02:34:01  Backup VM User_test_BackUp creation has completed
+        02:34:01  Discovery for Workgroup User_test_WG is complete
         02:34:01  Replication is going on in background. Please use "ksysmgr query Workgroup <wgname> status monitor=yes " to track the progress of the operation.
 02:34:01  Discovery has finished for us-east
 2 out of 2 managed VMs have been successfully discovered
@@ -653,61 +652,26 @@ SCRIPT_FAILURE_EVENT error Script execution has failed.
 ksysmgr q event type=warning
 Current Notification Level: Low
 Event Name Event Type Description
---------------------------------------------------------------------------------
-NETWORK_CONFIGURATION_FAILED warning Network configuration has failed.
-ksysmgr q event type=info
-Current Notification Level: Low
-Event Name Event Type Description
---------------------------------------------------------------------------------
-DISCOVERY_STARTED info Discovery has started.
-DISCOVERY_SUCCESS info Discovery has succeeded.
-DEPLOY_STARTED info Deploy vm has started.
-DEPLOY_SUCCESS info Deploy vm has succeeded.
-GRS_ENABLE_VOLUMES_STARTED info Volumes DR enablement has started.
-GRS_ENABLE_VOLUMES_SUCCESS info Volumes DR enablement has succeeded.
-ONBOARD_VOLUMES_STARTED info Volumes onboard has started.
-ONBOARD_VOLUMES_SUCCESS info Volumes onboard has failed.
-ATTACH_VOLUMES_STARTED info Volumes attach has started.
-ATTACH_VOLUMES_SUCCESS info Volumes attach has succeeded.
-VM_SHUTDOWN_STARTED info VM shutdown has started.
-VM_SHUTDOWN_SUCCESS info VM shutdown has succeeded.
-VM_BOOTUP_STARTED info VM bootup has started.
-VM_BOOTUP_SUCCESS info VM bootup has succeeded.
-REPLICATION_MONITOR_STARTED info Replication monitor has started.
-REPLICATION_MONITOR_SUCCESS info Replication monitor has succeeded.
-MOVE_STARTED info Move has started.
-MOVE_SUCCESS info Move has succeeded.
-VG_REVERSAL_STARTED info VG reversal has started.
-VG_REVERSAL_SUCCESS info VG reversal has succeeded.
-VG_STOP_STARTED info VG stop has started.
-VG_STOP_SUCCESS info VG stop has succeeded.
-VG_UPDATE_STARTED info VG update has started.
-VG_UPDATE_SUCCESS info VG update has succeeded.
-VG_REMOVE_STARTED info VG remove has started.
-VG_REMOVE_SUCCESS info VG remove has succeeded.
-VG_REMOVE_DISKS_STARTED info VG remove disks has started.
-VG_REMOVE_DISKS_COMPLETED info VG remove disks has succeeded.
-VM_REMOVE_STARTED info VM remove has started.
-VM_REMOVE_SUCCESS info VM remove has succeeded.
-NETWORK_CONFIGURATION_STARTED info Network configuration has started.
-NETWORK_CONFIGURATION_SUCCESS info Network configuration has succeeded.
-SCRIPT_SUCCESS_EVENT info Script execution has succeeded.
-NETWORK_CREATION_COMPLETED info Network creation has started.
-```
 
-To query the system-wide persistent attribute for the ksysmgr command, use the following command syntax:
+NETWORK_CONFIGURATION_FAILED warning Network configuration has failed.
+
+```
+ 
+#### To query the system-wide persistent attribute for the ksysmgr command, use the following command syntax:
+
 ```
 ksysmgr query system [ properties ]
 query => q*, ls, get, sh*
 system => sys*
 ```
+
 ```
 ksysmgr q system
 ```
 An output that is similar to the following example is displayed:
 ```
 System-Wide Persistent Attributes
-BaseUrl: test.cloud.ibm.com
+BaseUrl: test.cloud.test.com
 Regions: us-east
 dal10
 dal10
@@ -752,6 +716,7 @@ deep_discovery
 Sets the deep_discovery variable to enable/disable.
 ```
 
+
 #### To modify the system wide persistent attribute for the ksysmgr command:
 ```
 ksysmgr modify system
@@ -783,51 +748,6 @@ Note: Supported locales for ksys_lang are DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_
 By default language is considered to be en_US
 ```
 
-
-An output that is similar to the following example is displayed:
-
-
-```
-ksysmgr modify system auto_discovery_time=07:31:28
-KSYS auto_discovery_time has been updated
-```
-```
-ksysmgr modify system quick_discovery_interval=32
-KSYS quick_discovery_interval has been updated
-```
-```
-ksysmgr mod system quick_discovery=enable
-KSYS quick_discovery has been updated
-ksysmgr mod system quick_discovery=disable
-KSYS quick_discovery has been updated
-ksysmgr mod system deep_discovery=enable
-KSYS deep_discovery has been updated
-ksysmgr mod system deep_discovery=disable
-KSYS deep_discovery has been updated
-ksysmgr mod system trace_file_size=1
-KSYS trace_file_size has been updated
-Note: Spooling destination directory has been set to default path "/tmp/ksys/rm"
-ksysmgr mod system ksys_spooling=enable
-KSYS ksys_spooling has been updated
-ksysmgr mod system ksys_spooling=disable
-KSYS ksys_spooling has been updated
-ksysmgr mod system cleanup_files_interval=1
-KSYS cleanup_files_interval has been updated
-ksysmgr mod system spool_dest_dir="/tmp/ksys/rm"
-INFO: Attribute spool_dest_dir is already set to the specified value
-ksysmgr mod system spool_dir_max_size=1
-KSYS spool_dir_max_size has been updated
-ksysmgr mod system ksys_lang=DE_DE
-KSYS ksys_lang has been updated
-ksysmgr mod system notification_level=low
-KSYS notification_level has been updated
-ksysmgr mod system dup_event_processing=yes
-KSYS dup_event_processing has been updated
-ksysmgr mod system custom_script_timeout=2
-KSYS custom_script_timeout has been updated
-Note: The value in the sa_ping_timer attribute and the hmc_ping_timer attribute must be in the range 10 and 30. You can view the configured value in the output of the ksysmgr query system command.
-```
-
 ### Quick discovery example
 {: #qwe}
 
@@ -857,13 +777,13 @@ script=<full path script>
 event=<event name>
 add => ad*, cr*, make, mk
 notify => rn, remote_not*, noti*
+Note: Contact should be email address
 ```
->**Note:** Contact should be email address
-
 
 An output that is similar to the following example is displayed:
+
 ```
-ksysmgr add notify script=/surendar/a.sh event=DISCOVERY_STARTED successfully added script for event
+ksysmgr add notify script=/User_test/a.sh event=DISCOVERY_STARTED successfully added script for event
 ```
 
 ### To modify an email address or script for a specific user:
@@ -881,18 +801,19 @@ notify => rn, remote_not*, noti*
 ```
 
 An output that is similar to the following example is displayed:
+
 ```
-ksysmgr modify notify oldcontact=siva newcontact=sssssss
+ksysmgr modify notify oldcontact=User newcontact=sssssss
 successfully modified user info
 (0) root @ ksys804p: /
 # ksysmgr q notify
 Contact details:
 User: sssssss
-Contact: ssdhsadksa@gmail.com
+Contact: user.test.com
 Script details:
-Script: /surendar/a.sh
+Script: /User_test/a.sh
 Event: DISCOVERY_FAILED
-Script: /surendar/a.sh
+Script: /User_test/a.sh
 Event: DISCOVERY_STARTED
 ```
 
@@ -911,9 +832,9 @@ An output that is similar to the following example is displayed:
 ```
 ksysmgr query notify
 Contact details:
-User: siva
-Contact: sitalu54@in.ibm.com
-Script details: Script: /surendar/a.sh
+User: User
+Contact: user.test.com
+Script details: Script: /User_test/a.sh
 Event: DISCOVERY_STARTED
 ```
 
@@ -933,7 +854,7 @@ Also, User can give Only script name to remove notify for all events listed with
 
 An output that is similar to the following example is displayed:
 ```
-ksysmgr delete notify user="siva"
+ksysmgr delete notify user="User"
 successfully deleted user info
 ```
 
@@ -946,7 +867,7 @@ ksysmgr add notify script=full_path_script event=event_name
 
 For example,
 ```
-ksysmgr add notify script=/surendar/a.sh event=DISCOVERY_STARTED successfully added script for event
+ksysmgr add notify script=/User_test/a.sh event=DISCOVERY_STARTED successfully added script for event
 ```
 
 ### To modify a script:
@@ -966,9 +887,10 @@ ksysmgr delete notify
 script=<full path script> [ event=<event name> ]
 delete => de*, remove, rm, erase
 notify => rn, remote_not*, noti*
-```
- >**Note:** User can give script name along with event name to remove notify for particular event.
+Note: User can give script name along with event name to remove notify for particular event.
 Also, User can give Only script name to remove notify for all events listed with that script name
+
+```
 
 
 ### To query a script:
@@ -997,7 +919,7 @@ An output that is similar to the following example is displayed:
 ```
 ksysmgr q system
 System-Wide Persistent Attributes
-BaseUrl:                     cloud.ibm.com
+BaseUrl:                     cloud.test.com
 Regions:                     wdc06
                              dal12
                              tok04
@@ -1052,12 +974,10 @@ ksysmgr modify system
       [staticipenable=<yes|no|default>]
     modify => mod*, ch*, set
     system => sys*
+Note: Not advisable to modify `quick_discovery_interval` with values less than `60 mins`.
+Note: If `custom_script_timeout` value is set to `0`, it will be considered as no timeout is set.
+Note: Supported locales for `ksys_lang` are `DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_ES, IT_IT, ZH_CN, en_US`, by default language is considered to be `en_US`
 ```
-> **Note:** 
-      > - Not advisable to modify `quick_discovery_interval` with values less than `60 mins`.
-      > - If `custom_script_timeout` value is set to `0`, it will be considered as no timeout is set.
-      > - Supported locales for `ksys_lang` are `DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_ES, IT_IT, ZH_CN, en_US`, by default language is considered to be `en_US`
-
 
 ### To enable the KSYS subsystem to rediscover the resources every day automatically:
 {: #asd}
@@ -1073,6 +993,7 @@ KSYS quick_discovery has been updated
 ```
 
 An output that is similar to the following example is displayed:
+
 ```
 ksysmgr modify system auto_discovery_time=07:31:28
 KSYS auto_discovery_time has been updated
@@ -1107,6 +1028,7 @@ ksysmgr mod system dup_event_processing=yes
 KSYS dup_event_processing has been updated
 ksysmgr mod system custom_script_timeout=2
 KSYS custom_script_timeout has been updated
+Note: The value in the sa_ping_timer attribute and the hmc_ping_timer attribute must be in the range 10 and 30. You can view the configured value in the output of the ksysmgr query system command.
 ```
 
 ### To change the notification level of your system to receive notification for all critical errors and warnings of all events:
@@ -1211,11 +1133,11 @@ y
 This may take a few minutes to safely remove the ksysclsuter
 01:15:44 Removed tmp files successfully
 This may take a few minutes to remove the ksyscluster
-01:15:54 SivaKrishna_WG Workgroup stop VG has started
-01:15:54 SivaKrishna_WG Workgroup stop VG has completed
-01:15:54 Removal of VG disks from SivaKrishna_WG Workgroup has started
-01:15:54 Removal of VG disks from SivaKrishna_WG Workgroup has completed
-01:15:54 Workgroup SivaKrishna_WG was removed
+01:15:54 User_test_WG Workgroup stop VG has started
+01:15:54 User_test_WG Workgroup stop VG has completed
+01:15:54 Removal of VG disks from User_test_WG Workgroup has started
+01:15:54 Removal of VG disks from User_test_WG Workgroup has completed
+01:15:54 Workgroup User_test_WG was removed
 Restoring configuration...
 Creating cluster...
 Updating registry...
@@ -1373,7 +1295,7 @@ notify => rn, remote_not*, noti*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr add notify script=/surendar/a.sh event=DISCOVERY_STARTED 
+ksysmgr add notify script=/User_test/a.sh event=DISCOVERY_STARTED 
 Successfully added script for event
 ```
 
@@ -1391,10 +1313,10 @@ An output that is similar to the following example is displayed:
 ```
 ksysmgr query notify
 Contact details:
-User: siva 
-Contact: sitalu54@in.ibm.com
+User: User 
+Contact: user.test.com
 Script details:
-Script: /surendar/a.sh 
+Script: /User_test/a.sh 
 Event: DISCOVERY_STARTED
 ```
 
@@ -1408,7 +1330,7 @@ ksysmgr delete notify
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr delete notify user="siva" 
+ksysmgr delete notify user="User" 
 Successfully deleted user info.
 ```
 
@@ -1596,7 +1518,7 @@ An output that is similar to the following example is displayed:
 ```
 ksysmgr q system
 System-Wide Persistent Attributes
-BaseUrl: test.cloud.ibm.com
+BaseUrl: test.cloud.test.com
 Regions: us-east
 dal10
 api_key: #####1543D972B94F...
@@ -1620,7 +1542,7 @@ vm => lp*, vm
 An output that is similar to the following example is displayed:
 
 ```
-Name: Maheshwari
+Name: User_test
 UUID: 6aae01cd-0960-4c7e-b5bd-f274bcd53792
 State: INIT
 Status: ACTIVE
@@ -1639,7 +1561,7 @@ vm => lp*, vm
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr refresh vm Maheshwari
+ksysmgr refresh vm User_test
 Refresh VM info completed successfully.
 ```
 
