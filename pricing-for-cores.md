@@ -54,10 +54,12 @@ All processor types are billed uniformly, regardless of configuration.
 {: caption="All processors type pricing" caption-side="bottom"}
 
 
-   > **Notes:**
-    Uniform Rate : All processor types, including dedicated, shared uncapped, and shared capped configurations, are billed at the same hourly rate.
-    Usage-Based Billing: Costs are calculated on an hourly basis, and the monthly cost reflects usage for a full month (730 hours).
-    Exclusions: DR Automation billing excludes charges for operating systems, storage, and additional resources.
+
+  - **Uniform Rate** : All processor types, including dedicated, shared uncapped, and shared capped  configurations, are billed at the same hourly rate.
+
+  - **Usage-Based Billing**: Costs are calculated on an hourly basis, and the monthly cost reflects usage for a full month (730 hours).
+
+  - **Exclusions**: DR Automation billing excludes charges for operating systems, storage, and additional resources.
 
 
 ## End of billing

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-01-31"
 
 subcollection: dr-automation
 
@@ -17,6 +17,8 @@ Configure your environment by adding the **source** and **target sites**, specif
 {:shortdesc: .shortdesc}
 
 After adding the KSYS (Orchestrator) , you are required to add the **Source** and **Target sites**. Upon completing the KSYS setup, the GUI automatically redirects you to the **Add Sites** page. 
+
+## Procedure
 
 To add sites to the External Orchstrator UI , follow these steps:
 

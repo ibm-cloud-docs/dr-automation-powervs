@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-01-31"
 
 subcollection: dr-automation
 
@@ -48,8 +48,6 @@ To manage the VMs, complete the following steps:
    - WorkGroup
    - Source Workspace
    - Target Workspace
-
-> **Note:** The WorkGroup name is auto-generated and is based on the VM name. You can change it as per your requirements.
 
 
 ## Unmanage VM

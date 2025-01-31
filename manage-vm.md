@@ -22,9 +22,10 @@ To set up additional virtual server instances and manage them within the {{site.
 1. Navigate to the **Manage Virtual Servers** table.
 2. Click **Add Virtual Server** button.
 3. You are redirected to the [external orchestrator interface (UI)](https://10.32.150.93:3000/login?byCloud=true).
-4. In the external orchestrator interface, follow the guided steps to configure and add **virtual servers** to your disaster recovery setup.
-5. After the servers are successfully added, the servers are displayed in the list under **Managed Virtual Servers**.
+4. You can manage the virtual servers through the external orchestrator UI or by using the [`ksysmgr`command-line interface](/docs/dr-automation-powervs?topic=dr-automation-powervs-ksysmgr-commandorchestrator) .
+5. In the external orchestrator interface, follow the guided steps to configure and add **virtual servers** to your disaster recovery setup.
+6. After the servers are successfully added, the servers are displayed in the list under **Managed Virtual Servers**.
 
 Efficient management of virtual servers through the {{site.data.keyword.DR_short}} interface, coupled with the external orchestrator, ensures that your disaster recovery environment remains scalable and resilient. This seamless process provides confidence that your critical systems will be protected in the face of potential failures, maintaining business continuity.
 
-For more information about **{{site.data.keyword.DR_short}} external Orchestrator Interface (UI)**, see [{{site.data.keyword.DR_full_notm}}](https://www.ibm.com/docs/en/vmrmdr).
+For more information about **external Orchestrator Interface (UI)**, see [IBM VM Recovery Manager DR for Power Systems](https://www.ibm.com/docs/en/vmrmdr).

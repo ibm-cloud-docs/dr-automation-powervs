@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-31"
 
 subcollection: dr-automation
 
@@ -14,12 +14,6 @@ keywords: aix
 
 You can set up one or more Secure Shell (SSH) keys for root login when you create new AIX virtual machines (VM). The keys are loaded into the root's `authorized_keys` file. SSH keys allow you to securely log in to a VM. You must use the available operating system options to create SSH keys. To generate SSH keys on a Linux® or Mac OS system, for example, you can use the standard `ssh-keygen` tool.
 {:shortdesc: .shortdesc}
-
-## Generating an SSH key
-{: #gen-ssh}
-
-In this example, the user created a public key on a Linux-based IBM Cloud compute instance by using the `ssh-keygen` tool:
-
 
 ## Creating an AIX VM instance
 {: #vm-insta}

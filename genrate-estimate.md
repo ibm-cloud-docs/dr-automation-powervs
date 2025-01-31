@@ -29,11 +29,11 @@ Use the cost estimator tool to evaluate potential costs for DR Automation resour
 ### Step 1: Accessing the cost estimator
 {: #accst}
 
-- Use your IBM credentials to access the **IBM Cloud catalog**.
+1. Use your IBM credentials to access the **IBM Cloud catalog**.
 
-- In the **search box**, type IBM {{site.data.keyword.DR_full}}.
+2. In the **search box**, type IBM {{site.data.keyword.DR_full}}.
 
-- **Click** {{site.data.keyword.DR_full_notm}} tile.
+3. **Click** {{site.data.keyword.DR_full_notm}} tile.
 
 
 ### Step 2: Creating an estimate for resources
