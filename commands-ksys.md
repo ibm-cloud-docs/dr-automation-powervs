@@ -506,8 +506,8 @@ An output that is similar to the following example is displayed:
 ```
 ksysmgr resync wg IBMiWG
 Workgroup IBMiWG resync has started
-05:24:38 Shutdown has started for VM neha_IBMi
-05:24:54 Shutdown has completed for VM neha_IBMi
+05:24:38 Shutdown has started for VM User_IBMi
+05:24:54 Shutdown has completed for VM user_IBMi
 05:24:57 Resync is in progress for Workgroup IBMiWG
 05:26:08 Resync has completed for Workgroup IBMiWG
 ```
@@ -631,27 +631,62 @@ ksysmgr q event type=error
 Current Notification Level: Low
 Event Name Event Type Description
 --------------------------------------------------------------------------------
-DISCOVERY_FAILED error Discovery has failed.
-MIGRATED_VM_EXISTS_IN_WG error Migrated vm exists in workgroup
-DEPLOY_FAILED error Deploy vm has failed.
-GRS_ENABLE_VOLUMES_FAILED error Volumes DR enablement has failed.
-ONBOARD_VOLUMES_FAILED error Volumes onboard has succeeded.
-ATTACH_VOLUMES_FAILED error Volumes attach has failed.
-VM_SHUTDOWN_FAILED error VM shutdown has failed.
-VM_BOOTUP_FAILED error VM bootup has failed.
-REPLICATION_MONITOR_FAILED error Replication monitor has failed.
-MOVE_FAILED error Move has failed.
-VG_REVERSAL_FAILED error VG reversal has failed.
-VG_STOP_FAILED error VG stop has failed.
-VG_UPDATE_FAILED error VG update has failed.
-VG_REMOVE_FAILED error VG remove has failed.
-VG_REMOVE_DISKS_FAILED error VG remove disks has failed.
-VM_REMOVE_FAILED error VM remove has failed.
-VM_MISSED_FROM_WORKSPACE_PHASE error VM missed from the workspace
-SCRIPT_FAILURE_EVENT error Script execution has failed.
-ksysmgr q event type=warning
-Current Notification Level: Low
-Event Name Event Type Description
+| Location  | Replication Site | Is Active |
+|-----------|-----------------|-----------|
+| DISCOVERY_STARTED | info | true |
+| DISCOVERY_FAILED | error | true |
+| DISCOVERY_SUCCESS | info | true |
+| MIGRATED_VM_EXISTS_IN_WG | error | true |
+| DEPLOY_STARTED | info | true |
+| DEPLOY_SUCCESS | info | true |
+| DEPLOY_FAILED | error | true |
+| GRS_ENABLE_VOLUMES_STARTED | info | true |
+| GRS_ENABLE_VOLUMES_FAILED | error | true |
+| GRS_ENABLE_VOLUMES_SUCCESS | info | true |
+| ONBOARD_VOLUMES_STARTED | info | true |
+| ONBOARD_VOLUMES_SUCCESS | info | true |
+| ONBOARD_VOLUMES_FAILED | error | true |
+| ATTACH_VOLUMES_STARTED | info | true |
+| ATTACH_VOLUMES_SUCCESS | info | true |
+| ATTACH_VOLUMES_FAILED | error | true |
+| VM_SHUTDOWN_STARTED | info | true |
+| VM_SHUTDOWN_SUCCESS | info | true |
+| VM_SHUTDOWN_FAILED | error | true |
+| VM_BOOTUP_STARTED | info | true |
+| VM_BOOTUP_SUCCESS | info | true |
+| VM_BOOTUP_FAILED | error | true |
+| REPLICATION_MONITOR_STARTED | info | true |
+| REPLICATION_MONITOR_SUCCESS | info | true |
+| REPLICATION_MONITOR_FAILED | error | true |
+| MOVE_STARTED | info | true |
+| MOVE_SUCCESS | info | true |
+| MOVE_FAILED | error | true |
+| VG_REVERSAL_STARTED | info | true |
+| VG_REVERSAL_SUCCESS | info | true |
+| VG_REVERSAL_FAILED | error | true |
+| VG_STOP_STARTED | info | true |
+| VG_STOP_SUCCESS | info | true |
+| VG_STOP_FAILED | error | true |
+| VG_UPDATE_STARTED | info | true |
+| VG_UPDATE_SUCCESS | info | true |
+| VG_UPDATE_FAILED | error | true |
+| VG_REMOVE_STARTED | info | true |
+| VG_REMOVE_SUCCESS | info | true |
+| VG_REMOVE_FAILED | error | true |
+| VG_REMOVE_DISKS_STARTED | info | true |
+| VG_REMOVE_DISKS_COMPLETED | info | true |
+| VG_REMOVE_DISKS_FAILED | error | true |
+| VM_REMOVE_STARTED | info | true |
+| VM_REMOVE_SUCCESS | info | true |
+| VM_REMOVE_FAILED | error | true |
+| NETWORK_CONFIGURATION_STARTED | info | true |
+| NETWORK_CONFIGURATION_SUCCESS | info | true |
+| NETWORK_CONFIGURATION_FAILED | warning | true |
+| VM_MISSED_FROM_WORKSPACE_PHASE | error | true |
+| SCRIPT_FAILURE_EVENT | error | true |
+| SCRIPT_SUCCESS_EVENT | info | true |
+| NETWORK_CREATION_COMPLETED | info | true |
+
 
 NETWORK_CONFIGURATION_FAILED warning Network configuration has failed.
 
