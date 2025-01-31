@@ -5,10 +5,7 @@
   "console_page": "/catalog/services/power-virtual-server-dr-automation",
   "section_topics": {
     "links": [
-      {
-        "title": "Getting Started",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-getting-started"
-      },
+      
       {
         "title": "High Level Architecture",
         "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-arch"
@@ -20,6 +17,10 @@
       {
         "title": "External Orchestrator",
         "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter"
+      },
+      {
+        "title": "Troubleshooting",
+        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-troubleshooting"
       },
       {
         "title": "FAQs",
