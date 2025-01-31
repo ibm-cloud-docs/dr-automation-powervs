@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-21"
+lastupdated: "2025-01-31"
 subcollection: dr-automation
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -20,8 +20,6 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 **High availability for DR Orchestrator (KSYS)**
 :   The DR Orchestrator (KSYS) now supports high availability in additional regions, enabling continuous operations during failover. For more details, see [DR Orchestrator High Availability](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch#ksys-arch).
 
-**Enhanced VPC configurations and private endpoint support**
-:   Virtual Private Cloud (VPC) configurations and private endpoint support have been enhanced, ensuring better data security and regulatory compliance. For more details, see [Data isolation](/docs/dr-automation-powervs?topic=dr-automation-powervs-di).
 
 **Improved GUI for recovery workflows**
 :   Automate complex recovery workflows through the improved GUI interface, reducing manual intervention and minimizing Recovery Time Objectives (RTO). For more details, see [GUI Workflow Automation](/docs/dr-automation-powervs?topic=dr-automation-powervs-cinstance).

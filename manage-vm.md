@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-23"
+lastupdated: "2025-01-31"
 
 subcollection: dr-automation
 
@@ -19,7 +19,7 @@ To set up additional virtual server instances and manage them within the {{site.
 ## Add virtual servers
 {: #manage-vm-ser-added}
 
-1. Navigate to the **Manage Virtual Servers** tab.
+1. Navigate to the **Manage Virtual Servers** table.
 2. Click **Add Virtual Server** button.
 3. You are redirected to the [external orchestrator interface (UI)](https://10.32.150.93:3000/login?byCloud=true).
 4. In the external orchestrator interface, follow the guided steps to configure and add **virtual servers** to your disaster recovery setup.
