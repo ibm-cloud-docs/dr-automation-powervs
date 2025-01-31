@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-01-31"
 
 subcollection: dr-automation
 
@@ -17,6 +17,8 @@ Network pairing establishes communication links between network devices or syste
 {:shortdesc: .shortdesc}
 
 All VMs that are added to the WorkGroup are automatically populated on the **Network Pairing** page.
+
+## Procedure
 
 To complete the network pairing, follow these steps:
 

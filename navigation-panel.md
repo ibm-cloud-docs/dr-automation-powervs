@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-01-31"
 
 subcollection: dr-automation
 
@@ -203,6 +203,8 @@ The following list provides details for each option:
 
 ## Workgroup active and partner VMs
 {: #work-grou-active}
+
+## Procedure
 
 To view details about Active and Partner VMs for a Workgroup, follow these steps:
 

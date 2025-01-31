@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-01-31"
 
 subcollection: dr-automation
 
@@ -16,6 +16,8 @@ Move site is a critical functionality that is designed to manage the relocation 
 {:shortdesc: .shortdesc}
 
 To perform a Planned Move or Unplanned Move of the site, follow these steps:
+
+## Procedure
 
 1. Click on **Site** in the navigation panel.
 2. Navigate to **Move Site**.
