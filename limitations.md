@@ -13,7 +13,7 @@ keywords: known issues
 # Known limitations
 {: #knowlim}
 
-IBM® strives to keep issues in {{site.data.keyword.DR_full}} to a minimum, but occasionally they can't be avoided. Learn about the known issues in this version. IBM is aware of these issues and is working hard to address them as quickly as possible.
+IBM® strives to keep issues in {{site.data.keyword.DR_full}} to a minimum, but occasionally they can't be avoided. Learn about the known issues in this release. IBM is aware of these issues and is working hard to address them as quickly as possible.
 {:shortdesc: .shortdesc}
 
 ## External orchestrator
