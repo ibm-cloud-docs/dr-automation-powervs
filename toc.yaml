@@ -10,7 +10,7 @@ toc:
     service-name: service-name
     audience: solution
     category: virtualservers
-    label: Power Virtual Server DR Automations
+    label: Power Virtual Server DR Automation
   entries:
   - navgroup:
       id: learn
