@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-02-05"
 
 subcollection: dr-automation
 
@@ -36,6 +36,8 @@ Following the procedure below, you can deploy the orchestrator with the necessar
 3. You should provide the **IBM Cloud API key**, and if it is valid then you can provide the remaining fields.
 
 4. In the **Schematics workspace** field, select an appropriate workspace for the orchestrator. If required, create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) to define the Power Virtual Server workspace where the primary orchestrator will be deployed.
+
+ >**Note:** The schematic ID is available if the VPC is created using the VPC Landing Zone for the PowerVS option from the catalog. If VPCs are created manually, you can still generate a schematic ID using the Import option in the VPC Landing Zone for PowerVS. 
 
 5. Provide either **Public SSH key** or Select from **Secrets Manager**.
 
