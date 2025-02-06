@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-05"
+lastupdated: "2025-02-06"
 
 keywords: getting started, disaster recovery, PowerVS
 
@@ -47,7 +47,7 @@ Complete the following prerequisites:
 1. On the **Manage** tab, configure the **orchestrator name** and set a password to secure access.
 2. Provide a valid **IBM Cloud API key**, then complete additional fields, including the **Schematics workspace** and **Public SSH key** or keys from **Secrets Manager**.
 
- >**Note:**The schematic ID is available if the VPC is created using the VPC Landing Zone for the PowerVS option from the catalog. If VPCs are created manually, you can still generate a schematic ID using the Import option in the VPC Landing Zone for PowerVS.
+ >**Note:** The schematic ID is available if the VPC is created using the VPC Landing Zone for the PowerVS option from the catalog. If VPCs are created manually, you can still generate a schematic ID using the Import option in the VPC Landing Zone for PowerVS.
  
 3. (Optional) Expand the **Advanced Configuration** to select configruations for orchestrator.
 
