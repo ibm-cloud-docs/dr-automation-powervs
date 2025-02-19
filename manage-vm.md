@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-02-19"
 
 subcollection: dr-automation
 
@@ -22,7 +22,7 @@ To set up additional virtual server instances and manage them within the {{site.
 1. Navigate to the **Manage Virtual Servers** table.
 2. Click **Add Virtual Server** button.
 3. You are redirected to the [external orchestrator interface (UI)](https://10.32.150.93:3000/login?byCloud=true).
-4. You can manage the virtual servers through the external orchestrator UI or by using the [`ksysmgr`command-line interface](/docs/dr-automation-powervs?topic=dr-automation-powervs-ksysmgr-commandorchestrator) .
+4. You can manage the virtual servers through the external orchestrator UI or by using the [`ksysmgr` command-line interface](/docs/dr-automation-powervs?topic=dr-automation-powervs-ksysmgr-commandorchestrator) .
 5. In the external orchestrator interface, follow the guided steps to configure and add **virtual servers** to your disaster recovery setup.
 6. After the servers are successfully added, the servers are displayed in the list under **Managed Virtual Servers**.
 
