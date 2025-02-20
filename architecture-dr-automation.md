@@ -1,26 +1,28 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-02-18"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: architecture
 
 ---
 
+{{site.data.keyword.attribute-definition-list}}
+
 # Architecture for {{site.data.keyword.DR_full}}
-{: #arch} 
+{: #arch}
 
 {{site.data.keyword.DR_full}} is a robust disaster recovery solution specifically designed for IBM data centers, distinct from general IBM Cloud resources. This solution leverages dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.
-{:shortdesc: .shortdesc}
+{: shortdesc}
 
 The IBM Cloud Service Framework facilitates seamless deployment and management of {{site.data.keyword.DR_full_notm}} by integrating key components such as the Service Broker, Resource Management Controller (RMC), and IBM Cloud Catalog. This framework streamlines the DR setup process, enhances security, and ensures compliance, delivering a comprehensive DR solution within the IBM Cloud infrastructure.
 
 Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} architecture, features, hardware requirements, and network configurations.
 
 ## Table of contents
-{: #toc} 
+{: #toc}
 
 - [High-Level Architecture](#high)
 - [DR Service broker architecture](#service-broker)
@@ -33,7 +35,7 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 
 
 ## High-Level architecture
-{: #high} 
+{: #high}
 
 The **{{site.data.keyword.DR_full_notm}}** system operates within IBM data centers, isolated from the core IBM Cloud environment. Utilizing dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
 
@@ -43,36 +45,35 @@ The **Orchestrator (KSYS)** is crucial in coordinating DR workflows, ensuring Vi
 
 This setup provides a secure, seamless DR solution that integrates with your production environment, enabling smooth failover and failback to maintain business continuity in case of unexpected events.
 
-![DR Automation Architecture](images/dr-automation-arch.svg "DR Automation Architecture")
-{: caption="DR Automation Architecture" caption-side="bottom"}
+![DR Automation Architecture](images/dr-automation-arch.svg "DR Automation Architecture"){: caption="DR Automation Architecture" caption-side="bottom"}
 
 ## DR Service broker architecture
-{: #service-broker} 
+{: #service-broker}
 
 The **DR Service Broker** within IBM Cloud is central to provisioning and managing DR orchestration for PowerVS. Operating as a dedicated component, it handles critical functions, including billing, resource management, and service orchestration.
 
 ### Service provisioning
-{: #serv pro} 
+{: #serv pro}
 
 The Service Broker deploys the DR Orchestrator (KSYS) VM within the PowerVS workspace, utilizing PowerVS APIs to establish and manage DR operations. This process enables seamless integration of DR orchestration capabilities specific to each user account.
 
 ### Connectivity and communication
-{: #Conn} 
+{: #Conn}
 
 Through IBM Cloud’s VPN and VPC services, the Service Broker communicates securely with the DR Orchestrator. Connections from external clients or users are routed through IBM’s secure networking layers to ensure high availability and low latency during DR operations.
 
 ### Resource management and billing integration
-{: #resource} 
+{: #resource}
 
 The Service Broker updates DR metrics to IBM’s billing system (BSS) based on individual instances, providing granular billing data per customer. It ensures that usage is reported accurately for each instance and maintains a high level of automation in resource accounting.
 
 ### Interface accessibility
-{: #inter} 
+{: #inter}
 
 The {{site.data.keyword.DR_short}} Service Broker, accessible via the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with IBM’s broader catalog for resource provisioning.
 
 ## DR Orchestrator (KSYS) architecture
-{: #ksys-arch} 
+{: #ksys-arch}
 
 The **DR Orchestrator (KSYS)**, acting as the operational core within user accounts, is critical in executing and managing DR workflows, specifically for PowerVS instances. This component manages the deployment, configuration, and operation of VMs required during DR.
 
