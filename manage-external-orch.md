@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-02-20"
 
 subcollection: dr-automation
 
@@ -13,7 +13,7 @@ keywords: manage external
 # Managing external orchestrator
 {: #manage-exter}
 
-When you add virtual servers, you are redirected to the external orchestrator interface ({{site.data.keyword.DR_full}}). This interface guides you through the necessary steps to configure and include virtual servers in your disaster recovery setup.
+When you add virtual servers, you are redirected to the external orchestrator {{site.data.keyword.DR_full}}. This interface guides you through the necessary steps to configure and include virtual servers in your disaster recovery setup.
 {:shortdesc: .shortdesc}
 
 ## Steps to access the external orchestrator
@@ -26,5 +26,4 @@ When you add virtual servers, you are redirected to the external orchestrator in
 
  >**Note:** The credentials are remembered for 10 hours, if **Remember Me** option is unchecked.
 
-
-3. After successfully logging into the {{site.data.keyword.DR_full_notm}} GUI, you are redirected to the [KSYS cluster creation](https://10.32.150.93:3000/login?byCloud=true) screen where you can add the KSYS cluster.
+3. After successfully logging into the {{site.data.keyword.DR_full_notm}} GUI, you are redirected to the **KSYS cluster creation** screen where you can add the KSYS cluster.
