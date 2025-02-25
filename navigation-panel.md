@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-02-25"
 
 subcollection: dr-automation
 
@@ -56,20 +56,20 @@ To access the Summary tab and view ongoing issues, follow these steps:
 To analyze detailed information about events in your environment,  follow these steps:
 
 1. Select the cluster from the navigation panel.
-2. Click on **Summary** in the top navigation bar.
+2. Click **Summary** in the top navigation bar.
 3. Navigate to the **Events** tab by clicking on the Events option.
 
 **Features:**
 
-- Shows the time of occurrence, a description, and the severity of each event.
-- Use filters to display specific event types, such as critical events or warnings.
-- Click on an event to view its full details, including potential resolutions.
+- Shows the **time of occurrence**, **a description**, and the **severity** of each event.
+- Use filters to display specific event types, such as **critical events** or **warnings**.
+- Click on **an event** to view its full details, including potential resolutions.
 
 
 ## Tunable policies
 {: #tun-poli}
 
-To view and update system tunable attributes in the **Policies** tab:
+To view and update system tunable attributes in the **Policies** tab, follow these steps:
 
 1. Select the cluster from the navigation panel.
 2. Click on **Policies** in the top navigation bar.

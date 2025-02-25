@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-02-25"
 
 subcollection: dr-automation
 
@@ -40,7 +40,7 @@ To view the network details, follow these steps:
 2. Click **Network Information** on the main screen to see the associated networks.
 3. Click **View Networks** next to the desired workspace for detailed network data.
 
-You can see the following details about the selected network:
+You can view the following details about the selected network:
 
 - **Network Name:** The name that is assigned to the network.
 - **VM Name:** Lists the names of the virtual machines that are connected to the network.

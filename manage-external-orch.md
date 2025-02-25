@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-25"
 
 subcollection: dr-automation
 
@@ -22,8 +22,5 @@ When you add virtual servers, you are redirected to the external orchestrator {{
 1. Enter your login credentials and click **Log In**. Use the credentials configured on your system.
 
 2. To **Save** login credentials, check the **Remember Me** option that enables the system to remember your login credentials for up to 24 hours.
-
-
- >**Note:** The credentials are remembered for 10 hours, if **Remember Me** option is unchecked.
-
+   > **Note**: The credentials are remembered for 10 hours, if **Remember Me** option is unchecked.
 3. After successfully logging into the {{site.data.keyword.DR_full_notm}} GUI, you are redirected to the **KSYS cluster creation** screen where you can add the KSYS cluster.
