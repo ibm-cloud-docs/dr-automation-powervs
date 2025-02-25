@@ -53,7 +53,7 @@ This setup provides a secure, seamless DR solution that integrates with your pro
 The **DR Service Broker** within IBM Cloud is central to provisioning and managing DR orchestration for PowerVS. Operating as a dedicated component, it handles critical functions, including billing, resource management, and service orchestration.
 
 ### Service provisioning
-{: #serv pro}
+{: #serv-pro}
 
 The Service Broker deploys the DR Orchestrator (KSYS) VM within the PowerVS workspace, utilizing PowerVS APIs to establish and manage DR operations. This process enables seamless integration of DR orchestration capabilities specific to each user account.
 
@@ -105,14 +105,14 @@ For enhanced resilience, KSYS supports a High Availability (HA) setup, ensuring 
 
 {{site.data.keyword.DR_short}} provides a single interface to manage DR processes for IBM PowerVS environments. Key features include:
 
-- **Automated failover and failback**:
-Automate the failover process, ensuring that workloads resume quickly in the backup environment.
+Automated failover and failback
+:   Automate the failover process, ensuring that workloads resume quickly in the backup environment.
 
-- **Scheduling and monitoring**:
-Schedule DR operations and monitor the health and status of DR sites.
+Scheduling and monitoring
+:   Schedule DR operations and monitor the health and status of DR sites.
 
-- **Customizable recovery settings**:
-Define recovery priorities and configurations for different VMs or applications.
+Customizable recovery settings
+:   Define recovery priorities and configurations for different VMs or applications.
 
 ### Flexible billing model
 {: #flex}
@@ -126,17 +126,22 @@ The IBM Cloud Service Framework supports accurate billing and comprehensive repo
 
 The **IBM Cloud Service Framework** enhances {{site.data.keyword.DR_short}} by enabling seamless service deployment and management. Key components include:
 
-- **Service broker**: Manages compute, storage, and network resources, allowing users to select DR services from the IBM Cloud Catalog and configure deployment details.
+Service broker
+:   Manages compute, storage, and network resources, allowing users to select DR services from the IBM Cloud Catalog and configure deployment details.
 This component plays a central role in streamlining and automating DR processes.
 
-- **Resource management controller (RMC)**: Automates provisioning, image import, and VM configuration, making DR deployment efficient and straightforward for users.
+Resource management controller (RMC)
+:   Automates provisioning, image import, and VM configuration, making DR deployment efficient and straightforward for users.
 
-- **Orchestrator (KSYS)**: Coordinates DR workflows and ensures that VMs recover in a defined sequence, minimizing downtime and data loss.
+Orchestrator (KSYS)
+:   Coordinates DR workflows and ensures that VMs recover in a defined sequence, minimizing downtime and data loss.
 
-- **Security and compliance**: Ensures a secure, compliant environment through robust controls and monitoring.
+Security and compliance
+:   Ensures a secure, compliant environment through robust controls and monitoring.
 This includes IBM Cloud services like Activity Tracker (for monitoring) Cloud Object Storage (COS) (for secure storage), and Key Management (for data security).
 
-- **Reliable connectivity**: Maintains continuous, secure access to DR resources through redundant network connections, enhancing reliability and resilience.
+Reliable connectivity
+:   Maintains continuous, secure access to DR resources through redundant network connections, enhancing reliability and resilience.
 
 This integrated framework provides a secure, compliant, and efficient DR solution that aligns closely with the high-level architecture for {{site.data.keyword.DR_short}} in IBM data centers.
 
@@ -158,7 +163,7 @@ For more details, refer to the specific data sheets and hardware overview table.
 - The Orchestrator(KSYS) LPAR requires a minimum of 0.5 core CPU and 4 GB of memory, though larger environments with over 100 VMs may require more resources.
 - The KSYS logical partition must run IBM® AIX® 7.3 with Technology Level 1 Service Pack 1 (7300-01-01), or later.
 - Each Cloud LPAR in the host must have the following operating systems:
-  -   AIX Version 7.3, and later
+   - AIX Version 7.3, and later
 
 ## API key
 {: #apikey}
@@ -193,11 +198,11 @@ IBM configures the network environment for secure public connections, including 
 
 A private network setup is recommended for secure communication between PowerVS instances in primary and DR sites. This configuration supports:
 
-- **IBM cloud resources access**:
-Enable access to IBM Cloud Bare Metal Servers, Kubernetes containers, and Cloud Object Storage.
+IBM cloud resources access
+:   Enable access to IBM Cloud Bare Metal Servers, Kubernetes containers, and Cloud Object Storage.
 
-- **Direct link connect**:
-Use Direct Link Connect for secure, low-latency communication between DR environments.
+Direct link connect
+:   Use Direct Link Connect for secure, low-latency communication between DR environments.
 
 ## Setting Up {{site.data.keyword.DR_short}}
 {: #setup}
