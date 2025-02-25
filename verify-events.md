@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-02-25"
 
 subcollection: dr-automation
 
@@ -90,8 +90,7 @@ The following table lists events that the KSYS monitors:
 | SCRIPT_FAILURE_EVENT           | Critical          | Script execution has failed.              |
 {: caption="List of events" caption-side="bottom"}
 
- >**Note:**{: #note}
- 
- >Users might not receive event notifications while disaster recovery operations are in progress, as the quick discovery process is blocked during these operations.
-
- >The KSYS subsystem sends site event notifications without considering the value of the notification_level system attribute.
+ >  **Note:**{: #note}
+  >
+  >- Users might not receive event notifications while disaster recovery operations are in progress, as the quick discovery process is blocked during these operations.
+ >- The KSYS subsystem sends site event notifications without considering the value of the notification_level system attribute.

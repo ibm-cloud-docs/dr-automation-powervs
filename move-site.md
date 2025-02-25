@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-02-25"
 
 subcollection: dr-automation
 
@@ -23,7 +23,7 @@ To perform a Planned Move or Unplanned Move of the site, follow these steps:
 2. Navigate to **Move Site**.
 3. Choose either **Planned Move** or **Unplanned Move**.
 
-  >  **Note:**
+  >  **Note**
     > - A Planned Move involves shutting down the VM on the currently active site and starting the backup VM on the target site. This process will results in a temporary disruption at the active site.
     > - An Unplanned Move is executed when the currently active site is compromised or non-operational. During an Unplanned Move, the KSYS system attempts to shut down the VM on the active site before initiating recovery on the backup site.
 

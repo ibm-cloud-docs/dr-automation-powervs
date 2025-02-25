@@ -145,6 +145,7 @@ Reliable connectivity
 
 This integrated framework provides a secure, compliant, and efficient DR solution that aligns closely with the high-level architecture for {{site.data.keyword.DR_short}} in IBM data centers.
 
+Following are the hardware and software configurations that are supported for deploying the Orchestrator automatically based on your selection.
 
 ## Hardware specifications
 {: #hs}
@@ -154,16 +155,18 @@ IBM Power servers supported by {{site.data.keyword.DR_full_notm}} include:
 - **IBM Power S922**
 - **IBM Power E980**
 - **IBM Power E1080**
+- **IBM Power S1022**
 
 For more details, refer to the specific data sheets and hardware overview table.
 
 ## Software requirment
 {: #sr}
 
-- The Orchestrator(KSYS) LPAR requires a minimum of 0.5 core CPU and 4 GB of memory, though larger environments with over 100 VMs may require more resources.
-- The KSYS logical partition must run IBM® AIX® 7.3 with Technology Level 1 Service Pack 1 (7300-01-01), or later.
-- Each Cloud LPAR in the host must have the following operating systems:
-   - AIX Version 7.3, and later
+- The Orchestrator (KSYS) Power Virtual Server instance is deployed with 0.5 cores and 4 GB of memory; however, larger environments with over 100 VMs may require additional resources. You can increase this configuration after the initial deployment by modifying the workspace and virtual server properties.
+
+- The KSYS logical partition runs IBM® AIX® 7.3 with Technology Level 1 Service Pack 1 (7300-01-01).
+
+Once the configuration is complete, you can add all the supported Power Virtual Server instances as Managed VMs to enable DR
 
 ## API key
 {: #apikey}

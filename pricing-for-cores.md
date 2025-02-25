@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-02-25"
 
 subcollection: dr-automation
 
@@ -50,16 +50,14 @@ All processor types are billed uniformly, regardless of configuration.
 | 3              | $0.20547              | $149.99                  |
 | 4              | $0.27396              | $199.99                  |
 | 5              | $0.34245              | $249.99                  |
-
 {: caption="All processors type pricing" caption-side="bottom"}
 
 
-
-  - **Uniform Rate** : All processor types, including dedicated, shared uncapped, and shared capped  configurations, are billed at the same hourly rate.
-
-  - **Usage-Based Billing**: Costs are calculated on an hourly basis, and the monthly cost reflects usage for a full month (730 hours).
-
-  - **Exclusions**: DR Automation billing excludes charges for operating systems, storage, and additional resources.
+   > **Note**: 
+   >
+   > - **Uniform Rate** : All processor types, including dedicated, shared uncapped, and shared capped  configurations, are billed at the same hourly rate.
+   > - **Usage-Based Billing**: Costs are calculated on an hourly basis, and the monthly cost reflects usage for a full month (730 hours).
+   > - **Exclusions**: DR Automation billing excludes charges for operating systems, storage, and additional resources.
 
 
 ## End of billing
