@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-02-27"
+lastupdated: "2025-02-28"
 
 subcollection: dr-automation-powervs
 
@@ -85,17 +85,17 @@ KSYS brings VMs online in the required sequence during a disaster, minimizing RT
 ### Custom metrics and monitoring
 {: #custom}
 
-KSYS regularly updates custom DR metrics, securely transmitting to the Service Broker by using DR Automation API and adhering to authentication protocols. This allows ongoing monitoring and helps identify and address anomalies in real-time. These metric data can be reviewed in IBM Cloud Monitor with Power Virtual Server DR Automation dash board and you can see the metric name managed_vm_count that shows for each deployment how many number of managed VMs are enabled for DR.For More details click [IBM cloud monitoring](https://cloud.ibm.com/docs/monitoring?topic=monitoring-getting-started)
+KSYS regularly updates custom DR metrics, securely transmitting to the Service Broker by using DR Automation API and adhering to authentication protocols. This allows ongoing monitoring and helps identify and address anomalies in real-time. These metric data can be reviewed in IBM Cloud Monitor with Power Virtual Server DR Automation dash board and you can see the metric name `managed_vm_count` that shows for each deployment how many number of managed VMs are enabled for DR. For More details click [IBM cloud monitoring](https://cloud.ibm.com/docs/monitoring?topic=monitoring-getting-started).
 
 ### Provisioning and configuration management
 {: #provision}
 
-The Service Broker provisioning capabilities allow KSYS to be configured with essential user inputs and monitored to ensure alignment with the recovery environment. Also, it offers a GUI URL accessible through IBM’s catalog, enabling users to monitor and manage configurations in real-time.
+The Service Broker provisioning capabilities allow KSYS to configure with essential user inputs and monitored to ensure alignment with the recovery environment. Also, it offers a GUI URL accessible through IBM’s catalog, enabling users to monitor and manage configurations in real-time.
 
 ### High availability (Optional)
 {: #ha}
 
-For enhanced resilience, KSYS supports a High Availability (HA) setup, ensuring continuous operation and reducing single points of failure.
+For enhanced resilience, KSYS supports High Availability (HA) setup, ensuring continuous operation and reducing single points of failure.
 
 ## Key features
 {: #key}
