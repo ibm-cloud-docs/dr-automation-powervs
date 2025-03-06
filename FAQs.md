@@ -156,7 +156,7 @@ To know more about  [why is the **Finish** button not enabled in the UI after or
 Follow the below steps to check for any communication issues:
 
 1. Log in to the Orchestrator VM from the IBM Cloud UI or through the VPC-created jump server.
-2. Export the proxy IP that was created through the VPC landing zone.
+2. Export the proxy IP that was created through the VPC landing zone:
 
    > **Export**
    > `http_proxy="<proxy_ip:port>"`
@@ -168,5 +168,13 @@ Follow the below steps to check for any communication issues:
    > `https_proxy="10.30.10.4:3128"`
 
 3. Validate the communication using the below link:
-
+   `curl -v` [dra-power.ibm.com](dra-power.ibm.com)
    `curl -v` [www.google.com](www.google.com).
+
+- You can check the status of squid service on Edge VSI in case communication is failing from Orchestrator VM.
+
+- To check squid proxy status, run below command on VSI server:
+  `systemctl status squid`
+
+- If service is not running, run below command to restart the squid service:
+  `systemctl restart squid`
