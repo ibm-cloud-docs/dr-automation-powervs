@@ -159,11 +159,14 @@ Follow the below steps to check for any communication issues:
 2. Export the proxy IP that was created through the VPC landing zone.
 
   > **export** `http_proxy="<proxy_ip:port>"`
+
   > **export** `https_proxy="<proxy_ip:port>"`
 
 **Example:**
-
    > **export**`http_proxy="10.30.10.4:3128"`
+
    > **export** `https_proxy="10.30.10.4:3128"`
-3. Validate the communication using the below link
+
+3. Validate the communication using the below link:
+
    `curl -v` [www.google.com](www.google.com).
