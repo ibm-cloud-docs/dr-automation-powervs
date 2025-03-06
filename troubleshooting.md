@@ -144,7 +144,6 @@ After the orchestrator VM is deployed and active, the cluster configuration star
   > **export** `http_proxy="<proxy_ip:port>"`
 
   > **export** `https_proxy="<proxy_ip:port>"`
-
 **Example:**
 
    > **Export**: `http_proxy="10.30.10.4:3128"`
