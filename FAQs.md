@@ -158,17 +158,22 @@ Follow the below steps to verify any communication issues:
 1. Log in to the Orchestrator VM from the IBM Cloud UI or through the jump server VSI created during the VPC landing zone deployment.
 
 2. Validate the communication using the below link:
+
    `curl -v` [power-dra.cloud.ibm.com](power-dra.cloud.ibm.com)
     OR
+    
    `curl -v` [www.google.com](www.google.com).
 
 3. Export the proxy server IP configured on Edge VSI that is created through the VPC landing zone and perform the step two to check the communication.
 
    > `export http_proxy="<proxy_ip:port>"`
+
    > `export https_proxy="<proxy_ip:port>"`
 
    > **Example:**
+
    > `export http_proxy="10.30.10.4:3128"`
+
    > `export https_proxy="10.30.10.4:3128"`
 
 - If the communication issue persists you can check the status of the squid service on Edge VSI.

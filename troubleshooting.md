@@ -138,20 +138,26 @@ After the orchestrator VM is deployed and active, the cluster configuration star
 ### How to fix it  
 {: tsResolve}  
 
-1.Log in to the Orchestrator VM from the IBM Cloud UI or through the jump server VSI created during the VPC landing zone deployment.
+1. Log in to the Orchestrator VM from the IBM Cloud UI or through the jump server VSI created during the VPC landing zone deployment.
 
 2. Validate the communication using the below link:
+
    `curl -v` [power-dra.cloud.ibm.com](power-dra.cloud.ibm.com)
+
     OR
+
    `curl -v` [www.google.com](www.google.com).
 
 3. Export the proxy server IP configured on Edge VSI that is created through the VPC landing zone and perform the step two to check the communication.
 
    > `export http_proxy="<proxy_ip:port>"`
+
    > `export https_proxy="<proxy_ip:port>"`
 
    > **Example:**
+
    > `export http_proxy="10.30.10.4:3128"`
+   
    > `export https_proxy="10.30.10.4:3128"`
 
 - If the communication issue persists you can check the status of the squid service on Edge VSI.
@@ -164,4 +170,4 @@ After the orchestrator VM is deployed and active, the cluster configuration star
 
   `systemctl restart squid`
 
-  For more information refer to[Power Virtual Server with VPC landing zone](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-standard).
+  For more information refer [Power Virtual Server with VPC landing zone](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-standard).
