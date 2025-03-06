@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-03-06"
 
 subcollection: dr-automation
 
@@ -9,7 +9,7 @@ keywords: faqs
 
 ---
 # FAQs
-{: #faqs}
+{: #faqss}
 
 The FAQ section provides concise answers to common questions about {{site.data.keyword.DR_full}} for PowerVS, covering its features, billing model, components, deployment across regions, prerequisites, monitoring tools, security, and more. It aims to help users understand and efficiently use DR Automation for disaster recovery in IBM Power Virtual Server environments.
 {:shortdesc: .shortdesc}
@@ -143,3 +143,22 @@ The KSYS node is responsible for managing disaster recovery operations across ac
 {: #what conf} 
 
 Cloud storage must be configured with versions from 73D onwards to ensure that the KSYS node can interact with the cloud APIs for data replication and availability. This is critical to ensure smooth failover and recovery between the active and backup sites.  
+
+## **When orchestrator deployment is not completed and finish button is not enabled in UI**
+{: #orch-fini-enab} 
+
+Once the orchestrator VM is deployed and active, the cluster configuration starts automatically. Once it is completed, KSYS will send an event, and the UI will enable the **Finish** button to launch the External Orchestrator UI.
+
+If there is any communication issue preventing the Orchestrator VM from sending the event, the **Finish** button will not be enabled, and you will not be able to add managed VMs using the External Orchestrator UI.
+
+Follow the below steps to check for any communication issues:
+
+1. Log in to the Orchestrator VM from the IBM Cloud UI or through the VPC-created jump server.
+2. Export the proxy IP that was created through the VPC landing zone.
+  export `http_proxy="<proxy_ip:port>"`
+  export `https_proxy="<proxy_ip:port>"`
+**Example:**
+  export `http_proxy="10.30.10.4:3128"`
+  export `https_proxy="10.30.10.4:3128"`
+validate the communication using the below link
+curl -v [www.google.com](www.google.com)
