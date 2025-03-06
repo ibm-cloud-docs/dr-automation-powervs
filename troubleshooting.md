@@ -156,7 +156,7 @@ If there are any communication issues preventing the orchestrator VM from sendin
 
    > `export https_proxy="<proxy_ip:port>"`
 
- **Example:**
+**Example:**
 
    > `export http_proxy="10.30.10.4:3128"`
 
