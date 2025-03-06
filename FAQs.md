@@ -165,6 +165,7 @@ Follow the below steps to check for any communication issues:
 **Example:**
 
   > export `http_proxy="10.30.10.4:3128"`
+
   > export `https_proxy="10.30.10.4:3128"`
 
 3. Validate the communication using the below link
