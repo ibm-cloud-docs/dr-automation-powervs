@@ -141,14 +141,13 @@ After the orchestrator VM is deployed and active, the cluster configuration star
 1. Log in to the **Orchestrator VM** from the IBM Cloud UI or through the VPC-created jump server.  
 2. Export the proxy IP that was created through the VPC landing zone:  
 
-   ```sh
-   export http_proxy="<proxy_ip:port>"  
-   export https_proxy="<proxy_ip:port>"  ```
+   **export** `http_proxy="<proxy_ip:port>"` 
+   **export** `https_proxy="<proxy_ip:port>"`
 
 **Example:**
- `export http_proxy="10.30.10.4:3128"`
- `export https_proxy="10.30.10.4:3128"`  
 
+ **export** `http_proxy="10.30.10.4:3128"`
+ **export** `https_proxy="10.30.10.4:3128"`  
 
 3. Validate the communication by running the following command:
 
