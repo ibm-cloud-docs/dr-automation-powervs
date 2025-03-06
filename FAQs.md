@@ -158,16 +158,14 @@ Follow the below steps to check for any communication issues:
 1. Log in to the Orchestrator VM from the IBM Cloud UI or through the VPC-created jump server.
 2. Export the proxy IP that was created through the VPC landing zone.
 
-  > **Export**
-   `http_proxy="<proxy_ip:port>"`
-   `https_proxy="<proxy_ip:port>"`
-   
+   > **Export**
+   > `http_proxy="<proxy_ip:port>"`
+   > `https_proxy="<proxy_ip:port>"`
 
-   **Example:**
-
+   > **Example:**
    > **Export**: 
-   `http_proxy="10.30.10.4:3128"`
-   `https_proxy="10.30.10.4:3128"`
+   > `http_proxy="10.30.10.4:3128"`
+   > `https_proxy="10.30.10.4:3128"`
 
 3. Validate the communication using the below link:
 
