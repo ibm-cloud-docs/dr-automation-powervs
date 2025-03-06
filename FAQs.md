@@ -151,7 +151,7 @@ Once the orchestrator VM is deployed and active, the cluster configuration start
 
 If there is any communication issue preventing the orchestrator VM from sending the event, the **Finish** button is not enabled, and you will not be able to add managed VMs using the External Orchestrator UI.
 
-To know more about the commnuication issues click [Why is the **Finish** button not enabled in the UI after orchestrator deployment?](/docs/dr-automation-powervs?topic=dr-automation-powervs-troubleshooting#orch-fini-enab)
+To know more about  [why is the **Finish** button not enabled in the UI after orchestrator deployment?](/docs/dr-automation-powervs?topic=dr-automation-powervs-troubleshooting#orch-fini-enab)
 
 Follow the below steps to check for any communication issues:
 
