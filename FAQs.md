@@ -144,21 +144,28 @@ The KSYS node is responsible for managing disaster recovery operations across ac
 
 Cloud storage must be configured with versions from 73D onwards to ensure that the KSYS node can interact with the cloud APIs for data replication and availability. This is critical to ensure smooth failover and recovery between the active and backup sites.  
 
-## **When orchestrator deployment is not completed and finish button is not enabled in UI**
+## **When orchestrator deployment is not completed and finish button is not enabled in UI?**
 {: #orch-fini-enab} 
 
-Once the orchestrator VM is deployed and active, the cluster configuration starts automatically. Once it is completed, KSYS will send an event, and the UI will enable the **Finish** button to launch the External Orchestrator UI.
+Once the orchestrator VM is deployed and active, the cluster configuration starts automatically. Once it is completed, KSYS will send an event, and the UI enables the **Finish** button to launch the external orchestrator UI.
 
-If there is any communication issue preventing the Orchestrator VM from sending the event, the **Finish** button will not be enabled, and you will not be able to add managed VMs using the External Orchestrator UI.
+If there is any communication issue preventing the orchestrator VM from sending the event, the **Finish** button is not enabled, and you will not be able to add managed VMs using the External Orchestrator UI.
+
+To know more about the commnuication issues click 
 
 Follow the below steps to check for any communication issues:
 
 1. Log in to the Orchestrator VM from the IBM Cloud UI or through the VPC-created jump server.
 2. Export the proxy IP that was created through the VPC landing zone.
-  export `http_proxy="<proxy_ip:port>"`
-  export `https_proxy="<proxy_ip:port>"`
+
+  > export `http_proxy="<proxy_ip:port>"`
+
+  > export `https_proxy="<proxy_ip:port>"`
+
 **Example:**
-  export `http_proxy="10.30.10.4:3128"`
-  export `https_proxy="10.30.10.4:3128"`
-validate the communication using the below link
-curl -v [www.google.com](www.google.com)
+
+  > export `http_proxy="10.30.10.4:3128"`
+  > export `https_proxy="10.30.10.4:3128"`
+
+3. Validate the communication using the below link
+   `curl -v` [www.google.com](www.google.com).

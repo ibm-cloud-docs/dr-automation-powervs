@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-03-06"
 
 subcollection: dr-automation
 
@@ -95,7 +95,7 @@ The system displays an error indicating the orchestrator password does not meet 
 The password provided does not comply with the security standards required by the orchestrator.  
 
 ### How to fix it  
-{: tsResolve}  
+{: tsesolve}  
 1. Access the **DR Automation GUI**.  
 2. Navigate to the **Policies** tab.  
 3. Locate the **Orchestrator Password** field under tunable attributes.  
@@ -124,3 +124,32 @@ Dependencies, such as active VMs or storage volumes, may prevent the service fro
 4. Check for active resources associated with the service and ensure there are no dependencies.  
 5. Regenerate the API key from the **Policies** tab and update the system with the new key.  
 6. Retry the delete operation and monitor for success.  
+
+## Why is the **Finish** button not enabled in the UI after orchestrator deployment?  
+{: #orch-fini-enab}  
+{: troubleshoot}  
+
+### What's happening  
+The **Finish** button in the UI remains disabled, preventing you from launching the External Orchestrator UI.  
+
+### Why it's happening  
+After the orchestrator VM is deployed and active, the cluster configuration starts automatically. Once completed, KSYS sends an event to enable the **Finish** button. However, if there is a communication issue preventing the orchestrator VM from sending this event, the button remains disabled, and you cannot add managed VMs using the External Orchestrator UI.  
+
+### How to fix it  
+{: tsResolve}  
+
+1. Log in to the **Orchestrator VM** from the IBM Cloud UI or through the VPC-created jump server.  
+2. Export the proxy IP that was created through the VPC landing zone:  
+
+   ```sh
+   export http_proxy="<proxy_ip:port>"  
+   export https_proxy="<proxy_ip:port>"  ```
+
+**Example:**
+ `export http_proxy="10.30.10.4:3128"`
+ `export https_proxy="10.30.10.4:3128"`  
+
+
+3. Validate the communication by running the following command:
+
+    `curl -v` [www.google.com](www.google.com)
