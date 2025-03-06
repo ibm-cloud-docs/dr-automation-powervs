@@ -147,34 +147,38 @@ Cloud storage must be configured with versions from 73D onwards to ensure that t
 ## **When orchestrator deployment is not completed and finish button is not enabled in UI?**
 {: #orch-fini-enab} 
 
-Once the orchestrator VM is deployed and active, the cluster configuration starts automatically. Once it is completed, KSYS will send an event, and the UI enables the **Finish** button to launch the external orchestrator UI.
+Once the orchestrator VM is deployed and active, the cluster configuration starts automatically. Once it is completed, KSYS sends an event, and the UI enables the **Finish** button to launch the external orchestrator UI.
 
-If there is any communication issue preventing the orchestrator VM from sending the event, the **Finish** button is not enabled, and you will not be able to add managed VMs using the External Orchestrator UI.
+If there are any communication issues preventing the orchestrator VM from sending the event, the **Finish** button is not enabled, and you will not be able to enable DR for managed VM's using the External Orchestrator UI.
 
-To know more about  [why is the **Finish** button not enabled in the UI after orchestrator deployment?](/docs/dr-automation-powervs?topic=dr-automation-powervs-troubleshooting#orch-fini-enab)
+To know more about  [why is the **Finish** button not enabled in the UI after orchestrator deployment?](/docs/dr-automation-powervs?topic=dr-automation-powervs-troubleshooting#orch-fini-enab).
 
-Follow the below steps to check for any communication issues:
+Follow the below steps to verify any communication issues:
 
-1. Log in to the Orchestrator VM from the IBM Cloud UI or through the VPC-created jump server.
-2. Export the proxy IP that was created through the VPC landing zone:
+1. Log in to the Orchestrator VM from the IBM Cloud UI or through the jump server VSI created during the VPC landing zone deployment.
 
-   > **Export**
-   > `http_proxy="<proxy_ip:port>"`
-   > `https_proxy="<proxy_ip:port>"`
-
-   > **Example:**
-   > **Export**: 
-   > `http_proxy="10.30.10.4:3128"`
-   > `https_proxy="10.30.10.4:3128"`
-
-3. Validate the communication using the below link:
-   `curl -v` [dra-power.ibm.com](dra-power.ibm.com)
+2. Validate the communication using the below link:
+   `curl -v` [power-dra.cloud.ibm.com](power-dra.cloud.ibm.com)
+    OR
    `curl -v` [www.google.com](www.google.com).
 
-- You can check the status of squid service on Edge VSI in case communication is failing from Orchestrator VM.
+3. Export the proxy server IP configured on Edge VSI that is created through the VPC landing zone and perform the step two to check the communication.
 
-- To check squid proxy status, run below command on VSI server:
+   > `export http_proxy="<proxy_ip:port>"`
+   > `export https_proxy="<proxy_ip:port>"`
+
+   > **Example:**
+   > `export http_proxy="10.30.10.4:3128"`
+   > `export https_proxy="10.30.10.4:3128"`
+
+- If the communication issue persists you can check the status of the squid service on Edge VSI.
+
+- To check the squid proxy status, run the following command on Edge VSI server
+
   `systemctl status squid`
 
-- If service is not running, run below command to restart the squid service:
+- If the service is not running, run the following command to restart the squid service
+
   `systemctl restart squid`
+
+  For more information refer to[Power Virtual Server with VPC landing zone](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-standard).

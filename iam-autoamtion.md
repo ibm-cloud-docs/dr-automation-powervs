@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-27"
+lastupdated: "2025-03-06"
 
 subcollection: dr-automation
 
@@ -62,11 +62,11 @@ You can use the service access roles to define the actions that the users can pe
 
 To see the complete list of actions for each specific role, see the [IAM roles and actions page](https://cloud.ibm.com/docs/account?topic=account-iam-service-roles-actions#power-iaas-roles) in IBM Cloud documentation.
 
-#### Access role requirements for DR Automation for PowerVS
+#### Access role requirements for {{site.data.keyword.DR_full_notm}}
 {: #ser-acc-role-dr-auto}
 
 
-{{site.data.keyword.DR_short}} requires additional access to various network and infrastructure features to ensure seamless failover, recovery, and redundancy. These access roles are determined by the specific recovery and network requirements of your DR solution. For instance, setting up redundancy for storage replication or configuring network routes during failover may require access to services like VPC, Transit Gateway, or Cloud Object Storage.
+{{site.data.keyword.DR_full_notm}} requires additional access to various network and infrastructure features to ensure seamless failover, recovery, and redundancy. These access roles are determined by the specific recovery and network requirements of your DR solution. For instance, setting up redundancy for storage replication or configuring network routes during failover may require access to services like VPC, Transit Gateway, or Cloud Object Storage.
 
 The following table outlines the additional access roles required for DR automation, along with the corresponding resources and attributes:
 
@@ -75,7 +75,7 @@ The following table outlines the additional access roles required for DR automat
 
 | **Additional Access Roles**         | **Resources and Attributes**                    |
 |-------------------------------------|------------------------------------------------|
-| **Reader, Viewer, Editor, Manager**                 | DR automation for PowerVS service                   |
+| **Editor, Manager**                 | DR automation for PowerVS service                   |
 | **Editor, Manager**                 | Power Virtual Server service                   |
 | **Reader, Viewer**                  | VPC Infrastructure Services service            |
 | **Manager**                         | Transit Gateway service                        |
