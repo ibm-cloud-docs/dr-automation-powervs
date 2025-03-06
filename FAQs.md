@@ -160,8 +160,9 @@ Follow the below steps to verify any communication issues:
 2. Validate the communication using the below link:
 
    `curl -v` [power-dra.cloud.ibm.com](power-dra.cloud.ibm.com)
+
     OR
-    
+
    `curl -v` [www.google.com](www.google.com).
 
 3. Export the proxy server IP configured on Edge VSI that is created through the VPC landing zone and perform the step two to check the communication.
@@ -170,7 +171,7 @@ Follow the below steps to verify any communication issues:
 
    > `export https_proxy="<proxy_ip:port>"`
 
-   > **Example:**
+   **Example:**
 
    > `export http_proxy="10.30.10.4:3128"`
 
@@ -180,10 +181,10 @@ Follow the below steps to verify any communication issues:
 
 - To check the squid proxy status, run the following command on Edge VSI server
 
-  `systemctl status squid`
+    > `systemctl status squid`
 
 - If the service is not running, run the following command to restart the squid service
 
-  `systemctl restart squid`
+    > `systemctl restart squid`
 
-  For more information refer to[Power Virtual Server with VPC landing zone](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-standard).
+  For more information refer [Power Virtual Server with VPC landing zone](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-standard).

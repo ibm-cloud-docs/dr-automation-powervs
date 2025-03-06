@@ -154,20 +154,20 @@ After the orchestrator VM is deployed and active, the cluster configuration star
 
    > `export https_proxy="<proxy_ip:port>"`
 
-   > **Example:**
+ **Example:**
 
    > `export http_proxy="10.30.10.4:3128"`
-   
+
    > `export https_proxy="10.30.10.4:3128"`
 
 - If the communication issue persists you can check the status of the squid service on Edge VSI.
 
 - To check the squid proxy status, run the following command on Edge VSI server
 
-  `systemctl status squid`
+   > `systemctl status squid`
 
 - If the service is not running, run the following command to restart the squid service
 
-  `systemctl restart squid`
+   > `systemctl restart squid`
 
   For more information refer [Power Virtual Server with VPC landing zone](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-standard).
