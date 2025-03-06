@@ -148,7 +148,7 @@ If there are any communication issues preventing the orchestrator VM from sendin
 
     OR
 
-   `curl -v` [www.google.com](www.google.com).
+   `curl -v` [www.google.com](www.google.com)
 
 3. Export the proxy server IP configured on Edge VSI that is created through the VPC landing zone and perform the step two to check the communication.
 
@@ -168,7 +168,7 @@ If there are any communication issues preventing the orchestrator VM from sendin
 
    > `systemctl status squid`
 
-- If the service is not running, run the following command to restart the squid service
+- If the service is not active, run the following command to restart the squid service
 
    > `systemctl restart squid`
 
