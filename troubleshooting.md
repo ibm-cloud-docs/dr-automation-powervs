@@ -144,11 +144,11 @@ If there are any communication issues preventing the orchestrator VM from sendin
 
 2. Validate the communication using the following link:
 
-   `curl -v[power-dra.cloud.ibm.com](power-dra.cloud.ibm.com)`
+   `curl -v power-dra.cloud.ibm.com`
 
     OR
 
-   `curl -v [www.google.com](www.google.com)`
+   `curl -v www.google.com`
 
 3. Export the proxy server IP configured on Edge VSI that is created through the VPC landing zone and perform the step two to check the communication.
 
@@ -156,10 +156,11 @@ If there are any communication issues preventing the orchestrator VM from sendin
 
    > `export https_proxy="<proxy_ip:port>"`
 
-**Example:**
+   **Example:**
 
-   > `export http_proxy="10.30.10.4:3128"`
-   > `export https_proxy="10.30.10.4:3128"`
+   `export http_proxy="10.30.10.4:3128"`
+
+   `export https_proxy="10.30.10.4:3128"`
 
 4. If the communication issue persists, you can check the status of the squid service on Edge VSI.
 
