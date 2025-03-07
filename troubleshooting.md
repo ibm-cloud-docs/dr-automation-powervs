@@ -144,7 +144,10 @@ If there are any communication issues preventing the orchestrator VM from sendin
 
 2. Validate the communication using the following link:
 
-   `curl -v power-dra.cloud.ibm.com`
+   <div style="position: relative;">
+  <pre id="cmd1"><code>curl -v power-dra.cloud.ibm.com</code></pre>
+  <button onclick="copyToClipboard('cmd1')" style="position: absolute; right: 10px; top: 10px;">📋</button>
+</div>
 
     OR
 
@@ -162,7 +165,7 @@ If there are any communication issues preventing the orchestrator VM from sendin
 
    `export https_proxy="10.30.10.4:3128"`
 
-4. If the communication issue persists, you can check the status of the squid service on Edge VSI.
+If the communication issue persists, you can check the status of the squid service on Edge VSI.
 
 - To check the squid proxy status, run the following command on the Edge VSI server
 
