@@ -144,9 +144,11 @@ If there are any communication issues preventing the orchestrator VM from sendin
 
 2. Validate the communication using the following link:
 
-   `curl -v power-dra.cloud.ibm.com`
+   > `curl -v power-dra.cloud.ibm.com`
+
     OR
-   `curl -v www.google.com`
+
+   > `curl -v www.google.com`
 
 3. Export the proxy server IP configured on Edge VSI that is created through the VPC landing zone and perform the step two to check the communication.
 
@@ -164,10 +166,10 @@ If the communication issue persists, you can check the status of the squid servi
 
 - To check the squid proxy status, run the following command on the Edge VSI server
 
-   `systemctl status squid`
+   > `systemctl status squid`
 
 - If the service is not active, run the following command to restart the squid service
 
-   `systemctl restart squid`
+   > `systemctl restart squid`
 
   For more information, refer to [Power Virtual Server with VPC landing zone](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-standard).
