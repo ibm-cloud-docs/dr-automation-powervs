@@ -143,6 +143,7 @@ If there are any communication issues preventing the orchestrator VM from sendin
 1. Log in to the orchestrator VM from the IBM Cloud UI or through the jump server VSI created during the VPC landing zone deployment.
 
 2. Validate the communication using the following link:
+
    `curl -v power-dra.cloud.ibm.com`
     OR
    `curl -v www.google.com`
