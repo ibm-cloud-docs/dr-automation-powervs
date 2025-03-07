@@ -152,9 +152,9 @@ If there are any communication issues preventing the orchestrator VM from sendin
 
 3. Export the proxy server IP configured on Edge VSI that is created through the VPC landing zone and perform the step two to check the communication.
 
-   > `export http_proxy="<proxy_ip:port>"`
+   `export http_proxy="<proxy_ip:port>"`
 
-   > `export https_proxy="<proxy_ip:port>"`
+   `export https_proxy="<proxy_ip:port>"`
 
    **Example:**
 
