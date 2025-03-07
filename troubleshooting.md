@@ -144,10 +144,7 @@ If there are any communication issues preventing the orchestrator VM from sendin
 
 2. Validate the communication using the following link:
 
-   <div style="position: relative;">
-  <pre id="cmd1"><code>curl -v power-dra.cloud.ibm.com</code></pre>
-  <button onclick="copyToClipboard('cmd1')" style="position: absolute; right: 10px; top: 10px;">📋</button>
-</div>
+   `curl -v power-dra.cloud.ibm.com`
 
     OR
 
