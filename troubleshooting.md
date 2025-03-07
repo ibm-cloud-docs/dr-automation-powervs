@@ -147,12 +147,12 @@ If there are any communication issues preventing the orchestrator VM from sendin
 ```
  curl -v power-dra.cloud.ibm.com
 ```
-{: pre}
+{: codeblock}
 
 ```
 curl -v www.google.com
 ```
-{: pre}
+{: codeblock}
 
 
 3. Export the proxy server IP configured on Edge VSI that is created through the VPC landing zone and perform the step two to check the communication.
