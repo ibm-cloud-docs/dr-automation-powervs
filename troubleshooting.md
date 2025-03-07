@@ -166,10 +166,10 @@ If there are any communication issues preventing the orchestrator VM from sendin
 
 - To check the squid proxy status, run the following command on the Edge VSI server
 
-   > `systemctl status squid`
+   `systemctl status squid`
 
 - If the service is not active, run the following command to restart the squid service
 
-   > `systemctl restart squid`
+   `systemctl restart squid`
 
   For more information, refer to [Power Virtual Server with VPC landing zone](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-standard).
