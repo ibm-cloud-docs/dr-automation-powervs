@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-03-07"
+lastupdated: "2025-03-11"
 
 subcollection: dr-automation
 
@@ -149,10 +149,12 @@ If there are any communication issues preventing the orchestrator VM from sendin
 ```
 {: codeblock}
 
-```
+```sh
+
 curl -v www.google.com
+
 ```
-{: codeblock}
+{: pre}
 
 
 3. Export the proxy server IP configured on Edge VSI that is created through the VPC landing zone and perform the step two to check the communication.
