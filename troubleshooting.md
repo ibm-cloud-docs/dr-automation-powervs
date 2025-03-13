@@ -147,6 +147,7 @@ If there are any communication issues preventing the orchestrator VM from sendin
 ```sh
 ibmcloud resource service-instance <WORKSPACE_CRN> -o json
 ```
+
 {: pre}
 
 > `curl -v power-dra.cloud.ibm.com> `
