@@ -24,9 +24,10 @@ DR Automation for PowerVS is available in select regions with scale-out logical 
 | E1022 (9105-22A)      | 33         | Up to 1984 GB    |
 {: caption="Theoretical maximum memory" caption-side="bottom"}
 
-> **Notes:**
-    Memory Limits by Data Center: In certain data centers, such as **DAL12, DAL13, OSA21, SAO01, TOK04, WDC04, and WDC06, E980** systems can support up to 23,070 GB of memory.
-    Operating System Constraints: For IBM i, the **S922** and **S1022** machine types support a maximum of 4 cores per VM.
+ > **Notes:**
+ > Memory limits by data center: In certain data centers, such as **DAL12, DAL13, OSA21, SAO01, TOK04, WDC04, and WDC06, E980** systems can support up to 23,070 GB of memory.
+
+ > Operating system constraints: For IBM i, the **S922** and **S1022** machine types support a maximum of 4 cores per VM.
 
 
 
@@ -38,6 +39,8 @@ DR Automation for PowerVS uses a single, consistent pricing model across all pro
 - **S922**: Available in dedicated, shared uncapped, and shared capped configurations.
 - **E980**: Provides high memory capacity options in dedicated, shared uncapped, and shared capped configurations.
 - **S1022**: Designed for mid-range workloads, available in dedicated, shared uncapped, and shared capped configurations.
+- **E1080**:Designed for enterprise workloads, offering high performance and scalability in dedicated, shared uncapped, and shared capped configurations.
+
 For information on different processor type functions, see [FAQ](/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs).
 
 All processor types are billed uniformly, regardless of configuration.
