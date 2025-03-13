@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-03-13"
 
 subcollection: dr-automation
 
@@ -10,7 +10,7 @@ keywords: sites ksys
 
 ---
 
-# Adding sites to ksys
+# Adding sites to KSYS
 {: #add-site-ksys}
 
 Configure your environment by adding the **source** and **target sites**, specifying region names, and saving the configurations to enable seamless data replication.

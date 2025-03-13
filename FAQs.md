@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-03-06"
+lastupdated: "2025-03-13"
 
 subcollection: dr-automation
 
@@ -9,7 +9,7 @@ keywords: faqs
 
 ---
 # FAQs
-{: #faqss}
+{: #faqs}
 
 The FAQ section provides concise answers to common questions about {{site.data.keyword.DR_full}} for PowerVS, covering its features, billing model, components, deployment across regions, prerequisites, monitoring tools, security, and more. It aims to help users understand and efficiently use DR Automation for disaster recovery in IBM Power Virtual Server environments.
 {:shortdesc: .shortdesc}
@@ -142,7 +142,7 @@ The KSYS node is responsible for managing disaster recovery operations across ac
 ## **What configurations are required for cloud storage in DR Automation for PowerVS?**
 {: #what conf} 
 
-Cloud storage must be configured with versions from 73D onwards to ensure that the KSYS node can interact with the cloud APIs for data replication and availability. This is critical to ensure smooth failover and recovery between the active and backup sites.  
+Cloud storage must be configured with versions from AIX 7.3 TL2 onwards to ensure that the KSYS node can interact with the cloud APIs for data replication and availability. This is critical to ensure smooth failover and recovery between the active and backup sites.  
 
 ## **When orchestrator deployment is not completed and finish button is not enabled in UI?**
 {: #orch-fini-enab} 

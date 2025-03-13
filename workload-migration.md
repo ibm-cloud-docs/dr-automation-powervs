@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-03-13"
 
 subcollection: dr-automation
 
@@ -13,7 +13,7 @@ keywords: migration
 # Planning a workload migration to {{site.data.keyword.DR_full}}
 {: #plan-work-load}
 
-When workloads are deployed on a new system, you must pay attention to its configuration and tuning to achieve the expected performance. {{site.data.keyword.DR_full_notm}} uses different IBM Power Systems: E980 (9080-M9S), S922 (9009-22A), S1022 (9105-22A), and E1080 (9080-HEX).
+When workloads are deployed on a new system, you must pay attention to its configuration and tuning to achieve the expected performance. {{site.data.keyword.DR_full_notm}} uses different IBM Power Systems: S922, E980, E1080, S1022.
 {:shortdesc: .shortdesc}
 
 For more information on hardware specifications that you might need, see [Hardware specifications for {{site.data.keyword.DR_full_notm}}](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch#hs).
