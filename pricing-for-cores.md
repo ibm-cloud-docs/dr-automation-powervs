@@ -20,8 +20,9 @@ DR Automation for PowerVS is available in select regions with scale-out logical 
 |-----------------------|------------|-------------------|
 | E980 (9080-M9S)       | 143        | Up to 15,307 GB  |
 | S922 (9009-22A)       | 15         | Up to 942 GB     |
-| E1080 (9080-HEX)      | 240        | Up to 64 TB      |
 | E1022 (9105-22A)      | 33         | Up to 1984 GB    |
+| E1080 (9080-HEX)      | 240        | Up to 64 TB      |
+
 {: caption="Theoretical maximum memory" caption-side="bottom"}
 
  > **Notes:**

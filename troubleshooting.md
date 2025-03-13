@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-03-11"
+lastupdated: "2025-03-13"
 
 subcollection: dr-automation
 
@@ -144,17 +144,11 @@ If there are any communication issues preventing the orchestrator VM from sendin
 
 2. Validate the communication using the following link:
 
-```
- curl -v power-dra.cloud.ibm.com
-```
-{: codeblock}
+> `curl -v power-dra.cloud.ibm.com> `
 
-```sh
-
-curl -v www.google.com
-
-```
-{: pre}
+   OR
+   
+> `curl -v www.google.com> `
 
 
 3. Export the proxy server IP configured on Edge VSI that is created through the VPC landing zone and perform the step two to check the communication.
