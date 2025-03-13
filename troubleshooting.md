@@ -144,10 +144,15 @@ If there are any communication issues preventing the orchestrator VM from sendin
 
 2. Validate the communication using the following link:
 
+```sh
+ibmcloud resource service-instance <WORKSPACE_CRN> -o json
+```
+{: pre}
+
 > `curl -v power-dra.cloud.ibm.com> `
 
    OR
-   
+
 > `curl -v www.google.com> `
 
 
