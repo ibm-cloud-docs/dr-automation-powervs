@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-03-13"
 subcollection: dr-automation
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -24,8 +24,8 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 **Improved GUI for recovery workflows**
 :   Automate complex recovery workflows through the improved GUI interface, reducing manual intervention and minimizing Recovery Time Objectives (RTO). For more details, see [GUI Workflow Automation](/docs/dr-automation-powervs?topic=dr-automation-powervs-cinstance).
 
-**Support for I Power E1080 systems**
-:   DR Automation now supports I Power E1080 (9080-HEX) systems with up to 64 TB of memory, allowing for recovery of large-scale workloads. For more details, see [Hardware specifications](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch).
+**Support for Power E1080 systems**
+:   DR Automation now supports Power E1080 (9080-HEX) systems with up to 64 TB of memory, allowing for recovery of large-scale workloads. For more details, see [Hardware specifications](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch).
 
 **Updated external orchestrator GUI**
 :   The external orchestrator GUI has been updated with new navigation and monitoring features for simplified DR setup and operation. For more details, see [Orchestrator GUI Updates](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter).
