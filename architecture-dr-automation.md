@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-14"
 
 subcollection: dr-automation-powervs
 
@@ -166,7 +166,7 @@ For more details, refer to the specific data sheets and hardware overview table.
 
 - The KSYS logical partition runs IBM® AIX® 7.3 with Technology Level 1 Service Pack 1 (7300-01-01).
 
-- Currently IBM Power Virtual Server Private Cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers
+- Currently IBM Power Virtual Server officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers
 
 The configuration is complete, you can add all the supported Power Virtual Server instances as Managed VMs to enable DR
 
