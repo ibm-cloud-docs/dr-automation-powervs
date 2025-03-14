@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-03-14"
 
 subcollection: dr-automation
 
@@ -69,7 +69,7 @@ All processor types are billed uniformly, regardless of configuration.
 ## End of billing
 {: #eob}
 
-The billing cycle for DR Automation for PowerVS ends when the Logical Partition (LPAR) is deleted. If you scale your infrastructure in response to workload demands, billing adjusts accordingly. **Stopping the LPAR alone does not end billing**; you must delete the LPAR to stop the billing cycle.
+The billing cycle for DR Automation for PowerVS ends when the Logical Partition (LPAR) is deleted. If you scale your infrastructure in response to workload demands, billing adjusts accordingly. **Stopping the LPAR alone does not end billing**, you must delete the LPAR to stop the billing cycle.
 
 > **Important**:
 Charges continue if the VM is suspended. To reduce costs for inactive VMs, use Dynamic Logical Partitioning (DLPAR) to resize to a minimal state, lowering core and memory usage.
@@ -81,4 +81,4 @@ Charges continue if the VM is suspended. To reduce costs for inactive VMs, use D
 This document provides a comprehensive overview of DR Automation pricing and usage for PowerVS, ensuring customers have accurate information for budgeting their DR solutions.
 
 > **Important**:
-Prices shown are for illustration only and may differ from actual billing. For precise estimates, use the IBM Cloud Cost Estimator. Final costs may vary based on discounts and promotions.
+Prices shown are for illustration only and may differ from actual billing. They do not include storage replication charges or additional costs for prerequisites such as a VSI in VPC and a VPC VPN service. For precise estimates, use the **IBM Cloud Cost Estimator**, as final costs may vary based on your requirements, discounts, and promotions.
