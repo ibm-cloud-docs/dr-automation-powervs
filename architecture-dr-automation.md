@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-03-14"
+lastupdated: "2025-03-17"
 
 subcollection: dr-automation-powervs
 
@@ -203,7 +203,7 @@ After deployment, you can launch the "External Orchestrator UI" when you connect
 
 When KSYSHA is enabled, a standby Orchestrator is created in the user selected workspace, and it automatically adds this workspace to the Transit Gateway to establish connectivity with the VPC. When selecting the standby workspace, ensure that no duplicate subnet range is configured across the workspaces connected to the Transit Gateway. If multiple Power Virtual Servers have the same subnet range, they may fail to communicate with the VPC.
 
-Additionally, the system automatically adds all default networks configured for Power Virtual Servers to the security group to enable communication during the **Power Virtual Server with VPC landing zone** creation. If you create new subnets in the Power Virtual Server workspace, you must add them to the security group to enable communication with the VPC. For more details, refer to [VPC Security](https://teams.microsoft.com/l/message/19:meeting_NWZiNzFmNDgtZWI5My00Mjk1LWE2NTItYjgwYjdlYzU1Yjc4@thread.v2/1741949819616?context=%7B%22contextType%22%3A%22chat%22%7D).
+Additionally, the system automatically adds all default networks configured for Power Virtual Servers to the security group to enable communication during the **Power Virtual Server with VPC landing zone** creation. If you create new subnets in the Power Virtual Server workspace, you must add them to the security group to enable communication with the VPC. For more details, refer to [VPC Security](https://cloud.ibm.com/docs/vpc?topic=vpc-security-in-your-vpc).
 
  For detailed steps on connecting to the Power Virtual Server with VPC, refer to [Connect using a client-to-site VPN](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-solution-connect-client-vpn).
 
