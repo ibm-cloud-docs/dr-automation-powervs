@@ -197,7 +197,7 @@ With the IBM Cloud Service Framework, storage is allocated based on deployment n
 
 As part of the DR Automation deployment, the system creates the Orchestrator (KSYS) virtual server with private networks only, preventing direct access to the Power Virtual Server. To access this virtual server, you must use a VPN connected to the VPC or manually enable the public network after deployment.
 
-DR Automation deploys a VPC schematic through the **Power Virtual Server with VPC landing zone**, which internally creates an optional VPN. This VPN allows you to connect the Power Virtual Server and Virtual Server Instances (VSI) by downloading the VPN profile.
+DR Automation use a VPC schematic through the **Power Virtual Server with VPC landing zone**, this internally creates an optional VPN. This VPN allows you to connect the Power Virtual Server and Virtual Server Instances (VSI) by downloading the VPN profile.
 
 After deployment, you can launch the "External Orchestrator UI" when you connect to the VPN, or when the public network is explicitly enabled.
 
