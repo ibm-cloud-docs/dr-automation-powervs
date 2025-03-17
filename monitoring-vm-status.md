@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-03-13"
 
 subcollection: dr-automation
 
@@ -9,7 +9,7 @@ keywords: monitor status
 
 ---
 
-# Monitoring vm status
+# Monitoring VM status
 {: #moni-vm-stat}
 
 When creating one or multiple VMs in DR Automation for Power Virtual Server, the process includes various stages indicating the configuration, provisioning, and status of the virtual machines. Each status provides insights into the progress and highlights any potential issues that may arise during the VM creation process.

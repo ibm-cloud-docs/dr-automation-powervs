@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-17"
 
 subcollection: dr-automation-powervs
 
@@ -162,13 +162,13 @@ For more details, refer to the specific data sheets and hardware overview table.
 ## Software requirements
 {: #sr}
 
-- The Orchestrator (KSYS) Power Virtual Server instance is deployed with 0.5 cores and 4 GB of memory; however, larger environments with over 100 VMs require more resources. You can increase this configuration after the initial deployment by modifying the workspace and virtual server properties.
+- The Orchestrator (KSYS) Power Virtual Server instance is deployed with 0.5 cores and 4 GB of memory however, larger environments with over 100 VMs require more resources. You can increase this configuration after the initial deployment by modifying power virtual server properties with in the workspace.
 
 - The KSYS logical partition runs IBM® AIX® 7.3 with Technology Level 1 Service Pack 1 (7300-01-01).
 
-- Currently IBM Power Virtual Server Private Cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers
+- IBM Power Virtual Server Public Cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers and configuring them as managed virtual machines to enable DR.
 
-The configuration is complete, you can add all the supported Power Virtual Server instances as Managed VMs to enable DR
+The configuration is complete, you can add all the supported Power Virtual Server instances as Managed VMs to enable DR.
 
 ## API key
 {: #apikey}
@@ -192,22 +192,20 @@ With the IBM Cloud Service Framework, storage is allocated based on deployment n
 ## Network configurations
 {: #ns}
 
-### Public network
-{: #pn}
+### Connectivity for Orchestrator UI:
+{: #cfoui}
 
-{{site.data.keyword.DR_short}} offers public network connectivity for seamless access and configuration.
-IBM configures the network environment for secure public connections, including firewall protection and support for SSH, HTTPS, and IBM i terminal emulation.
+As part of the DR Automation deployment, the system creates the Orchestrator (KSYS) virtual server with private networks only, preventing direct access to the Power Virtual Server. To access this virtual server, you must use a VPN connected to the VPC or manually enable the public network after deployment.
 
-### Private network
-{: #privatenet}
+DR Automation deploys a VPC schematic through the **Power Virtual Server with VPC landing zone**, which internally creates an optional VPN. This VPN allows you to connect the Power Virtual Server and Virtual Server Instances (VSI) by downloading the VPN profile.
 
-A private network setup is recommended for secure communication between PowerVS instances in primary and DR sites. This configuration supports:
+After deployment, you can launch the "External Orchestrator UI" when you connect to the VPN, or when the public network is explicitly enabled.
 
-IBM cloud resources access
-:   Enable access to IBM Cloud Bare Metal Servers, Kubernetes containers, and Cloud Object Storage.
+When KSYSHA is enabled, a standby Orchestrator is created in the user selected workspace, and it automatically adds this workspace to the Transit Gateway to establish connectivity with the VPC. When selecting the standby workspace, ensure that no duplicate subnet range is configured across the workspaces connected to the Transit Gateway. If multiple Power Virtual Servers have the same subnet range, they may fail to communicate with the VPC.
 
-Direct link connect
-:   Use Direct Link Connect for secure, low-latency communication between DR environments.
+Additionally, the system automatically adds all default networks configured for Power Virtual Servers to the security group to enable communication during the **Power Virtual Server with VPC landing zone** creation. If you create new subnets in the Power Virtual Server workspace, you must add them to the security group to enable communication with the VPC. For more details, refer to [VPC Security](https://cloud.ibm.com/docs/vpc?topic=vpc-security-in-your-vpc).
+
+ For detailed steps on connecting to the Power Virtual Server with VPC, refer to [Connect using a client-to-site VPN](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-solution-connect-client-vpn).
 
 ## Setting Up {{site.data.keyword.DR_short}}
 {: #setup}
