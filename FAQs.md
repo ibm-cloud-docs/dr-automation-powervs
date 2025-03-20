@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-03-20"
 
 subcollection: dr-automation
 
@@ -27,7 +27,7 @@ The solution minimizes manual intervention by automating DR workflows by using t
 ## **What billing model does DR Automation use?**
  {: #bill}    
 
-DR Automation is billed based on the **number of cores provisioned** for disaster recovery. Unlike traditional setups that may include storage and additional configuration costs, DR Automation for PowerVS focuses solely on compute cores. Use the IBM Cloud estimator tool to calculate costs.  
+DR Automation is billed based on the **number of cores provisioned** for disaster recovery per hour. Unlike traditional setups that may include storage and additional configuration costs, DR Automation for PowerVS focuses solely on compute cores. Use the IBM Cloud estimator tool to calculate costs.  
 
 
 ## **What is the role of the DR Orchestrator (KSYS)?**
@@ -51,17 +51,18 @@ Yes, DR Automation supports global IBM Cloud regions, allowing users to select t
 - **IBM Cloud Account:** Create and log in to an IBM Cloud account.  
 - **SSH Keys:** Configure keys for secure communication with PowerVS instances.  
 - **VPC Configurations:** Define virtual private cloud settings for data isolation.  
-- **Infrastructure Plan:** Review capacity needs using IBM's cost estimator.  
+- **Infrastructure Plan:** Review capacity needs using IBM's cost estimator.
+For more details, refer to [Before you begin](/docs/dr-automation-powervs?topic=dr-automation-powervs-getting-started).
 
 ## **What steps are involved in provisioning {{site.data.keyword.DR_short}}?**
-{: #hekp} 
+{: #hekp}
 
    The provisioning workflow starts with the Service Broker deploying KSYS VMs in the source workspace. Data synchronization and resource replication are initiated automatically, with real time updates visible in the UI.
 
 ## **What storage tiers are supported for {{site.data.keyword.DR_short}}?**
 {: #suppt}  
 
-   DR Automation focuses on compute resources, but if storage is required, it supports flexible configurations like Tier 0 (25 IOPS/GB) and Tier 3 (3 IOPS/GB) for different workload requirements.
+   DR Automation focuses on compute resources, but if storage is required, it supports flexible configurations like Tier 1 (10 IOPS/GB) and Tier 3 (3 IOPS/GB) for different workload requirements.
 
 ##  **Does DR Automation support High Availability (HA)?**
 {: #hadr}  
@@ -110,7 +111,7 @@ Yes, users can scale resources dynamically based on workload demands. Additional
 
 - **KSYS Orchestrator:** Manages failover/failback workflows.  
 - **Service Broker:** Handles resource provisioning.  
-- **Cloud Object Storage:** Supports backup data replication.  
+- **Cloud Object Storage:** IBM Cloud services like COS, CloudantDB, BSS, Activity Tracker, Cloud logs, Sendgrid/ACS.  
 
 ## **How can users track billing for {{site.data.keyword.DR_short}}?**
 {: #implemen}  
