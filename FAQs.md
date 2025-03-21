@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-03-20"
+lastupdated: "2025-03-21"
 
 subcollection: dr-automation
 
@@ -33,7 +33,7 @@ DR Automation is billed based on the **number of cores provisioned** for disaste
 ## **What is the role of the DR Orchestrator (KSYS)?**
 {: #role}  
 
-KSYS orchestrates DR operations by managing the sequence of recovery, ensuring that workloads are restored in a logical order. It handles failover and failback processes across regions, optimizing resource usage during disasters.  
+KSYS as orchestrator (VM) DR operations by managing the sequence of recovery, ensuring that workloads are restored in a logical order. It handles failover and failback processes across regions, optimizing resource usage during disasters.  
   
 ## **What is the DR Service Broker?**
 {: #srd}  
