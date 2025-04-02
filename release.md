@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-04-01"
 subcollection: dr-automation
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -14,7 +14,7 @@ keywords: dr-automation, release-notes
 Use these release notes to learn about the latest updates to **{{site.data.keyword.DR_short}}** grouped by release date. Release notes are available for a minimum of three years.
 {: shortdesc}
 
-## 31 January 2024
+## 31 January 2025
 {: #subcollection-jan0124}
 {: release-note}
 **High availability for DR Orchestrator (KSYS)**
