@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-25"
+lastupdated: "2025-04-16"
 
 subcollection: dr-automation
 
@@ -136,7 +136,7 @@ To manage nodes in the KSYS cluster, follow these steps:
 1. Select the cluster from the navigation panel.
 2. Click on **KSYS Details** in the top navigation bar.
 3. Perform the desired action:
-   - **Adding a Node**: Click **Add Node**, enter the node details, and click **Add**.
+   - **Adding a Node**: Click **Add Node**, enter the node detail for example `IP:xx.x.x.xxx`, and click **Add**.
    - **Deleting a Node**: Select the node, click **Delete Node**, and confirm the deletion.
    - **Registering a Node**: Click **Register** next to an unregistered node, add the required details, and click **Register**.
    - **Unregistering a Node**: Click **Unregister** next to the node.
