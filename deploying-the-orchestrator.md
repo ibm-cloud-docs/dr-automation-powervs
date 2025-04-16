@@ -40,11 +40,11 @@ following the steps:
 5. In the **Schematics workspace** field, select an appropriate workspace for the orchestrator. If required, create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) to define the Power Virtual Server workspace where the primary orchestrator will be deployed.
    > **Note**: The schematic ID is available if the VPC is created using the VPC Landing Zone for the PowerVS option from the catalog. If VPCs are created manually, you can still generate a schematic ID by using the Import option in the VPC Landing Zone for PowerVS.
 
-6. Select the **DR Power Virtual Server workspace** that is generated based on the selected **DR location** and **DR Schematics workspace**. To change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace accordingly.
+6. Select the **DR Power Virtual Server workspace** that is generated(**listed**) based on the selected **DR location** and **DR Schematics workspace**. To change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace accordingly.
 
 7. Provide either **Public SSH key** or Select from **Secrets Manager**.
 
-8. Choose a **Public SSH key** and **IBM Cloud API key** from the **Secrets Manager** or upload new keys if necessary to help ensure secure connections.
+8. Choose a **Public SSH key** from the **Secrets Manager** or upload new keys if necessary to help ensure secure connections.
 
 9. Expand the **Advanced Configuration** section to adjust additional settings for storage tiers and machine types, if applicable.
 
@@ -52,7 +52,9 @@ following the steps:
 
 11. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VM.
 
-12. Once the orchestrator is deployed, manage the service through the [**orchestrator interface**](https://10.32.150.93:3000/login?byCloud=true) and configure additional virtual server instances for disaster recovery.
+12. Once the orchestrator is deployed, manage the service through the **orchestrator interface** and configure additional virtual server instances for disaster recovery.
+
+ >**Note**:The orchestrator interface (UI) is launched at https:// <Orchestrator IP>:3000/login.The <Orchestrator IP> is the system on which the orchestrator UI is installed and it is loaded automatically.
 
 13. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby node for redundancy and resilience.
 
