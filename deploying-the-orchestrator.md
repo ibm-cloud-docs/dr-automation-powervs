@@ -35,12 +35,12 @@ following the steps:
 
 3. Provide the **IBM Cloud API key**, and if it is valid then you can provide the remaining fields.
 
-4. In the **DR location** field, select a location in which you want to deploy the orchestrator VM.
+4. In the **DR location** field, select the target region for deploying the orchestrator VM.
 
 5. In the **Schematics workspace** field, select an appropriate workspace for the orchestrator. If required, create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) to define the Power Virtual Server workspace where the primary orchestrator will be deployed.
    > **Note**: The schematic ID is available if the VPC is created using the VPC Landing Zone for the PowerVS option from the catalog. If VPCs are created manually, you can still generate a schematic ID by using the Import option in the VPC Landing Zone for PowerVS.
 
-6. Select the **DR Power Virtual Server Workspace** that is generated based on the selected **DR location**, **DR Schematics workspace**. To the change the DR Power Virtual Server workspace you can change the DR location and DR Schematics workspace.
+6. Select the **DR Power Virtual Server workspace** that is generated based on the selected **DR location** and **DR Schematics workspace**. To change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace accordingly.
 
 7. Provide either **Public SSH key** or Select from **Secrets Manager**.
 
