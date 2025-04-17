@@ -68,7 +68,7 @@ To see the complete list of actions for each specific role, see the [IAM roles a
 
 {{site.data.keyword.DR_full_notm}} requires additional access to various network and infrastructure features to ensure seamless failover, recovery, and redundancy. These access roles are determined by the specific recovery and network requirements of your DR solution. For instance, setting up redundancy for storage replication or configuring network routes during failover may require access to services like VPC, Transit Gateway, or Cloud Object Storage.
 
-The following table outlines the additional access roles required for DR automation, along with the corresponding resources and attributes:
+The following table outlines the additional access roles required for DR automation, along with the corresponding resources and attributes for API key:
 
 ### Resources and attributes
 {: #res-atri}
