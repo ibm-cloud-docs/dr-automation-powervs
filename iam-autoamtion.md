@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-03-06"
+lastupdated: "2025-04-17"
 
 subcollection: dr-automation
 
@@ -62,7 +62,7 @@ You can use the service access roles to define the actions that the users can pe
 
 To see the complete list of actions for each specific role, see the [IAM roles and actions page](https://cloud.ibm.com/docs/account?topic=account-iam-service-roles-actions#power-iaas-roles) in IBM Cloud documentation.
 
-#### Access role requirements for {{site.data.keyword.DR_full_notm}}
+### Access role requirements for {{site.data.keyword.DR_full_notm}}
 {: #ser-acc-role-dr-auto}
 
 
@@ -70,7 +70,7 @@ To see the complete list of actions for each specific role, see the [IAM roles a
 
 The following table outlines the additional access roles required for DR automation, along with the corresponding resources and attributes:
 
-## Resources and attributes
+### Resources and attributes
 {: #res-atri}
 
 | **Additional Access Roles**         | **Resources and Attributes**                    |

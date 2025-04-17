@@ -54,7 +54,7 @@ following the steps:
 
 11. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VM.
 
-12. Once the orchestrator is deployed, manage the service through the **orchestrator interface** and configure additional virtual server instances for disaster recovery.
+12. Once the orchestrator is deployed, manage the service through the **External orchestrator interface** and configure additional virtual server instances for disaster recovery.
 
   >**Note**:The orchestrator interface (UI) is launched at https://`<Orchestrator IP>`:3000/login. The `<Orchestrator IP>` is the system on which the orchestrator UI is installed and it is loaded automatically.
 
