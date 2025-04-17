@@ -33,7 +33,7 @@ following the steps:
 
 2. In the configure primary orchestrator section, enter the **DR Orchestrator name**.
 
-3. Set a password in the **DR Orchestrator password** field and re-enter the password in **Confirm DR orchestrator password** to secure access to the external orchestrator interface.
+3. Set a password in the **DR Orchestrator password** field and re-enter the password in **Confirm DR orchestrator password** section to secure access to the external orchestrator interface.
    > **Note**: This password is set for the Orchestrator VM and you can use it to login to the Orchestrator VM UI.
 
 4. Provide the valid **IBM Cloud API key**.
@@ -46,7 +46,7 @@ following the steps:
 
 7. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace .
 
-8. Under **Public SSH Key**, enable **Use a secret** radio button to use secret form Secrets Manager. Click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups** and **Secrets**.
+8. Under **Public SSH Key**, enable the **Use a secret** radio button to use secret form Secrets Manager. Click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups** and **Secrets**.
 
 9. Select ssh key from **SSH key name**.
 
@@ -60,7 +60,7 @@ following the steps:
 
   >**Note**: The orchestrator interface (UI) is launched at https://`<Orchestrator IP>`:3000/login. The `<Orchestrator IP>` is the system on which the orchestrator UI is installed and it is loaded automatically.
 
-14. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby orchestrator for redundancy and resilience.
+14. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby orchestrator for redundancy and resilience,following the steps:
 
       a. Complete the [External orchestrator interface setup](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter).  
       b. Hover over the **External standby orchestrator interface** button to view the standby orchestrator IP, for example, `IP:xx.x.x.xxx`.  
