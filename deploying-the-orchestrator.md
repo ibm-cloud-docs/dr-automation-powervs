@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-04-16"
+lastupdated: "2025-04-17"
 
 subcollection: dr-automation
 
@@ -42,7 +42,7 @@ following the steps:
 
 6. Select the **DR Power Virtual Server workspace** that is generated(**listed**) based on the selected **DR location** and **DR Schematics workspace**. To change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace accordingly.
 
-7. Provide either **Public SSH key** or Select from **Secrets Manager**.
+7. Provide either **Public SSH key** or Select from **Secrets Manager** or upload new keys if necessary to help ensure secure connections.
 
 8. Choose a **Public SSH key** from the **Secrets Manager** or upload new keys if necessary to help ensure secure connections.
 
