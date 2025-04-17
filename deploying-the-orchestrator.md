@@ -31,7 +31,8 @@ following the steps:
 
 1. After completing the **Create** resource step, you are redirected to the **Manage** tab to proceed with the deployment.
 
-2. In the Configure primary orchestrator section, enter the **DR Orchestrator name** and set a password in the **DR Orchestrator password** field. Confirm the **Confirm DR Orchestrator password** to secure access to the external orchestrator interface. This password will be set for the Orchestrator VM and can be used to login to Orchestrator VM UI.
+2. In the Configure primary orchestrator section, enter the **DR Orchestrator name** and set a password in the **DR Orchestrator password** field. Re-enter the password in **Confirm DR Orchestrator password** to secure access to the external orchestrator interface.
+   > **Note**: This password is set for the Orchestrator VM and you can use it to login to the Orchestrator VM UI.
 
 3. Provide the valid **IBM Cloud API key**.
    > **Note**: Enter your API key, which is required to access various services described in [Managing identity and access management (IAM)](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage). Ensure that the API key has the necessary permissions for proper functionality.
@@ -63,8 +64,7 @@ following the steps:
       b. Hover over the **External standby orchestrator interface** button to view the standby orchestrator IP, for example, `IP:xx.x.x.xxx`.  
       c. Use the standby orchestrator IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.  
       d. Click the **External standby orchestrator interface** button to enable the interface.  
-      e. Click the **Refresh** icon to update the status.
-      f. The External standby orchestrator interface button is now enabled and ready for use.
+      e. Click the **Refresh** icon to update the status, enabling the **External standby orchestrator interface button** for use.
 
 14. If any error occur during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
 
