@@ -65,7 +65,6 @@ following the steps:
     e. Click the **Refresh** icon to update the status.
     f. The External standby orchestrator interface button is now enabled and ready for use.
 
-
 14. If any error occur during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
 
 By following this process, you can ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers. The **Orchestrator Details** and **Service Details** sections provide comprehensive technical insights that help administrators and cloud engineers monitor and manage disaster recovery automation for their infrastructure.
