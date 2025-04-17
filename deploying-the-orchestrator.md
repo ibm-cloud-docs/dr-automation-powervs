@@ -31,7 +31,7 @@ following the steps:
 
 1. After completing the **Create** resource step, you are redirected to the **Manage** tab to proceed with the deployment.
 
-2. In the Configure primary orchestrator section, enter the **DR Orchestrator name** and set a password in the **DR Orchestrator password** field. Re-enter the password in **Confirm DR Orchestrator password** to secure access to the external orchestrator interface.
+2. In the Configure primary orchestrator section, enter the **DR Orchestrator name** and set a password in the **DR Orchestrator password** field. Re-enter the password in **Confirm DR orchestrator password** to secure access to the external orchestrator interface.
    > **Note**: This password is set for the Orchestrator VM and you can use it to login to the Orchestrator VM UI.
 
 3. Provide the valid **IBM Cloud API key**.
@@ -60,7 +60,7 @@ following the steps:
 
 13. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby node for redundancy and resilience.
 
-      a. Complete the [External Orchestrator setup](/docs/dr-automation-powervs?  topic=dr-automation-powervs-manage-exter) to prepare for standby configuration.  
+      a. Complete the [External orchestrator interface setup](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter) to prepare for standby configuration.  
       b. Hover over the **External standby orchestrator interface** button to view the standby orchestrator IP, for example, `IP:xx.x.x.xxx`.  
       c. Use the standby orchestrator IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.  
       d. Click the **External standby orchestrator interface** button to enable the interface.  
