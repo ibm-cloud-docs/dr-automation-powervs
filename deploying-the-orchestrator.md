@@ -54,7 +54,7 @@ following the steps:
 
 12. Once the orchestrator is deployed, manage the service through the **orchestrator interface** and configure additional virtual server instances for disaster recovery.
 
- >**Note**:The orchestrator interface (UI) is launched at https://`<Orchestrator IP>`:3000/login. The `<Orchestrator IP>` is the system on which the orchestrator UI is installed and it is loaded automatically.
+  >**Note**:The orchestrator interface (UI) is launched at https://`<Orchestrator IP>`:3000/login. The `<Orchestrator IP>` is the system on which the orchestrator UI is installed and it is loaded automatically.
 
 13. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby node for redundancy and resilience.
 
