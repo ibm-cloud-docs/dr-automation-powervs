@@ -31,34 +31,36 @@ following the steps:
 
 1. After completing the **Create** resource step, you are redirected to the **Manage** tab to proceed with the deployment.
 
-2. In the Configure primary orchestrator section, enter the **DR Orchestrator name** and set a password in the **DR Orchestrator password** field. Re-enter the password in **Confirm DR orchestrator password** to secure access to the external orchestrator interface.
+2. In the Configure primary orchestrator section, enter the **DR Orchestrator name**.
+
+3. Set a password in the **DR Orchestrator password** field and Re-enter the password in **Confirm DR orchestrator password** to secure access to the external orchestrator interface.
    > **Note**: This password is set for the Orchestrator VM and you can use it to login to the Orchestrator VM UI.
 
-3. Provide the valid **IBM Cloud API key**.
-   > **Note**: Enter your API key, which is required to access various services described in [Managing identity and access management (IAM)](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage). Ensure that the API key has the necessary permissions for proper functionality.
+4. Provide the valid **IBM Cloud API key**.
+   > **Note**: Enter your API key, which is required to access various services described in [Managing identity and access management (IAM)](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto). Ensure that the API key has the necessary permissions for proper functionality.
 
-4. In the **DR location** field, select the target region for deploying the orchestrator VM.
+5. In the **DR location** field, select the target region for deploying the orchestrator VM.
 
-5. In the **DR Schematic workspace (VPC)** field, select an appropriate workspace for the orchestrator. If required, create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) to define the Power Virtual Server workspace where the primary orchestrator will be deployed.
+6. In the **DR Schematic workspace (VPC)** field, select an appropriate workspace for the orchestrator. If required, create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) to define the Power Virtual Server workspace where the primary orchestrator will be deployed.
    > **Note**: The schematic ID is available if the VPC is created using the VPC Landing Zone for the PowerVS option from the catalog. If VPCs are created manually, you can still generate a schematic ID by using the Import option in the VPC Landing Zone for PowerVS.
 
-6. Select the **DR Power Virtual Server workspace** that is generated(**listed**) based on the selected **DR location** and **DR Schematics workspace**. To change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace accordingly.
+7. Select the **DR Power Virtual Server workspace** that is generated(**listed**) based on the selected **DR location** and **DR Schematics workspace**. To change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace accordingly.
 
-7. Provide either **Public SSH key** or **Select from Secrets Manager**.
+8. Provide either **Public SSH key** or **Select from Secrets Manager**.
 
-8. Choose a **Public SSH key** from the **Secrets Manager** or upload new keys if necessary to help ensure secure connections.
+9. Choose a **Public SSH key** from the **Secrets Manager** or upload new keys if necessary to help ensure secure connections.
 
-9. Expand the **Advanced configuration** section to adjust additional settings for storage tiers and machine types, if applicable.
+10. Expand the **Advanced configuration** section to adjust additional settings for storage tiers and machine types, if applicable.
 
-10. To enable **Configure standby orchestrator for (HA)**, configure the **Standby orchestrator name** and select a **standby Power Virtual Server workspace** to define the Power Virtual Sever workspace in which the standby orchestrator is deployed. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
+11. To enable **Configure standby orchestrator for (HA)**, configure the **Standby orchestrator name** and select a **standby Power Virtual Server workspace** to define the Power Virtual Sever workspace in which the standby orchestrator is deployed. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
-11. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VM.
+12. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VM.
 
-12. Once the orchestrator is deployed, manage the service through the **External orchestrator interface** and configure additional virtual server instances for disaster recovery.
+13. Once the orchestrator is deployed, manage the service through the **External orchestrator interface** and configure additional virtual server instances for disaster recovery.
 
   >**Note**:The orchestrator interface (UI) is launched at https://`<Orchestrator IP>`:3000/login. The `<Orchestrator IP>` is the system on which the orchestrator UI is installed and it is loaded automatically.
 
-13. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby node for redundancy and resilience.
+14. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby node for redundancy and resilience.
 
       a. Complete the [External orchestrator interface setup](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter) to prepare for standby configuration.  
       b. Hover over the **External standby orchestrator interface** button to view the standby orchestrator IP, for example, `IP:xx.x.x.xxx`.  
@@ -66,7 +68,7 @@ following the steps:
       d. Click the **External standby orchestrator interface** button to enable the interface.  
       e. Click the **Refresh** icon to update the status, enabling the **External standby orchestrator interface button** for use.
 
-14. If any error occur during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
+15. If any error occur during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
 
 By following this process, you can ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers. The **Orchestrator Details** and **Service Details** sections provide comprehensive technical insights that help administrators and cloud engineers monitor and manage disaster recovery automation for their infrastructure.
 
