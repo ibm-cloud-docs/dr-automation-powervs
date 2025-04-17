@@ -31,24 +31,24 @@ following the steps:
 
 1. After completing the **Create** resource step, you are redirected to the **Manage** tab to proceed with the deployment.
 
-2. In the Configure primary orchestrator section, enter the **Primary orchestrator name** and set a password in the **Orchestrator password** field. Confirm the password to secure access to the external orchestrator interface.
+2. In the Configure primary orchestrator section, enter the **DR Orchestrator name** and set a password in the **DR Orchestrator password** field. Confirm the **Confirm DR Orchestrator password** to secure access to the external orchestrator interface. This password will be set for the Orchestrator VM and can be used to login to Orchestrator VM UI.
 
-3. Provide the **IBM Cloud API key**, and if it is valid then you can provide the remaining fields.
+3. Provide the valid **IBM Cloud API key**.
 
 4. In the **DR location** field, select the target region for deploying the orchestrator VM.
 
-5. In the **Schematics workspace** field, select an appropriate workspace for the orchestrator. If required, create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) to define the Power Virtual Server workspace where the primary orchestrator will be deployed.
+5. In the **DR Schematic workspace (VPC)** field, select an appropriate workspace for the orchestrator. If required, create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) to define the Power Virtual Server workspace where the primary orchestrator will be deployed.
    > **Note**: The schematic ID is available if the VPC is created using the VPC Landing Zone for the PowerVS option from the catalog. If VPCs are created manually, you can still generate a schematic ID by using the Import option in the VPC Landing Zone for PowerVS.
 
 6. Select the **DR Power Virtual Server workspace** that is generated(**listed**) based on the selected **DR location** and **DR Schematics workspace**. To change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace accordingly.
 
-7. Provide either **Public SSH key** or Select from **Secrets Manager**.
+7. Provide either **Public SSH key** or **Select from Secrets Manager**.
 
 8. Choose a **Public SSH key** from the **Secrets Manager** or upload new keys if necessary to help ensure secure connections.
 
-9. Expand the **Advanced Configuration** section to adjust additional settings for storage tiers and machine types, if applicable.
+9. Expand the **Advanced configuration** section to adjust additional settings for storage tiers and machine types, if applicable.
 
-10. To enable **High Availability**, configure a standby orchestrator name and select a **Secondary Power Virtual Server workspace** to define where the standby orchestrator will be deployed. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
+10. To enable **Configure standby orchestrator for (HA)**, configure the **Standby orchestrator name** and select a **standby Power Virtual Server workspace** to define the Power Virtual Sever workspace in which the standby orchestrator is deployed. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
 11. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VM.
 
@@ -59,10 +59,10 @@ following the steps:
 13. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby node for redundancy and resilience.
 
     a. Complete the [External Orchestrator setup](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter) to prepare for standby configuration.  
-    b. Hover over the **External standby orchestrator interface** button to generate the standby node IP, for example, `IP:xx.x.x.xxx`.  
-    c. Copy the generated IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.  
+    b. Hover over the **External standby orchestrator interface** button to view the standby orchestrator IP, for example, `IP:xx.x.x.xxx`.  
+    c. Use the standby orchestrator IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.  
     d. Click the **External standby orchestrator interface** button to enable the interface.  
-    e. Click the **Refresh** icon to update the status.  
+    e. Click the **Refresh** icon to update the status.
     f. Confirm that the interface is enabled and the standby orchestrator is ready for use.
 
 
