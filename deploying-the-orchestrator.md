@@ -58,12 +58,12 @@ following the steps:
 
 13. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby node for redundancy and resilience.
 
+
     a. Complete the [External Orchestrator setup](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter) to prepare for standby configuration.  
     b. Hover over the **External standby orchestrator interface** button to view the standby orchestrator IP, for example, `IP:xx.x.x.xxx`.  
     c. Use the standby orchestrator IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.  
     d. Click the **External standby orchestrator interface** button to enable the interface.  
     e. Click the **Refresh** icon to update the status.
-    
     f. The External standby orchestrator interface button is now enabled and ready for use.
 
 14. If any error occur during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
