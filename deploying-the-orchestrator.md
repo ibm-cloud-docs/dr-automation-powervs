@@ -34,6 +34,7 @@ following the steps:
 2. In the Configure primary orchestrator section, enter the **DR Orchestrator name** and set a password in the **DR Orchestrator password** field. Confirm the **Confirm DR Orchestrator password** to secure access to the external orchestrator interface. This password will be set for the Orchestrator VM and can be used to login to Orchestrator VM UI.
 
 3. Provide the valid **IBM Cloud API key**.
+   > **Note**: Enter your API key, which is required to access various services described in [Managing identity and access management (IAM)](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage). Ensure that the API key has the necessary permissions for proper functionality.
 
 4. In the **DR location** field, select the target region for deploying the orchestrator VM.
 
