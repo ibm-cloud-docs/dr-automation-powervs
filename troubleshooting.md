@@ -192,4 +192,4 @@ The Orchestrator is unable to establish a connection with any IBM Cloud services
  ### How to fix it
  {: tsressolvve} 
 
-Refer to the topic [Why is the Finish button not enabled in the UI after orchestrator deployment ?](#how-to-fix-it-7) for guidance on resolving the inactive state of the Orchestrator's external connectivity.
+Refer to the topic [How to fix it](#how-to-fix-it-7) for guidance on resolving the inactive state of the Orchestrator's external connectivity.
