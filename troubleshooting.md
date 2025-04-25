@@ -185,11 +185,11 @@ If the communication issue persists, you can check the status of the squid servi
 The External Connectivity status of the Orchestrator appears as Inactive in the UI.
 
  ### Why it's happening
-  {: tsressolvee} 
+ {: tsressolvee} 
 
 The Orchestrator is unable to establish a connection with any IBM Cloud services, which prevents it from effectively managing failover scenarios in the event of a workload failure.
 
  ### How to fix it
-  {: tsressolvve} 
+ {: tsressolvve} 
 
-Refer to the topic [Why is the **Finish** button not enabled in the UI after orchestrator deployment ?](#how-to-fix-it-7) for guidance on resolving the inactive state of the Orchestrator's external connectivity.
+Refer to the topic [Why is the Finish button not enabled in the UI after orchestrator deployment ?](#how-to-fix-it-7) for guidance on resolving the inactive state of the Orchestrator's external connectivity.
