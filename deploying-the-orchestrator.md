@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-09"
 
 subcollection: dr-automation
 
@@ -27,16 +27,16 @@ After creating the resource, deploying the orchestrator for DR automation is ess
 {: #procedure}
 
 To deploy the orchestrator with the necessary configurations to meet your disaster recovery requirements,
-following the steps:
+follow the steps:
 
 1. After completing the **Create** resource step, you are redirected to the **Manage** tab to proceed with the deployment.
 
 2. In the configure primary orchestrator section, enter the **DR Orchestrator name**.
 
 3. Set a password in the **DR Orchestrator password** field and re-enter the password in **Confirm DR orchestrator password** section to secure access to the external orchestrator interface.
-   > **Note**: This password is set for the Orchestrator VM and you can use it to login to the Orchestrator VM UI.
+   > **Note**: This password is set for the Orchestrator VM, and you can use it to login to the Orchestrator VM UI.
 
-4. Provide the valid **IBM Cloud API key**.
+4. Provide a valid **IBM Cloud API key**.
    > **Note**: Enter your API key, which is required to access various services described in [Access role requirements for Power Virtual Server DR Automation](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto). Ensure that the API key has the necessary permissions for proper functionality.
 
 5. In the **DR location** field, select the target region for deploying the orchestrator VM.
@@ -44,15 +44,15 @@ following the steps:
 6. In the **DR Schematic workspace (VPC)** field, select an appropriate workspace for the orchestrator. If required, create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) to define the Power Virtual Server workspace where the primary orchestrator will be deployed.
    > **Note**: The schematic ID is available if the VPC is created by using the VPC Landing Zone for the PowerVS option from the catalog. If VPCs are created manually, you can still generate a schematic ID by using the Import option in the VPC Landing Zone for PowerVS.
 
-7. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace .
+7. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
 
-8. Under **Public SSH Key**, enable the **Use a secret** radio button to use secret form Secrets Manager. Click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups** and **Secrets**.
+8. Under **Public SSH Key**, enable the **Use a secret** radio button to use a secret from Secrets Manager. Click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets**.
 
-9. Select ssh key from **SSH key name**.
+9. Select the SSH key from **SSH key name**.
 
 10. Expand the **Advanced configuration** section to adjust additional settings for storage tiers and machine types, if applicable.
 
-11. In **Configure standby orchestrator (for HA)** enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Sever workspace in which the standby orchestrator is deployed, when HA is enabled during provision. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
+11. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Sever workspace in which the standby orchestrator is deployed, when HA is enabled during provision. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
 12. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 

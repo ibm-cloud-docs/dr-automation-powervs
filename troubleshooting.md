@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-03-14"
+lastupdated: "2025-04-25"
 
 subcollection: dr-automation
 
@@ -125,7 +125,7 @@ Dependencies, such as active VMs or storage volumes, may prevent the service fro
 5. Regenerate the API key from the **Policies** tab and update the system with the new key.  
 6. Retry the delete operation and monitor for success.  
 
-## Why is the **Finish** button not enabled in the UI after orchestrator deployment?  
+## Why is the **Finish** button not enabled in the UI after orchestrator deployment ?  
 {: #orch-fini-enab}  
 {: troubleshoot}  
 
@@ -174,3 +174,22 @@ If the communication issue persists, you can check the status of the squid servi
    > `systemctl restart squid`
 
   For more information, refer to [Power Virtual Server with VPC landing zone](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-standard).
+
+## Why is the Orchestrator external connectivity status shown as inactive?
+{: #oe-xe-csi}  
+{: troubleshoot} 
+
+ ### What's happening
+ {: tsressolve} 
+
+The External Connectivity status of the Orchestrator appears as Inactive in the UI.
+
+ ### Why it's happening
+ {: tsressolvee} 
+
+The Orchestrator is unable to establish a connection with any IBM Cloud services, which prevents it from effectively managing failover scenarios in the event of a workload failure.
+
+ ### How to fix it
+ {: tsressolvve} 
+
+Refer to the topic [How to fix it](#how-to-fix-it-7) for guidance on resolving the inactive state of the Orchestrator's external connectivity.
