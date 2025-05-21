@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-21"
+lastupdated: "2025-05-21"
 
 subcollection: dr-automation
 
@@ -25,7 +25,7 @@ If you still can't resolve the problem, you can open a support case. For more in
 ## Providing support case details
 {: #support-case-details}
 
-To ensure that the support team can start investigating your case promptly, include detailed information and steps to reproduce the issue, if applicable. Consider providing the following information for issues with IBM {{site.data.keyword.DR_full}}:
+To ensure that the support team can start investigating your case promptly, include detailed information and steps to reproduce the issue, if applicable. Consider providing the following information for issues with {{site.data.keyword.DR_full}}:
 
 1. **Service Details**:
    - **Service Name**: Specify the exact name of the service or component where the issue occurred.
