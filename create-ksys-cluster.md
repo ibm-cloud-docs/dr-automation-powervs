@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-25"
+lastupdated: "2025-05-21"
 
 subcollection: dr-automation
 
@@ -19,7 +19,7 @@ Configure your **IBM_PVS_DR** environment by adding the KSYS (Orchestrator) Clus
 ## Procedure 
 {: #steps}
 
-To add the KSYS cluster follow these steps: 
+To add the KSYS cluster follow these steps:
 
 1. Navigate to the **Add KSYS** Subsystem page if it does not open automatically.
 

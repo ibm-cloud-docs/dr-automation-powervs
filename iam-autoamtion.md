@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-21"
 
 subcollection: dr-automation
 
@@ -27,7 +27,7 @@ For more information about IAM, review the following information:
 
 You can use platform access roles to enable users to complete tasks on IBM Cloud resources, such as creating users or adding services.
 
-The following table displays the IAM platform access roles and the corresponding type of control that is allowed by the DR Autoamtion for powerVS:
+The following table displays the IAM platform access roles and the corresponding type of control that is allowed by the DR Automation for powerVS:
 
 ## IAM platform access roles
 {: #iam-par-acc-role}
@@ -43,7 +43,7 @@ The following table displays the IAM platform access roles and the corresponding
 ### Service access roles
 {: #ser-acc-ro}
 
-You can use the service access roles to define the actions that the users can perform on Power Virtual Server resources. The following table displays the IAM service access roles and the corresponding actions that a user can complete by using the Dr Autaomtion for PowerVS:
+You can use the service access roles to define the actions that the users can perform on Power Virtual Server resources. The following table displays the IAM service access roles and the corresponding actions that a user can complete by using the Dr Automation for PowerVS:
 
 ## IAM service access roles
 {: #ser-acc-role}
