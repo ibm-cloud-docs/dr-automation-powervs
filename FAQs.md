@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-03-21"
+lastupdated: "2025-06-03"
 
 subcollection: dr-automation
 
@@ -153,3 +153,19 @@ Once the orchestrator VM is deployed and active, the cluster configuration start
 If there are any communication issues preventing the orchestrator VM from sending the event, the **Finish** button is not enabled, and you will not be able to enable DR for managed VM's using the External Orchestrator UI.
 
 To know more about [why is the **Finish** button not enabled in the UI after orchestrator deployment](/docs/dr-automation-powervs?topic=dr-automation-powervs-troubleshooting#orch-fini-enab).
+
+
+
+## how to get ProxyIP details which is configured for VSI(Virtual Server Instance) for VPC?
+{: #vpc-vsi-enab}
+
+The Proxy IP is the private IP address assigned to a Virtual Server Instance (VSI) in a Virtual Private Cloud (VPC). It enables secure communication with other resources. Follow these steps to retrieve the Proxy IP from the IBM Cloud console:
+
+1. Log in to the [IBM Cloud console](https://cloud.ibm.com).
+2. Click **Infrastructure** > **Virtual server instances**.
+3. Select the VSI from the list (for example, `test-vsi-test`).
+4. Click the VSI name to open its details page.
+5. Select the **Networking** tab.
+6. Locate the **Reserved IP** in the Network attachments section.
+
+After completing these steps, you can use the Proxy IP for network configuration or integration tasks.
