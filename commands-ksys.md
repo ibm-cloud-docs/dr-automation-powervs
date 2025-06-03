@@ -1718,13 +1718,12 @@ To list all shared processor pools created under your account, run:
 ```ibmcloud pi spp list```
 
 The following example output is displayed:
-```
+
 Listing shared processor pools under account Test Account as user `test_user@www.xxx.xx`:
 | ID                                   | Available Cores | Host group | Host ID | Name         | Reserved Cores | Allocated Cores | Status | Status Detail      |
 |-------------------------------------|------------------|------------|---------|--------------|----------------|------------------|--------|---------------------|
 | xxxx1234-5678-90ab-xxxx-1234567890ab | 5                | e980       | 36      | spp_pool_01  | 2              | 0.5              | active | shared processor   |
 | 1234abcd-5678-xxxx-ef12-xxxxxef987654 | 5                | s922       | 36      | test_pool    | 2              | 0.5              | active | shared processor   |
 
-```
 
 > **Note**: KSYS does not create the shared processor pool. You must create it manually in the PowerVS workspace before assigning it to any virtual machine.
