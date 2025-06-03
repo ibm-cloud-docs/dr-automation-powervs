@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-06-03"
 
 subcollection: dr-automation
 
@@ -1640,3 +1640,89 @@ An output that is similar to the following example is displayed:
 ksysmgr delete script entity=site script_name=pre_discovery
 KSYS site has been updated
 ```
+
+## Shared Processor Pool configuration
+
+### Enable shared processor pool for a virtual machine:
+
+To reduce licensing costs and optimize resource usage, you can enable the shared processor pool for a virtual machine. Before assigning, you must create the shared processor pool in the target PowerVS workspace.
+
+Use the following command to manage the VM and assign it to a shared processor pool:
+
+```ksysmgr manage vm <vmname> sharedprocpool=yes targetprocpool=<pool_name>```
+
+The following example output is displayed:
+
+```
+date; ksysmgr manage vm test_vm sharedprocpool=yes targetprocpool=test_pool
+Wed May 28 14:22:35 IST 2025 Refresh VMs list of test_workspace started
+Workgroup test_vm_WG added successfully
+For Vm test_vm attribute(s) ShareProcPoolEnable was successfully modified.
+For Vm test_vm attribute(s) TargetProcPool was successfully modified.
+```
+
+> **Note**: Note: Both `sharedprocpool=yes` and `targetprocpool=<pool_name>` are mandatory parameters.
+
+### Modify shared processor pool settings for a virtual machine:
+
+To apply shared processor pool settings after a VM has already been managed, use the following command:
+
+```ksysmgr modify vm <vmname> sharedprocpool=yes targetprocpool=<pool_name>```
+
+The following example output is displayed:
+
+```
+ksysmgr modify vm test_vm sharedprocpool=yes targetprocpool=test_pool
+For Vm test_vm attribute(s) ShareProcPoolEnable was successfully modified.
+For Vm test_vm attribute(s) TargetProcPool was successfully modified.
+```
+
+### Verify shared processor pool assignment:
+
+To confirm that the VM is assigned to a shared processor pool, run the following command:
+
+```ksysmgr query vm <vmname>```
+
+The following example output is displayed:
+
+```
+UUID:             12345678-1234-5678-9xxx-0123456789xx
+Processors:       1
+Memory_capacity:  4
+SharedProcPool:   yes
+TargetProcPool:   test_pool
+```
+
+### View backup VM configuration in PowerVS:
+
+To check the shared processor pool assignment and current resource configuration of the backup VM, run:
+
+```ibmcloud pi ins get <backup_vm_name>```
+
+The following example output is displayed:
+
+```
+CPU Cores:               0.25
+Memory:                  2
+Processor Type:          shared
+Shared Processor Pool:   test_pool
+Shared Processor Pool ID: abcd1234-xxxx-yyyy-zzzz-abcdef123456
+Status:                  SHUTOFF
+```
+This confirms the VM was provisioned with reduced capacity and associated with the specified processor pool.
+
+### List shared processor pools
+
+To list all shared processor pools created under your account, run:
+
+```ibmcloud pi spp list```
+
+The following example output is displayed:
+
+```
+Listing shared processor pools under account Test Account as user test_user@www.xxx.xx...
+ID                                   Available Cores  Host group  Host ID   Name         Reserved Cores  Allocated Cores  Status   Status Detail
+xxxx1234-5678-90ab-xxxx-1234567890ab 5                e980        36        spp_pool_01  2               0.5              active   shared processor
+1234abcd-5678-xxxx-ef12-xxxxxef987654 5               s922        36        test_pool    2               0.5              active   shared processor
+```
+> **Note**: KSYS does not create the shared processor pool. You must create it manually in the PowerVS workspace before assigning it to any virtual machine.
