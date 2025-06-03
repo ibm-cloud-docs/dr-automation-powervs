@@ -156,7 +156,7 @@ To know more about [why is the **Finish** button not enabled in the UI after orc
 
 
 
-## how to get ProxyIP details which is configured for VSI(Virtual Server Instance) for VPC?
+## How to get ProxyIP details which is configured for VSI(Virtual Server Instance) for VPC?
 {: #vpc-vsi-enab}
 
 The Proxy IP is the private IP address assigned to a Virtual Server Instance (VSI) in a Virtual Private Cloud (VPC). It enables secure communication with other resources. Follow these steps to retrieve the Proxy IP from the IBM Cloud console:
