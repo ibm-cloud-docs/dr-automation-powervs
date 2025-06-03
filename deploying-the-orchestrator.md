@@ -44,13 +44,15 @@ follow the steps:
 6. Select **Schematic workspace** or **Custom VPC** to manually configure the network settings for the orchestrator deployment.
 
    - Select **Schematic workspace** and follow these steps:
-      - a. Select an appropriate workspace for the orchestrator in the **DR Schematic workspace (VPC)** field.
-      - b. Create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) if required, to define the Power Virtual Server workspace where the primary orchestrator is deployed.
+
+      1. Select an appropriate workspace for the orchestrator in the **DR Schematic workspace (VPC)** field.
+      2. Create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) if required, to define the Power Virtual Server workspace where the primary orchestrator is deployed.
          > **Note**: The schematic ID is available if the VPC is created by using the VPC Landing Zone for the PowerVS option from the catalog. If VPCs are created manually, you can still generate a schematic ID by using the Import option in the VPC Landing Zone for PowerVS.
    - Select **Custom VPC** and follow these steps:
-      - a. Select the **Transit Gateway** to establish connectivity between the VPC and the PowerVS environment.
-      - b. Choose the **VPC** from the download already attached to the selected Transite Gateway.
-      - c. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services, and refer to the [FAQ]() to find the ProxyIP details configured for the VSI (Virtual Server Instance) for VPC.
+   
+      1. Select the **Transit Gateway** to establish connectivity between the VPC and the PowerVS environment.
+      2. Choose the **VPC** from the download already attached to the selected Transite Gateway.
+      3. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services, and refer to the [FAQ]() to find the ProxyIP details configured for the VSI (Virtual Server Instance) for VPC.
       
 7. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
 
