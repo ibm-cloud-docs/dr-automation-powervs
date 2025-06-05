@@ -176,5 +176,4 @@ The IP is used as a proxy IP in squid configuration.
 To enable communication to external services, enable the following variables:
 
 > `http_proxy="ProxyIP:3128"`
-
 > `https_proxy="ProxyIP:3128"`
