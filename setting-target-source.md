@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-05-21"
 
 subcollection: dr-automation
 
@@ -20,7 +20,7 @@ After adding the KSYS (Orchestrator) , you are required to add the **Source** an
 
 ## Procedure
 
-To add sites to the External Orchstrator UI , follow these steps:
+To add sites to the External Orchestrator UI , follow these steps:
 
 1. On the **Add Sites** page, click the **Add Sites** button to begin the configuration.
 

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-05-21"
 
 subcollection: dr-automation
 
@@ -31,7 +31,7 @@ Use the cost estimator tool to evaluate potential costs for DR Automation resour
 
 1. Use your IBM credentials to access the **IBM Cloud catalog**.
 
-2. In the **search box**, type IBM {{site.data.keyword.DR_full}}.
+2. In the **search box**, type {{site.data.keyword.DR_full}}.
 
 3. **Click** {{site.data.keyword.DR_full_notm}} tile.
 

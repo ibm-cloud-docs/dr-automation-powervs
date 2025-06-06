@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-08"
+lastupdated: "2025-05-21"
 
 keywords: getting started, disaster recovery, PowerVS
 
@@ -35,7 +35,7 @@ Complete the following prerequisites:
 
 1. **IBM Cloud account**: Ensure you have an IBM Cloud account. [Sign up for IBM Cloud](https://cloud.ibm.com/registration) if needed.
 2. **IAM setup**: Configure Identity and Access Management (IAM) roles. See [Managing DR Automation (IAM)](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage).
-3. **SSH keys or Secret Manager**: Generate a public and private SSH key or Choose a **Public SSH key** from the Secrets Manager . For details, see [Adding an SSH key](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui).
+3. **SSH keys or Secret Manager**: Generate a public and private SSH key or choose a **Public SSH key** from the Secrets Manager . For details, see [Adding an SSH key](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui).
 
 4. **VPC Landing Zone schematic ID**: Ensure that a Power Virtual Server with a VPC Landing Zone schematic ID is available to enable connectivity to the orchestrator UI. You can either use an existing Power Virtual Server with a VPC Landing Zone schematic ID created through the catalog or create a new one. You can also import your existing VPC into Power Virtual Server with a VPC Landing Zone and generate a new schematic ID and use it. See [Power Virtual Server with VPC Landing Zone](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-automation-solution-overview) document.
 

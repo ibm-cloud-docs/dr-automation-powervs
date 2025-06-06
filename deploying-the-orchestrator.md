@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-05-09"
+lastupdated: "2025-06-03"
 
 subcollection: dr-automation
 
@@ -41,18 +41,28 @@ follow the steps:
 
 5. In the **DR location** field, select the target region for deploying the orchestrator VM.
 
-6. In the **DR Schematic workspace (VPC)** field, select an appropriate workspace for the orchestrator. If required, create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) to define the Power Virtual Server workspace where the primary orchestrator will be deployed.
-   > **Note**: The schematic ID is available if the VPC is created by using the VPC Landing Zone for the PowerVS option from the catalog. If VPCs are created manually, you can still generate a schematic ID by using the Import option in the VPC Landing Zone for PowerVS.
+6. Select **Schematic workspace** or **Custom VPC** to manually configure the network settings for the orchestrator deployment.
 
+   - Select **Schematic workspace** and follow these steps:
+
+      1. Select an appropriate workspace for the orchestrator in the **DR Schematic workspace (VPC)** field.
+      2. Create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) if required, to define the Power Virtual Server workspace where the primary orchestrator is deployed.
+         > **Note**: The schematic ID is available if the VPC is created by using the VPC Landing Zone for the PowerVS option from the catalog. If VPCs are created manually, you can still generate a schematic ID by using the Import option in the VPC Landing Zone for PowerVS.
+   - Select **Custom VPC** and follow these steps:
+
+      1. Select the **Transit Gateway** to establish connectivity between the VPC and the PowerVS environment.
+      2. Choose the **VPC** from the download already attached to the selected Transite Gateway.
+      3. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services, see the [FAQ](/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab) to find the ProxyIP of the VSI.
+      
 7. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
 
 8. Under **Public SSH Key**, enable the **Use a secret** radio button to use a secret from Secrets Manager. Click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets**.
 
 9. Select the SSH key from **SSH key name**.
 
-10. Expand the **Advanced configuration** section to adjust additional settings for storage tiers and machine types, if applicable.
+10.  (Optional) Modify the **Advanced Settings** to configure the Storage tier and Machine type based on the **Deploy Orchestrator with HA** selection.
 
-11. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Sever workspace in which the standby orchestrator is deployed, when HA is enabled during provision. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
+11. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when HA is enabled during provision. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
 12. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 
@@ -67,7 +77,6 @@ follow the steps:
       c. Use the standby orchestrator IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.  
       d. Click the **External standby orchestrator interface** button to enable the interface.  
       e. Click the **Refresh** icon to update the status, enabling the **External standby orchestrator interface button** for use.
-
 15. If any error occurs during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
 
 By following this process, you can ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers. The **Orchestrator Details** and **Service Details** sections provide comprehensive technical insights that help administrators and cloud engineers monitor and manage disaster recovery automation for their infrastructure.
@@ -75,35 +84,50 @@ By following this process, you can ensure that your orchestrator is fully equipp
 ## Orchestrator details
 {: #orc-det}
 
-**Orchestrator instance identifier:**
-The unique identifier for the orchestrator instance is responsible for managing failover, failback and replication processes between the primary and DR sites.
+**DR Orchestrator name**:  
+The unique identifier for the primary orchestrator instance responsible for managing DR operations like failover, failback, and replication workflows.
 
-**Orchestrator health status:**
-Displays the current health and state of the orchestrator, such as "Running." The orchestrator must be operational for DR functions to be ready.
+**DR Orchestrator status**:  
+Displays the current operational status of the primary orchestrator. A status such as “Active” indicates that the orchestrator is functioning and ready for DR activities.
 
-**IBM Cloud SSH key:**
-Refers to the secure IBM Cloud SSH key used for authenticated and encrypted communication between the orchestrator and the managed VMs involved in DR.
+**SSH key name**:  
+The name of the IBM Cloud SSH key used to enable secure, encrypted communication between the orchestrator and the managed VMs involved in DR automation.
 
-**Linked SSH Key for remote access:**
-Indicates the SSH key that is linked to the orchestrator for remote access to VMs. Proper configuration is crucial for secure VM operations.
+**DR Schematics workspace**:  
+Specifies the name of the IBM Cloud Schematics workspace that contains the Infrastructure as Code (IaC) configuration used by the orchestrator to provision and manage DR resources.
 
-**Infrastructure as Code (IaC) Environment:**
-The IaC environment automates the provisioning of DR resources, using Terraform templates to define workflows for automation.
+**DR Schematics workspace connection status**:  
+Indicates whether the orchestrator is successfully connected to the Schematics workspace. A status like “ACTIVE” signifies that IaC automation is correctly integrated.
 
-**Schematics workspace connection:**
-Shows whether the orchestrator is successfully connected to the Schematics workspace. A “Running” status indicates successful infrastructure automation.
+**DR Location**:  
+Displays the location (for example, `dal10`) that hosts the DR orchestrator and resources, confirming the failover target region.
+
+**DR Power Virtual Server workspace**:  
+The name of the Power Virtual Server workspace associated with the primary orchestrator. This workspace includes the virtual server infrastructure used for DR operations.
+
+**Standby Power Virtual Server workspace**:  
+Represents the workspace linked to the standby orchestrator, located in a separate region. It provides backup infrastructure to take over during a failover.
+
+**Standby orchestrator name**:  
+The name of the standby orchestrator configured to take over if the primary orchestrator fails.
+
+**Standby orchestrator status**:  
+Displays the operational state of the standby orchestrator. A “failed” status indicates a misconfiguration or outage, requiring immediate attention.
+
+**Orchestrator external connectivity status**:  
+Indicates the network connectivity of the orchestrator with external components and services. A status of “Active” confirms that all required external connections are functional.
 
 ## Service details
 {: #service-det}
 
-**Disaster recovery service configuration:**
-Identifies the DR service that is configured in IBM Cloud for the orchestrator, linking it to the correct DR environment.
+**Service name**:  
+Indicates the user-defined name of the DR service instance that appears on the IBM Cloud console for easy identification.
 
-**Data center location:**
-Specifies the region or data center, such as "Dallas 12," where the DR resources are hosted and where failover will occur.
+**Disaster recovery location**:  
+Specifies the target data center (for example, `dal10`) where the DR operations, such as failover, will take place.
 
-**Resource group:**
-Displays the IBM Cloud resource group managing the DR resources, allowing for resource-level permissions and management.
+**Resource group**:  
+Displays the IBM Cloud resource group to which this DR service belongs. Resource groups help in organizing and managing access and billing across cloud resources.
 
-**Globally unique identifier:**
-A globally unique identifier for the DR service within IBM Cloud, enabling resource tracking and auditing across cloud environments by using APIs.
+**Service CRN**:  
+A Cloud Resource Name (CRN) uniquely identifying the DR service instance. This identifier is useful for tracking, API access, and integration with other IBM Cloud services.

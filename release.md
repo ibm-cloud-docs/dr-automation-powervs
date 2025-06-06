@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-05-13"
+lastupdated: "2025-06-03"
 subcollection: dr-automation
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -31,7 +31,7 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 {: #subcollection-jan0124}
 {: release-note}
 **High availability for DR Orchestrator (KSYS)**
-:   The DR Orchestrator (KSYS) now supports high availability in additional regions, enabling continuous operations during failover. For more details, see [DR Orchestrator High Availability](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch#ksys-arch).
+:   The DR Orchestrator (KSYS) now supports high availability in other regions, enabling continuous operations during failover. For more details, see [DR Orchestrator High Availability](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch#ksys-arch).
 
 
 **Improved GUI for recovery workflows**

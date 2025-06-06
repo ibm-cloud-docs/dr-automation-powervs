@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-05-21"
 
 subcollection: dr-automation
 
@@ -15,7 +15,7 @@ keywords: manage vm
 Manage Virtual Servers within the {{site.data.keyword.DR_full}} enables administrators to monitor and control the virtual server instances that are part of the disaster recovery environment. Through this interface, users can manage existing virtual servers, check their current status, and perform actions such as adding or removing servers to maintain optimal DR operations. This tool ensures that all servers involved in the DR plan are properly orchestrated and functional, safeguarding business continuity in the event of failures.
 
 To set up additional virtual server instances and manage them within the {{site.data.keyword.DR_full_notm}} framework, you can either add virtual server in {{site.data.keyword.DR_short}} manage UI or access the external orchestrator interface to add and manage advanced configuration.
-   > **Note**: Currently IBM Power Virtual Server Private Cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operationg systems for creating virtual servers.
+   > **Note**: Currently IBM Power Virtual Server Private Cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers.
 ## Add virtual servers
 {: #manage-vm-ser-added}
 
