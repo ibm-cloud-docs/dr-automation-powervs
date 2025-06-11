@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-06-10"
+lastupdated: "2025-06-11"
 
 subcollection: dr-automation
 
@@ -80,6 +80,8 @@ follow the steps:
 15. If any error occurs during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
 
 By following this process, you can ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers.
+
+## Power Edge Router and non Power Edge Router
 
 Power Virtual Server DR Automation supports both Power Edge Router(PER) and non Power Edge Router(PER) workspaces.
 To use a non PER enabled workspace, complete the following manual steps before using them:
