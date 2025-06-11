@@ -47,21 +47,18 @@
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote",
     "tiles": [
       {
-        "date": "31 Janunary 2025",
-        "title": "You can now automate complex recovery workflows through the improved GUI interface, reducing manual intervention and minimizing Recovery Time Objectives (RTO)."
+        "date": "30 April 2025",
+        "title": "You can now select the DR location while configuring the orchestrator, making it easier to define the target region for orchestrator VM deployment. This enhancement provides greater control over regional DR setup."
       },
       {
-        "date": "31 January 2025",
-        "title": "The DR Orchestrator (KSYS) now supports high availability in additional regions, enabling continuous operations during failover."
+        "date": "30 April 2025",
+        "title": "The deployment flow now allows dynamic selection of the DR Power Virtual Server workspace based on the chosen DR location and DR Schematics workspace, ensuring better alignment of resources and reducing setup errors."
       },
       {
-        "date": "31 January 2025",
-        "title": "DR Automation now supports IBM Power E1080 (9080-HEX) systems with up to 64 TB of memory, allowing for recovery of large-scale workloads."
+        "date": "30 April 2025",
+        "title": "A new external standby orchestrator interface is now available, enabling orchestrators to recognize and manage a standby node for improved failover support and operational resilience. This feature strengthens HA capabilities by streamlining standby node configuration."
       },
-      {
-        "date": "31 January 2025",
-        "title": "Virtual Private Cloud (VPC) configurations and private endpoint support have been enhanced, ensuring better data security and regulatory compliance."
-      }
+      
     ]
   }
 }
