@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-05-21"
+lastupdated: "2025-06-10"
 
 keywords: getting started, disaster recovery, PowerVS
 
@@ -50,8 +50,8 @@ Complete the following prerequisites:
 {: #setup-orchestrator}
 
 1. On the **Manage** tab, configure the **orchestrator name** and set a password to secure access.
-2. Provide a valid **IBM Cloud API key**, then complete additional fields, including the **Schematics workspace** and **Public SSH key** or keys from **Secrets Manager**.
-   > **Note**: The schematic workspace is available if the VPC is created using the Power Virtual Server with VPC landing zone option from the catalog. If VPC is created manually, you can still generate a schematic ID using the Import option in the "Power Virtual Server with VPC landing zone" catalog.
+2. Provide a valid **IBM Cloud API key**, then complete additional fields, including the **Schematics workspace** or **Custom VPC** and **Public SSH key** or keys from **Secrets Manager**.
+   > **Note**: The schematic workspace is available if the VPC is created using the Power Virtual Server with VPC landing zone option from the catalog. If VPC is created manually, you can still generate a schematic ID using the Import option in the "Power Virtual Server with VPC landing zone" catalog or use the custom VPC option to provide the VPC details that are Transit Gateway, VPC name and Proxy IP details.
    
    > **Note**: Make sure provided API Key has permissions listed in the [Access role requirements for DR Automation for PowerVS](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto) for completing the configuration.
 

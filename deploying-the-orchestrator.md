@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-06-03"
+lastupdated: "2025-06-11"
 
 subcollection: dr-automation
 
@@ -51,7 +51,7 @@ follow the steps:
    - Select **Custom VPC** and follow these steps:
 
       1. Select the **Transit Gateway** to establish connectivity between the VPC and the PowerVS environment.
-      2. Choose the **VPC** from the download already attached to the selected Transite Gateway.
+      2. Choose the VPC from the dropdown that is attached to the **Transit gateway** in the previous step.
       3. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services, see the [FAQ](/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab) to find the ProxyIP of the VSI.
       
 7. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
@@ -79,10 +79,25 @@ follow the steps:
       e. Click the **Refresh** icon to update the status, enabling the **External standby orchestrator interface button** for use.
 15. If any error occurs during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
 
-By following this process, you can ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers. The **Orchestrator Details** and **Service Details** sections provide comprehensive technical insights that help administrators and cloud engineers monitor and manage disaster recovery automation for their infrastructure.
+By following this process, you can ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers.
 
-## Orchestrator details
+## Power Edge Router and non Power Edge Router
+
+Power Virtual Server DR Automation supports both Power Edge Router(PER) and non Power Edge Router(PER) workspaces.
+To use a non PER enabled workspace, complete the following manual steps before using them:
+
+1. Create a Cloud connection by attaching all the available subnets that are used for communication from your non PER enabled Power Virtual Server workspace.
+2. Verify that the Cloud connection status changes to Active.
+3. Attach the Cloud connection to the Transit gateway.
+4. Select the Transit gateway **->** Add connection **->** Select Direct Link and select the newly created direct link **->** click Add.
+
+## Orchestrator and Service details
+
+ The **Orchestrator Details** and **Service Details** sections provide comprehensive technical insights that help administrators and cloud engineers monitor and manage disaster recovery automation for their infrastructure.
+ 
+### Orchestrator details
 {: #orc-det}
+ The **Orchestrator Details** and **Service Details** sections provide comprehensive technical insights that help administrators and cloud engineers monitor and manage disaster recovery automation for their infrastructure.
 
 **DR Orchestrator name**:  
 The unique identifier for the primary orchestrator instance responsible for managing DR operations like failover, failback, and replication workflows.
@@ -117,7 +132,7 @@ Displays the operational state of the standby orchestrator. A “failed” statu
 **Orchestrator external connectivity status**:  
 Indicates the network connectivity of the orchestrator with external components and services. A status of “Active” confirms that all required external connections are functional.
 
-## Service details
+### Service details
 {: #service-det}
 
 **Service name**:  
