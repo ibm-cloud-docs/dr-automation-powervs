@@ -51,7 +51,7 @@ follow the steps:
    - Select **Custom VPC** and follow these steps:
 
       1. Select the **Transit Gateway** to establish connectivity between the VPC and the PowerVS environment.
-      2. Choose the VPC from the dropdown that is attached to the Transit gateway in the previous step.
+      2. Choose the VPC from the dropdown that is attached to the **Transit gateway** in the previous step.
       3. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services, see the [FAQ](/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab) to find the ProxyIP of the VSI.
       
 7. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
@@ -88,8 +88,8 @@ To use a non PER enabled workspace, complete the following manual steps before u
 
 1. Create a Cloud connection by attaching all the available subnets that are used for communication.
 2. Verify that the Cloud connection status changes to Active.
-3. Attach the Cloud connection to the transit gateway.
-4. Select the transit gateway **->** Add connection **->** Select Direct Link and select the newly created direct link **->** click Add.
+3. Attach the Cloud connection to the Transit gateway.
+4. Select the Transit gateway **->** Add connection **->** Select Direct Link and select the newly created direct link **->** click Add.
 
  The **Orchestrator Details** and **Service Details** sections provide comprehensive technical insights that help administrators and cloud engineers monitor and manage disaster recovery automation for their infrastructure.
  
