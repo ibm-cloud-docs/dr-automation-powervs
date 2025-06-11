@@ -57,8 +57,7 @@
       {
         "date": "30 April 2025",
         "title": "A new external standby orchestrator interface is now available, enabling orchestrators to recognize and manage a standby node for improved failover support and operational resilience. This feature strengthens HA capabilities by streamlining standby node configuration."
-      },
-      
+      }
     ]
   }
 }

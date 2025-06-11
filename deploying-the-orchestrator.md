@@ -91,9 +91,11 @@ To use a non PER enabled workspace, complete the following manual steps before u
 3. Attach the Cloud connection to the Transit gateway.
 4. Select the Transit gateway **->** Add connection **->** Select Direct Link and select the newly created direct link **->** click Add.
 
+## Orchestrator and Service details
+
  The **Orchestrator Details** and **Service Details** sections provide comprehensive technical insights that help administrators and cloud engineers monitor and manage disaster recovery automation for their infrastructure.
  
-## Orchestrator details
+### Orchestrator details
 {: #orc-det}
  The **Orchestrator Details** and **Service Details** sections provide comprehensive technical insights that help administrators and cloud engineers monitor and manage disaster recovery automation for their infrastructure.
 
@@ -130,7 +132,7 @@ Displays the operational state of the standby orchestrator. A “failed” statu
 **Orchestrator external connectivity status**:  
 Indicates the network connectivity of the orchestrator with external components and services. A status of “Active” confirms that all required external connections are functional.
 
-## Service details
+### Service details
 {: #service-det}
 
 **Service name**:  
