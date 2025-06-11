@@ -86,7 +86,7 @@ By following this process, you can ensure that your orchestrator is fully equipp
 Power Virtual Server DR Automation supports both Power Edge Router(PER) and non Power Edge Router(PER) workspaces.
 To use a non PER enabled workspace, complete the following manual steps before using them:
 
-1. Create a Cloud connection by attaching all the available subnets that are used for communication.
+1. Create a Cloud connection by attaching all the available subnets that are used for communication from your non PER enabled Power Virtual Server workspace.
 2. Verify that the Cloud connection status changes to Active.
 3. Attach the Cloud connection to the Transit gateway.
 4. Select the Transit gateway **->** Add connection **->** Select Direct Link and select the newly created direct link **->** click Add.
