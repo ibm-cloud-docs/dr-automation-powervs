@@ -82,6 +82,7 @@ follow the steps:
 By following this process, you can ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers.
 
 ## Power Edge Router and non Power Edge Router
+{: #pow-ed-ro-non-pow-ed-rou}
 
 Power Virtual Server DR Automation supports both Power Edge Router(PER) and non Power Edge Router(PER) workspaces.
 To use a non PER enabled workspace, complete the following manual steps before using them:
