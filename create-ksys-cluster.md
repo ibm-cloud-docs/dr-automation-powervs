@@ -1,3 +1,14 @@
+---
+copyright:
+  years: 2025
+lastupdated: "2025-06-19"
+
+subcollection: dr-automation
+
+keywords: create instance, create cluster, create ksys 
+
+---
+
 # Creating the KSYS cluster
 {: #create-orch-ksys}
 
