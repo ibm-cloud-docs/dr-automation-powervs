@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-06-11"
+lastupdated: "2025-06-19"
 
 subcollection: dr-automation
 
@@ -60,7 +60,7 @@ follow the steps:
 
 9. Select the SSH key from **SSH key name**.
 
-10.  (Optional) Modify the **Advanced Settings** to configure the Storage tier and Machine type based on the **Deploy Orchestrator with HA** selection.
+10. (Optional) Modify the **Advanced Settings** to configure the Storage tier and Machine type based on the **Deploy Orchestrator with HA** selection.
 
 11. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when HA is enabled during provision. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
