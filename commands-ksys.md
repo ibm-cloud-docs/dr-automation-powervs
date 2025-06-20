@@ -1742,7 +1742,7 @@ Listing shared processor pools under account Test Account as user `test_user@www
 
 Disaster Recovery (DR) rehearsal at the Workgroup level allows administrators to validate failover readiness without impacting production workloads. The ksysmgr CLI supports DR rehearsal operations by enabling movement and cleanup of Workgroups across DR sites.
 
-## View workgroup information
+### View workgroup information
 {: #ve-wo-in}
 
 Run the following command to list the existing Workgroups and verify their status:
@@ -2004,10 +2004,10 @@ An output similar to the following example is displayed:
 ksysmgr move site from=HomeSite to=TargetSite dr_test=yes
 You are initiating a failover rehearsal across sites
 
-Do you wish to proceed? \[y/n\]  
-**y**
-```
-```
+Do you wish to proceed? [y/n\]  
+
+y
+
 03:28:32 Site dr_test move started for TargetSite to HomeSite, this may take a few minutes...
 03:28:32 dr_test move has started for Workgroup test_01_WG
 03:29:37 Rehearsal VM creation has started for VM test
