@@ -28,7 +28,6 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 - [DR Service broker architecture](#service-broker)
 - [DR Orchestrator (KSYS) architecture](#ksys-arch)
 - [Key Features](#key)
-- 
 - [Hardware Specifications](#hs)
 - [Supported Storage Tiers](#sst)
 - [Network Configurations](#ns)
