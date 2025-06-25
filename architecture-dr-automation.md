@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-06-24"
+lastupdated: "2025-06-25"
 
 subcollection: dr-automation-powervs
 
@@ -16,8 +16,6 @@ keywords: architecture
 
 {{site.data.keyword.DR_full}} is a robust disaster recovery solution that is designed for IBM data centers, distinct from general IBM Cloud resources. This solution uses dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.
 {: shortdesc}
-
-The IBM Cloud Service Framework facilitates seamless deployment and management of {{site.data.keyword.DR_full_notm}} by integrating key components such as the Service Broker, Resource Management controller (RMC), and IBM Cloud catalog. This framework streamlines the DR setup process, enhances security, and ensures compliance, delivering a comprehensive DR solution within the IBM Cloud infrastructure.
 
 Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} architecture, features, hardware requirements, and network configurations.
 
@@ -117,7 +115,7 @@ Customizable recovery settings
 {: #flex}
 
 {{site.data.keyword.DR_short}} follows a usage-based billing model, with flexible options based on the selected resources and configurations.
-The IBM Cloud Service Framework supports accurate billing and comprehensive reporting, ensuring that customers have clear visibility into DR-related costs.
+The IBM Cloud catalog supports accurate billing and comprehensive reporting, ensuring that customers have clear visibility into DR-related costs.
 
 
 
@@ -161,7 +159,7 @@ In {{site.data.keyword.DR_short}}, user can set up cross-account API keys to all
 | **Tier 3** | 3 IOPS/GB  | Cost-effective for noncritical applications |
 {: caption="Tier and IOPS mapping" caption-side="bottom"}
 
-With the IBM Cloud Service Framework, storage is allocated based on deployment needs, ensuring efficient usage of resources and seamless management.
+Storage is allocated based on deployment needs, ensuring efficient usage of resources and seamless management.
 
 
 ## Network configurations
