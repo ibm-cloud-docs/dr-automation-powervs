@@ -46,6 +46,7 @@ toc:
                         - iam-autoamtion.md
                         - create-instance-powervs.md
                         - deploying-the-orchestrator.md
+                        - Orchestrator-and-service-details.md
                         - monitoring-vm-status.md
                         - manage-vm.md                     
       - topicgroup:
