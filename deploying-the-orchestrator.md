@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-06-19"
+lastupdated: "2025-06-26"
 
 subcollection: dr-automation
 
@@ -128,10 +128,19 @@ Represents the workspace linked to the standby orchestrator, located in a separa
 The name of the standby orchestrator configured to take over if the primary orchestrator fails.
 
 **Standby orchestrator status**:  
-Displays the operational state of the standby orchestrator. A “failed” status indicates a misconfiguration or outage, requiring immediate attention.
+Displays the operational state of the standby orchestrator. A **failed** status indicates a misconfiguration or outage, requiring immediate attention.
 
 **Orchestrator external connectivity status**:  
-Indicates the network connectivity of the orchestrator with external components and services. A status of “Active” confirms that all required external connections are functional.
+Shows whether the orchestrator can reach all required IBM Cloud APIs and external services to perform DR operations.
+
+ - **Active**: All required external services are reachable.
+ - **Inactive**: One or more external services are not reachable.
+
+ **Standby orchestrator status**:
+ Shows whether the standby orchestrator VM is operational.
+ 
+- **Active**: Standby orchestrator is healthy and ready.
+- **Failed**: Standby orchestrator has encountered issues and may not be available for failover.
 
 ### Service details
 {: #service-det}
