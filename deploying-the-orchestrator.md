@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-06-26"
+lastupdated: "2025-07-03"
 
 subcollection: dr-automation
 
@@ -66,18 +66,20 @@ follow the steps:
 
 12. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 
-13. Once the orchestrator VM is deployed, manage the service through the **External orchestrator interface** and configure additional virtual server instances for disaster recovery.
+13. **Finish** button is enabled Once the orchestrator VM is deployed.
+
+14. Configure and manage the Power Virtual Server instances through the **External orchestrator interface** for disaster recovery.
 
   >**Note**: The orchestrator interface (UI) is launched at https://`<Orchestrator IP>`:3000/login. The `<Orchestrator IP>` is the system on which the orchestrator UI is installed and it is loaded automatically.
 
-14. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby orchestrator for redundancy and resilience, following the steps:
+15. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby orchestrator for redundancy and resilience, following the steps:
 
       a. Complete the [External orchestrator interface setup](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter).  
       b. Hover over the **External standby orchestrator interface** button to view the standby orchestrator IP, for example, `IP:xx.x.x.xxx`.  
       c. Use the standby orchestrator IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.  
       d. Click the **External standby orchestrator interface** button to enable the interface.  
       e. Click the **Refresh** icon to update the status, enabling the **External standby orchestrator interface button** for use.
-15. If any error occurs during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
+16. If any error occurs during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
 
 By following this process, you can ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers.
 
