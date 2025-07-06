@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-06-20"
+lastupdated: "2025-07-06"
 
 subcollection: dr-automation
 
@@ -1642,7 +1642,7 @@ KSYS site has been updated
 ```
 
 ## Shared Processor Pool configuration
-{: #rfc}
+{: #s-pro-poo-confi}
 
 ### Enable shared processor pool for a virtual machine
 {: #es-pp-vm}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-19"
+lastupdated: "2025-07-06"
 
 subcollection: dr-automation
 
@@ -177,8 +177,8 @@ The following list provides details for each option:
 - **Consolidated View**:
    - Provides a total count of managed VMs and cores for all system types within a site.
 
-### Steps to access inventory
-{: #steps}
+### Access inventory
+{: #steps-acc-inve}
 
 1. Select the desired **KSYS Cluster** from the navigation panel.
 2. Click **Inventory** in the top navigation bar.
@@ -204,8 +204,6 @@ The following list provides details for each option:
 
 ## Workgroup active and partner VMs
 {: #work-grou-active}
-
-## Procedure
 
 To view details about Active and Partner VMs for a Workgroup, follow these steps:
 

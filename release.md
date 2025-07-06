@@ -30,9 +30,13 @@ Remove temporary rehearsal VMs created during a failover rehearsal to restore th
 - **Re‑Sync**
 Synchronize backup VMs with the latest configuration and data from the active site after DR tests, rehearsals, or changes. For more information, see [Re‑Sync](/docs/dr-automation-powervs?topic=dr-automation-powervs-ad-vance-load#re-sy-nc).
 
+**Refresh workspace option for updated topology view**
 
+You can now use the Refresh Workspace option to update the workspace topology and display the latest managed and unmanaged VMs along with their associated workgroups. For more information, see [Refresh workspace](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan)
 
+**Shared Processor Pool configuration for virtual machines**
 
+You can now assign a virtual machine to a shared processor pool to optimize resource usage and reduce licensing costs. Use the CLI to enable the shared processor setting during VM management or modify it later. Shared processor pools must be pre-created in the target PowerVS workspace. For more details, see [Shared Processor Pool configuration](/docs/dr-automation-powervs?topic=dr-automation-powervs-ksysmgr-commandorchestrator#rfc).
 ## 30 April 2025
 {: #subcollection-apr0425}
 {: release-note}
