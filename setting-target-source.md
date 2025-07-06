@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-19"
+lastupdated: "2025-07-06"
 
 subcollection: dr-automation
 
@@ -18,7 +18,7 @@ Configure your environment by adding the **source** and **target sites**, specif
 
 After adding the KSYS (Orchestrator) , you are required to add the **Source** and **Target sites**. Upon completing the KSYS setup, the GUI automatically redirects you to the **Add Sites** page.
 
-> **Note**: If you select **IBM_PVS_PRIVATE_DR** as the cluster type while creating the [KSYS (Orchestrator) cluster](/docs/dr-automation-powervs?topic=dr-automation-powervs-create-orch-ksys), the UI displays **Select Source Satellite Location** and **Select Target Satellite Location** instead of region selectors.
+
 
 ## Procedure
 {: #aded-sitwe-ksyss}

@@ -21,14 +21,16 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 
 **Advanced Operations for disaster recovery validation and control**
 
-> - **Failover Rehearsal**
-Simulate a disaster recovery event without impacting production by creating a temporary rehearsal VM at the backup site. This feature helps validate DR readiness in both site and workgroup scopes. For more information, see Failover Rehearsal.
+- **Failover Rehearsal**
+Simulate a disaster recovery event without impacting production by creating a temporary rehearsal VM at the backup site. This feature helps validate DR readiness in both site and workgroup scopes. For more information, see [Failover Rehearsal](/docs/dr-automation-powervs?topic=dr-automation-powervs-ad-vance-load#Fa-il-over).
 
-> - **Clean up**
-Remove temporary rehearsal VMs created during a failover rehearsal to restore the environment to its original state. For more information, see Clean up.
+- **Clean up**
+Remove temporary rehearsal VMs created during a failover rehearsal to restore the environment to its original state. For more information, see [Clean up](/docs/dr-automation-powervs?topic=dr-automation-powervs-ad-vance-load#cl-ea-nup).
 
-> **Re‑Sync**
-Synchronize backup VMs with the latest configuration and data from the active site after DR tests, rehearsals, or changes. For more information, see Re‑Sync.
+- **Re‑Sync**
+Synchronize backup VMs with the latest configuration and data from the active site after DR tests, rehearsals, or changes. For more information, see [Re‑Sync](/docs/dr-automation-powervs?topic=dr-automation-powervs-ad-vance-load#re-sy-nc).
+
+
 
 
 ## 30 April 2025
