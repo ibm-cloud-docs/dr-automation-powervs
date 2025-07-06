@@ -36,7 +36,16 @@ You can now use the Refresh Workspace option to update the workspace topology an
 
 **Shared Processor Pool configuration for virtual machines**
 
-You can now assign a virtual machine to a shared processor pool to optimize resource usage and reduce licensing costs. Use the CLI to enable the shared processor setting during VM management or modify it later. Shared processor pools must be pre-created in the target PowerVS workspace. For more details, see [Shared Processor Pool configuration](/docs/dr-automation-powervs?topic=dr-automation-powervs-ksysmgr-commandorchestrator#rfc).
+You can now assign a virtual machine to a shared processor pool to optimize resource usage and reduce licensing costs. Use the CLI to enable the shared processor setting during VM management or modify it later. Shared processor pools must be pre-created in the target PowerVS workspace. For more details, see [Shared Processor Pool configuration](/docs/dr-automation-powervs?topic=dr-automation-powervs-ksysmgr-commandorchestrator#es-pp-vm).
+
+**Disaster Recovery rehearsal at workgroup level**
+
+You can now perform DR rehearsal operations at the workgroup level using the CLI, allowing safe failover simulation without impacting production workloads. This includes moving a workgroup for rehearsal and cleaning up the test environment after validation. For more details, see [DR Rehearsal at workgroup level](/docs/dr-automation-powervs?topic=dr-automation-powervs-ksysmgr-commandorchestrator#dr-rehearsal-move-at-workgroup-level).
+
+**Disaster Recovery rehearsal at site level**
+
+You can now simulate a full-site failover using DR rehearsal at the site level through the CLI. This allows validation of DR readiness across all workgroups without affecting production workloads. Cleanup commands are available to reset the environment post-validation. For more details, see [DR rehearsal at site level](/docs/dr-automation-powervs?topic=dr-automation-powervs-ksysmgr-commandorchestrator#dr-rehearsal-move-at-site-level).
+
 ## 30 April 2025
 {: #subcollection-apr0425}
 {: release-note}
