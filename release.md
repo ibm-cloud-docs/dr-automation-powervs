@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-06-03"
+lastupdated: "2025-07-06"
 subcollection: dr-automation
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -13,6 +13,23 @@ keywords: dr-automation, release-notes
 {: #relnote}
 Use these release notes to learn about the latest updates to **{{site.data.keyword.DR_short}}** grouped by release date. Release notes are available for a minimum of three years.
 {: shortdesc}
+
+
+## 25 July 2025
+{: #subcollection-july0725}
+{: release-note}
+
+**Advanced Operations for disaster recovery validation and control**
+
+> - **Failover Rehearsal**
+Simulate a disaster recovery event without impacting production by creating a temporary rehearsal VM at the backup site. This feature helps validate DR readiness in both site and workgroup scopes. For more information, see Failover Rehearsal.
+
+> - **Clean up**
+Remove temporary rehearsal VMs created during a failover rehearsal to restore the environment to its original state. For more information, see Clean up.
+
+> **Re‑Sync**
+Synchronize backup VMs with the latest configuration and data from the active site after DR tests, rehearsals, or changes. For more information, see Re‑Sync.
+
 
 ## 30 April 2025
 {: #subcollection-apr0425}
