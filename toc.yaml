@@ -46,6 +46,7 @@ toc:
                         - iam-autoamtion.md
                         - create-instance-powervs.md
                         - deploying-the-orchestrator.md
+                        - Orchestrator-and-service-details.md
                         - monitoring-vm-status.md
                         - manage-vm.md                     
       - topicgroup:
@@ -58,6 +59,7 @@ toc:
                         - network-paring.md
                         - configure-summary.md
                         - disocvery-operation.md
+                        - advance-operation.md
                         - discover-operation.md
                         - system-status-interface.md
                         - move-site.md

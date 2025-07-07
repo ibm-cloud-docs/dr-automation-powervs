@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-06-06"
+lastupdated: "2025-07-07"
 
 subcollection: dr-automation
 
@@ -175,6 +175,5 @@ The IP is used as a proxy IP in squid configuration.
 
 To enable communication to external services, export the following variables:
 
-> `http_proxy="<ProxyIP>:3128"`
-
-> `https_proxy="<ProxyIP>:3128"`
+>`http_proxy="<ProxyIP>:3128"`
+>`https_proxy="<ProxyIP>:3128"`

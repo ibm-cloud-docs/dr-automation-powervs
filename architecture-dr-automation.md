@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-03-17"
+lastupdated: "2025-06-25"
 
 subcollection: dr-automation-powervs
 
@@ -17,8 +17,6 @@ keywords: architecture
 {{site.data.keyword.DR_full}} is a robust disaster recovery solution that is designed for IBM data centers, distinct from general IBM Cloud resources. This solution uses dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.
 {: shortdesc}
 
-The IBM Cloud Service Framework facilitates seamless deployment and management of {{site.data.keyword.DR_full_notm}} by integrating key components such as the Service Broker, Resource Management controller (RMC), and IBM Cloud catalog. This framework streamlines the DR setup process, enhances security, and ensures compliance, delivering a comprehensive DR solution within the IBM Cloud infrastructure.
-
 Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} architecture, features, hardware requirements, and network configurations.
 
 ## Table of contents
@@ -28,7 +26,6 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 - [DR Service broker architecture](#service-broker)
 - [DR Orchestrator (KSYS) architecture](#ksys-arch)
 - [Key Features](#key)
-- [IBM Cloud Service Framework](#cloudservice)
 - [Hardware Specifications](#hs)
 - [Supported Storage Tiers](#sst)
 - [Network Configurations](#ns)
@@ -118,34 +115,10 @@ Customizable recovery settings
 {: #flex}
 
 {{site.data.keyword.DR_short}} follows a usage-based billing model, with flexible options based on the selected resources and configurations.
-The IBM Cloud Service Framework supports accurate billing and comprehensive reporting, ensuring that customers have clear visibility into DR-related costs.
+The IBM Cloud catalog supports accurate billing and comprehensive reporting, ensuring that customers have clear visibility into DR-related costs.
 
 
-## IBM cloud service framework
-{: #cloudservice}
 
-The IBM Cloud Service Framework enhances {{site.data.keyword.DR_short}} by enabling seamless service deployment and management. Key components include:
-
-Service broker
-:   Manages compute, storage, and network resources, allowing users to select DR services from the IBM Cloud catalog and configure deployment details.
-This component plays a central role in streamlining and automating DR processes.
-
-Resource management controller (RMC)
-:   Automates provisioning, image import, and VM configuration, making DR deployment efficient and straightforward for users.
-
-Orchestrator (KSYS)
-:   Coordinates DR workflows and ensures that VMs recover in a defined sequence, minimizing downtime and data loss.
-
-Security and compliance
-:   Ensures a secure, compliant environment through robust controls and monitoring.
-This includes IBM Cloud services like Activity Tracker (for monitoring) Cloud Object Storage (COS) (for secure storage), and Key Management (for data security).
-
-Reliable connectivity
-:   Maintains continuous, secure access to DR resources through redundant network connections, enhancing reliability and resilience.
-
-This integrated framework provides a secure, compliant, and efficient DR solution that aligns closely with the high-level architecture for {{site.data.keyword.DR_short}} in IBM data centers.
-
-Following are the hardware and software configurations that are supported for deploying the Orchestrator automatically based on your selection.
 
 ## Hardware specifications
 {: #hs}
@@ -186,7 +159,7 @@ In {{site.data.keyword.DR_short}}, user can set up cross-account API keys to all
 | **Tier 3** | 3 IOPS/GB  | Cost-effective for noncritical applications |
 {: caption="Tier and IOPS mapping" caption-side="bottom"}
 
-With the IBM Cloud Service Framework, storage is allocated based on deployment needs, ensuring efficient usage of resources and seamless management.
+Storage is allocated based on deployment needs, ensuring efficient usage of resources and seamless management.
 
 
 ## Network configurations
