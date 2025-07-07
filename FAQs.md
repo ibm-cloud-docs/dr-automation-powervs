@@ -167,3 +167,13 @@ The proxy IP is the private IP address assigned to a Virtual Server Instance (VS
 4. Click the VSI name to open its details page.
 5. Select the **Networking** tab.
 6. Locate the **Reserved IP** in the network attachments section, by default squid uses this reserved IP for the configuration.
+7. If the VSI has multiple IPs and you configured `squid.conf` with different IP, that is in `/etc/squid/squid.conf` with the following entry:
+
+> `http_port <IP>:3128`
+
+The IP is used as a proxy IP in squid configuration.
+
+To enable communication to external services, export the following variables:
+
+>`http_proxy="<ProxyIP>:3128"`
+>`https_proxy="<ProxyIP>:3128"`
