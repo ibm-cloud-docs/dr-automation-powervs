@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-06-26"
+lastupdated: "2025-07-08"
 
 subcollection: dr-automation
 
@@ -49,8 +49,7 @@ Displays the operational state of the standby orchestrator. A **failed** status 
 **Orchestrator external connectivity status**:  
 Shows whether the orchestrator can reach all required IBM Cloud APIs and external services to perform DR operations.
 
- - **Active**: All required external services are reachable.
- - **Inactive**: One or more external services are not reachable.
+ 
 
  **Standby orchestrator status**:
  Shows whether the standby orchestrator VM is operational.
