@@ -53,7 +53,7 @@ follow the steps:
       1. Create a new VPC or use an existing one, follow the below steps to verify the VPC:
       2. Select the **Transit Gateway** to establish connectivity between the VPC and the PowerVS environment.
       3. Choose the VPC from the dropdown that is attached to the **Transit gateway** you selected in the previous step.
-      4. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services, see the [FAQ](/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab) to find the ProxyIP of the VSI.
+      4. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services.
       5. See the following steps to find the Proxy IP of the VSI:
          - Log in to the [IBM Cloud console](https://cloud.ibm.com).
          - Click **Infrastructure** > **Virtual server instances**.
