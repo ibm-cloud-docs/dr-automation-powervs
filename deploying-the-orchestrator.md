@@ -50,11 +50,12 @@ follow the steps:
          > **Note**: The schematic ID is available if the VPC is created by using the VPC Landing Zone for the PowerVS option from the catalog.
    - Select **Custom VPC** and follow the below steps:
 
-      1. Create a new VPC or use an existing one, follow the below steps to verify the VPC:
-      2. Select the **Transit Gateway** to establish connectivity between the VPC and the PowerVS environment.
-      3. Choose the VPC from the dropdown that is attached to the **Transit gateway** you selected in the previous step.
-      4. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services.
-      5. See the following steps to find the Proxy IP of the VSI:
+      1. Create a new VPC or use an existing one, follow the below steps to verify the VPC.
+      2. Go to transit gateway and select your Tansit gateway, attach the VPC which you have created above
+      3. Select the **Transit Gateway** to establish connectivity between the VPC and the PowerVS environment.
+      4. Choose the VPC from the dropdown that is attached to the **Transit gateway** you selected in the previous step.
+      5. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services.
+      6. See the following steps to find the Proxy IP of the VSI:
          - Log in to the [IBM Cloud console](https://cloud.ibm.com).
          - Click **Infrastructure** > **Virtual server instances**.
          - Select the VSI from the list (for example, `test-vsi-test`).
@@ -72,9 +73,6 @@ follow the steps:
            >`http_proxy="<ProxyIP>:3128"`
            >
            >`https_proxy="<ProxyIP>:3128"`
-   - Create a [VPC]() if you don’t have one.
-   - Create a [transit gateway]() and attach it to the VPC. You can also reuse an existing one.
-   - Go to transit gateway and select your Tansit gateway, attach the VPC which you have created above
 
       
 7. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
