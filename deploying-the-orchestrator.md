@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-07-08"
 
 subcollection: dr-automation
 
@@ -48,11 +48,33 @@ follow the steps:
       1. Select an appropriate workspace for the orchestrator in the **DR Schematic workspace (VPC)** field.
       2. Create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) if required, to define the Power Virtual Server workspace where the primary orchestrator is deployed.
          > **Note**: The schematic ID is available if the VPC is created by using the VPC Landing Zone for the PowerVS option from the catalog.
-   - Select **Custom VPC** and follow these steps:
+   - Select **Custom VPC** and follow the below steps:
 
-      1. Select the **Transit Gateway** to establish connectivity between the VPC and the PowerVS environment.
-      2. Choose the VPC from the dropdown that is attached to the **Transit gateway** in the previous step.
-      3. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services, see the [FAQ](/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab) to find the ProxyIP of the VSI.
+      1. Create a new VPC or use an existing one, follow the below steps to verify the VPC:
+      2. Select the **Transit Gateway** to establish connectivity between the VPC and the PowerVS environment.
+      3. Choose the VPC from the dropdown that is attached to the **Transit gateway** you selected in the previous step.
+      4. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services, see the [FAQ](/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab) to find the ProxyIP of the VSI.
+      5. See the following steps to find the Proxy IP of the VSI:
+         - Log in to the [IBM Cloud console](https://cloud.ibm.com).
+         - Click **Infrastructure** > **Virtual server instances**.
+         - Select the VSI from the list (for example, `test-vsi-test`).
+         - Click the VSI name to open its details page.
+         - Select the **Networking** tab.
+         - Locate the **Reserved IP** in the network attachments section, by default squid uses this reserved IP for the configuration.
+         - If the VSI has multiple IPs and you configured `squid.conf` with different IP, that is in `/etc/squid/squid.conf` with the following entry:
+
+            > `http_port <IP>:3128`
+
+         The IP is used as a proxy IP in squid configuration.
+
+         To enable communication to external services, export the following variables:
+
+           >`http_proxy="<ProxyIP>:3128"`
+           >
+           >`https_proxy="<ProxyIP>:3128"`
+   - Create a [VPC]() if you don’t have one.
+   - Create a [transit gateway]() and attach it to the VPC. You can also reuse an existing one.
+
       
 7. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
 
