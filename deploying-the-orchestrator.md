@@ -74,6 +74,7 @@ follow the steps:
            >`https_proxy="<ProxyIP>:3128"`
    - Create a [VPC]() if you don’t have one.
    - Create a [transit gateway]() and attach it to the VPC. You can also reuse an existing one.
+   - Go to transit gateway and select your Tansit gateway, attach the VPC which you have created above
 
       
 7. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
