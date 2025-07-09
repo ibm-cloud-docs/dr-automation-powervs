@@ -122,7 +122,8 @@ To use a non PER enabled workspace, complete the following manual steps before u
 
 You can now use a non-PER enabled Power Virtual Server workspace by following the steps above. The setup ensures that your workspace is ready for network communication.
 
-### Enable proxy communication via VPC
+## Enable proxy communication via VPC
+{: #procedure-ena-ppro-comm}
 
 1. To navigate and select the VPC in IBM Cloud, go to **Infrastructure** > **Network** > **VPCs**, and then select your VPC from the list.
 2. Create a **Virtual Server Instance (VSI)** under the **Compute** section.
