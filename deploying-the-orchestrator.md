@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-08"
+lastupdated: "2025-07-09"
 
 subcollection: dr-automation
 
@@ -48,14 +48,14 @@ follow the steps:
       1. Select an appropriate workspace for the orchestrator in the **DR Schematic workspace (VPC)** field.
       2. Create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) if required, to define the Power Virtual Server workspace where the primary orchestrator is deployed.
          > **Note**: The schematic ID is available if the VPC is created by using the VPC Landing Zone for the PowerVS option from the catalog.
-   - Select **Custom VPC** and follow the below steps:
+   - Select **Custom VPC** and follow the steps:
 
-      1. Create a new VPC or use an existing one, follow the below steps to verify the VPC.
-      2. Go to transit gateway and select your Tansit gateway, attach the VPC which you have created above
+      1. Create a new VPC or use an existing one. To create a new VPC follow the steps:
+      2. Go to transit gateway and select your Tansit gateway, attach the VPC which you have created above. 
       3. Select the **Transit Gateway** to establish connectivity between the VPC and the PowerVS environment.
       4. Choose the VPC from the dropdown that is attached to the **Transit gateway** you selected in the previous step.
       5. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services.
-      6. See the following steps to find the Proxy IP of the VSI:
+      6. Follow the steps to find the Proxy IP of the VSI:
          - Log in to the [IBM Cloud console](https://cloud.ibm.com).
          - Click **Infrastructure** > **Virtual server instances**.
          - Select the VSI from the list (for example, `test-vsi-test`).
