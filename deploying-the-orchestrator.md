@@ -153,12 +153,12 @@ You can now use a non-PER enabled Power Virtual Server workspace by following th
 
 An output that is similar to the following example is displayed:
 
-```
-● squid.service - Squid caching proxy
-Loaded: loaded (/usr/lib/systemd/system/squid.service; enabled; preset: disabled)
-Active: active (running) since Mon 2025-07-07 11:19:52 UTC; 2 days ago
-```
-  **Note**: Ensure that Squid configuration is in Active and running  state.
+   ```
+   ● squid.service - Squid caching proxy
+   Loaded: loaded (/usr/lib/systemd/system/squid.service; enabled; preset: disabled)
+   Active: active (running) since Mon 2025-07-07 11:19:52 UTC; 2 days ago
+   ```
+
 6. To verify port number is up and running :
 
 > `sudo netstat -tulnp | grep 3128`
@@ -170,3 +170,5 @@ An output that is similar to the following example is displayed:
  ```
  
 For more information, see Configuring the [Squid proxy server](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server) in the Red Hat documentation.
+
+  **Note**: Ensure that Squid configuration is in Active and running  state.
