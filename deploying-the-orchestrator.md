@@ -125,9 +125,14 @@ You can now use a non-PER enabled Power Virtual Server workspace by following th
 ## Enable communication via VPC
 {: #procedure-ena-ppro-comm}
 
-1. Navigate and select the VPC in IBM Cloud, go to **Infrastructure** > **Network** > **VPCs**, and then select your VPC from the list.
-2. Create a **Virtual Server Instance (VSI)** under the **Compute** section.
-3. Configure the Squid proxy on the VSI by running the following commands:
+1. Open [IBM Cloud console](https://cloud.ibm.com).
+
+2. Click **Navigation menu** icon > **Infrastructure** > **Network** > **VPCs**, and select your VPC from the list.
+
+3. Create a **Virtual Server Instance (VSI)** under the **Compute** section.
+
+4. Configure the Squid proxy on the VSI by running the following commands:
+
 ```
 yum -y install squid
 systemctl start squid
@@ -140,7 +145,9 @@ firewall-cmd --add-port=3128/tcp --permanent
 firewall-cmd --reload
 systemctl status firewalld
 ```
-4. To verify the squid configuration , run the following command :
+
+5. To verify the squid configuration , run the following command:
+
 `systemctl status squid`
 
 An output that is similar to the following example is displayed:
@@ -150,8 +157,9 @@ An output that is similar to the following example is displayed:
      Loaded: loaded (/usr/lib/systemd/system/squid.service; enabled; preset: disabled)
      Active: active (running) since Mon 2025-07-07 11:19:52 UTC; 2 days ago
 ```
-> Note:The 
-5. To verify port number is up and running :
+> **Note**: Ensure that the Squid configuration is active.
+
+6. To verify port number is up and running :
 
 `sudo netstat -tulnp | grep 3128`
 
@@ -159,4 +167,5 @@ An output that is similar to the following example is displayed:
 ```
 tcp6  0  0 :::3128   :::*   LISTEN    16742/(squid-1)
 ```
-For more details on 
+
+For more information, see Configuring the [Squid caching proxy server](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server) in the Red Hat documentation.
