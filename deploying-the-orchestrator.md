@@ -52,7 +52,7 @@ follow the steps:
    - Select **Custom VPC** and follow the steps:
 
       1. Custom VPC requires a VPC, you can create a new [VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started) or use the existing one.
-      2. Once VPC is available, configure your [VPC to enable the proxy communication](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch#procedure-ena-ppro-comm).
+      2. Once VPC is available, configure your VPC to [enable the proxy communication](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch#procedure-ena-ppro-comm).
       3. Use the existing transit gateway or you can create a new [Transit gatway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-getting-started). To attach  Transit gateway with the VPC in IBM Cloud. Navigate to **Infrastructure** > **Network** > **Transit Gateway**, select your transit gateway and on the **Add connection** page, select the VPC in **Network connection**, choose the **Region**, select the appropriate **Connection reach**, **Select the VPC** from the available connection, and click **Add**.
       4. Choose the **Transit Gateway** from the dropdown.
       5. Select the VPC from the dropdown.
