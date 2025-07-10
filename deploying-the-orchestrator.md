@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-09"
+lastupdated: "2025-07-10"
 
 subcollection: dr-automation
 
@@ -43,7 +43,7 @@ follow the steps:
 
 6. Select **Schematic workspace** or **Custom VPC** to manually configure the network settings for the orchestrator deployment.
 
-   - Select the **Schematic workspace** and follow these steps:
+   - Select the **Schematic workspace** and follow the steps:
 
       1. Select an appropriate workspace for the orchestrator in the **DR Schematic workspace (VPC)** field.
       2. Create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) if required, to define the Power Virtual Server workspace where the primary orchestrator is deployed.
@@ -51,9 +51,9 @@ follow the steps:
 
    - Select **Custom VPC** and follow the steps:
 
-      1. Custom VPC requires a VPC either you can create a new [VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started) or use the existing one.
-      2. Once VPC is created, configure your [VPC to enable the proxy communication](#enable-proxy-commnuication-via-vpc).
-      3. Use the existing transit gateway or you can create a new [Transit gatway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-getting-started).To attach the newly created Transit gateway with the newly created VPC in IBM Cloud, go to **Infrastructure** > **Network** > **Transit Gateway**, select your transit gateway, and on the **Add connection** page, select the VPC in **Network connection**, choose the **Region**, select the appropriate **Connection reach**, **Select the VPC** from the available connection, and click **Add**.
+      1. Custom VPC requires a VPC, you can create a new [VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started) or use the existing one.
+      2. Once VPC is avalable, configure your [VPC to enable the proxy communication](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch#procedure-ena-ppro-comm).
+      3. Use the existing transit gateway or you can create a new [Transit gatway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-getting-started). To attach  Transit gateway with the VPC in IBM Cloud. Navigate to **Infrastructure** > **Network** > **Transit Gateway**, select your transit gateway and on the **Add connection** page, select the VPC in **Network connection**, choose the **Region**, select the appropriate **Connection reach**, **Select the VPC** from the available connection, and click **Add**.
       4. Choose the **Transit Gateway** from the dropdown.
       5. Select the VPC from the dropdown.
       6. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services.
@@ -122,27 +122,25 @@ To use a non PER enabled workspace, complete the following manual steps before u
 
 You can now use a non-PER enabled Power Virtual Server workspace by following the steps above. The setup ensures that your workspace is ready for network communication.
 
-## Enable proxy communication via VPC
+## Enable communication via VPC
 {: #procedure-ena-ppro-comm}
 
-1. To navigate and select the VPC in IBM Cloud, go to **Infrastructure** > **Network** > **VPCs**, and then select your VPC from the list.
+1. Navigate and select the VPC in IBM Cloud, go to **Infrastructure** > **Network** > **VPCs**, and then select your VPC from the list.
 2. Create a **Virtual Server Instance (VSI)** under the **Compute** section.
 3. Configure the Squid proxy on the VSI by running the following commands:
 ```
 yum -y install squid
 systemctl start squid
 systemctl enable squid
-systemctl status squid
 
 yum install firewalld
 systemctl start firewalld
 systemctl enable firewalld
+firewall-cmd --add-port=3128/tcp --permanent
+firewall-cmd --reload
 systemctl status firewalld
-
- firewall-cmd --add-port=3128/tcp --permanent
- firewall-cmd --reload
 ```
-4. To verify the squid is configured, run the following command :
+4. To verify the squid configuration , run the following command :
 `systemctl status squid`
 
 An output that is similar to the following example is displayed:
@@ -152,11 +150,13 @@ An output that is similar to the following example is displayed:
      Loaded: loaded (/usr/lib/systemd/system/squid.service; enabled; preset: disabled)
      Active: active (running) since Mon 2025-07-07 11:19:52 UTC; 2 days ago
 ```
+> Note:The 
 5. To verify port number is up and running :
 
-`Sudo netstat -tulnp | grep 3128`
+`sudo netstat -tulnp | grep 3128`
 
 An output that is similar to the following example is displayed:
 ```
-tcp6       0      0 :::3128                 :::*                    LISTEN      16742/(squid-1)
+tcp6  0  0 :::3128   :::*   LISTEN    16742/(squid-1)
 ```
+For more details on 
