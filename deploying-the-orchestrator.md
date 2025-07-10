@@ -169,4 +169,4 @@ An output that is similar to the following example is displayed:
 tcp6  0  0 :::3128   :::*   LISTEN    16742/(squid-1)
 ```
 
-For more information, see Configuring the [Squid caching proxy server](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server) in the Red Hat documentation.
+For more information, see Configuring the [Squid proxy server](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server) in the Red Hat documentation.
