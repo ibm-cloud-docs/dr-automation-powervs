@@ -134,18 +134,18 @@ You can now use a non-PER enabled Power Virtual Server workspace by following th
 
 4. Configure the Squid proxy on the VSI by running the following commands:
 
-```
-yum -y install squid
-systemctl start squid
-systemctl enable squid
+   ```
+   yum -y install squid
+   systemctl start squid
+   systemctl enable squid
 
-yum install firewalld
-systemctl start firewalld
-systemctl enable firewalld
-firewall-cmd --add-port=3128/tcp --permanent
-firewall-cmd --reload
-systemctl status firewalld
-```
+   yum install firewalld
+   systemctl start firewalld
+   systemctl enable firewalld
+   firewall-cmd --add-port=3128/tcp --permanent
+   firewall-cmd --reload
+   systemctl status firewalld
+   ```
 
 5. To verify the squid configuration , run the following command:
 
