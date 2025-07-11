@@ -148,8 +148,9 @@ An output that is similar to the following example is displayed:
    Loaded: loaded (/usr/lib/systemd/system/squid.service; enabled; preset: disabled)
    Active: active (running) since Mon 2025-07-07 11:19:52 UTC; 2 days ago
    ```
-  **Note**: Ensure that Squid configuration is in Active and running  state.
-7. To verify port number is up and running :
+**Note**: Ensure that Squid configuration is in Active and running  state.
+
+- To verify port number is up and running:
  `sudo netstat -tulnp | grep 3128`
 
 An output that is similar to the following example is displayed:
