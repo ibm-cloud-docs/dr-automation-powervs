@@ -140,9 +140,8 @@ You can now use a non-PER enabled Power Virtual Server workspace by following th
    systemctl status firewalld
    ```
 6. To verify the squid configuration , run the following command:
-
- >`systemctl status squid`
-
+ `systemctl status squid`
+ 
 An output that is similar to the following example is displayed:
    ```
    ● squid.service - Squid caching proxy
@@ -151,8 +150,7 @@ An output that is similar to the following example is displayed:
    ```
    **Note**: Ensure that Squid configuration is in Active and running  state.
 7. To verify port number is up and running:
-
- >`sudo netstat -tulnp | grep 3128`
+ `sudo netstat -tulnp | grep 3128`
 
 An output that is similar to the following example is displayed:
 
