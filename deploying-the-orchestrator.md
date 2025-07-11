@@ -151,7 +151,6 @@ An output that is similar to the following example is displayed:
    **Note**: Ensure that Squid configuration is in Active and running  state.
 7. To verify port number is up and running:
  `sudo netstat -tulnp | grep 3128`
-
 An output that is similar to the following example is displayed:
 
    ```
