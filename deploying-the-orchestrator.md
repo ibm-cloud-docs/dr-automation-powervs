@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-10"
+lastupdated: "2025-07-11"
 
 subcollection: dr-automation
 
@@ -51,13 +51,16 @@ follow the steps:
 
    - Select **Custom VPC** and follow the steps:
 
-      1. Custom VPC requires a VPC, you can create a new [VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started) or use the existing one.
-      2. Once VPC is available, configure your VPC to [enable the proxy communication](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch#procedure-ena-ppro-comm).
-      3. Use the existing transit gateway or you can create a new [Transit gatway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-getting-started). To attach  Transit gateway to a VPC in IBM Cloud. Navigate to **Infrastructure** > **Network** > **Transit Gateway**. Select your transit gateway, and on the **Add connection** page, select the VPC under **Network connection**, choose the **Region**, select the appropriate **Connection reach**, **Select the VPC** from the available connection, and click **Add**.
-      4. Choose the **Transit Gateway** from the dropdown.
-      5. Select the VPC from the dropdown.
-      6. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services.
-      7. Follow the steps to find the Proxy IP of the VSI:
+      1. To go ahead with the custom VPC you will have to finish the following pre-req:
+
+         - Need VPC,  you can create a new [VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started) or use the existing one.
+         - Once VPC is available, configure your VPC to [enable the proxy communication](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch#procedure-ena-ppro-comm).
+         - Use the existing transit gateway or you can create a new [Transit gatway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-getting-started). To attach  Transit gateway to a VPC in IBM Cloud. Navigate to **Infrastructure** > **Network** > **Transit Gateway**. Select your transit gateway, and on the **Add connection** page, select the VPC under **Network connection**, choose the **Region**, select the appropriate **Connection reach**, **Select the VPC** from the available connection, and click **Add**.
+         -  Once you complete all the pre-req you are ready to use the custom VPC.
+
+      2. Choose the **Transit Gateway** from the dropdown.
+      3. Select the VPC from the dropdown.
+      4. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services. Follow the steps to find the Proxy IP of the VSI:
          - Log in to the [IBM Cloud console](https://cloud.ibm.com).
          - Click **Infrastructure** > **Virtual server instances**.
          - Select the VSI from the list (for example, `test-vsi-test`).
@@ -69,12 +72,6 @@ follow the steps:
             > `http_port <IP>:3128`
 
          The IP is used as a proxy IP in squid configuration.
-
-         To enable communication to external services, export the following variables:
-
-           >`http_proxy="<ProxyIP>:3128"`
-           >
-           >`https_proxy="<ProxyIP>:3128"`
       
 7. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
 
@@ -128,7 +125,8 @@ You can now use a non-PER enabled Power Virtual Server workspace by following th
 1. Open [IBM Cloud console](https://cloud.ibm.com).
 2. Click **Navigation menu** icon > **Infrastructure** > **Network** > **VPCs**, and select your VPC from the list.
 3. Create a **Virtual Server Instance (VSI)** under the **Compute** section.
-4. Configure the Squid proxy on the VSI by running the following commands:
+4. Enable public gateway for the VSI subnet. Click **Navigation menu** icon > **Infrastructure** > **Network** > **Subnets** > Enable **Detached** in Public gateway > Click **Attach** and this enables the public gateway for VPC subnet.
+5. Configure the Squid proxy on the VSI by running the following commands:
    ```
    yum -y install squid
    systemctl start squid
@@ -141,8 +139,10 @@ You can now use a non-PER enabled Power Virtual Server workspace by following th
    firewall-cmd --reload
    systemctl status firewalld
    ```
-5. To verify the squid configuration , run the following command:
+6. To verify the squid configuration , run the following command:
+
  `systemctl status squid`
+
 An output that is similar to the following example is displayed:
    ```
    ● squid.service - Squid caching proxy
@@ -150,7 +150,8 @@ An output that is similar to the following example is displayed:
    Active: active (running) since Mon 2025-07-07 11:19:52 UTC; 2 days ago
    ```
   **Note**: Ensure that Squid configuration is in Active and running  state.
-6. To verify port number is up and running :
+7. To verify port number is up and running:
+
  `sudo netstat -tulnp | grep 3128`
 
 An output that is similar to the following example is displayed:
