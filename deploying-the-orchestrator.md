@@ -139,7 +139,7 @@ You can now use a non-PER enabled Power Virtual Server workspace by following th
    firewall-cmd --reload
    systemctl status firewalld
    ```
-5. To verify the squid configuration , run the following command:
+6. To verify the squid configuration , run the following command:
  `systemctl status squid`
 
 An output that is similar to the following example is displayed:
@@ -149,7 +149,7 @@ An output that is similar to the following example is displayed:
    Active: active (running) since Mon 2025-07-07 11:19:52 UTC; 2 days ago
    ```
   **Note**: Ensure that Squid configuration is in Active and running  state.
-6. To verify port number is up and running :
+7. To verify port number is up and running :
  `sudo netstat -tulnp | grep 3128`
 
 An output that is similar to the following example is displayed:
