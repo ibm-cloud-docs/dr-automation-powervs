@@ -115,7 +115,7 @@ To use a non PER enabled workspace, complete the following manual steps before u
 1. Create a Cloud connection by attaching all the available subnets that are used for communication from your non PER enabled Power Virtual Server workspace.
 2. Verify that the Cloud connection status changes to Active.
 3. Attach the Cloud connection to the Transit gateway.
-4. Select the Transit gateway **->** Add connection **->** Select Direct Link and select the newly created direct link **->** click Add.
+4. Select the **Transit gateway** -> **Add connection** -> Select Direct Link and select the newly created direct link -> click **Add**.
 
 You can now use a non-PER enabled Power Virtual Server workspace by following the steps above. The setup ensures that your workspace is ready for network communication.
 
@@ -149,8 +149,21 @@ An output that is similar to the following example is displayed:
    Active: active (running) since Mon 2025-07-07 11:19:52 UTC; 2 days ago
    ```
 
-**Note**: Ensure that Squid configuration is in Active and running  state.
-7. To verify port number is up and running:
+  **Note**: Ensure that Squid configuration is in Active and running  state.
+7. To verify the squid configuration , run the following command:
+ `systemctl status squid`
+ 
+An output that is similar to the following example is displayed:
+   ```
+   ● squid.service - Squid caching proxy
+   Loaded: loaded (/usr/lib/systemd/system/squid.service; enabled; preset: disabled)
+   Active: active (running) since Mon 2025-07-07 11:19:52 UTC; 2 days ago
+   ```
+
+  **Note**: Ensure that Squid configuration is in Active and running  state.
+
+8. To verify port number is up and running:
+
  `sudo netstat -tulnp | grep 3128`
 
 An output that is similar to the following example is displayed:
