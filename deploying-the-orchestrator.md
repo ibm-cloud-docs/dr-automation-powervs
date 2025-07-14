@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-07-11"
 
 subcollection: dr-automation
 
@@ -12,7 +12,7 @@ keywords: deploy the orch
 # Deploying the orchestrator
 {: #idep-the-orch}
 
-After creating the resource, deploying the orchestrator for DR automation is essential to ensure that your Power Virtual Server environment is protected against disaster events. The orchestrator coordinates disaster recovery operations, including replication, failover, and failback of virtual machines. This screen displays high availability (HA) settings, authentication keys and resource allocation. Once deployed, the orchestrator can manage multiple virtual servers and help ensure continuous availability.
+After creating the resource, deploying the orchestrator for DR automation is essential to can ensure that your Power Virtual Server environment is protected against disaster events. The orchestrator coordinates disaster recovery operations, including replication, failover, and failback of virtual machines. This screen displays high availability (HA) settings, authentication keys and resource allocation. Once deployed, the orchestrator can manage multiple virtual servers and help ensure continuous availability.
 {:shortdesc: .shortdesc}
 
  >**Note**: 
@@ -37,22 +37,41 @@ follow the steps:
    > **Note**: This password is set for the Orchestrator VM, and you can use it to login to the Orchestrator VM UI.
 
 4. Provide a valid **IBM Cloud API key**.
-   > **Note**: Enter your API key, which is required to access various services described in [Access role requirements for Power Virtual Server DR Automation](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto). Ensure that the API key has the necessary permissions for proper functionality.
+   > **Note**: Enter your API key, which is required to access various services described in [Access role requirements for Power Virtual Server DR Automation](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto). Can ensure that the API key has the necessary permissions for proper functions.
 
 5. In the **DR location** field, select the target region for deploying the orchestrator VM.
 
 6. Select **Schematic workspace** or **Custom VPC** to manually configure the network settings for the orchestrator deployment.
 
-   - Select **Schematic workspace** and follow these steps:
+   - Select the **Schematic workspace** and follow the steps:
 
       1. Select an appropriate workspace for the orchestrator in the **DR Schematic workspace (VPC)** field.
       2. Create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) if required, to define the Power Virtual Server workspace where the primary orchestrator is deployed.
          > **Note**: The schematic ID is available if the VPC is created by using the VPC Landing Zone for the PowerVS option from the catalog.
-   - Select **Custom VPC** and follow these steps:
 
-      1. Select the **Transit Gateway** to establish connectivity between the VPC and the PowerVS environment.
-      2. Choose the VPC from the dropdown that is attached to the **Transit gateway** in the previous step.
-      3. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services, see the [FAQ](/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab) to find the ProxyIP of the VSI.
+   - Select **Custom VPC** and follow the steps:
+
+      1. To go ahead with the custom VPC you will have to finish the following pre-req:
+
+         - Need VPC,  you can create a new [VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started) or use the existing one.
+         - Once VPC is available, configure your VPC to [enable the proxy communication](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch#procedure-ena-ppro-comm).
+         - Use the existing transit gateway or you can create a new [Transit gatway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-getting-started). To attach  Transit gateway to a VPC in IBM Cloud. Navigate to **Infrastructure** > **Network** > **Transit Gateway**. Select your transit gateway, and on the **Add connection** page, select the VPC under **Network connection**, choose the **Region**, select the appropriate **Connection reach**, **Select the VPC** from the available connection, and click **Add**.
+         -  Once you complete all the pre-req you are ready to use the custom VPC.
+
+      2. Choose the **Transit Gateway** from the dropdown.
+      3. Select the VPC from the dropdown.
+      4. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services. Follow the steps to find the Proxy IP of the VSI:
+         - Log in to the [IBM Cloud console](https://cloud.ibm.com).
+         - Click **Infrastructure** > **Virtual server instances**.
+         - Select the VSI from the list (for example, `test-vsi-test`).
+         - Click the VSI name to open its details page.
+         - Select the **Networking** tab.
+         - Locate the **Reserved IP** in the network attachments section, by default squid uses this reserved IP for the configuration.
+         - If the VSI has multiple IPs and you configured `squid.conf` with different IP, that is in `/etc/squid/squid.conf` with the following entry:
+
+            > `http_port <IP>:3128`
+
+         The IP is used as a proxy IP in squid configuration.
       
 7. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
 
@@ -96,6 +115,48 @@ To use a non PER enabled workspace, complete the following manual steps before u
 1. Create a Cloud connection by attaching all the available subnets that are used for communication from your non PER enabled Power Virtual Server workspace.
 2. Verify that the Cloud connection status changes to Active.
 3. Attach the Cloud connection to the Transit gateway.
-4. Select the Transit gateway **->** Add connection **->** Select Direct Link and select the newly created direct link **->** click Add.
+4. Select the **Transit gateway** -> **Add connection** -> Select Direct Link and select the newly created direct link -> click **Add**.
 
 You can now use a non-PER enabled Power Virtual Server workspace by following the steps above. The setup ensures that your workspace is ready for network communication.
+
+## Enable communication via VPC
+{: #procedure-ena-ppro-comm}
+
+1. Open [IBM Cloud console](https://cloud.ibm.com).
+2. Click **Navigation menu** icon > **Infrastructure** > **Network** > **VPCs**, and select your VPC from the list.
+3. Create a **Virtual Server Instance (VSI)** under the **Compute** section.
+4. Enable public gateway for the VSI subnet. Click **Navigation menu** icon > **Infrastructure** > **Network** > **Subnets** > Enable **Detached** in Public gateway > Click **Attach** and this enables the public gateway for VPC subnet.
+5. Configure the Squid proxy on the VSI by running the following commands:
+   ```
+   yum -y install squid
+   systemctl start squid
+   systemctl enable squid
+
+   yum install firewalld
+   systemctl start firewalld
+   systemctl enable firewalld
+   firewall-cmd --add-port=3128/tcp --permanent
+   firewall-cmd --reload
+   systemctl status firewalld
+   ```
+6. To verify the squid configuration, run the following command:
+    `systemctl status squid`
+
+    An output that is similar to the following example is displayed:
+    ```
+    ● squid.service - Squid caching proxy
+      Loaded: loaded (/usr/lib/systemd/system/squid.service; enabled; preset: disabled)
+      Active: active (running) since Mon 2025-07-07 11:19:52 UTC; 2 days ago
+    ```
+
+    **Note:** Ensure that Squid configuration is in Active and running state.
+
+7. To verify port number is up and running:
+    `sudo netstat -tulnp | grep 3128`
+
+
+An output that is similar to the following example is displayed:
+   ```
+   tcp6  0  0 :::3128   :::*   LISTEN    16742/(squid-1)
+   ```
+ For more information, see Configuring the [Squid proxy server](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server) in the Red Hat documentation.

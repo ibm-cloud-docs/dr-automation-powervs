@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-08"
+lastupdated: "2025-07-11"
 
 subcollection: dr-automation
 
@@ -173,8 +173,9 @@ The proxy IP is the private IP address assigned to a Virtual Server Instance (VS
 
 The IP is used as a proxy IP in squid configuration.
 
-To enable communication to external services, export the following variables:
+To enable communication to external services, export the following variables on your orchestrator node:
 
 >`http_proxy="<ProxyIP>:3128"`
 >
 >`https_proxy="<ProxyIP>:3128"`
+> **Note**: Exporting these variables is automatic with the DR Deployment, you can validate the configuration using these variables.
