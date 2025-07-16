@@ -1640,3 +1640,475 @@ An output that is similar to the following example is displayed:
 ksysmgr delete script entity=site script_name=pre_discovery
 KSYS site has been updated
 ```
+
+## Shared Processor Pool configuration
+{: #s-pro-poo-confi}
+
+### Enable shared processor pool for a virtual machine
+{: #es-pp-vm}
+
+To reduce licensing costs and optimize resource usage, you can enable the shared processor pool for a virtual machine. Before assigning, you must create the shared processor pool in the target PowerVS workspace.
+
+Run the following command on Orchestrator node to manage the VM, and assign it to a shared processor pool:
+
+```ksysmgr manage vm <vmname> sharedprocpool=yes targetprocpool=<pool_name>```
+
+The following example output is displayed:
+
+```
+date; ksysmgr manage vm test_vm sharedprocpool=yes targetprocpool=test_pool
+Wed May 28 14:22:35 IST 2025 Refresh VMs list of test_workspace started
+Workgroup test_vm_WG added successfully
+For Vm test_vm attribute(s) ShareProcPoolEnable was successfully modified.
+For Vm test_vm attribute(s) TargetProcPool was successfully modified.
+```
+
+> **Note**: Note: Both `sharedprocpool=yes` and `targetprocpool=<pool_name>` are mandatory parameters.
+
+### Modify shared processor pool settings for a virtual machine
+{: #msp-pp-vm}
+
+To apply shared processor pool settings after a VM has already been managed, use the following command:
+
+```ksysmgr modify vm <vmname> sharedprocpool=yes targetprocpool=<pool_name>```
+
+The following example output is displayed:
+
+```
+ksysmgr modify vm test_vm sharedprocpool=yes targetprocpool=test_pool
+For Vm test_vm attribute(s) ShareProcPoolEnable was successfully modified.
+For Vm test_vm attribute(s) TargetProcPool was successfully modified.
+```
+
+### Verify shared processor pool assignment
+{: #vs-pp-a}
+
+To confirm that the VM is assigned to a shared processor pool, run the following command:
+
+```ksysmgr query vm <vmname>```
+
+The following example output is displayed:
+
+```
+UUID:             12345678-1234-5678-9xxx-0123456789xx
+Processors:       1
+Memory_capacity:  4
+SharedProcPool:   yes
+TargetProcPool:   test_pool
+```
+
+### View backup VM configuration in PowerVS
+{: #vb-vm-cpv}
+
+To check the shared processor pool assignment and current resource configuration of the backup VM, run:
+
+```ibmcloud pi ins get <backup_vm_name>```
+
+The following example output is displayed:
+
+```
+CPU Cores:               0.25
+Memory:                  2
+Processor Type:          shared
+Shared Processor Pool:   test_pool
+Shared Processor Pool ID: abcd1234-xxxx-yyyy-zzzz-abcdef123456
+Status:                  SHUTOFF
+```
+This confirms the VM was provisioned with reduced capacity and associated with the specified processor pool.
+
+### List shared processor pools
+{: #li-sh-pro-po}
+
+To list all shared processor pools created under your account, run the following command:
+
+```ibmcloud pi spp list```
+
+The following example output is displayed:
+
+Listing shared processor pools under account Test Account as user `test_user@www.xxx.xx`:
+| ID                                   | Available Cores | Host group | Host ID | Name         | Reserved Cores | Allocated Cores | Status | Status Detail      |
+|-------------------------------------|------------------|------------|---------|--------------|----------------|------------------|--------|---------------------|
+| xxxx1234-5678-90ab-xxxx-1234567890ab | 5                | e980       | 36      | spp_pool_01  | 2              | 0.5              | active | shared processor   |
+| 1234abcd-5678-xxxx-ef12-xxxxxef987654 | 5                | s922       | 36      | test_pool    | 2              | 0.5              | active | shared processor   |
+
+
+> **Note**: KSYS does not create the shared processor pool. You must create it manually in the PowerVS workspace before assigning it to any virtual machine.
+
+
+## DR Rehearsal move at workgroup level
+{: #dr-re-mo-wo-l}
+
+### Disaster Recovery (DR) rehearsal at workgroup level
+{: #drr-ree-mov-wo-ll}
+
+Disaster Recovery (DR) rehearsal at the Workgroup level allows administrators to validate failover readiness without impacting production workloads. The ksysmgr CLI supports DR rehearsal operations by enabling movement and cleanup of Workgroups across DR sites.
+
+### View workgroup information
+{: #ve-wo-in}
+
+Run the following command to list the existing Workgroups and verify their status:
+
+```ksysmgr q wg```
+
+An output that is similar to the following example is displayed:
+
+```
+Name:                          test_WG
+ID:                            4b03e8a0-xxxx-xxxx-xxxx-8bfa973e1fcb
+VMs:                           test_vm
+PartnerVM:                     test_Backup
+State:                         READY_TO_MOVE
+Dr Test State:                 DRTESTCLEANUP_COMPLETED
+Priority:                      Medium
+SkipAutoResync:                OFF
+HomeWorkspace:                 test_workspace_siteA
+BackupWorkspace:               test_workspace_siteB
+ActiveWorkspace:               test_workspace_siteA
+Networks:                      net_mgmt <-> net_mgmt
+CGName:                        cgrp-4a3e-xxxx-xxxx-7c2b2f61d2c9
+Name:                          test2_WG
+ID:                            9a82b701-xxxx-xxxx-xxxx-f4ab0e3f70e0
+VMs:                           test2_vm
+PartnerVM:                     test2_Backup
+State:                         READY_TO_MOVE
+Dr Test State:                 INIT
+Priority:                      Medium
+SkipAutoResync:                OFF
+HomeWorkspace:                 test_workspace_siteA
+BackupWorkspace:               test_workspace_siteB
+ActiveWorkspace:               test_workspace_siteA
+Networks:                      net_mgmt <-> net_mgmt
+CGName:                       cgrp-6f2d-xxxx-xxxx-22487ee0caaa
+```
+
+> **Note**: Ensure the Workgroup state is `READY_TO_MOVE` before initiating a DR rehearsal move.
+
+### Identify site details
+{: #id-si-d}
+
+To determine the source and target sites for the rehearsal, run the following command:
+
+```ksysmgr q site```
+
+An output that is similar to the following example is displayed:
+
+```
+Name:                           TargetSite
+Region:                         lon06
+Workspaces:                     Test_workspace_lon06_new
+ActiveWorkgroups:               test_01_WG
+Name:                           HomeSite
+Region:                         lon04
+Workspaces:                     drawpclon-Lon04-power-workspace
+                                Test_WS_LON_04
+                                customwsLON04
+ActiveWorkgroups:               test_WG
+```
+This confirms the correct site names for use in the move command.
+
+### Perform DR Rehearsal move
+{: #pe-dr-re-mo}
+
+Initiate the DR rehearsal move using the command:
+
+```
+# ksysmgr move wg -h
+ksysmgr move workgroup <name>
+       to=<site_name>
+       [force=<true|false>]
+       [dr_type=<planned|unplanned>]
+       [dr_test=<yes|no>]
+    move => mov*, mv, swi*
+    workgroup => workg*, work_g*, wg
+Note: dr_type=planned is the default
+```
+
+### Parameters
+{: #para-me-ter}
+
+- `<workgroup_name>`: Name of the Workgroup to move (e.g., `alpha_WG`)
+- `<target_site>`: Target site name (e.g., `SiteB`)
+- `dr_test=yes`: Marks the operation as a DR rehearsal (test mode)
+
+An output that is similar to the following example is displayed:
+
+```
+ksysmgr move workgroup test_WG to=TargetSite dr_test=yes
+
+You are initiating a failover rehearsal across sites
+
+Do you wish to proceed? `[y/n]`
+
+`y`
+
+04:36:27   Workgroup dr_test move started for test_WG to TargetSite, this may take a few minutes...
+04:36:38    dr_test move has started for Workgroup test_WG
+04:36:38    Rehearsal VM creation has started for VM test
+04:37:34    Rehearsal VM test_Rehearsal creation has completed
+04:38:16    VM Volumes clone with consistency has started for test_BackUp
+04:38:56    VM Volumes clone with consistency has completed for test_BackUp
+04:38:56    Network Configuration has started for VM test_Rehearsal
+04:39:16    Network Configuration has completed for VM test_Rehearsal
+04:39:17    Volumes attachment has started for VM test_Rehearsal
+04:42:12    Volumes attachment has completed for VM test_Rehearsal
+04:42:22   Boot up on TargetSite Site has started for VM test_Rehearsal
+04:44:05   Boot up on TargetSite Site has completed for VM test_Rehearsal
+04:44:23   dr_test move has completed for Workgroup test_WG
+Workgroup dr_test move completed for Workgroup test_WG to TargetSite
+```
+### View workgroup information
+{: #ve-work-info}
+
+Run the following command to list the existing Workgroups and verify their status:
+
+`ksysmgr q wg`
+
+An output that is similar to the following example is displayed:
+
+```
+Name:                       test_Rehearsal
+UUID:                       xxxx
+State:                      INIT
+Dr Test State:              ACTIVE
+SourceVM:                   test
+ActiveVM:                   no
+IPAddresses:                192.168.x.xxx
+memory_capacity:            2
+Processors:                 0.25
+WorkSpace:                  Test_workspace_lon06_new
+Networks:                   mgmt_net
+
+Name:                       test_BackUp
+UUID:                       fe30xx38-babx-480x-920x-7fafad07c7xx
+State:                      DISCOVERED
+Dr Test State:              SHUTOFF
+Partner:                    test
+CloneVM:                    test_Rehearsal
+ActiveVM:                   no
+IPAddresses:                192.168.x.xxy
+memory_capacity:            0
+Processors:                 0.25
+WorkSpace:                  Test_workspace_lon06_new
+Networks:                   mgmt_net
+
+Name:                       test
+UUID:                       98d4xx06-a2x9-45x1-968x-3c6fb53a5fxx
+State:                      READY_TO_MOVE
+Dr Test State:              ACTIVE_COMPLETED
+Partner:                    test_Rehearsal
+CloneVM:                    yes
+ActiveVM:                   192.168.x.xxz
+IPAddresses:                2
+memory_capacity:            0
+Processors:                 0.25
+WorkSpace:                  Test_workspace_lon06_new
+Networks:                   mgmt_net
+
+Name:                       testtest_01_Backup
+UUID:                       889fxx15-a5dx-476x-be4x-0fficexx9cxx
+State:                      DISCOVERED
+Dr Test State:              SHUTOFF
+Partner:                    no
+CloneVM:                    yes
+ActiveVM:                   192.168.x.xxw
+IPAddresses:                2
+memory_capacity:            0
+Processors:                 0.25
+WorkSpace:                  dravyclon_lon04_power_workspace
+Networks:                   mgmt_net
+```
+
+### Clean Up after DR Rehearsal at workgroup level
+{: #cl-up-wg-le}
+
+Once validation is complete, revert the rehearsal environment usingby running the following command:
+
+```
+ksysmgr cleanup wg -h
+ksysmgr [-f] cleanup workgroup <name>
+      dr_test=<yes>
+      [force=<true|false>]
+    cleanup => clean*
+    workgroup => workg*, work_g*, wg
+```
+An output that is similar to the following example is displayed:
+```
+ksysmgr cleanup wg test1 dr_test=yes
+04:46:33 Workgroup dr_test cleanup started for test1, this may take a few minutes...
+04:46:44 dr_test cleanup has started for Workgroup test1
+04:46:44 VM Volumes clone with consistency delete has started for VM test2
+04:46:44 VM Volumes clone with consistency delete has completed for VM test2
+04:46:44 VM Removal has started for VM test2
+04:48:45 VM Removal has completed for VM test2
+04:48:45 dr_test cleanup has completed for Workgroup test1
+```
+
+> **Note**: This command resets the test environment and returns the Workgroup to its pre-test state.
+
+## DR rehearsal move at site level
+{: #dr-re-mo-si-le}
+
+### Disaster Recovery (DR) rehearsal at site level
+{: #drr-ree-mo-si-lee}
+
+Disaster Recovery (DR) rehearsal at the Site level allows administrators to validate failover readiness across entire sites without impacting production workloads. The ksysmgr CLI supports DR rehearsal operations by enabling site movement and cleanup.
+
+### View site information
+{: #ve-si-info}
+
+Run the following command to list the existing Sites and verify their details:
+
+```ksysmgr q site```
+
+An output similar to the following example is displayed:
+
+```
+Name:                                TargetSite
+Region:                              lon06
+Workspaces:                          Test_workspace_lon06_newActive
+Workgroups:                          test_01_WG
+Name:                                HomeSite
+Region:                              lon04
+Workspaces:                          dravpclon-Lon04-power-workspace
+                                     Test_WS_LON_04 
+                                     customwsLON04Active
+Workgroups:                          test_WG
+```
+This confirms the correct site names for use in the move command.
+
+### Perform DR rehearsal move at site level
+{: #pe-for-dr-re-mo}
+
+Initiate the DR rehearsal move using the following command:
+
+```
+ksysmgr move site -h
+ksysmgr [-f] move site
+    from=<sourcename>
+    to=<sitename>
+    [force=<true|false>]
+    [dr_type=<planned|unplanned>]
+    [dr_test=<yes|no>]
+move => mov*, mv, swi*
+Note: dr_type=planned is the default.
+```
+### Parameters
+{: #pa-ra-meter}
+
+- `<source_site>`: Source site name (e.g., `HomeSite`)
+- `<target_site>`: Target site name (e.g., `TargetSite`)
+- `dr_test=yes`: Marks the operation as a DR rehearsal (test mode)
+
+An output similar to the following example is displayed:
+
+```
+ksysmgr move site from=HomeSite to=TargetSite dr_test=yes
+You are initiating a failover rehearsal across sites
+
+Do you wish to proceed? [y/n\]  
+
+y
+
+03:28:32 Site dr_test move started for TargetSite to HomeSite, this may take a few minutes...
+03:28:32 dr_test move has started for Workgroup test_01_WG
+03:29:37 Rehearsal VM creation has started for VM test
+03:30:41 Rehearsal VM test_Rehearsal creation has completed
+03:31:15 VM Volumes clone with consistency has started for test_BackUp
+03:32:41 VM Volumes clone with consistency has completed for test_BackUp
+03:33:55 Network Configuration has started for VM test_Rehearsal
+03:34:11 Network Configuration has completed for VM test_Rehearsal
+03:34:11 Volumes attachment has started for VM test_Rehearsal
+03:35:55 Volumes attachment has completed for VM test_Rehearsal
+03:35:59 Boot up on HomeSite Site has started for VM test_Rehearsal
+03:35:59 Boot up on HomeSite Site has completed for VM test_Rehearsal
+03:35:59 dr_test move has completed for Workgroup test_01_WG
+Site dr_test move completed for Site TargetSite to HomeSite
+```
+### View managed VMs after DR rehearsal
+{: #ve-man-vms}
+
+Use the following command to list the managed VMs and verify their status:
+```
+ksysmgr q vm state=manage
+```
+An output similar to the following example is displayed:
+
+```
+Name:                              test_Rehearsal
+UUID:                              5de7xxaf-e78x-48bx-a9bx-695b8a2c76xx
+State:                             INIT
+Dr Test State:                     ACTIVE
+SourceVM:                          test
+ActiveVM:                          no
+IPAddresses:                       192.168.x.xxa
+memory_capacity:                   2
+Processors:                        0.25
+WorkSpace:                         Test_workspace_lon06_new
+Networks:                          mgmt_net
+
+Name:                              test_BackUp
+UUID:                              e6aexx89-2c7x-43bx-867x-669426d0c6xx
+State:                             INIT
+Dr Test State:                     ACTIVE
+SourceVM:                          test
+ActiveVM:                          no
+IPAddresses:                       192.168.x.xxb
+memory_capacity:                   0
+Processors:                        0.25
+WorkSpace:                         dravpclon-lon04-power-workspace
+Networks:                          mgmt_net
+
+Name:                              testtest_01_Backup
+UUID:                              889fxx15-a5dx-476x-be4x-0fficexx9cxx
+State:                             DISCOVERED
+Dr Test State:                     SHUTOFF
+Partner:                           test_Rehearsal
+CloneVM:                           no
+ActiveVM:                          no
+IPAddresses:                       192.168.x.xxc
+memory_capacity:                   2
+Processors:                        0.25
+WorkSpace:                         dravpclon-lon04-power-workspace
+Networks:                          mgmt_net
+
+Name:                              test
+UUID:                              28b6xx75-07ex-487x-bb5x-5faedfdc78xx
+State:                             READY_TO_MOVE
+Dr Test State:                     ACTIVE
+Partner:                           test_BackUp
+CloneVM:                           test_Rehearsal
+ActiveVM:                          yes
+IPAddresses:                       192.168.x.xxd
+memory_capacity:                    2
+Processors:                         0.25
+WorkSpace:                          Test_workspace_lon06_new
+Networks:                           mgmt_net
+```
+### Clean up after DR rehearsal at site level
+{: #clean-up}
+
+Once validation is complete, revert the rehearsal environment using:
+
+```
+ksysmgr cleanup site -h
+ksysmgr cleanup site <sitename>
+    dr_test=<yes>
+cleanup => clean*
+```
+An output similar to the following example is displayed:
+```
+ksysmgr clean site test dr_test=yes
+07:26:51 Site dr_test cleanup started for test, this may take a few minutes...
+07:27:02 dr_test cleanup has started for Workgroup test_WG1
+07:27:02 dr_test cleanup has started for Workgroup test_WG2
+07:27:02 VM Removal has started for VM test_VM2_Rehearsal
+07:27:03 VM Volumes clone with consistency delete has started for VM test_VM1_Rehearsal
+07:27:03 VM Volumes clone with consistency delete has completed for VM test_VM1_Rehearsal
+07:27:03 VM Removal has started for VM test_VM1_Rehearsal
+07:28:45 VM Removal has completed for VM test_VM1_Rehearsal
+07:28:50 dr_test cleanup has completed for Workgroup test_WG1
+07:39:56 VM Removal has completed for VM test_VM2_Rehearsal
+07:40:01 dr_test cleanup has completed for Workgroup test_WG2
+Site dr_test cleanup has completed for Site test
+```
+> **Note**: This command resets the test environment and returns the Site to its pre-test state.

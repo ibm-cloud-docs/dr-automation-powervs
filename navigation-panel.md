@@ -27,7 +27,7 @@ On the left of the dashboard, the navigation panel displays KSYS clusters, sites
 - **Workspace Navigation**:
    - Displays the workspace details along with the overall count of associated workgroups and unmanaged VMs for the selected workspace.
    - For example, you can view the count for `VMRM-wdc` and `VMRM-TEST-DAL10`.
-   
+    **Note**: Click **Refresh Workspace** to refresh the topology and display managed and unmanaged VMs and associated workgroups based on the existing configuration.
 
 - **Unmanaged VMs and Workgroups**:
    - Provides the total count of unmanaged VMs and Workgroups that are not yet managed by the system.
