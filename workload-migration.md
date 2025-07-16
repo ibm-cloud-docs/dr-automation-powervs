@@ -6,7 +6,7 @@ lastupdated: "2025-07-16"
 
 subcollection: dr-automation
 
-keywords: migration
+keywords: migration, migration deployment , upgrade, upgrade your deployment
 
 ---
 
