@@ -58,7 +58,7 @@ To migrate your current provision to the latest version, complete the follwoing 
    ksys.license  1.8.0.1  COMMITTED  Base Server Runtime
    ```
 
-   > **Note:** Migration supports only if your deployment is running older versions of `ksys`. You can verify the supported `ksys` levels in the documentation: `<link>`.
+   > **Note:** Migration supports only if your deployment is running older versions of `ksys`. You can verify the supported `ksys` levels in the IBM VMRM DR for Power systems [Upgrading](https://www.ibm.com/docs/en/vmrmdr/1.8.0?topic=installing-upgrading) section .
    > If you're running an older version, proceed with the follwoing steps to upgrade your Orchestrator (ksys) to the latest level.
 
 4. To view the usage options for creating a snapshot, run the following command:
@@ -106,7 +106,7 @@ To migrate your current provision to the latest version, complete the follwoing 
    ```
 6. Now upload the snapshot manually to the IBM COS bucket.
 
-### Restore Snapshot on new deployment
+### Restore snapshot on new deployment
 
 1. Identify your deployment to restore the snapshot.
 
@@ -173,7 +173,7 @@ To migrate your current provision to the latest version, complete the follwoing 
    ksysmgr q clu
    ```
 
-### Final Steps
+### Final step
 
 Deprovision the source deployment from the **Manage DR page** using **Delete Service** from the GUI.
 
