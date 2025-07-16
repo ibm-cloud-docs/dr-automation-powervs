@@ -23,7 +23,7 @@ For AIX, {{site.data.keyword.DR_full_notm}} supports only AIX 7.3, or later. If 
 ## Migration checklist
 {: #check-list}
 
-Before you migrate to a newer IBM Power, review the following checklist:
+Before you migrate to a newer IBM Power systems, review the following checklist:
 
 1. Plan the system migration.
 2. Install the latest required software and apply the available fixes.
@@ -36,7 +36,8 @@ Before you migrate to a newer IBM Power, review the following checklist:
 
 [IBM Technology Expert Labs](https://www.ibm.com/products/expertlabs) has service offerings available to assist you with resolving system, application, and database performance problems. Formal and informal training opportunities are also available where you can learn how to use performance tools and resolve issues on your own.
 
-## Upgrate you deployment
+## Upgrade your deployment
+{: #Upgrade-dep-your}
 
 This section provides a high-level walkthrough for migrating your existing deployment to the latest supported version. It outlines the essential steps for taking a snapshot from the source environment, restoring it on a new deployment, and completing the transition cleanly.
 
@@ -44,7 +45,7 @@ To migrate your current orchestrator to the latest version, complete the followi
 
 1. Identify the Orchestrator VM from the workspace for your deployment.
 
-2. Login to the Orchestrator VM.
+2. Login in to the Orchestrator VM.
 
 3. Check the current version using the following command:
 
@@ -58,8 +59,8 @@ To migrate your current orchestrator to the latest version, complete the followi
    ksys.license  1.8.0.1  COMMITTED  Base Server Runtime
    ```
 
-   > **Note:** Migration supports only if your deployment is running older versions of `ksys`. You can verify the supported `ksys` levels in the IBM VMRM DR for Power systems [Upgrading](https://www.ibm.com/docs/en/vmrmdr/1.8.0?topic=installing-upgrading) section .
-   > If you're running an older version, proceed with the follwoing steps to upgrade your Orchestrator (ksys) to the latest level.
+   > **Note:** Migration supported only if your deployment is running older versions of `ksys`. You can verify the supported `ksys` levels in the IBM VMRM DR for Power systems [Upgrading](https://www.ibm.com/docs/en/vmrmdr/1.8.0?topic=installing-upgrading) section .
+   > If you're running an older version, proceed with the following steps to upgrade your Orchestrator (ksys) to the latest level.
 
 4. To view the usage options for creating a snapshot, run the following command:
 
@@ -80,7 +81,7 @@ To migrate your current orchestrator to the latest version, complete the followi
    ```
    `/var/ksys/snapshots`
    ```
-   - You can create snapshot with specified name prefix and directory using the following command :
+   - You can create a snapshot with specified name prefix and directory using the following command :
    ```
    ksysmgr add snapshot filepath=/<directory>/<name>
    ```
@@ -142,9 +143,9 @@ To migrate your current orchestrator to the latest version, complete the followi
 
    > **Note:** The above command uses the API key stored in the orchestrator to access the COS bucket for downloading the snapshot.
 
-4. After a successful restore, Setup-2 displays all configurations from Setup-1.  
+4. After a successful restore, Setup 2 displays all configurations from Setup 1.  
 
-5. Cleanup the source deployment cluster.
+5. Cleanup up the source deployment cluster.
 
 6. Run the following command to view RSCT (Reliable Scalable Cluster Technology) peer domain details:
 
@@ -159,7 +160,7 @@ To migrate your current orchestrator to the latest version, complete the followi
    QA_rjakka15JulyNonHA_Cluster Online  3.3.2.0           No            12347  12348
    ```
 
-7. Now you will have to cleanup the source deployment using the following commands:
+7. Cleanup the source deployment using the following commands:
 
 - To delete the cluster on the source node, run the following command:
 
