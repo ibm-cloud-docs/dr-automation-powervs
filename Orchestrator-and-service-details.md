@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-08"
+lastupdated: "2025-07-16"
 
 subcollection: dr-automation
 
@@ -15,6 +15,9 @@ keywords: Orchestrator details, Service details, GRS, global replication service
  
 ## Orchestrator details
 {: #orc-det}
+
+**Update API Key**:
+Once the deployment is successful, the **Update API Key** option is enabled. Update the API key and reuse the same key for future actions.
 
 **DR Orchestrator name**:  
 The unique identifier for the primary orchestrator instance responsible for managing DR operations like failover, failback, and replication workflows.
