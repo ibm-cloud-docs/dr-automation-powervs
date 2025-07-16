@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-07-16"
 
 subcollection: dr-automation
 
@@ -35,3 +35,146 @@ Before you migrate to a newer IBM Power, review the following checklist:
 {: #lab-service}
 
 [IBM Technology Expert Labs](https://www.ibm.com/products/expertlabs) has service offerings available to assist you with resolving system, application, and database performance problems. Formal and informal training opportunities are also available where you can learn how to use performance tools and resolve issues on your own.
+
+## Migrate to 1.9.x.x from 1.8.x.x
+
+This section provides a high-level walkthrough for migrating your existing deployment to the latest supported version. It outlines the essential steps for taking a snapshot from the source environment, restoring it on a new deployment, and completing the transition cleanly.
+
+To migrate your current provision to the latest version, complete the follwoing steps:
+
+1. Identify the Orchestrator VM from the workspace for your deployment.
+
+2. Login to the Orchestrator VM.
+
+3. Check the current version using the following command:
+
+   ```
+   lslpp -l | grep ksys.license
+   ```
+
+   An output that is similar to the following example is displayed:
+
+   ```
+   ksys.license  1.8.0.1  COMMITTED  Base Server Runtime
+   ```
+
+   > **Note:** Migration supports only if your deployment is running older versions of `ksys`. You can verify the supported `ksys` levels in the documentation: `<link>`.
+   > If you're running an older version, proceed with the follwoing steps to upgrade your Orchestrator (ksys) to the latest level.
+
+4. To view the usage options for creating a snapshot, run the following command:
+
+   ```
+   ksysmgr add snapshot -h
+   ```
+
+   An output that is similar to the following example is displayed:
+
+   ```
+   ksysmgr add snapshot -h
+         [filepath=<full file prefix path | file prefix>]
+       add => ad*, cr*, make, mk
+       snapshot => snap*
+   ``` 
+
+   - By default, the snapshot is created in the Orchestrator VM in the following path:
+   ```
+   `/var/ksys/snapshots`
+   ```
+   - You can create snapshot with specified name prefix and directory using the following command :
+   ```
+   ksysmgr add snapshot filepath=/<directory>/<name>
+   ```
+   - The snapshot is created in `.tar.gz` format with a timestamp:
+   ```
+   snap.xml_DETAILED_2025-07-11_00:42:32.xml.tar.gz
+   ```
+  
+5. Create a snapshot using the following command:
+
+   ```bash
+   ksysmgr add snapshot
+   ```
+
+   An output that is similar to the following example is displayed:
+   
+    ```
+   Taking snapshot...
+   Successfully created directory: /var/ksys/snapshots
+   Successfully created directory for registry files: /var/ksys/snapshots/reg
+   Created: /var/ksys/snapshots/snap.xml_DETAILED_2025-07-11_00:42:32.xml.tar.gz
+   Successfully created a configuration snapshot: /var/ksys/snapshots/snap.xml_DETAILED_2025-07-11_00:42:32.xml.tar.gz
+   ```
+6. Now upload the snapshot manually to the IBM COS bucket.
+
+### Restore Snapshot on new deployment
+
+1. Identify your deployment to restore the snapshot.
+
+2. Login to the Orchestrator VM.
+
+3. Restore the snapshot uploaded to COS using the following command:
+
+   ```bash
+   ksysmgr restore snap filepath=<snapshot-name> download_from_cos=yes region=<Region> bucketname=<Bucket-Name>
+   ```
+
+   An output that is similar to the following example is displayed:
+
+   ```bash
+   ksysmgr restore snap filepath=snap.xml_DETAILED_2025-07-14_10:51:02.xml.tar.gz download_from_cos=yes region=us-south bucketname=dra-cos-bucket-dev
+
+   Successfully downloaded a configuration snapshot snap.xml_DETAILED_2025-07-14_10:51:02.xml.tar.gz from cos bucket dra-cos-bucket-dev
+   WARNING: This action would remove the existing VMRM configuration
+   Do you wish to proceed? [y|n]
+   y
+   This may take a few minutes to safely remove the ksyscluster
+   11:19:02  Removed tmp files successfully
+   Cleaning up old configuration...!
+   Restoring configuration...
+   Creating cluster...
+   Updating registry...
+   Successfully restored registry files!
+   Starting VMR daemon...
+   Successfully restored snapshot: /var/ksys/snap.xml_DETAILED_2025-07-14_10:51:02.xml!
+   Please run discovery to apply changes.
+   INFO: Restore completed successfully
+   ```
+
+   > **Note:** The above command uses the API key stored in the DB to access the COS bucket for downloading the snapshot.
+
+4. Log in to the Orchestrator UI and run **Discovery** after a successful restore.
+
+   > **Note:** After you complete the restore, Setup-2 displays all configurations from Setup-1.
+
+5. Cleanup the source cluster.
+
+6. Run the following command to view RSCT (Reliable Scalable Cluster Technology) peer domain details:
+
+   ```bash
+   lsrpdomain
+   ```
+
+   An output that is similar to the following example is displayed:
+
+   ```
+   Name  OpState RSCTActiveVersion MixedVersions TSPort GSPort
+   QA_rjakka15JulyNonHA_Cluster Online  3.3.2.0           No            12347  12348
+   ```
+
+7. To delete the cluster on the source node, run the following command:
+
+   ```bash
+   rmrpdomain -f <peer-domain-name>
+   ```
+
+8. To verify that the source node does not display any cluster, run the following command.
+
+   ```bash
+   ksysmgr q clu
+   ```
+
+### Final Steps
+
+Deprovision the source deployment from the **Manage DR page** using **Delete Service** from the GUI.
+
+> **Note:** The VM entry is removed automatically after 24 hours.
