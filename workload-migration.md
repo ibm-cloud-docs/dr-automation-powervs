@@ -36,7 +36,7 @@ Before you migrate to a newer IBM Power, review the following checklist:
 
 [IBM Technology Expert Labs](https://www.ibm.com/products/expertlabs) has service offerings available to assist you with resolving system, application, and database performance problems. Formal and informal training opportunities are also available where you can learn how to use performance tools and resolve issues on your own.
 
-## Upgrate you 
+## Upgrate you deployment
 
 This section provides a high-level walkthrough for migrating your existing deployment to the latest supported version. It outlines the essential steps for taking a snapshot from the source environment, restoring it on a new deployment, and completing the transition cleanly.
 
