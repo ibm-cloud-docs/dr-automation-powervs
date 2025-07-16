@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-08"
+lastupdated: "2025-07-16"
 
 subcollection: dr-automation
 
@@ -21,7 +21,7 @@ On the left of the dashboard, the navigation panel displays KSYS clusters, sites
    - Expand this section to view specific details and take actions that are related to the cluster.
 
 - **Site Navigation (for example, Site-2)**:
-   - Lists regions (for example, `USA`, `India`) with their respective overall counts of associated workspaces, workgroups, and unmanaged VMs.
+   - Lists regions (for example, `us-south`, `eu-de-1`) with their respective overall counts of associated workspaces, workgroups, and unmanaged VMs.
    - Expand a site to explore specific resources.
 
 - **Workspace Navigation**:

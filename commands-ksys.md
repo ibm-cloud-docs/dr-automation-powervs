@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-08"
+lastupdated: "2025-07-16"
 
 subcollection: dr-automation
 
@@ -1529,7 +1529,7 @@ workgroup => workg*, work_g*, wg
 An output that is similar to the following example is displayed:
 
 ```
-# ksysmgr resync wg vmrm_testvm_WG
+ksysmgr resync wg vmrm_testvm_WG
 Workgroup vmrm_testvm_WG resync has started
         23:49:17  Shutdown has started for VM vmrm_testvm_BackUp
         23:49:34  Resync is in progress for Workgroup vmrm_testvm_WG
