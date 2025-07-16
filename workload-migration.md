@@ -36,11 +36,11 @@ Before you migrate to a newer IBM Power, review the following checklist:
 
 [IBM Technology Expert Labs](https://www.ibm.com/products/expertlabs) has service offerings available to assist you with resolving system, application, and database performance problems. Formal and informal training opportunities are also available where you can learn how to use performance tools and resolve issues on your own.
 
-## Migrate to 1.9.x.x from 1.8.x.x
+## Upgrate you 
 
 This section provides a high-level walkthrough for migrating your existing deployment to the latest supported version. It outlines the essential steps for taking a snapshot from the source environment, restoring it on a new deployment, and completing the transition cleanly.
 
-To migrate your current provision to the latest version, complete the follwoing steps:
+To migrate your current orchestrator to the latest version, complete the following steps:
 
 1. Identify the Orchestrator VM from the workspace for your deployment.
 
@@ -84,7 +84,7 @@ To migrate your current provision to the latest version, complete the follwoing 
    ```
    ksysmgr add snapshot filepath=/<directory>/<name>
    ```
-   - The snapshot is created in `.tar.gz` format with a timestamp:
+   - The snapshot is created with a time stamp with the extension of `.tar.gz`
    ```
    snap.xml_DETAILED_2025-07-11_00:42:32.xml.tar.gz
    ```
@@ -112,7 +112,7 @@ To migrate your current provision to the latest version, complete the follwoing 
 
 2. Login to the Orchestrator VM.
 
-3. Restore the snapshot uploaded to COS using the following command:
+3. Restore the snapshot using the following command from the snapshot which was uploaded to COS:
 
    ```bash
    ksysmgr restore snap filepath=<snapshot-name> download_from_cos=yes region=<Region> bucketname=<Bucket-Name>
@@ -140,13 +140,11 @@ To migrate your current provision to the latest version, complete the follwoing 
    INFO: Restore completed successfully
    ```
 
-   > **Note:** The above command uses the API key stored in the DB to access the COS bucket for downloading the snapshot.
+   > **Note:** The above command uses the API key stored in the orchestrator to access the COS bucket for downloading the snapshot.
 
-4. Log in to the Orchestrator UI and run **Discovery** after a successful restore.
+4. After a successful restore, Setup-2 displays all configurations from Setup-1.  
 
-   > **Note:** After you complete the restore, Setup-2 displays all configurations from Setup-1.
-
-5. Cleanup the source cluster.
+5. Cleanup the source deployment cluster.
 
 6. Run the following command to view RSCT (Reliable Scalable Cluster Technology) peer domain details:
 
@@ -161,13 +159,15 @@ To migrate your current provision to the latest version, complete the follwoing 
    QA_rjakka15JulyNonHA_Cluster Online  3.3.2.0           No            12347  12348
    ```
 
-7. To delete the cluster on the source node, run the following command:
+7. Now you will have to cleanup the source deployment using the following commands:
+
+- To delete the cluster on the source node, run the following command:
 
    ```bash
    rmrpdomain -f <peer-domain-name>
    ```
 
-8. To verify that the source node does not display any cluster, run the following command.
+- Run the following command to verify if the cluster is deleted or not:
 
    ```bash
    ksysmgr q clu
@@ -177,4 +177,4 @@ To migrate your current provision to the latest version, complete the follwoing 
 
 Deprovision the source deployment from the **Manage DR page** using **Delete Service** from the GUI.
 
-> **Note:** The VM entry is removed automatically after 24 hours.
+> **Note:** The VM is removed automatically after 24 hours.
