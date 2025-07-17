@@ -143,8 +143,7 @@ To migrate your current orchestrator to the latest version, complete the followi
    - If you want to restore a snapshot from your node instead of COS, run the following command:
    ```bash
    ksysmgr restore snap -h
-
-ksysmgr restore snapshot
+   ksysmgr restore snapshot
       filepath=<full file prefix path>
       [download_from_cos=<yes | no>]
       [region=<cos_region>]
@@ -154,6 +153,7 @@ ksysmgr restore snapshot
     snapshot => snap*
     ```
    > **Note**: Copy the snapshot to the `Example:/snap1` directory on the node, and then restore it using the file path from that location.
+
     An output that is similar to the following example is displayed:
     ```bash
    ksysmgr restore snapshot filepath=/snap1/snap.xml_DETAILED_2025-07-15_07:12:02.xml.tar.gz
