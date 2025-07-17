@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-16"
+lastupdated: "2025-07-17"
 
 subcollection: dr-automation
 
@@ -140,6 +140,39 @@ To migrate your current orchestrator to the latest version, complete the followi
    Please run discovery to apply changes.
    INFO: Restore completed successfully
    ```
+   - If you want to restore a snapshot from your node instead of COS, run the following command:
+   ```bash
+   ksysmgr restore snap -h
+
+ksysmgr restore snapshot
+      filepath=<full file prefix path>
+      [download_from_cos=<yes | no>]
+      [region=<cos_region>]
+      [bucketname=<cos_bucket_name>]
+      [apikey=<apikey>]
+    restore => resto*
+    snapshot => snap*
+    ```
+   > **Note**: Copy the snapshot to the `Example:/snap1` directory on the node, and then restore it using the file path from that location.
+    An output that is similar to the following example is displayed:
+    ```bash
+   ksysmgr restore snapshot filepath=/snap1/snap.xml_DETAILED_2025-07-15_07:12:02.xml.tar.gz
+   WARNING: This action would remove the existing VMRM configuration
+   Do you wish to proceed? [y|n]
+   y
+   This may take a few minutes to safely remove the ksysclsuter
+   01:32:49  Removed tmp files successfully
+   This may take a few minutes to remove the ksyscluster
+   Cleaning up old configuration...!
+   Restoring configuration...
+   Creating cluster...
+   Updating registry...
+   Successfully restored registry files!
+   Starting VMR daemon...
+   Successfully restored snapshot:/snap1/snap.xml_DETAILED_2025-07-15_07:12:02.xml!
+   Please run discovery to apply changes.
+   INFO: Restore completed successfully
+    ```
 
    > **Note:** The above command uses the API key stored in the orchestrator to access the COS bucket for downloading the snapshot.
 
