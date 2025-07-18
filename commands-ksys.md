@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-16"
+lastupdated: "2025-07-18"
 
 subcollection: dr-automation
 
@@ -1826,9 +1826,9 @@ Note: dr_type=planned is the default
 ### Parameters
 {: #para-me-ter}
 
-- `<workgroup_name>`: Name of the Workgroup to move (e.g., `alpha_WG`)
-- `<target_site>`: Target site name (e.g., `SiteB`)
-- `dr_test=yes`: Marks the operation as a DR rehearsal (test mode)
+- **from:** Source site name (e.g., `HomeSite`)  
+- **to:** Target site name (e.g., `TargetSite`)
+
 
 An output that is similar to the following example is displayed:
 
@@ -1995,9 +1995,9 @@ Note: dr_type=planned is the default.
 ### Parameters
 {: #pa-ra-meter}
 
-- `<source_site>`: Source site name (e.g., `HomeSite`)
-- `<target_site>`: Target site name (e.g., `TargetSite`)
-- `dr_test=yes`: Marks the operation as a DR rehearsal (test mode)
+- **from:** Source site name (e.g., `HomeSite`)  
+- **to:** Target site name (e.g., `TargetSite`)
+
 
 An output similar to the following example is displayed:
 

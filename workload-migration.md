@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-17"
+lastupdated: "2025-07-18"
 
 subcollection: dr-automation
 
@@ -47,7 +47,7 @@ To migrate your current orchestrator to the latest version, complete the followi
 
 2. Login in to the Orchestrator VM.
 
-3. Check the current version using the following command:
+3. Check the current version of Orchestrator/KSYS using the following command:
 
    ```
    lslpp -l | grep ksys.license
@@ -59,7 +59,7 @@ To migrate your current orchestrator to the latest version, complete the followi
    ksys.license  1.8.0.1  COMMITTED  Base Server Runtime
    ```
 
-   > **Note:** Migration supported only if your deployment is running older versions of `ksys`. You can verify the supported `ksys` levels in the IBM VMRM DR for Power systems [Upgrading](https://www.ibm.com/docs/en/vmrmdr/1.8.0?topic=installing-upgrading) section .
+   > **Note:** Migration is supported only if your deployment is running older versions of `ksys`. You can verify the supported `ksys` levels in the IBM VMRM DR for Power systems [Upgrading](https://www.ibm.com/docs/en/vmrmdr/1.8.0?topic=installing-upgrading) section .
    > If you're running an older version, proceed with the following steps to upgrade your Orchestrator (ksys) to the latest level.
 
 4. To view the usage options for creating a snapshot, run the following command:
@@ -209,6 +209,6 @@ To migrate your current orchestrator to the latest version, complete the followi
 
 ### Final step
 
-Deprovision the source deployment from the **Manage DR page** using **Delete Service** from the GUI.
+Deprovision the source deployment from the **Manage DR page** using Delete Service under **Action** from the GUI.
 
 > **Note:** The VM is removed automatically after 24 hours.
