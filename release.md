@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-16"
+lastupdated: "2025-07-21"
 subcollection: dr-automation
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -22,7 +22,7 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 **Advanced Operations for disaster recovery validation and control**
 
 - **Failover Rehearsal**
-Simulate a disaster recovery event without impacting production by creating a temporary rehearsal VM at the backup site. This feature helps validate DR readiness in both site and workgroup scopes. For more information, see [Failover Rehearsal](/docs/dr-automation-powervs?topic=dr-automation-powervs-ad-vance-load#Fa-il-over).
+Simulate a disaster recovery event without impacting production by creating a temporary rehearsal VM at the backup site. This feature helps validate DR readiness in both site and workgroup scopes. For more information, see [Failover Rehearsal](/docs/dr-automation-powervs?topic=dr-automation-powervs-ad-vance-load#Fa-il-over).
 
 - **Clean up**
 Remove temporary rehearsal VMs created during a failover rehearsal to restore the environment to its original state. For more information, see [Clean up](/docs/dr-automation-powervs?topic=dr-automation-powervs-ad-vance-load#cl-ea-nup).
@@ -31,7 +31,7 @@ Remove temporary rehearsal VMs created during a failover rehearsal to restore th
 Synchronize backup VMs with the latest configuration and data from the active site after DR tests, rehearsals, or changes. For more information, see [Re‑Sync](/docs/dr-automation-powervs?topic=dr-automation-powervs-ad-vance-load#re-sy-nc).
 
 **Refresh workspace option for updated topology view**
-You can now use the Refresh Workspace option to update the workspace topology and display the latest managed and unmanaged VMs along with their associated workgroups. For more information, see [Refresh workspace](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan)
+You can now use the Refresh Workspace option to update the workspace topology and display the latest managed and unmanaged VMs along with their associated workgroups. For more information, see [Refresh workspace](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan).
 
 **Orchestrator external connectivity status**
 A new status indicator shows whether the orchestrator can connect to all required IBM Cloud APIs and external services. This helps validate network readiness for successful DR operations. For more information, see [Orchestrator connectivity status](/docs/dr-automation-powervs?topic=dr-automation-powervs-or-ser-de).
