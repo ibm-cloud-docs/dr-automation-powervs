@@ -22,27 +22,35 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 **Advanced Operations for disaster recovery validation and control**
 
 - **Failover Rehearsal**
+
 Simulate a disaster recovery event without impacting production by creating a temporary rehearsal VM at the backup site. This feature helps validate DR readiness in both site and workgroup scopes. For more information, see [Failover Rehearsal](/docs/dr-automation-powervs?topic=dr-automation-powervs-ad-vance-load#Fa-il-over).
 
 - **Clean up**
+
 Remove temporary rehearsal VMs created during a failover rehearsal to restore the environment to its original state. For more information, see [Clean up](/docs/dr-automation-powervs?topic=dr-automation-powervs-ad-vance-load#cl-ea-nup).
 
 - **Re‑Sync**
+
 Synchronize backup VMs with the latest configuration and data from the active site after DR tests, rehearsals, or changes. For more information, see [Re‑Sync](/docs/dr-automation-powervs?topic=dr-automation-powervs-ad-vance-load#re-sy-nc).
 
 **Refresh workspace option for updated topology view**
+
 You can now use the Refresh Workspace option to update the workspace topology and display the latest managed and unmanaged VMs along with their associated workgroups. For more information, see [Refresh workspace](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan).
 
 **Orchestrator external connectivity status**
+
 A new status indicator shows whether the orchestrator can connect to all required IBM Cloud APIs and external services. This helps validate network readiness for successful DR operations. For more information, see [Orchestrator connectivity status](/docs/dr-automation-powervs?topic=dr-automation-powervs-or-ser-de).
 
 **Shared Processor Pool configuration for virtual machines**
+
 You can now assign a virtual machine to a shared processor pool to optimize resource usage and reduce licensing costs. Use the CLI to enable the shared processor setting during VM management or modify it later. Shared processor pools must be pre-created in the target PowerVS workspace. For more details, see [Shared Processor Pool configuration](/docs/dr-automation-powervs?topic=dr-automation-powervs-ksysmgr-commandorchestrator#es-pp-vm).
 
 **Failover rehearsal at workgroup level**
+
 You can now perform DR rehearsal operations at the workgroup level using the CLI, allowing safe failover simulation without impacting production workloads. This includes moving a workgroup for rehearsal and cleaning up the test environment after validation. For more details, see [Failover Rehearsal at workgroup level](/docs/dr-automation-powervs?topic=dr-automation-powervs-ksysmgr-commandorchestrator#dr-rehearsal-move-at-workgroup-level).
 
 **Upgrade your deployment to the latest orchestrator version**
+
 Use a snapshot to migrate your deployment to the latest orchestrator version. Create and upload the snapshot to IBM COS, then restore it on the new deployment. After migration, clean up the source cluster and delete the service. For more information, see [Upgrade your deployment](https://test.cloud.ibm.com/docs/dr-automation-powervs?topic=dr-automation-powervs-plan-work-load#upgrate-you-deployment).
 
 
