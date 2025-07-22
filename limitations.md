@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-04"
+lastupdated: "2025-07-22"
 
 subcollection: dr-automation
 
@@ -18,6 +18,16 @@ IBM® strives to keep issues in {{site.data.keyword.DR_full}} to a minimum, but 
 
 ## External orchestrator
 {: #ext}
+
+## July 2025
+{: #jul-25}
+
+1. DR Rehearsal does not support shared processor pool.
+2. Rehearsal supports VMs with a maximum of 30 disks.
+3. Unmanaging multiple VMs in parallel is not supported in the current release. Unmanaging  operations must be performed one VM at a time to avoid system crashes.
+
+## December 2024
+{: #dec-cem-24}
 
 1. Ensure that no backup workspace VM with the same name, prefixed with `_BackUp`, exists during discovery when creating a fresh cluster. If such a VM exists, it will cause the discovery process to fail and may impact existing backup VMs.
 2. If a VM is configured with a public IP in the PowerVS environment, and static IP settings are enabled at both the system and workspace levels from Orchestrator(KSYS), we will not retain the same IP settings after performing a planned or unplanned move operation on the target site.
