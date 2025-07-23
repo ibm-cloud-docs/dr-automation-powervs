@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-18"
+lastupdated: "2025-07-23"
 
 subcollection: dr-automation
 
@@ -212,3 +212,4 @@ To migrate your current orchestrator to the latest version, complete the followi
 Deprovision the source deployment from the **Manage DR page** using Delete Service under **Action** from the GUI.
 
 > **Note:** The VM is removed automatically after 24 hours.
+> **Note:** When planning the migration, ensure that the source and destination configurations are identical. Both must be either a single KSYS deployment or a KSYS HA deployment. Migration is not supported if the snapshot is taken from a single KSYS deployment and restored on a KSYS HA deployment, or in the opposite deployment configuration.
