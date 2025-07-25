@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-25"
+lastupdated: "2025-07-16"
 
 subcollection: dr-automation
 
@@ -19,7 +19,7 @@ The **Events** tab in the {{site.data.keyword.DR_full}} interface provides an ov
 ## Accessing the event logs
 {: #access-log}
 
-You can access a maximum of 400 events for the current and previous months in the IBM Cloud console. To see the event logs, complete the following steps:
+You can access a maximum of 100 events for the current and previous months in the IBM Cloud console. To see the event logs, complete the following steps:
 
 1. Log in to the [IBM Cloud catalog](https://cloud.ibm.com/catalog) with your credentials.
 2. In the catalog's **search box**, type {{site.data.keyword.DR_full}}, and click the Workspace for {{site.data.keyword.DR_full_notm}} tile.

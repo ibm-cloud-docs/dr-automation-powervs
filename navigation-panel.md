@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-08"
+lastupdated: "2025-07-16"
 
 subcollection: dr-automation
 
@@ -21,13 +21,13 @@ On the left of the dashboard, the navigation panel displays KSYS clusters, sites
    - Expand this section to view specific details and take actions that are related to the cluster.
 
 - **Site Navigation (for example, Site-2)**:
-   - Lists regions (for example, `USA`, `India`) with their respective overall counts of associated workspaces, workgroups, and unmanaged VMs.
+   - Lists regions (for example, `us-south`, `eu-de-1`) with their respective overall counts of associated workspaces, workgroups, and unmanaged VMs.
    - Expand a site to explore specific resources.
 
 - **Workspace Navigation**:
    - Displays the workspace details along with the overall count of associated workgroups and unmanaged VMs for the selected workspace.
    - For example, you can view the count for `VMRM-wdc` and `VMRM-TEST-DAL10`.
-   
+    **Note**: Click **Refresh Workspace** to refresh the topology and display managed and unmanaged VMs and associated workgroups based on the existing configuration.
 
 - **Unmanaged VMs and Workgroups**:
    - Provides the total count of unmanaged VMs and Workgroups that are not yet managed by the system.

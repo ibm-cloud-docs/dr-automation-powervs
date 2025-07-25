@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-06-25"
+lastupdated: "2025-07-17"
 
 subcollection: dr-automation-powervs
 
@@ -137,7 +137,7 @@ For more details, refer to the specific data sheets and hardware overview table.
 
 - The Orchestrator (KSYS) Power Virtual Server instance is deployed with 0.5 cores and 4 GB of memory however, larger environments with over 100 VMs require more resources. You can increase this configuration after the initial deployment by modifying power virtual server properties with in the workspace.
 
-- The KSYS logical partition runs IBM® AIX® 7.3 with Technology Level 1 Service Pack 1 (7300-01-01).
+- The KSYS logical partition runs IBM® AIX® 7.3 with Technology Level 2 Service Pack 1 (7300-02-01).
 
 - IBM Power Virtual Server Public Cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers and configuring them as managed virtual machines to enable DR.
 
