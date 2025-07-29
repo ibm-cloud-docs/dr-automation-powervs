@@ -22,7 +22,7 @@ Follow these steps to create a Power Virtual Server instance for disaster recove
 
 1. Log in to the [**IBM Cloud catalog**](https://cloud.ibm.com/catalog) with your credentials.
 2. In the **search box**, type {{site.data.keyword.DR_full}} and click the corresponding tile.
-3. Select the Disaster Recovery location from the drop-down list. Choose IBM Cloud or Client location, depending on your deployment model.
+3. Select the Disaster Recovery location from the drop-down list. Choose **IBM Cloud** or **Client location**, depending on your deployment model.
    - This is where the virtual server instances will replicate for disaster recovery.
 
  > **Note**:If you select Client location, a Managed VM for disaster recovery is provisioned within your PowerVS workspace.
