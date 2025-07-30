@@ -126,6 +126,8 @@ The IBM Cloud catalog supports accurate billing and comprehensive reporting, ens
 ## Hardware specifications
 {: #hs-private}
 
+For more information about IBM Cloud regions can host connections from the pods for IBM Power Virtual Server in Client location, see [IBM Satellite location](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-satellite-location-spec-private-cloud).
+
 IBM Power servers that are supported by {{site.data.keyword.DR_full_notm}} include:
 
 - **IBM Power S922**
