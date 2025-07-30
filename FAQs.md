@@ -189,4 +189,4 @@ The location type displayed during provisioning depends on the selected plan. Th
 
 **Private plan**: Displays **Client Location** as the location type, indicating that the infrastructure is physically deployed at the client site and managed remotely by IBM.
 
-This mapping is intentional and helps distinguish between public cloud deployments and private, on-premises (Private Pod) environments.
+This mapping is intentional and helps distinguish between public and private (on-premises, Private Pod environments) cloud deployments.
