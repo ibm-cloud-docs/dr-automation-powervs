@@ -7,7 +7,6 @@ subcollection: dr-automation
 
 keywords: cloud satellite, sate;lite, data center, client location
 
-<span class="ibm-label ibm-label--red">Client location</span>
 ---
 
 # IBM Satellite location
