@@ -211,7 +211,7 @@ The user is unable to select a Disaster Recovery location or does not see any wo
 
 This issue occurs when no PowerVS workspace is available in the selected location, preventing the provisioning of a Managed VM for disaster recovery.
 
-## How to fix it
+### How to fix it
 {: tsResolve-fix}
 
 1. In the VM Recovery Manager DR GUI, go to the section where you configure the DR plan.
