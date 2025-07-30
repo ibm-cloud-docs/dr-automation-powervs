@@ -13,16 +13,16 @@ keywords: cloud satellite, sate;lite, data center, client location
 
 The following IBM Cloud regions can host connections from the pods for {{site.data.keyword.DR_short}} Private Cloud in your data center:
 
-Dallas (satcon_dal)
-Frankfurt (satcon_fra)
-London (satcon_lon)
-Madrid (satcon_mad)
-Osaka (satcon_osa)
-Sao Paulo (satcon_sao)
-Sydney (satcon_syd)
-Tokyo (satcon_tok)
-Toronto (satcon_tor)
-Washington, DC (satcon_wdc)
+- Dallas (satcon_dal)
+- Frankfurt (satcon_fra)
+- London (satcon_lon)
+- Madrid (satcon_mad)
+- Osaka (satcon_osa)
+- Sao Paulo (satcon_sao)
+- Sydney (satcon_syd)
+- Tokyo (satcon_tok)
+- Toronto (satcon_tor)
+- Washington, DC (satcon_wdc)
 
 Selection of IBM Cloud region is one of the factors for computing pricing.
 
