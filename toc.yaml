@@ -16,8 +16,12 @@ toc:
       id: learn
       topics:
       - getting-started-with-powerVS.md
-      - cloud-regions.md
       - release.md
+      - topicgroup:
+              label: Locations
+              topics:
+              - cloud-regions.md
+              - satellite-location.md
       - topicgroup:
               label: Architecture
               topics:
