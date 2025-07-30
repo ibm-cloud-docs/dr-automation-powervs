@@ -184,6 +184,7 @@ Additionally, the system automatically adds all default networks configured for 
  For detailed steps on connecting to the Power Virtual Server with VPC, refer to [Connect using a client-to-site VPN](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-solution-connect-client-vpn).
 
 ## Data center capabilities
+{: #data-center-capability}
 
 You can check and compare the data center capabilities among three different infrastructure locations on the overview page of the [IBM Power Virtual Server DR Automation](https://cloud.ibm.com/catalog/services/power-virtual-server-dr-automation?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPVBvd2VyVlMjc2VhcmNoX3Jlc3VsdHM%3D#:~:text=IBM%20Power%20Virtual%20Server%20DR,operations%20with%20minimal%20manual%20intervention.) in the IBM Cloud console. You can also use the external interfaces such as API, CLI, and Terraform to check your data center capabilities.
 
