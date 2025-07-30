@@ -197,7 +197,7 @@ The Orchestrator is unable to establish a connection with any IBM Cloud services
 
 Refer to the topic [How to fix it](#how-to-fix-it-7) for guidance on resolving the inactive state of the Orchestrator's external connectivity.
 
-### Why are no workspaces listed after selecting Client location?
+## Why are no workspaces listed after selecting Client location?
 {: #select-dr-loca}
 {: troubleshoot}
 
