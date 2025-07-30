@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-07-30"
 
 subcollection: dr-automation
 
@@ -15,10 +15,14 @@ keywords: private pod, client location
 # Architecture for {{site.data.keyword.DR_full_notm}} in Client location
 {: #arch-private-pod}
 
-{{site.data.keyword.DR_full}}  for client location is a specialized disaster recovery (DR) solution tailored for enterprise environments that span across public IBM Cloud and private cloud infrastructure. This setup supports hybrid DR deployments, where orchestration occurs from public PowerVS workspaces while the actual managed virtual machines (VMs) may reside within a client location.
+{{site.data.keyword.DR_full}} automatically orchestrate disaster recovery for managed workloads from your data center(Client location). The infrastructure, compute, storage, and network are physically deployed at your location(Client location) and managed by IBM Cloud platform. DR automation is available only if your environment supports Geo-Redundant Storage (GRS), which replicates data across geographically separated sites. With GRS configured, the solution automatically triggers failover and recovery operations, reducing downtime and ensuring business continuity without manual intervention.
 {: shortdesc}
 
+
+
+
 Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} for client location architecture, features, hardware requirements, and network configurations.
+
 
 ## Table of contents
 {: #toc-pri}
