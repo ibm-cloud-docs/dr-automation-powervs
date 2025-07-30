@@ -34,6 +34,7 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 - [Hardware Specifications](#hs)
 - [Supported Storage Tiers](#sst)
 - [Network Configurations](#ns)
+- [Data center capabilities](#data-center-capabilities)
 
 
 ## High-Level architecture
@@ -181,6 +182,15 @@ When KSYSHA is enabled, a standby Orchestrator is created in the user selected w
 Additionally, the system automatically adds all default networks configured for Power Virtual Servers to the security group to enable communication during the **Power Virtual Server with VPC landing zone** creation. If you create new subnets in the Power Virtual Server workspace, you must add them to the security group to enable communication with the VPC. For more details, refer to [VPC Security](https://cloud.ibm.com/docs/vpc?topic=vpc-security-in-your-vpc).
 
  For detailed steps on connecting to the Power Virtual Server with VPC, refer to [Connect using a client-to-site VPN](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-solution-connect-client-vpn).
+
+## Data center capabilities
+
+You can check and compare the data center capabilities among three different infrastructure locations on the overview page of the [IBM Power Virtual Server DR Automation](https://cloud.ibm.com/catalog/services/power-virtual-server-dr-automation?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPVBvd2VyVlMjc2VhcmNoX3Jlc3VsdHM%3D#:~:text=IBM%20Power%20Virtual%20Server%20DR,operations%20with%20minimal%20manual%20intervention.) in the IBM Cloud console. You can also use the external interfaces such as API, CLI, and Terraform to check your data center capabilities.
+
+For example, you can determine the support for the following capabilities in your infrastructure:
+
+- Machine types (Power11)
+- Global Replication Service (GRS)
 
 ## Setting Up {{site.data.keyword.DR_short}}
 {: #setup-private}
