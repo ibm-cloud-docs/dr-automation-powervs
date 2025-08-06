@@ -3,24 +3,29 @@ copyright:
   years: 2025
 lastupdated: "2025-07-30"
 
-subcollection: dr-automation-powervs
+subcollection: dr-automation
 
-keywords: architecture
+keywords: private pod, client location
 
 ---
 
+
 {{site.data.keyword.attribute-definition-list}}
 
-# Architecture for {{site.data.keyword.DR_full_notm}} in IBM data center
-{: #arch}
+# Architecture for {{site.data.keyword.DR_full_notm}} in Client location
+{: #arch-private-pod}
 
-{{site.data.keyword.DR_full}} is located in the IBM data centers, is a robust disaster recovery solution that is designed for IBM data centers, distinct from general IBM Cloud resources. This solution uses dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.
+{{site.data.keyword.DR_full}} automatically orchestrate disaster recovery for managed workloads from your data center(Client location). The infrastructure, compute, storage, and network are physically deployed at your location(Client location) and managed by IBM Cloud platform. DR automation is available only if your environment supports Geo-Redundant Storage (GRS), which replicates data across geographically separated sites. With GRS configured, the solution automatically triggers failover and recovery operations, reducing downtime and ensuring business continuity without manual intervention.
 {: shortdesc}
 
-Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} architecture, features, hardware requirements, and network configurations.
+
+
+
+Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} for client location architecture, features, hardware requirements, and network configurations.
+
 
 ## Table of contents
-{: #toc}
+{: #toc-pri}
 
 - [High-Level Architecture](#high)
 - [DR Service broker architecture](#service-broker)
@@ -29,10 +34,11 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 - [Hardware Specifications](#hs)
 - [Supported Storage Tiers](#sst)
 - [Network Configurations](#ns)
+- [Data center capabilities](#data-center-capabilities)
 
 
 ## High-Level architecture
-{: #high}
+{: #high-private}
 
 The **{{site.data.keyword.DR_full_notm}}** system operates within IBM Power Virtual data centers, which are isolated from the core IBM Cloud environment. Using dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
 
@@ -42,63 +48,63 @@ The **Orchestrator (KSYS)** is crucial in coordinating DR workflows, ensuring vi
 
 This setup provides a secure, seamless DR solution that integrates with your production environment, enabling smooth failover and failback to maintain business continuity in unexpected events.
 
-![DR Automation Architecture](images/dr-automation-architecture.svg "DR Automation Architecture"){: caption="DR Automation Architecture" caption-side="bottom"}
+![DR Automation Architecture](images/architecture-diagrams-deployment-private-pod.svg "architecture-diagrams-deployment-private-pod"){: caption="DR Automation Architecture for Client location" caption-side="bottom"}
 
 ## DR Service broker architecture
-{: #service-broker}
+{: #service-broker-private}
 
 The **DR Service Broker** within IBM Cloud is central to provisioning and managing DR orchestration for PowerVS. Operating as a dedicated component, it handles critical functions, including billing, resource management, and service orchestration.
 
 ### Service provisioning
-{: #serv-pro}
+{: #serv-pro-private}
 
 The Service Broker deploys the DR Orchestrator (KSYS) VM within the PowerVS workspace, using PowerVS APIs to establish and manage DR operations. This process enables seamless integration of DR orchestration capabilities specific to each user account.
 
 ### Connectivity and communication
-{: #Conn}
+{: #Conn-private}
 
 Through IBM Cloud VPN and VPC services, the DR Orchestrator communicates securely with the Service Broker. Connections from external clients or users are routed through IBM’s secure networking layers to ensure high availability and low latency during DR operations.
 
 ### Resource management and billing integration
-{: #resource}
+{: #resource-private}
 
 The Service WebSphere Message Broker updates DR metrics to IBM’s billing system (BSS) based on individual instances, providing granular billing data per customer. It ensures that usage is reported accurately for each instance and maintains a high level of automation in resource accounting.
 
 ### Interface accessibility
-{: #inter}
+{: #inter-private}
 
 The {{site.data.keyword.DR_short}} Service Broker, accessible via the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with IBM’s broader catalog for resource provisioning.
 
 ## DR Orchestrator (KSYS) architecture
-{: #ksys-arch}
+{: #ksys-arch-private}
 
 The **DR Orchestrator (KSYS)**, acting as the operational core within user accounts, is critical in running and managing DR workflows, specifically for PowerVS instances. This component manages the deployment, configuration, and operation of VMs required during DR.
 
 ### VM Orchestration and workflow management
-{: #vmorch}
+{: #vmorch-private}
 
 KSYS brings VMs online in the required sequence during a disaster, minimizing RTO and RPO. This workflow automation ensures systematic failover and recovery, essential for maintaining business continuity.
 
 ### Custom metrics and monitoring
-{: #custom}
+{: #custom-private}
 
 KSYS regularly updates custom DR metrics, securely transmitting to the Service Broker by using DR Automation API and adhering to authentication protocols. This allows ongoing monitoring and helps identify and address anomalies in real-time. These metric data can be reviewed in IBM Cloud Monitor with Power Virtual Server DR Automation dash board and you can see the metric name `managed_vm_count` that shows for each deployment how many number of managed VMs are enabled for DR. For More details click [IBM cloud monitoring](https://cloud.ibm.com/docs/monitoring?topic=monitoring-getting-started).
 
 ### Provisioning and configuration management
-{: #provision}
+{: #provision-private}
 
 The Service Broker provisioning capabilities allow KSYS to configure with essential user inputs and monitored to ensure alignment with the recovery environment. Also, it offers a GUI URL accessible through IBM’s catalog, enabling users to monitor and manage configurations in real-time.
 
 ### High availability (Optional)
-{: #ha}
+{: #ha-private}
 
 For enhanced resilience, KSYS supports High Availability (HA) setup, ensuring continuous operation and reducing single points of failure.
 
 ## Key features
-{: #key}
+{: #key-private}
 
 ### Simplified disaster recovery management
-{: #simplify}
+{: #simplify-private}
 
 {{site.data.keyword.DR_short}} provides a single interface to manage DR processes for IBM PowerVS environments. Key features include:
 
@@ -112,16 +118,15 @@ Customizable recovery settings
 :   Define recovery priorities and configurations for different VMs or applications.
 
 ### Flexible billing model
-{: #flex}
+{: #flex-private}
 
 {{site.data.keyword.DR_short}} follows a usage-based billing model, with flexible options based on the selected resources and configurations.
 The IBM Cloud catalog supports accurate billing and comprehensive reporting, ensuring that customers have clear visibility into DR-related costs.
 
-
-
-
 ## Hardware specifications
-{: #hs}
+{: #hs-private}
+
+For more information about IBM Cloud regions can host connections from the pods for IBM Power Virtual Server in Client location, see [IBM Satellite location](/docs/dr-automation-powervs?topic=dr-automation-powervs-ibm-satellite-location).
 
 IBM Power servers that are supported by {{site.data.keyword.DR_full_notm}} include:
 
@@ -133,7 +138,7 @@ IBM Power servers that are supported by {{site.data.keyword.DR_full_notm}} inclu
 For more details, refer to the specific data sheets and hardware overview table.
 
 ## Software requirements
-{: #sr}
+{: #sr-private}
 
 - The Orchestrator (KSYS) Power Virtual Server instance is deployed with 0.5 cores and 4 GB of memory however, larger environments with over 100 VMs require more resources. You can increase this configuration after the initial deployment by modifying power virtual server properties with in the workspace.
 
@@ -144,12 +149,12 @@ For more details, refer to the specific data sheets and hardware overview table.
 The configuration is complete, you can add all the supported Power Virtual Server instances as Managed VMs to enable DR.
 
 ## API key
-{: #apikey}
+{: #apikey-private}
 
 In {{site.data.keyword.DR_short}}, user can set up cross-account API keys to allow secure and restricted access between different IBM Cloud accounts. Cross-account API keys enable scenarios where resources or services in one account need to interact with those in another account, ensuring proper identity and access management with [IBM cloud guidelines](https://cloud.ibm.com/docs/account?topic=account-create-trusted-profile&interface=ui).
 
 ## Supported storage tiers
-{: #sst}
+{: #sst-private}
 
 {{site.data.keyword.DR_short}} offers storage with configurable IOPS levels to meet diverse DR requirements:
 
@@ -163,10 +168,10 @@ Storage is allocated based on deployment needs, ensuring efficient usage of reso
 
 
 ## Network configurations
-{: #ns}
+{: #ns-private}
 
 ### Connectivity for Orchestrator UI:
-{: #cfoui}
+{: #cfoui-private}
 
 As part of the DR Automation deployment, the system creates the Orchestrator (KSYS) virtual server with private networks only, preventing direct access to the Power Virtual Server. To access this virtual server, you must use a VPN connected to the VPC or manually enable the public network after deployment.
 
@@ -180,8 +185,18 @@ Additionally, the system automatically adds all default networks configured for 
 
  For detailed steps on connecting to the Power Virtual Server with VPC, refer to [Connect using a client-to-site VPN](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-solution-connect-client-vpn).
 
+## Data center capabilities
+{: #data-center-capability}
+
+You can check and compare the data center capabilities among three different infrastructure locations on the overview page of the [IBM Power Virtual Server DR Automation](https://cloud.ibm.com/catalog/services/power-virtual-server-dr-automation?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPVBvd2VyVlMjc2VhcmNoX3Jlc3VsdHM%3D#:~:text=IBM%20Power%20Virtual%20Server%20DR,operations%20with%20minimal%20manual%20intervention.) in the IBM Cloud console. You can also use the external interfaces such as API, CLI, and Terraform to check your data center capabilities.
+
+For example, you can determine the support for the following capabilities in your infrastructure:
+
+- Machine types (Power11)
+- Global Replication Service (GRS)
+
 ## Setting Up {{site.data.keyword.DR_short}}
-{: #setup}
+{: #setup-private}
 
 1. Log in to your [IBM Cloud account](https://cloud.ibm.com/).
 2. Locate the {{site.data.keyword.DR_full_notm}} tile.
