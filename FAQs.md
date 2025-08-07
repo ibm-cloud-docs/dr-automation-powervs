@@ -179,3 +179,14 @@ To enable communication to external services, export the following variables on 
 >
 >`https_proxy="<ProxyIP>:3128"`
 > **Note**: Exporting these variables is automatic with the DR Deployment, you can validate the configuration using these variables.
+
+## Why is IBM Data Center not displayed as the location type during provisioning?
+{: #location-type}
+
+The location type displayed during provisioning depends on the selected plan. This behavior is expected and reflects the infrastructure associated with each deployment model:
+
+**Public plan**: Displays **IBM Data Center** as the location type, as the infrastructure is hosted and managed in IBM Cloud regions.
+
+**Private plan**: Displays **Client Location** as the location type, indicating that the infrastructure is physically deployed at the client site and managed remotely by IBM.
+
+This mapping is intentional and helps distinguish between public and private (on-premises, Private Pod environments) cloud deployments.
