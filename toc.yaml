@@ -21,12 +21,10 @@ toc:
               label: Locations
               topics:
               - cloud-regions.md
-              - satellite-location.md
       - topicgroup:
               label: Architecture
               topics:
               - architecture-dr-automation.md
-              - private-pod.md
       - topicgroup:
               label: Pricing
               topics:
