@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-08-07"
 
 subcollection: dr-automation
 
@@ -196,30 +196,3 @@ The Orchestrator is unable to establish a connection with any IBM Cloud services
  {: fix-it}
 
 Refer to the topic [How to fix it](#how-to-fix-it-7) for guidance on resolving the inactive state of the Orchestrator's external connectivity.
-
-## Why are no workspaces listed after selecting Client location?
-{: #select-dr-loca}
-{: troubleshoot}
-
-### What's happening
-{: #select-dr-locatio}
-
-The user is unable to select a Disaster Recovery location or does not see any workspaces listed in the VMRM UI.
-
-### Why it's happening
-{: #select-dr-loca}
-
-This issue occurs when no PowerVS workspace is available in the selected location, preventing the provisioning of a Managed VM for disaster recovery.
-
-### How to fix it
-{: tsResolve-fix}
-
-1. In the VM Recovery Manager DR GUI, go to the section where you configure the DR plan.
-
-2. From the Disaster Recovery Location drop-down list, select either IBM Cloud or Client location.
-
-3. If you select Client location, ensure that you have at least one PowerVS workspace available in your location.
-
-4. After selecting the plan, wait for the list of available workspaces to appear.
-
-5. From the list, choose the appropriate workspace and enable the workload you want to protect with disaster recovery.
