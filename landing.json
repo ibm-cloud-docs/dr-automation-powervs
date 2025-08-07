@@ -47,16 +47,28 @@
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote",
     "tiles": [
       {
-        "date": "30 April 2025",
-        "title": "You can now select the DR location while configuring the orchestrator, making it easier to define the target region for orchestrator VM deployment. This enhancement provides greater control over regional DR setup."
+        "date": "July 2025",
+        "title": "Advanced Operations for disaster recovery validation and control."
       },
       {
-        "date": "30 April 2025",
-        "title": "The deployment flow now allows dynamic selection of the DR Power Virtual Server workspace based on the chosen DR location and DR Schematics workspace, ensuring better alignment of resources and reducing setup errors."
+        "date": "July 2025",
+        "title": "You can now use the Refresh Workspace option to update the workspace topology and display the latest managed and unmanaged VMs along with their associated workgroups."
       },
       {
-        "date": "30 April 2025",
-        "title": "A new external standby orchestrator interface is now available, enabling orchestrators to recognize and manage a standby node for improved failover support and operational resilience. This feature strengthens HA capabilities by streamlining standby node configuration."
+        "date": "July 2025",
+        "title": "A new status indicator shows whether the orchestrator can connect to all required IBM Cloud APIs and external services. This helps validate network readiness for successful DR operations."
+      },
+      {
+        "date": "July 2025",
+        "title": "You can now assign a virtual machine to a shared processor pool to optimize resource usage and reduce licensing costs. Use the CLI to enable the shared processor setting during VM management or modify it later. Shared processor pools must be pre-created in the target PowerVS workspace."
+      },
+      {
+        "date": "July 2025",
+        "title": "You can now perform DR rehearsal operations at the workgroup level using the CLI, allowing safe failover simulation without impacting production workloads. This includes moving a workgroup for rehearsal and cleaning up the test environment after validation."
+      },
+      {
+        "date": "July 2025",
+        "title": "Use a snapshot to migrate your deployment to the latest orchestrator version. Create and upload the snapshot to IBM COS, then restore it on the new deployment. After migration, clean up the source cluster and delete the service."
       }
     ]
   }

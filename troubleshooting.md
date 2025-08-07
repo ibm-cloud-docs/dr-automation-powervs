@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-04-25"
+lastupdated: "2025-07-30"
 
 subcollection: dr-automation
 
@@ -129,10 +129,13 @@ Dependencies, such as active VMs or storage volumes, may prevent the service fro
 {: #orch-fini-enab}  
 {: troubleshoot}  
 
-### What's happening  
+### What's happening
+{: #select-dr-loc}  
 The **Finish** button in the UI remains disabled, preventing you from starting the External Orchestrator UI.  
 
-### Why it's happening  
+### Why it's happening
+{: #select-dr-locat}
+
 Once the orchestrator VM is deployed and active, the cluster configuration starts automatically. Once it is completed, KSYS sends an event, and the UI enables the **Finish** button to start the external orchestrator UI.
 
 If there are any communication issues preventing the orchestrator VM from sending the event, the **Finish** button is not enabled, and you will not be able to enable DR for managed VM's using the External Orchestrator UI.
@@ -185,11 +188,38 @@ If the communication issue persists, you can check the status of the squid servi
 The External Connectivity status of the Orchestrator appears as Inactive in the UI.
 
  ### Why it's happening
- {: tsressolvee} 
+ {: why-it hap}
 
 The Orchestrator is unable to establish a connection with any IBM Cloud services, which prevents it from effectively managing failover scenarios in the event of a workload failure.
 
  ### How to fix it
- {: tsressolvve} 
+ {: fix-it}
 
 Refer to the topic [How to fix it](#how-to-fix-it-7) for guidance on resolving the inactive state of the Orchestrator's external connectivity.
+
+## Why are no workspaces listed after selecting Client location?
+{: #select-dr-loca}
+{: troubleshoot}
+
+### What's happening
+{: #select-dr-locatio}
+
+The user is unable to select a Disaster Recovery location or does not see any workspaces listed in the VMRM UI.
+
+### Why it's happening
+{: #select-dr-loca}
+
+This issue occurs when no PowerVS workspace is available in the selected location, preventing the provisioning of a Managed VM for disaster recovery.
+
+### How to fix it
+{: tsResolve-fix}
+
+1. In the VM Recovery Manager DR GUI, go to the section where you configure the DR plan.
+
+2. From the Disaster Recovery Location drop-down list, select either IBM Cloud or Client location.
+
+3. If you select Client location, ensure that you have at least one PowerVS workspace available in your location.
+
+4. After selecting the plan, wait for the list of available workspaces to appear.
+
+5. From the list, choose the appropriate workspace and enable the workload you want to protect with disaster recovery.
