@@ -2,11 +2,11 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-09-17"
 
 subcollection: dr-automation
 
-keywords: sys-status-imter
+keywords: workgroup, move workgroup, delete workgroup, workgroup status
 
 ---
 
@@ -30,7 +30,19 @@ The following list are the available statuses:
 - `Exploration of VM resources completed`
 - `The ongoing operation has encountered an issue and failed`
 
-## WorkGroup deletion
+## Move WorkGroup
+{: #workgroup-move}
+
+To move a WorkGroup in the {{site.data.keyword.DR_full_notm}} GUI follow this steps:
+
+1. Navigate to the **Work Groups** section.
+2. Select the WorkGroup you wish to delete.
+3. Click **Delete WorkGroup**.
+4. **Confirm** the deletion that appears in the dialog.
+
+This removes the selected Work Group from the system.
+
+## Delete WorkGroup
 {: #workgroup-delete}
 
 To delete a WorkGroup in the {{site.data.keyword.DR_full_notm}} GUI follow this steps:

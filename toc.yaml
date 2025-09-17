@@ -61,17 +61,16 @@ toc:
               label: External orchestrator
               topics:
                         - manage-external-orch.md
-                        - create-ksys-cluster.md
                         - setting-target-source.md
                         - manage-vm-vmrm.md
                         - network-paring.md
                         - configure-summary.md
+                        - navigation-panel.md
                         - disocvery-operation.md
                         - advance-operation.md
                         - discover-operation.md
-                        - system-status-interface.md
+                        - workgroup-operation.md.md
                         - move-site.md
-                        - navigation-panel.md
                         - verify-events.md
       - topicgroup:
               label: Enhancing security

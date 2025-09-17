@@ -2,11 +2,11 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-16"
+lastupdated: "2025-09-17"
 
 subcollection: dr-automation
 
-keywords: navigation-pane
+keywords: navigation-panel, add node , node, ksys details, Inventory tab, Workgroup, tunables, disk mapping, events
 
 ---
 
@@ -103,11 +103,11 @@ The Disk Mapping feature is applicable at the Workgroup level and provides a det
 {: #key-detai}
 
 - **Source and Target Sites**: Displays disk mapping information for both the source and target sites.
-- **Consistency Group and Volume Group**: For each site, the associated **Consistency Group** name and **Volume Group** name are shown, enabling better tracking and management.
-- **Source Site Information**:
+- **Consistency Group name and Volume Group name**: For each site, the associated **Consistency Group name** and **Volume Group name** are shown, enabling better tracking and management.
+- **Active Virtual Machine Information**:
    - **Disk ID**: Lists the disk identifiers for the source site.
    - **Active VM**: Displays the name of the VM currently active at the source site.
-- **Target Site Information**:
+- **Partner Virtual Machine Information**:
    - **Disk ID**: Lists the disk identifiers for the target site.
    - **Partner VM**: Displays the name of the partner (backup) VM at the target site.
 
@@ -115,8 +115,10 @@ The Disk Mapping feature is applicable at the Workgroup level and provides a det
 {: #user-scrip-disk-map}
 
 1. Select the desired Workgroup from the navigation panel.
-2. Click on the **Disk Mapping** tab in the main interface.
-3. Review the displayed mapping between the source and target sites, including disk details, Consistency Groups, and Volume Groups.
+2. Click on the **Disk Mapping** tab in the Dashboard.
+3. Review the displayed mapping between the source and target sites, including disk details, Consistency Group, and Volume Group.
+4. Disk Mapping displays each active VM disk ID paired with its partner VM disk ID prior to failover rehearsal, enabling clear validation of disk relationships between sites.
+5. After failover rehearsal, Disk Mapping displays the pairing from active VM to partner VM, and from partner VM to rehearsal VM, showing clear relationships for each recovery stage.
 
 ## User scripts tab
 {: #user-scrip}

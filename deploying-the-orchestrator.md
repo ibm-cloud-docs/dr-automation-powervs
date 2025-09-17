@@ -1,11 +1,11 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-11"
+lastupdated: "2025-09-17"
 
 subcollection: dr-automation
 
-keywords: deploy the orch
+keywords: deploying the orchestrator, 
 
 ---
 
@@ -15,10 +15,12 @@ keywords: deploy the orch
 After creating the resource, deploying the orchestrator for DR automation is essential to can ensure that your Power Virtual Server environment is protected against disaster events. The orchestrator coordinates disaster recovery operations, including replication, failover, and failback of virtual machines. This screen displays high availability (HA) settings, authentication keys and resource allocation. Once deployed, the orchestrator can manage multiple virtual servers and help ensure continuous availability.
 {:shortdesc: .shortdesc}
 
- >**Note**: 
+ >**Note**:
+
 >- The orchestrator VM is created with the default configuration of 0.5 CPU units and 4 GB memory.
 >- This configuration is suitable for managing 20 PowerVS instances.
 >- If you need to manage more than 20 Managed VMs, it is recommended to increase the configuration to 1 CPU unit and 6 GB of memory.
+>- The DR automation displays notifications to keep you informed about important events such as deployment status, errors, or other operational updates. Notifications appear as pop-up messages on the screen with timestamp.
 
 ## Deploying the orchestrator for disaster recovery
 {: #dep-the-orch-dis-re}
@@ -39,9 +41,11 @@ follow the steps:
 4. Provide a valid **IBM Cloud API key**.
    > **Note**: Enter your API key, which is required to access various services described in [Access role requirements for Power Virtual Server DR Automation](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto). Can ensure that the API key has the necessary permissions for proper functions.
 
-5. In the **DR location** field, select the target region for deploying the orchestrator VM.
+5. The **Location Type** field is selected by default.
 
-6. Select **Schematic workspace** or **Custom VPC** to manually configure the network settings for the orchestrator deployment.
+6. In the **DR location** field, select the target region for deploying the orchestrator VM.
+
+7. Select **Schematic workspace** or **Custom VPC** to manually configure the network settings for the orchestrator deployment.
 
    - Select the **Schematic workspace** and follow the steps:
 
@@ -73,32 +77,32 @@ follow the steps:
 
          The IP is used as a proxy IP in squid configuration.
       
-7. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
+8. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
 
-8. Under **Public SSH Key**, enable the **Use a secret** radio button to use a secret from Secrets Manager. Click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets**.
+9. Under **Public SSH Key**, enable the **Use a secret** radio button to use a secret from Secrets Manager. Click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets**.
 
-9. Select the SSH key from **SSH key name**.
+10. Select the SSH key from **SSH key name**.
 
-10. (Optional) Modify the **Advanced Settings** to configure the Storage tier and Machine type based on the **Deploy Orchestrator with HA** selection.
+11. (Optional) Modify the **Advanced Settings** to configure the Storage tier and Machine type based on the **Deploy Orchestrator with HA** selection.
 
-11. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when HA is enabled during provision. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
+12. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when HA is enabled during provision. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
-12. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
+13. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 
-13. **Finish** button is enabled Once the orchestrator VM is deployed.
+14. **Finish** button is enabled Once the orchestrator VM is deployed.
 
-14. Configure and manage the Power Virtual Server instances through the **External orchestrator interface** for disaster recovery.
+15. Configure and manage the Power Virtual Server instances through the **External orchestrator interface** for disaster recovery.
 
   >**Note**: The orchestrator interface (UI) is launched at https://`<Orchestrator IP>`:3000/login. The `<Orchestrator IP>` is the system on which the orchestrator UI is installed and it is loaded automatically.
 
-15. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby orchestrator for redundancy and resilience, following the steps:
+16. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby orchestrator for redundancy and resilience, following the steps:
 
       a. Complete the [External orchestrator interface setup](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter).  
       b. Hover over the **External standby orchestrator interface** button to view the standby orchestrator IP, for example, `IP:xx.x.x.xxx`.  
       c. Use the standby orchestrator IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.  
       d. Click the **External standby orchestrator interface** button to enable the interface.  
       e. Click the **Refresh** icon to update the status, enabling the **External standby orchestrator interface button** for use.
-16. If any error occurs during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
+17. If any error occurs during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
 
 By following this process, you can ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers.
 

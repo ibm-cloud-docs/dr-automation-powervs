@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-09-17"
 
 subcollection: dr-automation
 
@@ -15,7 +15,7 @@ keywords: monitor status
 When creating one or multiple VMs in DR Automation for Power Virtual Server, the process includes various stages indicating the configuration, provisioning, and status of the virtual machines. Each status provides insights into the progress and highlights any potential issues that may arise during the VM creation process.
 {:shortdesc: .shortdesc}
 
-By following the outlined statuses below, you can effectively monitor the progress of your VM creation and ensure it aligns with your deployment goals.
+By following the outlined status below, you can effectively monitor the progress of your VM creation and ensure it aligns with your deployment goals.
 
 ## Status for creating a single VM
 {: #moni-vm-stat-creat}
@@ -56,7 +56,7 @@ By following the outlined statuses below, you can effectively monitor the progre
   **Status**: `active`  
   **Details**: The VM is now ready for use.
 
-## Statuses for creating multiple VMs
+## Status for creating multiple VMs
 {: #moni-vm-stat-sing}
 
 - **Configure Status**  
@@ -134,4 +134,4 @@ By following the outlined statuses below, you can effectively monitor the progre
   **Status**: `not_found`  
   **Details**: The instance ID does not exist.
 
-By following these statuses, you can efficiently monitor the progress of your VM creation and ensure that it aligns with your deployment objectives.
+By following these status, you can efficiently monitor the progress of your VM creation and ensure that it aligns with your deployment objectives.

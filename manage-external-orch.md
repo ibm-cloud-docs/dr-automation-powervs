@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-25"
+lastupdated: "2025-09-17"
 
 subcollection: dr-automation
 
@@ -23,4 +23,4 @@ When you add virtual servers, you are redirected to the external orchestrator {{
 
 2. To **Save** login credentials, check the **Remember Me** option that enables the system to remember your login credentials for up to 24 hours.
    > **Note**: The credentials are remembered for 10 hours, if **Remember Me** option is unchecked.
-3. After successfully logging into the {{site.data.keyword.DR_full_notm}} GUI, you are redirected to the **KSYS cluster creation** screen where you can add the KSYS cluster.
+3. After successfully logging into the {{site.data.keyword.DR_full_notm}} GUI, you are redirected to the [**Add Sites**](/docs/dr-automation-powervs?topic=dr-automation-powervs-add-site-ksys) screen where you can select Source Region and Target region.

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-16"
+lastupdated: "2025-09-17"
 
 subcollection: dr-automation
 
@@ -75,6 +75,9 @@ Displays the IBM Cloud resource group to which this DR service belongs. Resource
 
 **Service CRN**:  
 A Cloud Resource Name (CRN) uniquely identifying the DR service instance. This identifier is useful for tracking, API access, and integration with other IBM Cloud services.
+
+**Plan name**:
+Displays the subscription plan for the Power Virtual Server DR Automation service which is selected during initial deployment. The values are **DR Automation Public Plan**, **DR Automation Private Plan**.
 
 ## Global replication services pair
 {: #grs-serv-pai}

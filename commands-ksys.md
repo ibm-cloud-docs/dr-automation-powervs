@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-18"
+lastupdated: "2025-09-17"
 
 subcollection: dr-automation
 
@@ -227,16 +227,16 @@ ksysmgr update license <vmname>
 
 ```
 ksysmgr add ksyscluster
-[<ksysclustername>]
-[type=<HA|DR|HADR|HADRHA|IBM_PVS_DR>]
-ksysnodes=<ksysnode1[,ksysnode2,...]>
-[sync=<yes|no>]
-apikey=<apikey>
-[baseurl=<baseurl>]
-[proxy=<ipaddress:portnumber>]
-add => ad*, cr*, make, mk
-ksyscluster => ksysclu*, clu*
- Note: apikey, baseurl and proxy are applicable only for `IBM_PVS_DR cluster.`
+      [<ksysclustername>]
+      [type=<HA|DR|HADR|HADRHA|IBM_PVS_DR|IBM_PVS_PRIVATE_DR>]
+      ksysnodes=<ksysnode1[,ksysnode2,...]>
+      [sync=<yes|no>]
+      apikey=<apikey>
+      [baseurl=<baseurl>]
+      [proxy=<ipaddress:portnumber>]
+    add => ad*, cr*, make, mk
+    ksyscluster => ksysclu*, clu*
+    Note: apikey, baseurl and proxy are applicable only for IBM_PVS_DR cluster`
 ```
 
 An output that is similar to the following example is displayed:
@@ -251,7 +251,7 @@ KSYS subsystem has started. You can begin adding site definitions, etc
 Note: By default, the value of type variable is DR cluster type.
 ```
 
-### To update staticIp modification
+### To update staticIP modification
 {: #stats-modi}
 
 ```
@@ -280,6 +280,16 @@ State: Online
 Type: IBM_PVS_DR
 Ksysnodes: test.dev.com:1:Online
 KsysState: test.dev.com:1:Online
+```
+An output that is similar to the following example is displayed for (Private Plan/pod):
+```
+# ksysmgr query cluster
+Name:                prasanna16sepprvi_Cluster
+State:               Online
+Type:                IBM_PVS_PRIVATE_DR
+Ksysnodes:           prasannapriv1:1:Online
+KsysState:           prasannapriv1:1:Online
+Proxy:               10.30.40.4:3128
 ```
 
 ### To remove a KSYS cluster:
@@ -354,11 +364,18 @@ ksyscluster => ksysclu*, clu*
 ### To add a site in the KSYS subsystem:
 {: #subsyste}
 
+#### To add a site in the kSYS sub sytem for Public Cloud:
+{: #subsyste-public-cloud}
+
 ```
 ksysmgr add site <sitename> region=<regionname>
 add => ad*
 site => sit*
+```
+
 An output that is similar to the following example is displayed:
+
+```
 Waiting for update of Workspaces ...
 Update of Workspaces are successful
 Refresh VMs list of VMRM-Dal10 workspace started
@@ -371,6 +388,38 @@ Refresh Networks list of VMRM-TEST-DAL10 workspace started
 Refresh Networks list of VMRM-TEST-DAL10 workspace completed
 Site dal10 added successfully
 Note: dal10 partner GRS Region is us-east.
+```
+#### To add a site in the kSYS sub sytem Private Plan:
+{: #subsyste-private-cloud}
+```
+ksysmgr add site -h
+ksysmgr add site <sitename> satellitelocation=<satellitelocationname>
+     add => ad*
+     site => sit*
+```
+An output that is similar to the following example is displayed for (Private Plan/pod):
+
+```
+ksysmgr add site home satellitelocation=satloc_dal_clp2joc20ppo19876n50
+Waiting for update of Workspaces ...
+Update of Workspaces are successful
+Refresh VMs list of Suv_Proc workspace started
+Refresh VMs list of Suv_Proc workspace completed
+Refresh Networks list of Suv_Proc workspace started
+Refresh Networks list of Suv_Proc workspace completed
+Refresh VMs list of SVT-SMALL-Q3.2-mano-GRS workspace started
+Refresh VMs list of SVT-SMALL-Q3.2-mano-GRS workspace completed
+Refresh Networks list of SVT-SMALL-Q3.2-mano-GRS workspace started
+Refresh Networks list of SVT-SMALL-Q3.2-mano-GRS workspace completed
+.
+.
+Refresh VMs list of test workspace started
+Refresh VMs list of test workspace completed
+Refresh Networks list of test workspace started
+Refresh Networks list of test workspace completed
+Site home added successfully
+Note: satloc_dal_clp2joc20ppo19876n50 partner GRS Region(s) satloc_dal_cq8884h20ifkvm7quss0
+
 ```
 
 ### To query the details about a specific sites:
@@ -392,6 +441,26 @@ ActiveWorkgroups: vmrm_dev_02_WG, vmrm_dev_03_WG, vmrm_dev_01_WG
 Note: Active indicates the site where a WorkGroup's VMs are running. The same WorkGroup cannot be active on both sites, but others can be.
 ```
 
+An output that is similar to the following example is displayed for (Private Plan/pod):
+```
+ksysmgr query site
+Name:               backup
+SatelliteLocation:  satloc_dal_cq8884h20ifkvm7quss0
+Workspaces:         SVT-XSMALL-MANO-DND
+                     WS-B
+                     SVT_3Q2_XSPoD_25
+                     SVT-XSMALL-Q3.2-mano-GRS
+                     .......
+                     test-guru-xs-ws
+Name:                home
+SatelliteLocation:   satloc_dal_clp2joc20ppo19876n50
+Workspaces:          Suv_Proc
+                     SVT-SMALL-Q3.2-mano-GRS
+                     ........
+                     PerformanceTeam
+                     test
+```
+
 ### To delete a site:
 {: #delets}
 
@@ -407,6 +476,17 @@ An output that is similar to the following example is displayed:
 ksysmgr del site us-east
 Workspace VMRM-wdc was removed
 Site us-east was removed
+Workgroup configuration example
+```
+An output that is similar to the following example is displayed for (Private Plan/pod):
+```
+ksysmgr del site home
+Workspace Suv_Proc was removed
+Workspace SVT-SMALL-Q3.2-mano-GRS was removed
+......
+Workspace PerformanceTeam was removed
+Workspace test was removed
+Site home was removed
 Workgroup configuration example
 ```
 
@@ -452,6 +532,23 @@ Networks:            vmrm_dal12_network01 <-> vmrm_dal12_network01
 CGName:              rccg-3b3d-b61c7
 
 ```
+An output that is similar to the following example is displayed for (private pod/plan): 
+```
+ksysmgr q wg sb-aix-01_WG
+Name:                sb-aix-01_WG
+ID:                  1
+VMs:                 sb-aix-01
+PartnerVM:           sb-aix-01_BackUp
+State:               READY_TO_MOVE
+Priority:            Medium
+SkipAutoResync:      OFF
+HomeWorkSpace:       SVT-SMALL-Q3.2-mano-GRS
+BackupWorkSpace:     SVT_3Q2_XSPoD_25
+ActiveWorkspace:     SVT-SMALL-Q3.2-mano-GRS
+Networks:            net-30 <-> Testsubnet1
+CGName:              rccg-3b3d-b61c7
+```
+
 
 ### To discover all VMS in a specific workgroup for Dr readiness:
 {: #dis-dr-read}
@@ -692,6 +789,7 @@ NETWORK_CONFIGURATION_FAILED warning Network configuration has failed.
 
 ```
  
+ mi
 #### To query the system-wide persistent attribute for the ksysmgr command, use the following command syntax:
 
 ```
@@ -1644,7 +1742,7 @@ KSYS site has been updated
 ## Shared Processor Pool configuration
 {: #s-pro-poo-confi}
 
-### Enable shared processor pool for a virtual machine
+### Enable shared processor pool for a virtual machine (Public and Private Cloud)
 {: #es-pp-vm}
 
 To reduce licensing costs and optimize resource usage, you can enable the shared processor pool for a virtual machine. Before assigning, you must create the shared processor pool in the target PowerVS workspace.
@@ -1665,7 +1763,7 @@ For Vm test_vm attribute(s) TargetProcPool was successfully modified.
 
 > **Note**: Note: Both `sharedprocpool=yes` and `targetprocpool=<pool_name>` are mandatory parameters.
 
-### Modify shared processor pool settings for a virtual machine
+### Modify shared processor pool settings for a virtual machine (Public and Private Cloud)
 {: #msp-pp-vm}
 
 To apply shared processor pool settings after a VM has already been managed, use the following command:
@@ -1680,7 +1778,7 @@ For Vm test_vm attribute(s) ShareProcPoolEnable was successfully modified.
 For Vm test_vm attribute(s) TargetProcPool was successfully modified.
 ```
 
-### Verify shared processor pool assignment
+### Verify shared processor pool assignment (Public and Private Cloud)
 {: #vs-pp-a}
 
 To confirm that the VM is assigned to a shared processor pool, run the following command:
@@ -1716,7 +1814,7 @@ Status:                  SHUTOFF
 ```
 This confirms the VM was provisioned with reduced capacity and associated with the specified processor pool.
 
-### List shared processor pools
+### List shared processor pools (Public and Private Cloud)
 {: #li-sh-pro-po}
 
 To list all shared processor pools created under your account, run the following command:

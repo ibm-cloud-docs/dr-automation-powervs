@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-16"
+lastupdated: "2025-09-17"
 
 subcollection: dr-automation
 
@@ -16,20 +16,14 @@ keywords: event-logs
 The **Events** tab in the {{site.data.keyword.DR_full}} interface provides an overview of the key activities and status changes within your virtual server instances. This log of events enables administrators to track and review significant actions, such as server stops, starts, and any alerts or warnings that might require attention. Monitoring these events ensures that the disaster recovery environment functions optimally and that any potential issues can be promptly addressed.
 {:shortdesc: .shortdesc}
 
-## Accessing the event logs
-{: #access-log}
-
-You can access a maximum of 100 events for the current and previous months in the IBM Cloud console. To see the event logs, complete the following steps:
-
-1. Log in to the [IBM Cloud catalog](https://cloud.ibm.com/catalog) with your credentials.
-2. In the catalog's **search box**, type {{site.data.keyword.DR_full}}, and click the Workspace for {{site.data.keyword.DR_full_notm}} tile.
-3. Select **workspace** on the left navigation under workspace of the {{site.data.keyword.DR_full}} user  interface to select from a list of previously created workspaces. If you do not have a workspace, click Create a workspace.
-4. Click **Event logs** to see the list of event logs and notifications.
-
 ## Administrating event logs
 {: #adm-log}
 
 Administrators can view detailed records of the virtual server activities, including:
+
+- You can access a maximum of 100 events for the current and previous months in the IBM Cloud console.
+
+- The DR automation displays notifications to keep you informed about important events such as deployment status, errors, or other operational updates. Notifications appear as pop-up messages on the screen with timestamp.
 
 - The kind of event that occurred, such as actions on virtual server instances.
 
@@ -38,6 +32,17 @@ Administrators can view detailed records of the virtual server activities, inclu
 - The exact time and date the event was logged, helping track the sequence of activities.
 
 - The importance level of the event, which could range from informative (Info) to critical warnings (Caution).
+
+## Accessing the event logs
+{: #access-log}
+
+ To see the event logs, complete the following steps:
+
+1. Log in to the [IBM Cloud catalog](https://cloud.ibm.com/catalog) with your credentials.
+2. In the catalog's **search box**, type {{site.data.keyword.DR_full}}, and click the Workspace for {{site.data.keyword.DR_full_notm}} tile.
+3. Select **workspace** on the left navigation under workspace of the {{site.data.keyword.DR_full}} user  interface to select from a list of previously created workspaces. If you do not have a workspace, click Create a workspace.
+4. Click **Event logs** to see the list of event logs and notifications.
+
 
 ## Notification for the KSYS events
 
