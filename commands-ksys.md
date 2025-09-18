@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-18"
 
 subcollection: dr-automation
 
@@ -32,7 +32,6 @@ The command provides a consistent interface to configure the controller system (
     ksysmgr {-h|-?} [-v] [<ACTION> [<CLASS>]]
 
     ksysmgr [-v] help
-
 
 The basic format for using the ksysmgr command is as follows:
 
@@ -127,7 +126,7 @@ Specifies the particular object, of type **CLASS** , on which the **ACTION** mus
 
 Specifies an optional flag that has attribute pairs and value pairs that are specific to the **ACTION** and **CLASS** combination. Use these pairs to specify configuration settings or to run particular operations. Both **ATTR** and **VALUE** flags are case-sensitive.
 
-**```-a {<ATTR#1>,<ATTR#2>,...}```**
+```-a {<ATTR#1>,<ATTR#2>,...}```
 
 Displays only the specified attributes. This flag must be used with the query ACTION flag. For example:
 
@@ -1813,6 +1812,17 @@ Shared Processor Pool ID: abcd1234-xxxx-yyyy-zzzz-abcdef123456
 Status:                  SHUTOFF
 ```
 This confirms the VM was provisioned with reduced capacity and associated with the specified processor pool.
+
+### Resource reduction during site switchovers (Public and Private Cloud)
+{: #rr-pp-vm}
+
+When a source VM is configured with a shared processor pool and its backup VM is also assigned to a shared processor pool, the system automatically adjusts resources during a site move:
+
+- **Move from home site to backup site**: The VM’s resources memory and processor are reduced to the minimum resource values defined for that VM.
+
+- **Move back from backup site to home site**: The VM’s resources are restored to the original configuration values.
+
+This automated resource optimization helps reduce licensing costs and ensures efficient utilization during disaster recovery operations.
 
 ### List shared processor pools (Public and Private Cloud)
 {: #li-sh-pro-po}
