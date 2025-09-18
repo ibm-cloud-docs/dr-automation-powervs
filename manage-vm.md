@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-18"
 
 subcollection: dr-automation
 
@@ -40,19 +40,19 @@ Displays the list of virtual machines configured for disaster recovery with deta
 
 Following are the configured VM details:
 
-**VM name**:
+- **VM name**:
 Name of the virtual machine added for DR management.  
 
-**VM ID**:
+- **VM ID**:
 Unique identifier assigned to the virtual machine.  
 
-**Memory**:
+- **Memory**:
 Amount of memory allocated to the virtual machine.  
 
-**Core**:
+- **Core**:
 Number of processor cores assigned to the virtual machine.  
 
-**Workgroup name**:
+- **Workgroup name**:
 Workgroup to which the virtual machine belongs for DR operations.  
 
 For more information about **External Orchestrator Interface (UI)**, see [IBM VM Recovery Manager DR for Power Systems](https://www.ibm.com/docs/en/vmrmdr).
