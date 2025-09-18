@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-18"
 
 subcollection: dr-automation
 
@@ -23,7 +23,7 @@ After adding the sites, you must create a new VM session if you are managing the
 
 To create and manage virtual machine, complete the following steps:
 
-# Create New Session
+### Create New Session
 
 1. Click **Create New Session**.  
 
