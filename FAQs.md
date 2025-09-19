@@ -1,11 +1,11 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-09-19"
 
 subcollection: dr-automation
 
-keywords: faqs
+keywords: faqs, help, FAQ, answers
 
 ---
 # FAQs
@@ -190,3 +190,42 @@ The location type displayed during provisioning depends on the selected plan. Th
 **Private plan**: Displays **Client Location** as the location type, indicating that the infrastructure is physically deployed at the client site and managed remotely by IBM.
 
 This mapping is intentional and helps distinguish between public and private (on-premises, Private Pod environments) cloud deployments.
+
+## **What should I do if I accidentally delete a KSYS Cluster?**
+{: #delete-ksys}
+
+If a KSYS Cluster is deleted, you must re-create it in the DR Automation GUI:  
+1. Log in to the GUI.  
+2. Go to the **Add KSYS Subsystem** page.  
+3. Click **Add KSYS** and provide the host details (Username and Password).  
+4. Select the correct **KSYS Deployment Type**:  
+   - **IBM_PVS_DR** for standard DR  
+   - **IBM_PVS_PRIVATE_DR** for private PowerVS cluster environments  
+5. Re-enter the **Cluster Details**.  
+6. (Optional) Enable **Add Proxy** if communication requires a proxy.  
+7. Save the configuration to restore orchestrator functionality.  
+
+## **How do I create a new KSYS Cluster?**
+{: #create-ksys-cluster}
+
+When logging in for the first time, or if no cluster exists, you are redirected to the **Add KSYS Subsystem** page. From there:  
+- Click **Add KSYS**  
+- Enter host details (Username, Password)  
+- Select **IBM_PVS_DR** or **IBM_PVS_PRIVATE_DR**  
+- Provide cluster details  
+- (Optional) enable proxy support  
+- Click **Save & Next**  
+
+## **When should I choose IBM_PVS_DR vs IBM_PVS_PRIVATE_DR?**
+{: #ksys-types}
+
+- **IBM_PVS_DR** → For standard DR deployments across IBM Cloud regions.  
+- **IBM_PVS_PRIVATE_DR** → For private PowerVS cluster environments, such as on-premises or private pods.  
+
+## **What happens after I add the KSYS Cluster?**
+{: #ksys-after}
+
+Once added, the KSYS Cluster integrates into your DR setup and orchestrates:  
+- Failover and failback workflows  
+- Synchronization between primary and backup sites  
+- Recovery sequence management for workloads  
