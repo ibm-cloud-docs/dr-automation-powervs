@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-18"
+lastupdated: "2025-09-19"
 
 subcollection: dr-automation
 
@@ -19,11 +19,12 @@ Efficiently set up and manage virtual machine sessions by creating new sessions,
 ## Create a new VM session
 {: #create-vm-ses}
 
-After adding the sites, you must create a new VM session if you are managing the virtual machine for the first time. If the virtual machine is already managed, you can proceed directly to [manage VM](#vm-ses)  sessions.
+After adding the sites, you must create a new VM session if you are managing the virtual machine for the first time. If the virtual machine is already managed, you can proceed directly to [manage VM](#vm-ses) and [unmanage VM](#um-manage-ses) sessions.
+
+### Procedure
+{: #new-vm-ses}
 
 To create and manage virtual machine, complete the following steps:
-
-### Create New Session
 
 1. Click **Create New Session**.  
 
@@ -45,15 +46,39 @@ To create and manage virtual machine, complete the following steps:
 ## Manage VM
 {: #vm-ses}
 
-You can view and manage virtual machines by using the Power Virtual Server DR Automation UI. Managing a virtual machine allows be included in disaster recovery operations and monitored effectively.
+You can view and manage virtual machines by using the Power Virtual Server DR Automation UI. Managing a virtual machine and monitor effectively.
+
+### Procedure
+{: #ma-vm-se}
 
 To manage the additonal virtual machines, complete the following steps:
 
 1. In the Power Virtual Server DR Automation navigation page, click **Cluster Name > Site > Workgroup > Managed VM**.
 2. Select the unmanged VM.
-3. Click **Manage VM** button.
+3. Click **Manage VM**.
 4. You are redirected to the Managed VM tab, where you can view the following details:
    - VM Name
    - Workgroup
    - Source workspace
    - Target workspace
+
+
+## Unmanage VM
+{: #um-manage-ses}
+
+You can view and virtual machines by using the Power Virtual Server DR Automation UI. Unmanaging a virtual machine removes the virtual machine from disaster recovery operations and monitoring.
+
+### Procedure
+{: #un-vm-manage}
+
+To unmanage virtual machines, complete the following steps:
+
+1. In the navigation page of the Power Virtual Server DR Automation, click **Site > Workgroup > Unmanaged VM**.
+2. Select the VM.
+3. Click **Unmanage this VM**.
+4. After this operation, the workgroup is removed and virtual machine is deleted.
+
+   > **Note:**
+   >
+   > - Each workgroup is associated with only one virtual machine.
+   > - You can unmanage a virtual machine even if it not managed previously.
