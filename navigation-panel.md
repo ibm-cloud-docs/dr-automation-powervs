@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-19"
 
 subcollection: dr-automation
 
@@ -102,19 +102,31 @@ The Disk Mapping feature is applicable at the Workgroup level and provides a det
 ### Key details
 {: #key-detai}
 
-- **Source and Target Sites**: Displays disk mapping information for both the source and target sites.
-- **Consistency Group name and Volume Group name**: For each site, the associated **Consistency Group name** and **Volume Group name** are shown, enabling better tracking and management.
+- **Source and Target Sites**: 
+
+Displays disk mapping information for both the source and target sites.
+
+- **Consistency Group name and Volume Group name**: 
+
+For each site, the associated **Consistency Group name** and **Volume Group name** are shown, enabling better tracking and management.
 - **Active Virtual Machine Information**:
+
    - **Disk ID**: Lists the disk identifiers for the source site.
+
    - **Active VM**: Displays the name of the VM currently active at the source site.
+
 - **Partner Virtual Machine Information**:
+
    - **Disk ID**: Lists the disk identifiers for the target site.
+
    - **Partner VM**: Displays the name of the partner (backup) VM at the target site.
 
-### Steps to access disk mapping
+### Procedure to access disk mapping
 {: #user-scrip-disk-map}
 
-1. Select the desired Workgroup from the navigation panel.
+To access the disk mapping, follow the steps:
+
+1. Select the Workgroup from the navigation panel.
 2. Click on the **Disk Mapping** tab in the Dashboard.
 3. Review the displayed mapping between the source and target sites, including disk details, Consistency Group, and Volume Group.
 4. Disk Mapping displays each active VM disk ID paired with its partner VM disk ID prior to failover rehearsal, enabling clear validation of disk relationships between sites.

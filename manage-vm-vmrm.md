@@ -36,7 +36,7 @@ To create and manage virtual machine, complete the following steps:
 
 5. All virtual machines are displayed. Select the virtual machines to enable the **Shared Procpool** option.  
 
-6. If you selected **Yes** in Step Two, enter the **Target IP Address details** that are Source IP Address and IP Address to Map.  
+6. If you have selected **Yes** in Step Two, enter the **Target IP Address details** that are Source IP Address and IP Address to Map.  
 
 7. Select **Yes** and enter the **Target Procpool** details to enable the **shared processor pool (SPP)**, which allows VMs to share processor capacity dynamically. Select **No** to skip this option.  
 

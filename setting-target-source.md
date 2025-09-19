@@ -13,7 +13,7 @@ keywords: sites ksys, source site, target site, Source Satellite Location, Targe
 # Add sites to KSYS
 {: #con-site-ksys}
 
-Configure your environment by adding the **source Site** and **target Site**, specifying region names, and saving the configurations to enable seamless data replication.
+Configure your environment by adding the **Source Site** and **Target Site**, specifying region names, and saving the configurations to enable seamless data replication.
 {:shortdesc: .shortdesc}
 
 Upon completing the KSYS setup, the DR Automation PowerVS GUI automatically redirects you to the **Add Sites** page.
