@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-18"
+lastupdated: "2025-09-19"
 
 subcollection: dr-automation
 
@@ -884,6 +884,7 @@ By default language is considered to be en_US
 {: #qwe}
 
 To enable or disable the quick-discovery feature:
+
 ```
 ksysmgr modify system quick_discovery=enable
 KSYS quick_discovery has been updated
@@ -1075,6 +1076,32 @@ dup_event_processing:        yes
 User Scripts for Site: None
 User Scripts for Workgroup: None
 User Scripts for VM: None
+```
+An output that is similar to the following example is displayed for (private pod/plan):
+```
+ksysmgr query system
+System-Wide Persistent Attributes
+BaseUrl:                     cloud.ibm.com
+SatelliteLocations:          satloc_dal_clp2joc20ppo19876n50 - satloc_dal_cq8884h20ifkvm7quss0
+api_key:                     #####16854C578FDCCF26592381C053 28F37FF3F7C 28E5039 9E1E6 398A87C8A 329A867 EEAA22CD5AC 435A65DBFA0819E3FC0F7E3A68BB4
+staticipenable:              default
+trace_file_size:             not set
+ksys_spooling:               not set
+spool_dest_dir:              not set
+spool_dir_max_size:          not set
+quick_discovery_interval:    60 minutes
+quick_discovery:             enable
+deep_discovery:              enable
+cleanup_files_interval:      7 days
+ksys_lang:
+auto_discovery_time:         00:00 hours
+custom_script_timeout:       none
+notification_level:          low
+dup_event_processing:        yes
+User Scripts for Site: None
+User Scripts for Workgroup: None
+User Scripts for VM: None
+
 ```
 
 Following is the output of modify system:
@@ -1294,6 +1321,7 @@ ksysmgr query disk_group [wg=<wgname>]
     query => q*, ls, get, sh*
     disk_group => dg, disk_g*
 ```
+An output that is similar to the following example is displayed:
 
 ```
 ksysmgr q disk_group
@@ -1306,8 +1334,22 @@ BackupWorkSpace:     vmrm_powervsdr_wdc06
 ActiveWorkspace:     vmrm_powervsdr_dal12
 Active Site:         DAL
 VolumeDiskGroup:     vmrm_rhel_WG_VG <-> rccg-a382-d35ba
-An output that is similar to the following example is displayed:
+
 ```
+An output that is similar to the following example is displayed for (private pod/plan)
+```
+ksysmgr q disk_group
+WGName:              vmrm_rhel_WG
+CGName:              rccg-a382-d35ba
+CGState:             consistent_copying
+Progress:            99.0
+HomeWorkSpace:       SVT-SMALL-Q3.2-mano-GRS
+BackupWorkSpace:     SVT_3Q2_XSPoD_25
+ActiveWorkspace:     SVT-SMALL-Q3.2-mano-GRS
+Active Site:         DAL
+VolumeDiskGroup:     vmrm_rhel_WG_VG <-> rccg-a382-d35ba
+```
+
 
 ## Viewing disk details
 {: #diskdetail}
@@ -1495,14 +1537,23 @@ Successfully created a configuration snapshot: /var/ksys/snapshots/snap.xml_DETA
 {: #pairs}
 
 ```
+ksysmgr pair workspace -h
 ksysmgr pair workspace <home_workspacename | ID>
-
-         pair=<target_workspacename | ID> | pair=none
-pair => map
-workspace => works*, work_s*, ws
+      pair=<target_workspacename | ID> | pair=none
+    pair => map
+    workspace => works*, work_s*, ws
+    Note: pair=none for unpairing the workspace
+```
 An output that is similar to the following example is displayed:
+
+```
 ksysmgr pair ws VMRM-Dal10 pair=VMRM-wdc
 Workspace VMRM-Dal10 was paired with VMRM-wdc
+```
+An output that is similar to the following example is displayed for (private plan/pod)
+```
+ksysmgr pair ws SVT-SMALL-Q3.2-mano-GRS pair=SVT_3Q2_XSPoD_25
+Workspace SVT-SMALL-Q3.2-mano-GRS was paired with SVT_3Q2_XSPoD_25
 ```
 
 ## To refresh a workspace, run the following command:
@@ -1520,7 +1571,11 @@ An output that is similar to the following example is displayed:
 ksysmgr refresh workspace VMRM-wdc
 Refresh workspaces to update Networks and VMs list completed.
 ```
-
+An output that is similar to the following example is displayed for (private plan/pod)
+```
+ksysmgr refresh workspace SVT_3Q2_XSPoD_25
+Refresh workspaces to update Networks and VMs list completed.
+```
 ## Network pairing example
 {: #netpair}
 
@@ -1545,6 +1600,12 @@ An output that is similar to the following example is displayed:
 ```
 ksysmgr pair network VMRM-Dal10-Network01 pair=vmrm-wdc-network01
 Network VMRM-Dal10-Network01 was paired with vmrm-wdc-network01
+```
+An output that is similar to the following example is displayed for (private plan/pod)
+
+```
+ksysmgr pair network net-30 pair=Testsubnet1
+Network net-30 was paired with Testsubnet1
 ```
 
 ## Site discovery example
@@ -1655,6 +1716,15 @@ Regions: us-east
 dal10
 api_key: #####1543D972B94F...
 ```
+An output that is similar to the following example is displayed for private plan/pod
+```
+ksysmgr query system
+System-Wide Persistent Attributes
+BaseUrl:                     cloud.ibm.com
+SatelliteLocations:          satloc_dal_clp2joc20ppo19876n50 - satloc_dal_cq8884h20ifkvm7quss0
+api_key:                     #####16854C578FDCCF26592381C053 28F37FF3F7C 28E5039 9E1E6 398A87C8A 329A867 EEAA22CD5AC 435A65DBFA0819E3FC0F7E3A68BB4
+staticipenable:              default...
+```
 
 ## VM query and refresh example
 {: #qre}
@@ -1674,6 +1744,7 @@ vm => lp*, vm
 An output that is similar to the following example is displayed:
 
 ```
+ksysmgr query vm User_test
 Name: User_test
 UUID: 6aae01cd-0960-4c7e-b5bd-f274bcd53792
 State: INIT
@@ -1914,6 +1985,19 @@ ActiveWorkgroups:               test_WG
 ```
 This confirms the correct site names for use in the move command.
 
+An output that is similar to the following example is displayed for (private plan/pod)
+
+```
+Name:                           TargetSite
+SatelliteLocations:             satloc_dal_clp2joc20ppo19876n50
+Workspaces:                     SVT-SMALL-Q3.2-mano-GRS
+ActiveWorkgroups:               test_01_WG
+Name:                           HomeSite
+SatelliteLocations:             satloc_dal_cq8884h20ifkvm7quss0
+Workspaces:                     SVT_3Q2_XSPoD_25
+ActiveWorkgroups:               test_WG
+```
+
 ### Perform DR Rehearsal move
 {: #pe-dr-re-mo}
 
@@ -2025,7 +2109,60 @@ Processors:                 0.25
 WorkSpace:                  dravyclon_lon04_power_workspace
 Networks:                   mgmt_net
 ```
+An output that is similar to the following example is displayed for private plan/pod:
 
+```
+Name:                       test_Rehearsal
+UUID:                       xxxx
+State:                      INIT
+Dr Test State:              ACTIVE
+SourceVM:                   test
+ActiveVM:                   no
+IPAddresses:                192.168.x.xxx
+memory_capacity:            2
+Processors:                 0.25
+WorkSpace:                  SVT-SMALL-Q3.2-mano-GRS
+Networks:                   net-30
+
+Name:                       test_BackUp
+UUID:                       fe30xx38-babx-480x-920x-7fafad07c7xx
+State:                      DISCOVERED
+Dr Test State:              SHUTOFF
+Partner:                    test
+CloneVM:                    test_Rehearsal
+ActiveVM:                   no
+IPAddresses:                192.168.x.xxy
+memory_capacity:            0
+Processors:                 0.25
+WorkSpace:                  SVT-SMALL-Q3.2-mano-GRS
+Networks:                   net-30
+
+Name:                       test
+UUID:                       98d4xx06-a2x9-45x1-968x-3c6fb53a5fxx
+State:                      READY_TO_MOVE
+Dr Test State:              ACTIVE_COMPLETED
+Partner:                    test_Rehearsal
+CloneVM:                    yes
+ActiveVM:                   192.168.x.xxz
+IPAddresses:                2
+memory_capacity:            0
+Processors:                 0.25
+WorkSpace:                  SVT-SMALL-Q3.2-mano-GRS
+Networks:                   net-30
+
+Name:                       testtest_01_Backup
+UUID:                       889fxx15-a5dx-476x-be4x-0fficexx9cxx
+State:                      DISCOVERED
+Dr Test State:              SHUTOFF
+Partner:                    no
+CloneVM:                    yes
+ActiveVM:                   192.168.x.xxw
+IPAddresses:                2
+memory_capacity:            0
+Processors:                 0.25
+WorkSpace:                  SVT_3Q2_XSPoD_25
+Networks:                   net-30
+```
 ### Clean Up after DR Rehearsal at workgroup level
 {: #cl-up-wg-le}
 
@@ -2083,6 +2220,18 @@ Workspaces:                          dravpclon-Lon04-power-workspace
 Workgroups:                          test_WG
 ```
 This confirms the correct site names for use in the move command.
+
+An output similar to the following example is displayed for private plan/pod
+```
+Name:                                TargetSite
+SatelliteLocations:                  satloc_dal_clp2joc20ppo19876n50
+Workspaces:                          SVT-SMALL-Q3.2-mano-GRS
+Workgroups:                          test_01_WG
+Name:                                HomeSite
+SatelliteLocations:                  satloc_dal_cq8884h20ifkvm7quss0
+Workspaces:                          SVT_3Q2_XSPoD_25
+Workgroups:                          test_WG
+```
 
 ### Perform DR rehearsal move at site level
 {: #pe-for-dr-re-mo}
@@ -2191,6 +2340,59 @@ memory_capacity:                    2
 Processors:                         0.25
 WorkSpace:                          Test_workspace_lon06_new
 Networks:                           mgmt_net
+```
+An output similar to the following example is displayed for private plan/pod:
+
+```
+Name:                              test_Rehearsal
+UUID:                              5de7xxaf-e78x-48bx-a9bx-695b8a2c76xx
+State:                             INIT
+Dr Test State:                     ACTIVE
+SourceVM:                          test
+ActiveVM:                          no
+IPAddresses:                       192.168.x.xxa
+memory_capacity:                   2
+Processors:                        0.25
+WorkSpace:                         SVT-SMALL-Q3.2-mano-GRS
+Networks:                          net-30
+
+Name:                              test_BackUp
+UUID:                              e6aexx89-2c7x-43bx-867x-669426d0c6xx
+State:                             INIT
+Dr Test State:                     ACTIVE
+SourceVM:                          test
+ActiveVM:                          no
+IPAddresses:                       192.168.x.xxb
+memory_capacity:                   0
+Processors:                        0.25
+WorkSpace:                         SVT-SMALL-Q3.2-mano-GRS
+Networks:                          net-30
+
+Name:                              testtest_01_Backup
+UUID:                              889fxx15-a5dx-476x-be4x-0fficexx9cxx
+State:                             DISCOVERED
+Dr Test State:                     SHUTOFF
+Partner:                           test_Rehearsal
+CloneVM:                           no
+ActiveVM:                          no
+IPAddresses:                       192.168.x.xxc
+memory_capacity:                   2
+Processors:                        0.25
+WorkSpace:                         SVT-SMALL-Q3.2-mano-GRS
+Networks:                          net-30
+
+Name:                              test
+UUID:                              28b6xx75-07ex-487x-bb5x-5faedfdc78xx
+State:                             READY_TO_MOVE
+Dr Test State:                     ACTIVE
+Partner:                           test_BackUp
+CloneVM:                           test_Rehearsal
+ActiveVM:                          yes
+IPAddresses:                       192.168.x.xxd
+memory_capacity:                    2
+Processors:                         0.25
+WorkSpace:                          SVT-SMALL-Q3.2-mano-GRS
+Networks:                           net-30
 ```
 ### Clean up after DR rehearsal at site level
 {: #clean-up}
