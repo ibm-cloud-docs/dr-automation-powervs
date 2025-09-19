@@ -283,11 +283,11 @@ KsysState: test.dev.com:1:Online
 An output that is similar to the following example is displayed for (Private Plan/pod):
 ```
 # ksysmgr query cluster
-Name:                prasanna16sepprvi_Cluster
+Name:                test16sepprvi_Cluster
 State:               Online
 Type:                IBM_PVS_PRIVATE_DR
-Ksysnodes:           prasannapriv1:1:Online
-KsysState:           prasannapriv1:1:Online
+Ksysnodes:           testpriv1:1:Online
+KsysState:           testpriv1:1:Online
 Proxy:               10.30.40.4:3128
 ```
 
@@ -388,7 +388,7 @@ Refresh Networks list of VMRM-TEST-DAL10 workspace completed
 Site dal10 added successfully
 Note: dal10 partner GRS Region is us-east.
 ```
-#### To add a site in the kSYS sub sytem Private Plan:
+#### To add a site in the KSYS sub sytem Private Plan:
 {: #subsyste-private-cloud}
 ```
 ksysmgr add site -h
@@ -450,7 +450,7 @@ Workspaces:         SVT-XSMALL-MANO-DND
                      SVT_3Q2_XSPoD_25
                      SVT-XSMALL-Q3.2-mano-GRS
                      .......
-                     test-guru-xs-ws
+                     test-xs-ws
 Name:                home
 SatelliteLocation:   satloc_dal_clp2joc20ppo19876n50
 Workspaces:          Suv_Proc
