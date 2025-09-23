@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-23"
 
 subcollection: dr-automation
 
@@ -13,7 +13,7 @@ keywords: migration, migration deployment , upgrade, upgrade your deployment
 # Planning a workload migration to {{site.data.keyword.DR_full}}
 {: #plan-work-load}
 
-When workloads are deployed on a new system, you must pay attention to its configuration and tuning to achieve the expected performance. {{site.data.keyword.DR_full_notm}} uses different IBM Power Systems: S922, E980, E1080, S1022.
+When workloads are deployed on a new system, you must pay attention to its configuration and tuning to achieve the expected performance. {{site.data.keyword.DR_full_notm}} uses different IBM Power Systems: S922, E980, E1080, S1022 and Power11.
 {:shortdesc: .shortdesc}
 
 For more information on hardware specifications that you might need, see [Hardware specifications for {{site.data.keyword.DR_full_notm}}](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch#hs).
