@@ -26,7 +26,7 @@ Follow these steps to create a Power Virtual Server instance for disaster recove
 
 Choose **IBM Cloud** or **Client location**, depending on your deployment model.
 > **Note**:
-- > If you select Client location, a Managed VM for disaster recovery is provisioned within your  PowerVS workspace.
+- > If you select PowerVS Private Cloud support, a Managed VM for disaster recovery is provisioned within your  PowerVS workspace.
 - > To enable this feature, ensure that you have at least one PowerVS workspace available in your location. When you select this plan in the External Orchestrator UI, a list of available workspaces is displayed.
 - > From the list, you can choose the appropriate workspace and enable the workload you want to protect with disaster recovery.
 
