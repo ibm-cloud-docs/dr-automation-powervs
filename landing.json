@@ -7,8 +7,12 @@
     "links": [
       
       {
-        "title": "High Level Architecture",
+        "title": "Architecture for Power Virtual Server DR Automation in IBM Data Center",
         "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-arch"
+      },
+      {
+        "title": "Architecture for Power Virtual Server DR Automation in IBM Data Center",
+        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-arch-private-pod"
       },
       {
         "title": "Pricing",
@@ -21,10 +25,6 @@
       {
         "title": "Troubleshooting",
         "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-troubleshooting"
-      },
-      {
-        "title": "FAQs",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs"
       },
       {
         "title": "FAQs",
