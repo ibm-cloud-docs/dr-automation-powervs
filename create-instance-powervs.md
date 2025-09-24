@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-23"
+lastupdated: "2025-09-24"
 
 subcollection: dr-automation
 
@@ -24,7 +24,11 @@ Follow these steps to create a Power Virtual Server instance for disaster recove
 2. In the **search box**, type {{site.data.keyword.DR_full}} and click the corresponding tile.
 3. Select the Disaster Recovery location from the drop-down list. Select the deployment type **PowerVS DR Automation** or **PowerVS Private Cloud support** for the pricing plan.
 
-
+Choose **IBM Cloud** or **Client location**, depending on your deployment model.
+> **Note**:
+- > If you select Client location, a Managed VM for disaster recovery is provisioned within your  PowerVS workspace.
+- > To enable this feature, ensure that you have at least one PowerVS workspace available in your location. When you select this plan in the External Orchestrator UI, a list of available workspaces is displayed.
+- > From the list, you can choose the appropriate workspace and enable the workload you want to protect with disaster recovery.
 
 4. In the Configure details section, provide a name for the instance and select the appropriate resource group.
    - You can create a new resource group if needed by clicking **Create resource group**.

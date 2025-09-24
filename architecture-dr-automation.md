@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-09-24"
 
 subcollection: dr-automation-powervs
 
@@ -11,7 +11,7 @@ keywords: architecture
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Architecture for {{site.data.keyword.DR_full_notm}} in IBM data center
+# Architecture for {{site.data.keyword.DR_full_notm}} in IBM Data Center
 {: #arch}
 
 {{site.data.keyword.DR_full}} is located in the IBM data centers, is a robust disaster recovery solution that is designed for IBM data centers, distinct from general IBM Cloud resources. This solution uses dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.

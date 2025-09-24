@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-23"
+lastupdated: "2025-09-24"
 
-keywords: getting started, disaster recovery, PowerVS
+keywords: getting started, disaster recovery, PowerVS, start
 
 subcollection: dr-automation
 
