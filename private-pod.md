@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-09-24"
 
 subcollection: dr-automation
 
@@ -12,7 +12,7 @@ keywords: private pod, client location
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Architecture for {{site.data.keyword.DR_full_notm}} in Client location
+# Architecture for {{site.data.keyword.DR_full_notm}} Private Cloud in Client location
 {: #arch-private-pod}
 
 {{site.data.keyword.DR_full}} automatically orchestrate disaster recovery for managed workloads from your data center(Client location). The infrastructure, compute, storage, and network are physically deployed at your location(Client location) and managed by IBM Cloud platform. DR automation is available only if your environment supports Geo-Redundant Storage (GRS), which replicates data across geographically separated sites. With GRS configured, the solution automatically triggers failover and recovery operations, reducing downtime and ensuring business continuity without manual intervention.
