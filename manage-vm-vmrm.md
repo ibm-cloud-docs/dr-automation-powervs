@@ -34,7 +34,7 @@ To create and manage virtual machine, complete the following steps:
 
 4. Provide the machine type in the **Target System** section, select the **Target Workspace** from the available list, and click **Save & Next**.  
 
-### Modify VM
+## Modify VM
 {: #modify-vm-ses}
 
 The Modify VM option allows you to make changes to your virtual machines as needed. You can choose the VMs you want to update, adjust their IP mapping, and decide whether to enable the Shared Processor Pool (SPP) for improved performance and flexibility.
