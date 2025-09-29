@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-19"
+lastupdated: "2025-09-29"
 
 subcollection: dr-automation
 
@@ -280,7 +280,7 @@ Type: IBM_PVS_DR
 Ksysnodes: test.dev.com:1:Online
 KsysState: test.dev.com:1:Online
 ```
-An output that is similar to the following example is displayed for (Private Plan/pod):
+An output that is similar to the following example is displayed for Private Plan:
 ```
 # ksysmgr query cluster
 Name:                test16sepprvi_Cluster
@@ -396,7 +396,7 @@ ksysmgr add site <sitename> satellitelocation=<satellitelocationname>
      add => ad*
      site => sit*
 ```
-An output that is similar to the following example is displayed for (Private Plan/pod):
+An output that is similar to the following example is displayed for Private Plan:
 
 ```
 ksysmgr add site home satellitelocation=satloc_dal_clp2joc20ppo19876n50
@@ -440,7 +440,7 @@ ActiveWorkgroups: vmrm_dev_02_WG, vmrm_dev_03_WG, vmrm_dev_01_WG
 Note: Active indicates the site where a WorkGroup's VMs are running. The same WorkGroup cannot be active on both sites, but others can be.
 ```
 
-An output that is similar to the following example is displayed for (Private Plan/pod):
+An output that is similar to the following example is displayed for Private Plan:
 ```
 ksysmgr query site
 Name:               backup
@@ -477,7 +477,7 @@ Workspace VMRM-wdc was removed
 Site us-east was removed
 Workgroup configuration example
 ```
-An output that is similar to the following example is displayed for (Private Plan/pod):
+An output that is similar to the following example is displayed for Private Plan:
 ```
 ksysmgr del site home
 Workspace Suv_Proc was removed
@@ -1812,7 +1812,7 @@ KSYS site has been updated
 ## Shared Processor Pool configuration
 {: #s-pro-poo-confi}
 
-### Enable shared processor pool for a virtual machine (Public and Private Cloud)
+### Enable shared processor pool for a virtual machine for Public and Private Plan
 {: #es-pp-vm}
 
 To reduce licensing costs and optimize resource usage, you can enable the shared processor pool for a virtual machine. Before assigning, you must create the shared processor pool in the target PowerVS workspace.
@@ -1833,7 +1833,7 @@ For Vm test_vm attribute(s) TargetProcPool was successfully modified.
 
 > **Note**: Note: Both `sharedprocpool=yes` and `targetprocpool=<pool_name>` are mandatory parameters.
 
-### Modify shared processor pool settings for a virtual machine (Public and Private Cloud)
+### Modify shared processor pool settings for a virtual machine Public and Private Plan
 {: #msp-pp-vm}
 
 To apply shared processor pool settings after a VM has already been managed, use the following command:
@@ -1848,7 +1848,7 @@ For Vm test_vm attribute(s) ShareProcPoolEnable was successfully modified.
 For Vm test_vm attribute(s) TargetProcPool was successfully modified.
 ```
 
-### Verify shared processor pool assignment (Public and Private Cloud)
+### Verify shared processor pool assignment for Public and Private Plan
 {: #vs-pp-a}
 
 To confirm that the VM is assigned to a shared processor pool, run the following command:
@@ -1884,7 +1884,7 @@ Status:                  SHUTOFF
 ```
 This confirms the VM was provisioned with reduced capacity and associated with the specified processor pool.
 
-### Resource reduction during site switchovers (Public and Private Cloud)
+### Resource reduction during site switchovers Public and Private Plan
 {: #rr-pp-vm}
 
 When a source VM is configured with a shared processor pool and its backup VM is also assigned to a shared processor pool, the system automatically adjusts resources during a site move:
@@ -1895,7 +1895,7 @@ When a source VM is configured with a shared processor pool and its backup VM is
 
 This automated resource optimization helps reduce licensing costs and ensures efficient utilization during disaster recovery operations.
 
-### List shared processor pools (Public and Private Cloud)
+### List shared processor pools for Public and Private Plan
 {: #li-sh-pro-po}
 
 To list all shared processor pools created under your account, run the following command:
