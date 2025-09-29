@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-19"
+lastupdated: "2025-09-29"
 
 subcollection: dr-automation
 
@@ -220,12 +220,4 @@ When logging in for the first time, or if no cluster exists, you are redirected 
 {: #ksys-types}
 
 - **IBM_PVS_DR** → For standard DR deployments across IBM Cloud regions.  
-- **IBM_PVS_PRIVATE_DR** → For private PowerVS cluster environments, such as on-premises or private pods.  
-
-## **What happens after I add the KSYS Cluster?**
-{: #ksys-after}
-
-Once added, the KSYS Cluster integrates into your DR setup and orchestrates:  
-- Failover and failback workflows  
-- Synchronization between primary and backup sites  
-- Recovery sequence management for workloads  
+- **IBM_PVS_PRIVATE_DR** → For private PowerVS cluster environments, such as on-premises or private pods.
