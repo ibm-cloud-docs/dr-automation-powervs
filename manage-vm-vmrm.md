@@ -46,7 +46,9 @@ To modify virtual machine, complete the following steps:
 
 1. All virtual machines are displayed. Select the virtual machines to enable the **Shared Procpool** option.  
 
-2. If you have selected **Yes** in Step Two, enter the **Target IP Address details** that are Source IP Address and IP Address to Map.  
+2. If you have selected **Yes** in Step Two, enter the **Target IP Address details** that are Source IP Address and IP Address to Map.
+
+> **Note**: We can add mulitple ip mapping in this step.
 
 3. Select **Yes** and enter the **Target Procpool** details to enable the **shared processor pool (SPP)**, which allows VMs to share processor capacity dynamically. Select **No** to skip this option.  
 
@@ -71,7 +73,7 @@ To manage the additonal virtual machines, complete the following steps:
    - Workgroup
    - Source workspace
    - Target workspace
-
+5. oCmplete the deployment flow to manage selected VM.
 
 ## Unmanage VM
 {: #um-manage-ses}
@@ -83,7 +85,7 @@ You can view and virtual machines by using the Power Virtual Server DR Automatio
 
 To unmanage virtual machines, complete the following steps:
 
-1. In the navigation page of the Power Virtual Server DR Automation, click **Site > Workgroup > Unmanaged VM**.
+1. In the navigation page of the Power Virtual Server DR Automation, click **Site > Workspace > Worksgroup>Managed VM**.
 2. Select the VM.
 3. Click **Unmanage this VM**.
 4. After this operation, the workgroup is removed and virtual machine is deleted.
