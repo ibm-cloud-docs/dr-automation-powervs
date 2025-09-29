@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-19"
+lastupdated: "2025-09-29"
 
 subcollection: dr-automation
 
@@ -24,25 +24,14 @@ Once the deployment is successful, the **Update API Key** option is enabled. Upd
 
 The unique identifier for the primary orchestrator instance responsible for managing DR operations like failover, failback, and replication workflows.
 
-**DR Orchestrator status**:
-
-Displays the current operational status of the primary orchestrator. A status such as “Active” indicates that the orchestrator is functioning and ready for DR activities.
-
 **SSH key name**:
 
 The name of the IBM Cloud SSH key used to enable secure, encrypted communication between the orchestrator and the managed VMs involved in DR automation.
 
-**DR Schematics workspace**:
-
-Specifies the name of the IBM Cloud Schematics workspace that contains the Infrastructure as Code (IaC) configuration used by the orchestrator to provision and manage DR resources.
 
 **DR Schematics workspace connection status**:
 
 Indicates whether the orchestrator is successfully connected to the Schematics workspace. A status like “ACTIVE” signifies that IaC automation is correctly integrated.
-
-**DR Location**:
-
-Displays the location (for example, `dal10`) that hosts the DR orchestrator and resources, confirming the failover target region.
 
 **DR Power Virtual Server workspace**:
 
@@ -51,10 +40,6 @@ The name of the Power Virtual Server workspace associated with the primary orche
 **Standby Power Virtual Server workspace**:
 
 Represents the workspace linked to the standby orchestrator, located in a separate region. It provides backup infrastructure to take over during a failover.
-
-**Standby orchestrator name**: 
-
-The name of the standby orchestrator configured to take over if the primary orchestrator fails.
 
 **Standby orchestrator status**:
 
@@ -73,6 +58,30 @@ Shows whether the orchestrator can reach all required IBM Cloud APIs and externa
  
 - **Active**: Standby orchestrator is healthy and ready.
 - **Failed**: Standby orchestrator has encountered issues and may not be available for failover.
+
+**DR Orchestrator status**:
+
+Displays the current operational status of the primary orchestrator. A status such as “Active” indicates that the orchestrator is functioning and ready for DR activities.
+
+**DR Schematics workspace**:
+
+Specifies the name of the IBM Cloud Schematics workspace that contains the Infrastructure as Code (IaC) configuration used by the orchestrator to provision and manage DR resources.
+
+**DR Location**:
+
+Displays the location (for example, `dal10`) that hosts the DR orchestrator and resources, confirming the failover target region.
+
+**Standby orchestrator name**: 
+
+The name of the standby orchestrator configured to take over if the primary orchestrator fails.
+
+**DR orchestrator deployment time DR**:
+
+Displays the date and time when the primary orchestrator was deployed.
+
+**Standby Orchestrator deployment time DR**:
+
+Displays the date and time when the standby orchestrator was deployed.
 
 ## Service details
 {: #service-det}
