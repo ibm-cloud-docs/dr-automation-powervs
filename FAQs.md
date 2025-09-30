@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-09-30"
 
 subcollection: dr-automation
 
@@ -194,7 +194,7 @@ This mapping is intentional and helps distinguish between public and private (on
 ## **What should I do if I accidentally delete a KSYS Cluster?**
 {: #delete-ksys}
 
-If a KSYS Cluster is deleted, you must re-create it in the DR Automation GUI:  
+If a KSYS Cluster is deleted, you must re-create it in the external orchestror GUI:  
 1. Log in to the GUI.  
 2. Go to the **Add KSYS Subsystem** page.  
 3. Click **Add KSYS** and provide the host details (Username and Password).  
@@ -205,10 +205,10 @@ If a KSYS Cluster is deleted, you must re-create it in the DR Automation GUI:
 6. (Optional) Enable **Add Proxy** if communication requires a proxy.  
 7. Save the configuration to restore orchestrator functionality.  
 
-## **How do I create a new KSYS Cluster?**
+## **How do I create a new KSYS Cluster in external orchestror?**
 {: #create-ksys-cluster}
 
-When logging in for the first time, or if no cluster exists, you are redirected to the **Add KSYS Subsystem** page. From there:  
+When logging in for the first time in external orchestror, or if no cluster exists, you are redirected to the **Add KSYS Subsystem** page. From there:  
 - Click **Add KSYS**  
 - Enter host details (Username, Password)  
 - Select **IBM_PVS_DR** or **IBM_PVS_PRIVATE_DR**  

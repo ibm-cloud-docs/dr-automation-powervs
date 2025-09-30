@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-09-30"
 
 subcollection: dr-automation
 
@@ -75,11 +75,11 @@ Displays the location (for example, `dal10`) that hosts the DR orchestrator and 
 
 The name of the standby orchestrator configured to take over if the primary orchestrator fails.
 
-**DR orchestrator deployment time DR**:
+**DR orchestrator deployment time**:
 
 Displays the date and time when the primary orchestrator was deployed.
 
-**Standby Orchestrator deployment time DR**:
+**Standby Orchestrator deployment time**:
 
 Displays the date and time when the standby orchestrator was deployed.
 

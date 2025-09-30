@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-30"
 
 subcollection: dr-automation
 
@@ -10,13 +10,13 @@ keywords: manage external
 
 ---
 
-# Managing external orchestrator
+# Managing external orchestrator GUI
 {: #manage-exter}
 
-When you add virtual servers, you are redirected to the external orchestrator {{site.data.keyword.DR_full}}. This interface guides you through the necessary steps to configure and include virtual servers in your disaster recovery setup.
+When you add virtual servers, you are redirected to the external orchestrator of {{site.data.keyword.DR_full}}. This interface guides you through the necessary steps to configure and include virtual servers in your disaster recovery setup.
 {:shortdesc: .shortdesc}
 
-## Steps to access the external orchestrator
+## Steps to access the external orchestrator GUI
 {: #access-ext-orch}
 
 1. Enter your login credentials and click **Log In**. Use the credentials configured on your system.

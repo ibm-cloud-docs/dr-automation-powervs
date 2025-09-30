@@ -531,7 +531,7 @@ Networks:            vmrm_dal12_network01 <-> vmrm_dal12_network01
 CGName:              rccg-3b3d-b61c7
 
 ```
-An output that is similar to the following example is displayed for (private pod/plan): 
+An output that is similar to the following example is displayed for private cloud:
 ```
 ksysmgr q wg sb-aix-01_WG
 Name:                sb-aix-01_WG
@@ -1077,7 +1077,7 @@ User Scripts for Site: None
 User Scripts for Workgroup: None
 User Scripts for VM: None
 ```
-An output that is similar to the following example is displayed for (private pod/plan):
+An output that is similar to the following example is displayed for private cloud:
 ```
 ksysmgr query system
 System-Wide Persistent Attributes
@@ -1336,7 +1336,7 @@ Active Site:         DAL
 VolumeDiskGroup:     vmrm_rhel_WG_VG <-> rccg-a382-d35ba
 
 ```
-An output that is similar to the following example is displayed for (private pod/plan)
+An output that is similar to the following example is displayed for private cloud:
 ```
 ksysmgr q disk_group
 WGName:              vmrm_rhel_WG
@@ -1550,7 +1550,7 @@ An output that is similar to the following example is displayed:
 ksysmgr pair ws VMRM-Dal10 pair=VMRM-wdc
 Workspace VMRM-Dal10 was paired with VMRM-wdc
 ```
-An output that is similar to the following example is displayed for (private plan/pod)
+An output that is similar to the following example is displayed for private cloud:
 ```
 ksysmgr pair ws SVT-SMALL-Q3.2-mano-GRS pair=SVT_3Q2_XSPoD_25
 Workspace SVT-SMALL-Q3.2-mano-GRS was paired with SVT_3Q2_XSPoD_25
@@ -1571,7 +1571,7 @@ An output that is similar to the following example is displayed:
 ksysmgr refresh workspace VMRM-wdc
 Refresh workspaces to update Networks and VMs list completed.
 ```
-An output that is similar to the following example is displayed for (private plan/pod)
+An output that is similar to the following example is displayed for private cloud:
 ```
 ksysmgr refresh workspace SVT_3Q2_XSPoD_25
 Refresh workspaces to update Networks and VMs list completed.
@@ -1601,7 +1601,7 @@ An output that is similar to the following example is displayed:
 ksysmgr pair network VMRM-Dal10-Network01 pair=vmrm-wdc-network01
 Network VMRM-Dal10-Network01 was paired with vmrm-wdc-network01
 ```
-An output that is similar to the following example is displayed for (private plan/pod)
+An output that is similar to the following example is displayed for private cloud:
 
 ```
 ksysmgr pair network net-30 pair=Testsubnet1
@@ -1716,7 +1716,7 @@ Regions: us-east
 dal10
 api_key: #####1543D972B94F...
 ```
-An output that is similar to the following example is displayed for private plan/pod
+An output that is similar to the following example is displayed for private cloud:
 ```
 ksysmgr query system
 System-Wide Persistent Attributes
@@ -1848,7 +1848,7 @@ For Vm test_vm attribute(s) ShareProcPoolEnable was successfully modified.
 For Vm test_vm attribute(s) TargetProcPool was successfully modified.
 ```
 
-**Note**: Modifying shared processor pool is allowed only before first discovery
+**Note**: Modifying shared processor pool is allowed only before first discovery.
 
 ### Verify shared processor pool assignment for Public and Private Plan
 {: #vs-pp-a}
@@ -1987,7 +1987,7 @@ ActiveWorkgroups:               test_WG
 ```
 This confirms the correct site names for use in the move command.
 
-An output that is similar to the following example is displayed for (private plan/pod)
+An output that is similar to the following example is displayed for private cloud
 
 ```
 Name:                           TargetSite
@@ -2111,7 +2111,7 @@ Processors:                 0.25
 WorkSpace:                  dravyclon_lon04_power_workspace
 Networks:                   mgmt_net
 ```
-An output that is similar to the following example is displayed for private plan/pod:
+An output that is similar to the following example is displayed for private cloud:
 
 ```
 Name:                       test_Rehearsal
@@ -2223,7 +2223,7 @@ Workgroups:                          test_WG
 ```
 This confirms the correct site names for use in the move command.
 
-An output similar to the following example is displayed for private plan/pod
+An output similar to the following example is displayed for private cloud:
 ```
 Name:                                TargetSite
 SatelliteLocations:                  satloc_dal_clp2joc20ppo19876n50
@@ -2343,7 +2343,7 @@ Processors:                         0.25
 WorkSpace:                          Test_workspace_lon06_new
 Networks:                           mgmt_net
 ```
-An output similar to the following example is displayed for private plan/pod:
+An output similar to the following example is displayed for private cloud:
 
 ```
 Name:                              test_Rehearsal

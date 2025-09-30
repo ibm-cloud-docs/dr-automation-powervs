@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-23"
+lastupdated: "2025-09-30"
 
 subcollection: dr-automation
 
@@ -322,7 +322,7 @@ ksysmgr upgrade -f filesets
 An output that is similar to the following example is displayed:
 
 ```
-# ksysmgr -f upgrade filesets
+# ksysmgr upgrade -f filesets
 Downloading fileset
 [##############################] 100.00% (297178681/297178681 bytes)
 File saved as /tmp/filesets//2529A_61ksys190.tar.gz
