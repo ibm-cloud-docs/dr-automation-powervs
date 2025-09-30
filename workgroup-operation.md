@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-30"
 
 subcollection: dr-automation
 
@@ -10,14 +10,14 @@ keywords: workgroup, move workgroup, delete workgroup, workgroup status
 
 ---
 
-# System status interface
-{: #sys-stat-inter}
+# Work group Operations
+{: #work-group-oper}
 
 The system status interface provides a comprehensive overview of the operational conditions of the workgroup. By displaying the following statuses, it helps identify any issues that might require troubleshooting or corrective actions to maintain smooth system operation.
 {:shortdesc: .shortdesc}
 
 ## WorkGroup status
-{: #workgroou}
+{: #work-groou}
 
 The following list are the available statuses:
 
