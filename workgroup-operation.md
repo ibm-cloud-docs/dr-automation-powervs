@@ -10,7 +10,7 @@ keywords: workgroup, move workgroup, delete workgroup, workgroup status
 
 ---
 
-# Work group Operations
+# Work group operations
 {: #work-group-oper}
 
 The system status interface provides a comprehensive overview of the operational conditions of the workgroup. By displaying the following statuses, it helps identify any issues that might require troubleshooting or corrective actions to maintain smooth system operation.

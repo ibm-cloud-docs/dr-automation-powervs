@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-16"
+lastupdated: "2025-09-30"
 
 subcollection: dr-automation-powervs
 
@@ -16,6 +16,11 @@ Advanced operations in the {{site.data.keyword.DR_full}} provide essential actio
 
 ## Navigate advance operations
 {: #na-vi-gate}
+
+Access Advanced Operations from the Workgroup Summary tab to perform actions like Failover Rehearsal, Clean up, or Re-Sync for disaster recovery management.
+
+### Procedure
+{: #pr-ci-dure}
 
 Follow these steps to access Advanced Operations for a selected workgroup in the {{site.data.keyword.DR_full_notm}} Ui:
 
