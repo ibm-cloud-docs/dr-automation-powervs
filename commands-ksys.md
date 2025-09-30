@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-09-30"
 
 subcollection: dr-automation
 
@@ -1831,7 +1831,7 @@ For Vm test_vm attribute(s) ShareProcPoolEnable was successfully modified.
 For Vm test_vm attribute(s) TargetProcPool was successfully modified.
 ```
 
-> **Note**: Note: Both `sharedprocpool=yes` and `targetprocpool=<pool_name>` are mandatory parameters.
+> **Note**: Both `sharedprocpool=yes` and `targetprocpool=<pool_name>` are mandatory parameters.
 
 ### Modify shared processor pool settings for a virtual machine Public and Private Plan
 {: #msp-pp-vm}
@@ -1847,6 +1847,8 @@ ksysmgr modify vm test_vm sharedprocpool=yes targetprocpool=test_pool
 For Vm test_vm attribute(s) ShareProcPoolEnable was successfully modified.
 For Vm test_vm attribute(s) TargetProcPool was successfully modified.
 ```
+
+**Note**: Modifying shared processor pool is allowed only before first discovery
 
 ### Verify shared processor pool assignment for Public and Private Plan
 {: #vs-pp-a}
