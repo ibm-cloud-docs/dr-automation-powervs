@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-24"
+lastupdated: "2025-09-30"
 
 subcollection: dr-automation-powervs
 
@@ -42,7 +42,7 @@ The **Orchestrator (KSYS)** is crucial in coordinating DR workflows, ensuring vi
 
 This setup provides a secure, seamless DR solution that integrates with your production environment, enabling smooth failover and failback to maintain business continuity in unexpected events.
 
-![DR Automation Architecture](images/dr-automation-architecture.svg "DR Automation Architecture"){: caption="DR Automation Architecture" caption-side="bottom"}
+![DR Automation Architecture](images/updated.svg "DR Automation Architecture"){: caption="DR Automation Architecture" caption-side="bottom"}
 
 ## DR Service broker architecture
 {: #service-broker}
