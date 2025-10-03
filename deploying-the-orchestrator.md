@@ -32,7 +32,7 @@ To deploy the orchestrator with the necessary configurations to meet your disast
 follow the steps:
 
 1. After completing the **Create** resource step, you are redirected to the **Manage** tab to proceed with the deployment.
-2. In the **Orchestrator HA** section, choose **Enable** to configure both a primary and standby orchestrator in high availability mode, or **Disable** to set up only the primary orchestrator.
+2. In the **Orchestrator HA** section, choose **Enable** to configure both a primary and standby orchestrator in high availability mode, or **Disable** to configure only the primary orchestrator.
 3. In the configure primary orchestrator section, enter the **DR Orchestrator name**.
 
 4. Set a password in the **DR Orchestrator password** field and re-enter the password in **Confirm DR orchestrator password** section to secure access to the external orchestrator interface.
@@ -57,10 +57,10 @@ follow the steps:
 
       1. To go ahead with the custom VPC you will have to finish the following pre-req:
 
-         - Need VPC,  you can create a new [VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started) or use the existing one.
+         - Need VPC, you can create a new [VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started) or use the existing one.
          - Once VPC is available, configure your VPC to [enable the proxy communication](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch#procedure-ena-ppro-comm).
-         - Use the existing transit gateway or you can create a new [Transit gatway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-getting-started). To attach  Transit gateway to a VPC in IBM Cloud. Navigate to **Infrastructure** > **Network** > **Transit Gateway**. Select your transit gateway, and on the **Add connection** page, select the VPC under **Network connection**, choose the **Region**, select the appropriate **Connection reach**, **Select the VPC** from the available connection, and click **Add**.
-         -  Once you complete all the pre-req you are ready to use the custom VPC.
+         - Use the existing transit gateway or you can create a new [Transit gatway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-getting-started). To attach Transit gateway to a VPC in IBM Cloud. Navigate to **Infrastructure** > **Network** > **Transit Gateway**. Select your transit gateway, and on the **Add connection** page, select the VPC under **Network connection**, choose the **Region**, select the appropriate **Connection reach**, **Select the VPC** from the available connection, and click **Add**.
+         - Once you complete all the pre-req you are ready to use the custom VPC.
 
       2. Choose the **Transit Gateway** from the dropdown.
       3. Select the VPC from the dropdown.

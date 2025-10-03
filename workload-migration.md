@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-30"
+lastupdated: "2025-10-03"
 
 subcollection: dr-automation
 
@@ -220,7 +220,7 @@ Deprovision the source deployment from the **Manage DR page** using Delete Servi
 ## Upgrade your ksys filsets
 {: #Upgrade-fil-set}
 
-The orchestrator upgrade process involves updating the orchestrator file set to the latest supported release. This ensures system stability, enhanced security, and access to the newest features and fixes. The upgrade is performed through a simple CLI command, making it straightforward to keep your deployment current and reliable.
+The orchestrator upgrade process involves updating the orchestrator fileset to the latest supported release. This ensures system stability, enhanced security, and access to the newest features and fixes. The upgrade is performed through a simple CLI command, making it straight forward to keep your deployment current and reliable.
 
 ### Procedure
 {: #procedure-upgrade}
@@ -230,7 +230,7 @@ To upgrade your current fileset to the latest version, complete the following st
 #### Standard upgrade
 {: #standard-upgrade}
 
-Used for routine updates, it checks the system and upgrades only new or missing filesets while skipping those already installed.
+For routine updates, the system checks and installs new or missing filesets while skipping those already present. If the orchestrator filesets are up to date, the system verifies them and skips reinstallation.
 
 To upgrade the filest to the latest version, run the following command:
 
@@ -306,8 +306,6 @@ ksys.ui.server            1.9.0.0         Already installed
 
 Filesets upgradation completed successfully.
 ```
-
-**NOTE**: If the orchestrator filesets are already up to date, the system verifies and skips reinstallation.
 
 #### Forced Upgrade
 {: #force-upgrade}

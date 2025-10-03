@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-30"
+lastupdated: "2025-10-03"
 
 subcollection: dr-automation
 
@@ -64,7 +64,7 @@ For more details, refer to [Before you begin](/docs/dr-automation-powervs?topic=
 
    DR Automation focuses on compute resources, but if storage is required, it supports flexible configurations like Tier 1 (10 IOPS/GB) and Tier 3 (3 IOPS/GB) for different workload requirements.
 
-##  **Does DR Automation support High Availability (HA)?**
+## **Does DR Automation support High Availability (HA)?**
 {: #hadr}  
 
 Yes, optional HA configurations can be enabled for orchestrators, can ensure resilience against single points of failure during disasters.  
