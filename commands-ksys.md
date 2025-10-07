@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-30"
+lastupdated: "2025-10-07"
 
 subcollection: dr-automation
 
@@ -1809,6 +1809,28 @@ ksysmgr delete script entity=site script_name=pre_discovery
 KSYS site has been updated
 ```
 
+## Target system type
+{: #Tr-sy-ty}
+
+You can optionally specify a target system type when configuring a backup VM. This attribute allows the backup VM to run on a system different from the source for example, when the production VM runs on a Power10 server and the backup VM must run on a Power9 server.
+
+> **Note**: Setting the target system type is currently not supported for PowerVS Private Plan.
+
+To configure a backup VM to run on a specific target system type, run the following command:, run the following command:
+
+```cksysmgr manage vm test-syd targetsystemtype=s922```
+
+The following example output is displayed:
+
+```
+# ksysmgr manage vm test-1 targetsystemtype=s922
+Refresh VMs list of Test-lon04 workspace started
+Refresh VMs list of Test-lon04 workspace completed
+Refresh Networks list of Test-lon04 workspace started
+Refresh Networks list of Test-lon04 workspace completed
+```
+
+
 ## Shared Processor Pool configuration
 {: #s-pro-poo-confi}
 
@@ -1891,11 +1913,19 @@ This confirms the VM was provisioned with reduced capacity and associated with t
 
 When a source VM is configured with a shared processor pool and its backup VM is also assigned to a shared processor pool, the system automatically adjusts resources during a site move:
 
-- **Move from home site to backup site**: The VM’s resources memory and processor are reduced to the minimum resource values defined for that VM.
+- **During discovery or DR readiness**:If the shared processor pool is configured for the target site, the backup VM is created with minimum CPU and memory resources from that pool.
+This helps minimize cost while maintaining DR readiness.
 
-- **Move back from backup site to home site**: The VM’s resources are restored to the original configuration values.
+- **Move from home site to backup site**: If Shared processor pool is configured for target site and source vm is from shared processor pool, during DR Readiness, target backup vm will be initially created with minimum resources.
 
-This automated resource optimization helps reduce licensing costs and ensures efficient utilization during disaster recovery operations.
+During move from home site to backup site, source vm which will be shutdown will be reduced to minimum resource and target system will be increase to actually vm resource configuration.
+
+> **Note**: if source vm is not from shared processor pool but target site shared processor pool is configured. During move the source vm capacity will not be reduced during shutdown. Where target system resource will be increase utilising resource from given pool.
+
+- **Move back from backup site to home site**: The VM’s resources are restored to the original configuration values. This automated resource optimization helps reduce licensing costs and ensures efficient utilization during disaster recovery operations.
+
+- **DR Rehearsal**: If the shared processor pool is configured for the target site, the rehearsal VM is created using resources from the target shared processor pool.
+The rehearsal VM also respects the target system type defined by the user.
 
 ### List shared processor pools for Public and Private Plan
 {: #li-sh-pro-po}
