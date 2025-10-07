@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-10-07"
 
 subcollection: dr-automation
 
@@ -63,7 +63,7 @@ You can view and manage virtual machines by using the Power Virtual Server DR Au
 ### Procedure
 {: #ma-vm-se}
 
-To manage the additonal virtual machines, complete the following steps:
+To manage the additonal new virtual machines, complete the following steps:
 
 1. In the Power Virtual Server DR Automation navigation page, click **Cluster Name > Site > Workgroup > Managed VM**.
 2. Select the unmanged VM.
@@ -73,7 +73,7 @@ To manage the additonal virtual machines, complete the following steps:
    - Workgroup
    - Source workspace
    - Target workspace
-5. oCmplete the deployment flow to manage selected VM.
+5. Complete the deployment flow to manage selected VM.
 
 ## Unmanage VM
 {: #um-manage-ses}
