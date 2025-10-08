@@ -18,7 +18,22 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 {: #subcollection-october1025}
 {: release-note-october}
 
+**Deploy DR Automation in Your private cloud environment**
 
+You can now deploy and manage your DR Automation resources in a private (client) cloud environment. This update introduces the complete architecture, deployment flow, and configuration details for setting up DR Automation in client locations, including information about the Service Broker, KSYS orchestrator, storage tiers, and network connectivity. For more information, see [Deploy DR Automation in Your private cloud environment](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch-private-pod)
+
+
+**IBM Satellite Location Support for DR Automation Private Cloud**
+
+You can now connect your DR Automation private cloud environment to IBM Satellite locations across multiple global regions. This enhancement enables low-latency, region-specific deployments for private data centers, improving performance and reliability. The updated documentation includes supported regions, connectivity guidance, and latency requirements for optimal setup. For more information, see [IBM Satellite location support for DR Automation private cloud](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch-private-pod)
+
+**Orchestrator deployment timestamps and plan details**
+
+You can now view the deployment timestamps for both the primary and standby orchestrators, along with the subscription plan details (Public or Private) selected during initial setup. These enhancements provide better tracking of deployment history and service configuration. For more information, see [Orchestrator and service details](/docs/dr-automation-powervs?topic=dr-automation-powervs-or-ser-de#service-det)
+
+**Modify Virtual Machine Enhancements**
+
+The Modify VM option now allows you to update virtual machines with greater flexibility. You can select VMs to modify, configure multiple IP mappings, and enable the Shared Processor Pool (SPP) to optimize performance and resource utilization. The updated workflow simplifies VM configuration and ensures seamless updates to DR-enabled environments. For more information, see [Orchestrator and service details](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-vm-ses#modify-vm-ses)
 
 ## 25 July 2025
 {: #subcollection-july0725}
