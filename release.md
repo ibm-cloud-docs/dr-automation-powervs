@@ -35,6 +35,20 @@ You can now view the deployment timestamps for both the primary and standby orch
 
 The Modify VM option now allows you to update virtual machines with greater flexibility. You can select VMs to modify, configure multiple IP mappings, and enable the Shared Processor Pool (SPP) to optimize performance and resource utilization. The updated workflow simplifies VM configuration and ensures seamless updates to DR-enabled environments. For more information, see [Orchestrator and service details](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-vm-ses#modify-vm-ses)
 
+**Real time event notifications**
+
+DR Automation now displays real-time notifications for events, that are deployment status, errors, and operational updates. Each notification appears as a pop-up with a timestamp, and you can track up to 100 events for the current and previous months in the IBM Cloud console, providing clear visibility into system activities and changes. For more information, see [Real time event notifications](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-log#adm-log)
+
+**Managed Power Virtual Servers with Sorting option**
+
+The Managed Power Virtual Servers view now displays a comprehensive list of virtual machines configured for disaster recovery. Details include VM name, VM ID, memory, processor cores, and workgroup name, with sorting options to help you quickly organize and manage DR-enabled VMs. For more information, see [Managed Power Virtual Servers with Sorting option](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-vm-ser#vm-details)
+
+**Source Satellite Location and Target Satellite Location**
+When deploying the orchestrator with Client Location (Private pod), the Add Sites page now shows Select Source Satellite Location and Select Target Satellite Location instead of region-based options. For more information, see [Source Satellite Location and Target Satellite Location](/docs/dr-automation-powervs?topic=dr-automation-powervs-con-site-ksys)
+
+**Upgrade your ksys filesets**
+DR Automation now supports upgrading the orchestrator filesets through a simplified CLI command, ensuring your system remains up to date with the latest features, fixes, and security enhancements. For more information, see [Upgrade your ksys filesets](/docs/dr-automation-powervs?topic=dr-automation-powervs-plan-work-load#Upgrade-fil-set)
+
 ## 25 July 2025
 {: #subcollection-july0725}
 {: release-note}
