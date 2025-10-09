@@ -10,7 +10,7 @@ keywords: upgrade your deployment, migration , migrate, ksys filsets, ksys
 
 ---
 
-## Upgrade your ksys filsets
+# Upgrade your ksys filsets
 {: #Upgrade-fil-set}
 
 The KSYS fileset upgrades the Orchestrator to the latest supported version to ensure compatibility with new features and improvements. Upgrading ksys to the latest version helps maintain system stability, enhance security, and provide access to the newest features and fixes. Before starting the upgrade, verify the currently installed version by running the following command:
@@ -604,4 +604,3 @@ To validate the upgrade is successful, run the following command to verify:
 ksysmgr q version
 ```
 Also you can Check [orchestrator and service details page](/docs/dr-automation-powervs?topic=dr-automation-powervs-or-ser-de) it displays the timestamp of your latest update and you can check in the event log to verify.
-
