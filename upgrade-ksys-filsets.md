@@ -17,7 +17,7 @@ The KSYS fileset upgrades the Orchestrator to the latest supported version to en
 
 ```ksysmgr q version```
 
-Ensure that the target version is the latest supported release, check [VMRM](https://www.ibm.com/docs/en/vmrmdr) page before proceeding. For the service pack version of the latest release check release notes of VMRM documentation for upgrade. The upgrade process is performed through a simple CLI command, making it straightforward to keep your deployment current, reliable, and optimized.
+Ensure that the target version is the latest supported release, see [VMRM](https://www.ibm.com/docs/en/vmrmdr) page before proceeding. For the service pack version of the latest release check release notes of VMRM documentation for upgrade. The upgrade process is performed through a simple CLI command, making it straightforward to keep your deployment current, reliable, and optimized.
 
 ## Procedure
 {: #procedure-upgrade}
