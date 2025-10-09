@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-10-09"
 
 subcollection: dr-automation
 
@@ -21,7 +21,7 @@ The **Events** tab in the {{site.data.keyword.DR_full}} interface provides an ov
 
 Administrators can view detailed records of the virtual server activities, including:
 
-- You can access a maximum of 100 events for the current and previous months in the IBM Cloud console.
+- You can access a maximum of 100 current events in the IBM Cloud console.
 
 - The DR automation displays notifications to keep you informed about important events such as deployment status, errors, or other operational updates. Notifications appear as pop-up messages on the screen with timestamp.
 

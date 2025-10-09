@@ -17,19 +17,19 @@ The KSYS fileset upgrades the Orchestrator to the latest supported version to en
 
 ```ksysmgr q version```
 
-Ensure that the target version is the latest supported release is `Ksysmgr version: 1.9.0.0` and `Ksys version: 1.9.0.0` before proceeding. The upgrade process is performed through a simple CLI command, making it straightforward to keep your deployment current, reliable, and optimized.
+Ensure that the target version is the latest supported release, check [VMRM](https://www.ibm.com/docs/en/vmrmdr) page before proceeding. For the service pack version of the latest release check release notes of VMRM documentation for upgrade. The upgrade process is performed through a simple CLI command, making it straightforward to keep your deployment current, reliable, and optimized.
 
-### Procedure
+## Procedure
 {: #procedure-upgrade}
 
 To upgrade your current ksys fileset to the latest version, complete the following steps:
 
-#### Standard upgrade
+### Standard upgrade
 {: #standard-upgrade}
 
 For routine updates, the system checks and installs new or missing filesets while skipping those already present. If the orchestrator ksys filesets are up to date, the system verifies them and skips reinstallation.
 
-To upgrade the filest to the latest version, run the following command:
+To upgrade the ksys filest to the latest version, run the following command:
 
 ```
 ksysmgr upgrade filesets
@@ -103,15 +103,16 @@ ksys.ui.server            1.9.0.0         Already installed
 
 Filesets upgradation completed successfully.
 ```
+
 To validate the upgrade is successful, run the following command to verify:
 
 ```
 ksysmgr q version
 ```
 
-Also you can Check [orchestrator and service details page](/docs/dr-automation-powervs?topic=dr-automation-powervs-or-ser-de) it displays the timestamp of your latest update and you can check in the event log to verify.
+Also you can Check in [orchestrator and service details page](/docs/dr-automation-powervs?topic=dr-automation-powervs-or-ser-de) it displays the timestamp of your latest update and you can check in the event log to verify.
 
-#### Forced Upgrade
+### Forced Upgrade
 {: #force-upgrade}
 
 Use when a force installation is needed, it force installs all orchestrator ksys filesets regardless of their current status.
@@ -603,4 +604,5 @@ To validate the upgrade is successful, run the following command to verify:
 ```
 ksysmgr q version
 ```
-Also you can Check [orchestrator and service details page](/docs/dr-automation-powervs?topic=dr-automation-powervs-or-ser-de) it displays the timestamp of your latest update and you can check in the event log to verify.
+
+Also you can check [DR orchestrator deployment time](/docs/dr-automation-powervs?topic=dr-automation-powervs-or-ser-de) it displays the timestamp of your latest update and you can check in the event log to verify.
