@@ -167,6 +167,10 @@ In {{site.data.keyword.DR_short}}, user can set up cross-account API keys to all
 
 Storage is allocated based on deployment needs, ensuring efficient usage of resources and seamless management.
 
+## Satellite location
+{: #sat-location}
+
+For DR Automation Private Cloud, the Satellite location corresponds to the IBM Cloud region closest to your data center, with a recommended network round-trip time (RTT) of 200 milliseconds or less. For more information on different Satellite locations, see [IBM Satellite location](/docs/dr-automation-powervs?topic=dr-automation-powervs-ibm-satellite-location).
 
 ## Network configurations
 {: #ns-private}
@@ -176,7 +180,7 @@ Storage is allocated based on deployment needs, ensuring efficient usage of reso
 
 As part of the DR Automation deployment, the system creates the Orchestrator (KSYS) virtual server with private networks only, preventing direct access to the Power Virtual Server. To access this virtual server, you must use a VPN connected to the VPC or manually enable the public network after deployment.
 
-DR Automation uses custom VPC and VPC schematic through the Power Virtual Server with VPC landing zone , VPC Schematic internally creates an optional VPN  and in case of Custom VPC, VPN need to be configured manually. This VPN allows you to connect the Power Virtual Server and Virtual Server Instances (VSI) by downloading the VPN profile.
+DR Automation uses **custom VPC** and **VPC schematic** through the Power Virtual Server with VPC landing zone , VPC Schematic internally creates an optional VPN  and in case of Custom VPC, VPN need to be configured manually. This VPN allows you to connect the Power Virtual Server and Virtual Server Instances (VSI) by downloading the VPN profile.
 
 After deployment, you can launch the "External Orchestrator UI" when you connect to the VPN, or when the public network is explicitly enabled.
 
