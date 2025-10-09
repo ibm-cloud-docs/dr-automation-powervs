@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-30"
+lastupdated: "2025-10-09"
 
 subcollection: dr-automation-powervs
 
@@ -129,6 +129,7 @@ IBM Power servers that are supported by {{site.data.keyword.DR_full_notm}} inclu
 - **IBM Power E980**
 - **IBM Power E1080**
 - **IBM Power S1022**
+- **IBM Power11**
 
 For more details, refer to the specific data sheets and hardware overview table.
 

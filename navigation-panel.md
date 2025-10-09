@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-19"
+lastupdated: "2025-10-09"
 
 subcollection: dr-automation
 
@@ -106,19 +106,15 @@ The Disk Mapping feature is applicable at the Workgroup level and provides a det
 
 Displays disk mapping information for both the source and target sites.
 
-- **Consistency Group name and Volume Group name**: 
-
+- **Consistency Group name and Volume Group name**:
 For each site, the associated **Consistency Group name** and **Volume Group name** are shown, enabling better tracking and management.
+
 - **Active Virtual Machine Information**:
-
    - **Disk ID**: Lists the disk identifiers for the source site.
-
    - **Active VM**: Displays the name of the VM currently active at the source site.
 
 - **Partner Virtual Machine Information**:
-
    - **Disk ID**: Lists the disk identifiers for the target site.
-
    - **Partner VM**: Displays the name of the partner (backup) VM at the target site.
 
 ### Procedure to access disk mapping

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-08"
+lastupdated: "2025-10-09"
 subcollection: dr-automation
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -48,6 +48,10 @@ When deploying the orchestrator with Client Location (Private pod), the Add Site
 
 **Upgrade your ksys filesets**
 DR Automation now supports upgrading the orchestrator filesets through a simplified CLI command, ensuring your system remains up to date with the latest features, fixes, and security enhancements. For more information, see [Upgrade your ksys filesets](/docs/dr-automation-powervs?topic=dr-automation-powervs-plan-work-load#Upgrade-fil-set)
+
+**Shared processor pool support for public and private plans**
+
+DR Automation now supports assigning and managing virtual machines with Shared Processor Pools (SPP) for both Public and Private Plans, enabling dynamic resource optimization and reduced licensing costs during disaster recovery operations. For more information, see [Shared processor pool support for public and private plans](/docs/dr-automation-powervs?topic=dr-automation-powervs-ksysmgr-commandorchestrator#s-pro-poo-confi)
 
 ## 25 July 2025
 {: #subcollection-july0725}

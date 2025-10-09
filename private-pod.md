@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-03"
+lastupdated: "2025-10-09"
 
 subcollection: dr-automation
 
@@ -134,6 +134,7 @@ IBM Power servers that are supported by {{site.data.keyword.DR_full_notm}} inclu
 - **IBM Power E980**
 - **IBM Power E1080**
 - **IBM Power S1022**
+- **IBM Power11**
 
 For more details, refer to the specific data sheets and hardware overview table.
 
@@ -175,7 +176,7 @@ Storage is allocated based on deployment needs, ensuring efficient usage of reso
 
 As part of the DR Automation deployment, the system creates the Orchestrator (KSYS) virtual server with private networks only, preventing direct access to the Power Virtual Server. To access this virtual server, you must use a VPN connected to the VPC or manually enable the public network after deployment.
 
-DR Automation use a VPC schematic through the **Power Virtual Server with VPC landing zone**, this internally creates an optional VPN. This VPN allows you to connect the Power Virtual Server and Virtual Server Instances (VSI) by downloading the VPN profile.
+DR Automation uses custom VPC and VPC schematic through the Power Virtual Server with VPC landing zone , VPC Schematic internally creates an optional VPN  and in case of Custom VPC, VPN need to be configured manually. This VPN allows you to connect the Power Virtual Server and Virtual Server Instances (VSI) by downloading the VPN profile.
 
 After deployment, you can launch the "External Orchestrator UI" when you connect to the VPN, or when the public network is explicitly enabled.
 
