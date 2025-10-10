@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-07"
+lastupdated: "2025-10-10"
 
 subcollection: dr-automation
 
@@ -1818,7 +1818,7 @@ You can optionally specify a target system type when configuring a backup VM. Th
 
 To configure a backup VM to run on a specific target system type, run the following command:, run the following command:
 
-```cksysmgr manage vm test-syd targetsystemtype=s922```
+```ksysmgr manage vm test-syd targetsystemtype=s922```
 
 The following example output is displayed:
 
@@ -1829,7 +1829,7 @@ Refresh VMs list of Test-lon04 workspace completed
 Refresh Networks list of Test-lon04 workspace started
 Refresh Networks list of Test-lon04 workspace completed
 ```
-
+>**Note**: Modifying target system type is allowed only before first discovery.
 
 ## Shared Processor Pool configuration
 {: #s-pro-poo-confi}
@@ -1920,7 +1920,7 @@ This helps minimize cost while maintaining DR readiness.
 
 During move from home site to backup site, source vm which will be shutdown will be reduced to minimum resource and target system will be increase to actually vm resource configuration.
 
-> **Note**: if source vm is not from shared processor pool but target site shared processor pool is configured. During move the source vm capacity will not be reduced during shutdown. Where target system resource will be increase utilising resource from given pool.
+> **Note**: If source vm is not from shared processor pool but target site shared processor pool is configured. During move the source vm capacity will not be reduced during shutdown. Where target system resource will be increase utilising resource from given pool.
 
 - **Move back from backup site to home site**: The VM’s resources are restored to the original configuration values. This automated resource optimization helps reduce licensing costs and ensures efficient utilization during disaster recovery operations.
 
