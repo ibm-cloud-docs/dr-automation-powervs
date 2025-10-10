@@ -18,23 +18,23 @@ When workloads are deployed on a new system, you must pay attention to its confi
 
 For more information on hardware specifications that you might need, see [Hardware specifications for {{site.data.keyword.DR_full_notm}}](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch#hs).
 
-For AIX, {{site.data.keyword.DR_full_notm}} supports only AIX 7.3, or later. If you use an unsupported version, it is subject to outages during planned maintenance windows with no advanced notification given. Your current AIX level and POWER processor family can help determine which migration path to follow.
+For AIX, {{site.data.keyword.DR_full_notm}} supports only AIX 7.3, or later. If you use an unsupported version, it is subject to outages during planned maintenance windows with no advanced notification given.
 
-## Migration Statergies
+## Migration Strategies
 {: #mig-ra-tion}
 
 This section provides a high-level walkthrough for upgrading your existing deployment to the latest supported version. It outlines the essential steps for taking a snapshot from the source environment, restoring it on a new deployment, and completing the transition cleanly.
 
-Check the current Orchestrator version by running the follwoing command:
+Check the current Orchestrator version by running the following command:
 
 ```ksysmgr query version```
 
 This display the current version number. Based on the version, choose one of two methods to migrate:
 
 - [Migrate using snapshot backup and restore](#migrate-using-snapshot-backup-and-restore): If the current version is older than `1.9.0.1`. This involves taking a configuration snapshot on the source and restoring it onto a new deployment.
-- [Migrate using direct approach](#migration-using-direct-approach): If the current version is `1.9.0.1` or later. This upgrades the existing deployment using the `ksysmgr upgrade file set` command.
+- [Migrate using direct approach](/docs-draft/dr-automation-powervs?topic=dr-automation-powervs-Upgrade-fil-set): If the current version is `1.9.0.1` or later. This upgrades the existing deployment using the `ksysmgr upgrade file set` command.
 
-## Migrate using snapshot backup and restore
+### Migrate using snapshot backup and restore
 {: #snapshot-mig}
 
 To Migrate your current orchestrator to the latest version, complete the following steps:
