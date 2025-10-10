@@ -10,7 +10,7 @@ keywords: migration, migration deployment , upgrade, upgrade your deployment, sn
 
 ---
 
-# Migratation planning in {{site.data.keyword.DR_full}}
+# Migration planning in {{site.data.keyword.DR_full}}
 {: #plan-work-load}
 
 
@@ -32,5 +32,5 @@ Check the current Orchestrator version by running the following command:
 
 This display the current version number. Based on the version, choose one of two methods to migrate:
 
-- [Migrate using snapshot backup and restore](#migrate-using-snapshot-backup-and-restore): If the current version is older than `1.9.0.1`. This involves taking a configuration snapshot on the source and restoring it onto a new deployment.
+- [Migrate using snapshot backup and restore](/docs/dr-automation-powervs?topic=dr-automation-powervs-snapshot-mig): If the current version is older than `1.9.0.1`. This involves taking a configuration snapshot on the source and restoring it onto a new deployment.
 - [Migrate using direct approach](/docs/dr-automation-powervs?topic=dr-automation-powervs-Upgrade-fil-set): If the current version is `1.9.0.1` or later. This upgrades the existing deployment using the `ksysmgr upgrade file set` command.
