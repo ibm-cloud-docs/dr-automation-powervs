@@ -1816,7 +1816,7 @@ You can optionally specify a target system type when configuring a backup VM. Th
 
 > **Note**: Setting the target system type is currently not supported for PowerVS Private Plan.
 
-To configure a backup VM to run on a specific target system type, run the following command:, run the following command:
+To configure a backup VM to run on a specific target system type, run the following command, run the following command:
 
 ```ksysmgr manage vm test-syd targetsystemtype=s922```
 
@@ -1829,6 +1829,18 @@ Refresh VMs list of Test-lon04 workspace completed
 Refresh Networks list of Test-lon04 workspace started
 Refresh Networks list of Test-lon04 workspace completed
 ```
+
+To modify a backup VM to run on a specific target system type, run the following command:
+
+```ksysmgr modify vm test-syd targetsystemtype=e980```
+
+The following example output is displayed:
+
+```
+ksysmgr modify vm test_syd04 targetsystemtype=e980
+TargetSystemType e980 was found and modified successfully
+```
+
 >**Note**: Modifying target system type is allowed only before first discovery.
 
 ## Shared Processor Pool configuration
