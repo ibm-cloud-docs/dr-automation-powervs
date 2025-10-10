@@ -13,11 +13,7 @@ keywords: upgrade your deployment, migration , migrate, ksys filsets, ksys
 # Upgrade your ksys filsets (Migrate using direct approach)
 {: #Upgrade-fil-set}
 
-The orchestrator fileset upgrades the latest supported version to ensure compatibility with new features and improvements. Upgrading ksys to the latest version helps maintain system stability, enhance security, and provide access to the newest features and fixes. Before starting the upgrade, verify the currently installed version by running the following command:
-
-```ksysmgr query version```
-
-Ensure that the target version is the latest supported release, see [VMRM](https://www.ibm.com/docs/en/vmrmdr) page before proceeding. For the service pack version of the latest release check release notes of VMRM documentation for upgrade. The upgrade process is performed through a simple CLI command, making it straightforward to keep your deployment current, reliable, and optimized.
+Upgrade the orchestrator fileset to the latest supported version to ensure compatibility, stability, security, and access to new features and fixes.
 
 ## Procedure
 {: #procedure-upgrade}
