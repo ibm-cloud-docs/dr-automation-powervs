@@ -75,24 +75,11 @@ To Migrate your current orchestrator to the latest version, complete the followi
    Successfully created a configuration snapshot: /var/ksys/snapshots/snap.xml_DETAILED_2025-07-11_00:42:32.xml.tar.gz
    ```
 
-6. Now upload the snapshot manually to the IBM COS bucket.(if the version is 1.8.0.1)
+6. Now upload the snapshot manually to the IBM COS bucket.
 
- > **Note**:If your at 1.9.0.0 version, you can take snapshot and directly upload it to COS,using the follwoing command:
- ```ksysmgr add snapshot <filepath> upload_to_cos```
+ > **Note**:If your at 1.9.0.0 version, you can take snapshot and directly upload it to COS,using the following command:
 
- An output that is similar to the following example is displayed:
-
- ```
-  ksysmgr add snapshot -h
-
-ksysmgr add snapshot
-      [filepath=<full file prefix path | file prefix>]
-      [upload_to_cos=<yes | no>]
-      [region=<cos_region>]
-      [bucketname=<cos_bucket_name>]
-    add => ad*, cr*, make, mk
-    snapshot => snap*
- ```
+```ksysmgr add snapshot upload_to_cos=yes region=<region-Name> bucketname=<bucket_name>```
 
 ## Migration using direct approach
 {: #snapshot-dir-ap}
