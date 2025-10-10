@@ -10,10 +10,10 @@ keywords: upgrade your deployment, migration , migrate, ksys filsets, ksys
 
 ---
 
-# Upgrade your ksys filsets
+# Upgrade your ksys filsets (Migrate using direct approach)
 {: #Upgrade-fil-set}
 
-The KSYS fileset upgrades the Orchestrator to the latest supported version to ensure compatibility with new features and improvements. Upgrading ksys to the latest version helps maintain system stability, enhance security, and provide access to the newest features and fixes. Before starting the upgrade, verify the currently installed version by running the following command:
+The orchestrator fileset upgrades the latest supported version to ensure compatibility with new features and improvements. Upgrading ksys to the latest version helps maintain system stability, enhance security, and provide access to the newest features and fixes. Before starting the upgrade, verify the currently installed version by running the following command:
 
 ```ksysmgr query version```
 

@@ -40,6 +40,7 @@ toc:
           label: Migration Strategies
           topics:
           - workload-migration.md
+          - migrate-using-snapshot.md
           - upgrade-ksys-filsets.md
           - additonal-migration.md
   - navgroup:
