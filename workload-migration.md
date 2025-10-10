@@ -20,12 +20,21 @@ For more information on hardware specifications that you might need, see [Hardwa
 
 For AIX, {{site.data.keyword.DR_full_notm}} supports only AIX 7.3, or later. If you use an unsupported version, it is subject to outages during planned maintenance windows with no advanced notification given. Your current AIX level and POWER processor family can help determine which migration path to follow.
 
-
-
-## Upgrade your orchestrator deployment
-{: #Upgrade-dep-your}
+## Migration statergies
+{: #mig-ra-tion}
 
 This section provides a high-level walkthrough for upgrading your existing deployment to the latest supported version. It outlines the essential steps for taking a snapshot from the source environment, restoring it on a new deployment, and completing the transition cleanly.
+
+Check the current Orchestrator version by running the follwoing command:
+
+```ksysmgr query version```
+This display the current version number. Based on the version, choose one of two methods:
+
+- [Migration using Snapshot and restrotation](#migration-using-snapshot-and-restrotation): If the current version is older than `1.9.0.2`. This involves taking a configuration snapshot on the source and restoring it onto a new deployment.
+- [Migration using direct approach](#migration-using-direct-approach): If the current version is 1.9.0.2 or later. This upgrades the existing deployment in place using the ksysmgr upgrade file set command.
+
+## Migration using Snapshot and restrotation
+{: #snapshot-mig}
 
 To upgrade your current orchestrator to the latest version, complete the following steps:
 
@@ -36,7 +45,7 @@ To upgrade your current orchestrator to the latest version, complete the followi
 3. Check the current version of Orchestrator/KSYS using the following command:
 
    ```
-   lslpp -l | grep ksys.license
+   ksysmgr query version
    ```
 
    An output that is similar to the following example is displayed:
@@ -45,8 +54,8 @@ To upgrade your current orchestrator to the latest version, complete the followi
    ksys.license  1.8.0.1  COMMITTED  Base Server Runtime
    ```
 
-   > **Note:** Migration is supported only if your deployment is running older versions of `ksys`. You can verify the supported `ksys` levels in the IBM VMRM DR for Power systems [Upgrading](https://www.ibm.com/docs/en/vmrmdr/1.8.0?topic=installing-upgrading) section .
-   > If you're running an older version, proceed with the following steps to upgrade your Orchestrator (ksys) to the latest level.
+   > **Note:** Migration is supported only if your deployment is running older versions of `Orchestrator`. You can verify the supported `Orchestrator` levels in the IBM VMRM DR for Power systems [Upgrading](https://www.ibm.com/docs/en/vmrmdr/1.8.0?topic=installing-upgrading) section .
+   > If you're running an older version, proceed with the following steps to upgrade your Orchestrator to the latest level.
 
 4. To view the usage options for creating a snapshot, run the following command:
 
@@ -93,7 +102,8 @@ To upgrade your current orchestrator to the latest version, complete the followi
    ```
 6. Now upload the snapshot manually to the IBM COS bucket.
 
-### Restore snapshot on new deployment
+### Migration using direct approach
+{: #snapshot-dir-ap}
 
 1. Identify your deployment to restore the snapshot.
 
