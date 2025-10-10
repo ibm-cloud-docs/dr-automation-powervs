@@ -20,7 +20,7 @@ For more information on hardware specifications that you might need, see [Hardwa
 
 For AIX, {{site.data.keyword.DR_full_notm}} supports only AIX 7.3, or later. If you use an unsupported version, it is subject to outages during planned maintenance windows with no advanced notification given. Your current AIX level and POWER processor family can help determine which migration path to follow.
 
-## Migration statergies
+## Migration Statergies
 {: #mig-ra-tion}
 
 This section provides a high-level walkthrough for upgrading your existing deployment to the latest supported version. It outlines the essential steps for taking a snapshot from the source environment, restoring it on a new deployment, and completing the transition cleanly.
@@ -28,21 +28,22 @@ This section provides a high-level walkthrough for upgrading your existing deplo
 Check the current Orchestrator version by running the follwoing command:
 
 ```ksysmgr query version```
-This display the current version number. Based on the version, choose one of two methods:
 
-- [Migration using Snapshot and restrotation](#migration-using-snapshot-and-restrotation): If the current version is older than `1.9.0.2`. This involves taking a configuration snapshot on the source and restoring it onto a new deployment.
-- [Migration using direct approach](#migration-using-direct-approach): If the current version is 1.9.0.2 or later. This upgrades the existing deployment in place using the ksysmgr upgrade file set command.
+This display the current version number. Based on the version, choose one of two methods to migrate:
 
-## Migration using Snapshot and restrotation
+- [Migrate using snapshot backup and restore](#migrate-using-snapshot-backup-and-restore): If the current version is older than `1.9.0.1`. This involves taking a configuration snapshot on the source and restoring it onto a new deployment.
+- [Migrate using direct approach](#migration-using-direct-approach): If the current version is `1.9.0.1` or later. This upgrades the existing deployment using the `ksysmgr upgrade file set` command.
+
+## Migrate using snapshot backup and restore
 {: #snapshot-mig}
 
-To upgrade your current orchestrator to the latest version, complete the following steps:
+To Migrate your current orchestrator to the latest version, complete the following steps:
 
-1. Identify the Orchestrator VM from the workspace for your deployment.
+1. Identify the Orchestrator from the workspace for your deployment.
 
 2. Login in to the Orchestrator VM.
 
-3. Check the current version of Orchestrator/KSYS using the following command:
+3. Check the current version of your Orchestrator using the following command:
 
    ```
    ksysmgr query version
@@ -51,13 +52,13 @@ To upgrade your current orchestrator to the latest version, complete the followi
    An output that is similar to the following example is displayed:
 
    ```
-   ksys.license  1.8.0.1  COMMITTED  Base Server Runtime
+   Ksysmgr version: 1.8.0.0
+   Ksys version: 1.8.0.0
    ```
 
-   > **Note:** Migration is supported only if your deployment is running older versions of `Orchestrator`. You can verify the supported `Orchestrator` levels in the IBM VMRM DR for Power systems [Upgrading](https://www.ibm.com/docs/en/vmrmdr/1.8.0?topic=installing-upgrading) section .
-   > If you're running an older version, proceed with the following steps to upgrade your Orchestrator to the latest level.
+   
 
-4. To view the usage options for creating a snapshot, run the following command:
+4. Take a snapshot on your deployment from the Orchestrator by running the following command:
 
    ```
    ksysmgr add snapshot -h
@@ -100,12 +101,20 @@ To upgrade your current orchestrator to the latest version, complete the followi
    Created: /var/ksys/snapshots/snap.xml_DETAILED_2025-07-11_00:42:32.xml.tar.gz
    Successfully created a configuration snapshot: /var/ksys/snapshots/snap.xml_DETAILED_2025-07-11_00:42:32.xml.tar.gz
    ```
-6. Now upload the snapshot manually to the IBM COS bucket.
+
+6. Now upload the snapshot manually to the IBM COS bucket.(if the version is 1.8.0.1)
+ > note:If your at 1.9.0.0 version , you can take snapshot and directly upload it to COS,using the follwoing command:
+ ```ksysmgr add snapshot <filepath> upload_to_cos```
+
+ The following is the output :
+ ```
+ 
+ ```
 
 ### Migration using direct approach
 {: #snapshot-dir-ap}
 
-1. Identify your deployment to restore the snapshot.
+1. Create a new deployment where your Orchestator is deployed with newer version.
 
 2. Login to the Orchestrator VM.
 
