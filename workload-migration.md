@@ -56,7 +56,8 @@ To Migrate your current orchestrator to the latest version, complete the followi
    Ksys version: 1.8.0.0
    ```
 
-   
+   > **Note:** Migration is supported only if your deployment is running older versions of `Orchestrator`. You can verify the supported `Orchestrator` levels in the IBM VMRM DR for Power systems [Upgrading](https://www.ibm.com/docs/en/vmrmdr/1.8.0?topic=installing-upgrading) section .
+   > If you're running an older version, proceed with the following steps to upgrade your Orchestrator to the latest level.
 
 4. Take a snapshot on your deployment from the Orchestrator by running the following command:
 
@@ -103,12 +104,22 @@ To Migrate your current orchestrator to the latest version, complete the followi
    ```
 
 6. Now upload the snapshot manually to the IBM COS bucket.(if the version is 1.8.0.1)
- > note:If your at 1.9.0.0 version , you can take snapshot and directly upload it to COS,using the follwoing command:
+
+ > **Note**:If your at 1.9.0.0 version, you can take snapshot and directly upload it to COS,using the follwoing command:
  ```ksysmgr add snapshot <filepath> upload_to_cos```
 
- The following is the output :
+ An output that is similar to the following example is displayed:
+
  ```
- 
+  ksysmgr add snapshot -h
+
+ksysmgr add snapshot
+      [filepath=<full file prefix path | file prefix>]
+      [upload_to_cos=<yes | no>]
+      [region=<cos_region>]
+      [bucketname=<cos_bucket_name>]
+    add => ad*, cr*, make, mk
+    snapshot => snap*
  ```
 
 ### Migration using direct approach
