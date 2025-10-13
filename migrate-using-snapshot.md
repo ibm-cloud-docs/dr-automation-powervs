@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-10"
+lastupdated: "2025-10-13"
 
 subcollection: dr-automation
 
@@ -81,8 +81,8 @@ To Migrate your current orchestrator to the latest version, complete the followi
 
 ```ksysmgr add snapshot upload_to_cos=yes region=<region-Name> bucketname=<bucket_name>```
 
-## Migration using direct approach
-{: #snapshot-dir-ap}
+## Restore snapshot on new deployment
+{: #re-san-new}
 
 1. Create a new deployment where your Orchestator is deployed with newer version.
 
