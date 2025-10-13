@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-09"
+lastupdated: "2025-10-13"
 
 subcollection: dr-automation
 
@@ -77,7 +77,7 @@ The name of the standby orchestrator configured to take over if the primary orch
 
 **DR orchestrator deployment time**:
 
-Displays the date and time when the primary orchestrator is deployed. This helps you to plan for any upgrade or migrate of your orchestrator if you are not in the latest level. You can review the availability of latest levels through ksysmgr commands. For more details see [Installing the KSYS fileset](https://www.ibm.com/docs/en/vmrmdr/1.9.0?topic=installing-#install_ksys__vmrmdr_ksys_install__title__1).
+Displays the date and time when the primary orchestrator is deployed. This helps you to plan for any upgrade or migrate of your orchestrator if you are not in the latest version. You can review the availability of latest levels through ksysmgr commands. For more details see [Upgrade your ksys filsets](/docs/dr-automation-powervs?topic=dr-automation-powervs-Upgrade-fil-set).
 
 **Standby Orchestrator deployment time**:
 

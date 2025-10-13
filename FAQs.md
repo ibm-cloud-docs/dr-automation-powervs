@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-03"
+lastupdated: "2025-10-13"
 
 subcollection: dr-automation
 
@@ -205,7 +205,7 @@ If a KSYS Cluster is deleted, you must re-create it in the external orchestror G
 6. (Optional) Enable **Add Proxy** if communication requires a proxy.  
 7. Save the configuration to restore orchestrator functionality.  
 
-## **How do I create a new KSYS Cluster in external orchestror?**
+## **How do I create a new KSYS Cluster in external orchestrator?**
 {: #create-ksys-cluster}
 
 When logging in for the first time in external orchestror, or if no cluster exists, you are redirected to the **Add KSYS Subsystem** page. From there:  

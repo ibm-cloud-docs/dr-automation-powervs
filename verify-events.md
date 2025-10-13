@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-09"
+lastupdated: "2025-10-13"
 
 subcollection: dr-automation
 
@@ -35,9 +35,8 @@ Administrators can view detailed records of the Orchestrator VM activities, incl
 
 1. Log in to the [IBM Cloud catalog](https://cloud.ibm.com/catalog) with your credentials.
 2. In the catalog's **search box**, type {{site.data.keyword.DR_full}}, and click the Workspace for {{site.data.keyword.DR_full_notm}} tile.
-3. Select **workspace** on the left navigation under workspace of the {{site.data.keyword.DR_full}} user  interface to select from a list of previously created workspaces. If you do not have a workspace, click Create a workspace.
-4. Click **Event logs** to see the list of event logs and notifications.
-
+3. To navigate to the event logs, click **Navigation Menu** > **Resource List** > **Compute**, then click on the provisioned instance you want to view.
+4. The Event logs section appears at the bottom of the page, displaying system events and notifications.
 
 ## Notification for the KSYS events
 
