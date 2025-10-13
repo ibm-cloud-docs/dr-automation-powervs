@@ -31,35 +31,7 @@ To Migrate your current orchestrator to the latest version, complete the followi
    Ksys version: 1.8.0.0
    ```
 
-4. Take a snapshot on your deployment from the Orchestrator by running the following command:
-
-   ```
-   ksysmgr add snapshot -h
-   ```
-
-   An output that is similar to the following example is displayed:
-
-   ```
-   ksysmgr add snapshot -h
-         [filepath=<full file prefix path | file prefix>]
-       add => ad*, cr*, make, mk
-       snapshot => snap*
-   ``` 
-
-   - By default, the snapshot is created in the Orchestrator VM in the following path:
-   ```
-   `/var/ksys/snapshots`
-   ```
-   - You can create a snapshot with specified name prefix and directory using the following command :
-   ```
-   ksysmgr add snapshot filepath=/<directory>/<name>
-   ```
-   - The snapshot is created with a time stamp with the extension of `.tar.gz`
-   ```
-   snap.xml_DETAILED_2025-07-11_00:42:32.xml.tar.gz
-   ```
-  
-5. Create a snapshot using the following command:
+4. Create a snapshot using the following command:
 
    ```bash
    ksysmgr add snapshot
@@ -75,7 +47,20 @@ To Migrate your current orchestrator to the latest version, complete the followi
    Successfully created a configuration snapshot: /var/ksys/snapshots/snap.xml_DETAILED_2025-07-11_00:42:32.xml.tar.gz
    ```
 
-6. Now upload the snapshot manually to the IBM COS bucket.
+   - By default, the snapshot is created in the Orchestrator VM in the following path:
+   ```
+   `/var/ksys/snapshots`
+   ```
+   - You can create a snapshot with specified name prefix and directory using the following command :
+   ```
+   ksysmgr add snapshot filepath=/<directory>/<name>
+   ```
+   - The snapshot is created with a time stamp with the extension of `.tar.gz`
+   ```
+   snap.xml_DETAILED_2025-07-11_00:42:32.xml.tar.gz
+   ```
+
+5. Now upload the snapshot manually to the IBM COS bucket.
 
  > **Note**:If your at 1.9.0.0 version, you can take snapshot and directly upload it to COS,using the following command:
 

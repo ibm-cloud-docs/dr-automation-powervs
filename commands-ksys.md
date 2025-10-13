@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-10"
+lastupdated: "2025-10-13"
 
 subcollection: dr-automation
 
@@ -1929,10 +1929,9 @@ When a source VM is configured with a shared processor pool and its backup VM is
 This helps minimize cost while maintaining DR readiness.
 
 - **Move from home site to backup site**: If Shared processor pool is configured for target site and source vm is from shared processor pool, during DR Readiness, target backup vm will be initially created with minimum resources.
-
 During move from home site to backup site, source vm which will be shutdown will be reduced to minimum resource and target system will be increase to actually vm resource configuration.
 
-> **Note**: If source vm is not from shared processor pool but target site shared processor pool is configured. During move the source vm capacity will not be reduced during shutdown. Where target system resource will be increase utilising resource from given pool.
+> **Note**: If source vm is not from shared processor pool but target site shared processor pool is configured. During move the source vm capacity will not be reduced during shutdown. Where target system resource will be increase utilizing resource from given pool.
 
 - **Move back from backup site to home site**: The VM’s resources are restored to the original configuration values. This automated resource optimization helps reduce licensing costs and ensures efficient utilization during disaster recovery operations.
 
