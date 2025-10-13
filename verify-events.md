@@ -6,41 +6,22 @@ lastupdated: "2025-10-13"
 
 subcollection: dr-automation
 
-keywords: event-logs
+keywords: event-logs, ksys events, events 
 
 ---
 
-# Managing events logs
-{: #manage-log}
+# Notification for the orchestrator events
+{: #orch-events}
 
-The **Events** tab in the {{site.data.keyword.DR_full}} interface provides an overview of the key activities and status changes within your virtual server instances. This log of events enables administrators to track and review significant actions, such as server stops, starts, and any alerts or warnings that might require attention. Monitoring these events ensures that the disaster recovery environment functions optimally and that any potential issues can be promptly addressed.
-{:shortdesc: .shortdesc}
+The orchestrator continuously monitors and records events that occur during disaster recovery (DR) automation operations. These events provide information about key system activities such as discovery, deployment, network configuration, and replication monitoring. Reviewing the event notifications helps you track the progress of operations, identify potential issues, and ensure that the DR environment is functioning as expected.
 
-## Administrating event logs
-{: #adm-log}
+You can use the ksysmgr query event command to view all recorded events or filter them by event type, such as error, warning, or info. Monitoring these events helps maintain visibility into orchestrator operations and supports proactive system management.
 
-Administrators can view detailed records of the Orchestrator VM activities, including:
 
-- You can access up to 100 current events in the IBM Cloud console.
-- DR automation displays pop-up notifications to keep you informed about important events, such as deployment status, errors, or other operational updates, with timestamps.
-- You can search, sort, and filter events to quickly find specific information.
-- A detailed description is displayed for each event when you expand it.
-- The exact time and date when the event is logged help track the sequence of activities.
-- The importance level of the event can range from informational (Info) to critical (Caution).
+## Viewing orchestrator event logs
+{: #view-orchestrator-event-logs}
 
-## Accessing the event logs
-{: #access-log}
-
- To see the event logs, complete the following steps:
-
-1. Log in to the [IBM Cloud catalog](https://cloud.ibm.com/catalog) with your credentials.
-2. In the catalog's **search box**, type {{site.data.keyword.DR_full}}, and click the Workspace for {{site.data.keyword.DR_full_notm}} tile.
-3. To navigate to the event logs, click **Navigation Menu** > **Resource List** > **Compute**, then click on the provisioned instance you want to view.
-4. The Event logs section appears at the bottom of the page, displaying system events and notifications.
-
-## Notification for the KSYS events
-
-The KSYS subsystem tracks various events in the environment and saves the information in **log** files.
+The orchestrator tracks various events in the environment and saves the information in **log** files.
 
 You can run the following command to list all the events that can be notified:
 
@@ -56,11 +37,12 @@ ksysmgr query event type=error|warning|info
 
 ```
 
-The following table lists events that the KSYS monitors:
+The following table lists events that the orchestrator monitors:
 
-## Notification for KSYS events
+## Orchestrator events
 {: #notifiy-events}
 
+The following table lists the events that can occur during external orchestrator operations. Each event includes its type and a brief description to help you identify the status or issues during execution.
 
 | **Events**                     | **Event Type**    | **Description**                           |
 |--------------------------------|-------------------|-------------------------------------------|

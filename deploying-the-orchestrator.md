@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-03"
+lastupdated: "2025-10-13"
 
 subcollection: dr-automation
 
@@ -18,8 +18,8 @@ After creating the resource, deploying the orchestrator for DR automation is ess
  >**Note**:
 
 >- The orchestrator VM is created with the default configuration of 0.5 CPU units and 4 GB memory.
->- This configuration is suitable for managing 20 PowerVS instances.
->- If you need to manage more than 20 Managed VMs, it is recommended to increase the configuration to 1 CPU unit and 6 GB of memory.
+>- This configuration is suitable for managing 30 PowerVS instances.
+>- If you need to manage more than 30 Managed VMs, it is recommended to increase the configuration to 1 CPU unit and 6 GB of memory.
 >- The DR automation displays notifications to keep you informed about important events such as deployment status, errors, or other operational updates. Notifications appear as pop-up messages on the screen with timestamp.
 
 ## Deploying the orchestrator for disaster recovery
@@ -33,7 +33,7 @@ follow the steps:
 
 1. After completing the **Create** resource step, you are redirected to the **Manage** tab to proceed with the deployment.
 2. In the **Orchestrator HA** section, choose **Enable** to configure both a primary and standby orchestrator in high availability mode, or **Disable** to configure only the primary orchestrator.
-3. In the configure primary orchestrator section, enter the **DR Orchestrator name**.
+3. In the Configure primary orchestrator section, enter the **DR Orchestrator name**.
 
 4. Set a password in the **DR Orchestrator password** field and re-enter the password in **Confirm DR orchestrator password** section to secure access to the external orchestrator interface.
    > **Note**: This password is set for the Orchestrator VM, and you can use it to login to the Orchestrator VM UI.
@@ -59,7 +59,7 @@ follow the steps:
 
          - Need VPC, you can create a new [VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started) or use the existing one.
          - Once VPC is available, configure your VPC to [enable the proxy communication](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch#procedure-ena-ppro-comm).
-         - Use the existing transit gateway or you can create a new [Transit gatway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-getting-started). To attach Transit gateway to a VPC in IBM Cloud. Navigate to **Infrastructure** > **Network** > **Transit Gateway**. Select your transit gateway, and on the **Add connection** page, select the VPC under **Network connection**, choose the **Region**, select the appropriate **Connection reach**, **Select the VPC** from the available connection, and click **Add**.
+         - Use the existing transit gateway or you can create a new [Transit gatway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-getting-started). To attach VPC to Transit gateway in IBM Cloud. Navigate to **Infrastructure** > **Network** > **Transit Gateway**. Select your transit gateway, and on the **Add connection** page, select the VPC under **Network connection**, choose the **Region**, select the appropriate **Connection reach**, **Select the VPC** from the available connection, and click **Add**.
          - Once you complete all the pre-req you are ready to use the custom VPC.
 
       2. Choose the **Transit Gateway** from the dropdown.
@@ -89,11 +89,11 @@ follow the steps:
 
 14. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 
-15. **Finish** button is enabled Once the orchestrator VM is deployed.
+15. **Finish** button is enabled once the orchestrator VM is deployed and now Click **Finish** to complete the setup.
 
 16. Configure and manage the Power Virtual Server instances through the **External orchestrator interface** for disaster recovery.
 
-  >**Note**: The orchestrator interface (UI) is launched at https://`<Orchestrator IP>`:3000/login. The `<Orchestrator IP>` is the system on which the orchestrator UI is installed and it is loaded automatically.
+  >**Note**: The orchestrator interface (UI) is launched at https://`<Orchestrator IP>`:3000/login. The `<Orchestrator IP>` address is the system on which the orchestrator UI is installed and it is loaded automatically.
 
 17. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby orchestrator for redundancy and resilience, following the steps:
 
@@ -102,7 +102,7 @@ follow the steps:
       c. Use the standby orchestrator IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.  
       d. Click the **External standby orchestrator interface** button to enable the interface.  
       e. Click the **Refresh** icon to update the status, enabling the **External standby orchestrator interface button** for use.
-18. If any error occurs during deployment, follow on-screen prompts to troubleshoot and retry the deployment.
+18. If any error occurs during deployment, follow on-screen prompts or events to troubleshoot and retry the deployment.
 
 By following this process, you can ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers.
 

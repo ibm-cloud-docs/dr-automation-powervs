@@ -55,6 +55,7 @@ toc:
           - Orchestrator-and-service-details.md
           - monitoring-vm-status.md
           - manage-vm.md
+          - dr-automation-events.md
       - topicgroup:
           label: External orchestrator
           topics:
