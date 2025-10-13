@@ -150,8 +150,9 @@ To Migrate your current orchestrator to the latest version, complete the followi
    An output that is similar to the following example is displayed:
 
    ```
-   Name  OpState RSCTActiveVersion MixedVersions TSPort GSPort
-   QA_rjakka15JulyNonHA_Cluster Online  3.3.2.0           No            12347  12348
+# lsrpdomain
+Name                         OpState RSCTActiveVersion MixedVersions TSPort GSPort
+QA_test13OctPriNHA_Cluster   Online  3.3.2.0           No            12347  12348
    ```
 
 7. Cleanup the source deployment using the following commands:
