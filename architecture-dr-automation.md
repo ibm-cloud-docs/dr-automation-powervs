@@ -14,7 +14,7 @@ keywords: architecture
 # Architecture for {{site.data.keyword.DR_full_notm}} in IBM Data Center
 {: #arch}
 
-{{site.data.keyword.DR_full}} located in the IBM data centers, is a robust disaster recovery solution that is designed for IBM data centers, distinct from general IBM Cloud resources. This solution uses dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.
+{{site.data.keyword.DR_full}} located in IBM data centers, is a robust disaster recovery solution designed for IBM data centers, distinct from general IBM Cloud resources. This solution uses dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.
 {: shortdesc}
 
 Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} architecture, features, hardware requirements, and network configurations.
@@ -42,7 +42,7 @@ The **Orchestrator (KSYS)** is crucial in coordinating DR workflows, ensuring vi
 
 This setup provides a secure, seamless DR solution that integrates with your production environment, enabling smooth failover and failback to maintain business continuity in unexpected events.
 
-![DR Automation Architecture](images/updated.svg "DR Automation Architecture"){: caption="DR Automation Architecture" caption-side="bottom"}
+![DR Automation Architecture](images/Flow-chart-draw-io.svg "DR Automation Architecture"){: caption="DR Automation Architecture" caption-side="bottom"}
 
 ## DR Service broker architecture
 {: #service-broker}
