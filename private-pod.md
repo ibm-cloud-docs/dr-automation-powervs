@@ -48,7 +48,7 @@ The **Orchestrator (KSYS)** is crucial in coordinating DR workflows, ensuring vi
 
 This setup provides a secure, seamless DR solution that integrates with your production environment, enabling smooth failover and failback to maintain business continuity in unexpected events.
 
-![DR Automation Architecture](images/private-pod.svg "architecture-diagrams-deployment-private-pod"){: caption="DR Automation Architecture for Client location" caption-side="bottom"}
+![DR Automation Architecture](images/private-pod.svg "private-pod"){: caption="DR Automation Architecture for Client location" caption-side="bottom"}
 
 ## DR Service broker architecture
 {: #service-broker-private}
@@ -98,7 +98,7 @@ The Service Broker provisioning capabilities allow KSYS to configure with essent
 ### High availability (Optional)
 {: #ha-private}
 
-For enhanced resilience, KSYS supports High Availability (HA) setup, ensuring continuous operation and reducing single points of failure.
+For enhanced resilience, KSYS supports **High Availability (HA)** setup through Dr automation deployment, ensuring continuous operation and reducing single points of failure.
 
 ## Key features
 {: #key-private}
@@ -134,7 +134,9 @@ IBM Power servers that are supported by {{site.data.keyword.DR_full_notm}} inclu
 - **IBM Power E980**
 - **IBM Power E1080**
 - **IBM Power S1022**
-- **IBM Power11**
+- **IBM Power E1080**
+- **IBM Power E1050**
+- **IBM Power S1122**
 
 For more details, refer to the specific data sheets and hardware overview table.
 
@@ -149,7 +151,8 @@ For more details, refer to the specific data sheets and hardware overview table.
 
 - IBM Power Virtual Server Public Cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers and configuring them as managed virtual machines to enable DR.
 
-The configuration is complete, you can add all the supported Power Virtual Server instances as Managed VMs to enable DR.
+once the configuration is complete, you can add all the supported Power Virtual Server instances as Managed VMs to enable DR
+
 
 ## API key
 {: #apikey-private}

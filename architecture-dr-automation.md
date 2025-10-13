@@ -129,7 +129,9 @@ IBM Power servers that are supported by {{site.data.keyword.DR_full_notm}} inclu
 - **IBM Power E980**
 - **IBM Power E1080**
 - **IBM Power S1022**
-- **IBM Power11**
+- **IBM Power E1080**
+- **IBM Power E1050**
+- **IBM Power S1122**
 
 For more details, refer to the specific data sheets and hardware overview table.
 

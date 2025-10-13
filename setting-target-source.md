@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-09"
+lastupdated: "2025-10-13"
 
 subcollection: dr-automation
 
@@ -31,6 +31,6 @@ To add sites, follow these steps:
 
 3. After completing the setup, click **Save & Next** and continue.
 
-> **Note**: Add the node by clicking **Add Node** and provide the standby orchestrator IP. For More information see [KSYS details](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.
+> **Note**: Add the node by clicking **Enable KsysHA** and provide the standby orchestrator IP. For More information see [KSYS details](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.
 
 This setup ensures proper configuration of Source and Target sites, enabling efficient disaster recovery operations for your environment.
