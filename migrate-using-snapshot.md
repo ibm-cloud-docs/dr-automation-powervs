@@ -150,7 +150,7 @@ To Migrate your current orchestrator to the latest version, complete the followi
    An output that is similar to the following example is displayed:
 
    ```
-# lsrpdomain
+lsrpdomain
 Name                         OpState RSCTActiveVersion MixedVersions TSPort GSPort
 QA_test13OctPriNHA_Cluster   Online  3.3.2.0           No            12347  12348
    ```
