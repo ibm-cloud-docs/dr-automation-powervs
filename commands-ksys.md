@@ -274,6 +274,7 @@ ksyscluster => ksysclu*, clu*
 
 An output that is similar to the following example is displayed:
 ```
+# ksysmgr query cluster
 Name: pvs_dr
 State: Online
 Type: IBM_PVS_DR
