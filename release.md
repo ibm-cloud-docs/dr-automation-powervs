@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-10"
+lastupdated: "2025-10-13"
 subcollection: dr-automation
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -32,6 +32,8 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 - When deploying the orchestrator with Client Location (Private pod), the Add Sites page now shows Select Source Satellite Location and Select Target Satellite Location instead of region-based options. For more information, see [Add sites to KSYS](/docs/dr-automation-powervs?topic=dr-automation-powervs-con-site-ksys).
 
 - DR Automation now supports upgrading the orchestrator ksys filesets through a simplified CLI command, ensuring your system remains up to date with the latest features, fixes, and security enhancements. For more information, see [Upgrade your ksys filesets](/docs/dr-automation-powervs?topic=dr-automation-powervs-Upgrade-fil-set).
+
+- You can now enable or disable Orchestrator HA directly from the DR Configuration page, simplifying the setup process.
 
 ## 25 July 2025
 {: #subcollection-july0725}
