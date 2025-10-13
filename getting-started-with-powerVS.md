@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-03"
+lastupdated: "2025-10-13"
 
 keywords: getting started, disaster recovery, PowerVS, start
 
@@ -57,7 +57,7 @@ Complete the following prerequisites:
 
 3. (Optional) Expand the **Advanced Configuration** to modify the default values of storage tier and machine type for the Orchestrator VM, by default **Tier1** is selected for Storage tier and **s922** is selected for machine type.
 
-4. Provide standby orchestrator details, if you have enabled **Orchestrator HA** on provision page.
+4. Provide standby orchestrator details, if you have enabled **Orchestrator HA** on manage page.
 5. Review all settings and click **Deploy Orchestrator** to begin the deployment.
 
 
