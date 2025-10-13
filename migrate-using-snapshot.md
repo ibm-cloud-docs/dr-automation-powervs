@@ -51,13 +51,14 @@ To Migrate your current orchestrator to the latest version, complete the followi
    ```
    `/var/ksys/snapshots`
    ```
-   - You can create a snapshot with specified name prefix and directory using the following command :
-   ```
-   ksysmgr add snapshot filepath=/<directory>/<name>
-   ```
+
    - The snapshot is created with a time stamp with the extension of `.tar.gz`
    ```
    snap.xml_DETAILED_2025-07-11_00:42:32.xml.tar.gz
+   ```
+   - You can create a snapshot with specified name prefix and directory using the following command :
+   ```
+   ksysmgr add snapshot filepath=/<directory>/<name>
    ```
 
 5. Now upload the snapshot manually to the IBM COS bucket.
