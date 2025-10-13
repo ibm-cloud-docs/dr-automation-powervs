@@ -1812,7 +1812,7 @@ KSYS site has been updated
 ## Target system type
 {: #Tr-sy-ty}
 
-You can optionally specify a target system type when configuring a backup VM. This attribute allows the backup VM to run on a system different from the source for example, when the production VM runs on a Power10 server and the backup VM must run on a Power9 server.
+You can optionally specify a target system type when configuring a backup VM. This attribute allows the backup VM to run on a system different from the source.  For example,  If the production VM runs on a Power10 server and the backup VM can run on  Power9 server.
 
 > **Note**: Setting the target system type is currently not supported for PowerVS Private Plan.
 
@@ -1928,8 +1928,7 @@ When a source VM is configured with a shared processor pool and its backup VM is
 - **During discovery or DR readiness**:If the shared processor pool is configured for the target site, the backup VM is created with minimum CPU and memory resources from that pool.
 This helps minimize cost while maintaining DR readiness.
 
-- **Move from home site to backup site**: If Shared processor pool is configured for target site and source vm is from shared processor pool, during DR Readiness, target backup vm will be initially created with minimum resources.
-During move from home site to backup site, source vm which will be shutdown will be reduced to minimum resource and target system will be increase to actually vm resource configuration.
+- **Move from home site to backup site**: If Shared processor pool is configured for target site and source vm is from shared processor pool, during DR Readiness, target backup vm will be initially created with minimum resources.During move from home site to backup site, source vm which will be shutdown will be reduced to minimum resource and target system will be increase to actually vm resource configuration.
 
 > **Note**: If source vm is not from shared processor pool but target site shared processor pool is configured. During move the source vm capacity will not be reduced during shutdown. Where target system resource will be increase utilizing resource from given pool.
 

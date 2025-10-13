@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-03"
+lastupdated: "2025-10-13"
 
 subcollection: dr-automation
 
@@ -21,7 +21,7 @@ Creating an instance for {{site.data.keyword.DR_full_notm}} in IBM Cloud allows 
 Follow these steps to create a Power Virtual Server instance for disaster recovery:
 
 1. Log in to the [**IBM Cloud catalog**](https://cloud.ibm.com/catalog) with your credentials.
-2. In the **search box**, type {{site.data.keyword.DR_full}} and click the corresponding tile.
+2. In the **search box**, type Power virtual Server DR Automation and click the corresponding tile.
 3. Select the Disaster Recovery location from the drop-down list. Select the deployment type **PowerVS DR Automation** or **PowerVS Private Cloud support** for the pricing plan.
 
 4. Choose **IBM Cloud** or **Client location**, depending on your deployment model.
