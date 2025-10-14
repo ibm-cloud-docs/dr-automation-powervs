@@ -71,9 +71,9 @@ Specifies the name of the IBM Cloud Schematics workspace that contains the Infra
 
 Displays the location (for example, `dal10`) that hosts the DR orchestrator and resources, confirming the failover target region.
 
-**Standby orchestrator name**: 
+**Standby orchestrator name**:
 
-The name of the standby orchestrator configured to take over if the primary orchestrator fails.
+The name of the standby orchestrator that is configured to take over if the primary orchestrator fails.
 
 **DR orchestrator deployment time**:
 
@@ -81,7 +81,7 @@ Displays the date and time when the primary orchestrator is deployed. This helps
 
 **Standby Orchestrator deployment time**:
 
-Displays the date and time when the standby orchestrator was deployed.
+Displays the date and time of the Standby orchestrator deployment.
 
 ## Service details
 {: #service-det}
@@ -104,7 +104,7 @@ A Cloud Resource Name (CRN) uniquely identifying the DR service instance. This i
 
 **Plan name**:
 
-Displays the subscription plan for the Power Virtual Server DR Automation service which is selected during initial deployment. The values are **DR Automation Public Plan**, **DR Automation Private Plan**.
+Displays the subscription plan for the Power Virtual Server DR Automation service that is selected during initial deployment. The values are **DR Automation Public Plan** or **DR Automation Private Plan**.
 
 ## Global replication services pair
 {: #grs-serv-pai}

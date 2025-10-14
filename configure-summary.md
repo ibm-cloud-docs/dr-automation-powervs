@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -28,7 +28,7 @@ The following details are displayed in the summary page:
 - **Target System**: The network configuration to which the virtual machine is connected after pairing.
 - **Static IP Map**: Displays the mapping between the source IP address and the target IP address, if static IP was enabled.  
 - **Enable Shared Procpool**: Indicates whether virtual machines are configured to share processor capacity dynamically through a shared processor pool (SPP).
-- **Target Procpool**: The designated shared processor pool (SPP) assigned to the virtual machines.  
+- **Target Procpool**: The designated shared processor pool (SPP) that is assigned to the virtual machines.  
 
 To complete the process, click **Submit & Deploy**, and you are redirected to the **Dashboard** section.
 

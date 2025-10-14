@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-13"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -19,7 +19,7 @@ The **Events** tab in the {{site.data.keyword.DR_full}} interface provides an ov
 ## Administrating event logs
 {: #adm-log}
 
-Administrators can view detailed records of the Orchestrator VM activities, including:
+Administrators can view detailed records of the following Orchestrator VM activities:
 
 - You can access up to 100 current events in the IBM Cloud console.
 - DR automation displays pop-up notifications to keep you informed about important events, such as deployment status, errors, or other operational updates, with timestamps.
@@ -28,7 +28,7 @@ Administrators can view detailed records of the Orchestrator VM activities, incl
 - You can sort Events based on your requirement by using the sort functionality on each Header.
 - The search option is available to search for the required event.
 - You can filter the events based on Resources, Levels and Actions.
-- A detailed description is displayed for each event when you expand it.
+- A detailed description is displayed for each event when you expand the event.
 - The exact time and date when the event is logged help track the sequence of activities.
 - The importance level of the event can range from informational (Info) to critical (Caution).
 

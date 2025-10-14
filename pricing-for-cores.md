@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-23"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -46,10 +46,10 @@ For information on different processor type functions, see [FAQ](/docs/dr-automa
 
 All processor types are billed uniformly, regardless of configuration.
 
-## All processors type pricing (Public and Private)
+## All processors type pricing (public and private)
 {: #aptp}
 
-| Number of cores | Hourly rate (Updated) | Monthly cost (730 hours) |
+| Number of cores | Hourly rate (updated) | Monthly cost (730 hours) |
 |----------------|----------------------|--------------------------|
 | 1              | $0.06849              | $50.00                   |
 | 2              | $0.13698              | $100.00                  |

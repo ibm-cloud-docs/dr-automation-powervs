@@ -80,7 +80,7 @@ The following ```ACTION``` flags are available:
 
 ```resync (resy*)```
 
-```update```
+```update (alias upd*)```
 
 ## CLASS
 {: #cla}
@@ -473,7 +473,7 @@ site => sit*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr del site us-east
+ksysmgr delete site us-east
 Workspace VMRM-wdc was removed
 Site us-east was removed
 Workgroup configuration example
@@ -490,8 +490,21 @@ Site home was removed
 Workgroup configuration example
 ```
 
+### Manage virtual machine:
+{: #manage-vm}
+
+```
+# ksysmgr manage disk -h
+ 
+ksysmgr manage disk diskid=<diskid1[,diskid2,...]>
+    manage => man*, mg
+```
+An output that is similar to the following example is displayed:
+
+
+
 ### To move a workgroup from one site to another site, run the following command:
-{: #movework}
+{: #move-work}
 
 ```
 ksysmgr move workgroup <name>
@@ -1380,6 +1393,73 @@ Volume Details:
 
 ```
 
+### To manage disk on virtual machine:
+{: #manage-disk-vm}
+```
+ksysmgr manage disk -h
+ 
+ksysmgr manage disk diskid=<diskid1[,diskid2,...]>
+    manage => man*, mg
+```
+
+### To unmanage disk on virtual machine:
+{: #unmanage-disk-vm}
+
+```
+# ksysmgr unmanage disk -h
+ 
+ksysmgr unmanage disk diskid=<diskid1[,diskid2,...]> workgroup=<workgroup_name>
+    unmanage => unman*, umg
+```
+
+### To query a virtual machine disk:
+{: #query-vm-disk}
+
+```
+ ksysmgr query disk vm=vmrm_aix_vm2
+VM:                  vmrm_aix_vm2 <-> vmrm_aix_vm2_BackUp
+CGName:              rccg-aca6-1507e
+CGState:             consistent_copying
+Progress:            99.66666666666667
+DiskIDs:             volume-aix_vol2-2d5ff23a-13bb -> 2d5ff23a-13bb-43d8-b354-51603dee5e50
+                     volume-aix_vol3-6a958988-9745 -> 6a958988-9745-4fee-8942-f8b80118e8e7
+                     volume-vmrm_aix_vm2-bc477fa9-00046b90-boot-0-a69d29f9-bc3a -> a69d29f9-bc3a-424e-a91e-3edad82348a4
+
+Volume Details:
+
+| Volume | State | Progress (%) |
+|---------|--------|--------------|
+| `volume-aix_vol2-2d5ff23a-13bb <-> aux_volume-aix_vol2-2d5ff23a-13b...` | consistent_copying | 100 |
+| `volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974...` | consistent_copying | 100 |
+| `volume-vmrm_aix_vm2-bc477fa9-000... <-> aux__aix_vm2-bc477fa9-00046b90-b...` | consistent_copying | 100 |
+```
+### To unmanage a disk on virtual machine:
+{: #un-manage-vm-disk}
+```
+ksysmgr unmanage disk diskid=2d5ff23a-13bb-43d8-b354-51603dee5e50 workgroup=vmrm_aix_vm2_WG
+DiskID(s) was successfully unmanaged
+```
+
+### To query unmanaged disk:
+{: #un-manage-qu-disk}
+
+```
+ksysmgr query disk vm=vmrm_aix_vm2
+VM:                  vmrm_aix_vm2 <-> vmrm_aix_vm2_BackUp
+CGName:              rccg-aca6-1507e
+CGState:             consistent_copying
+Progress:            99.5
+DiskIDs:             volume-aix_vol3-6a958988-9745 -> 6a958988-9745-4fee-8942-f8b80118e8e7
+                     volume-vmrm_aix_vm2-bc477fa9-00046b90-boot-0-a69d29f9-bc3a -> a69d29f9-bc3a-424e-a91e-3edad82348a4
+                     2d5ff23a-13bb-43d8-b354-51603dee5e50 -> Unmanaged
+### Volume Details
+
+| Volume | State | Progress (%) |
+|---------|--------|--------------|
+| `volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974...` | consistent_copying | 100 |
+| `volume-vmrm_aix_vm2-bc477fa9-000... <-> aux__aix_vm2-bc477fa9-00046b90-b...` | consistent_copying | 100 |
+
+```
 ## KSYS spooling
 {: #spooling}
 
@@ -1871,7 +1951,7 @@ For Vm test_vm attribute(s) TargetProcPool was successfully modified.
 ### Modify shared processor pool settings for a virtual machine Public and Private cloud
 {: #msp-pp-vm}
 
-To apply shared processor pool settings after a VM has already been managed, use the following command:
+To apply shared processor pool settings after a VM is managed, run the following command:
 
 ```ksysmgr modify vm <vmname> sharedprocpool=yes targetprocpool=<pool_name>```
 
@@ -1905,7 +1985,7 @@ TargetProcPool:   test_pool
 ### View backup VM configuration in PowerVS
 {: #vb-vm-cpv}
 
-To check the shared processor pool assignment and current resource configuration of the backup VM, run:
+To check the shared processor pool assignment and current resource configuration of the backup VM, run the following command:
 
 ```ibmcloud pi ins get <backup_vm_name>```
 
@@ -1919,7 +1999,7 @@ Shared Processor Pool:   test_pool
 Shared Processor Pool ID: abcd1234-xxxx-yyyy-zzzz-abcdef123456
 Status:                  SHUTOFF
 ```
-This confirms the VM was provisioned with reduced capacity and associated with the specified processor pool.
+This confirms that the VM is provisioned with reduced capacity and is associated with specified processor pool. 
 
 ### Resource reduction during site switchovers Public and Private cloud
 {: #rr-pp-vm}
@@ -2044,7 +2124,7 @@ ActiveWorkgroups:               test_WG
 ### Perform DR Rehearsal move
 {: #pe-dr-re-mo}
 
-Initiate the DR rehearsal move using the command:
+Initiate the DR rehearsal move using the following command:
 
 ```
 # ksysmgr move workgroup -h
@@ -2061,7 +2141,6 @@ Note: dr_type=planned is the default
 ### Parameters
 {: #para-me-ter}
 
-- **from:** Source site name (e.g., `HomeSite`)  
 - **to:** Target site name (e.g., `TargetSite`)
 
 
@@ -2209,7 +2288,7 @@ Networks:                   net-30
 ### Clean Up after DR Rehearsal at workgroup level
 {: #cl-up-wg-le}
 
-Once validation is complete, revert the rehearsal environment usingby running the following command:
+Once validation is complete, revert the rehearsal environment using by running the following command:
 
 ```
 ksysmgr cleanup workgroup -h

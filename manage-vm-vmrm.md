@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-09"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -37,7 +37,7 @@ To create and manage virtual machine, complete the following steps:
 ## Modify VM
 {: #modify-vm-ses}
 
-The Modify VM option allows you to make changes to your virtual machines as needed. You can choose the VMs you want to update, adjust the IP mapping, and decide whether to enable the Shared Processor Pool (SPP) for improved performance and flexibility.
+Make changes to your virtual machines as needed. You can choose the VMs that you want to update, adjust the IP mapping, and enable the Shared Processor Pool (SPP) for improved performance and flexibility.
 
 ### Procedure
 {: #mod-vm-ses}
@@ -46,11 +46,11 @@ To modify virtual machine, complete the following steps:
 
 1. All virtual machines are displayed. Select the virtual machines to enable the **Shared Procpool** option.  
 
-2. If you have selected **Yes** to enable Static IP while [creating a new VM session](#create-a-new-vm-session), enter the **Target IP Address details** that are Source IP Address and IP Address to Map.
+2. If you have selected **Yes** to enable Static IP while [creating a new VM session](#create-a-new-vm-session), enter the **Target IP Address details** that are **Source IP Address** and **IP Address to Map**.
 
-   > **Note:** We can add mulitple IP mapping in this step.
+   > **Note:** You can add multiple IP mappings.
 
-3. Select **Yes** and enter the **Target Procpool** details to enable the **shared processor pool (SPP)**, which allows VMs to share processor capacity dynamically. Select **No** to skip this option.  
+3. Select **Yes** and enter the **Target Procpool** details to enable the **shared processor pool (SPP)**, that allows VMs to share processor capacity dynamically. Select **No** to skip this option.  
 4. Click **Save & Next**.
 
 > **Note:** Click **Refresh VM List** to display all available VMs.

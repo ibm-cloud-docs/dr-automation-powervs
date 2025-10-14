@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-13"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -183,7 +183,7 @@ To enable communication to external services, export the following variables on 
 ## Why is IBM Data Center not displayed as the location type during provisioning?
 {: #location-type}
 
-The location type displayed during provisioning depends on the selected plan. This behavior is expected and reflects the infrastructure associated with each deployment model:
+The location type displayed during provisioning depends on the selected plan. This behavior is expected and reflects the infrastructure that is associated with each deployment model:
 
 **Public plan**: Displays **IBM Data Center** as the location type, as the infrastructure is hosted and managed in IBM Cloud regions.
 

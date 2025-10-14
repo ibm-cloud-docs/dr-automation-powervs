@@ -32,7 +32,7 @@ To deploy the orchestrator with the necessary configurations to meet your disast
 follow the steps:
 
 1. After completing the **Create** resource step, you are redirected to the **Manage** tab to proceed with the deployment.
-2. In the **Orchestrator HA** section, choose **Enable** to configure both a primary and standby orchestrator in high availability mode, or **Disable** to configure only the primary orchestrator.
+2. In the **Orchestrator HA** section, click **Enable** to configure both a primary and standby orchestrator in high availability mode, or click **Disable** to configure only the primary orchestrator.
 3. In the Configure primary orchestrator section, enter the **DR Orchestrator name**.
 
 4. Set a password in the **DR Orchestrator password** field and re-enter the password in **Confirm DR orchestrator password** section to secure access to the external orchestrator interface.

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-18"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -36,21 +36,21 @@ Efficient management of virtual servers through the {{site.data.keyword.DR_short
 ### Managed power virtual servers
 {: #vm-details}
 
-Displays the list of virtual machines configured for disaster recovery with details like VM name, VM ID, memory, Core and Workgroup name, which you can sort based on your requirement by using the sort option.
+View a list of virtual machinesthat are configured for disaster recovery.
 
-Following are the configured VM details:
+You can sort the following configured VM details:
 
 - **VM name**:
-Name of the virtual machine added for DR management.  
+Name of the virtual machine that is added for DR management.  
 
 - **VM ID**:
-Unique identifier assigned to the virtual machine.  
+Unique identifier that is assigned to the virtual machine.  
 
 - **Memory**:
-Amount of memory allocated to the virtual machine.  
+Amount of memory that is allocated to the virtual machine.  
 
 - **Core**:
-Number of processor cores assigned to the virtual machine.  
+Number of processor cores that are assigned to the virtual machine.  
 
 - **Workgroup name**:
 Workgroup to which the virtual machine belongs for DR operations.  

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-13"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -18,7 +18,7 @@ Configure your environment by adding the **Source Site** and **Target Site**, sp
 
 Upon completing the KSYS setup, the DR Automation PowerVS GUI redirects you to the external orchestrator GUI on **Add Sites** page.
 
-**Note**: If you select **Client Location (Private pod)** as the cluster type while [deploying the orchestrator](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch) , the Add Sites page displays **Select Source Satellite Location** and **Select Target Satellite Location** instead of **Select Source Region** and **Select target Region**. This is because private pods are hosted through IBM Cloud Satellite, which connects client data centers to IBM Cloud regions using Satellite locations.
+**Note**: If you select **Client Location (Private pod)** as the cluster type while [deploying the orchestrator](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch) then, the **Add Sites** page displays **Select Source Satellite Location** and **Select Target Satellite Location** instead of **Select Source Region** and **Select target Region**. This is because private pods are hosted through IBM Cloud Satellite, which connects client data centers to IBM Cloud regions using Satellite locations.
 
 ## Procedure
 {: #aded-sitwe-ksyss}

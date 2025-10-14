@@ -23,7 +23,7 @@ To upgrade your current orchestrator fileset to the latest version, complete the
 ### Standard upgrade
 {: #standard-upgrade}
 
-For routine updates, the system checks and installs new or missing filesets while skipping those already present. If the orchestrator filesets are up to date, the system verifies them and skips reinstallation.
+The standard upgrade is used for routine updates, checks and installs new or missing filesets while skipping those already present. If the orchestrator filesets are up to date, the system verifies them and skips reinstallation.
 
 To upgrade the orchestrator filest to the latest version, run the following command:
 
@@ -111,7 +111,7 @@ Also, you can check [ DR orchestrator deployment time](/docs/dr-automation-power
 ### Forced Upgrade
 {: #force-upgrade}
 
-Use when a force installation is needed, it force installs all orchestrator filesets regardless of their current status.
+When a force installation is required, the force upgrade option installs all orchestrator filesets regardless of their current status.
 
 To upgrade the orchestrator filest to the latest version, run the following command:
 

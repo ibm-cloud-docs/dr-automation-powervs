@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-13"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -69,7 +69,7 @@ The following table lists the events that can occur during external orchestrator
 | VG_REMOVE_DISKS_FAILED         | Critical          | VG remove disks has failed.               |
 | VM_MISSED_FROM_WORKSPACE_PHASE | Critical          | VM missed from the workspace.             |
 | SCRIPT_FAILURE_EVENT           | Critical          | Script execution has failed.              |
-{: caption="List of events" caption-side="bottom"}
+{: caption="List of events" caption-side="bottom left"}
 
  >  **Note:**{: #note}
   >
