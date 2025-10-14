@@ -183,7 +183,7 @@ To enable communication to external services, export the following variables on 
 ## Why is IBM Data Center not displayed as the location type during provisioning?
 {: #location-type}
 
-The location type displayed during provisioning depends on the selected plan. This behavior is expected and reflects the infrastructure that is associated with each deployment model:
+The location type displayed during provisioning depends on the selected plan. This behavior is expected and reflects the infrastructure that is associated with each deployment model.
 
 **Public plan**: Displays **IBM Data Center** as the location type, as the infrastructure is hosted and managed in IBM Cloud regions.
 
@@ -194,7 +194,7 @@ This mapping is intentional and helps distinguish between public and private (on
 ## **What should I do if I accidentally delete a KSYS Cluster?**
 {: #delete-ksys}
 
-If a KSYS Cluster is deleted, you must re-create it in the external orchestror GUI:  
+If a KSYS Cluster is deleted, you must re-create the cluster in the external orchestror GUI:  
 1. Log in to the GUI.  
 2. Go to the **Add KSYS Subsystem** page.  
 3. Click **Add KSYS** and provide the host details (Username and Password).  
@@ -208,7 +208,7 @@ If a KSYS Cluster is deleted, you must re-create it in the external orchestror G
 ## **How do I create a new KSYS Cluster in external orchestrator?**
 {: #create-ksys-cluster}
 
-When logging in for the first time in external orchestror, or if no cluster exists, you are redirected to the **Add KSYS Subsystem** page. From there:  
+When you log in for the first time in external orchestror, or if no cluster exists, you are redirected to the **Add KSYS Subsystem** page. From there you can perform the following actions:  
 - Click **Add KSYS**  
 - Enter host details (Username, Password)  
 - Select **IBM_PVS_DR** or **IBM_PVS_PRIVATE_DR**  

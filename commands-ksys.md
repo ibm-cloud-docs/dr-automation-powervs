@@ -2001,10 +2001,10 @@ Status:                  SHUTOFF
 ```
 This confirms that the VM is provisioned with reduced capacity and is associated with specified processor pool. 
 
-### Resource reduction during site switchovers Public and Private cloud
+### Resource reduction during site switchovers for Public and Private cloud
 {: #rr-pp-vm}
 
-When a source VM is configured with a shared processor pool and its backup VM is also assigned to a shared processor pool, the system automatically adjusts resources during a site move:
+When a source VM is configured with a shared processor pool and the backup VM is also assigned to a shared processor pool, then the system automatically adjusts resources during a site move.
 
 - **During discovery or DR readiness**:If the shared processor pool is configured for the target site, the backup VM is created with minimum CPU and memory resources from that pool.
 This helps minimize cost while maintaining DR readiness.
@@ -2034,7 +2034,7 @@ Listing shared processor pools under account Test Account as user `test_user@www
 | 1234abcd-5678-xxxx-ef12-xxxxxef987654 | 5                | s922       | 36      | test_pool    | 2              | 0.5              | active | shared processor   |
 
 
-> **Note**: KSYS does not create the shared processor pool. You must create it manually in the PowerVS workspace before assigning it to any virtual machine.
+> **Note**: KSYS does not create the shared processor pool. You must create it manually in the PowerVS workspace before you can assign the share processor pool to any virtual machine.
 
 
 ## DR Rehearsal move at workgroup level
