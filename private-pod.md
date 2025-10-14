@@ -25,17 +25,16 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 
 
 ## Table of contents
-{: #toc-pri}
+{: #tocpri}
 
-- [High-Level Architecture](#high-private)
+- [High-Level Architecture](#highprivate)
 - [DR Service broker architecture](#service-broker-private)
-- [DR Orchestrator (KSYS) architecture](#ksys-arch-private)
-- [Key Features](#key-private)
-- [Hardware Specifications](#hs-private)
-- [Supported Storage Tiers](#sst-private)
-- [Network Configurations](#ns-private)
-- [Data center capabilities](#data-center-capability)
-
+- [DR Orchestrator (KSYS) architecture](#ksysarchprivate)
+- [Key Features](#keyprivate)
+- [Hardware Specifications](#hsprivate)
+- [Supported Storage Tiers](#sstprivate)
+- [Network Configurations](#nsprivate)
+- [Data center capabilities](#datacapability)
 
 ## High-Level architecture
 {: #highprivate}
@@ -100,7 +99,7 @@ The Service Broker provisioning capabilities allow KSYS to configure with essent
 
 For enhanced resilience, KSYS supports **High Availability (HA)** setup through Dr automation deployment, ensuring continuous operation and reducing single points of failure.
 
-## Key features
+## Key Features
 {: #keyprivate}
 
 ### Simplified disaster recovery management
@@ -123,7 +122,7 @@ Customizable recovery settings
 {{site.data.keyword.DR_short}} follows a usage-based billing model, with flexible options that are based on the selected resources and configurations.
 The IBM Cloud catalog supports accurate billing and comprehensive reporting, ensuring that customers have clear visibility into DR-related costs.
 
-## Hardware specifications
+## Hardware Specifications
 {: #hsprivate}
 
 IBM Power servers supported by {{site.data.keyword.DR_full_notm}} include the following models. However, all Power Virtual Server machine types are supported by DR automation.
@@ -172,6 +171,7 @@ Storage is allocated based on deployment needs, ensuring efficient usage of reso
 
 ## Satellite location
 {: #satlocation}
+
 The Satellite location is where the private cloud VM is hosted, for which the Power Virtual Server disaster recovery is enabled in a DR automation Private Cloud architecture. This Satellite location corresponds to the IBM Cloud region closest to your data center, with a recommended network round-trip time (RTT) of 200 milliseconds or less. For more information about available Satellite locations, see [IBM Satellite location](/docs/dr-automation-powervs?topic=dr-automation-powervs-ibm-satellite-location).
 
 
