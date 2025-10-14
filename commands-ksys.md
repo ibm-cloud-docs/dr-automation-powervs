@@ -9,7 +9,6 @@ keywords: commands
 
 ---
 # ksysmgr commands(Orchestrator)
-
 {: #comm}
 
 The command provides a consistent interface to configure the controller system (KSYS) and to perform {{site.data.keyword.DR_full}} operations by using a terminal or script.
@@ -361,6 +360,7 @@ ksysmgr modify ksyscluster <ksysclustername> [glnode=<ksysnode>]
 [proxy=<ipaddress:portnumber>]
 ksyscluster => ksysclu*, clu*
 ```
+
 ### To add a site in the KSYS subsystem:
 {: #subsyste}
 
@@ -804,6 +804,7 @@ NETWORK_CONFIGURATION_FAILED warning Network configuration has failed.
  
 
 #### To query the system-wide persistent attribute for the ksysmgr command, use the following command syntax:
+{: #que-sys-wide}
 
 ```
 ksysmgr query system [ properties ]
@@ -864,6 +865,8 @@ Sets the deep_discovery variable to enable/disable.
 
 
 #### To modify the system wide persistent attribute for the ksysmgr command:
+{: #mod-sys-wide}
+
 ```
 ksysmgr modify system
 [auto_discovery_time=<hh:mm>]
@@ -1038,7 +1041,6 @@ Note: User can give script name along with event name to remove notify for parti
 Also, User can give Only script name to remove notify for all events listed with that script name
 
 ```
-
 
 ### To query a script:
 {: ikm}
