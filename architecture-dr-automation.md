@@ -186,7 +186,7 @@ Additionally, the system automatically adds all default networks configured for 
 
  For detailed steps on connecting to the Power Virtual Server with VPC, refer to [Connect using a client-to-site VPN](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-solution-connect-client-vpn).
 
-## Setting Up {{site.data.keyword.DR_short}}
+## Setting up {{site.data.keyword.DR_short}}
 {: #setup}
 
 1. Log in to your [IBM Cloud account](https://cloud.ibm.com/).
