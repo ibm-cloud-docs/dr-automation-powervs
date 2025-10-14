@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-13"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -79,9 +79,9 @@ follow the steps:
       
 9. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
 
-10. Under **Public SSH Key**, enable the **Use a secret** radio button to use a secret from Secrets Manager. Click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets**.
+10. To create ksys VM with secrets, click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the  **Use a secret** radio button and select the SSH key from **SSH key name**.
 
-11. Select the SSH key from **SSH key name**.
+> **Note**: The SSH Key dropdown, displays only the Account level SSH-keys.
 
 12. (Optional) Modify the **Advanced Settings** to configure the Storage tier and Machine type based on the **Orchestrator HA** selection.
 

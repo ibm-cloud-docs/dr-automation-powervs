@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-13"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -116,12 +116,12 @@ Use when a force installation is needed, it force installs all orchestrator ksys
 To upgrade the ksys filest to the latest version, run the following command:
 
 ```
-ksysmgr upgrade -f filesets
+ksysmgr -f upgrade filesets
 ```
 An output that is similar to the following example is displayed:
 
 ```
-# ksysmgr upgrade -f filesets
+# ksysmgr -f upgrade filesets
 Downloading fileset
 [##############################] 100.00% (297178681/297178681 bytes)
 File saved as /tmp/filesets//2529A_61ksys190.tar.gz
@@ -598,7 +598,7 @@ Filesets upgradation completed successfully.
 To validate the upgrade is successful, run the following command to verify:
 
 ```
-ksysmgr q version
+ksysmgr query version
 ```
 
 Also, you can check [ DR orchestrator deployment time](/docs/dr-automation-powervs?topic=dr-automation-powervs-or-ser-de) section, as it displays the timestamp of your latest update, and you can check in the event log to verify.
