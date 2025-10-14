@@ -27,13 +27,13 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 ## Table of contents
 {: #toc-pri}
 
-- [High-Level Architecture](#high)
-- [DR Service broker architecture](#service-broker)
-- [DR Orchestrator (KSYS) architecture](#ksys-arch)
-- [Key Features](#key)
-- [Hardware Specifications](#hs)
-- [Supported Storage Tiers](#sst)
-- [Network Configurations](#ns)
+- [High-Level Architecture](#high-level-architecture)
+- [DR Service broker architecture](#dr-service-broker-architecture)
+- [DR Orchestrator (KSYS) architecture](#dr-orchestrator-ksys-architecture)
+- [Key Features](#key-features)
+- [Hardware Specifications](#hardware-specifications)
+- [Supported Storage Tiers](#supported-storage-tiers)
+- [Network Configurations](#network-configurations)
 - [Data center capabilities](#data-center-capabilities)
 
 
