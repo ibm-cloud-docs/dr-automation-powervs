@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -204,7 +204,7 @@ Refer to the topic [How to fix it](#how-to-fix-it-7) for guidance on resolving t
 ### What's happening
 {: #select-dr-locatio}
 
-The user is unable to select a Disaster Recovery location or does not see any workspaces listed in the VMRM UI.
+The user is unable to select a Disaster Recovery location or does not see any workspaces listed in the external orchestrator UI.
 
 ### Why it's happening
 {: #select-dr-loca}
@@ -214,7 +214,7 @@ This issue occurs when no PowerVS workspace is available in the selected locatio
 ### How to fix it
 {: tsResolve-fix}
 
-1. In the VM Recovery Manager DR GUI, go to the section where you configure the DR plan.
+1. In the external orchestrator UI, go to the section where you configure the DR plan.
 
 2. From the Disaster Recovery Location drop-down list, select either IBM Cloud or Client location.
 

@@ -28,7 +28,7 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 {: #tocpri}
 
 - [High-Level Architecture](#highprivate)
-- [DR Service broker architecture](#service-broker-private)
+- [DR Service broker architecture](#serviceprivate)
 - [DR Orchestrator (KSYS) architecture](#ksysarchprivate)
 - [Key Features](#keyprivate)
 - [Hardware Specifications](#hsprivate)

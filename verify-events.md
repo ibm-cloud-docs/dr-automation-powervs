@@ -10,7 +10,7 @@ keywords: event-logs, ksys events, events
 
 ---
 
-# Notification for the orchestrator events
+# Orchestrator events
 {: #orch-events}
 
 The orchestrator continuously monitors and records events that occur during disaster recovery (DR) automation operations. These events provide information about key system activities such as discovery, deployment, network configuration, and replication monitoring. Reviewing the event notifications helps you track the progress of operations, identify potential issues, and ensure that the DR environment is functioning as expected.
