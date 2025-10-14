@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-13"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -281,7 +281,7 @@ Type: IBM_PVS_DR
 Ksysnodes: test.dev.com:1:Online
 KsysState: test.dev.com:1:Online
 ```
-An output that is similar to the following example is displayed for Private Plan:
+An output that is similar to the following example is displayed for Private cloud:
 ```
 # ksysmgr query cluster
 Name:                test16sepprvi_Cluster
@@ -389,7 +389,7 @@ Refresh Networks list of VMRM-TEST-DAL10 workspace completed
 Site dal10 added successfully
 Note: dal10 partner GRS Region is us-east.
 ```
-#### To add a site in the KSYS sub sytem Private Plan:
+#### To add a site in the KSYS sub sytem Private cloud:
 {: #subsyste-private-cloud}
 ```
 ksysmgr add site -h
@@ -397,7 +397,7 @@ ksysmgr add site <sitename> satellitelocation=<satellitelocationname>
      add => ad*
      site => sit*
 ```
-An output that is similar to the following example is displayed for Private Plan:
+An output that is similar to the following example is displayed for Private cloud:
 
 ```
 ksysmgr add site home satellitelocation=satloc_dal_clp2joc20ppo19876n50
@@ -441,7 +441,7 @@ ActiveWorkgroups: vmrm_dev_02_WG, vmrm_dev_03_WG, vmrm_dev_01_WG
 Note: Active indicates the site where a WorkGroup's VMs are running. The same WorkGroup cannot be active on both sites, but others can be.
 ```
 
-An output that is similar to the following example is displayed for Private Plan:
+An output that is similar to the following example is displayed for Private cloud:
 ```
 ksysmgr query site
 Name:               backup
@@ -478,9 +478,9 @@ Workspace VMRM-wdc was removed
 Site us-east was removed
 Workgroup configuration example
 ```
-An output that is similar to the following example is displayed for Private Plan:
+An output that is similar to the following example is displayed for Private cloud:
 ```
-ksysmgr del site home
+ksysmgr delete site home
 Workspace Suv_Proc was removed
 Workspace SVT-SMALL-Q3.2-mano-GRS was removed
 ......
@@ -506,7 +506,7 @@ workgroup => workg*, work_g*, wg
 {: #quer}
 
 ```
-ksysmgr q wg -h
+ksysmgr query workgroup -h
 
 ksysmgr query workgroup [ name ]
       [status [monitor=<no|yes>]]
@@ -517,7 +517,7 @@ ksysmgr query workgroup [ name ]
 An output that is similar to the following example is displayed: 
 
 ```
-ksysmgr q wg vmrm_IBMi_WG
+ksysmgr query workgroup vmrm_IBMi_WG
 Name:                vmrm_IBMi_WG
 ID:                  2
 VMs:                 vmrm_IBMi
@@ -534,7 +534,7 @@ CGName:              rccg-3b3d-b61c7
 ```
 An output that is similar to the following example is displayed for private cloud:
 ```
-ksysmgr q wg sb-aix-01_WG
+ksysmgr query workgroup sb-aiz-01_WG
 Name:                sb-aix-01_WG
 ID:                  1
 VMs:                 sb-aix-01
@@ -562,7 +562,7 @@ workgroup => workg*, work_g*, wg
 An output that is similar to the following example is displayed: 
 
 ```
-ksysmgr -t discover wg User_test_WG
+ksysmgr -t discover workgroup User_test_WG
 04:49:54 Running discovery on Workgroup User_test_WG, this may take a few minutes...
 04:49:55 Discovery has started for Workgroup User_test_WG
 04:49:55 Discovery has started for VM User_test
@@ -601,7 +601,7 @@ workgroup => workg*, work_g*, wg
 An output that is similar to the following example is displayed: 
 
 ```
-ksysmgr resync wg IBMiWG
+ksysmgr resync workgroup IBMi_WG
 Workgroup IBMiWG resync has started
 05:24:38 Shutdown has started for VM User_IBMi
 05:24:54 Shutdown has completed for VM user_IBMi
@@ -789,7 +789,7 @@ NETWORK_CONFIGURATION_FAILED warning Network configuration has failed.
 
 ```
  
- mi
+
 #### To query the system-wide persistent attribute for the ksysmgr command, use the following command syntax:
 
 ```
@@ -1042,7 +1042,7 @@ ksysmgr query notify script
 {: #opi}
 
 ```
-ksysmgr q system -h
+ksysmgr query system -h
 
 ksysmgr query system [ properties | status ]
     query => q*, ls, get, sh*
@@ -1051,7 +1051,7 @@ ksysmgr query system [ properties | status ]
 
 An output that is similar to the following example is displayed:
 ```
-ksysmgr q system
+ksysmgr query system
 System-Wide Persistent Attributes
 BaseUrl:                     cloud.test.com
 Regions:                     wdc06
@@ -1325,7 +1325,7 @@ ksysmgr query disk_group [wg=<wgname>]
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr q disk_group
+ksysmgr query disk_group
 WGName:              vmrm_rhel_WG
 CGName:              rccg-a382-d35ba
 CGState:             consistent_copying
@@ -1367,7 +1367,7 @@ query => q*, ls, get, sh*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr q disk vm=vmrm_rhel
+ksysmgr query disk vm=vmrm_rhel
 VM:                  vmrm_rhel <-> vmrm_rhel_BackUp
 CGName:              rccg-a382-d35ba
 CGState:             consistent_copying
@@ -1658,7 +1658,7 @@ workgroup => workg*, work_g*, wg
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr discover wg vmrm_rhel_WG
+ksysmgr discover workgroup vmrm_rhel_WG
 04:10:41  Running discovery on Workgroup vmrm_rhel_WG, this may take a few minutes...
         04:10:54  Discovery has started for Workgroup vmrm_rhel_WG
         04:10:54  Discovery has started for VM vmrm_rhel
@@ -1688,7 +1688,7 @@ workgroup => workg*, work_g*, wg
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr resync wg vmrm_testvm_WG
+ksysmgr resync workgroup vmrm_testvm_WG
 Workgroup vmrm_testvm_WG resync has started
         23:49:17  Shutdown has started for VM vmrm_testvm_BackUp
         23:49:34  Resync is in progress for Workgroup vmrm_testvm_WG
@@ -1710,7 +1710,7 @@ system => sys*
 
 An output that is similar to the following example is displayed:
 ```
-ksysmgr q system
+ksysmgr query system
 System-Wide Persistent Attributes
 BaseUrl: test.cloud.test.com
 Regions: us-east
@@ -1784,7 +1784,7 @@ event => ev*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr q event type=error
+ksysmgr query event type=error
 Event Name: DISCOVERY_FAILED
 Event Type: error
 Description: Discovery has failed.
@@ -1815,7 +1815,7 @@ KSYS site has been updated
 
 You can optionally specify a target system type when configuring a backup VM. This attribute allows the backup VM to run on a system different from the source.  For example,  If the production VM runs on a Power10 server and the backup VM can run on  Power9 server.
 
-> **Note**: Setting the target system type is currently not supported for PowerVS Private Plan.
+> **Note**: Setting the target system type is currently not supported for PowerVS Private cloud.
 
 To configure a backup VM to run on a specific target system type, run the following command, run the following command:
 
@@ -1847,7 +1847,7 @@ TargetSystemType e980 was found and modified successfully
 ## Shared Processor Pool configuration
 {: #s-pro-poo-confi}
 
-### Enable shared processor pool for a virtual machine for Public and Private Plan
+### Enable shared processor pool for a virtual machine for Public and Private cloud
 {: #es-pp-vm}
 
 To reduce licensing costs and optimize resource usage, you can enable the shared processor pool for a virtual machine. Before assigning, you must create the shared processor pool in the target PowerVS workspace.
@@ -1868,7 +1868,7 @@ For Vm test_vm attribute(s) TargetProcPool was successfully modified.
 
 > **Note**: Both `sharedprocpool=yes` and `targetprocpool=<pool_name>` are mandatory parameters.
 
-### Modify shared processor pool settings for a virtual machine Public and Private Plan
+### Modify shared processor pool settings for a virtual machine Public and Private cloud
 {: #msp-pp-vm}
 
 To apply shared processor pool settings after a VM has already been managed, use the following command:
@@ -1885,7 +1885,7 @@ For Vm test_vm attribute(s) TargetProcPool was successfully modified.
 
 **Note**: Modifying shared processor pool is allowed only before first discovery.
 
-### Verify shared processor pool assignment for Public and Private Plan
+### Verify shared processor pool assignment for Public and Private cloud
 {: #vs-pp-a}
 
 To confirm that the VM is assigned to a shared processor pool, run the following command:
@@ -1921,7 +1921,7 @@ Status:                  SHUTOFF
 ```
 This confirms the VM was provisioned with reduced capacity and associated with the specified processor pool.
 
-### Resource reduction during site switchovers Public and Private Plan
+### Resource reduction during site switchovers Public and Private cloud
 {: #rr-pp-vm}
 
 When a source VM is configured with a shared processor pool and its backup VM is also assigned to a shared processor pool, the system automatically adjusts resources during a site move:
@@ -1938,7 +1938,7 @@ This helps minimize cost while maintaining DR readiness.
 - **DR Rehearsal**: If the shared processor pool is configured for the target site, the rehearsal VM is created using resources from the target shared processor pool.
 The rehearsal VM also respects the target system type defined by the user.
 
-### List shared processor pools for Public and Private Plan
+### List shared processor pools for Public and Private cloud
 {: #li-sh-pro-po}
 
 To list all shared processor pools created under your account, run the following command:
@@ -1970,7 +1970,7 @@ Disaster Recovery (DR) rehearsal at the Workgroup level allows administrators to
 
 Run the following command to list the existing Workgroups and verify their status:
 
-```ksysmgr q wg```
+```ksysmgr query workgroup```
 
 An output that is similar to the following example is displayed:
 
@@ -2010,7 +2010,7 @@ CGName:                       cgrp-6f2d-xxxx-xxxx-22487ee0caaa
 
 To determine the source and target sites for the rehearsal, run the following command:
 
-```ksysmgr q site```
+```ksysmgr query site```
 
 An output that is similar to the following example is displayed:
 
@@ -2047,7 +2047,7 @@ ActiveWorkgroups:               test_WG
 Initiate the DR rehearsal move using the command:
 
 ```
-# ksysmgr move wg -h
+# ksysmgr move workgroup -h
 ksysmgr move workgroup <name>
        to=<site_name>
        [force=<true|false>]
@@ -2096,7 +2096,7 @@ Workgroup dr_test move completed for Workgroup test_WG to TargetSite
 
 Run the following command to list the existing Workgroups and verify their status:
 
-`ksysmgr q wg`
+`ksysmgr query workgroup`
 
 An output that is similar to the following example is displayed:
 
@@ -2212,7 +2212,7 @@ Networks:                   net-30
 Once validation is complete, revert the rehearsal environment usingby running the following command:
 
 ```
-ksysmgr cleanup wg -h
+ksysmgr cleanup workgroup -h
 ksysmgr [-f] cleanup workgroup <name>
       dr_test=<yes>
       [force=<true|false>]
@@ -2221,7 +2221,7 @@ ksysmgr [-f] cleanup workgroup <name>
 ```
 An output that is similar to the following example is displayed:
 ```
-ksysmgr cleanup wg test1 dr_test=yes
+ksysmgr cleanup workgroup test1 dr_test=yes
 04:46:33 Workgroup dr_test cleanup started for test1, this may take a few minutes...
 04:46:44 dr_test cleanup has started for Workgroup test1
 04:46:44 VM Volumes clone with consistency delete has started for VM test2
@@ -2246,7 +2246,7 @@ Disaster Recovery (DR) rehearsal at the Site level allows administrators to vali
 
 Run the following command to list the existing Sites and verify their details:
 
-```ksysmgr q site```
+```ksysmgr query site```
 
 An output similar to the following example is displayed:
 
@@ -2329,7 +2329,7 @@ Site dr_test move completed for Site TargetSite to HomeSite
 
 Use the following command to list the managed VMs and verify their status:
 ```
-ksysmgr q vm state=manage
+ksysmgr query vm state=manage
 ```
 An output similar to the following example is displayed:
 
