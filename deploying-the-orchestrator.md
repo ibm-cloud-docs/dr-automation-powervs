@@ -81,7 +81,7 @@ follow the steps:
 
 10. To create ksys VM with secrets, click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the  **Use a secret** radio button and select the SSH key from **SSH key name**.
 
-   > **Note**: The SSH Key dropdown, displays only the Account level SSH-keys.
+    > **Note**: The SSH Key dropdown displays only the Account level SSH-keys.
 
 11. (Optional) Modify the **Advanced Settings** to configure the Storage tier and Machine type based on the **Orchestrator HA** selection.
 
