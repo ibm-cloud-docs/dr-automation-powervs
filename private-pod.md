@@ -27,14 +27,14 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 ## Table of contents
 {: #toc-pri}
 
-- [High-Level Architecture](#high-level-architecture)
-- [DR Service broker architecture](#dr-service-broker-architecture)
-- [DR Orchestrator (KSYS) architecture](#dr-orchestrator-ksys-architecture)
-- [Key Features](#key-features)
-- [Hardware Specifications](#hardware-specifications)
-- [Supported Storage Tiers](#supported-storage-tiers)
-- [Network Configurations](#network-configurations)
-- [Data center capabilities](#data-center-capabilities)
+- [High-Level Architecture](#high-private)
+- [DR Service broker architecture](#service-broker-private)
+- [DR Orchestrator (KSYS) architecture](#ksys-arch-private)
+- [Key Features](#key-private)
+- [Hardware Specifications](#hs-private)
+- [Supported Storage Tiers](#sst-private)
+- [Network Configurations](#ns-private)
+- [Data center capabilities](#data-center-capability)
 
 
 ## High-Level architecture
@@ -145,7 +145,6 @@ For more details, see to the specific data sheets and hardware overview table.
 - The Orchestrator (KSYS) Power Virtual Server instance is deployed with 0.5 cores and 4 GB of memory. However, larger environments with over 100 VMs require more resources. You can increase this configuration after the initial deployment by modifying power virtual server properties with in the workspace.
 
 > - **Current Baseline**: Newly deployed KSYS logical partitions run IBM® AIX® 7.3 with Technology Level 2 Service Pack 1 (**7300-02-01**).
-
 > - **Older Deployments**:Existing deployments may be running earlier Technology Levels or Service Packs prior to **7300-02-01**, so you should verify their deployment level and plan upgrades if needed.
 
 - IBM Power Virtual Server private cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers and configuring them as managed virtual machines to enable DR.
