@@ -8,7 +8,7 @@ subcollection: dr-automation
 keywords: commands
 
 ---
-# ksysmgr command(Orchestrator)
+# ksysmgr commands(Orchestrator)
 
 {: #comm}
 

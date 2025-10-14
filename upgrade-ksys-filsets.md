@@ -10,7 +10,7 @@ keywords: upgrade your deployment, migration , migrate, ksys filsets, ksys
 
 ---
 
-# Upgrade your ksys filsets (Migrate using direct approach)
+# Migrate using ksysmgr commands
 {: #Upgrade-fil-set}
 
 Upgrade the orchestrator fileset to the latest supported version to ensure compatibility, stability, security, and access to new features and fixes.
@@ -18,14 +18,14 @@ Upgrade the orchestrator fileset to the latest supported version to ensure compa
 ## Procedure
 {: #procedure-upgrade}
 
-To upgrade your current ksys fileset to the latest version, complete the following steps:
+To upgrade your current orchestrator fileset to the latest version, complete the following steps:
 
 ### Standard upgrade
 {: #standard-upgrade}
 
-For routine updates, the system checks and installs new or missing filesets while skipping those already present. If the orchestrator ksys filesets are up to date, the system verifies them and skips reinstallation.
+For routine updates, the system checks and installs new or missing filesets while skipping those already present. If the orchestrator filesets are up to date, the system verifies them and skips reinstallation.
 
-To upgrade the ksys filest to the latest version, run the following command:
+To upgrade the orchestrator filest to the latest version, run the following command:
 
 ```
 ksysmgr upgrade filesets
@@ -111,9 +111,9 @@ Also, you can check [ DR orchestrator deployment time](/docs/dr-automation-power
 ### Forced Upgrade
 {: #force-upgrade}
 
-Use when a force installation is needed, it force installs all orchestrator ksys filesets regardless of their current status.
+Use when a force installation is needed, it force installs all orchestrator filesets regardless of their current status.
 
-To upgrade the ksys filest to the latest version, run the following command:
+To upgrade the orchestrator filest to the latest version, run the following command:
 
 ```
 ksysmgr -f upgrade filesets

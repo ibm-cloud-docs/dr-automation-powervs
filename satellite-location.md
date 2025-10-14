@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -24,6 +24,6 @@ The following IBM Cloud regions can host connections from the pods for {{site.da
 - Toronto (satcon_tor)
 - Washington, DC (satcon_wdc)
 
-Selection of IBM Cloud region is one of the factors for computing pricing.
+The selection of IBM Cloud region is one of the factors for computing pricing.
 
-Create a Satellite location associated with an IBM Cloud region. Select the IBM Cloud region that is closest to the physical location of your data center. The network latency between your data center and the selected IBM Cloud region must maintain a network round-trip time (RTT) of less than or equal to 200 milliseconds. For more information, see [Create a Satellite location overview](https://cloud.ibm.com/docs/satellite?topic=satellite-locations).
+Create a Satellite that is location associated with an IBM Cloud region. Select the IBM Cloud region that is closest to the physical location of your data center. The network latency between your data center and the selected IBM Cloud region must maintain a network round-trip time (RTT) of less than or equal to 200 milliseconds. For more information, see [Create a Satellite location overview](https://cloud.ibm.com/docs/satellite?topic=satellite-locations).
