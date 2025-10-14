@@ -2305,7 +2305,7 @@ An output similar to the following example is displayed:
 ksysmgr move site from=HomeSite to=TargetSite dr_test=yes
 You are initiating a failover rehearsal across sites
 
-Do you wish to proceed? [y/n\]  
+Do you wish to proceed? [y/n]  
 
 y
 
