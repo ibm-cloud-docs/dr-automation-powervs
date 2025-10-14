@@ -81,28 +81,28 @@ follow the steps:
 
 10. To create ksys VM with secrets, click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the  **Use a secret** radio button and select the SSH key from **SSH key name**.
 
-> **Note**: The SSH Key dropdown, displays only the Account level SSH-keys.
+ > **Note**: The SSH Key dropdown, displays only the Account level SSH-keys.
+
+11. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in config page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
 12. (Optional) Modify the **Advanced Settings** to configure the Storage tier and Machine type based on the **Orchestrator HA** selection.
 
-13. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when HA is enabled during provision. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
+13. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 
-14. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
+14. **Finish** button is enabled once the orchestrator VM is deployed and now Click **Finish** to complete the setup.
 
-15. **Finish** button is enabled once the orchestrator VM is deployed and now Click **Finish** to complete the setup.
-
-16. Configure and manage the Power Virtual Server instances through the **External orchestrator interface** for disaster recovery.
+15. Configure and manage the Power Virtual Server instances through the **External orchestrator interface** for disaster recovery.
 
   >**Note**: The orchestrator interface (UI) is launched at https://`<Orchestrator IP>`:3000/login. The `<Orchestrator IP>` address is the system on which the orchestrator UI is installed and it is loaded automatically.
 
-17. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby orchestrator for redundancy and resilience, following the steps:
+16. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby orchestrator for redundancy and resilience, following the steps:
 
       a. Complete the [External orchestrator interface setup](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter).  
       b. Hover over the **External standby orchestrator interface** button to view the standby orchestrator IP, for example, `IP:xx.x.x.xxx`.  
       c. Use the standby orchestrator IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.  
       d. Click the **External standby orchestrator interface** button to enable the interface.  
       e. Click the **Refresh** icon to update the status, enabling the **External standby orchestrator interface button** for use.
-18. If any error occurs during deployment, follow on-screen prompts or events to troubleshoot and retry the deployment.
+17. If any error occurs during deployment, follow on-screen prompts or events to troubleshoot and retry the deployment.
 
 By following this process, you can ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers.
 
