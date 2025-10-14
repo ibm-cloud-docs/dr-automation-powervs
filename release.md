@@ -27,11 +27,11 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 
 - DR Automation now displays real-time notifications for events, that are deployment status, errors, and operational updates. Each notification appears as a pop-up with a timestamp, and you can track up to 100 current events, providing clear visibility into system activities and changes. For more information, see [Administrating event logs](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-log#adm-log).
 
-- When deploying the orchestrator with Client Location (Private pod), the Add Sites page now shows Select Source Satellite Location and Select Target Satellite Location instead of region-based options. For more information, see [Add sites to KSYS](/docs/dr-automation-powervs?topic=dr-automation-powervs-con-site-ksys).
+- When deploying the orchestrator with Client Location (Private pod), the Add Sites page now display Select Source Satellite Location and Select Target Satellite Location instead of region-based options. For more information, see [Add sites to KSYS](/docs/dr-automation-powervs?topic=dr-automation-powervs-con-site-ksys).
 
-- DR Automation now supports upgrading the orchestrator ksys filesets through a simplified CLI command, ensuring your system remains up to date with the latest features, fixes, and security enhancements. For more information, see [Upgrade your ksys filesets](/docs/dr-automation-powervs?topic=dr-automation-powervs-Upgrade-fil-set).
+- DR Automation now supports upgrading the orchestrator ksys filesets through a simplified CLI command, ensuring your system remains up to date with the latest features, fixes, and security enhancements. For more information, see [Migrate using ksysmgr commands](/docs/dr-automation-powervs?topic=dr-automation-powervs-Upgrade-fil-set).
 
-- You can now enable or disable Orchestrator HA directly from the DR Configuration page. For more information, see [Deploying the orchestrator for disaster recovery](ibm.com/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch#dep-the-orch-dis-re).
+- You can now choose Orchestator HA enablement in DR configuration page. For more information, see [Deploying the orchestrator for disaster recovery](ibm.com/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch#dep-the-orch-dis-re).
 
 ## 25 July 2025
 {: #subcollection-july0725}
