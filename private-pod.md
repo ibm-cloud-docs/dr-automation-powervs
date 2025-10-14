@@ -174,8 +174,8 @@ Storage is allocated based on deployment needs, ensuring efficient usage of reso
 
 ## Satellite location
 {: #sat-location}
+The Satellite location is where the private cloud VM is hosted, for which the Power Virtual Server disaster recovery is enabled in a DR automation Private Cloud architecture. This Satellite location corresponds to the IBM Cloud region closest to your data center, with a recommended network round-trip time (RTT) of 200 milliseconds or less. For more information about available Satellite locations, see [IBM Satellite location](/docs/dr-automation-powervs?topic=dr-automation-powervs-ibm-satellite-location).
 
-For DR Automation Private Cloud, the Satellite location corresponds to the IBM Cloud region closest to your data center, with a recommended network round-trip time (RTT) of 200 milliseconds or less. For more information on different Satellite locations, see [IBM Satellite location](/docs/dr-automation-powervs?topic=dr-automation-powervs-ibm-satellite-location).
 
 ## Network configurations
 {: #ns-private}
