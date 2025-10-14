@@ -46,7 +46,7 @@ To modify virtual machine, complete the following steps:
 
 1. All virtual machines are displayed. Select the virtual machines to enable the **Shared Procpool** option.  
 
-2. If you have selected **Yes** to enable Static IP while [creating a new VM session](#create-a-new-vm-session), enter the **Target IP Address details** that are **Source IP Address** and **IP Address to Map**.
+2. If you have selected **Yes** to enable Static IP while [creating a new VM session](#create-vm-ses), enter the **Target IP Address details** that are **Source IP Address** and **IP Address to Map**.
 
    > **Note:** You can add multiple IP mappings.
 

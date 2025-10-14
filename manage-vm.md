@@ -54,5 +54,3 @@ Number of processor cores that are assigned to the virtual machine.
 
 - **Workgroup name**:
 Workgroup to which the virtual machine belongs for DR operations.  
-
-For more information about **External Orchestrator Interface (UI)**, see [IBM VM Recovery Manager DR for Power Systems](https://www.ibm.com/docs/en/vmrmdr).

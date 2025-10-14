@@ -103,10 +103,10 @@ Filesets upgradation completed successfully.
 To validate the upgrade is successful, run the following command to verify:
 
 ```
-ksysmgr quvery version
+ksysmgr query version
 ```
 
-Also, you can check [ DR orchestrator deployment time](/docs/dr-automation-powervs?topic=dr-automation-powervs-or-ser-de) section, as it displays the timestamp of your latest update, and you can check in the event log to verify.
+Also, you can check [DR orchestrator deployment time](/docs/dr-automation-powervs?topic=dr-automation-powervs-or-ser-de) section, as it displays the timestamp of your latest update, and you can check in the event log to verify.
 
 ### Forced Upgrade
 {: #force-upgrade}
