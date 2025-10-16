@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-10-16"
 
 subcollection: dr-automation
 
@@ -9,7 +9,7 @@ keywords: price core
 
 ---
 
-# Pricing for IBM DR automation for PowerVS
+# Pricing for IBM DR Automation for PowerVS
 {: #price}
 
 DR Automation for PowerVS is available in select regions with scale-out logical partitions (LPAR). The systems supporting DR Automation have theoretical maximums for memory and processors, varying by server model and data center resources.

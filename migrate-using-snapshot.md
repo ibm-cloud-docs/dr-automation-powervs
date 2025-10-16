@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-13"
+lastupdated: "2025-10-16"
 
 subcollection: dr-automation
 
@@ -135,7 +135,7 @@ To Migrate your current orchestrator to the latest version, complete the followi
    INFO: Restore completed successfully
     ```
 
-   > **Note:** The above command uses the API key stored in the orchestrator to access the COS bucket for downloading the snapshot.
+   > **Note**: The above command uses the API key stored in the orchestrator to access the COS bucket for downloading the snapshot.
 
 4. After a successful restore, Setup two displays all configurations from Setup one.  
 
@@ -149,12 +149,11 @@ To Migrate your current orchestrator to the latest version, complete the followi
 
    An output that is similar to the following example is displayed:
 
-```
-lsrpdomain
-Name                         OpState  RSCTActiveVersion   MixedVersions     TSPort          GSPort
-QA_test13OctPriNHA_Cluster   Online  3.3.2.0              No                12347            12348
-```
-
+   ```bash
+   lsrpdomain
+   Name                         OpState  RSCTActiveVersion   MixedVersions     TSPort          GSPort
+   QA_test13OctPriNHA_Cluster   Online  3.3.2.0              No                12347            12348
+   ```
 7. Cleanup the source deployment using the following commands:
 
 - To delete the cluster on the source node, run the following command:

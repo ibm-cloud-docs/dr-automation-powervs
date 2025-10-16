@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-10-16"
 
 subcollection: dr-automation
 
@@ -203,7 +203,7 @@ For example, you can determine the support for the following capabilities in you
 - Machine types (Power11)
 - Global Replication Service (GRS)
 
-## Setting Up {{site.data.keyword.DR_short}}
+## Setting up {{site.data.keyword.DR_short}}
 {: #setupprivate}
 
 1. Log in to your [IBM Cloud account](https://cloud.ibm.com/).

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-10-16"
 
 subcollection: dr-automation
 
@@ -223,3 +223,25 @@ This issue occurs when no PowerVS workspace is available in the selected locatio
 4. After selecting the plan, wait for the list of available workspaces to appear.
 
 5. From the list, choose the appropriate workspace and enable the workload you want to protect with disaster recovery.
+
+## Why does a subsequent deployment fail when using the same workspace?
+{: #ksys-image-deploy}  
+{: troubleshoot}
+
+### What's happening
+
+During a DR Automation deployment, the KSYS image is downloaded to the selected workspace where the orchestrator is to be created. Once the deployment is completed, this image is automatically deleted.
+
+If the same workspace is used for a subsequent deployment, the image download is not re-initiated because the system detects that the image previously existed. Since the image may have been deleted during the first deployment, the second deployment can fail when creating the orchestrator.
+
+### Why it's happening
+
+The system assumes the KSYS image already exists in the workspace and skips downloading it. If the image was removed after the first deployment, the orchestrator creation cannot proceed.
+
+### How to fix it
+{: tsResolve}
+
+1. Redeploy the DR Automation environment and ensure the KSYS image is downloaded successfully.  
+2. Avoid performing multiple deployments simultaneously in the same workspace to prevent deployment failures.
+
+**Recommendation:** Perform sequential deployments using separate workspaces or wait until the first deployment completes before starting a new one.
