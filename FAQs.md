@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-10-16"
 
 subcollection: dr-automation
 
@@ -194,7 +194,11 @@ This mapping is intentional and helps distinguish between public and private (on
 ## **What should I do if I accidentally delete a KSYS Cluster?**
 {: #delete-ksys}
 
-If a KSYS Cluster is deleted, you must re-create the cluster in the external orchestror GUI:  
+If a KSYS Cluster is deleted, you must re-create the cluster in the external orchestror GUI:
+
+### Procedure
+{: #pro-proxy}
+
 1. Log in to the GUI.  
 2. Go to the **Add KSYS Subsystem** page.  
 3. Click **Add KSYS** and provide the host details (Username and Password).  
@@ -221,3 +225,57 @@ When you log in for the first time in external orchestror, or if no cluster exis
 
 - **IBM_PVS_DR** → For standard DR deployments across IBM Cloud regions.  
 - **IBM_PVS_PRIVATE_DR** → For private PowerVS cluster environments, such as on-premises or private pods.
+
+## **How do I update the Proxy IP in the Orchestrator?**
+{: #proxy-ip}
+
+You can update the proxy IP in the orchestrator depending on if the KSYS cluster is already created.
+
+### **Scenario 1: Cluster already created**
+{: #proxy-existing}
+
+1. Verify the cluster status by running the following command:
+
+   ```ksysmgr query ksyscluster```
+
+2. If the cluster exists, update the proxy IP using the following command:
+
+   ```ksysmgr modify ksyscluster <ksysclustername> proxy=ipaddress:portnumber```
+
+### **Scenario 2: Cluster not yet created**
+{: #proxy-new}
+
+If the KSYS cluster is not yet created, you can update the proxy IP directly in the configuration file.
+
+1. Navigate to the `/etc` directory and back up the existing configuration file:  
+
+   ```#cp /etc/drautomation.json /etc/drautomation.json.bkp```
+
+2. Open the `/etc/drautomation.json` file in a text editor.  
+3. Update the proxy IP and port details as required.  
+4. Save the file and reboot the node.  
+
+When the system reboots, it automatically attempts to recreate the cluster with the updated proxy configuration.
+
+## **How do I update the API Key in my DR Automation deployment?**
+{: #update-api-key}
+
+You can update the API Key for your deployment using the DR Automation UI and the KSYS Orchestrator. Ensure that the same key is used in both places to maintain proper synchronization.
+
+### **Step 1: Update the API Key in DR Automation UI**
+{: #update-api-ui}
+
+1. Navigate to the **Summary** page in the DR Automation UI.  
+2. Click the **Update API Key** button.  
+3. The system updates the API key for your deployment automatically.
+
+### **Step 2: Update the API Key in Orchestrator**
+{: #update-api-orch}
+
+After updating the API key in the UI, update it in the orchestrator to keep both in sync:
+
+To update the API key in orchestrator ,run the following command:
+
+   ```ksysmgr modify ksyscluster <ksysclustername> apikey=<apikey>```
+
+> **Note:** Use the same API key in both the deployment and orchestrator to ensure proper synchronization.

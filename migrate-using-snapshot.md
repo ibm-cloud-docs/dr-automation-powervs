@@ -135,7 +135,7 @@ To Migrate your current orchestrator to the latest version, complete the followi
    INFO: Restore completed successfully
     ```
 
-   > **Note**: The above command uses the API key stored in the orchestrator to access the COS bucket for downloading the snapshot. 
+   > **Note**: The above command uses the API key stored in the orchestrator to access the COS bucket for downloading the snapshot.
 
 4. After a successful restore, Setup two displays all configurations from Setup one.  
 
