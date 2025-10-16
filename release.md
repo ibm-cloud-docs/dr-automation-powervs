@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-10-16"
 subcollection: dr-automation
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -31,7 +31,7 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 
 - DR Automation now supports upgrading the orchestrator ksys filesets through a simplified CLI command, ensuring your system remains up to date with the latest features, fixes, and security enhancements. For more information, see [Migrate using ksysmgr commands](/docs/dr-automation-powervs?topic=dr-automation-powervs-Upgrade-fil-set).
 
-- You can now choose Orchestator HA enablement in DR configuration page. For more information, see [Deploying the orchestrator for disaster recovery](ibm.com/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch#dep-the-orch-dis-re).
+- You can now choose Orchestator HA enablement in DR configuration page. For more information, see [Deploying the orchestrator for disaster recovery](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch).
 
 ## 25 July 2025
 {: #subcollection-july0725}
