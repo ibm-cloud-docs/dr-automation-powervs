@@ -231,7 +231,7 @@ When you log in for the first time in external orchestror, or if no cluster exis
 
 You can update the proxy IP in the orchestrator depending on whether the KSYS cluster has already been created. To update the API key, follow the steps below.
 
-### **Scenario 1: Cluster already created**
+### **Step 1: Cluster already created**
 {: #proxy-existing}
 
 1. Verify the cluster status by running the following command:
@@ -242,7 +242,7 @@ You can update the proxy IP in the orchestrator depending on whether the KSYS cl
 
    ```ksysmgr modify ksyscluster <ksysclustername> proxy=ipaddress:portnumber```
 
-### **Scenario 2: Cluster not yet created**
+### **Step 2: Cluster not yet created**
 {: #proxy-new}
 
 If the KSYS cluster is not yet created, you can update the proxy IP directly in the configuration file.
