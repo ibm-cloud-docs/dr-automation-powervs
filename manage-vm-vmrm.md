@@ -2,66 +2,96 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
-keywords: manage-ummanage
+keywords: manage vm, modify vm, create vm, update vm, create virtual machine, add virtual machine, modify virtual machine
 
 ---
 
 # Managing VM sessions
 {: #manage-vm-ses}
 
-Efficiently set up and manage VM sessions by creating new sessions, organizing virtual machines into workgroups, and saving configurations for streamlined virtual machine management.
+Efficiently set up and manage virtual machine sessions by creating new sessions, and grouping virtual machines into workgroups and save configuration for streamlined virtual machine management.
 {:shortdesc: .shortdesc}
 
 ## Create a new VM session
 {: #create-vm-ses}
 
-After creating the sites, you must create a new VM session if you are managing the virtual machine for the first time. If the virtual machine is already managed, you can proceed directly to [manage the VM](#vm-ses) and [unmanage VM](#um-manage-ses) sessions.
+After adding the sites, you must create a new VM session if you are managing the virtual machine for the first time. If the virtual machine is already managed, you can proceed directly to [manage VM](#vm-ses) and [unmanage VM](#um-manage-ses) sessions.
 
-To create and manage virtual machines, complete the following steps:
+### Procedure
+{: #new-vm-ses}
 
-1. Click **Create New Session**.
+To create and manage virtual machine, complete the following steps:
 
-2. To create workgroups, search for or select the virtual machines that are based on your requirements.
+1. Click **Create New Session**.  
 
-3. Display only the selected virtual machines for the session.
+2. Select **Yes** to enable Static IP for all VMs, or select **No** to skip this option.  
 
-4. To create the target workspace, search for or select the virtual machines according to your requirements, and click **Save & Next**.
+3. To add a workgroup, search for or select the virtual machine as required.  
 
-> **Note**: The workgroup name is auto-generated and is based on the VM name. You can modify it if necessary.
+4. Provide the machine type in the **Target System** section, select the **Target Workspace** from the available list, and click **Save & Next**.  
+
+## Modify VM
+{: #modify-vm-ses}
+
+Make changes to your virtual machines as needed. You can choose the VMs that you want to update, adjust the IP mapping, and enable the Shared Processor Pool (SPP) for improved performance and flexibility.
+
+### Procedure
+{: #mod-vm-ses}
+
+To modify virtual machine, complete the following steps:
+
+1. All virtual machines are displayed. Select the virtual machines to enable the **Shared Procpool** option.  
+
+2. If you have selected **Yes** to enable Static IP while [creating a new VM session](#create-vm-ses), enter the **Target IP Address details** that are **Source IP Address** and **IP Address to Map**.
+
+   > **Note:** You can add multiple IP mappings.
+
+3. Select **Yes** and enter the **Target Procpool** details to enable the **shared processor pool (SPP)**, that allows VMs to share processor capacity dynamically. Select **No** to skip this option.  
+4. Click **Save & Next**.
+
+> **Note:** Click **Refresh VM List** to display all available VMs.
+
 
 ## Manage VM
 {: #vm-ses}
 
-You can view and manage VMs by using the VM Recovery Manager DR (GUI). Managing a VM allows be included in disaster recovery operations and monitored effectively.
+You can view and manage virtual machines by using the Power Virtual Server DR Automation UI. Managing a virtual machine and monitor effectively.
 
-To manage the VMs, complete the following steps:
+### Procedure
+{: #ma-vm-se}
 
-1. In the navigation page of the VM Recovery Manager DR, click **Site > workspace > Managed this VM**.
-2. Select the VM.
-3. Click **Manage this VM**.
+To manage the additonal new virtual machines, complete the following steps:
+
+1. In the Power Virtual Server DR Automation navigation page, click **Cluster Name > Site > Workgroup > Managed VM**.
+2. Select the unmanged VM.
+3. Click **Manage VM**.
 4. You are redirected to the Managed VM tab, where you can view the following details:
    - VM Name
    - Workgroup
    - Source workspace
    - Target workspace
-
+5. Complete the deployment flow to manage selected VM.
 
 ## Unmanage VM
 {: #um-manage-ses}
 
-You can view and unmanage VMs by using the VM Recovery Manager DR (GUI). Unmanaging a VM removes the VM from disaster recovery operations and monitoring.
+You can view and virtual machines by using the Power Virtual Server DR Automation UI. Unmanaging a virtual machine removes the virtual machine from disaster recovery operations and monitoring.
 
-To unmanage VMs, complete the following steps:
+### Procedure
+{: #un-vm-manage}
 
-1. In the navigation page of the VM Recovery Manager DR, click **Site > workspace > Unmanaged this VM**.
+To unmanage virtual machines, complete the following steps:
+
+1. In the navigation page of the Power Virtual Server DR Automation, click **Site > Workspace > Worksgroup>Managed VM**.
 2. Select the VM.
 3. Click **Unmanage this VM**.
-4. After this operation, the workgroup is removed from the list.
+4. After this operation, the workgroup is removed and virtual machine is deleted.
 
-  >  **Note:**
-   > - Each workgroup is associated with only one VM.  
-   > - You can unmanage a VM even if it not managed previously.
+   > **Note:**
+   >
+   > - Each workgroup is associated with only one virtual machine.
+   > - You can unmanage a virtual machine even if it not managed previously.

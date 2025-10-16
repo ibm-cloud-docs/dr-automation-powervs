@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-16"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -19,6 +19,9 @@ To set up and manage additional virtual server instances,you can use either DR A
 ## Add virtual servers
 {: #manage-vm-ser-added}
 
+### Procedure
+{: #manage-vm-ser-procedure}
+
 1. Navigate to the **Manage Virtual Servers** table.
    > **Note**: DR Automation supports all virtual server instances as Managed Virtual Servers that are created through IBM Power Virtual Server. To learn more about all the supported Managed Virtual Server instances, click [IBM Power Virtual Server documentation](https://cloud.ibm.com/docs/power-iaas){: external}.
 2. Click **Add Virtual Server** button.
@@ -30,4 +33,24 @@ https://`<Orchestrator IP>`:3000/login.
 
 Efficient management of virtual servers through the {{site.data.keyword.DR_short}} interface, coupled with the external orchestrator, ensures that your disaster recovery environment remains scalable and resilient. This seamless process provides confidence that your critical systems will be protected in the face of potential failures, maintaining business continuity.
 
-For more information about **External Orchestrator Interface (UI)**, see [IBM VM Recovery Manager DR for Power Systems](https://www.ibm.com/docs/en/vmrmdr).
+### Managed power virtual servers
+{: #vm-details}
+
+View a list of virtual machinesthat are configured for disaster recovery.
+
+You can sort the following configured VM details:
+
+- **VM name**:
+Name of the virtual machine that is added for DR management.  
+
+- **VM ID**:
+Unique identifier that is assigned to the virtual machine.  
+
+- **Memory**:
+Amount of memory that is allocated to the virtual machine.  
+
+- **Core**:
+Number of processor cores that are assigned to the virtual machine.  
+
+- **Workgroup name**:
+Workgroup to which the virtual machine belongs for DR operations.  

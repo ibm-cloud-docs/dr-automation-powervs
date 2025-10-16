@@ -1,15 +1,14 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-18"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
 keywords: commands
 
 ---
-# ksysmgr command(Orchestrator)
-
+# ksysmgr commands(Orchestrator)
 {: #comm}
 
 The command provides a consistent interface to configure the controller system (KSYS) and to perform {{site.data.keyword.DR_full}} operations by using a terminal or script.
@@ -32,7 +31,6 @@ The command provides a consistent interface to configure the controller system (
     ksysmgr {-h|-?} [-v] [<ACTION> [<CLASS>]]
 
     ksysmgr [-v] help
-
 
 The basic format for using the ksysmgr command is as follows:
 
@@ -81,7 +79,7 @@ The following ```ACTION``` flags are available:
 
 ```resync (resy*)```
 
-```update```
+```update (alias upd*)```
 
 ## CLASS
 {: #cla}
@@ -127,7 +125,7 @@ Specifies the particular object, of type **CLASS** , on which the **ACTION** mus
 
 Specifies an optional flag that has attribute pairs and value pairs that are specific to the **ACTION** and **CLASS** combination. Use these pairs to specify configuration settings or to run particular operations. Both **ATTR** and **VALUE** flags are case-sensitive.
 
-**```-a {<ATTR#1>,<ATTR#2>,...}```**
+```-a {<ATTR#1>,<ATTR#2>,...}```
 
 Displays only the specified attributes. This flag must be used with the query ACTION flag. For example:
 
@@ -227,16 +225,16 @@ ksysmgr update license <vmname>
 
 ```
 ksysmgr add ksyscluster
-[<ksysclustername>]
-[type=<HA|DR|HADR|HADRHA|IBM_PVS_DR>]
-ksysnodes=<ksysnode1[,ksysnode2,...]>
-[sync=<yes|no>]
-apikey=<apikey>
-[baseurl=<baseurl>]
-[proxy=<ipaddress:portnumber>]
-add => ad*, cr*, make, mk
-ksyscluster => ksysclu*, clu*
- Note: apikey, baseurl and proxy are applicable only for `IBM_PVS_DR cluster.`
+      [<ksysclustername>]
+      [type=<HA|DR|HADR|HADRHA|IBM_PVS_DR|IBM_PVS_PRIVATE_DR>]
+      ksysnodes=<ksysnode1[,ksysnode2,...]>
+      [sync=<yes|no>]
+      apikey=<apikey>
+      [baseurl=<baseurl>]
+      [proxy=<ipaddress:portnumber>]
+    add => ad*, cr*, make, mk
+    ksyscluster => ksysclu*, clu*
+    Note: apikey, baseurl and proxy are applicable only for IBM_PVS_DR cluster`
 ```
 
 An output that is similar to the following example is displayed:
@@ -251,7 +249,7 @@ KSYS subsystem has started. You can begin adding site definitions, etc
 Note: By default, the value of type variable is DR cluster type.
 ```
 
-### To update staticIp modification
+### To update staticIP modification
 {: #stats-modi}
 
 ```
@@ -275,11 +273,22 @@ ksyscluster => ksysclu*, clu*
 
 An output that is similar to the following example is displayed:
 ```
+# ksysmgr query cluster
 Name: pvs_dr
 State: Online
 Type: IBM_PVS_DR
 Ksysnodes: test.dev.com:1:Online
 KsysState: test.dev.com:1:Online
+```
+An output that is similar to the following example is displayed for Private cloud:
+```
+# ksysmgr query cluster
+Name:                test16sepprvi_Cluster
+State:               Online
+Type:                IBM_PVS_PRIVATE_DR
+Ksysnodes:           testpriv1:1:Online
+KsysState:           testpriv1:1:Online
+Proxy:               10.30.40.4:3128
 ```
 
 ### To remove a KSYS cluster:
@@ -351,14 +360,22 @@ ksysmgr modify ksyscluster <ksysclustername> [glnode=<ksysnode>]
 [proxy=<ipaddress:portnumber>]
 ksyscluster => ksysclu*, clu*
 ```
+
 ### To add a site in the KSYS subsystem:
 {: #subsyste}
+
+#### To add a site in the kSYS sub sytem for Public Cloud:
+{: #subsyste-public-cloud}
 
 ```
 ksysmgr add site <sitename> region=<regionname>
 add => ad*
 site => sit*
+```
+
 An output that is similar to the following example is displayed:
+
+```
 Waiting for update of Workspaces ...
 Update of Workspaces are successful
 Refresh VMs list of VMRM-Dal10 workspace started
@@ -371,6 +388,38 @@ Refresh Networks list of VMRM-TEST-DAL10 workspace started
 Refresh Networks list of VMRM-TEST-DAL10 workspace completed
 Site dal10 added successfully
 Note: dal10 partner GRS Region is us-east.
+```
+#### To add a site in the KSYS sub sytem Private cloud:
+{: #subsyste-private-cloud}
+```
+ksysmgr add site -h
+ksysmgr add site <sitename> satellitelocation=<satellitelocationname>
+     add => ad*
+     site => sit*
+```
+An output that is similar to the following example is displayed for Private cloud:
+
+```
+ksysmgr add site home satellitelocation=satloc_dal_clp2joc20ppo19876n50
+Waiting for update of Workspaces ...
+Update of Workspaces are successful
+Refresh VMs list of Suv_Proc workspace started
+Refresh VMs list of Suv_Proc workspace completed
+Refresh Networks list of Suv_Proc workspace started
+Refresh Networks list of Suv_Proc workspace completed
+Refresh VMs list of SVT-SMALL-Q3.2-mano-GRS workspace started
+Refresh VMs list of SVT-SMALL-Q3.2-mano-GRS workspace completed
+Refresh Networks list of SVT-SMALL-Q3.2-mano-GRS workspace started
+Refresh Networks list of SVT-SMALL-Q3.2-mano-GRS workspace completed
+.
+.
+Refresh VMs list of test workspace started
+Refresh VMs list of test workspace completed
+Refresh Networks list of test workspace started
+Refresh Networks list of test workspace completed
+Site home added successfully
+Note: satloc_dal_clp2joc20ppo19876n50 partner GRS Region(s) satloc_dal_cq8884h20ifkvm7quss0
+
 ```
 
 ### To query the details about a specific sites:
@@ -392,6 +441,26 @@ ActiveWorkgroups: vmrm_dev_02_WG, vmrm_dev_03_WG, vmrm_dev_01_WG
 Note: Active indicates the site where a WorkGroup's VMs are running. The same WorkGroup cannot be active on both sites, but others can be.
 ```
 
+An output that is similar to the following example is displayed for Private cloud:
+```
+ksysmgr query site
+Name:               backup
+SatelliteLocation:  satloc_dal_cq8884h20ifkvm7quss0
+Workspaces:         SVT-XSMALL-MANO-DND
+                     WS-B
+                     SVT_3Q2_XSPoD_25
+                     SVT-XSMALL-Q3.2-mano-GRS
+                     .......
+                     test-xs-ws
+Name:                home
+SatelliteLocation:   satloc_dal_clp2joc20ppo19876n50
+Workspaces:          Suv_Proc
+                     SVT-SMALL-Q3.2-mano-GRS
+                     ........
+                     PerformanceTeam
+                     test
+```
+
 ### To delete a site:
 {: #delets}
 
@@ -404,14 +473,38 @@ site => sit*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr del site us-east
+ksysmgr delete site us-east
 Workspace VMRM-wdc was removed
 Site us-east was removed
 Workgroup configuration example
 ```
+An output that is similar to the following example is displayed for Private cloud:
+```
+ksysmgr delete site home
+Workspace Suv_Proc was removed
+Workspace SVT-SMALL-Q3.2-mano-GRS was removed
+......
+Workspace PerformanceTeam was removed
+Workspace test was removed
+Site home was removed
+Workgroup configuration example
+```
+
+### Manage virtual machine:
+{: #manage-vm}
+
+```
+# ksysmgr manage disk -h
+ 
+ksysmgr manage disk diskid=<diskid1[,diskid2,...]>
+    manage => man*, mg
+```
+An output that is similar to the following example is displayed:
+
+
 
 ### To move a workgroup from one site to another site, run the following command:
-{: #movework}
+{: #move-work}
 
 ```
 ksysmgr move workgroup <name>
@@ -426,7 +519,7 @@ workgroup => workg*, work_g*, wg
 {: #quer}
 
 ```
-ksysmgr q wg -h
+ksysmgr query workgroup -h
 
 ksysmgr query workgroup [ name ]
       [status [monitor=<no|yes>]]
@@ -437,7 +530,7 @@ ksysmgr query workgroup [ name ]
 An output that is similar to the following example is displayed: 
 
 ```
-ksysmgr q wg vmrm_IBMi_WG
+ksysmgr query workgroup vmrm_IBMi_WG
 Name:                vmrm_IBMi_WG
 ID:                  2
 VMs:                 vmrm_IBMi
@@ -452,6 +545,23 @@ Networks:            vmrm_dal12_network01 <-> vmrm_dal12_network01
 CGName:              rccg-3b3d-b61c7
 
 ```
+An output that is similar to the following example is displayed for private cloud:
+```
+ksysmgr query workgroup sb-aiz-01_WG
+Name:                sb-aix-01_WG
+ID:                  1
+VMs:                 sb-aix-01
+PartnerVM:           sb-aix-01_BackUp
+State:               READY_TO_MOVE
+Priority:            Medium
+SkipAutoResync:      OFF
+HomeWorkSpace:       SVT-SMALL-Q3.2-mano-GRS
+BackupWorkSpace:     SVT_3Q2_XSPoD_25
+ActiveWorkspace:     SVT-SMALL-Q3.2-mano-GRS
+Networks:            net-30 <-> Testsubnet1
+CGName:              rccg-3b3d-b61c7
+```
+
 
 ### To discover all VMS in a specific workgroup for Dr readiness:
 {: #dis-dr-read}
@@ -465,7 +575,7 @@ workgroup => workg*, work_g*, wg
 An output that is similar to the following example is displayed: 
 
 ```
-ksysmgr -t discover wg User_test_WG
+ksysmgr -t discover workgroup User_test_WG
 04:49:54 Running discovery on Workgroup User_test_WG, this may take a few minutes...
 04:49:55 Discovery has started for Workgroup User_test_WG
 04:49:55 Discovery has started for VM User_test
@@ -504,7 +614,7 @@ workgroup => workg*, work_g*, wg
 An output that is similar to the following example is displayed: 
 
 ```
-ksysmgr resync wg IBMiWG
+ksysmgr resync workgroup IBMi_WG
 Workgroup IBMiWG resync has started
 05:24:38 Shutdown has started for VM User_IBMi
 05:24:54 Shutdown has completed for VM user_IBMi
@@ -692,7 +802,9 @@ NETWORK_CONFIGURATION_FAILED warning Network configuration has failed.
 
 ```
  
+
 #### To query the system-wide persistent attribute for the ksysmgr command, use the following command syntax:
+{: #que-sys-wide}
 
 ```
 ksysmgr query system [ properties ]
@@ -753,6 +865,8 @@ Sets the deep_discovery variable to enable/disable.
 
 
 #### To modify the system wide persistent attribute for the ksysmgr command:
+{: #mod-sys-wide}
+
 ```
 ksysmgr modify system
 [auto_discovery_time=<hh:mm>]
@@ -787,6 +901,7 @@ By default language is considered to be en_US
 {: #qwe}
 
 To enable or disable the quick-discovery feature:
+
 ```
 ksysmgr modify system quick_discovery=enable
 KSYS quick_discovery has been updated
@@ -927,7 +1042,6 @@ Also, User can give Only script name to remove notify for all events listed with
 
 ```
 
-
 ### To query a script:
 {: ikm}
 
@@ -943,7 +1057,7 @@ ksysmgr query notify script
 {: #opi}
 
 ```
-ksysmgr q system -h
+ksysmgr query system -h
 
 ksysmgr query system [ properties | status ]
     query => q*, ls, get, sh*
@@ -952,7 +1066,7 @@ ksysmgr query system [ properties | status ]
 
 An output that is similar to the following example is displayed:
 ```
-ksysmgr q system
+ksysmgr query system
 System-Wide Persistent Attributes
 BaseUrl:                     cloud.test.com
 Regions:                     wdc06
@@ -978,6 +1092,32 @@ dup_event_processing:        yes
 User Scripts for Site: None
 User Scripts for Workgroup: None
 User Scripts for VM: None
+```
+An output that is similar to the following example is displayed for private cloud:
+```
+ksysmgr query system
+System-Wide Persistent Attributes
+BaseUrl:                     cloud.ibm.com
+SatelliteLocations:          satloc_dal_clp2joc20ppo19876n50 - satloc_dal_cq8884h20ifkvm7quss0
+api_key:                     #####16854C578FDCCF26592381C053 28F37FF3F7C 28E5039 9E1E6 398A87C8A 329A867 EEAA22CD5AC 435A65DBFA0819E3FC0F7E3A68BB4
+staticipenable:              default
+trace_file_size:             not set
+ksys_spooling:               not set
+spool_dest_dir:              not set
+spool_dir_max_size:          not set
+quick_discovery_interval:    60 minutes
+quick_discovery:             enable
+deep_discovery:              enable
+cleanup_files_interval:      7 days
+ksys_lang:
+auto_discovery_time:         00:00 hours
+custom_script_timeout:       none
+notification_level:          low
+dup_event_processing:        yes
+User Scripts for Site: None
+User Scripts for Workgroup: None
+User Scripts for VM: None
+
 ```
 
 Following is the output of modify system:
@@ -1197,9 +1337,10 @@ ksysmgr query disk_group [wg=<wgname>]
     query => q*, ls, get, sh*
     disk_group => dg, disk_g*
 ```
+An output that is similar to the following example is displayed:
 
 ```
-ksysmgr q disk_group
+ksysmgr query disk_group
 WGName:              vmrm_rhel_WG
 CGName:              rccg-a382-d35ba
 CGState:             consistent_copying
@@ -1209,8 +1350,22 @@ BackupWorkSpace:     vmrm_powervsdr_wdc06
 ActiveWorkspace:     vmrm_powervsdr_dal12
 Active Site:         DAL
 VolumeDiskGroup:     vmrm_rhel_WG_VG <-> rccg-a382-d35ba
-An output that is similar to the following example is displayed:
+
 ```
+An output that is similar to the following example is displayed for private cloud:
+```
+ksysmgr q disk_group
+WGName:              vmrm_rhel_WG
+CGName:              rccg-a382-d35ba
+CGState:             consistent_copying
+Progress:            99.0
+HomeWorkSpace:       SVT-SMALL-Q3.2-mano-GRS
+BackupWorkSpace:     SVT_3Q2_XSPoD_25
+ActiveWorkspace:     SVT-SMALL-Q3.2-mano-GRS
+Active Site:         DAL
+VolumeDiskGroup:     vmrm_rhel_WG_VG <-> rccg-a382-d35ba
+```
+
 
 ## Viewing disk details
 {: #diskdetail}
@@ -1227,7 +1382,7 @@ query => q*, ls, get, sh*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr q disk vm=vmrm_rhel
+ksysmgr query disk vm=vmrm_rhel
 VM:                  vmrm_rhel <-> vmrm_rhel_BackUp
 CGName:              rccg-a382-d35ba
 CGState:             consistent_copying
@@ -1240,6 +1395,73 @@ Volume Details:
 
 ```
 
+### To manage disk on virtual machine:
+{: #manage-disk-vm}
+```
+ksysmgr manage disk -h
+ 
+ksysmgr manage disk diskid=<diskid1[,diskid2,...]>
+    manage => man*, mg
+```
+
+### To unmanage disk on virtual machine:
+{: #unmanage-disk-vm}
+
+```
+# ksysmgr unmanage disk -h
+ 
+ksysmgr unmanage disk diskid=<diskid1[,diskid2,...]> workgroup=<workgroup_name>
+    unmanage => unman*, umg
+```
+
+### To query a virtual machine disk:
+{: #query-vm-disk}
+
+```
+ ksysmgr query disk vm=vmrm_aix_vm2
+VM:                  vmrm_aix_vm2 <-> vmrm_aix_vm2_BackUp
+CGName:              rccg-aca6-1507e
+CGState:             consistent_copying
+Progress:            99.66666666666667
+DiskIDs:             volume-aix_vol2-2d5ff23a-13bb -> 2d5ff23a-13bb-43d8-b354-51603dee5e50
+                     volume-aix_vol3-6a958988-9745 -> 6a958988-9745-4fee-8942-f8b80118e8e7
+                     volume-vmrm_aix_vm2-bc477fa9-00046b90-boot-0-a69d29f9-bc3a -> a69d29f9-bc3a-424e-a91e-3edad82348a4
+
+Volume Details:
+
+| Volume | State | Progress (%) |
+|---------|--------|--------------|
+| `volume-aix_vol2-2d5ff23a-13bb <-> aux_volume-aix_vol2-2d5ff23a-13b...` | consistent_copying | 100 |
+| `volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974...` | consistent_copying | 100 |
+| `volume-vmrm_aix_vm2-bc477fa9-000... <-> aux__aix_vm2-bc477fa9-00046b90-b...` | consistent_copying | 100 |
+```
+### To unmanage a disk on virtual machine:
+{: #un-manage-vm-disk}
+```
+ksysmgr unmanage disk diskid=2d5ff23a-13bb-43d8-b354-51603dee5e50 workgroup=vmrm_aix_vm2_WG
+DiskID(s) was successfully unmanaged
+```
+
+### To query unmanaged disk:
+{: #un-manage-qu-disk}
+
+```
+ksysmgr query disk vm=vmrm_aix_vm2
+VM:                  vmrm_aix_vm2 <-> vmrm_aix_vm2_BackUp
+CGName:              rccg-aca6-1507e
+CGState:             consistent_copying
+Progress:            99.5
+DiskIDs:             volume-aix_vol3-6a958988-9745 -> 6a958988-9745-4fee-8942-f8b80118e8e7
+                     volume-vmrm_aix_vm2-bc477fa9-00046b90-boot-0-a69d29f9-bc3a -> a69d29f9-bc3a-424e-a91e-3edad82348a4
+                     2d5ff23a-13bb-43d8-b354-51603dee5e50 -> Unmanaged
+### Volume Details
+
+| Volume | State | Progress (%) |
+|---------|--------|--------------|
+| `volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974...` | consistent_copying | 100 |
+| `volume-vmrm_aix_vm2-bc477fa9-000... <-> aux__aix_vm2-bc477fa9-00046b90-b...` | consistent_copying | 100 |
+
+```
 ## KSYS spooling
 {: #spooling}
 
@@ -1398,14 +1620,23 @@ Successfully created a configuration snapshot: /var/ksys/snapshots/snap.xml_DETA
 {: #pairs}
 
 ```
+ksysmgr pair workspace -h
 ksysmgr pair workspace <home_workspacename | ID>
-
-         pair=<target_workspacename | ID> | pair=none
-pair => map
-workspace => works*, work_s*, ws
+      pair=<target_workspacename | ID> | pair=none
+    pair => map
+    workspace => works*, work_s*, ws
+    Note: pair=none for unpairing the workspace
+```
 An output that is similar to the following example is displayed:
+
+```
 ksysmgr pair ws VMRM-Dal10 pair=VMRM-wdc
 Workspace VMRM-Dal10 was paired with VMRM-wdc
+```
+An output that is similar to the following example is displayed for private cloud:
+```
+ksysmgr pair ws SVT-SMALL-Q3.2-mano-GRS pair=SVT_3Q2_XSPoD_25
+Workspace SVT-SMALL-Q3.2-mano-GRS was paired with SVT_3Q2_XSPoD_25
 ```
 
 ## To refresh a workspace, run the following command:
@@ -1423,7 +1654,11 @@ An output that is similar to the following example is displayed:
 ksysmgr refresh workspace VMRM-wdc
 Refresh workspaces to update Networks and VMs list completed.
 ```
-
+An output that is similar to the following example is displayed for private cloud:
+```
+ksysmgr refresh workspace SVT_3Q2_XSPoD_25
+Refresh workspaces to update Networks and VMs list completed.
+```
 ## Network pairing example
 {: #netpair}
 
@@ -1448,6 +1683,12 @@ An output that is similar to the following example is displayed:
 ```
 ksysmgr pair network VMRM-Dal10-Network01 pair=vmrm-wdc-network01
 Network VMRM-Dal10-Network01 was paired with vmrm-wdc-network01
+```
+An output that is similar to the following example is displayed for private cloud:
+
+```
+ksysmgr pair network net-30 pair=Testsubnet1
+Network net-30 was paired with Testsubnet1
 ```
 
 ## Site discovery example
@@ -1499,7 +1740,7 @@ workgroup => workg*, work_g*, wg
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr discover wg vmrm_rhel_WG
+ksysmgr discover workgroup vmrm_rhel_WG
 04:10:41  Running discovery on Workgroup vmrm_rhel_WG, this may take a few minutes...
         04:10:54  Discovery has started for Workgroup vmrm_rhel_WG
         04:10:54  Discovery has started for VM vmrm_rhel
@@ -1529,7 +1770,7 @@ workgroup => workg*, work_g*, wg
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr resync wg vmrm_testvm_WG
+ksysmgr resync workgroup vmrm_testvm_WG
 Workgroup vmrm_testvm_WG resync has started
         23:49:17  Shutdown has started for VM vmrm_testvm_BackUp
         23:49:34  Resync is in progress for Workgroup vmrm_testvm_WG
@@ -1551,12 +1792,21 @@ system => sys*
 
 An output that is similar to the following example is displayed:
 ```
-ksysmgr q system
+ksysmgr query system
 System-Wide Persistent Attributes
 BaseUrl: test.cloud.test.com
 Regions: us-east
 dal10
 api_key: #####1543D972B94F...
+```
+An output that is similar to the following example is displayed for private cloud:
+```
+ksysmgr query system
+System-Wide Persistent Attributes
+BaseUrl:                     cloud.ibm.com
+SatelliteLocations:          satloc_dal_clp2joc20ppo19876n50 - satloc_dal_cq8884h20ifkvm7quss0
+api_key:                     #####16854C578FDCCF26592381C053 28F37FF3F7C 28E5039 9E1E6 398A87C8A 329A867 EEAA22CD5AC 435A65DBFA0819E3FC0F7E3A68BB4
+staticipenable:              default...
 ```
 
 ## VM query and refresh example
@@ -1577,6 +1827,7 @@ vm => lp*, vm
 An output that is similar to the following example is displayed:
 
 ```
+ksysmgr query vm User_test
 Name: User_test
 UUID: 6aae01cd-0960-4c7e-b5bd-f274bcd53792
 State: INIT
@@ -1615,7 +1866,7 @@ event => ev*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr q event type=error
+ksysmgr query event type=error
 Event Name: DISCOVERY_FAILED
 Event Type: error
 Description: Discovery has failed.
@@ -1641,10 +1892,44 @@ ksysmgr delete script entity=site script_name=pre_discovery
 KSYS site has been updated
 ```
 
+## Target system type
+{: #Tr-sy-ty}
+
+You can optionally specify a target system type when configuring a backup VM. This attribute allows the backup VM to run on a system different from the source.  For example,  If the production VM runs on a Power10 server and the backup VM can run on  Power9 server.
+
+> **Note**: Setting the target system type is currently not supported for PowerVS Private cloud.
+
+To configure a backup VM to run on a specific target system type, run the following command, run the following command:
+
+```ksysmgr manage vm test-syd targetsystemtype=s922```
+
+The following example output is displayed:
+
+```
+# ksysmgr manage vm test-1 targetsystemtype=s922
+Refresh VMs list of Test-lon04 workspace started
+Refresh VMs list of Test-lon04 workspace completed
+Refresh Networks list of Test-lon04 workspace started
+Refresh Networks list of Test-lon04 workspace completed
+```
+
+To modify a backup VM to run on a specific target system type, run the following command:
+
+```ksysmgr modify vm test-syd targetsystemtype=e980```
+
+The following example output is displayed:
+
+```
+ksysmgr modify vm test_syd04 targetsystemtype=e980
+TargetSystemType e980 was found and modified successfully
+```
+
+>**Note**: Modifying target system type is allowed only before first discovery.
+
 ## Shared Processor Pool configuration
 {: #s-pro-poo-confi}
 
-### Enable shared processor pool for a virtual machine
+### Enable shared processor pool for a virtual machine for Public and Private cloud
 {: #es-pp-vm}
 
 To reduce licensing costs and optimize resource usage, you can enable the shared processor pool for a virtual machine. Before assigning, you must create the shared processor pool in the target PowerVS workspace.
@@ -1663,12 +1948,12 @@ For Vm test_vm attribute(s) ShareProcPoolEnable was successfully modified.
 For Vm test_vm attribute(s) TargetProcPool was successfully modified.
 ```
 
-> **Note**: Note: Both `sharedprocpool=yes` and `targetprocpool=<pool_name>` are mandatory parameters.
+> **Note**: Both `sharedprocpool=yes` and `targetprocpool=<pool_name>` are mandatory parameters.
 
-### Modify shared processor pool settings for a virtual machine
+### Modify shared processor pool settings for a virtual machine Public and Private cloud
 {: #msp-pp-vm}
 
-To apply shared processor pool settings after a VM has already been managed, use the following command:
+To apply shared processor pool settings after a VM is managed, run the following command:
 
 ```ksysmgr modify vm <vmname> sharedprocpool=yes targetprocpool=<pool_name>```
 
@@ -1680,7 +1965,9 @@ For Vm test_vm attribute(s) ShareProcPoolEnable was successfully modified.
 For Vm test_vm attribute(s) TargetProcPool was successfully modified.
 ```
 
-### Verify shared processor pool assignment
+**Note**: Modifying shared processor pool is allowed only before first discovery.
+
+### Verify shared processor pool assignment for Public and Private cloud
 {: #vs-pp-a}
 
 To confirm that the VM is assigned to a shared processor pool, run the following command:
@@ -1700,7 +1987,7 @@ TargetProcPool:   test_pool
 ### View backup VM configuration in PowerVS
 {: #vb-vm-cpv}
 
-To check the shared processor pool assignment and current resource configuration of the backup VM, run:
+To check the shared processor pool assignment and current resource configuration of the backup VM, run the following command:
 
 ```ibmcloud pi ins get <backup_vm_name>```
 
@@ -1714,9 +2001,26 @@ Shared Processor Pool:   test_pool
 Shared Processor Pool ID: abcd1234-xxxx-yyyy-zzzz-abcdef123456
 Status:                  SHUTOFF
 ```
-This confirms the VM was provisioned with reduced capacity and associated with the specified processor pool.
+This confirms that the VM is provisioned with reduced capacity and is associated with specified processor pool. 
 
-### List shared processor pools
+### Resource reduction during site switchovers for Public and Private cloud
+{: #rr-pp-vm}
+
+When a source VM is configured with a shared processor pool and the backup VM is also assigned to a shared processor pool, then the system automatically adjusts resources during a site move.
+
+- **During discovery or DR readiness**:If the shared processor pool is configured for the target site, the backup VM is created with minimum CPU and memory resources from that pool.
+This helps minimize cost while maintaining DR readiness.
+
+- **Move from home site to backup site**: If Shared processor pool is configured for target site and source vm is from shared processor pool, during DR Readiness, target backup vm will be initially created with minimum resources.During move from home site to backup site, source vm which will be shutdown will be reduced to minimum resource and target system will be increase to actually vm resource configuration.
+
+> **Note**: If source vm is not from shared processor pool but target site shared processor pool is configured. During move the source vm capacity will not be reduced during shutdown. Where target system resource will be increase utilizing resource from given pool.
+
+- **Move back from backup site to home site**: The VM’s resources are restored to the original configuration values. This automated resource optimization helps reduce licensing costs and ensures efficient utilization during disaster recovery operations.
+
+- **DR Rehearsal**: If the shared processor pool is configured for the target site, the rehearsal VM is created using resources from the target shared processor pool.
+The rehearsal VM also respects the target system type defined by the user.
+
+### List shared processor pools for Public and Private cloud
 {: #li-sh-pro-po}
 
 To list all shared processor pools created under your account, run the following command:
@@ -1732,7 +2036,7 @@ Listing shared processor pools under account Test Account as user `test_user@www
 | 1234abcd-5678-xxxx-ef12-xxxxxef987654 | 5                | s922       | 36      | test_pool    | 2              | 0.5              | active | shared processor   |
 
 
-> **Note**: KSYS does not create the shared processor pool. You must create it manually in the PowerVS workspace before assigning it to any virtual machine.
+> **Note**: KSYS does not create the shared processor pool. You must create it manually in the PowerVS workspace before you can assign the share processor pool to any virtual machine.
 
 
 ## DR Rehearsal move at workgroup level
@@ -1748,7 +2052,7 @@ Disaster Recovery (DR) rehearsal at the Workgroup level allows administrators to
 
 Run the following command to list the existing Workgroups and verify their status:
 
-```ksysmgr q wg```
+```ksysmgr query workgroup```
 
 An output that is similar to the following example is displayed:
 
@@ -1788,7 +2092,7 @@ CGName:                       cgrp-6f2d-xxxx-xxxx-22487ee0caaa
 
 To determine the source and target sites for the rehearsal, run the following command:
 
-```ksysmgr q site```
+```ksysmgr query site```
 
 An output that is similar to the following example is displayed:
 
@@ -1806,13 +2110,26 @@ ActiveWorkgroups:               test_WG
 ```
 This confirms the correct site names for use in the move command.
 
+An output that is similar to the following example is displayed for private cloud
+
+```
+Name:                           TargetSite
+SatelliteLocations:             satloc_dal_clp2joc20ppo19876n50
+Workspaces:                     SVT-SMALL-Q3.2-mano-GRS
+ActiveWorkgroups:               test_01_WG
+Name:                           HomeSite
+SatelliteLocations:             satloc_dal_cq8884h20ifkvm7quss0
+Workspaces:                     SVT_3Q2_XSPoD_25
+ActiveWorkgroups:               test_WG
+```
+
 ### Perform DR Rehearsal move
 {: #pe-dr-re-mo}
 
-Initiate the DR rehearsal move using the command:
+Initiate the DR rehearsal move using the following command:
 
 ```
-# ksysmgr move wg -h
+# ksysmgr move workgroup -h
 ksysmgr move workgroup <name>
        to=<site_name>
        [force=<true|false>]
@@ -1826,7 +2143,6 @@ Note: dr_type=planned is the default
 ### Parameters
 {: #para-me-ter}
 
-- **from:** Source site name (e.g., `HomeSite`)  
 - **to:** Target site name (e.g., `TargetSite`)
 
 
@@ -1861,7 +2177,7 @@ Workgroup dr_test move completed for Workgroup test_WG to TargetSite
 
 Run the following command to list the existing Workgroups and verify their status:
 
-`ksysmgr q wg`
+`ksysmgr query workgroup`
 
 An output that is similar to the following example is displayed:
 
@@ -1917,14 +2233,67 @@ Processors:                 0.25
 WorkSpace:                  dravyclon_lon04_power_workspace
 Networks:                   mgmt_net
 ```
+An output that is similar to the following example is displayed for private cloud:
 
+```
+Name:                       test_Rehearsal
+UUID:                       xxxx
+State:                      INIT
+Dr Test State:              ACTIVE
+SourceVM:                   test
+ActiveVM:                   no
+IPAddresses:                192.168.x.xxx
+memory_capacity:            2
+Processors:                 0.25
+WorkSpace:                  SVT-SMALL-Q3.2-mano-GRS
+Networks:                   net-30
+
+Name:                       test_BackUp
+UUID:                       fe30xx38-babx-480x-920x-7fafad07c7xx
+State:                      DISCOVERED
+Dr Test State:              SHUTOFF
+Partner:                    test
+CloneVM:                    test_Rehearsal
+ActiveVM:                   no
+IPAddresses:                192.168.x.xxy
+memory_capacity:            0
+Processors:                 0.25
+WorkSpace:                  SVT-SMALL-Q3.2-mano-GRS
+Networks:                   net-30
+
+Name:                       test
+UUID:                       98d4xx06-a2x9-45x1-968x-3c6fb53a5fxx
+State:                      READY_TO_MOVE
+Dr Test State:              ACTIVE_COMPLETED
+Partner:                    test_Rehearsal
+CloneVM:                    yes
+ActiveVM:                   192.168.x.xxz
+IPAddresses:                2
+memory_capacity:            0
+Processors:                 0.25
+WorkSpace:                  SVT-SMALL-Q3.2-mano-GRS
+Networks:                   net-30
+
+Name:                       testtest_01_Backup
+UUID:                       889fxx15-a5dx-476x-be4x-0fficexx9cxx
+State:                      DISCOVERED
+Dr Test State:              SHUTOFF
+Partner:                    no
+CloneVM:                    yes
+ActiveVM:                   192.168.x.xxw
+IPAddresses:                2
+memory_capacity:            0
+Processors:                 0.25
+WorkSpace:                  SVT_3Q2_XSPoD_25
+Networks:                   net-30
+```
 ### Clean Up after DR Rehearsal at workgroup level
 {: #cl-up-wg-le}
 
-Once validation is complete, revert the rehearsal environment usingby running the following command:
+Once validation is complete, revert the rehearsal environment using by running the following command:
 
 ```
-ksysmgr cleanup wg -h
+ksysmgr cleanup workgroup -h
 ksysmgr [-f] cleanup workgroup <name>
       dr_test=<yes>
       [force=<true|false>]
@@ -1933,7 +2302,7 @@ ksysmgr [-f] cleanup workgroup <name>
 ```
 An output that is similar to the following example is displayed:
 ```
-ksysmgr cleanup wg test1 dr_test=yes
+ksysmgr cleanup workgroup test1 dr_test=yes
 04:46:33 Workgroup dr_test cleanup started for test1, this may take a few minutes...
 04:46:44 dr_test cleanup has started for Workgroup test1
 04:46:44 VM Volumes clone with consistency delete has started for VM test2
@@ -1958,7 +2327,7 @@ Disaster Recovery (DR) rehearsal at the Site level allows administrators to vali
 
 Run the following command to list the existing Sites and verify their details:
 
-```ksysmgr q site```
+```ksysmgr query site```
 
 An output similar to the following example is displayed:
 
@@ -1975,6 +2344,18 @@ Workspaces:                          dravpclon-Lon04-power-workspace
 Workgroups:                          test_WG
 ```
 This confirms the correct site names for use in the move command.
+
+An output similar to the following example is displayed for private cloud:
+```
+Name:                                TargetSite
+SatelliteLocations:                  satloc_dal_clp2joc20ppo19876n50
+Workspaces:                          SVT-SMALL-Q3.2-mano-GRS
+Workgroups:                          test_01_WG
+Name:                                HomeSite
+SatelliteLocations:                  satloc_dal_cq8884h20ifkvm7quss0
+Workspaces:                          SVT_3Q2_XSPoD_25
+Workgroups:                          test_WG
+```
 
 ### Perform DR rehearsal move at site level
 {: #pe-for-dr-re-mo}
@@ -2005,7 +2386,7 @@ An output similar to the following example is displayed:
 ksysmgr move site from=HomeSite to=TargetSite dr_test=yes
 You are initiating a failover rehearsal across sites
 
-Do you wish to proceed? [y/n\]  
+Do you wish to proceed? [y/n]  
 
 y
 
@@ -2029,7 +2410,7 @@ Site dr_test move completed for Site TargetSite to HomeSite
 
 Use the following command to list the managed VMs and verify their status:
 ```
-ksysmgr q vm state=manage
+ksysmgr query vm state=manage
 ```
 An output similar to the following example is displayed:
 
@@ -2083,6 +2464,59 @@ memory_capacity:                    2
 Processors:                         0.25
 WorkSpace:                          Test_workspace_lon06_new
 Networks:                           mgmt_net
+```
+An output similar to the following example is displayed for private cloud:
+
+```
+Name:                              test_Rehearsal
+UUID:                              5de7xxaf-e78x-48bx-a9bx-695b8a2c76xx
+State:                             INIT
+Dr Test State:                     ACTIVE
+SourceVM:                          test
+ActiveVM:                          no
+IPAddresses:                       192.168.x.xxa
+memory_capacity:                   2
+Processors:                        0.25
+WorkSpace:                         SVT-SMALL-Q3.2-mano-GRS
+Networks:                          net-30
+
+Name:                              test_BackUp
+UUID:                              e6aexx89-2c7x-43bx-867x-669426d0c6xx
+State:                             INIT
+Dr Test State:                     ACTIVE
+SourceVM:                          test
+ActiveVM:                          no
+IPAddresses:                       192.168.x.xxb
+memory_capacity:                   0
+Processors:                        0.25
+WorkSpace:                         SVT-SMALL-Q3.2-mano-GRS
+Networks:                          net-30
+
+Name:                              testtest_01_Backup
+UUID:                              889fxx15-a5dx-476x-be4x-0fficexx9cxx
+State:                             DISCOVERED
+Dr Test State:                     SHUTOFF
+Partner:                           test_Rehearsal
+CloneVM:                           no
+ActiveVM:                          no
+IPAddresses:                       192.168.x.xxc
+memory_capacity:                   2
+Processors:                        0.25
+WorkSpace:                         SVT-SMALL-Q3.2-mano-GRS
+Networks:                          net-30
+
+Name:                              test
+UUID:                              28b6xx75-07ex-487x-bb5x-5faedfdc78xx
+State:                             READY_TO_MOVE
+Dr Test State:                     ACTIVE
+Partner:                           test_BackUp
+CloneVM:                           test_Rehearsal
+ActiveVM:                          yes
+IPAddresses:                       192.168.x.xxd
+memory_capacity:                    2
+Processors:                         0.25
+WorkSpace:                          SVT-SMALL-Q3.2-mano-GRS
+Networks:                           net-30
 ```
 ### Clean up after DR rehearsal at site level
 {: #clean-up}

@@ -1,14 +1,17 @@
 {
   "version": 2,
   "title": "Power Virtual Server DR Automation",
-  "introduction": "Power Virtual Server DR Automation is a cloud solution for managing your virtual servers.",
+  "introduction": "Power Virtual Server DR Automation is a cloud solution to enable Disaster Recovery capability for your power virtual servers.",
   "console_page": "/catalog/services/power-virtual-server-dr-automation",
   "section_topics": {
     "links": [
-      
       {
-        "title": "High Level Architecture",
+        "title": "Architecture for Power Virtual Server DR Automation in IBM Data Center",
         "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-arch"
+      },
+      {
+        "title": "Architecture for Power Virtual Server DR Automation in Client Location (Private Cloud)",
+        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-arch-private-pod"
       },
       {
         "title": "Pricing",
@@ -16,7 +19,7 @@
       },
       {
         "title": "External Orchestrator",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter"
+        "href": "/docs/dr-automation-powervs?group=external-orchestrator"
       },
       {
         "title": "Troubleshooting",

@@ -1,12 +1,12 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-21"
+lastupdated: "2025-10-14"
 subcollection: dr-automation
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
 }
-keywords: dr-automation, release-notes
+keywords: release-notes, new features, enhanchments, latest release
 ---
 {{site.data.keyword.attribute-definition-list}}
 # Release notes for {{site.data.keyword.DR_short}}
@@ -14,6 +14,24 @@ keywords: dr-automation, release-notes
 Use these release notes to learn about the latest updates to **{{site.data.keyword.DR_short}}** grouped by release date. Release notes are available for a minimum of three years.
 {: shortdesc}
 
+## 16 October 2025
+{: #subcollection-october1025}
+{: release-note-october}
+
+
+- You can now deploy and manage your DR Automation resources in a private (client) cloud environment using IBM PowerVS Satellite locations. This update introduces the complete architecture, deployment flow, and configuration details for setting up DR Automation in client locations, including information about the Service Broker, KSYS orchestrator, storage tiers, and network connectivity. For more information, see [Deploy DR Automation in Your private cloud environment](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch-private-pod).
+
+- You can now view the deployment timestamps for both the primary and standby orchestrators, along with the subscription plan details (Public or Private) selected during initial setup. These enhancements provide better tracking of deployment history and service configuration. For more information, see [Orchestrator and service details](/docs/dr-automation-powervs?topic=dr-automation-powervs-or-ser-de).
+
+- In Orchestrator UI Configuration deployment page, Modify VM option is provided which allows you to modify, configure multiple IP mappings, and enable the Shared Processor Pool (SPP) to optimize performance and resource utilization for the DR enabled virtual machines. For more information, see [Managing VM sessions](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-vm-ses#modify-vm-ses), [Shared processor pool support for public and private plans](/docs/dr-automation-powervs?topic=dr-automation-powervs-comm#shared-processor-pool-configuration).
+
+- DR Automation now displays real-time notifications for events, that are deployment status, errors, and operational updates. Each notification appears as a pop-up with a timestamp, and you can track up to 100 current events, providing clear visibility into system activities and changes. For more information, see [Administrating event logs](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-log#adm-log).
+
+- When deploying the orchestrator with Client Location (Private pod), the Add Sites page now display Select Source Satellite Location and Select Target Satellite Location instead of region-based options. For more information, see [Add sites to KSYS](/docs/dr-automation-powervs?topic=dr-automation-powervs-con-site-ksys).
+
+- DR Automation now supports upgrading the orchestrator ksys filesets through a simplified CLI command, ensuring your system remains up to date with the latest features, fixes, and security enhancements. For more information, see [Migrate using ksysmgr commands](/docs/dr-automation-powervs?topic=dr-automation-powervs-Upgrade-fil-set).
+
+- You can now choose Orchestator HA enablement in DR configuration page. For more information, see [Deploying the orchestrator for disaster recovery](ibm.com/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch#dep-the-orch-dis-re).
 
 ## 25 July 2025
 {: #subcollection-july0725}

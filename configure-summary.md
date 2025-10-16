@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-25"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -21,13 +21,17 @@ After completing all the necessary setup steps, you are redirected to the **Summ
 
 The following details are displayed in the summary page:
 
-- **VM Name**: The unique identifier that is assigned to each virtual machine for management and configuration purposes.
-- **Source Workspace**: The initial group or environment from which the virtual machine originates.
-- **Target Workspace**: The designated environment where the virtual machine is deployed or managed.
-- **Workgroup**: A collection of VMs that share common management and configuration settings within the system.
-- **Source Network**: The original network setup that is associated with the virtual machine before pairing.
-- **Target Network**: The network configuration to which the virtual machine will connect after pairing.
+- **VM Name**: The unique identifier assigned to each virtual machine for management and configuration purposes.  
+- **Source Workspace**: The workspace from which the virtual machine originates.  
+- **Target Workspace**: The workspace where the virtual machine is deployed or managed.  
+- **Workgroup Name**: The name assigned to the group of virtual machines for collective management. 
+- **Target System**: The network configuration to which the virtual machine is connected after pairing.
+- **Static IP Map**: Displays the mapping between the source IP address and the target IP address, if static IP was enabled.  
+- **Enable Shared Procpool**: Indicates whether virtual machines are configured to share processor capacity dynamically through a shared processor pool (SPP).
+- **Target Procpool**: The designated shared processor pool (SPP) that is assigned to the virtual machines.  
+
+To complete the process, click **Submit & Deploy**, and you are redirected to the **Dashboard** section.
+
+
 
 This summary ensures that all configurations are accurately set up and ready for operational use.
-
-To complete the process, click **Submit & Deploy**. You are redirected to the **Dashboard** section.

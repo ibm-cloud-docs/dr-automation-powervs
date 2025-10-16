@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation-powervs
 
@@ -11,10 +11,10 @@ keywords: architecture
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Architecture for {{site.data.keyword.DR_full_notm}} in IBM data center
+# Architecture for {{site.data.keyword.DR_full_notm}} in IBM Data Center
 {: #arch}
 
-{{site.data.keyword.DR_full}} is located in the IBM data centers, is a robust disaster recovery solution that is designed for IBM data centers, distinct from general IBM Cloud resources. This solution uses dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.
+{{site.data.keyword.DR_full}} located in IBM data centers, is a robust disaster recovery solution designed for IBM data centers, distinct from general IBM Cloud resources. This solution uses dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.
 {: shortdesc}
 
 Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} architecture, features, hardware requirements, and network configurations.
@@ -42,7 +42,7 @@ The **Orchestrator (KSYS)** is crucial in coordinating DR workflows, ensuring vi
 
 This setup provides a secure, seamless DR solution that integrates with your production environment, enabling smooth failover and failback to maintain business continuity in unexpected events.
 
-![DR Automation Architecture](images/dr-automation-architecture.svg "DR Automation Architecture"){: caption="DR Automation Architecture" caption-side="bottom"}
+![DR Automation Architecture](images/dr-automation-architec.svg "DR Automation Architecture"){: caption="DR Automation Architecture" caption-side="bottom"}
 
 ## DR Service broker architecture
 {: #service-broker}
@@ -129,6 +129,11 @@ IBM Power servers that are supported by {{site.data.keyword.DR_full_notm}} inclu
 - **IBM Power E980**
 - **IBM Power E1080**
 - **IBM Power S1022**
+- **IBM Power E1050**
+- **IBM Power S1122**
+- **IBM Power E1150**
+- **IBM Power S1124**
+
 
 For more details, refer to the specific data sheets and hardware overview table.
 
@@ -137,7 +142,8 @@ For more details, refer to the specific data sheets and hardware overview table.
 
 - The Orchestrator (KSYS) Power Virtual Server instance is deployed with 0.5 cores and 4 GB of memory however, larger environments with over 100 VMs require more resources. You can increase this configuration after the initial deployment by modifying power virtual server properties with in the workspace.
 
-- The KSYS logical partition runs IBM® AIX® 7.3 with Technology Level 2 Service Pack 1 (7300-02-01).
+> - **Current Baseline**: Newly deployed KSYS logical partitions run IBM® AIX® 7.3 with Technology Level 2 Service Pack 1 (**7300-02-01**).
+> - **Older Deployments**:Existing deployments may be running earlier Technology Levels or Service Packs prior to **7300-02-01**, so you should verify their deployment level and plan upgrades if needed.
 
 - IBM Power Virtual Server Public Cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers and configuring them as managed virtual machines to enable DR.
 
@@ -180,7 +186,7 @@ Additionally, the system automatically adds all default networks configured for 
 
  For detailed steps on connecting to the Power Virtual Server with VPC, refer to [Connect using a client-to-site VPN](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-solution-connect-client-vpn).
 
-## Setting Up {{site.data.keyword.DR_short}}
+## Setting up {{site.data.keyword.DR_short}}
 {: #setup}
 
 1. Log in to your [IBM Cloud account](https://cloud.ibm.com/).

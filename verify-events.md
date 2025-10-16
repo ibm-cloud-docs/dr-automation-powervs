@@ -2,46 +2,26 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-16"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
-keywords: event-logs
+keywords: event-logs, ksys events, events 
 
 ---
 
-# Managing events logs
-{: #manage-log}
+# Orchestrator events
+{: #orch-events}
 
-The **Events** tab in the {{site.data.keyword.DR_full}} interface provides an overview of the key activities and status changes within your virtual server instances. This log of events enables administrators to track and review significant actions, such as server stops, starts, and any alerts or warnings that might require attention. Monitoring these events ensures that the disaster recovery environment functions optimally and that any potential issues can be promptly addressed.
-{:shortdesc: .shortdesc}
+The orchestrator continuously monitors and records events that occur during disaster recovery (DR) automation operations. These events provide information about key system activities such as discovery, deployment, network configuration, and replication monitoring. Reviewing the event notifications helps you track the progress of operations, identify potential issues, and ensure that the DR environment is functioning as expected.
 
-## Accessing the event logs
-{: #access-log}
+You can use the ksysmgr query event command to view all recorded events or filter them by event type, such as error, warning, or info. Monitoring these events helps maintain visibility into orchestrator operations and supports proactive system management.
 
-You can access a maximum of 100 events for the current and previous months in the IBM Cloud console. To see the event logs, complete the following steps:
 
-1. Log in to the [IBM Cloud catalog](https://cloud.ibm.com/catalog) with your credentials.
-2. In the catalog's **search box**, type {{site.data.keyword.DR_full}}, and click the Workspace for {{site.data.keyword.DR_full_notm}} tile.
-3. Select **workspace** on the left navigation under workspace of the {{site.data.keyword.DR_full}} user  interface to select from a list of previously created workspaces. If you do not have a workspace, click Create a workspace.
-4. Click **Event logs** to see the list of event logs and notifications.
+## Viewing orchestrator event logs
+{: #view-orchestrator-event-logs}
 
-## Administrating event logs
-{: #adm-log}
-
-Administrators can view detailed records of the virtual server activities, including:
-
-- The kind of event that occurred, such as actions on virtual server instances.
-
-- A description of the event, for example, whether the virtual server was stopped or any other relevant action was taken.
-
-- The exact time and date the event was logged, helping track the sequence of activities.
-
-- The importance level of the event, which could range from informative (Info) to critical warnings (Caution).
-
-## Notification for the KSYS events
-
-The KSYS subsystem tracks various events in the environment and saves the information in **log** files.
+The orchestrator tracks various events in the environment and saves the information in **log** files.
 
 You can run the following command to list all the events that can be notified:
 
@@ -57,11 +37,12 @@ ksysmgr query event type=error|warning|info
 
 ```
 
-The following table lists events that the KSYS monitors:
+The following table lists events that the orchestrator monitors:
 
-## Notification for KSYS events
+## Orchestrator events
 {: #notifiy-events}
 
+The following table lists the events that can occur during external orchestrator operations. Each event includes its type and a brief description to help you identify the status or issues during execution.
 
 | **Events**                     | **Event Type**    | **Description**                           |
 |--------------------------------|-------------------|-------------------------------------------|
@@ -88,7 +69,7 @@ The following table lists events that the KSYS monitors:
 | VG_REMOVE_DISKS_FAILED         | Critical          | VG remove disks has failed.               |
 | VM_MISSED_FROM_WORKSPACE_PHASE | Critical          | VM missed from the workspace.             |
 | SCRIPT_FAILURE_EVENT           | Critical          | Script execution has failed.              |
-{: caption="List of events" caption-side="bottom"}
+{: caption="List of events" caption-side="bottom left"}
 
  >  **Note:**{: #note}
   >

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-10"
+lastupdated: "2025-10-14"
 
-keywords: getting started, disaster recovery, PowerVS
+keywords: getting started, disaster recovery, PowerVS, start
 
 subcollection: dr-automation
 
@@ -33,7 +33,7 @@ IBM Power Virtual Server Public Cloud officially supports Red Hat Enterprise Lin
 
 Complete the following prerequisites:
 
-1. **IBM Cloud account**: Ensure you have an IBM Cloud account. [Sign up for IBM Cloud](https://cloud.ibm.com/registration) if needed.
+1. **IBM Cloud account**: Ensure you have an IBM Cloud account, [Sign up for IBM Cloud](https://cloud.ibm.com/registration) if needed.
 2. **IAM setup**: Configure Identity and Access Management (IAM) roles. See [Managing DR Automation (IAM)](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage).
 3. **SSH keys or Secret Manager**: Generate a public and private SSH key or choose a **Public SSH key** from the Secrets Manager . For details, see [Adding an SSH key](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui).
 
@@ -44,7 +44,7 @@ Complete the following prerequisites:
 ## Lifecycle of Power Virtual Server DR Automation
 {: #lpvsdrauto} 
 
-![DR Automation life Cycle](images/Flow-chart-drawio.svg "DR Automation life Cycle"){: caption="DR Automation life Cycle" caption-side="bottom"}
+![DR Automation life Cycle](images/life-Cycle-public-private.svg "DR Automation life Cycle"){: caption="DR Automation life Cycle" caption-side="bottom"}
 
 ### Step 1: Set up the orchestrator
 {: #setup-orchestrator}
@@ -57,7 +57,7 @@ Complete the following prerequisites:
 
 3. (Optional) Expand the **Advanced Configuration** to modify the default values of storage tier and machine type for the Orchestrator VM, by default **Tier1** is selected for Storage tier and **s922** is selected for machine type.
 
-4. Provide standby orchestrator details, if you have enabled **Deploy Orchestrator with HA** on provision page.
+4. If you have enabled **Orchestrator HA** on manage page. Provide standby orchestrator details.
 5. Review all settings and click **Deploy Orchestrator** to begin the deployment.
 
 
@@ -68,6 +68,6 @@ After completing the orchestrator setup, you can:
 
 - [Manage virtual servers](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-vm-ser) that enables administrators to monitor and control the virtual server instances.
 
-- [Add sites and configure settings](/docs/dr-automation-powervs?topic=dr-automation-powervs-add-site-ksys) to pair source and target environments for disaster recovery.
+
 
 These advanced configurations help you optimize your disaster recovery setup for business resilience.

@@ -19,7 +19,7 @@ The Discover Site operation in {{site.data.keyword.DR_full_notm}} is essential f
 
 1. In the navigation pane of the {{site.data.keyword.DR_short}} GUI, select the site you want to discover.
 2. Click **Discover Site**.
-3. After the discovery process is successfully completed, the details are displayed in the [**Events tab**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#nav-pan-eve).
+3. After the discovery process is successfully completed, the details are displayed in the [**Events tab**](/docs/dr-automation-powervs?topic=dr-automation-powervs-orch-events).
 
 ## Discover workGroup
 {: #discoveer}
@@ -33,4 +33,4 @@ The Discover WorkGroup operation in {{site.data.keyword.DR_short}} is critical f
 
 1. In the navigation pane of the {{site.data.keyword.DR_short}} GUI, select the **WorkGroup** you want to discover.
 2. Click **Discover WorkGroup**.
-3. After the discovery process is successfully completed, the details are displayed in the [**Events tab**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#nav-pan-eve).
+3. After the discovery process is successfully completed, the details are displayed in the [**Events tab**](/docs/dr-automation-powervs?topic=dr-automation-powervs-orch-events).

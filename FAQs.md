@@ -1,11 +1,11 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
-keywords: faqs
+keywords: faqs, help, FAQ, answers
 
 ---
 # FAQs
@@ -64,7 +64,7 @@ For more details, refer to [Before you begin](/docs/dr-automation-powervs?topic=
 
    DR Automation focuses on compute resources, but if storage is required, it supports flexible configurations like Tier 1 (10 IOPS/GB) and Tier 3 (3 IOPS/GB) for different workload requirements.
 
-##  **Does DR Automation support High Availability (HA)?**
+## **Does DR Automation support High Availability (HA)?**
 {: #hadr}  
 
 Yes, optional HA configurations can be enabled for orchestrators, can ensure resilience against single points of failure during disasters.  
@@ -179,3 +179,45 @@ To enable communication to external services, export the following variables on 
 >
 >`https_proxy="<ProxyIP>:3128"`
 > **Note**: Exporting these variables is automatic with the DR Deployment, you can validate the configuration using these variables.
+
+## Why is IBM Data Center not displayed as the location type during provisioning?
+{: #location-type}
+
+The location type displayed during provisioning depends on the selected plan. This behavior is expected and reflects the infrastructure that is associated with each deployment model.
+
+**Public plan**: Displays **IBM Data Center** as the location type, as the infrastructure is hosted and managed in IBM Cloud regions.
+
+**Private plan**: Displays **Client Location** as the location type, indicating that the infrastructure is physically deployed at the client site and managed remotely by IBM.
+
+This mapping is intentional and helps distinguish between public and private (on-premises, Private Pod environments) cloud deployments.
+
+## **What should I do if I accidentally delete a KSYS Cluster?**
+{: #delete-ksys}
+
+If a KSYS Cluster is deleted, you must re-create the cluster in the external orchestror GUI:  
+1. Log in to the GUI.  
+2. Go to the **Add KSYS Subsystem** page.  
+3. Click **Add KSYS** and provide the host details (Username and Password).  
+4. Select the correct **KSYS Deployment Type**:  
+   - **IBM_PVS_DR** for standard DR  
+   - **IBM_PVS_PRIVATE_DR** for private PowerVS cluster environments  
+5. Re-enter the **Cluster Details**.  
+6. (Optional) Enable **Add Proxy** if communication requires a proxy.  
+7. Save the configuration to restore orchestrator functionality.  
+
+## **How do I create a new KSYS Cluster in external orchestrator?**
+{: #create-ksys-cluster}
+
+When you log in for the first time in external orchestror, or if no cluster exists, you are redirected to the **Add KSYS Subsystem** page. From there you can perform the following actions:  
+- Click **Add KSYS**  
+- Enter host details (Username, Password)  
+- Select **IBM_PVS_DR** or **IBM_PVS_PRIVATE_DR**  
+- Provide cluster details  
+- (Optional) enable proxy support  
+- Click **Save & Next**  
+
+## **When should I choose IBM_PVS_DR vs IBM_PVS_PRIVATE_DR?**
+{: #ksys-types}
+
+- **IBM_PVS_DR** → For standard DR deployments across IBM Cloud regions.  
+- **IBM_PVS_PRIVATE_DR** → For private PowerVS cluster environments, such as on-premises or private pods.

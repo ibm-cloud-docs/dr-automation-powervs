@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-05-21"
+lastupdated: "2025-10-14"
 
 subcollection: dr-automation
 
@@ -47,9 +47,9 @@ You can generate an estimate by specifying the necessary **configurations** for 
 
 2. Choose the **IBM Cloud region** where the DR resources will be hosted.
 
-3. Define the number of cores required for DR.
+3. Define the number of cores required for DR. The estimation is calculated based on managed VM cores per hour.
 
-4. Enable **Orchestrator HA** option if high availability is needed for your orchestrator. Additional charges may apply.
+4. The High Avalibility VM charges is included in the cloud account, but not charged against our DR Automation catalog service, so it does not impact catalog cost estimator charges.
 
 
 ### Step 3: Add to estimate and viewing summary

@@ -1,7 +1,3 @@
-#  Name your file `toc.yaml`
-#  Make sure you include all nav file coding requirements, as defined in https://test.cloud.ibm.com/docs-internal/writing?topic=writing-code-nav
-#  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
----
 toc:
   properties:
     subcollection: dr-automation-powervs
@@ -18,80 +14,84 @@ toc:
       - getting-started-with-powerVS.md
       - release.md
       - topicgroup:
-              label: Locations
-              topics:
-              - cloud-regions.md
+          label: Locations
+          topics:
+          - cloud-regions.md
+          - satellite-location.md
       - topicgroup:
-              label: Architecture
-              topics:
-              - architecture-dr-automation.md
+          label: Architecture
+          topics:
+          - architecture-dr-automation.md
+          - private-pod.md
       - topicgroup:
-              label: Pricing
-              topics:
-              - genrate-estimate.md
-              - pricing-for-cores.md
+          label: Pricing
+          topics:
+          - genrate-estimate.md
+          - pricing-for-cores.md
       - topicgroup:
-              label: Replication
-              topics:
-              - grs-replication.md
+          label: Replication
+          topics:
+          - grs-replication.md
       - topicgroup:
-              label: Security and compliance
-              topics:
-              - GDPR.md
+          label: Security and compliance
+          topics:
+          - GDPR.md
       - topicgroup:
-              label: Migration Strategies
-              topics:
-              - workload-migration.md
-              - additonal-migration.md
+          label: Migration Strategies
+          topics:
+          - workload-migration.md
+          - migrate-using-snapshot.md
+          - upgrade-ksys-filsets.md
+          - additonal-migration.md
   - navgroup:
       id: howto
       topics:
       - topicgroup:
-              label: Create, Manage, Deploy
-              topics:
-                        - iam-autoamtion.md
-                        - create-instance-powervs.md
-                        - deploying-the-orchestrator.md
-                        - Orchestrator-and-service-details.md
-                        - monitoring-vm-status.md
-                        - manage-vm.md                     
+          label: Create, Manage, Deploy
+          topics:
+          - iam-autoamtion.md
+          - create-instance-powervs.md
+          - deploying-the-orchestrator.md
+          - Orchestrator-and-service-details.md
+          - monitoring-vm-status.md
+          - manage-vm.md
+          - dr-automation-events.md
       - topicgroup:
-              label: External orchestrator
-              topics:
-                        - manage-external-orch.md
-                        - create-ksys-cluster.md
-                        - setting-target-source.md
-                        - manage-vm-vmrm.md
-                        - network-paring.md
-                        - configure-summary.md
-                        - disocvery-operation.md
-                        - advance-operation.md
-                        - discover-operation.md
-                        - system-status-interface.md
-                        - move-site.md
-                        - navigation-panel.md
-                        - verify-events.md
+          label: External orchestrator
+          topics:
+          - manage-external-orch.md
+          - setting-target-source.md
+          - manage-vm-vmrm.md
+          - network-paring.md
+          - configure-summary.md
+          - navigation-panel.md
+          - disocvery-operation.md
+          - advance-operation.md
+          - discover-operation.md
+          - workgroup-operation.md
+          - move-site.md
+          - verify-events.md
       - topicgroup:
-              label: Enhancing security
-              topics:
-                - data-isolation.md                 
+          label: Enhancing security
+          topics:
+          - data-isolation.md
       - topicgroup:
-              label: AIX
-              topics:
-                - aix-vm.md       
+          label: AIX
+          topics:
+          - aix-vm.md
       - topicgroup:
-              label: Observability
-              topics:
-                        - monitor-metrics.md
-                        - activity-tracker-events.md          
+          label: Observability
+          topics:
+          - monitor-metrics.md
+          - activity-tracker-events.md
   - navgroup:
       id: reference
       topics:
       - commands-ksys.md
       - topicgroup:
-              label: Roles and Responsibility
-              topics:
-                - responsibility.md
+          label: Roles and Responsibility
+          topics:
+          - responsibility.md
   - navgroup:
       id: help
       topics:
