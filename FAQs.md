@@ -229,7 +229,7 @@ When you log in for the first time in external orchestror, or if no cluster exis
 ## **How do I update the Proxy IP in the Orchestrator?**
 {: #proxy-ip}
 
-You can update the proxy IP in the orchestrator depending on if the KSYS cluster is already created.
+You can update the proxy IP in the orchestrator depending on whether the KSYS cluster has already been created. To update the API key, follow the steps below.
 
 ### **Scenario 1: Cluster already created**
 {: #proxy-existing}
