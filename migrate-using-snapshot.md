@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-13"
+lastupdated: "2025-10-16"
 
 subcollection: dr-automation
 
@@ -135,9 +135,9 @@ To Migrate your current orchestrator to the latest version, complete the followi
    INFO: Restore completed successfully
     ```
 
-   > **Note:** The above command uses the API key stored in the orchestrator to access the COS bucket for downloading the snapshot.
+> **Note:** The above command uses the API key stored in the orchestrator to access the COS bucket for downloading the snapshot.
 
-4. After a successful restore, Setup two displays all configurations from Setup one.  
+4. After a successful restore, Setup two displays all configurations from Setup one.
 
 5. Cleanup the source deployment cluster.
 
