@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-10-16"
 
 subcollection: dr-automation
 
@@ -19,7 +19,7 @@ Learn about the management responsibilities and terms and conditions that you ha
 - For more information about the responsibilities for you and for IBM® when you use a deployable architecture, see [Understanding your responsibilities when you use deployable architectures](https://cloud.ibm.com/docs/overview?topic=overview-shared-responsibilities#managed-offerings-on-customers-resources-responsibilities).
 - For a high-level view of the service types in IBM Cloud® and the breakdown of responsibilities between the customer and IBM for each type, see [Shared responsibilities for using IBM Cloud® products](https://cloud.ibm.com/docs/overview?topic=overview-shared-responsibilities).
 - For the overall terms of use, see [IBM Cloud Terms and Notices](https://cloud.ibm.com/docs/overview?topic=overview-terms).
-- For more information about the shared responsibilities for each Financial Services Validated service, see [Responsibilities for operating services in your deployment in IBM Cloud Framework for Financial Services](https://cloud.ibm.com/docs/overview?topic=overview-financial-services-validated-services).
+- For more information about the shared responsibilities for each Financial Services Validated service, see [Responsibilities for operating services in your deployment in IBM Cloud Framework for Financial Services](https://cloud.ibm.com/docs/overview?topic=overview-shared-responsibilities).
 
 Review the following sections for the specific responsibilities for you and for IBM when you use DR Automation for PowerVS.
 
