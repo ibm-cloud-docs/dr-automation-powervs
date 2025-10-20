@@ -123,10 +123,10 @@ Billing is transparent and tied to the number of cores. Usage metrics are update
 
 IBM offers 24/7 technical support, comprehensive documentation and guided assistance for setting up and managing DR Automation.  
 
-## **What resources should be planned before implementing VMRM DR?**
+## **What resources should be planned before implementing DR Automation?**
 {: #implementt}   
 
-Before implementing the VM Recovery Manager (VMRM) DR solution, can ensure that you have the following resources planned and ready:  
+Before implementing the DR Automation solution, can ensure that you have the following resources planned and ready:  
 
 - **KSYS Node**: Identify the virtual machine runs IBM AIX 7.3 with Technology Level 1 Service Pack 1 (7300-01-01) or later, capable of communication with both active and backup sites through HTTPS.
 
@@ -178,7 +178,8 @@ To enable communication to external services, export the following variables on 
 >`http_proxy="<ProxyIP>:3128"`
 >
 >`https_proxy="<ProxyIP>:3128"`
-> **Note**: Exporting these variables is automatic with the DR Deployment, you can validate the configuration using these variables.
+
+  > **Note**: Exporting these variables is automatic with the DR Deployment, you can validate the configuration using these variables.
 
 ## Why is IBM Data Center not displayed as the location type during provisioning?
 {: #location-type}
@@ -229,7 +230,7 @@ When you log in for the first time in external orchestror, or if no cluster exis
 ## **How do I update the Proxy IP in the Orchestrator?**
 {: #proxy-ip}
 
-You can update the proxy IP in the orchestrator depending on whether the KSYS cluster has already been created. To update the API key, follow the steps below.
+You can update the proxy IP in the orchestrator depending on whether the KSYS cluster has already been created. To update the Proxy IP, follow the steps below.
 
 ### **Step 1: Cluster already created**
 {: #proxy-existing}

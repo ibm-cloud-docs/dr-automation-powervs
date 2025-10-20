@@ -22,7 +22,7 @@ The API key might be expired or improperly configured, leading to a failure in r
 
 ### How to fix it  
 {: tsResolve}  
-1. Access the **VM Recovery Manager DR GUI**.  
+1. Access the **External orchestrator GUI**.  
 2. Navigate to the **Policies** tab from the top navigation bar.  
 3. Locate the **API Key** field in the list of tunable attributes.  
 4. Click **Regenerate** to create a new API key.  
@@ -44,7 +44,7 @@ The architecture and components of the service may not be fully understood.
 - The **Service Broker** manages resource provisioning and billing.  
 - The **KSYS orchestrator** handles VM orchestration, ensuring resources are activated in the correct sequence.  
 - **Global Replication Services (GRS)** facilitates data replication between primary and backup sites.  
-- Users can configure and monitor the DR environment through the **IBM Cloud GUI** and manage VMs via the **VM Recovery Manager HA/DR interface**.  
+- Users can configure and monitor the DR environment through the **IBM Cloud GUI** and manage VMs via the **External orchestrator UI**.  
 
 ## Why am I unable to perform IAM actions with the service?  
 {: #iam-actions}  
@@ -224,7 +224,7 @@ This issue occurs when no PowerVS workspace is available in the selected locatio
 
 5. From the list, choose the appropriate workspace and enable the workload you want to protect with disaster recovery.
 
-## Why does a subsequent deployment fail when using the same workspace?
+## why does a simultaneous deployments fails when using the same PowerVS workspace?
 {: #ksys-image-deploy}  
 {: troubleshoot}
 

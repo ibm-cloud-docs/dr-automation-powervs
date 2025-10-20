@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-10-16"
 
 subcollection: dr-automation
 
@@ -18,7 +18,7 @@ keywords: Orchestrator details, Service details, GRS, global replication service
 
 **Update API Key**:
 
-Once the deployment is successful, the **Update API Key** option is enabled. Update the API key and reuse the same key for future actions.
+Once the deployment is successful, the **Update API Key** option is enabled. Update the API key and reuse the same key for future actions. For more information, see the [FAQ](/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs#how-do-i-update-the-api-key-in-my-dr-automation-deployment)
 
 **DR Orchestrator name**:
 
