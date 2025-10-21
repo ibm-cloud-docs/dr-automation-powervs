@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-16"
+lastupdated: "2025-10-21"
 
 subcollection: dr-automation
 
@@ -254,7 +254,9 @@ If the KSYS cluster is not yet created, you can update the proxy IP directly in 
 
 2. Open the `/etc/drautomation.json` file in a text editor.  
 3. Update the proxy IP and port details as required.  
-4. Save the file and reboot the node.  
+4. Run the following command to delete stale entries if exist.
+   > ```rm -f /var/ksys/config/ksys_configured.txt```
+5. Save the file and reboot the node.  
 
 When the system reboots, it automatically attempts to recreate the cluster with the updated proxy configuration.
 
@@ -278,5 +280,4 @@ After updating the API key in the UI, update it in the orchestrator to keep both
 To update the API key in orchestrator ,run the following command:
 
    ```ksysmgr modify ksyscluster <ksysclustername> apikey=<apikey>```
-
 > **Note:** Use the same API key in both the deployment and orchestrator to ensure proper synchronization.
