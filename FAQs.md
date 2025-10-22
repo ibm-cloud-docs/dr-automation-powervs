@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-21"
+lastupdated: "2025-10-22"
 
 subcollection: dr-automation
 
@@ -253,10 +253,10 @@ If the KSYS cluster is not yet created, you can update the proxy IP directly in 
    ```#cp /etc/drautomation.json /etc/drautomation.json.bkp```
 
 2. Open the `/etc/drautomation.json` file in a text editor.  
-3. Update the proxy IP and port details as required.  
-4. Run the following command to delete stale entries if exist.
+3. Update the proxy IP and port details as required.
+4. Save the file.  
+5. To delete stale entries if exist, run the following command:
    > ```rm -f /var/ksys/config/ksys_configured.txt```
-5. Save the file and reboot the node.  
 
 When the system reboots, it automatically attempts to recreate the cluster with the updated proxy configuration.
 
