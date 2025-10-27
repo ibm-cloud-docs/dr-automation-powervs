@@ -33,12 +33,6 @@
   },
   "section_highlights": [
     {
-      "title": "Power Virtual Server DR Automation",
-      "description": "Power Virtual Server DR Automation is a cloud solution for managing your virtual servers.",
-      "href": "https://www.ibm.com/blog/?q=disaster+recovery+as+a+service&lang=en&cc=us",
-      "type": "blog"
-    },
-    {
       "title": "Planning and Building Disaster Recovery Solutions",
       "description": "This course introduces the concepts of disaster recovery and high availability and how they relate to IBM Cloud.",
       "href": "https://www.ibm.com/training/course/planning-and-building-disaster-recovery-solutions-DL70505G",
