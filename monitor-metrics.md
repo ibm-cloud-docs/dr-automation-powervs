@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-11-04"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: monitor
 

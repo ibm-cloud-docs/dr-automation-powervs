@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-11-04"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: manage vm, modify vm, create vm, update vm, create virtual machine, add virtual machine, modify virtual machine
 
