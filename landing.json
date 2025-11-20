@@ -2,79 +2,70 @@
   "version": 2,
   "title": "Power Virtual Server DR Automation",
   "introduction": "Power Virtual Server DR Automation is a cloud solution to enable Disaster Recovery capability for your power virtual servers.",
+  "product_page": "https://cloud.ibm.com/catalog/services/power-virtual-server-dr-automation?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjYWxsX3Byb2R1Y3Rz",
   "console_page": "/catalog/services/power-virtual-server-dr-automation",
   "section_topics": {
     "links": [
       {
-        "title": "Architecture for Power Virtual Server DR Automation in IBM Data Center",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-arch"
+        "title": "Topic title",
+        "href": "/docs/overview?topic=overview-get-started-checklist"
       },
       {
-        "title": "Architecture for Power Virtual Server DR Automation in Client Location (Private Cloud)",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-arch-private-pod"
+        "title": "Topic title",
+        "href": "/docs/overview?topic=overview-get-started-checklist"
       },
       {
-        "title": "Pricing",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-price"
+        "title": "Topic title",
+        "href": "/docs/overview?topic=overview-get-started-checklist"
       },
       {
-        "title": "External Orchestrator",
-        "href": "/docs/dr-automation-powervs?group=external-orchestrator"
+        "title": "Topic title",
+        "href": "/docs/overview?topic=overview-get-started-checklist"
       },
       {
-        "title": "Troubleshooting",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-troubleshooting"
-      },
-      {
-        "title": "FAQs",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs"
+        "title": "Topic title",
+        "href": "/docs/overview?topic=overview-get-started-checklist"
       }
     ]
   },
   "section_highlights": [
     {
-      "title": "Planning and Building Disaster Recovery Solutions",
-      "description": "This course introduces the concepts of disaster recovery and high availability and how they relate to IBM Cloud.",
-      "href": "https://www.ibm.com/training/course/planning-and-building-disaster-recovery-solutions-DL70505G",
+      "title": "Resource title",
+      "description": "Short description of resource content.",
+      "href": "https://www.example.ibm.com/link/to/resource",
+      "type": "blog"
+    },
+    {
+      "title": "Db2 Optimization Techniques for SAP Database Migration to the Cloud",
+      "description": "This IBM Redbook provides in-depth recommendations for the source system database export.",
+      "href": "https://www.redbooks.ibm.com/abstracts/sg248531.html",
       "type": "redbook",
       "recommended": true
     }
   ],
   "section_devtools": {
-    "api": "https://cloud.ibm.com/apidocs/dr-automation-powervs",
-    "cli": "https://cloud.ibm.com/apidocs/dr-automation-powervs",
+    "api": "/apidocs/acme-test-v1/acme-test-v1.2.0",
+    "cli": "/docs/acme-test",
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/iam_access_group"
   },
   "section_updates": {
-    "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote",
+    "view_more": "/docs/overview?topic=overview-whatsnew",
     "tiles": [
       {
-        "date": "05 December 2025",
-        "title": "You can now deploy and manage your DR Automation resources in a private (client) cloud environment using IBM PowerVS Satellite locations. This update introduces the complete architecture, deployment flow, and configuration details for setting up DR Automation in client locations, including information about the Service Broker, KSYS orchestrator, storage tiers, and network connectivity."
+        "date": "07 August 2025",
+        "title": "Experimental: Access resources from the Resources tab"
       },
       {
-        "date": "05 December 2025",
-        "title": "You can now view the deployment timestamps for both the primary and standby orchestrators, along with the subscription plan details (Public or Private) selected during initial setup. These enhancements provide better tracking of deployment history and service configuration."
+        "date": "07 August 2025",
+        "title": "View counts for all resources in the resource summary widget"
       },
       {
-        "date": "05 December 2025",
-        "title": "In Orchestrator UI Configuration deployment page, Modify VM option is provided which allows you to modify, configure multiple IP mappings, and enable the Shared Processor Pool (SPP) to optimize performance and resource utilization for the DR enabled virtual machines."
+        "date": "17 June 2025",
+        "title": "Experimental: Using AI to answer your questions about IBM Cloud"
       },
       {
-        "date": "05 December 2025",
-        "title": "DR Automation now displays real-time notifications for events, that are deployment status, errors, and operational updates. Each notification appears as a pop-up with a timestamp, and you can track up to 100 current events, providing clear visibility into system activities and changes."
-      },
-      {
-        "date": "05 December 2025",
-        "title": "When deploying the orchestrator with Client Location (Private pod), the Add Sites page now display Select Source Satellite Location and Select Target Satellite Location instead of region-based options."
-      },
-      {
-        "date": "05 December 2025",
-        "title": "DR Automation now supports upgrading the orchestrator ksys filesets through a simplified CLI command, ensuring your system remains up to date with the latest features, fixes, and security enhancements."
-      },
-      {
-        "date": "05 December 2025",
-        "title": "You can now choose Orchestator HA enablement in DR configuration page."
+        "date": "17 June 2025",
+        "title": "Changes to IBM Cloud projects API method to list all deployed resources"
       }
     ]
   }
