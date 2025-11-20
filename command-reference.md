@@ -837,7 +837,8 @@ ibmcloud power-hadr pdr last-operation \
 
 {{site.data.keyword.attribute-definition-list}}
 
-# DrAutomation Service CLI
+
+## DrAutomation Service CLI
 {: #power-hadr-cli}
 
 ## Api Key
@@ -1637,5 +1638,3 @@ ibmcloud power-hadr pdr last-operation \
 }
 ```
 {: screen}
-
-
