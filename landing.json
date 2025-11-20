@@ -40,36 +40,41 @@
       "recommended": true
     }
   ],
+  "section_devtools": {
+    "api": "https://cloud.ibm.com/apidocs/dr-automation-powervs",
+    "cli": "/docs/acme-test",
+    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/iam_access_group"
+  },
   "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote",
     "tiles": [
       {
-        "date": "16 October 2025",
-        "title": "You can now deploy and manage your DR Automation resources in a private (client) cloud environment using IBM PowerVS Satellite locations. This update introduces the complete architecture, deployment flow, and configuration details for setting up DR Automation in client locations, including information about the Service Broker, KSYS orchestrator, storage tiers, and network connectivity."
+        "date": "05 December 2025",
+        "title": ""
       },
       {
-        "date": "16 October 2025",
-        "title": "You can now view the deployment timestamps for both the primary and standby orchestrators, along with the subscription plan details (Public or Private) selected during initial setup. These enhancements provide better tracking of deployment history and service configuration."
+        "date": "05 December 2025",
+        "title": ""
       },
       {
-        "date": "16 October 2025",
-        "title": "In Orchestrator UI Configuration deployment page, Modify VM option is provided which allows you to modify, configure multiple IP mappings, and enable the Shared Processor Pool (SPP) to optimize performance and resource utilization for the DR enabled virtual machines."
+        "date": "05 December 2025",
+        "title": ""
       },
       {
-        "date": "16 October 2025",
-        "title": "DR Automation now displays real-time notifications for events, that are deployment status, errors, and operational updates. Each notification appears as a pop-up with a timestamp, and you can track up to 100 current events, providing clear visibility into system activities and changes."
+        "date": "05 December 2025",
+        "title": ""
       },
       {
-        "date": "16 October 2025",
-        "title": "When deploying the orchestrator with Client Location (Private pod), the Add Sites page now display Select Source Satellite Location and Select Target Satellite Location instead of region-based options."
+        "date": "05 December 2025",
+        "title": ""
       },
       {
-        "date": "16 October 2025",
-        "title": "DR Automation now supports upgrading the orchestrator ksys filesets through a simplified CLI command, ensuring your system remains up to date with the latest features, fixes, and security enhancements."
+        "date": "05 December 2025",
+        "title": ""
       },
       {
-        "date": "16 October 2025",
-        "title": "You can now choose Orchestator HA enablement in DR configuration page."
+        "date": "05 December 2025",
+        "title": ""
       }
     ]
   }

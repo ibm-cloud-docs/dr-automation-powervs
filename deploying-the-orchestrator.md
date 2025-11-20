@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-04"
+lastupdated: "2025-11-20"
 
 subcollection: dr-automation-powervs
 
@@ -83,9 +83,20 @@ follow the steps:
 
     > **Note**: The SSH Key dropdown displays only the Account level SSH-keys.
 
-11. (Optional) Modify the **Advanced Settings** to configure the Storage tier and Machine type based on the **Orchestrator HA** selection.
+11. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in config page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
-12. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in config page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
+12. (Optional) Expand the **Advanced Settings** to configure Multi Factor Autentication(MFA).
+
+- > **Prerequisite**: To Enable MFA, you must complete the MFA tenant setup and obtain the **Client ID**, **Client Secret**, and **Tenant Name** from [IBM Security Verify](https://www.ibm.com/account/reg/us-en/subscribe?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197).
+
+- For more information on MFA configuration, see [Setting up Multifactor Authentication](/docs/dr-automation-powervs?topic=dr-automation-powervs-mfa-setup).
+
+- Select the **Enable MFA** checkbox and enter the **Client ID**, **Client Secret**, and **Tenant Name** that you generated during the MFA tenant setup.
+
+
+> **Note:** MFA status is displayed in the **Orchestrator Details** page and MFA events are captured in the **Events** log for auditing.
+
+- (Optional) Modify the **Advanced Settings** to configure Storage tier and Machine type based on the **Orchestrator HA** selection.
 
 13. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 

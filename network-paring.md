@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-04"
+lastupdated: "2025-11-20"
 
 subcollection: dr-automation-powervs
 
@@ -23,7 +23,7 @@ All VMs that are added to the WorkGroup are automatically populated on the **Net
 To complete the network pairing, follow these steps:
 
 1. Select the VM that requires network pairing from the list.
-2. Select the source network from the **Source Network** drop-down menu and the corresponding target network from the **Target Network** drop-down menu.
+2. Select the source network from the **Source Network** drop-down menu and the corresponding target network from the **Target Network** drop-down menu, and you can now map multiple networks for each VM as part of the network selection process.
 3. If you need to create a new target network, click **Create New Target Network** and configure the required settings.
 4. Click **Save & Next** to finalize the network pairing.
 5. To review the paired networks, click **Show Network Pairs**.

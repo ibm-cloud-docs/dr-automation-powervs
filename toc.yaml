@@ -56,6 +56,7 @@ toc:
           - monitoring-vm-status.md
           - manage-vm.md
           - dr-automation-events.md
+          - multifactor-authentication.md
       - topicgroup:
           label: External orchestrator
           topics:
@@ -71,6 +72,7 @@ toc:
           - workgroup-operation.md
           - move-site.md
           - verify-events.md
+          - reports.md
       - topicgroup:
           label: Enhancing security
           topics:
@@ -88,6 +90,12 @@ toc:
       id: reference
       topics:
       - commands-ksys.md
+      - topicgroup:
+          label: command reference
+          topics:
+          - get-started-cli-plu-in.md
+          - cli-plug-in.md
+          - command-reference.md
       - topicgroup:
           label: Roles and Responsibility
           topics:
