@@ -66,7 +66,7 @@
       },
       {
         "date": "05 December 2025",
-        "title": "When deploying the orchestrator with Client Location (Private pod), the Add Sites page now display Select Source Satellite Location and Select Target Satellite Location instead of region-based options."
+        "title": "When deploying the orchestrator with Client Location (Private pod), the Add Sites page now displays Select Source Satellite Location and Select Target Satellite Location instead of region-based options."
       },
       {
         "date": "05 December 2025",
@@ -74,7 +74,7 @@
       },
       {
         "date": "05 December 2025",
-        "title": "You can now choose Orchestator HA enablement in DR configuration page."
+        "title": "You can now choose Orchestrator HA enablement in DR configuration page."
       }
     ]
   }
