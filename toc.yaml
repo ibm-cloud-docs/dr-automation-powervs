@@ -4,12 +4,11 @@ toc:
     path: dr-automation-powervs
     href: /docs/dr-automation-powervs
     service-name: service-name
-    audience: solution
     category: virtualservers
     label: Power Virtual Server DR Automation
   entries:
   - navgroup:
-      id: learn
+      id: overview
       topics:
       - getting-started-with-powerVS.md
       - release.md

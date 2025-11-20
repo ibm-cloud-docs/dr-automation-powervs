@@ -2,7 +2,7 @@
 copyright:
   years: 2025
 lastupdated: "2025-11-20"
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
 }
