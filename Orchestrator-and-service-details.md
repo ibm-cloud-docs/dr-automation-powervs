@@ -83,7 +83,9 @@ Displays the date and time when the primary orchestrator is deployed. This helps
 
 Displays the orchestrator version status, and if a newer version is available for upgrade.
 
-**MFA Status**: The MFA Status displays whether MFA is enabled (**True**) or not enabled (**False**), based on your selection.
+**MFA Status**:
+
+The MFA Status displays whether MFA is enabled (**True**) or not enabled (**False**), based on your selection.
 
 ## Service details
 {: #service-det}
