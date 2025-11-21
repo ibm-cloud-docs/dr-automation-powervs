@@ -1444,8 +1444,10 @@ Volume Details:
 | `volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974...` | consistent_copying | 100 |
 | `volume-vmrm_aix_vm2-bc477fa9-000... <-> aux__aix_vm2-bc477fa9-00046b90-b...` | consistent_copying | 100 |
 ```
+
 ### To unmanage a disk on virtual machine:
 {: #un-manage-vm-disk}
+
 ```
 ksysmgr unmanage disk diskid=2d5ff23a-13bb-43d8-b354-51603dee5e50 workgroup=vmrm_aix_vm2_WG
 DiskID(s) was successfully unmanaged
@@ -1670,6 +1672,7 @@ An output that is similar to the following example is displayed for private clou
 ksysmgr refresh workspace SVT_3Q2_XSPoD_25
 Refresh workspaces to update Networks and VMs list completed.
 ```
+
 ## Network pairing example
 {: #netpair}
 
