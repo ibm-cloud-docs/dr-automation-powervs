@@ -35,6 +35,7 @@ The command provides a consistent interface to configure the controller system (
 The basic format for using the ksysmgr command is as follows:
 
     ksysmgr ACTION CLASS [NAME] [ATTRIBUTES...]
+
 >**Note:**
 > - You must have root authority to run the ksysmgr command.
 > - Help information is available for the ksysmgr command from the command line. For example, when you run the ksysmgr command without any flags or parameters a list of the available ACTIONs is displayed.
@@ -44,16 +45,17 @@ The basic format for using the ksysmgr command is as follows:
 
 ## Description
 {: #des}
+
 All ksysmgr command operations are logged in the ```/var/ksys/log/ksysmgr.oplog``` file, including the name of the executed command, start time, process ID for the ksysmgr operation, the command with arguments, and overall return code.
 
 ## ACTION
-{: #ac}
+{: #act-ion}
 
 The ```ACTION``` flags are not case-sensitive. All ```ACTION``` flags provide a shorter alias. For example, ```rm``` is an alias for ```delete```. Aliases are provided for convenience from the command line and must not be used in scripts.
 
 The following ```ACTION``` flags are available:
 
->Note: The asterisk ```(*)``` in the aliases signify wildcard characters. For example, for the modify ACTION, the alias value is ```modd```. If you type ```mod*```, the command still works.
+>**Note**: The asterisk ```(*)``` in the aliases signify wildcard characters. For example, for the modify ACTION, the alias value is ```modd```. If you type ```mod*```, the command still works.
 
 ```query (alias: q*, ls, get, sh*)```
 
@@ -82,7 +84,7 @@ The following ```ACTION``` flags are available:
 ```update (alias upd*)```
 
 ## CLASS
-{: #cla}
+{: #cla-ss}
 
 Specifies the type of object on which the ```ACTION``` is performed. The ```CLASS``` flags are not case-sensitive.
 
@@ -1051,7 +1053,7 @@ Also, User can give Only script name to remove notify for all events listed with
 ```
 
 ### To query a script:
-{: script-query}
+{: query-scr}
 
 ```
 ksysmgr query notify script
@@ -2187,7 +2189,8 @@ Do you wish to proceed? `[y/n]`
 04:44:23   dr_test move has completed for Workgroup test_WG
 Workgroup dr_test move completed for Workgroup test_WG to TargetSite
 ```
-### View workgroup information
+
+### Viewing workgroup information
 {: #ve-work-info}
 
 Run the following command to list the existing Workgroups and verify their status:
@@ -2302,6 +2305,7 @@ Processors:                 0.25
 WorkSpace:                  SVT_3Q2_XSPoD_25
 Networks:                   net-30
 ```
+
 ### Clean Up after DR Rehearsal at workgroup level
 {: #cl-up-wg-le}
 
@@ -2331,6 +2335,7 @@ ksysmgr cleanup workgroup test1 dr_test=yes
 
 ## DR rehearsal move at site level
 {: #dr-re-mo-si-le}
+
 
 ### Disaster Recovery (DR) rehearsal at site level
 {: #drr-ree-mo-si-lee}
@@ -2388,6 +2393,7 @@ ksysmgr [-f] move site
 move => mov*, mv, swi*
 Note: dr_type=planned is the default.
 ```
+
 ### Parameters
 {: #pa-ra-meter}
 
@@ -2420,6 +2426,7 @@ y
 03:35:59 dr_test move has completed for Workgroup test_01_WG
 Site dr_test move completed for Site TargetSite to HomeSite
 ```
+
 ### View managed VMs after DR rehearsal
 {: #ve-man-vms}
 
@@ -2533,6 +2540,7 @@ Processors:                         0.25
 WorkSpace:                          SVT-SMALL-Q3.2-mano-GRS
 Networks:                           net-30
 ```
+
 ### Clean up after DR rehearsal at site level
 {: #clean-up}
 

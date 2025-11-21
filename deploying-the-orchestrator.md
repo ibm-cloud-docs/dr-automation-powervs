@@ -15,8 +15,7 @@ keywords: deploying the orchestrator,
 After creating the resource, deploying the orchestrator for DR automation is essential to ensure that your Power Virtual Server environment is protected against disaster events. The orchestrator coordinates disaster recovery operations, including replication, failover, and failback of virtual machines. This screen displays high availability (HA) settings, authentication keys and resource allocation. Once deployed, the orchestrator can manage multiple virtual servers and help ensure continuous availability.
 {:shortdesc: .shortdesc}
 
- >**Note**:
-
+>**Note**:
 >- The orchestrator VM is created with the default configuration of 0.5 CPU units and 4 GB memory.
 >- This configuration is suitable for managing 30 PowerVS instances.
 >- If you need to manage more than 30 Managed VMs, it is recommended to increase the configuration to 1 CPU unit and 6 GB of memory.

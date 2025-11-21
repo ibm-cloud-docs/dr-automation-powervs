@@ -14,12 +14,13 @@ keywords: faqs, help, FAQ, answers
 The FAQ section provides concise answers to common questions about {{site.data.keyword.DR_full}} for PowerVS, covering its features, billing model, components, deployment across regions, prerequisites, monitoring tools, security and more. It aims to help users understand and efficiently use DR Automation for disaster recovery in IBM Power Virtual Server environments.
 {:shortdesc: .shortdesc}
 
- ## **What is {{site.data.keyword.DR_full}} for PowerVS?**  
- 
+## **What is {{site.data.keyword.DR_full}} for PowerVS?**  
+ {: #how-to-power-vs}
+
 DR Automation for PowerVS is a solution for automating disaster recovery operations for IBM Power Virtual Server environments. It can ensure seamless failover, failback and data synchronization between primary and backup sites. This service is integrated with the IBM Cloud catalog UI, enabling users to deploy and manage DR solutions efficiently.  
 [Learn more about {{site.data.keyword.DR_short}}](/docs/dr-automation-powervs)
 
- ## **How does {{site.data.keyword.DR_full_notm}} simplify DR processes?**
+## **How does {{site.data.keyword.DR_full_notm}} simplify DR processes?**
  {: #how-to}  
 
 The solution minimizes manual intervention by automating DR workflows by using tools like the DR Service Broker and the KSYS orchestrator. These components synchronize resources, manage failover priorities and optimize RPOs and RTOs, can ensure high availability and business continuity.
@@ -176,9 +177,8 @@ The IP is used as a proxy IP in squid configuration.
 To enable communication to external services, export the following variables on your orchestrator node:
 
 >`http_proxy="<ProxyIP>:3128"`
->
->`https_proxy="<ProxyIP>:3128"`
 
+>`https_proxy="<ProxyIP>:3128"`
   > **Note**: Exporting these variables is automatic with the DR Deployment, you can validate the configuration using these variables.
 
 ## Why is IBM Data Center not displayed as the location type during provisioning?

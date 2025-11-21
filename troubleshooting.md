@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-20"
+lastupdated: "2025-11-21"
 
 subcollection: dr-automation-powervs
 
@@ -14,14 +14,19 @@ keywords: troubleshooting, API key, DR automation
 {: #rotate-api-key}  
 {: troubleshoot}  
 
-### What's happening  
+### What's happening
+{: #rotate-api-key-whats-happening}
+
 The user is unable to regenerate the API key, which is required to maintain secure access to the service.  
 
-### Why it's happening  
+### Why it's happening
+{: #rotate-api-key-why}
+
 The API key might be expired or improperly configured, leading to a failure in regenerating it.  
 
 ### How to fix it  
-{: tsResolve}  
+{: tsResolve}
+
 1. Access the **External orchestrator GUI**.  
 2. Navigate to the **Policies** tab from the top navigation bar.  
 3. Locate the **API Key** field in the list of tunable attributes.  
@@ -32,14 +37,19 @@ The API key might be expired or improperly configured, leading to a failure in r
 {: #how-service-works}  
 {: troubleshoot}  
 
-### What's happening  
+### What's happening
+{: #how-service-works-whats-happening}
+
 Users are unclear about how the service automates disaster recovery operations.  
 
-### Why it's happening  
+### Why it's happening
+{: #how-service-works-why}
+
 The architecture and components of the service may not be fully understood.  
 
 ### How to fix it  
 {: tsResolve}  
+
 - The service automates failover and failback processes across sites.  
 - The **Service Broker** manages resource provisioning and billing.  
 - The **KSYS orchestrator** handles VM orchestration, ensuring resources are activated in the correct sequence.  
@@ -50,14 +60,19 @@ The architecture and components of the service may not be fully understood.
 {: #iam-actions}  
 {: troubleshoot}  
 
-### What's happening  
+### What's happening
+{: #iam-actions-whats-happening}
+
 IAM actions, such as assigning roles or monitoring permissions, are not functioning as expected.  
 
-### Why it's happening  
+### Why it's happening
+{: #iam-actions-why}
+
 This issue occurs due to insufficient permissions or improper configurations in the IAM roles that are assigned to the service.  
 
 ### How to fix it  
-{: tsResolve}  
+{: tsResolve}
+
 1. Log in to the **IAM Console** via the IBM Cloud portal.  
 2. Review the roles that are assigned to the DR automation service under the **Access Groups** tab.  
 3. Enable **Activity Tracker** under the **Monitoring** tab to track IAM actions.  
@@ -68,15 +83,20 @@ This issue occurs due to insufficient permissions or improper configurations in 
 {: #access-token-error}  
 {: troubleshoot}  
 
-### What's happening  
+### What's happening
+{: #access-token-error-whats-happening}
+
 The provisioning process fails with the error message:  
 > `Error getting access token.`  
 
-### Why it's happening  
+### Why it's happening
+{: #access-token-error-why}
+
 The service is unable to authenticate due to an expired or invalid API key, or insufficient IAM permissions.  
 
 ### How to fix it  
-{: tsResolve}  
+{: tsResolve}
+
 1. Access the **DR Automation GUI**.  
 2. Navigate to the **Policies** tab.  
 3. Verify that the API key is valid and not expired.  
@@ -88,14 +108,19 @@ The service is unable to authenticate due to an expired or invalid API key, or i
 {: #password-format-error}  
 {: troubleshoot}  
 
-### What's happening  
+### What's happening
+{: #password-format-error-whats-happening}
+
 The system displays an error indicating the orchestrator password does not meet format requirements.  
 
-### Why it's happening  
+### Why it's happening
+{: #password-format-error-why}
+
 The password that is provided does not comply with the security standards that are required by the orchestrator.  
 
 ### How to fix it  
 {: tsesolve}  
+
 1. Access the **DR Automation GUI**.  
 2. Navigate to the **Policies** tab.  
 3. Locate the **Orchestrator Password** field under tunable attributes.  
@@ -109,15 +134,20 @@ The password that is provided does not comply with the security standards that a
 {: #delete-service-error}  
 {: troubleshoot}  
 
-### What's happening  
+### What's happening
+{: #delete-service-error-whats-happening}
+
 The system fails to delete the provisioned service, displaying a generic error message:  
 > `Provision disaster recovery service deletion failed.`  
 
-### Why it's happening  
+### Why it's happening
+{: #delete-service-error-why}
+
 Dependencies, such as active VMs or storage volumes, may prevent the service from being deleted, or the API key may be invalid.  
 
 ### How to fix it  
-{: tsResolve}  
+{: tsResolve}
+
 1. Access the **DR Automation GUI**.  
 2. Navigate to the **Events** tab and review the detailed logs.  
 3. Verify API connectivity by running a test command (for example, ping or curl) to the service endpoint.  
@@ -131,6 +161,7 @@ Dependencies, such as active VMs or storage volumes, may prevent the service fro
 
 ### What's happening
 {: #select-dr-loc}  
+
 The **Finish** button in the UI remains disabled, preventing you from starting the External Orchestrator UI.  
 
 ### Why it's happening
@@ -182,17 +213,17 @@ If the communication issue persists, you can check the status of the squid servi
 {: #oe-xe-csi}  
 {: troubleshoot} 
 
- ### What's happening
- {: tsressolve} 
+### What's happening
+ {: wh-hap}
 
 The External Connectivity status of the Orchestrator appears as Inactive in the UI.
 
- ### Why it's happening
- {: why-it hap}
+### Why it's happening
+ {: why-it-hap}
 
 The Orchestrator is unable to establish a connection with any IBM Cloud services, which prevents it from effectively managing failover scenarios in the event of a workload failure.
 
- ### How to fix it
+### How to fix it
  {: fix-it}
 
 Refer to the topic [How to fix it](#how-to-fix-it-7) for guidance on resolving the inactive state of the Orchestrator's external connectivity.
@@ -229,12 +260,14 @@ This issue occurs when no PowerVS workspace is available in the selected locatio
 {: troubleshoot}
 
 ### What's happening
+{: #trou-sh-deploy}
 
 During a DR Automation deployment, the KSYS image is downloaded to the selected workspace where the orchestrator is to be created. Once the deployment is completed, this image is automatically deleted.
 
 If the same workspace is used for a subsequent deployment, the image download is not re-initiated because the system detects that the image previously existed. Since the image may have been deleted during the first deployment, the second deployment can fail when creating the orchestrator.
 
 ### Why it's happening
+{: #trou-sh-deploy}
 
 The system assumes the KSYS image already exists in the workspace and skips downloading it. If the image was removed after the first deployment, the orchestrator creation cannot proceed.
 
