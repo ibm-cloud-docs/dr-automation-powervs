@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-20"
+lastupdated: "2025-11-21"
 
 subcollection: dr-automation-powervs
 
@@ -19,6 +19,7 @@ Network pairing establishes communication links between network devices or syste
 All VMs that are added to the WorkGroup are automatically populated on the **Network Pairing** page.
 
 ## Procedure
+{: #network-proce}
 
 To complete the network pairing, follow these steps:
 

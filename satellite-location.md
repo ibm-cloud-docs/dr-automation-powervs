@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-20"
+lastupdated: "2025-11-21"
 
 subcollection: dr-automation-powervs
 
@@ -10,6 +10,7 @@ keywords: cloud satellite, sate;lite, data center, client location
 ---
 
 # IBM Satellite location
+{: #sat-location}
 
 The following IBM Cloud regions can host connections from the pods for {{site.data.keyword.DR_short}} Private Cloud in your data center:
 

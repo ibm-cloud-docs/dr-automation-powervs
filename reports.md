@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-20"
+lastupdated: "2025-11-21"
 
 subcollection: dr-automation-powervs
 
@@ -53,7 +53,7 @@ The report displays the following information:
 
 Use this report to monitor move activities, verify successful workgroup movement across sites, and analyze failures or delays observed during the move process.
 
-# Failover rehearsal report
+## Failover rehearsal report
 {: #failover-report}
 
 The Failover Rehearsal report provides information about failover rehearsal operations performed on a workgroup, enabling you to track DR testing activities, validate VM cloning behavior, review failure reasons, and analyze the overall rehearsal duration.
@@ -83,7 +83,7 @@ The report displays the following information:
 Use this report to validate DR test readiness, verify that cloned VMs were created and tested successfully, and analyze delays or failures encountered during the failover rehearsal process.
 
 
-# Cleanup report
+## Cleanup report
 {: #cleanup-report}
 
 The Cleanup report provides information about cleanup operations performed on a workgroup, helping you track storage cleanup activity, review status, and validate the overall cleanup duration.
