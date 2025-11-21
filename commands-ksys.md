@@ -389,14 +389,17 @@ Refresh Networks list of VMRM-TEST-DAL10 workspace completed
 Site dal10 added successfully
 Note: dal10 partner GRS Region is us-east.
 ```
+
 #### To add a site in the KSYS sub sytem Private cloud:
 {: #subsyste-private-cloud}
+
 ```
 ksysmgr add site -h
 ksysmgr add site <sitename> satellitelocation=<satellitelocationname>
      add => ad*
      site => sit*
 ```
+
 An output that is similar to the following example is displayed for Private cloud:
 
 ```
@@ -1043,7 +1046,7 @@ Also, User can give Only script name to remove notify for all events listed with
 ```
 
 ### To query a script:
-{: ikm}
+{: script-query}
 
 ```
 ksysmgr query notify script
