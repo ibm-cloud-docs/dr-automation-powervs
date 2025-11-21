@@ -1906,11 +1906,12 @@ To configure a backup VM to run on a specific target system type, run the follow
 The following example output is displayed:
 
 ```
-# ksysmgr manage vm test-1 targetsystemtype=s922
+ksysmgr manage vm test-1 targetsystemtype=s922
 Refresh VMs list of Test-lon04 workspace started
 Refresh VMs list of Test-lon04 workspace completed
 Refresh Networks list of Test-lon04 workspace started
 Refresh Networks list of Test-lon04 workspace completed
+
 ```
 
 To modify a backup VM to run on a specific target system type, run the following command:
@@ -2129,7 +2130,7 @@ ActiveWorkgroups:               test_WG
 Initiate the DR rehearsal move using the following command:
 
 ```
-# ksysmgr move workgroup -h
+ksysmgr move workgroup -h
 ksysmgr move workgroup <name>
        to=<site_name>
        [force=<true|false>]
