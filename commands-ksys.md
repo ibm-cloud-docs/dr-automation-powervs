@@ -272,6 +272,7 @@ ksyscluster => ksysclu*, clu*
 ```
 
 An output that is similar to the following example is displayed:
+
 ```
 # ksysmgr query cluster
 Name: pvs_dr
@@ -279,8 +280,11 @@ State: Online
 Type: IBM_PVS_DR
 Ksysnodes: test.dev.com:1:Online
 KsysState: test.dev.com:1:Online
+
 ```
+
 An output that is similar to the following example is displayed for Private cloud:
+
 ```
 # ksysmgr query cluster
 Name:                test16sepprvi_Cluster
@@ -293,6 +297,7 @@ Proxy:               10.30.40.4:3128
 
 ### To remove a KSYS cluster:
 {: #removeksys}
+
 ```
 ksysmgr [-f] delete ksyscluster <ksysclustername>
 delete => de*, remove, rm, erase
@@ -1400,6 +1405,7 @@ Volume Details:
 
 ### To manage disk on virtual machine:
 {: #manage-disk-vm}
+
 ```
 ksysmgr manage disk -h
  
@@ -1457,19 +1463,21 @@ Progress:            99.5
 DiskIDs:             volume-aix_vol3-6a958988-9745 -> 6a958988-9745-4fee-8942-f8b80118e8e7
                      volume-vmrm_aix_vm2-bc477fa9-00046b90-boot-0-a69d29f9-bc3a -> a69d29f9-bc3a-424e-a91e-3edad82348a4
                      2d5ff23a-13bb-43d8-b354-51603dee5e50 -> Unmanaged
-### Volume Details
+Volume Details
 
 | Volume | State | Progress (%) |
 |---------|--------|--------------|
 | `volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974...` | consistent_copying | 100 |
 | `volume-vmrm_aix_vm2-bc477fa9-000... <-> aux__aix_vm2-bc477fa9-00046b90-b...` | consistent_copying | 100 |
-
 ```
+
 ## KSYS spooling
 {: #spooling}
 
+
 ### To query a KSYS spooling:
 {: #query}
+
 
 ```
 ksysmgr query system [ properties ]
