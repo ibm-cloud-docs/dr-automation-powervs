@@ -8,7 +8,7 @@ toc:
     label: Power Virtual Server DR Automation
   entries:
   - navgroup:
-      id: overview
+      id: learn
       topics:
       - getting-started-with-powerVS.md
       - release.md
