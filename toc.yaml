@@ -72,6 +72,7 @@ toc:
           - move-site.md
           - verify-events.md
           - reports.md
+          - certificate-private-key-pairs.md
       - topicgroup:
           label: Enhancing security
           topics:
