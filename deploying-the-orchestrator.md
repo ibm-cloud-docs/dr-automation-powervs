@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-20"
+lastupdated: "2025-11-21"
 
 subcollection: dr-automation-powervs
 
@@ -85,7 +85,7 @@ follow the steps:
 
 11. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in config page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
-12. (Optional) Expand the **Advanced Settings** to configure Multi Factor Autentication(MFA).
+12. (Optiona) Expand the **Advanced Settings** to configure Multi Factor Autentication(MFA).
 
 - > **Prerequisite**: To Enable MFA, you must complete the MFA tenant setup and obtain the **Client ID**, **Client Secret**, and **Tenant Name** from [IBM Security Verify](https://www.ibm.com/account/reg/us-en/subscribe?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197).
 
