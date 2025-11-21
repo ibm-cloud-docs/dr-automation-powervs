@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-04"
+lastupdated: "2025-11-21"
 
 subcollection: dr-automation-powervs
 
@@ -125,7 +125,7 @@ Specifies the particular object, of type **CLASS** , on which the **ACTION** mus
 
 Specifies an optional flag that has attribute pairs and value pairs that are specific to the **ACTION** and **CLASS** combination. Use these pairs to specify configuration settings or to run particular operations. Both **ATTR** and **VALUE** flags are case-sensitive.
 
-```-a {<ATTR#1>,<ATTR#2>,...}```
+ ```-a {ATTR#1,ATTR#2,...}```
 
 Displays only the specified attributes. This flag must be used with the query ACTION flag. For example:
 
