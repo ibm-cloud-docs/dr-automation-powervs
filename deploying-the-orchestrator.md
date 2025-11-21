@@ -54,17 +54,17 @@ follow the steps:
 
 10. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in config page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
-11. (Optiona) Expand the **Advanced Settings** to configure Multi Factor Autentication (MFA).
+11. (Optional) Expand the **Advanced Settings** to configure Multi Factor Authentication (MFA).
 
->- **Prerequisite**: To Enable MFA, you must complete the MFA tenant setup and obtainthe **Client > ID**, **Client Secret**, and **Tenant Name** from [IBM Security Verify](https://www.ibm.com/account/reg/us-en/subscribe?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197).
-> - For more information on MFA configuration, see [Setting up Multifactor Authentication](/docs/dr-automation-powervs?topic=dr-automation-powervs-multifactor-authentication).
->- Select the **Enable MFA** checkbox and enter the **Client ID**, **Client Secret**, and **Tenant Name** that you generated during the MFA tenant setup. When deployment completes, the orchestrator is registered with IBM Security Verify.
->- The root user is prompted to enter their password first and then an OTP during the first login. This adds an extra layer of security for administrative access to the orchestrator UI.
->- **Note:** MFA status is displayed in the **Orchestrator Details** page and MFA events are captured in the **Events** log for auditing.
+    > **Prerequisite**: To Enable MFA, you must complete the MFA tenant setup and obtain the **Client ID**, **Client Secret**, and **Tenant Name** from IBM Security Verify.
+    > - For more information on MFA configuration, see Setting up Multifactor Authentication.
+    > - Select the **Enable MFA** checkbox and enter the **Client ID**, **Client Secret**, and **Tenant Name** that you generated during the MFA tenant setup. When deployment completes, the orchestrator is registered with IBM Security Verify.
+    > - The root user is prompted to enter their password first and then an OTP during the first login.
+    > - **Note:** MFA status is displayed in the **Orchestrator Details** page and MFA events are captured in the **Events** log for auditing.
 
-12. If you select **Chennai (in-che, che01)** or **Montréal (ca-mon)** as the DR location, ensure that you enter the proxy details. For more information, see [How to get ProxyIP details which is configured for Virtual Server Instance for VPC](https://test.cloud.ibm.com/docs-draft/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab)
+12. Enter the proxy details if you have selected **Chennai (in-che, che01)** or **Montréal (ca-mon)** as the DR location. For more information, see [How to get ProxyIP details which is configured for Virtual Server Instance for VPC](https://test.cloud.ibm.com/docs-draft/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab).
 
-13. (Optional) Modify the **Advanced Settings** to configure Storage tier and Machine type based on the **Orchestrator HA** selection.
+13. (Optional) Expand the **Advanced Settings** to configure Storage tier and Machine type based on the **Orchestrator HA** selection.
 
 14. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 
