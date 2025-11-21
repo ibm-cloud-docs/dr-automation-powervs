@@ -55,7 +55,6 @@ toc:
           - monitoring-vm-status.md
           - manage-vm.md
           - dr-automation-events.md
-          - multifactor-authentication.md
       - topicgroup:
           label: External orchestrator
           topics:
@@ -71,8 +70,10 @@ toc:
           - workgroup-operation.md
           - move-site.md
           - verify-events.md
-          - reports.md
+          - multifactor-authentication.md
+          - user-role-management.md
           - certificate-private-key-pairs.md
+          - reports.md
       - topicgroup:
           label: Enhancing security
           topics:
