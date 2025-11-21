@@ -41,7 +41,7 @@ The following procedure explains how to create one private-key pair and one cert
 
    **UNIX/Linux:**
    ```
-   openssl rand -out workstationname.rnd -rand ./openssl 8192
+   openssl rand -out workstationname.rnd -rand ./openssl.cnf 8192
    ```
 
 2. Create the private-key pair (with triple-DES encryption):
