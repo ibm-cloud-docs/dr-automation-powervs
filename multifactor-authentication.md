@@ -9,8 +9,11 @@ subcollection: dr-automation-powervs
 keywords: MFA, multifactor authentication
 
 ---
-# Setting up multifactor authentication
+# Multifactor authentication
 {: monitor-multi-ibm}
+
+## Setting up multifactor authentication
+{: monitor-multi-auten}
 
 You can enable Multi-Factor Authentication (MFA) in {{site.data.keyword.DR_full}} to enhance access security by requiring users to enter their password first, followed by a one-time passcode (OTP), when logging in to the DR automation GUI.
 
