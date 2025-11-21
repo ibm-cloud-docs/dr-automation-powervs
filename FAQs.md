@@ -177,9 +177,10 @@ The IP is used as a proxy IP in squid configuration.
 To enable communication to external services, export the following variables on your orchestrator node:
 
 >`http_proxy="<ProxyIP>:3128"`
-
+>
 >`https_proxy="<ProxyIP>:3128"`
-  > **Note**: Exporting these variables is automatic with the DR Deployment, you can validate the configuration using these variables.
+>
+> **Note**: Exporting these variables is automatic with the DR Deployment, you can validate the configuration using these variables.
 
 ## Why is IBM Data Center not displayed as the location type during provisioning?
 {: #location-type}

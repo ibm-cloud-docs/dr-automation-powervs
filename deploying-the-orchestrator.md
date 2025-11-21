@@ -44,60 +44,29 @@ follow the steps:
 
 7. In the **DR location** field, select the target region for deploying the orchestrator VM.
 
-8. Select **Schematic workspace** or **Custom VPC** to manually configure the network settings for the orchestrator deployment.
+    > **Note**: If you select **Chennai (in-che)** or **Montréal (ca-mon)** as the DR location, you must provide the proxy details in the **Advanced configuration** section. These regions require a proxy because the orchestrator uses it to communicate with IBM Cloud services during deployment.
 
-   - Select the **Schematic workspace** and follow the steps:
+8. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
 
-      1. Select an appropriate workspace for the orchestrator in the **DR Schematic workspace (VPC)** field.
-      2. Create a [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-pvs-inf-2dd486c7-b317-4aaa-907b-42671485ad96-global/readme/terraform/terraform/e104e91d-d4a8-44fa-a341-eebf735d9635-global) if required, to define the Power Virtual Server workspace where the primary orchestrator is deployed.
-         > **Note**: The schematic ID is available if the VPC is created by using the VPC Landing Zone for the PowerVS option from the catalog.
-
-   - Select **Custom VPC** and follow the steps:
-
-      1. To go ahead with the custom VPC you will have to finish the following pre-req:
-
-         - Need VPC, you can create a new [VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started) or use the existing one.
-         - Once VPC is available, configure your VPC to [enable the proxy communication](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch#procedure-ena-ppro-comm).
-         - Use the existing transit gateway or you can create a new [Transit gatway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-getting-started). To attach VPC to Transit gateway in IBM Cloud. Navigate to **Infrastructure** > **Network** > **Transit Gateway**. Select your transit gateway, and on the **Add connection** page, select the VPC under **Network connection**, choose the **Region**, select the appropriate **Connection reach**, **Select the VPC** from the available connection, and click **Add**.
-         - Once you complete all the pre-req you are ready to use the custom VPC.
-
-      2. Choose the **Transit Gateway** from the dropdown.
-      3. Select the VPC from the dropdown.
-      4. Enter the Proxy details in `proxyIP:portno` format to enable secure communication between the Orchestrator and external IBM Cloud services. Follow the steps to find the Proxy IP of the VSI:
-         - Log in to the [IBM Cloud console](https://cloud.ibm.com).
-         - Click **Infrastructure** > **Virtual server instances**.
-         - Select the VSI from the list (for example, `test-vsi-test`).
-         - Click the VSI name to open its details page.
-         - Select the **Networking** tab.
-         - Locate the **Reserved IP** in the network attachments section, by default squid uses this reserved IP for the configuration.
-         - If the VSI has multiple IPs and you configured `squid.conf` with different IP, that is in `/etc/squid/squid.conf` with the following entry:
-
-            > `http_port <IP>:3128`
-
-         The IP is used as a proxy IP in squid configuration.
-      
-9. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
-
-10. To create ksys VM with secrets, click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the  **Use a secret** radio button and select the SSH key from **SSH key name**.
+9. To create ksys VM with secrets, click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the  **Use a secret** radio button and select the SSH key from **SSH key name**.
 
     > **Note**: The SSH Key dropdown displays only the Account level SSH-keys.
 
-11. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in config page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
+10. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in config page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
-12. (Optiona) Expand the **Advanced Settings** to configure Multi Factor Autentication(MFA).
+11. (Optiona) Expand the **Advanced Settings** to configure Multi Factor Autentication (MFA).
 
-- > **Prerequisite**: To Enable MFA, you must complete the MFA tenant setup and obtain the **Client ID**, **Client Secret**, and **Tenant Name** from [IBM Security Verify](https://www.ibm.com/account/reg/us-en/subscribe?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197).
+>- **Prerequisite**: To Enable MFA, you must complete the MFA tenant setup and obtainthe **Client > ID**, **Client Secret**, and **Tenant Name** from [IBM Security Verify](https://www.ibm.com/account/reg/us-en/subscribe?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197).
+> - For more information on MFA configuration, see [Setting up Multifactor Authentication](/docs/dr-automation-powervs?topic=dr-automation-powervs-multifactor-authentication).
+>- Select the **Enable MFA** checkbox and enter the **Client ID**, **Client Secret**, and **Tenant Name** that you generated during the MFA tenant setup. When deployment completes, the orchestrator is registered with IBM Security Verify.
+>- The root user is prompted to enter their password first and then an OTP during the first login. This adds an extra layer of security for administrative access to the orchestrator UI.
+>- **Note:** MFA status is displayed in the **Orchestrator Details** page and MFA events are captured in the **Events** log for auditing.
 
-- For more information on MFA configuration, see [Setting up Multifactor Authentication](/docs/dr-automation-powervs?topic=dr-automation-powervs-mfa-setup).
+12. If you select **Chennai (in-che, che01)** or **Montréal (ca-mon)** as the DR location, ensure that you enter the proxy details. For more information, see [How to get ProxyIP details which is configured for Virtual Server Instance for VPC](https://test.cloud.ibm.com/docs-draft/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab)
 
-- Select the **Enable MFA** checkbox and enter the **Client ID**, **Client Secret**, and **Tenant Name** that you generated during the MFA tenant setup.
+13. (Optional) Modify the **Advanced Settings** to configure Storage tier and Machine type based on the **Orchestrator HA** selection.
 
-
-> **Note:** MFA status is displayed in the **Orchestrator Details** page and MFA events are captured in the **Events** log for auditing.
-
-- (Optional) Modify the **Advanced Settings** to configure Storage tier and Machine type based on the **Orchestrator HA** selection.
-
-13. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
+14. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 
 14. **Finish** button is enabled once the orchestrator VM is deployed and now Click **Finish** to complete the setup.
 
