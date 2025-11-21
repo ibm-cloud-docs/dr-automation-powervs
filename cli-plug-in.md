@@ -37,4 +37,4 @@ To install, update, or view the {{site.data.keyword.DR_full_notm}} CLI plug-in, 
 
 
 4. You can use the other CLI commands available for {{site.data.keyword.DR_full_notm}}.
-Refer to the full CLI documentation [{{site.data.keyword.DR_full}} CLI version 0.0.1](https://cloud.ibm.com/login).
+Refer to the full CLI documentation [{{site.data.keyword.DR_full}} CLI version 0.0.1](/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version).
