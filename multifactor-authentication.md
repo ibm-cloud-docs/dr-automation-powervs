@@ -25,15 +25,15 @@ If multiple orchestrators are deployed using the same IBM Security Verify tenant
 ## Prerequisites
 {: monitor-pre-ibm}
 
-Before enabling MFA, you must configure a tenant in **IBM Security Verify** and obtain the credentials needed for integration.
+Before enabling MFA, you must configure a tenant in [**IBM Security Verify**](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197) and obtain the credentials needed for integration.
 
-1. Register or sign in to the **IBM Security Verify** portal.
+1. Register or sign in to the [**IBM Security Verify**](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197) portal.
 2. Create and configure a tenant.
 3. From the portal navigation, select **Security > API access**.
 4. Copy the **Client ID** and **Client Secret** from the **API Credentials** section.
 5. Note your **Tenant Name**.
 
-These values are entered during orchestrator deployment or when adding MFA to an existing environment.
+These values are entered during [Deploying the orchestrator](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch) or when adding MFA to an existing environment.
 
 ## Enabling MFA during orchestrator deployment (root user)
 {: monitor-met-ibm}
@@ -45,6 +45,4 @@ You can enable MFA during the deployment of the orchestrator, which applies imme
 3. Enter the **Client ID**, **Client Secret**, and **Tenant Name** obtained from IBM Security Verify.
 4. Complete the remaining deployment configurations and deploy the orchestrator.
 
-After deployment, when the root user logs in to the GUI, the login screen prompts for both the root password and an OTP. The OTP is delivered to the root user’s registered email. The orchestrator is registered in IBM Security Verify as part of the deployment and remains registered unless this is the last orchestrator instance associated with that tenant.
-
----
+After deployment, when the root user logs in to the External Orchestrator GUI, the login screen prompts for both the root password and an OTP. The OTP is delivered to the root user’s registered email. The orchestrator is registered in IBM Security Verify as part of the deployment and remains registered unless this is the last orchestrator instance associated with that tenant.
