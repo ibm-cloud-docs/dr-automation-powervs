@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-04"
+lastupdated: "2025-11-21"
 
 subcollection: dr-automation-powervs
 
@@ -81,7 +81,9 @@ Displays the date and time when the primary orchestrator is deployed. This helps
 
 **Standby Orchestrator deployment time**:
 
-Displays the date and time of the Standby orchestrator deployment.
+Displays the orchestrator version status, and if a newer version is available for upgrade.
+
+**MFA Status**: The MFA Status displays whether MFA is enabled (**True**) or not enabled (**False**), based on your selection.
 
 ## Service details
 {: #service-det}
