@@ -42,7 +42,7 @@
   ],
   "section_devtools": {
     "api": "/apidocs/dr-automation-powervs",
-    "cli": "/docs/acme-test",
+    "cli": "/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version",
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/iam_access_group"
   },
   "section_updates": {
