@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-11-24"
 
 subcollection: dr-automation-powervs
 
@@ -91,8 +91,6 @@ The CA signs the CSR using its own key pair and creates the certificate:
 | SSL random seed     | workstationname.rnd |
 {: caption="Files for local options" caption-side="bottom"}
 
-Files for local options {{site.data.keyword.DR_short}}
-
 ## Configuring private-key pairs and certificates on the GUI server
 {: #configuring-pairs}
 
@@ -102,7 +100,7 @@ Files for local options {{site.data.keyword.DR_short}}
    /opt/IBM/ksys/ui/security/
    ```
 
-2. The folder contains the following files:
+2. The folder contains the following files.
 
 ### Files in the security folder
 {: #security-files}
@@ -118,8 +116,6 @@ Files for local options {{site.data.keyword.DR_short}}
 | agent.csr   | Certificate signing request for the agent |
 | agent.cert  | Certificate signed by CA |
 {: caption="Files in the security folder" caption-side="bottom"}
-
-Files in the security folder {{site.data.keyword.DR_short}}
 
 3. Stop the GUI server:
 

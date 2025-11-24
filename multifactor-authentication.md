@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-11-24"
 
 subcollection: dr-automation-powervs
 
@@ -46,3 +46,6 @@ You can enable MFA during the deployment of the orchestrator, which applies imme
 4. Complete the remaining deployment configurations and deploy the orchestrator.
 
 After deployment, when the root user logs in to the External Orchestrator GUI, the login screen prompts for both the root password and an OTP. The OTP is delivered to the root user’s registered email. The orchestrator is registered in IBM Security Verify as part of the deployment and remains registered unless this is the last orchestrator instance associated with that tenant.
+
+You can manage user accounts, roles, and permissions through the User Role Management page. For more information, see [User role management](/docs/dr-automation-powervs?topic=dr-automation-powervs-user-ro-mang).
+.
