@@ -40,17 +40,12 @@
       "recommended": true
     }
   ],
-  "section_devtools": {
-    "api": "/apidocs/dr-automation-powervs",
-    "cli": "/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version",
-    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/iam_access_group"
-  },
   "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote",
     "tiles": [
       {
         "date": "05 December 2025",
-        "title": "You can now deploy and manage your DR Automation resources in a private (client) cloud environment using IBM PowerVS Satellite locations. This update introduces the complete architecture, deployment flow, and configuration details for setting up DR Automation in client locations, including information about the Service Broker, KSYS orchestrator, storage tiers, and network connectivity."
+        "title": "MFA-"
       },
       {
         "date": "05 December 2025",

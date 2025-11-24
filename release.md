@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-23"
+lastupdated: "2025-11-24"
 subcollection: dr-automation-powervs
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -20,9 +20,9 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 {: #subcollection-december1225}
 {: release-note-october}
 
-- 
-- 
-- 
+- MFA
+- User role management
+- Reports
 
 ## 16 October 2025
 {: #subcollection-october1025}

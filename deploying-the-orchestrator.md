@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-11-24"
 
 subcollection: dr-automation-powervs
 
@@ -44,7 +44,7 @@ follow the steps:
 
 7. In the **DR location** field, select the target region for deploying the orchestrator VM.
 
-    > **Note**: If you select **Chennai (in-che)** or **Montréal (ca-mon)** as the DR location, you must provide the proxy details in the **Advanced configuration** section. These regions require a proxy because the orchestrator uses it to communicate with IBM Cloud services during deployment.
+    > **Note**: If you select **Chennai (in-che)** or **Montréal (ca-mon)** for the primary or standby (secondary) workspace, you must provide proxy details in the **Advanced configuration** section. These regions require a proxy for orchestrator communication with IBM Cloud services.
 
 8. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
 
