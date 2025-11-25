@@ -47,7 +47,7 @@ follow the steps:
     > **Note**: If you select **Chennai (in-che)** or **Montréal (ca-mon)** for the primary or standby (secondary) workspace, you must provide proxy details in the **Advanced configuration** section. These regions require a proxy for orchestrator communication with IBM Cloud services.
 
 8. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location**.
-9. To create ksys VM with secrets, click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the  **Use a secret** radio button and select the SSH key from **SSH key name**.
+9. To create ksys VM with secrets, click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the  **Use a secret** toggle button and select the SSH key from **SSH key name**.
 
     > **Note**: The SSH Key dropdown displays only the Account level SSH-keys.
 
@@ -95,7 +95,7 @@ Power Virtual Server DR Automation supports both Power Edge Router(PER) and non 
 To use a non PER enabled workspace, complete the following manual steps before using them:
 
 1. Create a Cloud connection by attaching all the available subnets that are used for communication from your non PER enabled Power Virtual Server workspace.
-2. Verify that the Cloud connection status changes to Active.
+2. Verify that the Cloud connection status changes to Established.
 3. Attach the Cloud connection to the Transit gateway.
 4. Select the **Transit gateway** -> **Add connection** -> Select Direct Link and select the newly created direct link -> click **Add**.
 

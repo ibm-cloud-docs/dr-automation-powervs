@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-11-25"
 
 subcollection: dr-automation-powervs
 
@@ -27,11 +27,6 @@ The unique identifier for the primary orchestrator instance responsible for mana
 **SSH key name**:
 
 The name of the IBM Cloud SSH key used to enable secure, encrypted communication between the orchestrator and the managed VMs involved in DR automation.
-
-
-**DR Schematics workspace connection status**:
-
-Indicates whether the orchestrator is successfully connected to the Schematics workspace. A status like “ACTIVE” signifies that IaC automation is correctly integrated.
 
 **DR Power Virtual Server workspace**:
 
@@ -62,10 +57,6 @@ Shows whether the orchestrator can reach all required IBM Cloud APIs and externa
 **DR Orchestrator status**:
 
 Displays the current operational status of the primary orchestrator. A status such as “Active” indicates that the orchestrator is functioning and ready for DR activities.
-
-**DR Schematics workspace**:
-
-Specifies the name of the IBM Cloud Schematics workspace that contains the Infrastructure as Code (IaC) configuration used by the orchestrator to provision and manage DR resources.
 
 **DR Location**:
 
