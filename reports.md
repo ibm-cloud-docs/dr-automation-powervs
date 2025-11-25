@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-11-25"
 
 subcollection: dr-automation-powervs
 
@@ -13,7 +13,7 @@ keywords: reports, migration report, discover report,
 
 The Reports page in {{site.data.keyword.DR_full_notm}} provides a consolidated view of operational activities performed across sites and workspaces, enabling administrators to review historical events, track execution status, analyze execution time, and download report summaries for auditing or troubleshooting, including reports for **Discovery**, **Verify**, **Discover & Verify**, **Failover Rehearsal**, **Migration**, **Restart**, and **Cleanup**.
 
-## Discovery report
+## Discovery
 {: #discovery-report}
 
 The **Discovery** report provides information about discovery operations performed on a site or workspace, helping you track discovery activity, review failure reasons, and validate the overall discovery duration.
@@ -32,7 +32,7 @@ The report displays the following information:
 
 Use this report to monitor ongoing discovery activities, verify successful resource detection, and analyze failures or delays observed during the discovery process.
 
-## Move report
+## Move
 {: #move-report}
 
 The **Move** report provides information about move operations performed on a workgroup, allowing you to review the movement of virtual machines between sites, validate execution time, and analyze any failures that occurred during the move workflow.
@@ -53,7 +53,7 @@ The report displays the following information:
 
 Use this report to monitor move activities, verify successful workgroup movement across sites, and analyze failures or delays observed during the move process.
 
-## Failover rehearsal report
+## Failover rehearsal
 {: #failover-report}
 
 The Failover Rehearsal report provides information about failover rehearsal operations performed on a workgroup, enabling you to track DR testing activities, validate VM cloning behavior, review failure reasons, and analyze the overall rehearsal duration.
@@ -83,7 +83,7 @@ The report displays the following information:
 Use this report to validate DR test readiness, verify that cloned VMs were created and tested successfully, and analyze delays or failures encountered during the failover rehearsal process.
 
 
-## Cleanup report
+## Cleanup
 {: #cleanup-report}
 
 The Cleanup report provides information about cleanup operations performed on a workgroup, helping you track storage cleanup activity, review status, and validate the overall cleanup duration.

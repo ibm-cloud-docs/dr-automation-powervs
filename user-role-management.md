@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-11-25"
 
 subcollection: dr-automation-powervs
 
@@ -23,9 +23,11 @@ Use the following procedures to access and manage user roles in the User Role Ma
 
 1. Click **root** in the user menu at the top-right of the External Orchestrator GUI. Select User Role Management from the menu displayed. The web-browser displays the User Role Management screen.
 2. Select **Users** and it displays username, role name, and permission granted to a user in the list displayed, MFA Status, Actions and add a new user.
-3. Click **Add New User**and provide the username, email address, and phone number, and optionally enable MFA for the user.
+3. Click **Add New User** and provide the username, email address, and phone number for the user.
 4. Under **Assign Role & Permissions**, select the role you want to assign from the list or click Add New Role to create a custom role and assign permissions to the role.
 4. Click **Create New User**.
+
+> **Note**: When a new user is added to the User role management, to access the UI, the user should be created onto the same VM.
 
 The new user is created and added to the user list with the assigned role and permissions.
 

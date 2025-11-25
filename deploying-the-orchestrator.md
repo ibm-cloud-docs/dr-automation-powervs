@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-24"
+lastupdated: "2025-11-25"
 
 subcollection: dr-automation-powervs
 
@@ -46,15 +46,15 @@ follow the steps:
 
     > **Note**: If you select **Chennai (in-che)** or **Montréal (ca-mon)** for the primary or standby (secondary) workspace, you must provide proxy details in the **Advanced configuration** section. These regions require a proxy for orchestrator communication with IBM Cloud services.
 
-8. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location** and **DR Schematics workspace**. Accordingly, to change the DR Power Virtual Server workspace, update the DR location and DR Schematics workspace.
-
+8. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location**.
 9. To create ksys VM with secrets, click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the  **Use a secret** radio button and select the SSH key from **SSH key name**.
 
     > **Note**: The SSH Key dropdown displays only the Account level SSH-keys.
 
 10. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in config page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
-11. (Optional) Expand the **Advanced Settings** to configure Multi Factor Authentication (MFA).
+11. (Optional) Expand the **Advanced configuration** to configure Multi Factor Authentication (MFA).
+
 
     > **Prerequisite**: To Enable MFA, you must complete the MFA tenant setup and obtain the **Client ID**, **Client Secret**, and **Tenant Name** from [IBM Security Verify](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197).
     > - For more information on MFA configuration, see [Setting up Multifactor Authentication](/docs/dr-automation-powervs?topic=dr-automation-powervs-multifactor-authentication).
@@ -64,7 +64,7 @@ follow the steps:
 
 12. Enter the proxy details if you have selected **Chennai (in-che, che01)** or **Montréal (ca-mon)** as the DR location. For more information, see [How to get ProxyIP details which is configured for Virtual Server Instance for VPC](https://test.cloud.ibm.com/docs-draft/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab).
 
-13. (Optional) Expand the **Advanced Settings** to configure Storage tier and Machine type based on the **Orchestrator HA** selection.
+13. (Optional) Expand the **Advanced configuration** to change the Storage tier and Machine type configuration based on the **Orchestrator HA** selection.
 
 14. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 
@@ -104,7 +104,6 @@ You can now use a non-PER enabled Power Virtual Server workspace by following th
 
 ## Enable communication via VPC
 {: #procedure-ena-ppro-comm}
-
 1. Open [IBM Cloud console](https://cloud.ibm.com).
 2. Click **Navigation menu** icon > **Infrastructure** > **Network** > **VPCs**, and select your VPC from the list.
 3. Create a **Virtual Server Instance (VSI)** under the **Compute** section.
