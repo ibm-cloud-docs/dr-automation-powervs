@@ -40,7 +40,7 @@ follow the steps:
 5. Provide a valid **IBM Cloud API key**.
    > **Note**: Enter your API key, which is required to access various services described in [Access role requirements for Power Virtual Server DR Automation](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto). Can ensure that the API key has the necessary permissions for proper functions.
 
-6. The **Location Type** field is selected by default.
+6. The **Location Type** field is selected by default depending on your deployment model.
 
 7. In the **DR location** field, select the target region for deploying the orchestrator VM.
 
@@ -54,7 +54,6 @@ follow the steps:
 10. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in config page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
 11. (Optional) Expand the **Advanced configuration** to configure Multi Factor Authentication (MFA).
-
 
     > **Prerequisite**: To Enable MFA, you must complete the MFA tenant setup and obtain the **Client ID**, **Client Secret**, and **Tenant Name** from [IBM Security Verify](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197).
     > - For more information on MFA configuration, see [Setting up Multifactor Authentication](/docs/dr-automation-powervs?topic=dr-automation-powervs-multifactor-authentication).
