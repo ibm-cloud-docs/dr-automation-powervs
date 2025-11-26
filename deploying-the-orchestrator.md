@@ -35,21 +35,21 @@ follow the steps:
 3. In the Configure primary orchestrator section, enter the **DR Orchestrator name**.
 
 4. Set a password in the **DR Orchestrator password** field and re-enter the password in **Confirm DR orchestrator password** section to secure access to the external orchestrator interface.
-   > **Note**: This password is set for the Orchestrator VM, and you can use it to login to the Orchestrator VM UI.
+   > **Note**: This password is set for the  for the root user of Orchestrator VM, and you can use it to login to the Orchestrator VM UI.
 
 5. Provide a valid **IBM Cloud API key**.
-   > **Note**: Enter your API key, which is required to access various services described in [Access role requirements for Power Virtual Server DR Automation](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto). Can ensure that the API key has the necessary permissions for proper functions.
+   > **Note**: Enter your API key, which is required to access various services described in [Access role requirements for Power Virtual Server DR Automation](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto). Ensure that the API key has the necessary permissions for proper functions.
 
 6. The **Location Type** field is selected by default depending on your deployment model.
 
 7. In the **DR location** field, select the target region for deploying the orchestrator VM.
 
-    > **Note**: If you select **Chennai (in-che)** or **Montréal (ca-mon)** for the primary or standby (secondary) workspace, you must provide proxy details in the **Advanced configuration** section. These regions require a proxy for orchestrator communication with IBM Cloud services.
+    > **Note**: If you select **Chennai (in-che)** or **Montréal (ca-mon)** for the primary or standby (secondary) workspace, you must provide proxy details in the **Advanced orchestrator configuration** section. These regions require a proxy for orchestrator communication with IBM Cloud services.
 
 8. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location**.
 9. To create ksys VM with secrets, click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the  **Use a secret** toggle button and select the SSH key from **SSH key name**.
 
-    > **Note**: The SSH Key dropdown displays only the Account level SSH-keys.
+    > **Note**: The SSH Key dropdown displays only the Account level SSH-keys and by default, you can choose the key from the list of ssh keys in the account level only. You should enable the toggle to select the key from secret manager.
 
 10. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in config page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
@@ -63,7 +63,7 @@ follow the steps:
 
 12. Enter the proxy details if you have selected **Chennai (in-che, che01)** or **Montréal (ca-mon)** as the DR location. For more information, see [How to get ProxyIP details which is configured for Virtual Server Instance for VPC](https://test.cloud.ibm.com/docs-draft/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab).
 
-13. (Optional) Expand the **Advanced configuration** to change the Storage tier and Machine type configuration based on the **Orchestrator HA** selection.
+13. (Optional) Expand the **Advanced orchestrator configuration** to change the Storage tier and Machine type configuration based on the **Orchestrator HA** selection.
 
 14. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 

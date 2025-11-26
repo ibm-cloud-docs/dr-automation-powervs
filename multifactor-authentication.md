@@ -21,6 +21,8 @@ MFA is configured by integrating the orchestrator with **IBM Security Verify**. 
 
 If multiple orchestrators are deployed using the same IBM Security Verify tenant, the service automatically detects and **reuses** the existing registration. If an orchestrator is removed and it is the **last** one associated with that tenant, the registration is also removed. This ensures that tenant-based billing and registrations remain aligned with your usage. The MFA status for a deployed orchestrator is displayed in the **Orchestrator Details** page and all MFA-related events are recorded in the **Events** log for audit tracking.
 
+Multi-Factor Authentication (MFA) in the Orchestrator requires internet connectivity. Ensure that your Power Virtual Server workspace has access to the external network. If you are using a proxy for outbound communication, provide the proxy IP and port in the proxy details. During deployment, the proxy settings are automatically exported to the Orchestrator.
+
 
 ## Prerequisites
 {: monitor-pre-ibm}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-04"
+lastupdated: "2025-11-26"
 
 keywords: getting started, disaster recovery, PowerVS, start
 
@@ -55,7 +55,7 @@ Complete the following prerequisites:
    
    > **Note**: Make sure provided API Key has permissions listed in the [Access role requirements for DR Automation for PowerVS](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto) for completing the configuration.
 
-3. (Optional) Expand the **Advanced Configuration** to modify the default values of storage tier and machine type for the Orchestrator VM, by default **Tier1** is selected for Storage tier and **s922** is selected for machine type.
+3. (Optional) Expand the **Advanced orchestrator configuration** to modify the default values of storage tier and machine type for the Orchestrator VM, by default **Tier1** is selected for Storage tier and **s922** is selected for machine type.
 
 4. If you have enabled **Orchestrator HA** on manage page. Provide standby orchestrator details.
 5. Review all settings and click **Deploy Orchestrator** to begin the deployment.
