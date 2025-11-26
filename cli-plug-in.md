@@ -8,23 +8,31 @@ subcollection: dr-automation-powervs
 keywords: plugin-cli plugin
 
 ---
+# Installing the {{site.data.keyword.DR_full_notm}} CLI plug-in
+{: #plun-in}
+To install, update, or view the {{site.data.keyword.DR_full_notm}} CLI plug-in, complete the following steps:
+
+1. Install the [IBM Cloud® CLI](https://cloud.ibm.com/docs/cli).
+
+2. Install or update the `power-hadr` plug-in.
 
 **To install**
 
->```
->    ibmcloud plugin install power-hadr
->```
+```
+   ibmcloud plugin install power-hadr
+```
 
-> **To update**
+ **To update**
 
->```
->    ibmcloud plugin update
->```
+```
+    ibmcloud plugin update
+```
 
 **To view your installed plug-ins and versions:**
->```
->    ibmcloud plugin list
->```
+
+```
+    ibmcloud plugin list
+```
 
 3. Verify the installed plug-in,by running the following command:
 

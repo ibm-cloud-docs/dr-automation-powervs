@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-24"
+lastupdated: "2025-11-26"
 
 subcollection: dr-automation-powervs
 
@@ -15,7 +15,7 @@ keywords: MFA, multifactor authentication
 ## Setting up multifactor authentication
 {: monitor-multi-auten}
 
-You can enable Multi-Factor Authentication (MFA) in {{site.data.keyword.DR_full}} to enhance access security by requiring users to enter their password first, followed by a one-time passcode (OTP), when logging in to the DR automation GUI.
+You can enable Multi-Factor Authentication (MFA) in {{site.data.keyword.DR_full}} to enhance access security by requiring users to enter their password first, followed by a one-time passcode (OTP), when logging in to the orchestrator GUI.
 
 MFA is configured by integrating the orchestrator with **IBM Security Verify**. During deployment, you provide the **Client ID**, **Client Secret**, and **Tenant Name** that correspond to your IBM Security Verify tenant. The deployment process uses these values to register the orchestrator and the **root** user with IBM Security Verify. When MFA is enabled during deployment, the root user is prompted for an OTP during the first login and in all subsequent logins while MFA remains enabled.
 
@@ -45,7 +45,8 @@ You can enable MFA during the deployment of the orchestrator, which applies imme
 3. Enter the **Client ID**, **Client Secret**, and **Tenant Name** obtained from IBM Security Verify.
 4. Complete the remaining deployment configurations and deploy the orchestrator.
 
-After deployment, when the root user logs in to the External Orchestrator GUI, the login screen prompts for both the root password and an OTP. The OTP is delivered to the root user’s registered email. The orchestrator is registered in IBM Security Verify as part of the deployment and remains registered unless this is the last orchestrator instance associated with that tenant.
+After deployment, when the root user logs in to the External Orchestrator GUI, the login screen prompts for the root password and post authentication of root password, generates an OTP. The OTP is delivered to the IBM Cloud registered email. The orchestrator is registered in IBM Security Verify as part of the deployment and remains registered until the last deployment is deprovisioned.
 
 You can manage user accounts, roles, and permissions through the User Role Management page. For more information, see [User role management](/docs/dr-automation-powervs?topic=dr-automation-powervs-user-ro-mang).
-.
+
+> **Note**: If incorrect values are provided for the client ID, client secret, or tenant name, the deployment process still completes successfully, but MFA will not be enabled. In this situation, monitor the events for any MFA registration failures. After deployment, you can enable MFA from the Orchestrator GUI with correct credentials.
