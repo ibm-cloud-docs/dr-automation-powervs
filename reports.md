@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-25"
+lastupdated: "2025-11-26"
 
 subcollection: dr-automation-powervs
 
@@ -11,7 +11,7 @@ keywords: reports, migration report, discover report,
 # Generate external orchestrator reports
 {: #reports}
 
-The Reports page in {{site.data.keyword.DR_full_notm}} provides a consolidated view of operational activities performed across sites and workspaces, enabling administrators to review historical events, track execution status, analyze execution time, and download report summaries for auditing or troubleshooting, including reports for **Discovery**, **Verify**, **Discover & Verify**, **Failover Rehearsal**, **Migration**, **Restart**, and **Cleanup**.
+The Reports page in {{site.data.keyword.DR_full_notm}} provides a consolidated view of operational activities performed across sites and workspaces, enabling administrators to review historical events, track execution status, analyze execution time, and download report summaries for auditing or troubleshooting, including reports for **Discovery**, **Discover & Verify**, **Failover Rehearsal**, and **Cleanup**.
 
 ## Discovery
 {: #discovery-report}
