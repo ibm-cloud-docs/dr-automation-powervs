@@ -18,46 +18,46 @@ To install, update, or view the {{site.data.keyword.DR_full_notm}} CLI plug-in, 
 
 **To install**
 
-```
-   ibmcloud plugin install power-hadr
-```
+    ```
+    ibmcloud plugin install power-hadr
+    ```
 
  **To update**
 
-```
-    ibmcloud plugin update
-```
+    ```
+        ibmcloud plugin update
+    ```
 
 **To view your installed plug-ins and versions:**
 
-```
-    ibmcloud plugin list
-```
+    ```
+        ibmcloud plugin list
+    ```
 
 3. Verify the installed plug-in,by running the following command:
 
-```
-    ibmcloud plugin list
-```
+    ```
+        ibmcloud power-hadr
+    ```
 
 The out put is as following:
 
-```
-    ibmcloud power-hadr
-    NAME:
-    power-hadr - Commands to manage power-hadr.
-    USAGE:
-    ibmcloud power-hadr [command] [options]
-    VERSION:
-    0.0.1
-    COMMANDS:
-    pdr, dr   Manage DrAutomation Service.
-    OPTIONS:
-    -h, --help      Show help
-    -v, --version   Version of the plug-in.
-    Use "ibmcloud power-hadr <command> --help" for more information about a command.
-    [root@dra-sb dra-cli-plugin]
-```
+    ```
+        ibmcloud power-hadr
+        NAME:
+        power-hadr - Commands to manage power-hadr.
+        USAGE:
+        ibmcloud power-hadr [command] [options]
+        VERSION:
+        0.0.1
+        COMMANDS:
+        pdr, dr   Manage DrAutomation Service.
+        OPTIONS:
+        -h, --help      Show help
+        -v, --version   Version of the plug-in.
+        Use "ibmcloud power-hadr <command> --help" for more information about a command.
+        [root@dra-sb dra-cli-plugin]
+    ```
 
 4. You can use the other CLI commands available for {{site.data.keyword.DR_full_notm}}.
 

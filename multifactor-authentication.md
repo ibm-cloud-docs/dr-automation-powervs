@@ -49,4 +49,4 @@ After deployment, when the root user logs in to the External Orchestrator GUI, t
 
 You can manage user accounts, roles, and permissions through the User Role Management page. For more information, see [User role management](/docs/dr-automation-powervs?topic=dr-automation-powervs-user-ro-mang).
 
-> **Note**: If incorrect values are provided for the client ID, client secret, or tenant name, the deployment process still completes successfully, but MFA will not be enabled. In this situation, monitor the events for any MFA registration failures. After deployment, you can enable MFA from the Orchestrator GUI with correct credentials.
+> **Note**: If incorrect values are provided for the client ID, client secret, or tenant name, the deployment process still completes successfully, but MFA will not be enabled.
