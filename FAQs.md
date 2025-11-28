@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-11-28"
 
 subcollection: dr-automation-powervs
 
@@ -181,6 +181,7 @@ To enable communication to external services, export the following variables on 
 >`https_proxy="<ProxyIP>:3128"`
 >
 > **Note**: Exporting these variables is automatic with the DR Deployment, you can validate the configuration using these variables.
+> **Note**: The updated proxy details are not reflected in the DR Automation UI. The UI continues to display only the initially configured proxy IP.
 
 ## Why is IBM Data Center not displayed as the location type during provisioning?
 {: #location-type}

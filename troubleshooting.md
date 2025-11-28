@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-11-28"
 
 subcollection: dr-automation-powervs
 
@@ -278,3 +278,20 @@ The system assumes the KSYS image already exists in the workspace and skips down
 2. Avoid performing multiple deployments simultaneously in the same workspace to prevent deployment failures.
 
 **Recommendation:** Perform sequential deployments using separate workspaces or wait until the first deployment completes before starting a new one.
+
+## Why MFA is not enabled even though it was selected during deployment ?
+{: #mfa-deploy}  
+{: troubleshoot}
+
+### What's happening
+{: #trou-sh-deploy}
+
+After deployment, MFA (Multi-Factor Authentication) is not enabled for the orchestrator, even though the MFA option was selected during deployment.
+
+### Why it's happening
+{: #trou-sh-deploy}
+
+During the deployment process, if any of the values are incorrect, the deployment still completes successfully, but MFA cannot be enabled and an error event is generated indicating why MFA setup failed
+
+### How to fix it
+{: tsResolve}
