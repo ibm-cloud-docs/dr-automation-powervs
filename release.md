@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-24"
+lastupdated: "2025-12-02"
 subcollection: dr-automation-powervs
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -20,7 +20,8 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 {: #subcollection-december1225}
 {: release-note-october}
 
-- You can now enable Multi-Factor Authentication (MFA) for the DR automation orchestrator to enhance login security. For more information, see [Multifactor authentication](/docs/dr-automation-powervs?topic=dr-automation-powervs-multifactor-authentication)
+- You can now deploy the orchestrator with minimal inputs. You no longer need to provide schematic or custom VPC details. The orchestrator uses a private endpoint to communicate with all required IBM Cloud services.For more information, see [Deploying the orchestrator](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch).
+- You can now enable Multi-Factor Authentication (MFA) for the DR automation orchestrator to enhance login security. For more information, see [Multifactor authentication](/docs/dr-automation-powervs?topic=dr-automation-powervs-multifactor-authentication).
 - You can now assign roles to users and manage permissions through the new User Role Management feature, which introduces role-based access control (RBAC) for creating users, defining roles, and controlling access to DR automation operations. For more information, see [User role management](/docs/dr-automation-powervs?topic=dr-automation-powervs-user-ro-mang).
 - You can now generate consolidated operational reports for the external orchestrator, including Discovery, Move, Failover Rehearsal, and Cleanup activities. For more information, see [Generate external orchestrator reports](/docs/dr-automation-powervs?topic=dr-automation-powervs-reports).
 - You can now map multiple networks for each VM during network pairing, allowing more flexible and granular connectivity configuration across WorkGroups. For more information, see [Creating network pairing](/docs/dr-automation-powervs?topic=dr-automation-powervs-network-pairing).

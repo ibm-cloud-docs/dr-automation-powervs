@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-26"
+lastupdated: "2025-12-02"
 
 subcollection: dr-automation-powervs
 
@@ -15,7 +15,7 @@ keywords: MFA, multifactor authentication
 ## Setting up multifactor authentication
 {: monitor-multi-auten}
 
-You can enable Multi-Factor Authentication (MFA) in {{site.data.keyword.DR_full}} to enhance access security by requiring users to enter their password first, followed by a one-time passcode (OTP), when logging in to the orchestrator GUI.
+You can enable Multi-Factor Authentication (MFA) in {{site.data.keyword.DR_full}} to enhance access security by requiring users to enter their password first, followed by a one-time passcode (OTP), when logging in to the orchestrator GUI. The OTP is sent to the your IBM Cloud–registered email address.
 
 MFA is configured by integrating the orchestrator with **IBM Security Verify**. During deployment, you provide the **Client ID**, **Client Secret**, and **Tenant Name** that correspond to your IBM Security Verify tenant. The deployment process uses these values to register the orchestrator and the **root** user with IBM Security Verify. When MFA is enabled during deployment, the root user is prompted for an OTP during the first login and in all subsequent logins while MFA remains enabled.
 

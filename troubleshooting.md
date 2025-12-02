@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-28"
+lastupdated: "2025-12-02"
 
 subcollection: dr-automation-powervs
 
@@ -294,4 +294,49 @@ After deployment, MFA (Multi-Factor Authentication) is not enabled for the orche
 During the deployment process, if any of the values are incorrect, the deployment still completes successfully, but MFA cannot be enabled and an error event is generated indicating why MFA setup failed
 
 ### How to fix it
-{: tsResolve}
+{: #trou-sh-fix}
+
+You can verify the MFA tenant, client id and secret details by logging into the orchestrator with root credentials.
+
+1. Open the file `"userMfaConfig.json"`, verify if all the details of your MFA and confirm if anything need to be modified.
+2. By looking into the events, identify whether the registration is failed. 
+3. In case of registration failure, either you can manually register into the [**IBM Security Verify**](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197) or disable the MFA.
+
+4. To disabling the MFA, edit the `**"mfa_enabled": true**` feild and change it to `**"mfa_enabled": flase**`in the follwoing example:
+
+**Example:**
+
+```
+cat /opt/IBM/ksys/ui/server/node_modules/vmrui-common/lib/configuration/server/userMfaConfig.json
+{
+  "client_id": "3ac48a08-e71e-4444-a8a2-86c0e6aa38c8",
+  "client_secret": "1CSjAwKXqL",
+  "mfa_enabled": true,
+  "tenant_name": "ibmsecure.verify.ibm.com",
+  "user_email_id": "test.test@ibm.com",
+  "user_id": "root",
+  "proxy_port": "3128",
+  "http_proxy": "10.30.40.4"
+}     
+```
+
+An output that is similar to the following example is displayed :
+
+```
+cat /opt/IBM/ksys/ui/server/node_modules/vmrui-common/lib/configuration/server/userMfaConfig.json
+{
+  "client_id": "3ac48a08-e71e-4444-a8a2-86c0e6aa38c8",
+  "client_secret": "1CSjAwKXqL",
+  "mfa_enabled": flase,
+  "tenant_name": "ibmsecure.verify.ibm.com",
+  "user_email_id": "test.test@ibm.com",
+  "user_id": "root",
+  "proxy_port": "3128",
+  "http_proxy": "10.30.40.4"
+}
+```
+
+5. Log in to the orchestrator vm.
+
+6. In case registration success and still OTOP is not generated, it means the communication is not happening with IBM secure verify. In this case, verify whether the proxy IP which you have provided is properly configured or not ? 
+7. In this case, either can open a support ticket for resolution or disable the MFA by following the steps mentioned in above.
