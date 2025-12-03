@@ -2056,8 +2056,9 @@ Listing shared processor pools under account Test Account as user `test_user@www
 > **Note**: KSYS does not create the shared processor pool. You must create it manually in the PowerVS workspace before you can assign the share processor pool to any virtual machine.
 
 
-## DR Rehearsal move at workgroup level
+## DR Rehearsal
 {: #dr-re-mo-wo-l}
+
 If you want to use a different network for the DR rehearsal instance, you must specify a DR rehearsal–specific network while pairing the network by using the `dr_test=yes` flag. When a DR rehearsal move is triggered, the DR rehearsal instance that is created at the DR site receives an IP address from the network that is explicitly specified for the DR test operation.
 
 If you do not explicitly configure a DR rehearsal–specific network, the DR rehearsal instance uses the same target network IP that is configured for the actual DR operation.
