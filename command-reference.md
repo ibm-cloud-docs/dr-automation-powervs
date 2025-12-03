@@ -15,12 +15,10 @@ keywords: power-hadr, cli, pdr
 
 
 
-Use the {{site.data.keyword.DR_full}} to configure and automate disaster recovery solutions for the virtual servers that are running AIX, IBM i, or Linux(RHEL and SLES) workloads.
 
 ## Available Commands:
 {: #avalible-cmd}
 
-## Available Commands
 
 `api-key`- Manage the API key for the Power DR Automation service instance.  
 `event`- View events generated during DR Automation operations such as provisioning, ManageDR creation, image download, virtual server creation, orchestrator cluster creation, and API key updates.  

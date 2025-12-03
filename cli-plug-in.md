@@ -1,13 +1,14 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-26"
+lastupdated: "2025-12-03"
 
 subcollection: dr-automation-powervs
 
 keywords: plugin-cli plugin
 
 ---
+
 # Installing the {{site.data.keyword.DR_full_notm}} CLI plug-in
 {: #plun-in}
 
@@ -17,23 +18,31 @@ To install, update, or view the {{site.data.keyword.DR_full_notm}} CLI plug-in, 
 
 2. Install or update the `power-hadr` plug-in.
 
-**To install**
+    **To install**
 
-```ibmcloud plugin install power-hadr```
+    ```bash
+    ibmcloud plugin install power-hadr
+    ```
 
-**To update**
+    **To update**
 
-```ibmcloud plugin update```
+    ```bash
+    ibmcloud plugin update
+    ```
 
-**To view your installed plug-ins and versions:**
+    **To view your installed plug-ins and versions:**
 
-```ibmcloud plugin list```
+    ```bash
+    ibmcloud plugin list
+    ```
 
-3. Verify the installed plug-in,by running the following command:
+3. Verify the installed plug-in by running the following command:
 
-    ```ibmcloud power-hadr```
+    ```bash
+    ibmcloud power-hadr
+    ```
 
-The output is as following:
+    The output is as follows:
 
     ```
     ibmcloud power-hadr
@@ -51,4 +60,4 @@ The output is as following:
 
 Refer to the full CLI documentation [{{site.data.keyword.DR_full}} CLI version 0.0.1](/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version).
 
-> **Note**: The {{site.data.keyword.DR_full}} CLI plug-in requires a valid IAM token authorization before each use. Use the ibmcloud login command to renew authorization if your token expires.
+> **Note**: The {{site.data
