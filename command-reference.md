@@ -17,25 +17,28 @@ keywords: power-hadr, cli, pdr
 
 Use the {{site.data.keyword.DR_full}} to configure and automate disaster recovery solutions for the virtual servers that are running AIX, IBM i, or Linux(RHEL and SLES) workloads.
 
-
 ## Available Commands:
 {: #avalible-cmd}
 
-- `api-key` : Update the API key details for the specified DR automation service instance.
-- `event` : Retrieve events generated during DR automation operations such as provisioning, ManageDR creation, image download, VM creation, orchestrator creation, and API key updates.
-- `grs-location-pairs` : Retrieve the GRS location pairs associated with the service instance based on managed VMs.
-- `locations` : Retrieve the list of disaster recovery locations available for the specified service instance.
-- `managed-vms` : Retrieve the list of virtual machines managed by the DR automation service.
-- `summary` : Retrieve the DR summary, including orchestrator details, service details, and managed VM information.
-- `machine-types` : Retrieve supported PowerVS machine types for deploying primary and standby orchestrators.
-- `powervs-workspaces` : Retrieve PowerVS workspaces for primary and standby orchestrators based on a location ID.
-- `create` : Deploy the primary orchestrator and optional standby orchestrator with the specified configuration.
-- `last-operation` : Retrieve the status of the last operation performed on the service instance.
+## Available Commands
 
-## Api Key
+`api-key`- Manage the API key for the Power DR Automation service instance.  
+`event`- View events generated during DR Automation operations such as provisioning, ManageDR creation, image download, virtual server creation, orchestrator cluster creation, and API key updates.  
+`grs-location-pairs`- Retrieve the Global Replication Services (GRS) location pairs associated with the specified service instance based on managed VMs.  
+`locations`- List the available disaster recovery (DR) locations for the specified service instance.  
+`managed-vms`- Retrieve the list of disaster recovery managed virtual machines for the specified service instance.  
+`summary`- Retrieve a consolidated disaster recovery summary for the service instance, including orchestrator details, service configuration, and managed VM information.  
+`machine-types`- List the supported machine types available for disaster recovery for the specified primary and standby workspaces.  
+`powervs-workspaces`- Retrieve the Power Virtual Server workspaces for the primary and standby orchestrators based on the specified location ID.  
+`create`- Create and deploy the orchestrator virtual machine in the specified workspace and configuration to manage disaster recovery.  
+`last-operation`- Retrieve the status and details of the most recent operation performed on the specified service instance, such as provisioning, updating, or deprovisioning.  
+
+
+
+## Api key
 {: #power-hadr-api-key-cli}
 
-Manage apikey.
+Manage apikey
 
 ```sh
 ibmcloud power-hadr pdr api-key --help
@@ -190,7 +193,7 @@ ibmcloud power-hadr pdr event list \
 ```
 
 
-### `ibmcloud power-hadr pdr event get`
+### ```ibmcloud power-hadr pdr event get```
 {: #power-hadr-cli-event-get-command}
 
 Retrieves the details of a specific event for the given service instance provision ID.
@@ -257,7 +260,7 @@ ibmcloud power-hadr pdr event get \
 ```
 
 
-## GRS Location Pairs
+## GRS location pairs
 {: #power-hadr-dr-grs-location-pairs}
 
 ### `ibmcloud power-hadr pdr grs-location-pairs`
@@ -293,7 +296,7 @@ ibmcloud power-hadr pdr grs-location-pairs \
 ```
 
 
-## DR Locations
+## DR locations
 {: #power-hadr-dr-locations}
 
 ### `ibmcloud power-hadr pdr locations`
@@ -345,7 +348,7 @@ ibmcloud power-hadr pdr locations \
 ```
 
 
-## Managed Vms
+## Managed VM's
 {: #power-hadr-dr-managed-vms}
 
 ### `ibmcloud power-hadr pdr managed-vms`
@@ -413,7 +416,7 @@ ibmcloud power-hadr pdr managed-vms \
 
 
 
-## DR Summary
+## DR summary
 {: #power-hadr-dr-summary}
 
 ### `ibmcloud power-hadr pdr summary`
@@ -502,7 +505,7 @@ ibmcloud power-hadr pdr summary \
 ```
 
 
-## Machine Types
+## Machine types
 {: #power-hadr-dr-machine-types}
 
 ### `ibmcloud power-hadr pdr machine-types`
@@ -617,7 +620,7 @@ ibmcloud power-hadr pdr powervs-workspaces \
 ```
 
 
-## Create Manage DR
+## Create manage DR
 {: #power-hadr-dr-create}
 
 ### `ibmcloud power-hadr pdr create`

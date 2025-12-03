@@ -45,31 +45,23 @@
     "tiles": [
       {
         "date": "05 December 2025",
-        "title": "MFA-"
+        "title": "You can now deploy the orchestrator with minimal inputs. You no longer need to provide schematic or custom VPC details. The orchestrator uses a private endpoint to communicate with all required IBM Cloud services."
       },
       {
         "date": "05 December 2025",
-        "title": "You can now view the deployment timestamps for both the primary and standby orchestrators, along with the subscription plan details (Public or Private) selected during initial setup. These enhancements provide better tracking of deployment history and service configuration."
+        "title": "You can now enable Multi-Factor Authentication (MFA) for the DR automation orchestrator to enhance login security."
       },
       {
         "date": "05 December 2025",
-        "title": "In Orchestrator UI Configuration deployment page, Modify VM option is provided which allows you to modify, configure multiple IP mappings, and enable the Shared Processor Pool (SPP) to optimize performance and resource utilization for the DR enabled virtual machines."
+        "title": "You can now assign roles to users and manage permissions through the new User Role Management feature, which introduces role-based access control (RBAC) for creating users, defining roles, and controlling access to DR automation operations."
       },
       {
         "date": "05 December 2025",
-        "title": "DR Automation now displays real-time notifications for events, that are deployment status, errors, and operational updates. Each notification appears as a pop-up with a timestamp, and you can track up to 100 current events, providing clear visibility into system activities and changes."
+        "title": "You can now generate consolidated operational reports for the external orchestrator, including Discovery, Move, Failover Rehearsal, and Cleanup activities."
       },
       {
         "date": "05 December 2025",
-        "title": "When deploying the orchestrator with Client Location (Private pod), the Add Sites page now displays Select Source Satellite Location and Select Target Satellite Location instead of region-based options."
-      },
-      {
-        "date": "05 December 2025",
-        "title": "DR Automation now support upgrading the orchestrator ksys filesets through a simplified CLI command, ensuring your system remains up to date with the latest features, fixes, and security enhancements."
-      },
-      {
-        "date": "05 December 2025",
-        "title": "You can now choose Orchestrator HA enablement in DR configuration page."
+        "title": "You can now manage custom SSL certificates and private-key pairs for GUI communication."
       }
     ]
   }
