@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-04"
+lastupdated: "2025-12-03"
 
 subcollection: dr-automation-powervs
 
@@ -18,6 +18,12 @@ IBM® strives to keep issues in {{site.data.keyword.DR_full}} to a minimum, but 
 
 ## External orchestrator
 {: #ext}
+
+## December 2025
+{: #dec-25}
+
+1. Any resource created with space in name (eg workspace, vm, network) will not be supported for {{site.data.keyword.DR_short}}.
+
 
 ## July 2025
 {: #jul-25}
