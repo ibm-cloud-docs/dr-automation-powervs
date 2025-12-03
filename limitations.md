@@ -20,10 +20,10 @@ IBM® strives to keep issues in {{site.data.keyword.DR_full}} to a minimum, but 
 {: #ext}
 
 ## December 2025
-{: #dec-25}
+{: #december-25}
 
 1. Any resource created with space in name (eg workspace, vm, network) will not be supported for {{site.data.keyword.DR_short}}.
-
+2. DR Rehearsal–specific network support is available only from the backend and can be enabled through the CLI only.
 
 ## July 2025
 {: #jul-25}

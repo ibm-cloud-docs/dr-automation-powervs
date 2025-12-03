@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-25"
+lastupdated: "2025-12-03"
 
 subcollection: dr-automation-powervs
 
@@ -31,10 +31,6 @@ Use the {{site.data.keyword.DR_full}} to configure and automate disaster recover
 - `powervs-workspaces` : Retrieve PowerVS workspaces for primary and standby orchestrators based on a location ID.
 - `create` : Deploy the primary orchestrator and optional standby orchestrator with the specified configuration.
 - `last-operation` : Retrieve the status of the last operation performed on the service instance.
-
-
-## {{site.data.keyword.DR_full_notm}} Service CLI
-{: #power-hadr-cli}
 
 ## Api Key
 {: #power-hadr-api-key-cli}
@@ -81,7 +77,7 @@ ibmcloud power-hadr pdr api-key update \
     --accept-language exampleString \
     --if-none-match exampleString
 ```
-{: pre}
+
 
 #### Example output
 {: #power-hadr-api-key-update-cli-output}
@@ -92,7 +88,7 @@ ibmcloud power-hadr pdr api-key update \
   "status" : "Active"
 }
 ```
-{: screen}
+
 
 ## Event
 {: #power-hadr-event-cli}
@@ -147,7 +143,7 @@ ibmcloud power-hadr pdr event list \
     --accept-language exampleString \
     --if-none-match exampleString
 ```
-{: pre}
+
 
 #### Example output
 {: #power-hadr-event-list-cli-output}
@@ -192,7 +188,7 @@ ibmcloud power-hadr pdr event list \
   } ]
 }
 ```
-{: screen}
+
 
 ### `ibmcloud power-hadr pdr event get`
 {: #power-hadr-cli-event-get-command}
@@ -229,7 +225,7 @@ ibmcloud power-hadr pdr event get \
     --accept-language exampleString \
     --if-none-match exampleString
 ```
-{: pre}
+
 
 #### Example output
 {: #power-hadr-event-get-cli-output}
@@ -259,10 +255,10 @@ ibmcloud power-hadr pdr event get \
   }
 }
 ```
-{: screen}
 
-## Dr Automation Config
-{: #power-hadr-dr-automation-config-cli}
+
+## GRS Location Pairs
+{: #power-hadr-dr-grs-location-pairs}
 
 ### `ibmcloud power-hadr pdr grs-location-pairs`
 {: #power-hadr-cli-grs-location-pairs-command}
@@ -295,7 +291,10 @@ ibmcloud power-hadr pdr grs-location-pairs \
     --accept-language exampleString \
     --if-none-match exampleString
 ```
-{: pre}
+
+
+## DR Locations
+{: #power-hadr-dr-locations}
 
 ### `ibmcloud power-hadr pdr locations`
 {: #power-hadr-cli-locations-command}
@@ -328,7 +327,7 @@ ibmcloud power-hadr pdr locations \
     --accept-language exampleString \
     --if-none-match exampleString
 ```
-{: pre}
+
 
 #### Example output
 {: #power-hadr-locations-cli-output}
@@ -344,7 +343,10 @@ ibmcloud power-hadr pdr locations \
   } ]
 }
 ```
-{: screen}
+
+
+## Managed Vms
+{: #power-hadr-dr-managed-vms}
 
 ### `ibmcloud power-hadr pdr managed-vms`
 {: #power-hadr-cli-managed-vms-command}
@@ -377,7 +379,7 @@ ibmcloud power-hadr pdr managed-vms \
     --accept-language exampleString \
     --if-none-match exampleString
 ```
-{: pre}
+
 
 #### Example output
 {: #power-hadr-managed-vms-cli-output}
@@ -408,7 +410,11 @@ ibmcloud power-hadr pdr managed-vms \
   }
 }
 ```
-{: screen}
+
+
+
+## DR Summary
+{: #power-hadr-dr-summary}
 
 ### `ibmcloud power-hadr pdr summary`
 {: #power-hadr-cli-summary-command}
@@ -441,7 +447,7 @@ ibmcloud power-hadr pdr summary \
     --accept-language exampleString \
     --if-none-match exampleString
 ```
-{: pre}
+
 
 #### Example output
 {: #power-hadr-summary-cli-output}
@@ -494,10 +500,10 @@ ibmcloud power-hadr pdr summary \
   }
 }
 ```
-{: screen}
 
-## Dr Automation Ibm Cloud
-{: #power-hadr-dr-automation-ibm-cloud-cli}
+
+## Machine Types
+{: #power-hadr-dr-machine-types}
 
 ### `ibmcloud power-hadr pdr machine-types`
 {: #power-hadr-cli-machine-types-command}
@@ -538,7 +544,11 @@ ibmcloud power-hadr pdr machine-types \
     --if-none-match exampleString \
     --standby-workspace-name Test-workspace-wdc07
 ```
-{: pre}
+
+
+
+## powervs workspaces
+{: #power-hadr-dr-powervs-workspaces}
 
 ### `ibmcloud power-hadr pdr powervs-workspaces`
 {: #power-hadr-cli-powervs-workspaces-command}
@@ -548,7 +558,6 @@ Retrieves the power virtual server workspaces for primary and standby orchestrat
 ```sh
 ibmcloud power-hadr pdr powervs-workspaces --instance-id INSTANCE-ID --location-id LOCATION-ID [--if-none-match IF-NONE-MATCH]
 ```
-
 
 #### Command options
 {: #power-hadr-powervs-workspaces-cli-options}
@@ -571,7 +580,7 @@ ibmcloud power-hadr pdr powervs-workspaces \
     --location-id exampleString \
     --if-none-match exampleString
 ```
-{: pre}
+
 
 #### Example output
 {: #power-hadr-powervs-workspaces-cli-output}
@@ -606,10 +615,10 @@ ibmcloud power-hadr pdr powervs-workspaces \
   } ]
 }
 ```
-{: screen}
 
-## Dr Automation Manage Dr
-{: #power-hadr-dr-automation-manage-dr-cli}
+
+## Create Manage DR
+{: #power-hadr-dr-create}
 
 ### `ibmcloud power-hadr pdr create`
 {: #power-hadr-cli-create-command}
@@ -726,8 +735,8 @@ ibmcloud power-hadr pdr create --instance-id INSTANCE-ID [--api-key API-KEY] [--
 ibmcloud power-hadr pdr create \
     --instance-id crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9:: \
     --api-key exampleString \
-    --client-id d9f2c83a-97d2-4b14-bf62-8eaecc67a122 \
-    --client-secret N8lQ4tP2xM1yT5rS8wK6qR9dD7vF1hU4sA3bE2jG0pL9oX7yC \
+    --client-id abcd-97d2-1234-bf62-8eaecc67a1234 \
+    --client-secret abcd1234xM1y123wK6qR9123456789bE2jG0pabcdefgh \
     --guid 123e4567-e89b-12d3-a456-426614174000 \
     --location-id dal10 \
     --machine-type bx2-4x16 \
@@ -756,7 +765,7 @@ ibmcloud power-hadr pdr create \
     --if-none-match exampleString \
     --accepts-incomplete=true
 ```
-{: pre}
+
 
 #### Example output
 {: #power-hadr-create-cli-output}
@@ -767,10 +776,10 @@ ibmcloud power-hadr pdr create \
   "id" : "crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9::"
 }
 ```
-{: screen}
 
-## Dr Automation Service Instance
-{: #power-hadr-dr-automation-service-instance-cli}
+
+## Last Operation
+{: #power-hadr-dr-last-operation}
 
 ### `ibmcloud power-hadr pdr last-operation`
 {: #power-hadr-cli-last-operation-command}
@@ -803,7 +812,7 @@ ibmcloud power-hadr pdr last-operation \
     --accept-language exampleString \
     --if-none-match exampleString
 ```
-{: pre}
+
 
 #### Example output
 {: #power-hadr-last-operation-cli-output}
@@ -832,11 +841,3 @@ ibmcloud power-hadr pdr last-operation \
   "status" : "Running"
 }
 ```
-{: screen}
-
-
-{{site.data.keyword.attribute-definition-list}}
-
-
-## DrAutomation Service CLI
-{: #power-hadr-cli}

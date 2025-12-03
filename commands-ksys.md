@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-03"
 
 subcollection: dr-automation-powervs
 
@@ -2058,6 +2058,57 @@ Listing shared processor pools under account Test Account as user `test_user@www
 
 ## DR Rehearsal move at workgroup level
 {: #dr-re-mo-wo-l}
+If you want to use a different network for the DR rehearsal instance, you must specify a DR rehearsal–specific network while pairing the network by using the `dr_test=yes` flag. When a DR rehearsal move is triggered, the DR rehearsal instance that is created at the DR site receives an IP address from the network that is explicitly specified for the DR test operation.
+
+If you do not explicitly configure a DR rehearsal–specific network, the DR rehearsal instance uses the same target network IP that is configured for the actual DR operation.
+
+To configure network pairing for a DR rehearsal–specific network,run the following command:
+
+```
+Ksysmgr pair network <source_nw_name> pair =<target_nw_name> dr_test=yes
+```
+DR Rehearsal network pairing can be verified at query workspace:
+
+```
+(0) root @ pbrazos01-ksys01: /opt/IBM/ksys/powervs
+# ksysmgr query workspace vmrm-dal12 ; ksysmgr query workspace powervs-dr-wdc06
+Name:                vmrm-dal12
+ID:                  1d6118b5-bd77-4100-a655-754453558d9d
+Region:              dal12
+Type:                off-premises
+Family:              data-center
+CRN:                 crn:v1:bluemix:public:power-iaas:dal12:a/fe3c2ccd058e407c81e1dba2b5c0e0d6:1d6118b5-bd77-4100-a655-754453558d9d::
+Status:
+Default_Partner:     powervs-dr-wdc06
+staticIPEnable:      default
+VMs:                 ksysnode_dishant, vmrm_IBMi1, vmrm_test03, vmrm_test01
+                     vmrm_test02, VMRM_DEV_TEST2_BackUp, vmrm_test05, vmrm_test04
+                     VMRM_DEV-3, VMRM_DEV-2, aix_pub_vm, ksysnode01
+                     VMRM_DEV-1
+Networks:            dal12-network01, public-192_168_198_80-29-VLAN_2070, dal12_network01
+Network pair:        dal12_network01 - wdc06_network01 (Workspace: powervs-dr-wdc06)
+                     dal12-network01 - dal12-network01 (Workspace: powervs-dr-wdc06)
+RehersalNetworkPair: dal12_network01 - wdc06_network01 (Workspace: powervs-dr-wdc06)
+                     dal12-network01 - dal12-network01 (Workspace: powervs-dr-wdc06)
+
+Name:                powervs-dr-wdc06
+ID:                  xx2f37ac-xxxx-4e13-xxxx-7a9ba511xxxx
+Region:              wdc06
+Type:                off-premises
+Family:              data-center
+CRN:                 crn:v1:bluemix:public:power-iaas:wdc06:a/fe3c2ccd058e407c81e1dba2b5c0e0d6:912f37ac-918d-4e13-866a-7a9ba511c047::
+Status:
+Default_Partner:     vmrm-dal12
+staticIPEnable:      default
+VMs:                 VMRM_DEV_TEST2, oracle_test01_BackUp, vmrm_test05_BackUp, glvm_wdc06
+                     aix_pub_test, VMRM_DEV-1_BackUp, vmrm_IBMi1_BackUp
+Networks:            test_network01, public-000_168_000_80-29-VLAN_2070, test-network01
+Network pair:        wdc06_network01 - test_network01 (Workspace: test-dal12)
+                     test-network01 - test-network01 (Workspace: test-dal12)
+RehersalNetworkPair: test_network01 - test_network01 (Workspace: test-dal12)
+                     test-network01 - test-network01 (Workspace: test-dal12)
+```
+When DR Rehearsal VM is created in ksysmgr query vm it should display IP of DR Test specific network. 
 
 ### Disaster Recovery (DR) rehearsal at workgroup level
 {: #drr-ree-mov-wo-ll}
