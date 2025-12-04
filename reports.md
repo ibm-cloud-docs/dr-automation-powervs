@@ -22,7 +22,7 @@ The **Discovery** report provides information about discovery operations perform
 
 The report displays the following information:
 
-- The discovery type shown in the **Discover on** field identifies the site or workspace on which the discovery was performed.
+- The discovery type shown in the **Discover** field identifies the site or workspace on which the discovery was performed.
 - The outcome of the discovery operation displayed in the **Status** field indicates whether the discovery completed successfully or failed.
 - The duration of the discovery process shown in the **Approximate Time Taken** field provides the total time required to complete the discovery.
 - The **Start Date** and **End Date** fields record when the discovery operation began and when it finished.
