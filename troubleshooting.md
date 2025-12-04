@@ -150,7 +150,7 @@ Dependencies, such as active VMs or storage volumes, may prevent the service fro
 
 1. Access the **DR Automation GUI**.  
 2. Navigate to the **Events** tab and review the detailed logs.  
-3. Verify API connectivity by running a test command (for example, ping or curl) to the service endpoint.  
+3. Verify the API connectivity by running a test command (for example, ping or curl) to the service endpoint.  
 4. Check for active resources that are associated with the service and ensure that there are no dependencies.  
 5. Regenerate the API key from the **Policies** tab and update the system with the new key.  
 6. Retry the delete operation and monitor for success.  
@@ -169,7 +169,7 @@ The **Finish** button in the UI remains disabled, preventing you from starting t
 
 Once the orchestrator VM is deployed and active, the cluster configuration starts automatically. Once it is completed, KSYS sends an event, and the UI enables the **Finish** button to start the external orchestrator UI.
 
-If there are any communication issues preventing the orchestrator VM from sending the event, the **Finish** button is not enabled, and you will not be able to enable DR for managed VM's using the External Orchestrator UI.
+If there are any communication issues preventing the orchestrator VM from sending the event, the **Finish** button is not enabled, you can not enable DR for managed VM's using the External Orchestrator UI.
 
 ### How to fix it  
 {: tsResolve}  
@@ -255,7 +255,7 @@ This issue occurs when no PowerVS workspace is available in the selected locatio
 
 5. From the list, choose the appropriate workspace and enable the workload you want to protect with disaster recovery.
 
-## why does a simultaneous deployments fails when using the same PowerVS workspace?
+## Why does a simultaneous deployment fail when using the same PowerVS workspace?
 {: #ksys-image-deploy}  
 {: troubleshoot}
 
@@ -291,16 +291,16 @@ After deployment, MFA (Multi-Factor Authentication) is not enabled for the orche
 ### Why it's happening
 {: #trou-sh-deploy}
 
-During the deployment process, if any of the values are incorrect, the deployment still completes successfully, but MFA cannot be enabled and an error event is generated indicating why MFA setup failed
+During the deployment process, if any of the values are incorrect, the deployment still completes successfully, but MFA cannot be enabled and an error event is generated indicating why MFA setup failed.
 
 ### How to fix it
 {: #trou-sh-fix}
 
 You can verify the MFA tenant, client id and secret details by logging into the orchestrator with root credentials.
 
-1. Open the file `"userMfaConfig.json"`, verify if all the details of your MFA and confirm if anything need to be modified.
-2. By looking into the events, identify whether the registration is failed. 
-3. In case of registration failure, either you can manually register into the [**IBM Security Verify**](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197) or disable the MFA.
+1. Open the file `"userMfaConfig.json"`, verify the details of your MFA and confirm if anything need to be modified.
+2. Verify the events and identify if the registration failed.
+3. If registration failure, you can manually register into the [**IBM Security Verify**](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197) or disable the MFA.
 
 4. To disable the MFA, edit the `"mfa_enabled": true` Field and change it to `"mfa_enabled": false`in the following example:
 

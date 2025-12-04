@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-04"
 
 subcollection: dr-automation-powervs
 
@@ -24,6 +24,7 @@ IBM® strives to keep issues in {{site.data.keyword.DR_full}} to a minimum, but 
 
 1. Any resource created with space in name (eg workspace, vm, network) will not be supported for {{site.data.keyword.DR_short}}.
 2. DR Rehearsal–specific network support is available only from the backend and can be enabled through the CLI only.
+3. You can have a maximum of 20 provisions for your individual account. If you require additional provisions, you must raise a support ticket.
 
 ## July 2025
 {: #jul-25}
