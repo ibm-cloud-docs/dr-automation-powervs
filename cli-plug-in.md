@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-04"
 
 subcollection: dr-automation-powervs
 
@@ -27,7 +27,7 @@ To install, update, or view the {{site.data.keyword.DR_full_notm}} CLI plug-in, 
     **To update**
 
     ```bash
-    ibmcloud plugin update
+    ibmcloud plugin update [PLUGIN_NAME]
     ```
 
     **To view your installed plug-ins and versions:**

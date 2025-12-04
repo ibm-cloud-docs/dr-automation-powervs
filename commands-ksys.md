@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-04"
 
 subcollection: dr-automation-powervs
 
@@ -1682,6 +1682,7 @@ Refresh workspaces to update Networks and VMs list completed.
 {: #runfollow}
 
 ```
+ ksysmgr pair network -h
 ksysmgr pair network <source_network_name>
       pair=<target_network_name> | pair=none
       [home_workspace=<home_workspacename>]
@@ -1689,6 +1690,7 @@ ksysmgr pair network <source_network_name>
       [ip_range=<start_ip_address,end_ip_address>]
       [cidr=<cidr>]
       [dns=<dns>]
+      [dr_test=<yes|no>]
     pair => map
     network => net*, net_w, nw
 Note: pair=none for unpairing the network
@@ -2140,6 +2142,7 @@ ActiveWorkspace:               test_workspace_siteA
 Networks:                      net_mgmt <-> net_mgmt
 CGName:                        cgrp-4a3e-xxxx-xxxx-7c2b2f61d2c9
 Name:                          test2_WG
+
 ID:                            9a82b701-xxxx-xxxx-xxxx-f4ab0e3f70e0
 VMs:                           test2_vm
 PartnerVM:                     test2_Backup
