@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-04"
 
 subcollection: dr-automation-powervs
 
@@ -31,7 +31,7 @@ keywords: power-hadr, cli, pdr
 `create`- Create and deploy the orchestrator virtual machine in the specified workspace and configuration to manage disaster recovery.  
 `last-operation`- Retrieve the status and details of the most recent operation performed on the specified service instance, such as provisioning, updating, or deprovisioning.  
 
-
+>**Note**: All the cli example outputs are shown below in `json` format.By default, cli output is shown in table format.To change the output format of cli, add --ouput <format> at  the end of cli command.
 
 ## Api key
 {: #power-hadr-api-key-cli}
