@@ -2140,9 +2140,10 @@ HomeWorkspace:                 test_workspace_siteA
 BackupWorkspace:               test_workspace_siteB
 ActiveWorkspace:               test_workspace_siteA
 Networks:                      net_mgmt <-> net_mgmt
+RehearsalNetworks:             net_mgmt <-> net_mgmt
 CGName:                        cgrp-4a3e-xxxx-xxxx-7c2b2f61d2c9
-Name:                          test2_WG
 
+Name:                          test2_WG
 ID:                            9a82b701-xxxx-xxxx-xxxx-f4ab0e3f70e0
 VMs:                           test2_vm
 PartnerVM:                     test2_Backup
@@ -2154,9 +2155,12 @@ HomeWorkspace:                 test_workspace_siteA
 BackupWorkspace:               test_workspace_siteB
 ActiveWorkspace:               test_workspace_siteA
 Networks:                      net_mgmt <-> net_mgmt
-CGName:                       cgrp-6f2d-xxxx-xxxx-22487ee0caaa
+RehearsalNetworks:             net_mgmt <-> net_mgmt
+RehearsalNetworks:             mad02-network01 <-> mad02-network01
+CGName:                        cgrp-6f2d-xxxx-xxxx-22487ee0caaa
 ```
-
+> **Note** : If a specific network is not assigned for DR Rehearsal, a network with the same subnet and name is created in the backup workspace during the DR Rehearsal move, and the DR Rehearsal VM uses this newly created network.
+> **Note** : If you want to use the same network of BackUp VM, you should execute pair network command.
 > **Note**: Ensure the Workgroup state is `READY_TO_MOVE` before initiating a DR rehearsal move.
 
 ### Identify site details
