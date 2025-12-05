@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-16"
+lastupdated: "2025-11-25"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: Orchestrator details, Service details, GRS, global replication services pair
 ---
@@ -27,11 +27,6 @@ The unique identifier for the primary orchestrator instance responsible for mana
 **SSH key name**:
 
 The name of the IBM Cloud SSH key used to enable secure, encrypted communication between the orchestrator and the managed VMs involved in DR automation.
-
-
-**DR Schematics workspace connection status**:
-
-Indicates whether the orchestrator is successfully connected to the Schematics workspace. A status like “ACTIVE” signifies that IaC automation is correctly integrated.
 
 **DR Power Virtual Server workspace**:
 
@@ -63,10 +58,6 @@ Shows whether the orchestrator can reach all required IBM Cloud APIs and externa
 
 Displays the current operational status of the primary orchestrator. A status such as “Active” indicates that the orchestrator is functioning and ready for DR activities.
 
-**DR Schematics workspace**:
-
-Specifies the name of the IBM Cloud Schematics workspace that contains the Infrastructure as Code (IaC) configuration used by the orchestrator to provision and manage DR resources.
-
 **DR Location**:
 
 Displays the location (for example, `dal10`) that hosts the DR orchestrator and resources, confirming the failover target region.
@@ -81,7 +72,11 @@ Displays the date and time when the primary orchestrator is deployed. This helps
 
 **Standby Orchestrator deployment time**:
 
-Displays the date and time of the Standby orchestrator deployment.
+Displays the orchestrator version status, and if a newer version is available for upgrade.
+
+**MFA Status**:
+
+The MFA Status displays whether MFA is enabled (**True**) or not enabled (**False**), based on your selection.
 
 ## Service details
 {: #service-det}

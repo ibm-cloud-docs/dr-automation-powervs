@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-12-04"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: getting started
 
@@ -47,6 +47,7 @@ The following table lists key events generated during various DR Automation oper
 | Orchestrator                | Update           | Ksys running fine event has generated.           |
 | API key                     | Update           | API key updation has happened.                   |
 | Provision ID                | Delete           | Service has deleted.                             |
+| MFA                | Create           | MFA registration for the instance has completed successfully for the tenant.                             |
 {: caption="List of DR Automation events" caption-side="bottom"}
 
 ## Accessing the event logs

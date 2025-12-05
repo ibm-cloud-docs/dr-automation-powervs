@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-06-11"
+lastupdated: "2025-11-20"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: help and support
 

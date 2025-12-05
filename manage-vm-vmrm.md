@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-11-26"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: manage vm, modify vm, create vm, update vm, create virtual machine, add virtual machine, modify virtual machine
 
@@ -32,7 +32,7 @@ To create and manage virtual machine, complete the following steps:
 
 3. To add a workgroup, search for or select the virtual machine as required.  
 
-4. Provide the machine type in the **Target System** section, select the **Target Workspace** from the available list, and click **Save & Next**.  
+4. Select the **Target Workspace** from the available list, and click **Save & Next**.  
 
 ## Modify VM
 {: #modify-vm-ses}

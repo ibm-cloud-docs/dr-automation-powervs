@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-12-05"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: commands
 
@@ -35,6 +35,7 @@ The command provides a consistent interface to configure the controller system (
 The basic format for using the ksysmgr command is as follows:
 
     ksysmgr ACTION CLASS [NAME] [ATTRIBUTES...]
+
 >**Note:**
 > - You must have root authority to run the ksysmgr command.
 > - Help information is available for the ksysmgr command from the command line. For example, when you run the ksysmgr command without any flags or parameters a list of the available ACTIONs is displayed.
@@ -44,16 +45,17 @@ The basic format for using the ksysmgr command is as follows:
 
 ## Description
 {: #des}
+
 All ksysmgr command operations are logged in the ```/var/ksys/log/ksysmgr.oplog``` file, including the name of the executed command, start time, process ID for the ksysmgr operation, the command with arguments, and overall return code.
 
 ## ACTION
-{: #ac}
+{: #act-ion}
 
 The ```ACTION``` flags are not case-sensitive. All ```ACTION``` flags provide a shorter alias. For example, ```rm``` is an alias for ```delete```. Aliases are provided for convenience from the command line and must not be used in scripts.
 
 The following ```ACTION``` flags are available:
 
->Note: The asterisk ```(*)``` in the aliases signify wildcard characters. For example, for the modify ACTION, the alias value is ```modd```. If you type ```mod*```, the command still works.
+>**Note**: The asterisk ```(*)``` in the aliases signify wildcard characters. For example, for the modify ACTION, the alias value is ```modd```. If you type ```mod*```, the command still works.
 
 ```query (alias: q*, ls, get, sh*)```
 
@@ -82,7 +84,7 @@ The following ```ACTION``` flags are available:
 ```update (alias upd*)```
 
 ## CLASS
-{: #cla}
+{: #cla-ss}
 
 Specifies the type of object on which the ```ACTION``` is performed. The ```CLASS``` flags are not case-sensitive.
 
@@ -125,7 +127,7 @@ Specifies the particular object, of type **CLASS** , on which the **ACTION** mus
 
 Specifies an optional flag that has attribute pairs and value pairs that are specific to the **ACTION** and **CLASS** combination. Use these pairs to specify configuration settings or to run particular operations. Both **ATTR** and **VALUE** flags are case-sensitive.
 
-```-a {<ATTR#1>,<ATTR#2>,...}```
+ ```-a {ATTR#1,ATTR#2,...}```
 
 Displays only the specified attributes. This flag must be used with the query ACTION flag. For example:
 
@@ -272,6 +274,7 @@ ksyscluster => ksysclu*, clu*
 ```
 
 An output that is similar to the following example is displayed:
+
 ```
 # ksysmgr query cluster
 Name: pvs_dr
@@ -279,8 +282,11 @@ State: Online
 Type: IBM_PVS_DR
 Ksysnodes: test.dev.com:1:Online
 KsysState: test.dev.com:1:Online
+
 ```
+
 An output that is similar to the following example is displayed for Private cloud:
+
 ```
 # ksysmgr query cluster
 Name:                test16sepprvi_Cluster
@@ -293,6 +299,7 @@ Proxy:               10.30.40.4:3128
 
 ### To remove a KSYS cluster:
 {: #removeksys}
+
 ```
 ksysmgr [-f] delete ksyscluster <ksysclustername>
 delete => de*, remove, rm, erase
@@ -389,14 +396,17 @@ Refresh Networks list of VMRM-TEST-DAL10 workspace completed
 Site dal10 added successfully
 Note: dal10 partner GRS Region is us-east.
 ```
+
 #### To add a site in the KSYS sub sytem Private cloud:
 {: #subsyste-private-cloud}
+
 ```
 ksysmgr add site -h
 ksysmgr add site <sitename> satellitelocation=<satellitelocationname>
      add => ad*
      site => sit*
 ```
+
 An output that is similar to the following example is displayed for Private cloud:
 
 ```
@@ -1043,7 +1053,7 @@ Also, User can give Only script name to remove notify for all events listed with
 ```
 
 ### To query a script:
-{: ikm}
+{: query-scr}
 
 ```
 ksysmgr query notify script
@@ -1397,6 +1407,7 @@ Volume Details:
 
 ### To manage disk on virtual machine:
 {: #manage-disk-vm}
+
 ```
 ksysmgr manage disk -h
  
@@ -1435,8 +1446,10 @@ Volume Details:
 | `volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974...` | consistent_copying | 100 |
 | `volume-vmrm_aix_vm2-bc477fa9-000... <-> aux__aix_vm2-bc477fa9-00046b90-b...` | consistent_copying | 100 |
 ```
+
 ### To unmanage a disk on virtual machine:
 {: #un-manage-vm-disk}
+
 ```
 ksysmgr unmanage disk diskid=2d5ff23a-13bb-43d8-b354-51603dee5e50 workgroup=vmrm_aix_vm2_WG
 DiskID(s) was successfully unmanaged
@@ -1454,19 +1467,21 @@ Progress:            99.5
 DiskIDs:             volume-aix_vol3-6a958988-9745 -> 6a958988-9745-4fee-8942-f8b80118e8e7
                      volume-vmrm_aix_vm2-bc477fa9-00046b90-boot-0-a69d29f9-bc3a -> a69d29f9-bc3a-424e-a91e-3edad82348a4
                      2d5ff23a-13bb-43d8-b354-51603dee5e50 -> Unmanaged
-### Volume Details
+Volume Details
 
 | Volume | State | Progress (%) |
 |---------|--------|--------------|
 | `volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974...` | consistent_copying | 100 |
 | `volume-vmrm_aix_vm2-bc477fa9-000... <-> aux__aix_vm2-bc477fa9-00046b90-b...` | consistent_copying | 100 |
-
 ```
+
 ## KSYS spooling
 {: #spooling}
 
+
 ### To query a KSYS spooling:
 {: #query}
+
 
 ```
 ksysmgr query system [ properties ]
@@ -1659,6 +1674,7 @@ An output that is similar to the following example is displayed for private clou
 ksysmgr refresh workspace SVT_3Q2_XSPoD_25
 Refresh workspaces to update Networks and VMs list completed.
 ```
+
 ## Network pairing example
 {: #netpair}
 
@@ -1666,6 +1682,7 @@ Refresh workspaces to update Networks and VMs list completed.
 {: #runfollow}
 
 ```
+ ksysmgr pair network -h
 ksysmgr pair network <source_network_name>
       pair=<target_network_name> | pair=none
       [home_workspace=<home_workspacename>]
@@ -1673,6 +1690,7 @@ ksysmgr pair network <source_network_name>
       [ip_range=<start_ip_address,end_ip_address>]
       [cidr=<cidr>]
       [dns=<dns>]
+      [dr_test=<yes|no>]
     pair => map
     network => net*, net_w, nw
 Note: pair=none for unpairing the network
@@ -1906,11 +1924,12 @@ To configure a backup VM to run on a specific target system type, run the follow
 The following example output is displayed:
 
 ```
-# ksysmgr manage vm test-1 targetsystemtype=s922
+ksysmgr manage vm test-1 targetsystemtype=s922
 Refresh VMs list of Test-lon04 workspace started
 Refresh VMs list of Test-lon04 workspace completed
 Refresh Networks list of Test-lon04 workspace started
 Refresh Networks list of Test-lon04 workspace completed
+
 ```
 
 To modify a backup VM to run on a specific target system type, run the following command:
@@ -2039,8 +2058,60 @@ Listing shared processor pools under account Test Account as user `test_user@www
 > **Note**: KSYS does not create the shared processor pool. You must create it manually in the PowerVS workspace before you can assign the share processor pool to any virtual machine.
 
 
-## DR Rehearsal move at workgroup level
+## DR Rehearsal
 {: #dr-re-mo-wo-l}
+
+If you want to use a different network for the DR rehearsal instance, you must specify a DR rehearsal–specific network while pairing the network by using the `dr_test=yes` flag. When a DR rehearsal move is triggered, the DR rehearsal instance that is created at the DR site receives an IP address from the network that is explicitly specified for the DR test operation.
+
+If you do not explicitly configure a DR rehearsal–specific network, the DR rehearsal instance uses the same target network IP that is configured for the actual DR operation.
+
+To configure network pairing for a DR rehearsal–specific network,run the following command:
+
+```
+Ksysmgr pair network <source_nw_name> pair =<target_nw_name> dr_test=yes
+```
+DR Rehearsal network pairing can be verified at query workspace:
+
+```
+(0) root @ pbrazos01-ksys01: /opt/IBM/ksys/powervs
+# ksysmgr query workspace vmrm-dal12 ; ksysmgr query workspace powervs-dr-wdc06
+Name:                vmrm-dal12
+ID:                  1d6118b5-bd77-4100-a655-754453558d9d
+Region:              dal12
+Type:                off-premises
+Family:              data-center
+CRN:                 crn:v1:bluemix:public:power-iaas:dal12:a/fe3c2ccd058e407c81e1dba2b5c0e0d6:1d6118b5-bd77-4100-a655-754453558d9d::
+Status:
+Default_Partner:     powervs-dr-wdc06
+staticIPEnable:      default
+VMs:                 ksysnode_dishant, vmrm_IBMi1, vmrm_test03, vmrm_test01
+                     vmrm_test02, VMRM_DEV_TEST2_BackUp, vmrm_test05, vmrm_test04
+                     VMRM_DEV-3, VMRM_DEV-2, aix_pub_vm, ksysnode01
+                     VMRM_DEV-1
+Networks:            dal12-network01, public-192_168_198_80-29-VLAN_2070, dal12_network01
+Network pair:        dal12_network01 - wdc06_network01 (Workspace: powervs-dr-wdc06)
+                     dal12-network01 - dal12-network01 (Workspace: powervs-dr-wdc06)
+RehersalNetworkPair: dal12_network01 - wdc06_network01 (Workspace: powervs-dr-wdc06)
+                     dal12-network01 - dal12-network01 (Workspace: powervs-dr-wdc06)
+
+Name:                powervs-dr-wdc06
+ID:                  xx2f37ac-xxxx-4e13-xxxx-7a9ba511xxxx
+Region:              wdc06
+Type:                off-premises
+Family:              data-center
+CRN:                 crn:v1:bluemix:public:power-iaas:wdc06:a/fe3c2ccd058e407c81e1dba2b5c0e0d6:912f37ac-918d-4e13-866a-7a9ba511c047::
+Status:
+Default_Partner:     vmrm-dal12
+staticIPEnable:      default
+VMs:                 VMRM_DEV_TEST2, oracle_test01_BackUp, vmrm_test05_BackUp, glvm_wdc06
+                     aix_pub_test, VMRM_DEV-1_BackUp, vmrm_IBMi1_BackUp
+Networks:            test_network01, public-000_168_000_80-29-VLAN_2070, test-network01
+Network pair:        wdc06_network01 - test_network01 (Workspace: test-dal12)
+                     test-network01 - test-network01 (Workspace: test-dal12)
+RehersalNetworkPair: test_network01 - test_network01 (Workspace: test-dal12)
+                     test-network01 - test-network01 (Workspace: test-dal12)
+```
+When DR Rehearsal VM is created in ksysmgr query vm it should display IP of DR Test specific network. 
 
 ### Disaster Recovery (DR) rehearsal at workgroup level
 {: #drr-ree-mov-wo-ll}
@@ -2069,7 +2140,9 @@ HomeWorkspace:                 test_workspace_siteA
 BackupWorkspace:               test_workspace_siteB
 ActiveWorkspace:               test_workspace_siteA
 Networks:                      net_mgmt <-> net_mgmt
+RehearsalNetworks:             net_mgmt <-> net_mgmt
 CGName:                        cgrp-4a3e-xxxx-xxxx-7c2b2f61d2c9
+
 Name:                          test2_WG
 ID:                            9a82b701-xxxx-xxxx-xxxx-f4ab0e3f70e0
 VMs:                           test2_vm
@@ -2082,10 +2155,16 @@ HomeWorkspace:                 test_workspace_siteA
 BackupWorkspace:               test_workspace_siteB
 ActiveWorkspace:               test_workspace_siteA
 Networks:                      net_mgmt <-> net_mgmt
-CGName:                       cgrp-6f2d-xxxx-xxxx-22487ee0caaa
+RehearsalNetworks:             net_mgmt <-> net_mgmt
+RehearsalNetworks:             mad02-network01 <-> mad02-network01
+CGName:                        cgrp-6f2d-xxxx-xxxx-22487ee0caaa
 ```
+> **Note**: If a specific network is not assigned for DR Rehearsal, a network with the same subnet and name is created in the backup workspace during the DR Rehearsal move, and the DR Rehearsal VM uses this newly created network.
 
-> **Note**: Ensure the Workgroup state is `READY_TO_MOVE` before initiating a DR rehearsal move.
+> **Note**: If you want to use the same network of the backup VM, you must execute the `pair network` command.
+
+> **Note**: Ensure that the Workgroup state is `READY_TO_MOVE` before initiating a DR Rehearsal move.
+
 
 ### Identify site details
 {: #id-si-d}
@@ -2129,7 +2208,7 @@ ActiveWorkgroups:               test_WG
 Initiate the DR rehearsal move using the following command:
 
 ```
-# ksysmgr move workgroup -h
+ksysmgr move workgroup -h
 ksysmgr move workgroup <name>
        to=<site_name>
        [force=<true|false>]
@@ -2172,7 +2251,8 @@ Do you wish to proceed? `[y/n]`
 04:44:23   dr_test move has completed for Workgroup test_WG
 Workgroup dr_test move completed for Workgroup test_WG to TargetSite
 ```
-### View workgroup information
+
+### Viewing workgroup information
 {: #ve-work-info}
 
 Run the following command to list the existing Workgroups and verify their status:
@@ -2287,6 +2367,7 @@ Processors:                 0.25
 WorkSpace:                  SVT_3Q2_XSPoD_25
 Networks:                   net-30
 ```
+
 ### Clean Up after DR Rehearsal at workgroup level
 {: #cl-up-wg-le}
 
@@ -2316,6 +2397,7 @@ ksysmgr cleanup workgroup test1 dr_test=yes
 
 ## DR rehearsal move at site level
 {: #dr-re-mo-si-le}
+
 
 ### Disaster Recovery (DR) rehearsal at site level
 {: #drr-ree-mo-si-lee}
@@ -2373,6 +2455,7 @@ ksysmgr [-f] move site
 move => mov*, mv, swi*
 Note: dr_type=planned is the default.
 ```
+
 ### Parameters
 {: #pa-ra-meter}
 
@@ -2405,6 +2488,7 @@ y
 03:35:59 dr_test move has completed for Workgroup test_01_WG
 Site dr_test move completed for Site TargetSite to HomeSite
 ```
+
 ### View managed VMs after DR rehearsal
 {: #ve-man-vms}
 
@@ -2518,6 +2602,7 @@ Processors:                         0.25
 WorkSpace:                          SVT-SMALL-Q3.2-mano-GRS
 Networks:                           net-30
 ```
+
 ### Clean up after DR rehearsal at site level
 {: #clean-up}
 

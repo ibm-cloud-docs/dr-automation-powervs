@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-05-21"
+lastupdated: "2025-12-05"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: iam
 
@@ -75,7 +75,7 @@ The following table outlines the additional access roles required for DR automat
 
 | **Additional Access Roles**         | **Resources and Attributes**                    |
 |-------------------------------------|------------------------------------------------|
-| **Editor, Manager**                 | DR automation for PowerVS service                   |
+| **Editor, Manager**                 | Power Virtual Server DR Automation             |
 | **Editor, Manager**                 | Power Virtual Server service                   |
 | **Reader, Viewer**                  | VPC Infrastructure Services service            |
 | **Manager**                         | Transit Gateway service                        |
@@ -83,7 +83,7 @@ The following table outlines the additional access roles required for DR automat
 | **Viewer**                          | All resource groups                            |
 | **Manager**                         | Cloud Object Storage                           |
 | **Manager**                         | Schematics                                     |
-| **Manager**                         | Secret Manager                                 |
+| **Reader, Viewer**                  | Secret Manager                                 |
 {: caption="Additional access roles" caption-side="bottom"}
 
 

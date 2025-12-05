@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-11-26"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: manage vm
 
@@ -16,6 +16,7 @@ Manage Virtual Servers within the  {{site.data.keyword.DR_full}} enables adminis
 
 To set up and manage additional virtual server instances,you can use either DR Automation management UI or access the external orchestrator interface to add and manage advanced configuration for enabling disaster recovery.
    > **Note**: Currently IBM Power Virtual Server Private Cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers.
+   
 ## Add virtual servers
 {: #manage-vm-ser-added}
 

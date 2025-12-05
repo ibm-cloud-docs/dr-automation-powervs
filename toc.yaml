@@ -4,7 +4,6 @@ toc:
     path: dr-automation-powervs
     href: /docs/dr-automation-powervs
     service-name: service-name
-    audience: solution
     category: virtualservers
     label: Power Virtual Server DR Automation
   entries:
@@ -71,6 +70,10 @@ toc:
           - workgroup-operation.md
           - move-site.md
           - verify-events.md
+          - multifactor-authentication.md
+          - user-role-management.md
+          - certificate-private-key-pairs.md
+          - reports.md
       - topicgroup:
           label: Enhancing security
           topics:
@@ -88,6 +91,12 @@ toc:
       id: reference
       topics:
       - commands-ksys.md
+      - topicgroup:
+          label: command reference
+          topics:
+          - get-started-cli-plu-in.md
+          - cli-plug-in.md
+          - command-reference.md
       - topicgroup:
           label: Roles and Responsibility
           topics:

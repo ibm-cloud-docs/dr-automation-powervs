@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-11-20"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: sites ksys, source site, target site, Source Satellite Location, Target Satellite Location, add node, configure sites
 

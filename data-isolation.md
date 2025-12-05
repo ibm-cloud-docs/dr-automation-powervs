@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-11-21"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: data isolation
 
@@ -33,6 +33,7 @@ IBM Cloud’s Virtual Private Cloud (VPC) provides an isolated network environme
 - **Peering and VPN Connections**: VPC peering and VPNs secure connections across on-premises and cloud environments, maintaining data isolation.
 
 ### Dedicated Cloud and Private Infrastructure
+{: #de-pr-infra}
 
 IBM Cloud offers **dedicated cloud** options for exclusive access to physical servers, ideal for {{site.data.keyword.DR_short}}’s sensitive workloads.
 
@@ -40,7 +41,7 @@ IBM Cloud offers **dedicated cloud** options for exclusive access to physical se
 - **IBM Cloud Bare Metal Servers** and **Virtual Servers** deliver single-tenant environments, enhancing data isolation by controlling compute resources directly.
 
 ### Data Encryption
-{: #daen}
+{: #da-en}
 
 Data encryption ensures that sensitive DR data is secure and isolated.
 
@@ -49,12 +50,14 @@ Data encryption ensures that sensitive DR data is secure and isolated.
 - **IBM Key Protect**: Centralized key management for encryption keys, supporting Bring Your Own Key (BYOK) capabilities, is essential for DR data replication and storage.
 
 ### Identity and access management
+{: #de-pr-acces}
 
 **IBM Cloud IAM** provides role-based access control for DR resources, ensuring that only authorized users and systems can access critical DR functions.
 
 - **Role-Based Access Control (RBAC)**: Controls access to specific DR resources by defining roles and permissions.
 
-### Cloud Object Storage for Bucket-Level Isolation
+### Cloud Object Storage for bucket level isolation
+{: #de-pr-infra-bucket}
 
 **IBM Cloud Object Storage** is used for storing DR backups, logs, and replication snapshots, providing bucket-level data isolation.
 
@@ -62,6 +65,7 @@ Data encryption ensures that sensitive DR data is secure and isolated.
 - **Bucket Encryption**: Data is encrypted by default at rest, with options for customer-managed keys via IBM Key Protect.
 
 ### Network Security and Isolation
+{: #de-pr-iso}
 
 IBM Cloud offers network isolation and security features for DR resources.
 
@@ -70,6 +74,7 @@ IBM Cloud offers network isolation and security features for DR resources.
 - **Private Endpoints and VPNs**: Facilitate isolated communication between IBM Cloud services, maintaining data privacy.
 
 ### Compliance and Data Residency
+{: #de-pr-da-ta-re}
 
 IBM Cloud’s compliance tools and certifications help meet regional and regulatory requirements for DR data isolation.
 

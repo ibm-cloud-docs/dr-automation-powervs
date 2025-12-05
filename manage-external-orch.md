@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-11-20"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: manage external
 
@@ -23,4 +23,5 @@ When you add virtual servers, you are redirected to the external orchestrator of
 
 2. To **Save** login credentials, check the **Remember Me** option that enables the system to remember your login credentials for up to 24 hours.
    > **Note**: The credentials are remembered for 10 hours, if **Remember Me** option is unchecked.
-3. After successfully logging into the {{site.data.keyword.DR_full_notm}} GUI, you are redirected to the [**Add Sites to KSYS**](/docs/dr-automation-powervs?topic=dr-automation-powervs-con-site-ksys) screen where you can select Source Region and Target region.
+3. After entering valid credentials, the system prompts you to select an OTP authentication method. Choose Send **OTP on Email** and click Next to complete multi-factor authentication.
+4. After successful authentication, you are redirected to the [**Add Sites to KSYS**](/docs/dr-automation-powervs?topic=dr-automation-powervs-con-site-ksys) screen where you can select Source Region and Target region.

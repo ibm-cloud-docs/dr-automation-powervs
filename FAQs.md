@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-22"
+lastupdated: "2025-11-28"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: faqs, help, FAQ, answers
 
@@ -14,18 +14,19 @@ keywords: faqs, help, FAQ, answers
 The FAQ section provides concise answers to common questions about {{site.data.keyword.DR_full}} for PowerVS, covering its features, billing model, components, deployment across regions, prerequisites, monitoring tools, security and more. It aims to help users understand and efficiently use DR Automation for disaster recovery in IBM Power Virtual Server environments.
 {:shortdesc: .shortdesc}
 
- ## **What is {{site.data.keyword.DR_full}} for PowerVS?**  
- 
+## **What is {{site.data.keyword.DR_full}} for PowerVS?**  
+ {: #how-to-power-vs}
+
 DR Automation for PowerVS is a solution for automating disaster recovery operations for IBM Power Virtual Server environments. It can ensure seamless failover, failback and data synchronization between primary and backup sites. This service is integrated with the IBM Cloud catalog UI, enabling users to deploy and manage DR solutions efficiently.  
 [Learn more about {{site.data.keyword.DR_short}}](/docs/dr-automation-powervs)
 
- ## **How does {{site.data.keyword.DR_full_notm}} simplify DR processes?**
- {: #how to}  
+## **How does {{site.data.keyword.DR_full_notm}} simplify DR processes?**
+ {: #how-to}  
 
 The solution minimizes manual intervention by automating DR workflows by using tools like the DR Service Broker and the KSYS orchestrator. These components synchronize resources, manage failover priorities and optimize RPOs and RTOs, can ensure high availability and business continuity.
 
 ## **What billing model does DR Automation use?**
- {: #bill}    
+ {: #bill}
 
 DR Automation is billed based on the **number of cores provisioned** for disaster recovery per hour. Unlike traditional setups that can include storage and more configuration costs, DR Automation for PowerVS focuses solely on compute cores. Use the IBM Cloud estimator tool to calculate costs.  
 
@@ -141,7 +142,7 @@ Before implementing the DR Automation solution, can ensure that you have the fol
 The KSYS node is responsible for managing disaster recovery operations across active and backup sites. It must be a virtual machine runs IBM AIX 7.3 or later, capable of communicating with both sites through HTTPS. The node handles failover and can ensure data replication between sites by interacting with cloud storage and VMs.  
 
 ## **What configurations are required for cloud storage in DR Automation for PowerVS?**
-{: #what conf} 
+{: #what-conf} 
 
 Cloud storage must be configured with versions from AIX 7.3 TL2 onwards to can ensure that the KSYS node can interact with the cloud APIs for data replication and availability. This is critical to can ensure smooth failover and recovery between the active and backup sites.  
 
@@ -178,8 +179,9 @@ To enable communication to external services, export the following variables on 
 >`http_proxy="<ProxyIP>:3128"`
 >
 >`https_proxy="<ProxyIP>:3128"`
-
-  > **Note**: Exporting these variables is automatic with the DR Deployment, you can validate the configuration using these variables.
+>
+> **Note**: Exporting these variables is automatic with the DR Deployment, you can validate the configuration using these variables.
+> **Note**: The updated proxy details are not reflected in the DR Automation UI. The UI continues to display only the initially configured proxy IP.
 
 ## Why is IBM Data Center not displayed as the location type during provisioning?
 {: #location-type}

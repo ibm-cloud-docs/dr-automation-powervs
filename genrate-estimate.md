@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-11-21"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: price
 
@@ -77,13 +77,15 @@ You can generate an estimate by specifying the necessary **configurations** for 
 ## {{site.data.keyword.DR_short}} configuration summary
 {: #drcs}
 
-| Field                          | Description                                                                                           |
-|--------------------------------|-------------------------------------------------------------------------------------------------------|
-| Disaster Recovery Location  | Select the IBM Cloud region for DR replication.                                                      |
-| Total Managed Cores         | Define the number of cores necessary for your DR setup.                                             |
-| Orchestrator HA             | Optional: Enable high availability for the orchestrator if required.                                |
+| Field                     | Description                                                        |
+|---------------------------|--------------------------------------------------------------------|
+| Disaster Recovery Location| Select the IBM Cloud region for DR replication.                    |
+| Total Managed Cores       | Define the number of cores necessary for your DR setup.            |
+| Orchestrator HA           | Optional: Enable high availability for the orchestrator if required. |
+{: caption="Configuration summary" caption-side="bottom"}
+
 Configuration Parameters for {{site.data.keyword.DR_short}}
-{: caption="configuration summary" caption-side="bottom"}
+
 
 ## Creating, Saving, and viewing an estimate
 {: #csve}

@@ -2,7 +2,7 @@
 front_matter_title: "Discover"
 lastupdated: "2024-10-23"
 copyright: "2023, 2024"
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 ---
 # Discovery operation
 {: #dis-co-cover}

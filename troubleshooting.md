@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-16"
+lastupdated: "2025-12-05"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: troubleshooting, API key, DR automation
 
@@ -14,14 +14,19 @@ keywords: troubleshooting, API key, DR automation
 {: #rotate-api-key}  
 {: troubleshoot}  
 
-### What's happening  
+### What's happening
+{: #rotate-api-key-whats-happening}
+
 The user is unable to regenerate the API key, which is required to maintain secure access to the service.  
 
-### Why it's happening  
+### Why it's happening
+{: #rotate-api-key-why}
+
 The API key might be expired or improperly configured, leading to a failure in regenerating it.  
 
 ### How to fix it  
-{: tsResolve}  
+{: tsResolve}
+
 1. Access the **External orchestrator GUI**.  
 2. Navigate to the **Policies** tab from the top navigation bar.  
 3. Locate the **API Key** field in the list of tunable attributes.  
@@ -32,14 +37,19 @@ The API key might be expired or improperly configured, leading to a failure in r
 {: #how-service-works}  
 {: troubleshoot}  
 
-### What's happening  
+### What's happening
+{: #how-service-works-whats-happening}
+
 Users are unclear about how the service automates disaster recovery operations.  
 
-### Why it's happening  
+### Why it's happening
+{: #how-service-works-why}
+
 The architecture and components of the service may not be fully understood.  
 
 ### How to fix it  
 {: tsResolve}  
+
 - The service automates failover and failback processes across sites.  
 - The **Service Broker** manages resource provisioning and billing.  
 - The **KSYS orchestrator** handles VM orchestration, ensuring resources are activated in the correct sequence.  
@@ -50,14 +60,19 @@ The architecture and components of the service may not be fully understood.
 {: #iam-actions}  
 {: troubleshoot}  
 
-### What's happening  
+### What's happening
+{: #iam-actions-whats-happening}
+
 IAM actions, such as assigning roles or monitoring permissions, are not functioning as expected.  
 
-### Why it's happening  
+### Why it's happening
+{: #iam-actions-why}
+
 This issue occurs due to insufficient permissions or improper configurations in the IAM roles that are assigned to the service.  
 
 ### How to fix it  
-{: tsResolve}  
+{: tsResolve}
+
 1. Log in to the **IAM Console** via the IBM Cloud portal.  
 2. Review the roles that are assigned to the DR automation service under the **Access Groups** tab.  
 3. Enable **Activity Tracker** under the **Monitoring** tab to track IAM actions.  
@@ -68,15 +83,20 @@ This issue occurs due to insufficient permissions or improper configurations in 
 {: #access-token-error}  
 {: troubleshoot}  
 
-### What's happening  
+### What's happening
+{: #access-token-error-whats-happening}
+
 The provisioning process fails with the error message:  
 > `Error getting access token.`  
 
-### Why it's happening  
+### Why it's happening
+{: #access-token-error-why}
+
 The service is unable to authenticate due to an expired or invalid API key, or insufficient IAM permissions.  
 
 ### How to fix it  
-{: tsResolve}  
+{: tsResolve}
+
 1. Access the **DR Automation GUI**.  
 2. Navigate to the **Policies** tab.  
 3. Verify that the API key is valid and not expired.  
@@ -88,14 +108,19 @@ The service is unable to authenticate due to an expired or invalid API key, or i
 {: #password-format-error}  
 {: troubleshoot}  
 
-### What's happening  
+### What's happening
+{: #password-format-error-whats-happening}
+
 The system displays an error indicating the orchestrator password does not meet format requirements.  
 
-### Why it's happening  
+### Why it's happening
+{: #password-format-error-why}
+
 The password that is provided does not comply with the security standards that are required by the orchestrator.  
 
 ### How to fix it  
 {: tsesolve}  
+
 1. Access the **DR Automation GUI**.  
 2. Navigate to the **Policies** tab.  
 3. Locate the **Orchestrator Password** field under tunable attributes.  
@@ -109,18 +134,23 @@ The password that is provided does not comply with the security standards that a
 {: #delete-service-error}  
 {: troubleshoot}  
 
-### What's happening  
+### What's happening
+{: #delete-service-error-whats-happening}
+
 The system fails to delete the provisioned service, displaying a generic error message:  
 > `Provision disaster recovery service deletion failed.`  
 
-### Why it's happening  
+### Why it's happening
+{: #delete-service-error-why}
+
 Dependencies, such as active VMs or storage volumes, may prevent the service from being deleted, or the API key may be invalid.  
 
 ### How to fix it  
-{: tsResolve}  
+{: tsResolve}
+
 1. Access the **DR Automation GUI**.  
 2. Navigate to the **Events** tab and review the detailed logs.  
-3. Verify API connectivity by running a test command (for example, ping or curl) to the service endpoint.  
+3. Verify the API connectivity by running a test command (for example, ping or curl) to the service endpoint.  
 4. Check for active resources that are associated with the service and ensure that there are no dependencies.  
 5. Regenerate the API key from the **Policies** tab and update the system with the new key.  
 6. Retry the delete operation and monitor for success.  
@@ -131,6 +161,7 @@ Dependencies, such as active VMs or storage volumes, may prevent the service fro
 
 ### What's happening
 {: #select-dr-loc}  
+
 The **Finish** button in the UI remains disabled, preventing you from starting the External Orchestrator UI.  
 
 ### Why it's happening
@@ -138,7 +169,7 @@ The **Finish** button in the UI remains disabled, preventing you from starting t
 
 Once the orchestrator VM is deployed and active, the cluster configuration starts automatically. Once it is completed, KSYS sends an event, and the UI enables the **Finish** button to start the external orchestrator UI.
 
-If there are any communication issues preventing the orchestrator VM from sending the event, the **Finish** button is not enabled, and you will not be able to enable DR for managed VM's using the External Orchestrator UI.
+If there are any communication issues preventing the orchestrator VM from sending the event, the **Finish** button is not enabled, you can not enable DR for managed VM's using the External Orchestrator UI.
 
 ### How to fix it  
 {: tsResolve}  
@@ -182,17 +213,17 @@ If the communication issue persists, you can check the status of the squid servi
 {: #oe-xe-csi}  
 {: troubleshoot} 
 
- ### What's happening
- {: tsressolve} 
+### What's happening
+ {: wh-hap}
 
 The External Connectivity status of the Orchestrator appears as Inactive in the UI.
 
- ### Why it's happening
- {: why-it hap}
+### Why it's happening
+ {: why-it-hap}
 
 The Orchestrator is unable to establish a connection with any IBM Cloud services, which prevents it from effectively managing failover scenarios in the event of a workload failure.
 
- ### How to fix it
+### How to fix it
  {: fix-it}
 
 Refer to the topic [How to fix it](#how-to-fix-it-7) for guidance on resolving the inactive state of the Orchestrator's external connectivity.
@@ -224,17 +255,19 @@ This issue occurs when no PowerVS workspace is available in the selected locatio
 
 5. From the list, choose the appropriate workspace and enable the workload you want to protect with disaster recovery.
 
-## why does a simultaneous deployments fails when using the same PowerVS workspace?
+## Why does a simultaneous deployment fail when using the same PowerVS workspace?
 {: #ksys-image-deploy}  
 {: troubleshoot}
 
 ### What's happening
+{: #trou-sh-deploy}
 
 During a DR Automation deployment, the KSYS image is downloaded to the selected workspace where the orchestrator is to be created. Once the deployment is completed, this image is automatically deleted.
 
 If the same workspace is used for a subsequent deployment, the image download is not re-initiated because the system detects that the image previously existed. Since the image may have been deleted during the first deployment, the second deployment can fail when creating the orchestrator.
 
 ### Why it's happening
+{: #trou-sh-deploy}
 
 The system assumes the KSYS image already exists in the workspace and skips downloading it. If the image was removed after the first deployment, the orchestrator creation cannot proceed.
 
@@ -245,3 +278,65 @@ The system assumes the KSYS image already exists in the workspace and skips down
 2. Avoid performing multiple deployments simultaneously in the same workspace to prevent deployment failures.
 
 **Recommendation:** Perform sequential deployments using separate workspaces or wait until the first deployment completes before starting a new one.
+
+## Why MFA is not enabled even though it was selected during deployment ?
+{: #mfa-deploy}  
+{: troubleshoot}
+
+### What's happening
+{: #trou-sh-deploy}
+
+After deployment, MFA (Multi-Factor Authentication) is not enabled for the orchestrator, even though the MFA option was selected during deployment.
+
+### Why it's happening
+{: #trou-sh-deploy}
+
+During the deployment process, if any of the values are incorrect, the deployment still completes successfully, but MFA cannot be enabled and an error event is generated indicating why MFA setup failed.
+
+### How to fix it
+{: #trou-sh-fix}
+
+You can verify the MFA tenant, client id and secret details by logging into the orchestrator with root credentials.
+
+1. Open the file `"userMfaConfig.json"`, verify the details of your MFA and confirm if anything need to be modified.
+2. Verify the events and identify if the registration failed.
+3. If registration failure, you can manually register into the [**IBM Security Verify**](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197) or disable the MFA.
+
+4. To disable the MFA, edit the `"mfa_enabled": true` field and change it to `"mfa_enabled": false` in the following example:
+
+**Example:**
+
+```
+cat /opt/IBM/ksys/ui/server/node_modules/vmrui-common/lib/configuration/server/userMfaConfig.json
+{
+  "client_id": "3ac48xxx-x71e-xxxx-a8a2-86c0e6xx38xx",
+  "client_secret": "xxxxxxx",
+  "mfa_enabled": true,
+  "tenant_name": "ibmsecure.verify.ibm.com",
+  "user_email_id": "test.test@ibm.com",
+  "user_id": "root",
+  "proxy_port": "3128",
+  "http_proxy": "xx.30.xx.4"
+}     
+```
+
+An output that is similar to the following example is displayed :
+
+```
+cat /opt/IBM/ksys/ui/server/node_modules/vmrui-common/lib/configuration/server/userMfaConfig.json
+{
+  "client_id": "3ac48xxx-x71e-xxxx-a8a2-86c0e6xx38xx",
+  "client_secret": "xxxxxx",
+  "mfa_enabled": false,
+  "tenant_name": "ibmsecure.verify.ibm.com",
+  "user_email_id": "test.test@ibm.com",
+  "user_id": "root",
+  "proxy_port": "3128",
+  "http_proxy": "10.xx.00.x"
+}
+```
+
+5. Log in to the orchestrator vm.
+
+6. In case registration success and still OTP is not generated, it means the communication is not happening with IBM secure verify. In this case, verify whether the proxy IP which you have provided is properly configured or not ?
+7. In this case, either can open a support ticket for resolution or disable the MFA by following the steps mentioned in above.

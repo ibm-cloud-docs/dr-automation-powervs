@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-09-30"
+lastupdated: "2025-11-20"
 
 subcollection: dr-automation-powervs
 
@@ -10,7 +10,7 @@ keywords: advance operation, advance, operation
 ---
 
 # Advance operations
-{: #ad-vance-load}
+{: #ad-vance}
 
 Advanced operations in the {{site.data.keyword.DR_full}} provide essential actions to manage and test your disaster recovery setup. This feature includes options such as **Failover Rehearsal**, **Clean up**, and **Re-Sync**. These actions help validate DR readiness, clear temporary artifacts, and maintain synchronization between sites
 

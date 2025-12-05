@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-09"
+lastupdated: "2025-11-04"
 
-subcollection: dr-automation
+subcollection: dr-automation-powervs
 
 keywords: navigation-panel, add node , node, ksys details, Inventory tab, Workgroup, tunables, disk mapping, events
 
