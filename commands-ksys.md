@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-05"
 
 subcollection: dr-automation-powervs
 
@@ -2159,9 +2159,12 @@ RehearsalNetworks:             net_mgmt <-> net_mgmt
 RehearsalNetworks:             mad02-network01 <-> mad02-network01
 CGName:                        cgrp-6f2d-xxxx-xxxx-22487ee0caaa
 ```
-> **Note** : If a specific network is not assigned for DR Rehearsal, a network with the same subnet and name is created in the backup workspace during the DR Rehearsal move, and the DR Rehearsal VM uses this newly created network.
-> **Note** : If you want to use the same network of BackUp VM, you should execute pair network command.
-> **Note**: Ensure the Workgroup state is `READY_TO_MOVE` before initiating a DR rehearsal move.
+> **Note**: If a specific network is not assigned for DR Rehearsal, a network with the same subnet and name is created in the backup workspace during the DR Rehearsal move, and the DR Rehearsal VM uses this newly created network.
+
+> **Note**: If you want to use the same network of the backup VM, you must execute the `pair network` command.
+
+> **Note**: Ensure that the Workgroup state is `READY_TO_MOVE` before initiating a DR Rehearsal move.
+
 
 ### Identify site details
 {: #id-si-d}
