@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-05"
 
 subcollection: dr-automation-powervs
 
@@ -302,7 +302,7 @@ You can verify the MFA tenant, client id and secret details by logging into the 
 2. Verify the events and identify if the registration failed.
 3. If registration failure, you can manually register into the [**IBM Security Verify**](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197) or disable the MFA.
 
-4. To disable the MFA, edit the `"mfa_enabled": true` Field and change it to `"mfa_enabled": false`in the following example:
+4. To disable the MFA, edit the `"mfa_enabled": true` field and change it to `"mfa_enabled": false` in the following example:
 
 **Example:**
 
