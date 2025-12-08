@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-08"
 
 subcollection: dr-automation-powervs
 
@@ -31,12 +31,12 @@ keywords: power-hadr, cli, pdr
 `create`- Create and deploy the orchestrator virtual machine in the specified workspace and configuration to manage disaster recovery.  
 `last-operation`- Retrieve the status and details of the most recent operation performed on the specified service instance, such as provisioning, updating, or deprovisioning.  
 
->**Note**: All the cli example outputs are shown below in `json` format.By default, cli output is shown in table format.To change the output format of cli, add --ouput <format> at  the end of cli command.
+>**Note**: All the cli example outputs are shown below in `json` format.By default, cli output display in table format.To change the output format of cli, add `--output <format>` at  the end of command.
 
-## Api key
+## Api Key
 {: #power-hadr-api-key-cli}
 
-Manage apikey
+Manage apikey.
 
 ```sh
 ibmcloud power-hadr pdr api-key --help
@@ -49,7 +49,7 @@ ibmcloud power-hadr pdr api-key --help
 Updating the current API key details for the specified service instance.
 
 ```sh
-ibmcloud power-hadr pdr api-key update --instance-id INSTANCE-ID --api-key API-KEY [--accept-language ACCEPT-LANGUAGE] [--if-none-match IF-NONE-MATCH]
+ibmcloud power-hadr pdr api-key update --instance-id INSTANCE-ID --api-key API-KEY [--accept-language ACCEPT-LANGUAGE]
 ```
 
 
@@ -65,18 +65,14 @@ ibmcloud power-hadr pdr api-key update --instance-id INSTANCE-ID --api-key API-K
 `--accept-language` (string)
 :   The language requested for the return document.
 
-`--if-none-match` (string)
-:   ETag for conditional requests (optional).
-
 #### Example
 {: #power-hadr-api-key-update-examples}
 
 ```sh
 ibmcloud power-hadr pdr api-key update \
-    --instance-id crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9:: \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
     --api-key adfadfdsafsdfdsf \
-    --accept-language exampleString \
-    --if-none-match exampleString
+    --accept-language exampleString
 ```
 
 
@@ -107,7 +103,7 @@ ibmcloud power-hadr pdr event --help
 Retrieves the list of events from the specified service instance ID.
 
 ```sh
-ibmcloud power-hadr pdr event list --instance-id INSTANCE-ID [--time TIME] [--from-time FROM-TIME] [--to-time TO-TIME] [--accept-language ACCEPT-LANGUAGE] [--if-none-match IF-NONE-MATCH]
+ibmcloud power-hadr pdr event list --instance-id INSTANCE-ID [--time TIME] [--from-time FROM-TIME] [--to-time TO-TIME] [--accept-language ACCEPT-LANGUAGE]
 ```
 
 
@@ -129,22 +125,18 @@ ibmcloud power-hadr pdr event list --instance-id INSTANCE-ID [--time TIME] [--fr
 `--accept-language` (string)
 :   The language requested for the return document.
 
-`--if-none-match` (string)
-:   ETag for conditional requests (optional).
-
 #### Example
 {: #power-hadr-event-list-examples}
 
 ```sh
 ibmcloud power-hadr pdr event list \
-    --instance-id crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9:: \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
     --time 2025-06-19T23:59:59Z \
     --from-time 2025-06-19T00:00:00Z \
     --to-time 2025-06-19T23:59:59Z \
-    --accept-language exampleString \
-    --if-none-match exampleString
+    --accept-language exampleString
 ```
-
+{: pre}
 
 #### Example output
 {: #power-hadr-event-list-cli-output}
@@ -191,13 +183,13 @@ ibmcloud power-hadr pdr event list \
 ```
 
 
-### ```ibmcloud power-hadr pdr event get```
+### `ibmcloud power-hadr pdr event get`
 {: #power-hadr-cli-event-get-command}
 
 Retrieves the details of a specific event for the given service instance provision ID.
 
 ```sh
-ibmcloud power-hadr pdr event get --instance-id INSTANCE-ID --event-id EVENT-ID [--accept-language ACCEPT-LANGUAGE] [--if-none-match IF-NONE-MATCH]
+ibmcloud power-hadr pdr event get --instance-id INSTANCE-ID --event-id EVENT-ID [--accept-language ACCEPT-LANGUAGE]
 ```
 
 
@@ -213,18 +205,14 @@ ibmcloud power-hadr pdr event get --instance-id INSTANCE-ID --event-id EVENT-ID 
 `--accept-language` (string)
 :   The language requested for the return document.
 
-`--if-none-match` (string)
-:   ETag for conditional requests (optional).
-
 #### Example
 {: #power-hadr-event-get-examples}
 
 ```sh
 ibmcloud power-hadr pdr event get \
-    --instance-id crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9:: \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
     --event-id 00116b2a-9326-4024-839e-fb5364b76898 \
-    --accept-language exampleString \
-    --if-none-match exampleString
+    --accept-language exampleString
 ```
 
 
@@ -259,15 +247,15 @@ ibmcloud power-hadr pdr event get \
 
 
 ## GRS location pairs
-{: #power-hadr-dr-grs-location-pairs}
+{: #power-hadr-dr-automation-config-cli}
 
 ### `ibmcloud power-hadr pdr grs-location-pairs`
 {: #power-hadr-cli-grs-location-pairs-command}
 
-Retrieves the (GRS) location pairs associated with the specified service instance based on managed VMs.
+Retrieves the Global replication service (GRS) location pairs associated with the specified service instance based on managed VMs.
 
 ```sh
-ibmcloud power-hadr pdr grs-location-pairs --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE] [--if-none-match IF-NONE-MATCH]
+ibmcloud power-hadr pdr grs-location-pairs --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
 ```
 
 
@@ -280,22 +268,15 @@ ibmcloud power-hadr pdr grs-location-pairs --instance-id INSTANCE-ID [--accept-l
 `--accept-language` (string)
 :   The language requested for the return document.
 
-`--if-none-match` (string)
-:   ETag for conditional requests (optional).
-
 #### Example
 {: #power-hadr-grs-location-pairs-examples}
 
 ```sh
 ibmcloud power-hadr pdr grs-location-pairs \
-    --instance-id crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9:: \
-    --accept-language exampleString \
-    --if-none-match exampleString
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --accept-language exampleString
 ```
 
-
-## DR locations
-{: #power-hadr-dr-locations}
 
 ### `ibmcloud power-hadr pdr locations`
 {: #power-hadr-cli-locations-command}
@@ -303,7 +284,7 @@ ibmcloud power-hadr pdr grs-location-pairs \
 Retrieves the list of disaster recovery (DR) locations available for the specified service instance.
 
 ```sh
-ibmcloud power-hadr pdr locations --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE] [--if-none-match IF-NONE-MATCH]
+ibmcloud power-hadr pdr locations --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
 ```
 
 
@@ -316,17 +297,13 @@ ibmcloud power-hadr pdr locations --instance-id INSTANCE-ID [--accept-language A
 `--accept-language` (string)
 :   The language requested for the return document.
 
-`--if-none-match` (string)
-:   ETag for conditional requests (optional).
-
 #### Example
 {: #power-hadr-locations-examples}
 
 ```sh
 ibmcloud power-hadr pdr locations \
-    --instance-id crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9:: \
-    --accept-language exampleString \
-    --if-none-match exampleString
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --accept-language exampleString
 ```
 
 
@@ -346,16 +323,13 @@ ibmcloud power-hadr pdr locations \
 ```
 
 
-## Managed VM's
-{: #power-hadr-dr-managed-vms}
-
 ### `ibmcloud power-hadr pdr managed-vms`
 {: #power-hadr-cli-managed-vms-command}
 
 Retrieves the list of disaster recovery (DR) managed virtual machines for the specified service instance.
 
 ```sh
-ibmcloud power-hadr pdr managed-vms --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE] [--if-none-match IF-NONE-MATCH]
+ibmcloud power-hadr pdr managed-vms --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
 ```
 
 
@@ -368,19 +342,14 @@ ibmcloud power-hadr pdr managed-vms --instance-id INSTANCE-ID [--accept-language
 `--accept-language` (string)
 :   The language requested for the return document.
 
-`--if-none-match` (string)
-:   ETag for conditional requests (optional).
-
 #### Example
 {: #power-hadr-managed-vms-examples}
 
 ```sh
 ibmcloud power-hadr pdr managed-vms \
-    --instance-id crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9:: \
-    --accept-language exampleString \
-    --if-none-match exampleString
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --accept-language exampleString
 ```
-
 
 #### Example output
 {: #power-hadr-managed-vms-cli-output}
@@ -413,17 +382,13 @@ ibmcloud power-hadr pdr managed-vms \
 ```
 
 
-
-## DR summary
-{: #power-hadr-dr-summary}
-
 ### `ibmcloud power-hadr pdr summary`
 {: #power-hadr-cli-summary-command}
 
 Retrieves the disaster recovery (DR) summary details for the specified service instance, including key configuration, status information and managed vm details.
 
 ```sh
-ibmcloud power-hadr pdr summary --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE] [--if-none-match IF-NONE-MATCH]
+ibmcloud power-hadr pdr summary --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
 ```
 
 
@@ -436,19 +401,14 @@ ibmcloud power-hadr pdr summary --instance-id INSTANCE-ID [--accept-language ACC
 `--accept-language` (string)
 :   The language requested for the return document.
 
-`--if-none-match` (string)
-:   ETag for conditional requests (optional).
-
 #### Example
 {: #power-hadr-summary-examples}
 
 ```sh
 ibmcloud power-hadr pdr summary \
-    --instance-id crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9:: \
-    --accept-language exampleString \
-    --if-none-match exampleString
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --accept-language exampleString
 ```
-
 
 #### Example output
 {: #power-hadr-summary-cli-output}
@@ -503,8 +463,8 @@ ibmcloud power-hadr pdr summary \
 ```
 
 
-## Machine types
-{: #power-hadr-dr-machine-types}
+##  Machine types
+{: #power-hadr-dr-automation-ibm-cloud-cli}
 
 ### `ibmcloud power-hadr pdr machine-types`
 {: #power-hadr-cli-machine-types-command}
@@ -512,7 +472,7 @@ ibmcloud power-hadr pdr summary \
 Retrieves the list of supported machine types for the given workspace. This endpoint is used to identify machine types available for disaster recovery automation.
 
 ```sh
-ibmcloud power-hadr pdr machine-types --instance-id INSTANCE-ID --primary-workspace-name PRIMARY-WORKSPACE-NAME [--accept-language ACCEPT-LANGUAGE] [--if-none-match IF-NONE-MATCH] [--standby-workspace-name STANDBY-WORKSPACE-NAME]
+ibmcloud power-hadr pdr machine-types --instance-id INSTANCE-ID --primary-workspace-name PRIMARY-WORKSPACE-NAME [--accept-language ACCEPT-LANGUAGE] [--standby-workspace-name STANDBY-WORKSPACE-NAME]
 ```
 
 
@@ -528,9 +488,6 @@ ibmcloud power-hadr pdr machine-types --instance-id INSTANCE-ID --primary-worksp
 `--accept-language` (string)
 :   The language requested for the return document.
 
-`--if-none-match` (string)
-:   ETag for conditional requests (optional).
-
 `--standby-workspace-name` (string)
 :   The standby Power virtual server workspace name.
 
@@ -539,17 +496,12 @@ ibmcloud power-hadr pdr machine-types --instance-id INSTANCE-ID --primary-worksp
 
 ```sh
 ibmcloud power-hadr pdr machine-types \
-    --instance-id crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9:: \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
     --primary-workspace-name Test-workspace-wdc06 \
     --accept-language exampleString \
-    --if-none-match exampleString \
     --standby-workspace-name Test-workspace-wdc07
 ```
 
-
-
-## powervs workspaces
-{: #power-hadr-dr-powervs-workspaces}
 
 ### `ibmcloud power-hadr pdr powervs-workspaces`
 {: #power-hadr-cli-powervs-workspaces-command}
@@ -557,8 +509,9 @@ ibmcloud power-hadr pdr machine-types \
 Retrieves the power virtual server workspaces for primary and standby orchestrator based on location id.
 
 ```sh
-ibmcloud power-hadr pdr powervs-workspaces --instance-id INSTANCE-ID --location-id LOCATION-ID [--if-none-match IF-NONE-MATCH]
+ibmcloud power-hadr pdr powervs-workspaces --instance-id INSTANCE-ID --location-id LOCATION-ID
 ```
+
 
 #### Command options
 {: #power-hadr-powervs-workspaces-cli-options}
@@ -569,17 +522,13 @@ ibmcloud power-hadr pdr powervs-workspaces --instance-id INSTANCE-ID --location-
 `--location-id` (string)
 :   Location ID value. Required.
 
-`--if-none-match` (string)
-:   ETag for conditional requests (optional).
-
 #### Example
 {: #power-hadr-powervs-workspaces-examples}
 
 ```sh
 ibmcloud power-hadr pdr powervs-workspaces \
-    --instance-id crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9:: \
-    --location-id exampleString \
-    --if-none-match exampleString
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --location-id exampleString
 ```
 
 
@@ -618,16 +567,16 @@ ibmcloud power-hadr pdr powervs-workspaces \
 ```
 
 
-## Create manage DR
-{: #power-hadr-dr-create}
+## Create DR deployment
+{: #power-hadr-dr-automation-manage-dr-cli}
 
 ### `ibmcloud power-hadr pdr create`
 {: #power-hadr-cli-create-command}
 
-Creates Orchestrator VM in the given workspace and configuration. Orchestrator VM can be used to manage multiple virtual servers and help ensure continuous availability. For more details, refer Deploying the Orchestrator - /docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch.
+Creates DR Deployment by creating Orchestrator instance in the given PowerVS workspace and configuration. Orchestrator instance can be used to manage multiple virtual servers and ensure continuous availability. For more details, refer Deploying the Orchestrator - /docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch.
 
 ```sh
-ibmcloud power-hadr pdr create --instance-id INSTANCE-ID [--api-key API-KEY] [--client-id CLIENT-ID] [--client-secret CLIENT-SECRET] [--guid GUID] [--location-id LOCATION-ID] [--machine-type MACHINE-TYPE] [--orchestrator-ha=ORCHESTRATOR-HA] [--orchestrator-location-type ORCHESTRATOR-LOCATION-TYPE] [--orchestrator-name ORCHESTRATOR-NAME] [--orchestrator-password ORCHESTRATOR-PASSWORD] [--orchestrator-workspace-id ORCHESTRATOR-WORKSPACE-ID] [--orchestrator-workspace-location ORCHESTRATOR-WORKSPACE-LOCATION] [--proxy-ip PROXY-IP] [--region-id REGION-ID] [--resource-instance RESOURCE-INSTANCE] [--secondary-workspace-id SECONDARY-WORKSPACE-ID] [--secret SECRET] [--secret-group SECRET-GROUP] [--ssh-key-name SSH-KEY-NAME] [--standby-machine-type STANDBY-MACHINE-TYPE] [--standby-orchestrator-name STANDBY-ORCHESTRATOR-NAME] [--standby-orchestrator-workspace-id STANDBY-ORCHESTRATOR-WORKSPACE-ID] [--standby-orchestrator-workspace-location STANDBY-ORCHESTRATOR-WORKSPACE-LOCATION] [--standby-tier STANDBY-TIER] [--tenant-name TENANT-NAME] [--tier TIER] [--stand-by-redeploy STAND-BY-REDEPLOY] [--accept-language ACCEPT-LANGUAGE] [--if-none-match IF-NONE-MATCH] [--accepts-incomplete=ACCEPTS-INCOMPLETE]
+ibmcloud power-hadr pdr create --instance-id INSTANCE-ID --location-id LOCATION-ID --machine-type MACHINE-TYPE --orchestrator-location-type ORCHESTRATOR-LOCATION-TYPE --orchestrator-name ORCHESTRATOR-NAME --orchestrator-password ORCHESTRATOR-PASSWORD --orchestrator-workspace-id ORCHESTRATOR-WORKSPACE-ID [--api-key API-KEY] [--client-id CLIENT-ID] [--client-secret CLIENT-SECRET] [--guid GUID] [--orchestrator-ha=ORCHESTRATOR-HA] [--proxy-ip PROXY-IP] [--region-id REGION-ID] [--resource-instance RESOURCE-INSTANCE] [--secret SECRET] [--secret-group SECRET-GROUP] [--ssh-key-name SSH-KEY-NAME] [--standby-machine-type STANDBY-MACHINE-TYPE] [--standby-orchestrator-name STANDBY-ORCHESTRATOR-NAME] [--standby-orchestrator-workspace-id STANDBY-ORCHESTRATOR-WORKSPACE-ID] [--standby-tier STANDBY-TIER] [--tenant-name TENANT-NAME] [--tier TIER] [--stand-by-redeploy STAND-BY-REDEPLOY] [--accept-language ACCEPT-LANGUAGE] [--accepts-incomplete=ACCEPTS-INCOMPLETE]
 ```
 
 
@@ -636,6 +585,24 @@ ibmcloud power-hadr pdr create --instance-id INSTANCE-ID [--api-key API-KEY] [--
 
 `--instance-id` (string)
 :   instance id of instance to provision. Required.
+
+`--location-id` (string)
+:   The location or data center identifier where the service instance is deployed. Required.
+
+`--machine-type` (string)
+:   The machine type used for deploying orchestrator. Required.
+
+`--orchestrator-location-type` (string)
+:   The cloud location where your orchestator need to be created. Required.
+
+`--orchestrator-name` (string)
+:   The username used for the orchestrator. Required.
+
+`--orchestrator-password` (string)
+:   The password that you can use to access your orchestrator. Required.
+
+`--orchestrator-workspace-id` (string)
+:   The unique identifier orchestrator workspace. Required.
 
 `--api-key` (string)
 :   The api Key of the service instance for deploying the disaster recovery service.
@@ -649,29 +616,8 @@ ibmcloud power-hadr pdr create --instance-id INSTANCE-ID [--api-key API-KEY] [--
 `--guid` (string)
 :   The global unique identifier of the service instance.
 
-`--location-id` (string)
-:   The location or data center identifier where the service instance is deployed.
-
-`--machine-type` (string)
-:   The machine type used for deploying orchestrator.
-
 `--orchestrator-ha` (bool)
 :   Indicates whether the orchestrator High Availability (HA) is enabled for the service instance.
-
-`--orchestrator-location-type` (string)
-:   The cloud location where your orchestator need to be created.
-
-`--orchestrator-name` (string)
-:   The username used for the orchestrator.
-
-`--orchestrator-password` (string)
-:   The password that you can use to access your orchestrator.
-
-`--orchestrator-workspace-id` (string)
-:   The unique identifier orchestrator workspace.
-
-`--orchestrator-workspace-location` (string)
-:   The location of the orchestrator workspace.
 
 `--proxy-ip` (string)
 :   Proxy IP for the Communication between Orchestrator and Service broker.
@@ -681,9 +627,6 @@ ibmcloud power-hadr pdr create --instance-id INSTANCE-ID [--api-key API-KEY] [--
 
 `--resource-instance` (string)
 :   The uniquie identifier of the associated IBM Cloud resource instance.
-
-`--secondary-workspace-id` (string)
-:   The unique identifier of the secondary workspace used for the disaster recovery.
 
 `--secret` (string)
 :   The secret name or identifier used for retrieving credentials from secrets manager.
@@ -703,9 +646,6 @@ ibmcloud power-hadr pdr create --instance-id INSTANCE-ID [--api-key API-KEY] [--
 `--standby-orchestrator-workspace-id` (string)
 :   The unique identifier of the standby orchestrator workspace.
 
-`--standby-orchestrator-workspace-location` (string)
-:   The location of the standby orchestrator workspace.
-
 `--standby-tier` (string)
 :   The storage tier used for deploying standby orchestrator.
 
@@ -721,9 +661,6 @@ ibmcloud power-hadr pdr create --instance-id INSTANCE-ID [--api-key API-KEY] [--
 `--accept-language` (string)
 :   The language requested for the return document.
 
-`--if-none-match` (string)
-:   ETag for conditional requests (optional).
-
 `--accepts-incomplete` (bool)
 :   A value of true indicates that both the IBM Cloud platform and the requesting client support asynchronous deprovisioning.
 
@@ -732,41 +669,14 @@ ibmcloud power-hadr pdr create --instance-id INSTANCE-ID [--api-key API-KEY] [--
 #### Example
 {: #power-hadr-create-examples}
 
-```sh
-ibmcloud power-hadr pdr create \
-    --instance-id crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9:: \
-    --api-key exampleString \
-    --client-id abcd-97d2-1234-bf62-8eaecc67a1234 \
-    --client-secret abcd1234xM1y123wK6qR9123456789bE2jG0pabcdefgh \
-    --guid 123e4567-e89b-12d3-a456-426614174000 \
-    --location-id dal10 \
-    --machine-type bx2-4x16 \
-    --orchestrator-ha=true \
-    --orchestrator-location-type off-premises \
-    --orchestrator-name adminUser \
-    --orchestrator-password exampleString \
-    --orchestrator-workspace-id orch-workspace-01 \
-    --orchestrator-workspace-location us-south \
-    --proxy-ip 10.40.30.10:8888 \
-    --region-id us-south \
-    --resource-instance crn:v1:bluemix:public:resource-controller::res123 \
-    --secondary-workspace-id secondary-workspace789 \
-    --secret exampleString \
-    --secret-group default-secret-group \
-    --ssh-key-name my-ssh-key \
-    --standby-machine-type bx2-8x32 \
-    --standby-orchestrator-name standbyAdmin \
-    --standby-orchestrator-workspace-id orch-standby-02 \
-    --standby-orchestrator-workspace-location us-east \
-    --standby-tier Premium \
-    --tenant-name xxx.ibm.com \
-    --tier Standard \
-    --stand-by-redeploy exampleString \
-    --accept-language exampleString \
-    --if-none-match exampleString \
-    --accepts-incomplete=true
-```
+Example request for non-HA Deployment
 
+```sh
+ibmcloud power-hadr dr create --instance-id instance1 --orchestrator-name non-HA-deployment --orchestrator-password abcabc --orchestrator-workspace-id "workspace1-abc-19304" --orchestrator-location-type locationType --location-id dal13 --machine-type s922
+
+ibmcloud power-hadr dr create --instance-id instance1 --orchestrator-name HA-Deployment --orchestrator-password abcabc --orchestrator-workspace-id "workspace1-abc-19304" --orchestrator-location-type locationType --location-id dal13 --machine-type machineType --standby-orchestrator-name standby --standby-orchestrator-workspace-id workspace-abc-wewe --standby-machine-type s922 --orchestrator-ha true
+```
+{: pre}
 
 #### Example output
 {: #power-hadr-create-cli-output}
@@ -779,8 +689,8 @@ ibmcloud power-hadr pdr create \
 ```
 
 
-## Last Operation
-{: #power-hadr-dr-last-operation}
+## Last operation
+{: #power-hadr-dr-automation-service-instance-cli}
 
 ### `ibmcloud power-hadr pdr last-operation`
 {: #power-hadr-cli-last-operation-command}
@@ -788,7 +698,7 @@ ibmcloud power-hadr pdr create \
 Retrieves the status of the last operation performed on the specified service instance, such as provisioning, updating, or deprovisioning.
 
 ```sh
-ibmcloud power-hadr pdr last-operation --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE] [--if-none-match IF-NONE-MATCH]
+ibmcloud power-hadr pdr last-operation --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
 ```
 
 
@@ -801,17 +711,13 @@ ibmcloud power-hadr pdr last-operation --instance-id INSTANCE-ID [--accept-langu
 `--accept-language` (string)
 :   The language requested for the return document.
 
-`--if-none-match` (string)
-:   ETag for conditional requests (optional).
-
 #### Example
 {: #power-hadr-last-operation-examples}
 
 ```sh
 ibmcloud power-hadr pdr last-operation \
-    --instance-id crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9:: \
-    --accept-language exampleString \
-    --if-none-match exampleString
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --accept-language exampleString
 ```
 
 
