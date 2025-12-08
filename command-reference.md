@@ -277,6 +277,8 @@ ibmcloud power-hadr pdr grs-location-pairs \
     --accept-language exampleString
 ```
 
+## DR location
+{: #power-hadr-dr-automation-dr-location-cli}
 
 ### `ibmcloud power-hadr pdr locations`
 {: #power-hadr-cli-locations-command}
@@ -322,6 +324,8 @@ ibmcloud power-hadr pdr locations \
 }
 ```
 
+## Managed VM's
+{: #power-hadr-dr-managed-vm-cli}v
 
 ### `ibmcloud power-hadr pdr managed-vms`
 {: #power-hadr-cli-managed-vms-command}
@@ -381,6 +385,8 @@ ibmcloud power-hadr pdr managed-vms \
 }
 ```
 
+## DR summary
+{: #power-hadr-dr-automation-summary-cli}
 
 ### `ibmcloud power-hadr pdr summary`
 {: #power-hadr-cli-summary-command}
@@ -502,6 +508,8 @@ ibmcloud power-hadr pdr machine-types \
     --standby-workspace-name Test-workspace-wdc07
 ```
 
+## PowerVS workspaces
+{: #power-hadr-dr-automation-config-cli}
 
 ### `ibmcloud power-hadr pdr powervs-workspaces`
 {: #power-hadr-cli-powervs-workspaces-command}
