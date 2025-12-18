@@ -12,12 +12,12 @@ keywords: advance operation, advance, operation
 # Advance operations
 {: #ad-vance}
 
-Advanced operations in the {{site.data.keyword.DR_full}} provide essential actions to manage and test your disaster recovery setup. This feature includes options such as **Failover Rehearsal**, **Clean up**, and **Re-Sync**. These actions help validate DR readiness, clear temporary artifacts, and maintain synchronization between sites
+Advanced operations in the {{site.data.keyword.DR_full}} provide essential actions to manage and test your disaster recovery setup. This feature includes options such as **Failover Rehearsal**, **Clean-up**, and **Re-Sync**. These actions help validate DR readiness, clear temporary artifacts, and maintain synchronization between sites
 
 ## Navigate advance operations
 {: #na-vi-gate}
 
-Access Advanced Operations from the workgroup Summary tab to perform actions like Failover Rehearsal, Clean up, or Re-Sync for disaster recovery management.
+Access Advanced Operations from the workgroup Summary tab to perform actions like Failover Rehearsal, Clean-up, or Re-Sync for disaster recovery management.
 
 ### Procedure
 {: #pr-ci-dure}
@@ -30,12 +30,12 @@ Follow these steps to access Advanced Operations for a selected workgroup in the
 
 3. Click the **Summary** tab and it displays **Advanced Operations**.
 
-Click the Advanced Operations dropdown to choose from available actions such as **Failover Rehearsal**, **Clean up**, or **Re-Sync** to manage and test your disaster recovery setup.
+Click the Advanced Operations dropdown to choose from available actions such as **Failover Rehearsal**, **Clean-up**, or **Re-Sync** to manage and test your disaster recovery setup.
 
 ## Failover rehearsal
 {: #Fa-il-over}
 
-**Failover Rehearsal** is a disaster recovery (DR) testing feature available at both the **site** and **workgroup** levels in Power Virtual Server DR Automation. It simulate a failover without affecting production by creating a temporary **Rehearsal VM** at the backup site. It helps validate your DR configuration is working as expected.
+**Failover Rehearsal** is a disaster recovery (DR) testing feature available at both the **site** and **workgroup** levels in Power Virtual Server DR Automation. It simulates a failover without affecting production by creating a temporary **Rehearsal VM** at the backup site. It helps validate your DR configuration is working as expected.
 
 > **Important**: To initiate a rehearsal, discovery must be completed at the site or workgroup level.
 
@@ -55,7 +55,7 @@ This process helps ensure that disaster recovery operations can be validated wit
 ## Cleanup
 {: #cl-ea-nup}
 
-The **Clean up** operation removes the Rehearsal VM created during a Failover Rehearsal. This helps restore the environment to its original state and ensures that no temporary resources remain after testing.
+The **Clean-up** operation removes the Rehearsal VM created during a Failover Rehearsal. The clean-up helps restore the environment to its original state and ensures that no temporary resources remain after testing.
 
 ### Procedure
 {: #cl-ea-pro}
@@ -63,12 +63,12 @@ The **Clean up** operation removes the Rehearsal VM created during a Failover Re
 Follow these steps to remove the Rehearsal VM created during a Failover Rehearsal:
 
 1. **Select** the same **workgroup** used for rehearsal.  
-2. **Click** the **Advanced Operations** dropdown and **select** **Clean up**.  
+2. **Click** the **Advanced Operations** dropdown and **select** **Clean-up**.  
 3. **Confirm** the operation when prompted.
 
-Use this step after completing validation to maintain a clean and consistent DR setup.
+Perform this step after completing validation to maintain a clean and consistent DR setup.
 
-## Re-sync a workgroup
+## Resync a workgroup
 {: #re-sy-nc}
 
 The **Re-Sync** operation is used to synchronize the state of virtual machines in a workgroup between the active and backup sites. It helps ensure that the backup VM is updated with the latest configuration and data from the active VM. You can perform a resync to shut down the backup VM, synchronizes the state, and brings it back in sync with the active site. This operation is useful after configuration changes, DR tests, or failover rehearsals to maintain consistency across both sites.
@@ -76,7 +76,7 @@ The **Re-Sync** operation is used to synchronize the state of virtual machines i
 ### Procedure
 {: #re-cy-cv}
 
-Follow these steps to re-sync a workgroup in Power Virtual Server DR Automation:
+Follow these steps to resync a workgroup in Power Virtual Server DR Automation:
 
 1. **Select** the workspace and target **workgroup** from the navigation window.
 2. **Click** the **Advanced Operations** dropdown.  
