@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-20"
+lastupdated: "2025-12-18"
 
 subcollection: dr-automation-powervs
 
@@ -17,7 +17,7 @@ Advanced operations in the {{site.data.keyword.DR_full}} provide essential actio
 ## Navigate advance operations
 {: #na-vi-gate}
 
-Access Advanced Operations from the Workgroup Summary tab to perform actions like Failover Rehearsal, Clean up, or Re-Sync for disaster recovery management.
+Access Advanced Operations from the workgroup Summary tab to perform actions like Failover Rehearsal, Clean up, or Re-Sync for disaster recovery management.
 
 ### Procedure
 {: #pr-ci-dure}
@@ -26,7 +26,7 @@ Follow these steps to access Advanced Operations for a selected workgroup in the
 
 1. **Select** the workspace from the navigation window.
 
-2. **Expand** the workgroup list and select the **WorkGroup**.
+2. **Expand** the workgroup list and select the **workgroup**.
 
 3. Click the **Summary** tab and it displays **Advanced Operations**.
 
@@ -44,7 +44,7 @@ Click the Advanced Operations dropdown to choose from available actions such as 
 
 Follow these steps to perform the Failover Rehearsal:
 
-1. **Select** the workspace and target **WorkGroup** from the navigation window.  
+1. **Select** the workspace and target **workgroup** from the navigation window.  
 2. **Click** the **Advanced Operations** dropdown and **select** **Failover Rehearsal**.  
 3. When prompted with a confirmation dialog, **click Yes** to proceed.  
 4. **Monitor** the progress in the **Activity Log**.  
@@ -62,7 +62,7 @@ The **Clean up** operation removes the Rehearsal VM created during a Failover Re
 
 Follow these steps to remove the Rehearsal VM created during a Failover Rehearsal:
 
-1. **Select** the same **WorkGroup** used for rehearsal.  
+1. **Select** the same **workgroup** used for rehearsal.  
 2. **Click** the **Advanced Operations** dropdown and **select** **Clean up**.  
 3. **Confirm** the operation when prompted.
 
@@ -78,7 +78,7 @@ The **Re-Sync** operation is used to synchronize the state of virtual machines i
 
 Follow these steps to re-sync a workgroup in Power Virtual Server DR Automation:
 
-1. **Select** the workspace and target **WorkGroup** from the navigation window.
+1. **Select** the workspace and target **workgroup** from the navigation window.
 2. **Click** the **Advanced Operations** dropdown.  
 3. **Select** **Re-Sync** from the list of options.  
 4. **Confirm** the operation when prompted.
