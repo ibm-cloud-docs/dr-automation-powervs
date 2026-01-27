@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2026-01-27"
 
 subcollection: dr-automation-powervs
 
@@ -178,13 +178,13 @@ As part of the DR Automation deployment, the system creates the Orchestrator (KS
 
 DR Automation use a VPC schematic through the **Power Virtual Server with VPC landing zone**, this internally creates an optional VPN. This VPN allows you to connect the Power Virtual Server and Virtual Server Instances (VSI) by downloading the VPN profile.
 
-After deployment, you can launch the "External Orchestrator UI" when you connect to the VPN, or when the public network is explicitly enabled.
+After deployment, you can launch the External Orchestrator UI by connecting to the environment using a VPN, or when the public network is explicitly enabled.
 
 When KSYSHA is enabled, a standby Orchestrator is created in the user selected workspace, and it automatically adds this workspace to the Transit Gateway to establish connectivity with the VPC. When selecting the standby workspace, ensure that no duplicate subnet range is configured across the workspaces connected to the Transit Gateway. If multiple Power Virtual Servers have the same subnet range, they may fail to communicate with the VPC.
 
 Additionally, the system automatically adds all default networks configured for Power Virtual Servers to the security group to enable communication during the **Power Virtual Server with VPC landing zone** creation. If you create new subnets in the Power Virtual Server workspace, you must add them to the security group to enable communication with the VPC. For more details, refer to [VPC Security](https://cloud.ibm.com/docs/vpc?topic=vpc-security-in-your-vpc).
 
- For detailed steps on connecting to the Power Virtual Server with VPC, refer to [Connect using a client-to-site VPN](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-solution-connect-client-vpn).
+ For more information about VPN connectivity options, see [VPN connections](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-VPN-connections).
 
 ## Setting up {{site.data.keyword.DR_short}}
 {: #setup}

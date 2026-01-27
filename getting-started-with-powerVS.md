@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-26"
+lastupdated: "2026-01-27"
 
 keywords: getting started, disaster recovery, PowerVS, start
 
@@ -42,7 +42,7 @@ Complete the following prerequisites:
 5. **Plan infrastructure**: Define your DR requirements and estimate costs using the [DR Automation Estimate pricing tool](https://cloud.ibm.com/estimator).
 
 ## Lifecycle of Power Virtual Server DR Automation
-{: #lpvsdrauto} 
+{: #lpvsdrauto}
 
 ![DR Automation life Cycle](images/life-Cycle-public-private.svg "DR Automation life Cycle"){: caption="DR Automation life Cycle" caption-side="bottom"}
 
