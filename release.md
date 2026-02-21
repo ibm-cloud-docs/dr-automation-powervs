@@ -1,12 +1,12 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-02"
+lastupdated: "2026-02-21"
 subcollection: dr-automation-powervs
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
 }
-keywords: release-notes, new features, enhanchments, latest release
+keywords: release-notes, new features, enhancements, latest release
 ---
 
 {{site.data.keyword.attribute-definition-list}}
@@ -20,7 +20,7 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 {: #subcollection-december1225}
 {: release-note-october}
 
-- You can now deploy the orchestrator with minimal inputs. You no longer need to provide schematic or custom VPC details. The orchestrator uses a private endpoint to communicate with all required IBM Cloud services.For more information, see [Deploying the orchestrator](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch).
+- You can now deploy the orchestrator with minimal inputs. You no longer need to provide schematic or custom VPC details. The orchestrator uses a private endpoint to communicate with all required IBM Cloud services. For more information, see [Deploying the orchestrator](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch).
 - You can now enable Multi-Factor Authentication (MFA) for the DR automation orchestrator to enhance login security. For more information, see [Multifactor authentication](/docs/dr-automation-powervs?topic=dr-automation-powervs-multifactor-authentication).
 - You can now assign roles to users and manage permissions through the new User Role Management feature, which introduces role-based access control (RBAC) for creating users, defining roles, and controlling access to DR automation operations. For more information, see [User role management](/docs/dr-automation-powervs?topic=dr-automation-powervs-user-ro-mang).
 - You can now generate consolidated operational reports for the external orchestrator, including Discovery, Move, Failover Rehearsal, and Cleanup activities. For more information, see [Generate external orchestrator reports](/docs/dr-automation-powervs?topic=dr-automation-powervs-reports).
@@ -36,15 +36,15 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 
 - You can now view the deployment timestamps for both the primary and standby orchestrators, along with the subscription plan details (Public or Private) selected during initial setup. These enhancements provide better tracking of deployment history and service configuration. For more information, see [Orchestrator and service details](/docs/dr-automation-powervs?topic=dr-automation-powervs-or-ser-de).
 
-- In Orchestrator UI Configuration deployment page, Modify VM option is provided which allows you to modify, configure multiple IP mappings, and enable the Shared Processor Pool (SPP) to optimize performance and resource utilization for the DR enabled virtual machines. For more information, see [Managing VM sessions](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-vm-ses#modify-vm-ses), [Shared processor pool support for public and private plans](/docs/dr-automation-powervs?topic=dr-automation-powervs-comm#shared-processor-pool-configuration).
+- In the Orchestrator UI Configuration deployment page, the Modify VM option is provided, which allows you to modify, configure multiple IP mappings, and enable the Shared Processor Pool (SPP) to optimize performance and resource utilization for the DR-enabled virtual machines. For more information, see [Managing VM sessions](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-vm-ses#modify-vm-ses), [Shared processor pool support for public and private plans](/docs/dr-automation-powervs?topic=dr-automation-powervs-comm#shared-processor-pool-configuration).
 
-- DR Automation now displays real-time notifications for events, that are deployment status, errors, and operational updates. Each notification appears as a pop-up with a timestamp, and you can track up to 100 current events, providing clear visibility into system activities and changes. For more information, see [Administrating event logs](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-log#adm-log).
+- DR Automation now displays real-time notifications for events, including deployment status, errors, and operational updates. Each notification appears as a pop-up with a timestamp, and you can track up to 100 current events, providing clear visibility into system activities and changes. For more information, see [Administrating event logs](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-log#adm-log).
 
-- When deploying the orchestrator with Client Location (Private pod), the Add Sites page now display Select Source Satellite Location and Select Target Satellite Location instead of region-based options. For more information, see [Add sites to KSYS](/docs/dr-automation-powervs?topic=dr-automation-powervs-con-site-ksys).
+- When deploying the orchestrator with Client Location (Private pod), the Add Sites page now displays Select Source Satellite Location and Select Target Satellite Location instead of region-based options. For more information, see [Add sites to KSYS](/docs/dr-automation-powervs?topic=dr-automation-powervs-con-site-ksys).
 
 - DR Automation now supports upgrading the orchestrator ksys filesets through a simplified CLI command, ensuring your system remains up to date with the latest features, fixes, and security enhancements. For more information, see [Migrate using ksysmgr commands](/docs/dr-automation-powervs?topic=dr-automation-powervs-Upgrade-fil-set).
 
-- You can now choose Orchestator HA enablement in DR configuration page. For more information, see [Deploying the orchestrator for disaster recovery](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch).
+- You can now choose Orchestator HA enablement in the DR configuration page. For more information, see [Deploying the orchestrator for disaster recovery](/docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch).
 
 ## 25 July 2025
 {: #subcollection-july0725}
@@ -82,7 +82,7 @@ You can now perform DR rehearsal operations at the workgroup level using the CLI
 
 **Upgrade your deployment to the latest orchestrator version**
 
-Use a snapshot to migrate your deployment to the latest orchestrator version. Create and upload the snapshot to IBM COS, then restore it on the new deployment. After migration, clean up the source cluster and delete the service. For more information, see [Upgrade your deployment](https://test.cloud.ibm.com/docs/dr-automation-powervs?topic=dr-automation-powervs-plan-work-load#upgrate-you-deployment).
+Use a snapshot to migrate your deployment to the latest orchestrator version. Create and upload the snapshot to IBM COS, then restore it on the new deployment. After migration, clean up the source cluster and delete the service. For more information, see [Upgrade your deployment](https://cloud.ibm.com/docs/dr-automation-powervs?topic=dr-automation-powervs-plan-work-load#upgrate-you-deployment).
 
 
 **Failover rehearsal at site level**
@@ -110,7 +110,7 @@ You can now simulate a full-site failover using DR rehearsal at the site level t
 
 
 **Improved GUI for recovery workflows**
-:   Automate complex recovery workflows through the improved GUI interface, reducing manual intervention and minimizing Recovery Time Objectives (RTO). For more details, see [GUI Workflow Automation](/docs/dr-automation-powervs?topic=dr-automation-powervs-cinstance).
+Automate complex recovery workflows via an improved GUI, reducing manual intervention and minimizing Recovery Time Objectives (RTO). For more details, see [GUI Workflow Automation](/docs/dr-automation-powervs?topic=dr-automation-powervs-cinstance).
 
 **Support for Power E1080 systems**
 :   DR Automation now supports Power E1080 (9080-HEX) systems with up to 64 TB of memory, allowing for recovery of large-scale workloads. For more details, see [Hardware specifications](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch).

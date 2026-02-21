@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-08"
+lastupdated: "2026-02-21"
 
 subcollection: dr-automation-powervs
 
@@ -12,9 +12,6 @@ keywords: power-hadr, cli, pdr
 
 # {{site.data.keyword.DR_full}} CLI version 0.0.1
 {: #dr-automation-cli-version}
-
-
-
 
 ## Available Commands:
 {: #avalible-cmd}
@@ -691,14 +688,14 @@ ibmcloud power-hadr dr create --instance-id instance1 --orchestrator-name HA-Dep
 
 ```json
 {
-  "dashboard_url" : "https://power-dra.test.cloud.ibm.com/power-dra-ui?instance_id=crn:v1:bluemix:public:power-dr-automation:us-south:a/fe3c2ccd058e407c81e1dba2b5c0e0d6:e3d09875-bbf8-4d8a-b52c-abefb67a53c5::",
-  "id" : "crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9::"
+  "dashboard_url" : "https://power-dra.ibm.com/power-dra-ui?instance_id=crn:v1:bluemix:public:power-dr-automation:us-south:a/fe3c2ccd058e407c81e1dba2b5c0e0d6:e3d09875-bbf8-4d8a-b52c-abefb67a53c5::",
+  "id" : "crn:v1:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9::"
 }
 ```
 
-
 ## Last operation
 {: #power-hadr-dr-automation-service-instance-cli}
+
 
 ### `ibmcloud power-hadr pdr last-operation`
 {: #power-hadr-cli-last-operation-command}

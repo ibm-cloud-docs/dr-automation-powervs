@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-04"
+lastupdated: "2026-02-21"
 
 subcollection: dr-automation-powervs
 
@@ -31,7 +31,6 @@ The following details are displayed in the summary page:
 - **Target Procpool**: The designated shared processor pool (SPP) that is assigned to the virtual machines.  
 
 To complete the process, click **Submit & Deploy**, and you are redirected to the **Dashboard** section.
-
 
 
 This summary ensures that all configurations are accurately set up and ready for operational use.

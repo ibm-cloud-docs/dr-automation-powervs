@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-05"
+lastupdated: "2026-02-21"
 
 subcollection: dr-automation-powervs
 
@@ -811,7 +811,6 @@ Event Name Event Type Description
 NETWORK_CONFIGURATION_FAILED warning Network configuration has failed.
 
 ```
- 
 
 #### To query the system-wide persistent attribute for the ksysmgr command, use the following command syntax:
 {: #que-sys-wide}

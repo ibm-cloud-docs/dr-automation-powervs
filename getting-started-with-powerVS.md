@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-01-27"
+lastupdated: "2026-02-21"
 
 keywords: getting started, disaster recovery, PowerVS, start
 
@@ -68,6 +68,6 @@ After completing the orchestrator setup, you can:
 
 - [Manage virtual servers](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-vm-ser) that enables administrators to monitor and control the virtual server instances.
 
-
+-->
 
 These advanced configurations help you optimize your disaster recovery setup for business resilience.

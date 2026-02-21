@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-26"
+lastupdated: "2026-02-21"
 
 subcollection: dr-automation-powervs
 
@@ -61,7 +61,7 @@ follow the steps:
     > - The root user is prompted to enter their password first and then an OTP during the first login.
     > - **Note:** MFA status is displayed in the **Orchestrator Details** page and MFA events are captured in the **Events** log for auditing.
 
-12. Enter the proxy details if you have selected **Chennai (in-che, che01)** or **Montréal (ca-mon)** as the DR location. For more information, see [How to get ProxyIP details which is configured for Virtual Server Instance for VPC](https://test.cloud.ibm.com/docs-draft/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab).
+12. Enter the proxy details if you have selected **Chennai (in-che, che01)** or **Montréal (ca-mon)** as the DR location. For more information, see [How to get ProxyIP details which is configured for Virtual Server Instance for VPC](https://cloud.ibm.com/docs-draft/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab).
 
 13. (Optional) Expand the **Advanced orchestrator configuration** to change the Storage tier and Machine type configuration based on the **Orchestrator HA** selection.
 
@@ -78,7 +78,7 @@ follow the steps:
       a. Complete the [External orchestrator interface setup](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter).  
       b. Hover over the **External standby orchestrator interface** button to view the standby orchestrator IP, for example, `IP:xx.x.x.xxx`.  
       c. Use the standby orchestrator IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.  
-      d. Click the **External standby orchestrator interface** button to enable the interface.  
+      d. Click the **External standby orchestrator interface** button to enable the interface.
       e. Click the **Refresh** icon to update the status, enabling the **External standby orchestrator interface button** for use.
 17. If any error occurs during deployment, follow on-screen prompts or events to troubleshoot and retry the deployment.
 

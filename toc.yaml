@@ -11,6 +11,7 @@ toc:
       id: learn
       topics:
       - getting-started-with-powerVS.md
+      - power-ha-getting-started.md
       - release.md
       - topicgroup:
           label: Locations
@@ -22,6 +23,7 @@ toc:
           topics:
           - architecture-dr-automation.md
           - private-pod.md
+          - powerha-aix-arch.md
       - topicgroup:
           label: Pricing
           topics:
@@ -51,6 +53,7 @@ toc:
           - iam-autoamtion.md
           - create-instance-powervs.md
           - deploying-the-orchestrator.md
+          - create-ha-cluster.md
           - Orchestrator-and-service-details.md
           - monitoring-vm-status.md
           - manage-vm.md
