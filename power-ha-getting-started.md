@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-02-21"
+lastupdated: "2026-02-23"
 
 subcollection: dr-automation-powervs
 
@@ -14,7 +14,7 @@ keywords: powerha, Power HA, getting started
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Getting started with IBM {{site.data.keyword.DR_full_notm}}
+# Getting started with HA Automation for Power Virtual Server
 
 {: #getting-started}
 {: toc-content-type="tutorial"}
@@ -22,7 +22,7 @@ keywords: powerha, Power HA, getting started
 {: toc-completion-time="10m"}
 
 
-{{site.data.keyword.DR_full}} helps you deploy and operate high-availability clusters using PowerHA SystemMirror with minimal manual effort. The service integrates with IBM Cloud to streamline onboarding, cluster lifecycle operations, and service management for PowerHA-enabled virtual machines.
+Setup HA Automation of {{site.data.keyword.DR_full}} helps you deploy and operate high-availability clusters using PowerHA SystemMirror with minimal manual effort. The service integrates with IBM Cloud to streamline onboarding, cluster lifecycle operations, and service management for PowerHA-enabled virtual machines.
 
 You can deploy PowerHA automation from the IBM Cloud catalog. The catalog UI guides you through selecting the PowerHA plan and associating existing PowerVS virtual machines that participate in a PowerHA cluster. The service focuses on automation, visibility, and lifecycle management, while cluster configuration and application setup remain customer-managed.
 {: shortdesc}
