@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-02-21"
+lastupdated: "2026-02-24"
 
 subcollection: dr-automation-powervs
 
@@ -9,7 +9,11 @@ keywords: create instance for PowerHA , powerha instance, add node
 
 ---
 
-# Create HA cluster
+# Creating HA cluster
+{: #creating-ha-cluster}
+
+
+## Create HA cluster
 {: #create-ha-cluster}
 
 After creating the service instance, configuring the HA cluster in {{site.data.keyword.DR_full}} is required to enable high availability for your Power Virtual Server environment. The HA cluster establishes coordinated nodes that help ensure workload continuity during planned or unplanned outages. This screen allows you to configure the location, workspace, API authentication key, and related high availability settings. Once configured, {{site.data.keyword.DR_short}} supports automatic failover and resilient operations to maintain service availability.

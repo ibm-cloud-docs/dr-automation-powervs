@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-02-23"
+lastupdated: "2026-02-24"
 
 keywords: getting started, disaster recovery, PowerVS, start
 
@@ -23,9 +23,9 @@ completion-time: 10m
 {: toc-services=""}
 {: toc-completion-time="10m"}
 
-Set up DR Automation of {{site.data.keyword.DR_full}} to automate disaster recovery (DR) processes for virtualized environments and ensure business continuity with minimal manual intervention. Deploy {{site.data.keyword.DR_short}} from the IBM Cloud Catalog UI, which provides an intuitive interface for selecting and configuring recovery services. The solution automates the recovery of virtual machines (VMs) and workloads, synchronizing data and managing replication between sites to protect critical operations.
+Set up **DR Automation** of {{site.data.keyword.DR_full}} to automate disaster recovery (DR) processes for virtualized environments and ensure business continuity with minimal manual intervention. Deploy DR automation from the IBM Cloud Catalog UI, which provides an intuitive interface for selecting and configuring recovery services. The solution automates the recovery of virtual machines (VMs) and workloads, synchronizing data and managing replication between sites to protect critical operations.
 
-IBM Power Virtual Server Public Cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers and configuring them as managed virtual machines to enable DR. With robust automation, {{site.data.keyword.DR_short}} minimizes downtime, reduces manual tasks, and enhances business resilience. Leveraging IBM Cloud's global regions, it offers low-latency failover and high availability options to effectively meet your DR requirements.
+IBM Power Virtual Server Public Cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers and configuring them as managed virtual machines to enable DR. With robust automation, DR Automation minimizes downtime, reduces manual tasks, and enhances business resilience. Leveraging IBM Cloud's global regions, it offers low-latency failover and high availability options to effectively meet your DR requirements.
 {: shortdesc}
 
 ## Before you begin
@@ -57,7 +57,7 @@ Complete the following prerequisites:
 
 3. (Optional) Expand the **Advanced orchestrator configuration** to modify the default values of storage tier and machine type for the Orchestrator VM, by default **Tier1** is selected for Storage tier and **s922** is selected for machine type.
 
-4. If you have enabled **Orchestrator HA** on manage page. Provide standby orchestrator details.
+4. If you have enabled **Orchestrator HA**. Provide standby orchestrator details.
 5. Review all settings and click **Deploy Orchestrator** to begin the deployment.
 
 
@@ -67,7 +67,5 @@ Complete the following prerequisites:
 After completing the orchestrator setup, you can:
 
 - [Manage virtual servers](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-vm-ser) that enables administrators to monitor and control the virtual server instances.
-
--->
 
 These advanced configurations help you optimize your disaster recovery setup for business resilience.
