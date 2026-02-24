@@ -47,10 +47,10 @@ It supports disaster recovery automation where PowerVS infrastructure is deploye
 
 Use this plan when your PowerVS environment is deployed in a private or client location.
 
-- **PowerHA AIX for PowerVS**
+- **HA Automation for PowerVS**
 
-This plan provides PowerHA enablement for AIX workloads running on PowerVS.
-It is focused on high availability (HA) rather than disaster recovery and is available only in locations that support PowerHA for AIX on PowerVS.
+This plan provides HA Automation enablement for AIX workloads running on PowerVS.
+It is focused on high availability (HA) rather than disaster recovery and is available only in locations that support HA Automation for PowerVS.
 
 Use this plan when you require high availability for AIX workloads on PowerVS.
 
@@ -84,7 +84,7 @@ The service is designed to operate across regions while respecting region-specif
 
 ### **Does {{site.data.keyword.DR_full_notm}} High Availability (HA)?**
 
-Yes. High availability is supported through the PowerHA AIX for PowerVS plan, which provides native HA capabilities for AIX workloads.
+Yes. High availability is supported through the HA Automation for PowerVS plan, which provides native HA capabilities for AIX workloads.
 
 ### **What monitoring tools are available?**
 {: #monitor}  
@@ -114,8 +114,8 @@ Yes, recovery configurations are customizable, allowing users to prioritize crit
 - **KSYS Orchestrator:** Manages failover/failback workflows.  
 - **Service Broker:** Handles resource provisioning.  
 - **Cloud Object Storage:** IBM Cloud services like Cloud Object Storage, CloudantDB, BSS, Activity Tracker, Cloud logs, Sendgrid/ACS.
-- **PowerHA SystemMirror (for PowerHA plans)**: Provides native high availability capabilities for AIX workloads running on PowerVS.
-- **PowerHA Agent (for PowerHA plans)**: Installs and manages PowerHA filesets on selected PowerVS instances and reports status to the service.
+- **HA Automation (for PowerHA plans)**: Provides native high availability capabilities for AIX workloads running on PowerVS.
+- **HA Agent (for PowerHA plans)**: Installs and manages HA Automation filesets on selected PowerVS instances and reports status to the service.
 
 ### **How can users track billing for {{site.data.keyword.DR_short}}?**
 {: #implemen}  
@@ -127,7 +127,7 @@ Billing is transparent and tied to the number of cores. Usage metrics are update
 
 IBM offers 24/7 technical support, comprehensive documentation and guided assistance for setting up and managing DR Automation.  
 
-## Power Virtual Server DR Automation faq:
+## DR Automation faq
 {: #power-vs-dr-auto-faq} 
 
 ### **What is the role of the DR Orchestrator (KSYS)?**
@@ -159,14 +159,14 @@ The platform includes features for DR drills, where users can simulate failovers
 
 Yes, users can scale resources dynamically based on workload demands. Additional cores can be provisioned through the IBM Cloud UI.
 
-### **What are the key components of {{site.data.keyword.DR_short}}?**
+### **What are the key components of DR Automation of {{site.data.keyword.DR_short}}?**
 {: #compe}  
 
 - **KSYS Orchestrator:** Manages failover/failback workflows.  
 - **Service Broker:** Handles resource provisioning.  
 - **Cloud Object Storage:** IBM Cloud services like Cloud Object Storage, CloudantDB, BSS, Activity Tracker, Cloud logs, Sendgrid/ACS.
 - **PowerHA SystemMirror (for PowerHA plans)**: Provides native high availability capabilities for AIX workloads running on PowerVS.
-- **PowerHA Agent (for PowerHA plans)**: Installs and manages PowerHA filesets on selected PowerVS instances and reports status to the service.
+- **PowerHA Agent (for PowerHA plans)**: Installs and manages HA filesets on selected PowerVS instances and reports status to the service.
 
 ### **What resources should be planned before implementing DR Automation?**
 {: #implementt}   
@@ -335,7 +335,7 @@ To update the API key in orchestrator ,run the following command:
    ```ksysmgr modify ksyscluster <ksysclustername> apikey=<apikey>```
 > **Note:** Use the same API key in both the deployment and orchestrator to ensure proper synchronization.
 
-## PowerHA faq
+## HA Automation faq
 {: #powerha-faq}
 
 ### What is HA Automation for Power Virtual Server?
@@ -345,15 +345,15 @@ HA Automation enables high availability for IBM Power Virtual Server workloads b
 
 It ensures continuous application availability and supports automatic failover during outages.
 
-### **What are the prerequisites for setting up PowerHA AIX for PowerVS?**
+### **What are the prerequisites for setting up HA Automation for PowerVS?**
 {: #preque-powerha}
 
-Before you deploy PowerHA AIX for PowerVS, ensure that the following requirements are met:
+Before you deploy HA Automation for PowerVS, ensure that the following requirements are met:
 
 - **IBM Cloud account** - You must have an active IBM Cloud account. If required, sign up at https://cloud.ibm.com/registration.
-- **IAM access** - Configure the required Identity and Access Management (IAM) roles and permissions for PowerHA AIX for PowerVS.
+- **IAM access** - Configure the required Identity and Access Management (IAM) roles and permissions for HA Automation for PowerVS.
 - **PowerVS environment** - A supported Power Virtual Server workspace with AIX virtual machines must already be available in the selected location.
-- **Infrastructure planning** - Plan your high availability topology based on your business requirements and supported PowerHA configurations.
+- **Infrastructure planning** - Plan your high availability topology based on your business requirements and supported HA Automation configurations.
 - **API key** - An IBM Cloud API key is required for service provisioning and orchestration operations.
 
 ### Does HA Automation support both High Availability and Disaster Recovery?
@@ -381,20 +381,20 @@ The agent performs the following actions:
 
 Each HA node must run the agent to complete the installation.
 
-### **What are the main API endpoints for PowerHA AIX for PowerVS?**
+### **What are the main API endpoints for HA Automation for PowerVS?**
 {: #apiendd}  
 
 Key endpoints include provisioning APIs for VMs, monitoring APIs for health metrics, and deprovisioning APIs for tearing down configurations. Some APIs and workflows apply only to HA Automation plans.
 
-### **What resources should be planned before implementing PowerHA AIX for PowerVS?**
+### **What resources should be planned before implementing HA Automation for PowerVS?**
 {: #implementt-powerha}
 
-Before implementing PowerHA AIX for PowerVS, ensure that you have the following resources planned and ready:
+Before implementing HA Automation for PowerVS, ensure that you have the following resources planned and ready:
 
-- **PowerVS AIX virtual machines**: Existing AIX virtual machines on PowerVS that will participate in the PowerHA cluster.
-- **PowerHA cluster nodes**: Identify the PowerVS instances that will form the PowerHA cluster.
-- **Network connectivity**: Reliable network connectivity between PowerHA nodes to support cluster communication and failover.
-- **PowerHA software availability**: PowerHA SystemMirror filesets must be available for installation on each PowerHA node using the PowerHA agent.
+- **PowerVS AIX virtual machines**: Existing AIX virtual machines on PowerVS that will participate in the HA Automation cluster.
+- **HA cluster nodes**: Identify the PowerVS instances that will form the HA cluster.
+- **Network connectivity**: Reliable network connectivity between HA nodes to support cluster communication and failover.
+- **HA availability**: HA Automation SystemMirror filesets must be available for installation on each HA node using the PowerHA agent.
 - **Cluster configuration planning**: Plan resource groups, application dependencies, and failover behavior according to your high availability requirements.
 
 
