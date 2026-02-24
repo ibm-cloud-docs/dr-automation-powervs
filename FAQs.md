@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-02-21"
+lastupdated: "2026-02-24"
 
 subcollection: dr-automation-powervs
 
@@ -338,6 +338,13 @@ To update the API key in orchestrator ,run the following command:
 ## PowerHA faq
 {: #powerha-faq}
 
+### What is HA Automation for Power Virtual Server?
+{: #faq-ha-automation-overview}
+
+HA Automation enables high availability for IBM Power Virtual Server workloads by deploying and managing clustered environments in the cloud.  
+
+It ensures continuous application availability and supports automatic failover during outages.
+
 ### **What are the prerequisites for setting up PowerHA AIX for PowerVS?**
 {: #preque-powerha}
 
@@ -348,6 +355,31 @@ Before you deploy PowerHA AIX for PowerVS, ensure that the following requirement
 - **PowerVS environment** - A supported Power Virtual Server workspace with AIX virtual machines must already be available in the selected location.
 - **Infrastructure planning** - Plan your high availability topology based on your business requirements and supported PowerHA configurations.
 - **API key** - An IBM Cloud API key is required for service provisioning and orchestration operations.
+
+### Does HA Automation support both High Availability and Disaster Recovery?
+{: #faq-ha-dr-support}
+
+Yes. The solution provides automation for both:
+
+- **High Availability (HA)** – Cluster-based protection within or across environments.
+- **Disaster Recovery (DR)** – Automated failover and replication to recovery sites.
+
+Both offerings are available through a single IBM Cloud catalog experience.
+
+
+### How is HA software installed on PowerVS virtual machines?
+{: #faq-ha-installation}
+
+HA software is installed by using an agent that runs on each selected PowerVS instance.
+
+The agent performs the following actions:
+
+- Connects securely to the service
+- Downloads the required software files
+- Installs dependencies and service packs
+- Reports installation status back to the service
+
+Each HA node must run the agent to complete the installation.
 
 ### **What are the main API endpoints for PowerHA AIX for PowerVS?**
 {: #apiendd}  
@@ -364,6 +396,14 @@ Before implementing PowerHA AIX for PowerVS, ensure that you have the following 
 - **Network connectivity**: Reliable network connectivity between PowerHA nodes to support cluster communication and failover.
 - **PowerHA software availability**: PowerHA SystemMirror filesets must be available for installation on each PowerHA node using the PowerHA agent.
 - **Cluster configuration planning**: Plan resource groups, application dependencies, and failover behavior according to your high availability requirements.
+
+
+### How is billing calculated for HA Automation?
+{: #faq-ha-billing}
+
+Billing follows a usage-based (“Pay as you use”) model.
+
+Charges are calculated based on the number of CPU cores used by the managed virtual machines in the cluster. Usage is collected hourly and reported for billing purposes.
 
 ### What APIs are available for this service?
 {: #api-powerha}
@@ -389,3 +429,72 @@ To provision a service instance, use the **Provision API (PUT)** and provide the
 After successful provisioning, the API response includes a `dashboard_url` that you can use to access the service instance.
 
 To deprovision a service instance, use the **DELETE** operation with the corresponding `plan_id` and `service_id`. The response confirms that the deprovisioning process has been initiated.
+
+
+### Why is HA cluster configuration required after creating the service instance?
+{: #faq-ha-required}
+
+After you provision a service instance, you must configure the HA cluster to enable high availability for your Power Virtual Server environment.  
+
+The HA cluster coordinates nodes within the selected high availability location and workspace to help ensure workload continuity during planned or unplanned outages and to support automatic failover.
+
+
+### What information is required to configure the HA cluster?
+{: #faq-ha-required-info}
+
+To configure the HA cluster, provide the following information:
+
+- **API key** – A valid API key that is used for authentication. The key must be validated before you can save the configuration.
+- **High availability location** – The location where the HA cluster is deployed.
+- **Power Virtual Server workspace** – The workspace that contains the virtual server instances to be protected.
+
+Ensure that the API key has the required permissions to access the selected workspace.
+
+
+### Is adding nodes mandatory after configuring the HA cluster?
+{: #faq-ha-add-node-mandatory}
+
+Yes. After you configure the HA cluster, you must add one or more virtual server instances as cluster nodes.  
+
+High availability protection is not enabled until at least one node is added to the cluster.
+
+
+### What if no virtual server instances are available to add as nodes?
+{: #faq-ha-no-instances}
+
+If no virtual server instances are listed in the **Cluster nodes** section, you must first create a Power Virtual Server workspace and provision virtual server instances.
+
+To create a workspace, navigate to:
+
+**Navigation menu > Infrastructure > Power Virtual Server > Workspace > Create a workspace**
+
+After you provision the virtual server instances, return to the **Cluster nodes** section and add the instances to the HA cluster.
+
+
+### Do I need to manually configure the HA cluster?
+{: #faq-ha-cluster-configuration}
+
+Yes. After the software installation is complete, you must configure the HA cluster based on your workload requirements.
+
+
+### What happens if usage data is temporarily unavailable?
+{: #faq-ha-usage-data}
+
+If usage information is not received from the monitoring node, the system uses previously recorded usage data to prevent billing gaps. Failed records are retried automatically in the next billing cycle.
+
+
+### Can I upgrade to a newer HA version after deployment?
+{: #faq-ha-upgrade}
+
+Yes. When a newer version is available, you can initiate a migration from the UI.
+
+The system downloads and installs the updated software and reports the migration status.
+
+
+
+### What roles are required to manage HA Automation?
+{: #faq-ha-roles}
+
+IBM Cloud platform and service roles determine what actions a user can perform.
+
+Depending on the assigned role (Administrator, Editor, Operator, or Viewer), users can provision, configure, or view service instances.

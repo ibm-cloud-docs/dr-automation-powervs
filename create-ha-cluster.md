@@ -19,7 +19,7 @@ keywords: create instance for PowerHA , powerha instance, add node
 After creating the service instance, configuring the HA cluster in {{site.data.keyword.DR_full}} is required to enable high availability for your Power Virtual Server environment. The HA cluster establishes coordinated nodes that help ensure workload continuity during planned or unplanned outages. This screen allows you to configure the location, workspace, API authentication key, and related high availability settings. Once configured, {{site.data.keyword.DR_short}} supports automatic failover and resilient operations to maintain service availability.
 {:shortdesc: .shortdesc}
 
-## Procedure
+### Procedure
 {: #procedure-ha-cluster}
 
 To configure the HA cluster, complete the following steps:
@@ -35,7 +35,7 @@ To configure the HA cluster, complete the following steps:
 
 After you complete the HA cluster configuration, add nodes to the cluster.
 
-## Procedure
+### Procedure
 {: #procedur-add-node}
 
 To add nodes, complete the following steps:
@@ -57,5 +57,8 @@ To add nodes, complete the following steps:
    - **Status**
 
 5. Click **Add instance** to add the selected nodes to the cluster.
+
+6. If there are no virtual servers instance added ,complete the following step.
+Click **Naviagation Menu** > **Infratructer** > **Power Virtual Server** > **Workspace** > **Create a Wrokspace**.
 
 After the nodes are added, they appear in the **Cluster nodes** table, where you can monitor their status and continue with agent installation and failover configuration.
