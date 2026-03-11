@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-02-21"
+lastupdated: "2026-03-11"
 
 subcollection: dr-automation-powervs
 
@@ -82,9 +82,7 @@ IBM Power servers that are supported by {{site.data.keyword.DR_full_notm}} inclu
 - **IBM Power E1080**
 - **IBM Power S1022**
 - **IBM Power E1050**
-- **IBM Power S1122**
-- **IBM Power E1150**
-- **IBM Power S1124**
+
 
 For more details, refer to the specific data sheets and hardware overview table.
 
@@ -95,10 +93,12 @@ For more details, refer to the specific data sheets and hardware overview table.
 To deploy and use PowerHA SystemMirror on IBM Power Virtual Server (PowerVS), ensure that your environment meets the following software requirements.
 
 - **Supported operating systems**
-PowerHA supports enterprise operating systems available on PowerVS, including IBM AIX®, IBM i, and supported Linux distributions. Ensure that your virtual server instances are running a PowerHA-supported operating system level.
+PowerHA supports enterprise operating systems available on PowerVS, including IBM AIX®, IBMi, and supported Linux distributions. Ensure that your virtual server instances are running a PowerHA-supported operating system level.
 
-- **PowerHA SystemMirror software**
-PowerHA SystemMirror must be installed and configured on all virtual server instances that participate in the high availability cluster. The software enables health monitoring, failover, and recovery operations.
+> **Note:** The agent installation script requires `curl` command, which is not supported for installation on **AIX 7.1**. Agent installation is supported on **AIX 7.2** and later version.
+
+- **PowerHA System Mirror software**
+PowerHA System Mirror must be installed and configured on all virtual server instances that participate in the high availability cluster. The software enables health monitoring, failover, and recovery operations.
 
 - **IBM Cloud access and permissions**
 You must have appropriate permissions in your IBM Cloud account to deploy and manage Power Virtual Server compute, storage, and networking resources required for high availability.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-05"
+lastupdated: "2026-03-11"
 
 subcollection: dr-automation-powervs
 
@@ -18,6 +18,11 @@ IBM® strives to keep issues in {{site.data.keyword.DR_full}} to a minimum, but 
 
 ## External orchestrator
 {: #ext}
+
+## April 2026
+{: #april-26}
+
+1. The agent installation script requires `curl` command, which is not supported for installation on AIX 7.1. Agent installation is supported on AIX 7.2 and later version.
 
 ## December 2025
 {: #december-25}
