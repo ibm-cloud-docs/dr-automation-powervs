@@ -5,16 +5,13 @@ lastupdated: "2026-03-26"
 
 subcollection: dr-automation-powervs
 
-keywords: create instance for PowerHA , powerha instance, add node
+keywords: create instance for PowerHA , powerha instance, add node, download agent
 
 ---
 
 # Creating HA cluster
 {: #creating-ha-cluster}
 
-
-## Create HA cluster
-{: #create-ha-cluster}
 
 After creating the service instance, configuring the HA cluster in {{site.data.keyword.DR_full}} is required to enable high availability for your Power Virtual Server environment. The HA cluster establishes coordinated nodes that help ensure workload continuity during planned or unplanned outages. This screen allows you to configure the location, workspace, API authentication key, and related high availability settings. Once configured, {{site.data.keyword.DR_short}} supports automatic failover and resilient operations to maintain service availability.
 {:shortdesc: .shortdesc}
@@ -63,57 +60,12 @@ Click **Naviagation Menu** > **Infratructer** > **Power Virtual Server** > **Wor
 
 After the nodes are added, they appear in the **Cluster nodes** table, where you can monitor their status and continue with agent installation and failover configuration.
 
-## Download agent
----
-copyright:
-  years: 2025
-lastupdated: "2026-03-26"
-
-subcollection: dr-automation-powervs
-
-keywords: create instance for PowerHA , powerha instance, add node
----
-
-
-## Create HA cluster
-{: #create-ha-cluster}
-
-After creating the service instance, configuring the HA cluster in {{site.data.keyword.DR_full}} is required to enable high availability for your Power Virtual Server environment. The HA cluster establishes coordinated nodes that help ensure workload continuity during planned or unplanned outages.
-{:shortdesc: .shortdesc}
-
-### Procedure
-{: #procedure-ha-cluster}
-
-1. On the **Service details** page, in the **HA cluster** section, click **Edit**.
-2. Enter the required **API key** and validate it.
-3. Select the **High availability location**.
-4. Select the **Power Virtual Server workspace**.
-5. Click **Save**.
-
----
-
-## Add node
-{: #add-node}
-
-After configuring the HA cluster, add nodes to the cluster.
-
-### Procedure
-{: #procedure-add-node}
-
-1. On the **Service details** page, go to the **Cluster nodes** section.
-2. Click **Add node**.
-3. Review the following details:
-   - High availability location  
-   - Power Virtual Server workspace name  
-   - Power Virtual Server workspace ID  
-4. Select the virtual server instances that you want to add.
-5. Click **Add instance**.
-
 
 ## Download agent
 {: #download-agent}
 
-After adding nodes, download and install the agent on each virtual machine (VM). The agent enables communication with {{site.data.keyword.DR_short}} and is used to manage PowerHA operations such as installation, upgrade, uninstallation, and registration.
+After adding nodes, download and install the agent on each virtual machine (VM).To add and install complete the following steps:
+
 {:shortdesc: .shortdesc}
 
 ### Procedure
@@ -172,7 +124,6 @@ Optional parameters:
 Note: Ensure API_KEY and SERVICE_INSTANCE_ID are exported as environment variables when arguments are not passed
 ```
 
-
 ### List supported PowerHA versions
 {: #list-powerha-versions}
 
@@ -204,6 +155,7 @@ INFO: Agent job is Completed
 export API_KEY=<value>
 export SERVICE_INSTANCE_ID=<value>
 ```
+
 ### Install PowerHA
 {: #install-powerha}
 
