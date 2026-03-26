@@ -74,8 +74,6 @@ subcollection: dr-automation-powervs
 keywords: create instance for PowerHA , powerha instance, add node
 ---
 
-# Creating HA cluster
-{: #creating-ha-cluster}
 
 ## Create HA cluster
 {: #create-ha-cluster}
@@ -281,7 +279,6 @@ Force register:
 ```bash
 ./powerha-agent -r -f
 ```
-
 
 ### Monitoring status in the UI
 {: #agent-status}
