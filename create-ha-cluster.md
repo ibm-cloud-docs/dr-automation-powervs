@@ -9,20 +9,22 @@ keywords: create instance for PowerHA , powerha instance, add node, download age
 
 ---
 
-# Creating HA cluster
-{: #creating-ha-cluster}
+# Deploying the PowerHA SystemMirror
+{: #deploying-ha-systemirror}
 
 
-After creating the service instance, configuring the HA cluster in {{site.data.keyword.DR_full}} is required to enable high availability for your Power Virtual Server environment. The HA cluster establishes coordinated nodes that help ensure workload continuity during planned or unplanned outages. This screen allows you to configure the location, workspace, API authentication key, and related high availability settings. Once configured, {{site.data.keyword.DR_short}} supports automatic failover and resilient operations to maintain service availability.
+After the service instance is created, deploy PowerHA SystemMirror for IBM Power Virtual Server to enable high availability for your environment. This deployment establishes coordinated nodes that help ensure workload continuity during planned or unplanned outages.
+
+During the deployment, you can select the region and workspace where your Power Virtual Server instances are located. After you select the workspace, you can choose the instances on which to enable PowerHA SystemMirror for your applications.
 {:shortdesc: .shortdesc}
 
 ### Procedure
 {: #procedure-ha-cluster}
 
-To configure the HA cluster, complete the following steps:
+To configure the HA deployment, complete the following steps:
 
-1. On the **Service details** page, in the **HA cluster** section, click **Edit**.
-2. In the **Edit configuration** panel, enter the required **API key** and validate it.
+1. In the **Service details** page, in the **HA cluster** section, click **Edit**.
+2. In the **Edit configuration** page, enter the required **API key** and it validates the API key.
 3. Select the **High availability location**.
 4. Select the appropriate **Power Virtual Server workspace**.
 5. Click **Save** to apply the configuration.
@@ -30,7 +32,7 @@ To configure the HA cluster, complete the following steps:
 ## Add Node
 {: #add-node}
 
-After you complete the HA cluster configuration, add nodes to the cluster.
+After you complete the HA deployment configuration, add nodes to the deployment.
 
 ### Procedure
 {: #procedur-add-node}
@@ -39,13 +41,12 @@ To add nodes, complete the following steps:
 
 1. On the **Service details** page, scroll to the **Cluster nodes** section.
 2. Click **Add node**.
-3. In the **Add nodes** panel, review the following details:
+3. In the **Add nodes** page, review the following details that you have already provided in the earlier step:
    - **High availability location**
    - **Power Virtual Server workspace name**
    - **Power Virtual Server workspace ID**
 
-4. From the list of available virtual server instances, select the nodes that you want to add to the cluster.
-   You can review details such as:
+4. From the list of instances, you can select only that are in an active state, with a maximum of eight nodes supported for deployment. You can review the following details:
    - **Name**
    - **ID**
    - **IPs**
@@ -55,16 +56,17 @@ To add nodes, complete the following steps:
 
 5. Click **Add instance** to add the selected nodes to the cluster.
 
-6. If there are no virtual servers instance added ,complete the following step.
-Click **Naviagation Menu** > **Infratructer** > **Power Virtual Server** > **Workspace** > **Create a Wrokspace**.
+6. If there are no virtual servers instances added, complete the following step.
+Click **Navigation menu** > **Infratructer** > **Power Virtual Server** > **Workspace** > **Create a Workspace**.
 
 After the nodes are added, they appear in the **Cluster nodes** table, where you can monitor their status and continue with agent installation and failover configuration.
 
+Once the all the nodes are configured, you can enable the PowerHA cluster configuration that supports failover and resilient operations to maintain the application high availability. 
 
 ## Download agent
 {: #download-agent}
 
-After adding nodes, download and install the agent on each virtual machine (VM).To add and install complete the following steps:
+After adding nodes, download and install the agent on each virtual machine (VM). To add and install complete the following steps:
 
 {:shortdesc: .shortdesc}
 
@@ -74,11 +76,11 @@ After adding nodes, download and install the agent on each virtual machine (VM).
 1. On the **Service details** page, go to the **Cluster nodes** section.
 2. Click **Download agent**.
 
-   The agent fileset (`powerha-agent.rte`) is downloaded to your local system.
+   The agent file set (`powerha-agent.rte`) is downloaded to your local system.
 
-3. Copy the downloaded fileset to each VM that is added to the cluster.
+3. Copy the downloaded file set to each VM that is added to the cluster.
 
-4. Log in to each VM and install the fileset by using the `installp` command.
+4. Log in to each VM and install the file set by using the `installp` command.
 
 5. After installation, go to the agent installation directory:
 
