@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-26"
+lastupdated: "2026-03-30"
 
 subcollection: dr-automation-powervs
 
@@ -37,9 +37,9 @@ To create and manage virtual machine, complete the following steps:
 ## Modify VM
 {: #modify-vm-ses}
 
-Make changes to your virtual machines as needed. You can choose the VMs that you want to update, adjust the IP mapping, and enable the Shared Processor Pool (SPP) for improved performance and flexibility.
+Make changes to your virtual machines as needed. In this step, select the virtual machines to update and configure target environment settings by using the available sections: Modify VM to configure basic settings such as IP mapping and Shared Processor Pool (SPP), Flex Capacity to control CPU and memory allocation for inactive and failover states, Dedicated Hostgroup to specify hostgroup-level placement, and Dedicated Host to specify host-level placement for isolation and predictable resource allocation.
 
-### Procedure
+### Modify VM 
 {: #mod-vm-ses}
 
 To modify virtual machine, complete the following steps:
@@ -54,6 +54,44 @@ To modify virtual machine, complete the following steps:
 4. Click **Save & Next**.
 
 > **Note:** Click **Refresh VM List** to display all available VMs.
+
+### Modify Flex Capacity
+{: #mod-fl-capacity}
+
+To configure Flex capacity, complete the following steps:
+
+1. In the **Modify VM** page, select the virtual machine.
+
+2. Expand the **Flex Capacity** section.
+
+3. Provide the required values:
+   - **Target Flex Memory (%)**: Percentage of total memory allocated during failover.
+   - **Target Flex CPU (%)**: Percentage of CPU allocated during failover.
+   - **Inactive VM Memory**: Minimum memory when the VM is inactive. Specify an integer value with a minimum of 2 GB.
+   - **Inactive VM CPU**: Minimum CPU when the VM is inactive. Specify a value in multiples of 0.25 cores.
+
+4. Click **Save & Next**.
+
+5. Review the configuration in the **Summary** page and click **Submit & Deploy** to apply the changes.
+6. In the dashboard page, select the VM. The **Summary** and **Flex Capacity** tabs are displayed. Click **Flex Capacity** to review and modify **Target Flex Memory (%)**, **Target Flex CPU (%)**, **Inactive VM Memory**, and **Inactive VM CPU** as required.
+
+> **Note**: If no values are specified for **Flex Capacity**, the **Target Flex Memory (%)** and **Target Flex CPU (%)** are set to 50% by default.
+
+### Modify Dedicated Hostgroup and Dedicated Host
+
+To configure dedicated hostgroup and dedicated host, complete the following steps:
+
+1. In the **Modify VM** step, select the virtual machine.
+
+2. Expand the **Dedicated Hostgroup** and **Dedicated Host** section.
+
+3. Select the required dedicated hostgroup or dedicated host from the available list.
+
+4. You can also click the expand icon to open the selection window, choose the appropriate **Dedicated Hostgroup** and **Dedicated Host**, and click **Submit**.
+
+5. Click **Save & Next**.
+
+6. Review the configuration in the **Summary** page and click **Submit & Deploy** to apply the changes.
 
 
 ## Manage VM
