@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-02-20"
+lastupdated: "2026-03-31"
 
 subcollection: dr-automation-powervs
 
@@ -82,9 +82,6 @@ The MFA Status displays whether MFA is enabled (**True**) or not enabled (**Fals
 
 Displays the name of the IBM Cloud SSH key configured for the standby orchestrator to ensure secure access and encrypted communication with the backup Power Virtual Server infrastructure.
 
-**API key**:
-
-Displays the IBM Cloud API key associated with the DR automation service. For security reasons, the key value is masked and not fully visible in the UI.
 
 ## Service details
 {: #service-det}
