@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-04"
+lastupdated: "2026-03-31"
 
 subcollection: dr-automation-powervs
 
@@ -10,8 +10,8 @@ keywords: events
 
 ---
 
-# Activity tracker events
-{: #ate} 
+# Activity tracker events for DR Automation
+{: #ate-for-dr-automation} 
 
 Activity tracking events report on activities that change the state of a service in IBM Cloud. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
 {:shortdesc: .shortdesc}
@@ -29,7 +29,7 @@ Activity Tracker Event Routing records user-initiated activities that change the
 
 This document provides details on various events relevant to {{site.data.keyword.DR_short}}. These events help administrators manage instance readiness, images, network configurations, and security policies required for effective disaster recovery.
 
-## {{site.data.keyword.DR_full}} Service Events Documentation
+## DR Automation service events documentation
 {: #site events}
 
 This document provides details of the key events and their respective API operations in the **{{site.data.keyword.DR_short}} Service**. Use the given screenshots as a reference for style and formatting.
@@ -86,7 +86,7 @@ This document provides details of the key events and their respective API operat
 | `power-dr-automation.orchestrator-vm.read`         | Retrieve information about existing Orchestrator instances.        |
 {: caption="KSYS" caption-side="bottom"}
 
-## Viewing {{site.data.keyword.DR_short}} events
+## Viewing DR Automation events
 {: #view}
 
 Disaster Recovery (DR) Automation events are automatically forwarded to specific geographic locations based on data center regions. You can access the activity tracker logs for {{site.data.keyword.DR_short}} as follows:

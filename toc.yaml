@@ -89,7 +89,9 @@ toc:
           label: Observability
           topics:
           - monitor-metrics.md
+          - monitoring-metrics-ha.md
           - activity-tracker-events.md
+          - activity-tracker-events-ha.md
   - navgroup:
       id: reference
       topics:
