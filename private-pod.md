@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-20"
+lastupdated: "2026-04-01"
 
 subcollection: dr-automation-powervs
 
@@ -15,13 +15,15 @@ keywords: private pod, client location
 # Architecture for {{site.data.keyword.DR_full_notm}} in Client Location (Private Cloud)
 {: #arch-private-pod}
 
-{{site.data.keyword.DR_full}} automatically orchestrates disaster recovery for managed workloads from your data center (Client location). The infrastructure, compute, storage, and network are physically deployed at your location (Client location) and managed by IBM Cloud platform. DR automation is available only if your environment supports Geo-Redundant Storage (GRS), which replicates data across geographically separated sites. With GRS configured, the solution automatically triggers failover and recovery operations, reducing downtime and ensuring business continuity without manual intervention.
+{{site.data.keyword.DR_full}}, **DR automation**, orchestrates disaster recovery for workloads running in your data center (client location). Infrastructure resources, including compute, storage, and network, are deployed at the client location and managed by the IBM Cloud platform.
+
+DR automation requires Geo-Redundant Storage (GRS) to replicate data across geographically separated sites and automatically trigger failover and recovery operations, ensuring business continuity with minimal downtime.
 {: shortdesc}
 
 
 
 
-Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} for client location architecture, features, hardware requirements, and network configurations.
+Explore the following sections to understand the **DR automation** for client location architecture, features, hardware requirements, and network configurations.
 
 
 ## Table of contents
@@ -39,7 +41,7 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 ## High-Level architecture
 {: #highprivate}
 
-The **{{site.data.keyword.DR_full_notm}}** system operates within IBM Power Virtual data centers, which are isolated from the core IBM Cloud environment. Using dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
+The {{site.data.keyword.DR_full_notm}}, DR automation, system operates within IBM Power Virtual data centers, which are isolated from the core IBM Cloud environment. Using dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
 
 Central to this architecture is the **Service Broker**, which manages compute, storage, and network resources to streamline and automate DR processes. The Service Broker simplifies recovery setup, enabling customers to quickly deploy and manage DR services through an intuitive interface.
 
@@ -72,7 +74,7 @@ The Service WebSphere Message Broker updates DR metrics to IBM’s billing syste
 ### Interface accessibility
 {: #interprivate}
 
-The {{site.data.keyword.DR_short}} Service Broker, accessible by using the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with the IBM broader catalog for resource provisioning.
+The DR automation Service Broker, accessible by using the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with the IBM broader catalog for resource provisioning.
 
 ## DR Orchestrator (KSYS) architecture
 {: #ksysarchprivate}

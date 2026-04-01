@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-01-27"
+lastupdated: "2026-04-01"
 
 subcollection: dr-automation-powervs
 
@@ -14,10 +14,10 @@ keywords: architecture
 # Architecture for {{site.data.keyword.DR_full_notm}} in IBM Data Center
 {: #arch}
 
-{{site.data.keyword.DR_full}} located in IBM data centers, is a robust disaster recovery solution designed for IBM data centers, distinct from general IBM Cloud resources. This solution uses dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.
+{{site.data.keyword.DR_full}}, DR automation, is a robust disaster recovery solution designed for IBM data center environments, distinct from general IBM Cloud resources. It uses dedicated network configurations and direct-attached storage to provide secure and reliable disaster recovery (DR) capabilities.
 {: shortdesc}
 
-Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} architecture, features, hardware requirements, and network configurations.
+Explore the following sections to understand the {{site.data.keyword.DR_full_notm}}, DR automation,architecture, features, hardware requirements, and network configurations.
 
 ## Table of contents
 {: #toc}
@@ -34,7 +34,7 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 ## High-Level architecture
 {: #high}
 
-The **{{site.data.keyword.DR_full_notm}}** system operates within IBM Power Virtual data centers, which are isolated from the core IBM Cloud environment. Using dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
+The **{{site.data.keyword.DR_full_notm}}**, DR automation, system operates within IBM Power Virtual data centers, which are isolated from the core IBM Cloud environment. Using dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
 
 Central to this architecture is the **Service Broker**, which manages compute, storage, and network resources to streamline and automate DR processes. It simplifies recovery setup, enabling customers to quickly deploy and manage DR services through an intuitive interface.
 
@@ -67,7 +67,7 @@ The Service WebSphere Message Broker updates DR metrics to IBM’s billing syste
 ### Interface accessibility
 {: #inter}
 
-The {{site.data.keyword.DR_short}} Service Broker, accessible via the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with IBM’s broader catalog for resource provisioning.
+The DR Automation Service Broker, accessible via the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with IBM’s broader catalog for resource provisioning.
 
 ## DR Orchestrator (KSYS) architecture
 {: #ksys-arch}
@@ -100,7 +100,7 @@ For enhanced resilience, KSYS supports High Availability (HA) setup, ensuring co
 ### Simplified disaster recovery management
 {: #simplify}
 
-{{site.data.keyword.DR_short}} provides a single interface to manage DR processes for IBM PowerVS environments. Key features include:
+DR Automation provides a single interface to manage DR processes for IBM PowerVS environments. Key features include:
 
 Automated failover and failback
 :   Automate the failover process, ensuring that workloads resume quickly in the backup environment.
@@ -114,7 +114,7 @@ Customizable recovery settings
 ### Flexible billing model
 {: #flex}
 
-{{site.data.keyword.DR_short}} follows a usage-based billing model, with flexible options based on the selected resources and configurations.
+DR Automation follows a usage-based billing model, with flexible options based on the selected resources and configurations.
 The IBM Cloud catalog supports accurate billing and comprehensive reporting, ensuring that customers have clear visibility into DR-related costs.
 
 
@@ -123,7 +123,7 @@ The IBM Cloud catalog supports accurate billing and comprehensive reporting, ens
 ## Hardware specifications
 {: #hs}
 
-IBM Power servers that are supported by {{site.data.keyword.DR_full_notm}} include:
+IBM Power servers that are supported by DR Automation include:
 
 - **IBM Power S922**
 - **IBM Power E980**
@@ -152,12 +152,12 @@ The configuration is complete, you can add all the supported Power Virtual Serve
 ## API key
 {: #apikey}
 
-In {{site.data.keyword.DR_short}}, user can set up cross-account API keys to allow secure and restricted access between different IBM Cloud accounts. Cross-account API keys enable scenarios where resources or services in one account need to interact with those in another account, ensuring proper identity and access management with [IBM cloud guidelines](https://cloud.ibm.com/docs/account?topic=account-create-trusted-profile&interface=ui).
+In DR Automation, user can set up cross-account API keys to allow secure and restricted access between different IBM Cloud accounts. Cross-account API keys enable scenarios where resources or services in one account need to interact with those in another account, ensuring proper identity and access management with [IBM cloud guidelines](https://cloud.ibm.com/docs/account?topic=account-create-trusted-profile&interface=ui).
 
 ## Supported storage tiers
 {: #sst}
 
-{{site.data.keyword.DR_short}} offers storage with configurable IOPS levels to meet diverse DR requirements:
+DR Automation offers storage with configurable IOPS levels to meet diverse DR requirements:
 
 | Tier Level | IOPS       | Performance                                |
 |------------|------------|--------------------------------------------|
@@ -186,10 +186,10 @@ Additionally, the system automatically adds all default networks configured for 
 
  For more information about VPN connectivity options, see [VPN connections](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-VPN-connections).
 
-## Setting up {{site.data.keyword.DR_short}}
+## Setting up DR Automation
 {: #setup}
 
 1. Log in to your [IBM Cloud account](https://cloud.ibm.com/).
-2. Locate the {{site.data.keyword.DR_full_notm}} tile.
+2. Locate the DR Automation tile.
 3. Set up storage, compute, and network resources according to DR needs.
 4. Schedule DR tests and monitor system health.

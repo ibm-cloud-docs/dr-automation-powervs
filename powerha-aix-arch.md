@@ -11,7 +11,7 @@ keywords: private pod, client location
 # Architecture for {{site.data.keyword.DR_full}} in PowerHA AIX
 {: #arch-powerha-aix}
 
-{{site.data.keyword.DR_full}} PowerHA AIX on PowerVS provides high availability for workloads running on IBM Power Virtual Server (PowerVS). The compute, storage, and network resources are deployed and managed by the IBM Cloud platform. PowerHA continuously monitors application and system health and automatically performs failover between cluster nodes when a failure occurs. This ensures minimal disruption to applications and helps maintain continuous availability without manual intervention.
+{{site.data.keyword.DR_full}} **PowerHA AIX on PowerVS** provides high availability for workloads running on IBM Power Virtual Server (PowerVS). The compute, storage, and network resources are deployed and managed by the IBM Cloud platform. PowerHA continuously monitors application and system health and automatically performs failover between cluster nodes when a failure occurs. This ensures minimal disruption to applications and helps maintain continuous availability without manual intervention.
 {: shortdesc}
 
 Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} PowerHA AIX architecture, features, hardware requirements, and network configurations.
@@ -31,7 +31,7 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 ## High-Level Architecture
 {: #highpower}
 
-{{site.data.keyword.DR_full}} provides high availability for workloads running on IBM Power Virtual Server (PowerVS) in IBM Cloud. The solution uses multiple PowerVS virtual machines that are configured as a PowerHA SystemMirror cluster, with shared storage and dedicated networking to maintain application availability.
+{{site.data.keyword.DR_full}}, PowerHA AIX, provides high availability for workloads running on IBM Power Virtual Server (PowerVS) in IBM Cloud. The solution uses multiple PowerVS virtual machines that are configured as a PowerHA SystemMirror cluster, with shared storage and dedicated networking to maintain application availability.
 
 IBM Cloud manages the orchestration layer that monitors cluster health and coordinates failover operations. When an application or system failure occurs, PowerHA automatically switches workloads to a healthy node, ensuring minimal disruption and continued service availability.
 
@@ -112,7 +112,7 @@ After the software requirements are met, you can configure your PowerVS virtual 
 ## Supported storage tiers
 {: #sst}
 
-{{site.data.keyword.DR_short}} offers storage with configurable IOPS levels to meet diverse HA requirements:
+ PowerHA AIX offers storage with configurable IOPS levels to meet diverse HA requirements:
 
 | Tier Level | IOPS       | Performance                                |
 |------------|------------|--------------------------------------------|
@@ -125,13 +125,13 @@ Storage is allocated based on deployment needs, ensuring efficient usage of reso
 ## API key
 {: #apikey}
 
-In {{site.data.keyword.DR_short}}, user can set up cross-account API keys to allow secure and restricted access between different IBM Cloud accounts. Cross-account API keys enable scenarios where resources or services in one account need to interact with those in another account, ensuring proper identity and access management with [IBM cloud guidelines](https://cloud.ibm.com/docs/account?topic=account-create-trusted-profile&interface=ui).
+In PowerHA AIX, user can set up cross-account API keys to allow secure and restricted access between different IBM Cloud accounts. Cross-account API keys enable scenarios where resources or services in one account need to interact with those in another account, ensuring proper identity and access management with [IBM cloud guidelines](https://cloud.ibm.com/docs/account?topic=account-create-trusted-profile&interface=ui).
 
 
-## Setting up {{site.data.keyword.DR_short}}
+## Setting up PowerHA AIX
 {: #setup}
 
 1. Log in to your [IBM Cloud account](https://cloud.ibm.com/).
-2. Locate the {{site.data.keyword.DR_full_notm}} tile.
+2. Locate the {{site.data.keyword.DR_full_notm}}, PowerHA AIX tile.
 3. Set up storage, compute, and network resources according to HA needs.
 4. Schedule HA tests and monitor system health.
