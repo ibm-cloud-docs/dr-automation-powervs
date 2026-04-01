@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-05"
+lastupdated: "2026-04-01"
 
 subcollection: dr-automation-powervs
 
@@ -340,3 +340,34 @@ cat /opt/IBM/ksys/ui/server/node_modules/vmrui-common/lib/configuration/server/u
 
 6. In case registration success and still OTP is not generated, it means the communication is not happening with IBM secure verify. In this case, verify whether the proxy IP which you have provided is properly configured or not ?
 7. In this case, either can open a support ticket for resolution or disable the MFA by following the steps mentioned in above.
+
+## Why does the provision move to **suspended_billing** status?  
+{: #suspended-billing}  
+{: troubleshoot}  
+
+### What's happening  
+{: #suspended-billing-whats-happening}  
+
+The provision status automatically changes to **suspended_billing** after 12 hours. A notification is displayed in the UI indicating a billing-related communication issue.  
+
+Access to the UI may be restricted for the provision.  
+
+### Why it's happening  
+{: #suspended-billing-why}  
+
+This issue occurs when the system is unable to receive the required usage data for billing. Possible reasons include:  
+
+- Usage data is not received from the KSYS orchestrator within 12 hours.  
+- Deployment time exceeds 12 hours without usage reporting.  
+- Communication failure between the orchestrator and the Service Broker.  
+
+The service is not fully blocked, and users can continue to perform **get** operations by using API, SDK, or Terraform.  
+
+### How to fix it  
+{: tsResolve}  
+
+1. Verify that the **Orchestrator** is active and running.  
+2. Check the external connectivity status of the orchestrator.  
+3. Ensure that there are no network or proxy configuration issues.  
+4. Confirm that the orchestrator can communicate with IBM Cloud services.  
+5. If the issue persists, open a support ticket for further investigation.  

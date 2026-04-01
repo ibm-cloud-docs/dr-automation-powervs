@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-03-31"
+lastupdated: "2026-04-01"
 
 subcollection: dr-automation-powervs
 
@@ -34,7 +34,7 @@ This document provides details on various events relevant to PowerHA SystemMirro
 
 This document provides details of the key events and their respective API operations in the **PowerHA SystemMirror Service**.
 
-# Activity tracker events for PowerHA SystemMirror
+## tracker events for PowerHA SystemMirror
 {: #ate-for-powerha}
 
 Activity tracking events report on activities that change the state of a service in IBM Cloud. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
