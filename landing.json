@@ -49,24 +49,24 @@
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote",
     "tiles": [
       {
-        "date": "05 December 2025",
-        "title": "You can now deploy the orchestrator with minimal inputs. You no longer need to provide schematic or custom VPC details. The orchestrator uses a private endpoint to communicate with all required IBM Cloud services."
+        "date": "30 April 2026",
+        "title": ""
       },
       {
-        "date": "05 December 2025",
-        "title": "You can now enable Multi-Factor Authentication (MFA) for the DR automation orchestrator to enhance login security."
+        "date": "30 April 2026",
+        "title": ""
       },
       {
-        "date": "05 December 2025",
-        "title": "You can now assign roles to users and manage permissions through the new User Role Management feature, which introduces role-based access control (RBAC) for creating users, defining roles, and controlling access to DR automation operations."
+        "date": "30 April 2026",
+        "title": ""
       },
       {
-        "date": "05 December 2025",
-        "title": "You can now generate consolidated operational reports for the external orchestrator, including Discovery, Move, Failover Rehearsal, and Cleanup activities."
+        "date": "30 April 2026",
+        "title": ""
       },
       {
-        "date": "05 December 2025",
-        "title": "You can now manage custom SSL certificates and private-key pairs for GUI communication."
+        "date": "30 April 2026",
+        "title": ""
       }
     ]
   }
