@@ -14,8 +14,8 @@
         "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-arch-private-pod"
       },
       {
-        "title": "Pricing",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-price"
+        "title": "PowerHA AIX",
+        "href": "/docs/dr-automation-powervs-arch-powerha-aix"
       },
       {
         "title": "External Orchestrator",
