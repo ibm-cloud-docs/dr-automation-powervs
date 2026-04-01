@@ -52,12 +52,19 @@ toc:
           topics:
           - iam-autoamtion.md
           - create-instance-powervs.md
-          - deploying-the-orchestrator.md
-          - create-ha-cluster.md
-          - Orchestrator-and-service-details.md
-          - monitoring-vm-status.md
-          - manage-vm.md
-          - dr-automation-events.md
+          - topicgroup:
+              label: DR Automation
+              topics:
+              - deploying-the-orchestrator.md
+              - Orchestrator-and-service-details.md
+              - monitoring-vm-status.md
+              - manage-vm.md
+              - dr-automation-events.md
+          - topicgroup:
+              label: PowerHA AIX
+              topics:
+              - create-ha-cluster.md
+              - ha-automation-events.md
       - topicgroup:
           label: External orchestrator
           topics:
@@ -88,10 +95,16 @@ toc:
       - topicgroup:
           label: Observability
           topics:
-          - monitor-metrics.md
-          - monitoring-metrics-ha.md
-          - activity-tracker-events.md
-          - activity-tracker-events-ha.md
+          - topicgroup:
+              label: DR Automation
+              topics:
+              - monitor-metrics.md
+              - activity-tracker-events.md
+          - topicgroup:
+              label: PowerHA AIX
+              topics:
+              - monitoring-metrics-ha.md
+              - activity-tracker-events-ha.md
   - navgroup:
       id: reference
       topics:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-20"
+lastupdated: "2026-04-01"
 
 subcollection: dr-automation-powervs
 
@@ -10,7 +10,7 @@ keywords: migration, migration deployment , upgrade, upgrade your deployment, sn
 
 ---
 
-# Migration planning in {{site.data.keyword.DR_full}}
+# Migration planning in {{site.data.keyword.DR_full}} DR Automation
 {: #plan-work-load}
 
 
