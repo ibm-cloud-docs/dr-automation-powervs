@@ -1,14 +1,14 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-03-11"
+lastupdated: "2026-04-01"
 
 subcollection: dr-automation-powervs
 
 keywords: private pod, client location
 
 ---
-# Architecture for PowerHA AIX on PowerVS
+# Architecture for {{site.data.keyword.DR_full}} in PowerHA AIX
 {: #arch-powerha-aix}
 
 {{site.data.keyword.DR_full}} PowerHA AIX on PowerVS provides high availability for workloads running on IBM Power Virtual Server (PowerVS). The compute, storage, and network resources are deployed and managed by the IBM Cloud platform. PowerHA continuously monitors application and system health and automatically performs failover between cluster nodes when a failure occurs. This ensures minimal disruption to applications and helps maintain continuous availability without manual intervention.
