@@ -40,7 +40,7 @@ The API key might be expired or improperly configured, leading to a failure in r
 ### What's happening
 {: #how-service-works-whats-happening}
 
-Users are unclear about how the service automates disaster recovery operations.  
+You are unclear about how the service automates disaster recovery operations.  
 
 ### Why it's happening
 {: #how-service-works-why}
@@ -54,7 +54,7 @@ The architecture and components of the service may not be fully understood.
 - The **Service Broker** manages resource provisioning and billing.  
 - The **KSYS orchestrator** handles VM orchestration, ensuring resources are activated in the correct sequence.  
 - **Global Replication Services (GRS)** facilitates data replication between primary and backup sites.  
-- Users can configure and monitor the DR environment through the **IBM Cloud GUI** and manage VMs via the **External orchestrator UI**.  
+- you can configure and monitor the DR environment through the **IBM Cloud GUI** and manage VMs via the **External orchestrator UI**.  
 
 ## Why am I unable to perform IAM actions with the service?  
 {: #iam-actions}  
@@ -361,7 +361,7 @@ This issue occurs when the system is unable to receive the required usage data f
 - Deployment time exceeds 12 hours without usage reporting.  
 - Communication failure between the orchestrator and the Service Broker.  
 
-The service is not fully blocked, and users can continue to perform **get** operations by using API, SDK, or Terraform.  
+The service is not fully blocked, and you can continue to perform **get** operations by using API, SDK, or Terraform.  
 
 ### How to fix it  
 {: tsResolve}  
