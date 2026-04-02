@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-01"
+lastupdated: "2026-04-02"
 
 subcollection: dr-automation-powervs
 
@@ -12,7 +12,7 @@ keywords: private pod, client location
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Architecture for {{site.data.keyword.DR_full_notm}} in Client Location (Private Cloud)
+# Architecture for {{site.data.keyword.DR_full_notm}} DR automation in Client Location (Private Cloud)
 {: #arch-private-pod}
 
 {{site.data.keyword.DR_full}}, **DR automation**, orchestrates disaster recovery for workloads running in your data center (client location). Infrastructure resources, including compute, storage, and network, are deployed at the client location and managed by the IBM Cloud platform.

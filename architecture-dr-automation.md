@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-01"
+lastupdated: "2026-04-02"
 
 subcollection: dr-automation-powervs
 
@@ -11,7 +11,7 @@ keywords: architecture
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Architecture for {{site.data.keyword.DR_full_notm}} in IBM Data Center
+# Architecture for {{site.data.keyword.DR_full_notm}} DR automationin IBM Data Center
 {: #arch}
 
 {{site.data.keyword.DR_full}}, DR automation, is a robust disaster recovery solution designed for IBM data center environments, distinct from general IBM Cloud resources. It uses dedicated network configurations and direct-attached storage to provide secure and reliable disaster recovery (DR) capabilities.
