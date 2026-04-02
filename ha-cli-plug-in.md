@@ -64,4 +64,4 @@ To install, update, or view the {{site.data.keyword.DR_full_notm}} PowerHA AIX  
 
 4. You can use the CLI commands available for PowerHA AIX.
 
-Refer to the full CLI documentation [{{site.data.keyword.DR_full}} PowerHA AIX CLI](/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version).
+Refer to the full CLI documentation [{{site.data.keyword.DR_full}} PowerHA AIX CLI](docs/dr-automation-powervs?topic=dr-automation-powervs-powerha-cli-version).

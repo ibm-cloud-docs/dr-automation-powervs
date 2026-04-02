@@ -14,7 +14,7 @@ keywords: ha automation, cli, plug-in
 
 The {{site.data.keyword.DR_full_notm}} PowerHA AIX Command Line Interface (CLI) provides a set of commands that are grouped by namespace to help you interact with PowerHA. For more information, see the following topics:
 
-- [**{{site.data.keyword.DR_full_notm}} PowerHA AIX CLI](/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version)
+- [**{{site.data.keyword.DR_full_notm}} PowerHA AIX CLI](docs/dr-automation-powervs?topic=dr-automation-powervs-powerha-cli-version)
 
 
 You can also use the application programming interfaces (APIs) to interact with PowerHA AIX. For more information, see [**API references**](https://cloud.ibm.com/apidocs/dr-automation-powervs).
