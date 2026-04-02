@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-02-24"
+lastupdated: "2026-04-02"
 
 keywords: getting started, disaster recovery, PowerVS, start
 
@@ -23,7 +23,7 @@ completion-time: 10m
 {: toc-services=""}
 {: toc-completion-time="10m"}
 
-Set up **DR Automation** of {{site.data.keyword.DR_full}} to automate disaster recovery (DR) processes for virtualized environments and ensure business continuity with minimal manual intervention. Deploy DR automation from the IBM Cloud Catalog UI, which provides an intuitive interface for selecting and configuring recovery services. The solution automates the recovery of virtual machines (VMs) and workloads, synchronizing data and managing replication between sites to protect critical operations.
+Set up {{site.data.keyword.DR_full}} **DR Automation** to automate disaster recovery processes for virtualized environments and ensure business continuity with minimal manual intervention. Deploy DR automation from the IBM Cloud Catalog UI, which provides an intuitive interface for selecting and configuring recovery services. The solution automates the recovery of virtual machines (VMs) and workloads, synchronizing data and managing replication between sites to protect critical operations.
 
 IBM Power Virtual Server Public Cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers and configuring them as managed virtual machines to enable DR. With robust automation, DR Automation minimizes downtime, reduces manual tasks, and enhances business resilience. Leveraging IBM Cloud's global regions, it offers low-latency failover and high availability options to effectively meet your DR requirements.
 {: shortdesc}
