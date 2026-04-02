@@ -11,7 +11,7 @@ keywords: dr automation events
 ---
 
 # Activity tracker events for DR Automation
-{: #ate-for-dr-automation} 
+{: #dr-ate-for-dr-automation}
 
 Activity tracking events report on activities that change the state of a service in IBM Cloud. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
 {:shortdesc: .shortdesc}

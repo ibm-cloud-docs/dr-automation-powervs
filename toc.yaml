@@ -99,7 +99,7 @@ toc:
               label: DR Automation
               topics:
               - monitor-metrics.md
-              - activity-tracker-events-dr.md
+              - dr-activity-tracker-events.md
           - topicgroup:
               label: PowerHA AIX
               topics:
