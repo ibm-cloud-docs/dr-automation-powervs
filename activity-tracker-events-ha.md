@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-01"
+lastupdated: "2026-04-02"
 
 subcollection: dr-automation-powervs
 
@@ -11,7 +11,7 @@ keywords: events
 ---
 
 # Activity tracker events for  PowerHA SystemMirror
-{: #ate-for-dr-automation} 
+{: #ha-ate-for-automation} 
 
 Activity tracking events report on activities that change the state of a service in IBM Cloud. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
 {:shortdesc: .shortdesc}
@@ -25,17 +25,17 @@ You can use IBM Cloud Logs to visualize and alert on events that are generated i
 Activity Tracker Event Routing records user-initiated activities that change the state of a service in IBM Cloud. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see the [Getting started tutorial for Activity Tracker Event Routing](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
 ## Management events
-{: #manag events} 
+{: #ha-manag-events} 
 
 This document provides details on various events relevant to PowerHA SystemMirror. These events help administrators manage instance readiness, images, network configurations, and security policies required for effective disaster recovery.
 
 ## PowerHA SystemMirror service events documentation
-{: #site events}
+{: #ha-site events}
 
 This document provides details of the key events and their respective API operations in the **PowerHA SystemMirror Service**.
 
 ## tracker events for PowerHA SystemMirror
-{: #ate-for-powerha}
+{: #ha-ate-for-powerha}
 
 Activity tracking events report on activities that change the state of a service in IBM Cloud. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
 {:shortdesc: .shortdesc}
@@ -51,21 +51,21 @@ Activity Tracker Event Routing records user-initiated activities that change the
 ---
 
 ## Management events
-{: #manage-events-powerha}
+{: #ha-manage-events-powerha}
 
 This document provides details on various events relevant to PowerHA SystemMirror. These events help administrators manage and monitor high availability (HA) environments.
 
 ---
 
 ## PowerHA SystemMirror service events documentation
-{: #powerha-events}
+{: #ha-powerha-events}
 
 This section lists the key Activity Tracker events and their corresponding API operations for the **PowerHA SystemMirror service**.
 
 ---
 
 ## Dashboard
-{: #dashboard-events}
+{: #ha-dashboard-events}
 
 | Action | Description |
 |--------|------------|
@@ -75,7 +75,7 @@ This section lists the key Activity Tracker events and their corresponding API o
 ---
 
 ## PowerHA settings
-{: #powerha-settings-events}
+{: #ha-powerha-settings-events}
 
 | Action | Description |
 |--------|------------|
@@ -86,7 +86,7 @@ This section lists the key Activity Tracker events and their corresponding API o
 ---
 
 ## PowerHA operation
-{: #powerha-operation-events}
+{: #ha-powerha-operation-events}
 
 | Action | Description |
 |--------|------------|
@@ -96,7 +96,7 @@ This section lists the key Activity Tracker events and their corresponding API o
 ---
 
 ## PowerHA summary
-{: #powerha-summary-events}
+{: #ha-powerha-summary-events}
 
 | Action | Description |
 |--------|------------|
@@ -106,7 +106,7 @@ This section lists the key Activity Tracker events and their corresponding API o
 ---
 
 ## Event
-{: #powerha-event-events}
+{: #ha-powerha-event-events}
 
 | Action | Description |
 |--------|------------|
@@ -117,7 +117,7 @@ This section lists the key Activity Tracker events and their corresponding API o
 ---
 
 ## PowerHA virtual machines
-{: #powerha-vm-events}
+{: #ha-powerha-vm-events}
 
 | Action | Description |
 |--------|------------|
@@ -126,7 +126,7 @@ This section lists the key Activity Tracker events and their corresponding API o
 {: caption="powerha-vm" caption-side="bottom"}
 
 ## Viewing PowerHA SystemMirror events
-{: #view}
+{: #ha-view}
 
 PowerHA SystemMirror events are automatically forwarded to specific geographic locations based on data center regions. You can access the activity tracker logs for PowerHA SystemMirror as follows:
 
@@ -142,7 +142,7 @@ The Activity Tracker service supports only one instance per location. To view {{
  events, you must access the Activity Tracker web UI in the same location where your HA service instance is deployed. For additional guidance, see [Launching the web UI through the IBM Cloud UI](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-launch).
 
 ## Activity tracker sample response format
-{: #at tracker}
+{: #ha-at tracker}
 
 The new response format that is used in activity tracking adheres to the CADF (Cloud Auditing Data Federation) standard. Hence, auditing events can be collected and routed in a standardized format, ensuring consistency and interoperability across different cloud platforms.
 
@@ -151,7 +151,7 @@ The new response format that is used in activity tracking adheres to the CADF (C
 The following code snippets show the differences between the old and new activity tracker response format.
 
 ### Log message
-{: #log msg}
+{: #ha-log msg}
 
 ```json
 {
@@ -231,7 +231,7 @@ The following code snippets show the differences between the old and new activit
 
 
 ## Activity tracker regions
-{: #at trackerregions}
+{: #ha-at trackerregions}
 
 You can create an activity tracker instance and provision it in the same region where your data center is located.
 
@@ -240,7 +240,7 @@ You can create an activity tracker instance and provision it in the same region 
 The following table shows the data center and its corresponding regions where you can deploy an activity tracker instance:
 
 ## Data center
-{: #data-cents}
+{: #ha-data-cents}
 
 | Datacenter | Activity Tracker Region |
 |------------|-------------------------|

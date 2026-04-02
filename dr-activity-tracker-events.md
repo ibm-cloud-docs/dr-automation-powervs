@@ -25,17 +25,17 @@ You can use IBM Cloud Logs to visualize and alert on events that are generated i
 Activity Tracker Event Routing records user-initiated activities that change the state of a service in IBM Cloud. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see the [Getting started tutorial for Activity Tracker Event Routing](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
 ## Management events
-{: #manag events} 
+{: #dr-manag-events-dr} 
 
 This document provides details on various events relevant to {{site.data.keyword.DR_short}}. These events help administrators manage instance readiness, images, network configurations, and security policies required for effective disaster recovery.
 
 ## DR Automation service events documentation
-{: #site events}
+{: #dr-site events}
 
 This document provides details of the key events and their respective API operations in the **{{site.data.keyword.DR_short}} Service**. Use the given screenshots as a reference for style and formatting.
 
 ## cloud-instance
-{: #cloud-events}
+{: #dr-cloud-events}
 
 | Action                                    | Description                                             |
 |-------------------------------------------|---------------------------------------------------------|
@@ -44,7 +44,7 @@ This document provides details of the key events and their respective API operat
 
 
 ## dr-operation
-{: #dr-events}
+{: #dr-events-op}
 
 | Action                                   | Description                                           |
 |------------------------------------------|-------------------------------------------------------|
@@ -52,7 +52,7 @@ This document provides details of the key events and their respective API operat
 {: caption="dr-operation" caption-side="bottom"}
 
 ## dr-summary
-{: #summ-events}
+{: #dr-summ-events}
 
 | Action                                   | Description                                       |
 |------------------------------------------|---------------------------------------------------|
@@ -60,7 +60,7 @@ This document provides details of the key events and their respective API operat
 {: caption="dr-summary" caption-side="bottom"}
 
 ## Orchestration-settings
-{: #manage}
+{: #dr-manage}
 
 | Action                                   | Description                                                |
 |------------------------------------------|------------------------------------------------------------|
@@ -69,7 +69,7 @@ This document provides details of the key events and their respective API operat
 {: caption="manage-dr" caption-side="bottom"}
 
 ## Event
-{: #eevents}
+{: #dr-eevents}
 
 | Action                                   | Description                                                |
 |------------------------------------------|------------------------------------------------------------|
@@ -78,7 +78,7 @@ This document provides details of the key events and their respective API operat
 {: caption="event" caption-side="bottom"}
 
 ## Orchestrator(KSYS)
-{: #orch-eve}
+{: #dr-orch-eve}
 
 | Action                                   | Description                                                |
 |------------------------------------------|------------------------------------------------------------|
@@ -87,7 +87,7 @@ This document provides details of the key events and their respective API operat
 {: caption="KSYS" caption-side="bottom"}
 
 ## Viewing DR Automation events
-{: #view}
+{: #dr-view}
 
 Disaster Recovery (DR) Automation events are automatically forwarded to specific geographic locations based on data center regions. You can access the activity tracker logs for {{site.data.keyword.DR_short}} as follows:
 
@@ -103,7 +103,7 @@ The Activity Tracker service supports only one instance per location. To view {{
  events, you must access the Activity Tracker web UI in the same location where your DR service instance is deployed. For additional guidance, see [Launching the web UI through the IBM Cloud UI](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-launch).
 
 ## Activity tracker sample response format
-{: #at tracker}
+{: #dr-at tracker}
 
 The new response format that is used in activity tracking adheres to the CADF (Cloud Auditing Data Federation) standard. Hence, auditing events can be collected and routed in a standardized format, ensuring consistency and interoperability across different cloud platforms.
 
@@ -112,7 +112,7 @@ The new response format that is used in activity tracking adheres to the CADF (C
 The following code snippets show the differences between the old and new activity tracker response format.
 
 ### Log message
-{: #log msg}
+{: #dr-log msg}
 
 ```json
 {
@@ -162,7 +162,7 @@ The following code snippets show the differences between the old and new activit
 
 
 ## Activity tracker regions
-{: #at trackerregions}
+{: #dr-at trackerregions}
 
 You can create an activity tracker instance and provision it in the same region where your data center is located.
 
@@ -172,7 +172,7 @@ You can create an activity tracker instance and provision it in the same region 
 The following table shows the data center and its corresponding regions where you can deploy an activity tracker instance:
 
 ## Data center
-{: #data-cents}
+{: #dr-data-cents}
 
 | Datacenter | Activity Tracker Region |
 |------------|-------------------------|
