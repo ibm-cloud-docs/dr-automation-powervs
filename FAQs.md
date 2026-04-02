@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-02-24"
+lastupdated: "2026-04-02"
 
 subcollection: dr-automation-powervs
 
@@ -313,7 +313,7 @@ If the KSYS cluster is not yet created, you can update the proxy IP directly in 
 
 When the system reboots, it automatically attempts to recreate the cluster with the updated proxy configuration.
 
-## **How do I update the API Key in my DR Automation deployment?**
+### **How do I update the API Key in my DR Automation deployment?**
 {: #update-api-key}
 
 You can update the API Key for your deployment using the DR Automation UI and the KSYS Orchestrator. Ensure that the same key is used in both places to maintain proper synchronization.
@@ -335,7 +335,7 @@ To update the API key in orchestrator ,run the following command:
    ```ksysmgr modify ksyscluster <ksysclustername> apikey=<apikey>```
 > **Note:** Use the same API key in both the deployment and orchestrator to ensure proper synchronization.
 
-## HA Automation faq
+## PowerHA AIX faq
 {: #powerha-faq}
 
 ### What is HA Automation for Power Virtual Server?
@@ -477,11 +477,6 @@ After you provision the virtual server instances, return to the **Cluster nodes*
 Yes. After the software installation is complete, you must configure the HA cluster based on your workload requirements.
 
 
-### What happens if usage data is temporarily unavailable?
-{: #faq-ha-usage-data}
-
-If usage information is not received from the monitoring node, the system uses previously recorded usage data to prevent billing gaps. Failed records are retried automatically in the next billing cycle.
-
 
 ### Can I upgrade to a newer HA version after deployment?
 {: #faq-ha-upgrade}
@@ -498,3 +493,18 @@ The system downloads and installs the updated software and reports the migration
 IBM Cloud platform and service roles determine what actions a user can perform.
 
 Depending on the assigned role (Administrator, Editor, Operator, or Viewer), users can provision, configure, or view service instances.
+
+### What versions of PowerHA SystemMirror are supported?
+{: #faq-powerha-supported-versions}
+
+The service supports the latest supported versions of IBM PowerHA SystemMirror that are compatible with the selected AIX levels on Power Virtual Server.
+
+You can also register environments that use earlier or unsupported versions. However, such versions might have limited support and compatibility.
+
+
+### When does billing start for HA Automation for PowerVS?
+{: #faq-powerha-billing-start}
+
+Billing starts when the PowerHA installation process is initiated on the selected virtual machines.
+
+Charges begin when the PowerHA agent starts installing the required filesets and are calculated based on the number of CPU cores of the managed virtual machines, billed hourly.

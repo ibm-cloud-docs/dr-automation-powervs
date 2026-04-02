@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-02-21"
+lastupdated: "2026-04-02"
 
 subcollection: dr-automation-powervs
 
@@ -47,13 +47,15 @@ follow the steps:
     > **Note**: If you select **Chennai (in-che)** or **Montréal (ca-mon)** for the primary or standby (secondary) workspace, you must provide proxy details in the **Advanced orchestrator configuration** section. These regions require a proxy for orchestrator communication with IBM Cloud services.
 
 8. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location**.
-9. To create ksys VM with secrets, click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the  **Use a secret** toggle button and select the SSH key from **SSH key name**.
+9. Select the required subnets from the avalible list in the **DR orchestrator networks** section.
+10. To create ksys VM with secrets, click **Select from Secrets Manager** and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the  **Use a secret** toggle button and select the SSH key from **SSH key name**.
 
     > **Note**: The SSH Key dropdown displays only the Account level SSH-keys and by default, you can choose the key from the list of ssh keys in the account level only. You should enable the toggle to select the key from secret manager.
 
-10. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name** and select a **Standby Power Virtual Server workspace** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in config page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
+11. In **Configure standby orchestrator (for HA)**, enter the **Standby orchestrator name**, select a **Standby Power Virtual Server workspace** and select a **Standby SSH key name** and **Standby orchestrator networks** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in config page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
-11. (Optional) Configure Multi Factor Authentication (MFA) in the **Advanced orchestrator configuration** section .
+    > **Note**: Select a **Standby SSH key name** for the standby Orchesrator created at the account level or the workspace level SSH key.
+12. (Optional) Configure Multi Factor Authentication (MFA) in the **Advanced orchestrator configuration** section .
 
     > **Prerequisite**: To Enable MFA, you must complete the MFA tenant setup and obtain the **Client ID**, **Client Secret**, and **Tenant Name** from [IBM Security Verify](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197).
     > - For more information on MFA configuration, see [Setting up Multifactor Authentication](/docs/dr-automation-powervs?topic=dr-automation-powervs-multifactor-authentication).
@@ -61,26 +63,28 @@ follow the steps:
     > - The root user is prompted to enter their password first and then an OTP during the first login.
     > - **Note:** MFA status is displayed in the **Orchestrator Details** page and MFA events are captured in the **Events** log for auditing.
 
-12. Enter the proxy details if you have selected **Chennai (in-che, che01)** or **Montréal (ca-mon)** as the DR location. For more information, see [How to get ProxyIP details which is configured for Virtual Server Instance for VPC](https://cloud.ibm.com/docs-draft/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab).
 
-13. (Optional) Expand the **Advanced orchestrator configuration** to change the Storage tier and Machine type configuration based on the **Orchestrator HA** selection.
+13. Enter the proxy details if you have selected **Chennai (in-che, che01)** or **Montréal (ca-mon)** as the DR location. For more information, see [How to get ProxyIP details which is configured for Virtual Server Instance for VPC](https://cloud.ibm.com/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab).
 
-14. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 
-14. **Finish** button is enabled once the orchestrator VM is deployed and now Click **Finish** to complete the setup.
+14. (Optional) Expand the **Advanced orchestrator configuration** to change the Storage tier and Machine type configuration based on the **Orchestrator HA** selection.
 
-15. Configure and manage the Power Virtual Server instances through the **External orchestrator interface** for disaster recovery.
+15. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
+
+16. **Finish** button is enabled once the orchestrator VM is deployed and now Click **Finish** to complete the setup.
+
+17. Configure and manage the Power Virtual Server instances through the **External orchestrator interface** for disaster recovery.
 
   >**Note**: The orchestrator interface (UI) is launched at https://`<Orchestrator IP>`:3000/login. The `<Orchestrator IP>` address is the system on which the orchestrator UI is installed and it is loaded automatically.
 
-16. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby orchestrator for redundancy and resilience, following the steps:
+18. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby orchestrator for redundancy and resilience, following the steps:
 
       a. Complete the [External orchestrator interface setup](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter).  
       b. Hover over the **External standby orchestrator interface** button to view the standby orchestrator IP, for example, `IP:xx.x.x.xxx`.  
       c. Use the standby orchestrator IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.  
       d. Click the **External standby orchestrator interface** button to enable the interface.
       e. Click the **Refresh** icon to update the status, enabling the **External standby orchestrator interface button** for use.
-17. If any error occurs during deployment, follow on-screen prompts or events to troubleshoot and retry the deployment.
+19. If any error occurs during deployment, follow on-screen prompts or events to troubleshoot and retry the deployment.
 
 By following this process, you can ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers.
 
@@ -103,6 +107,7 @@ You can now use a non-PER enabled Power Virtual Server workspace by following th
 
 ## Enable communication via VPC
 {: #procedure-ena-ppro-comm}
+
 1. Open [IBM Cloud console](https://cloud.ibm.com).
 2. Click **Navigation menu** icon > **Infrastructure** > **Network** > **VPCs**, and select your VPC from the list.
 3. Create a **Virtual Server Instance (VSI)** under the **Compute** section.
