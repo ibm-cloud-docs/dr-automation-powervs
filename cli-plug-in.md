@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-04"
+lastupdated: "2026-04-02"
 
 subcollection: dr-automation-powervs
 
@@ -9,10 +9,10 @@ keywords: plugin-cli plugin
 
 ---
 
-# Installing the {{site.data.keyword.DR_full_notm}} CLI plug-in
+# Installing the {{site.data.keyword.DR_full_notm}} DR Automation CLI plug-in
 {: #plun-in}
 
-To install, update, or view the {{site.data.keyword.DR_full_notm}} CLI plug-in, complete the following steps:
+To install, update, or view the DR Automation CLI plug-in, complete the following steps:
 
 1. Install the [IBM Cloud® CLI](https://cloud.ibm.com/docs/cli).
 
@@ -56,8 +56,6 @@ To install, update, or view the {{site.data.keyword.DR_full_notm}} CLI plug-in, 
     [root@dra-sb dra-cli-plugin]
     ```
 
-4. You can use the CLI commands available for {{site.data.keyword.DR_full_notm}}.
+4. You can use the CLI commands available for DR Automation.
 
-Refer to the full CLI documentation [{{site.data.keyword.DR_full}} CLI version 0.0.1](/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version).
-
-> **Note**: The {{site.data
+Refer to the full CLI documentation [{{site.data.keyword.DR_full}} DR Automation CLI](/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version).

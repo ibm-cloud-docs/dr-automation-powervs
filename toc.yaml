@@ -108,13 +108,22 @@ toc:
   - navgroup:
       id: reference
       topics:
-      - commands-ksys.md
       - topicgroup:
-          label: command reference
+          label: External orchestrator command reference
+          topics:
+          - commands-ksys.md
+      - topicgroup:
+          label: DR Automation command reference
           topics:
           - get-started-cli-plu-in.md
           - cli-plug-in.md
           - command-reference.md
+      - topicgroup:
+          label: PowerHA command reference
+          topics:
+          - ha-get-started-cli-plu-in.md
+          - ha-cli-plug-in.md
+          - ha-command-reference.md
       - topicgroup:
           label: Roles and Responsibility
           topics:

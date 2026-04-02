@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-02-21"
+lastupdated: "2026-04-02"
 
 subcollection: dr-automation-powervs
 
@@ -10,25 +10,25 @@ keywords: power-hadr, cli, pdr
 ---
 
 
-# {{site.data.keyword.DR_full}} CLI version 0.0.1
+# {{site.data.keyword.DR_full}} DR Automation CLI 
 {: #dr-automation-cli-version}
 
 ## Available Commands:
 {: #avalible-cmd}
 
 
-`api-key`- Manage the API key for the Power DR Automation service instance.  
-`event`- View events generated during DR Automation operations such as provisioning, ManageDR creation, image download, virtual server creation, orchestrator cluster creation, and API key updates.  
-`grs-location-pairs`- Retrieve the Global Replication Services (GRS) location pairs associated with the specified service instance based on managed VMs.  
-`locations`- List the available disaster recovery (DR) locations for the specified service instance.  
-`managed-vms`- Retrieve the list of disaster recovery managed virtual machines for the specified service instance.  
-`summary`- Retrieve a consolidated disaster recovery summary for the service instance, including orchestrator details, service configuration, and managed VM information.  
-`machine-types`- List the supported machine types available for disaster recovery for the specified primary and standby workspaces.  
-`powervs-workspaces`- Retrieve the Power Virtual Server workspaces for the primary and standby orchestrators based on the specified location ID.  
-`create`- Create and deploy the orchestrator virtual machine in the specified workspace and configuration to manage disaster recovery.  
-`last-operation`- Retrieve the status and details of the most recent operation performed on the specified service instance, such as provisioning, updating, or deprovisioning.  
+`api-key` - Manage the API key for the DR Automation service instance.  
+`deployment` - Manage disaster recovery deployment configuration and lifecycle operations.  
+`event` - Retrieve events generated during DR Automation operations.  
+`grs-location-pairs` - Retrieve GRS location pairs for the service instance.  
+`locations` - Retrieve supported disaster recovery locations.  
+`managed-vms` - Retrieve managed virtual machines for the service instance.  
+`machine-types` - Retrieve supported machine types for deployment.  
+`powervs-workspaces` - Retrieve PowerVS workspaces for DR deployment.  
+`last-operation` - Retrieve the status of the last operation performed on the service instance.    
 
 >**Note**: All the cli example outputs are shown below in `json` format.By default, cli output display in table format.To change the output format of cli, add `--output <format>` at  the end of command.
+
 
 ## Api Key
 {: #power-hadr-api-key-cli}
@@ -56,11 +56,17 @@ ibmcloud power-hadr pdr api-key update --instance-id INSTANCE-ID --api-key API-K
 `--instance-id` (string)
 :   instance id of instance to provision. Required.
 
+    The maximum length is `512` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_:\/.]+$/`.
+
 `--api-key` (string)
 :   The new API key value that will replace the existing one. Required.
 
+    The maximum length is `256` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
 `--accept-language` (string)
 :   The language requested for the return document.
+
+    The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
 
 #### Example
 {: #power-hadr-api-key-update-examples}
@@ -71,7 +77,7 @@ ibmcloud power-hadr pdr api-key update \
     --api-key adfadfdsafsdfdsf \
     --accept-language exampleString
 ```
-
+{: pre}
 
 #### Example output
 {: #power-hadr-api-key-update-cli-output}
@@ -82,339 +88,53 @@ ibmcloud power-hadr pdr api-key update \
   "status" : "Active"
 }
 ```
+{: screen}
 
+## Deployment
+{: #power-hadr-deployment-cli}
 
-## Event
-{: #power-hadr-event-cli}
-
-Shows event that got generated during various DR Automation operations such as provision creation, ManageDR Creation, image download, virtual server instance creation, orchestrator cluster creation, API Key updation along with their corresponding actions and descriptions.
+Provide options to manage the DR configuration through deployment and fetching existing deployment details.
 
 ```sh
-ibmcloud power-hadr pdr event --help
+ibmcloud power-hadr pdr deployment --help
 ```
 
 
-### `ibmcloud power-hadr pdr event list`
-{: #power-hadr-cli-event-list-command}
+### `ibmcloud power-hadr pdr deployment get`
+{: #power-hadr-cli-deployment-get-command}
 
-Retrieves the list of events from the specified service instance ID.
+Retrieves the disaster recovery (DR) summary details for the specified service instance, including key configuration, status information and managed vm details.
 
 ```sh
-ibmcloud power-hadr pdr event list --instance-id INSTANCE-ID [--time TIME] [--from-time FROM-TIME] [--to-time TO-TIME] [--accept-language ACCEPT-LANGUAGE]
+ibmcloud power-hadr pdr deployment get --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
 ```
 
 
 #### Command options
-{: #power-hadr-event-list-cli-options}
+{: #power-hadr-deployment-get-cli-options}
 
 `--instance-id` (string)
 :   instance id of instance to provision. Required.
 
-`--time` (string)
-:   (deprecated - use from_time) A time in either ISO 8601 or unix epoch format.
-
-`--from-time` (string)
-:   A from query time in either ISO 8601 or unix epoch format.
-
-`--to-time` (string)
-:   A to query time in either ISO 8601 or unix epoch format.
+    The maximum length is `512` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_:\/.]+$/`.
 
 `--accept-language` (string)
 :   The language requested for the return document.
 
+    The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
+
 #### Example
-{: #power-hadr-event-list-examples}
+{: #power-hadr-deployment-get-examples}
 
 ```sh
-ibmcloud power-hadr pdr event list \
+ibmcloud power-hadr pdr deployment get \
     --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
-    --time 2025-06-19T23:59:59Z \
-    --from-time 2025-06-19T00:00:00Z \
-    --to-time 2025-06-19T23:59:59Z \
     --accept-language exampleString
 ```
 {: pre}
 
 #### Example output
-{: #power-hadr-event-list-cli-output}
-
-```json
-{
-  "events" : [ {
-    "action" : "create",
-    "event_id" : "1cecfe43-43cd-4b1b-86be-30c2d3d2a25f",
-    "level" : "info",
-    "message" : "Service Instance '7222c899-a31a-4a0c-be03-75920d23cd16' has been created successfully.",
-    "messageData" : {
-      "InstanceID" : {
-        "id" : "7222c899-a31a-4a0c-be03-75920d23cd16"
-      }
-    },
-    "metadata" : { },
-    "resource" : "ProvisionID",
-    "time" : "2025-06-23T07:12:49.840Z",
-    "timestamp" : "1750662769",
-    "user" : {
-      "user_id" : "admin"
-    }
-  }, {
-    "action" : "create",
-    "event_id" : "c49f0ced-2a78-48a6-929c-6b824555ddc6",
-    "level" : "info",
-    "message" : "Disaster recovery for Service Instance '7222c899-a31a-4a0c-be03-75920d23cd16' has been managed successfully.",
-    "messageData" : {
-      "InstanceID" : {
-        "id" : "7222c899-a31a-4a0c-be03-75920d23cd16"
-      }
-    },
-    "metadata" : { },
-    "resource" : "managedr",
-    "time" : "2025-06-23T07:14:53.871Z",
-    "timestamp" : "1750662893",
-    "user" : {
-      "email" : "abcuser@ibm.com",
-      "user_id" : "IBMid-695000ab7E"
-    }
-  } ]
-}
-```
-
-
-### `ibmcloud power-hadr pdr event get`
-{: #power-hadr-cli-event-get-command}
-
-Retrieves the details of a specific event for the given service instance provision ID.
-
-```sh
-ibmcloud power-hadr pdr event get --instance-id INSTANCE-ID --event-id EVENT-ID [--accept-language ACCEPT-LANGUAGE]
-```
-
-
-#### Command options
-{: #power-hadr-event-get-cli-options}
-
-`--instance-id` (string)
-:   instance id of instance to provision. Required.
-
-`--event-id` (string)
-:   Event ID. Required.
-
-`--accept-language` (string)
-:   The language requested for the return document.
-
-#### Example
-{: #power-hadr-event-get-examples}
-
-```sh
-ibmcloud power-hadr pdr event get \
-    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
-    --event-id 00116b2a-9326-4024-839e-fb5364b76898 \
-    --accept-language exampleString
-```
-
-
-#### Example output
-{: #power-hadr-event-get-cli-output}
-
-```json
-{
-  "action" : "create",
-  "api_source" : "dr-automation-api",
-  "event_id" : "1cecfe43-43cd-4b1b-86be-30c2d3d2a25f",
-  "level" : "info",
-  "message" : "Service Instance created successfully",
-  "message_data" : {
-    "InstanceID" : {
-      "id" : "7222c899-a31a-4a0c-be03-75920d23cd16"
-    },
-    "request_id" : {
-      "id" : "req-12345"
-    }
-  },
-  "metadata" : { },
-  "resource" : "ProvisionID",
-  "time" : "2025-06-23T07:12:49.840Z",
-  "timestamp" : "1750662769",
-  "user" : {
-    "user_email" : "example.user@ibm.com",
-    "user_id" : "IBMid-123456"
-  }
-}
-```
-
-
-## GRS location pairs
-{: #power-hadr-dr-automation-config-cli}
-
-### `ibmcloud power-hadr pdr grs-location-pairs`
-{: #power-hadr-cli-grs-location-pairs-command}
-
-Retrieves the Global replication service (GRS) location pairs associated with the specified service instance based on managed VMs.
-
-```sh
-ibmcloud power-hadr pdr grs-location-pairs --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
-```
-
-
-#### Command options
-{: #power-hadr-grs-location-pairs-cli-options}
-
-`--instance-id` (string)
-:   instance id of instance to provision. Required.
-
-`--accept-language` (string)
-:   The language requested for the return document.
-
-#### Example
-{: #power-hadr-grs-location-pairs-examples}
-
-```sh
-ibmcloud power-hadr pdr grs-location-pairs \
-    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
-    --accept-language exampleString
-```
-
-## DR location
-{: #power-hadr-dr-automation-dr-location-cli}
-
-### `ibmcloud power-hadr pdr locations`
-{: #power-hadr-cli-locations-command}
-
-Retrieves the list of disaster recovery (DR) locations available for the specified service instance.
-
-```sh
-ibmcloud power-hadr pdr locations --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
-```
-
-
-#### Command options
-{: #power-hadr-locations-cli-options}
-
-`--instance-id` (string)
-:   instance id of instance to provision. Required.
-
-`--accept-language` (string)
-:   The language requested for the return document.
-
-#### Example
-{: #power-hadr-locations-examples}
-
-```sh
-ibmcloud power-hadr pdr locations \
-    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
-    --accept-language exampleString
-```
-
-
-#### Example output
-{: #power-hadr-locations-cli-output}
-
-```json
-{
-  "dr_locations" : [ {
-    "id" : "loc-001",
-    "name" : "us-south"
-  }, {
-    "id" : "loc-002",
-    "name" : "eu-de"
-  } ]
-}
-```
-
-## Managed VM's
-{: #power-hadr-dr-managed-vm-cli}v
-
-### `ibmcloud power-hadr pdr managed-vms`
-{: #power-hadr-cli-managed-vms-command}
-
-Retrieves the list of disaster recovery (DR) managed virtual machines for the specified service instance.
-
-```sh
-ibmcloud power-hadr pdr managed-vms --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
-```
-
-
-#### Command options
-{: #power-hadr-managed-vms-cli-options}
-
-`--instance-id` (string)
-:   instance id of instance to provision. Required.
-
-`--accept-language` (string)
-:   The language requested for the return document.
-
-#### Example
-{: #power-hadr-managed-vms-examples}
-
-```sh
-ibmcloud power-hadr pdr managed-vms \
-    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
-    --accept-language exampleString
-```
-
-#### Example output
-{: #power-hadr-managed-vms-cli-output}
-
-```json
-{
-  "managed_vm_list" : {
-    "3f2e1a09-1234-4d56-7890-abcd1234ef56" : {
-      "core" : "0.50",
-      "dr_average_time" : "10",
-      "dr_region" : "nyc02",
-      "memory" : "4",
-      "region" : "nyc01",
-      "vm_name" : "example_vm",
-      "workgroup_name" : "Example_Workgroup",
-      "workspace_name" : "Example_Workspace"
-    },
-    "9b8a7c65-4321-0fed-cba9-87654321abcd" : {
-      "core" : "1.00",
-      "dr_average_time" : "5",
-      "dr_region" : "sfo04",
-      "memory" : "8",
-      "region" : "sfo03",
-      "vm_name" : "another_vm",
-      "workgroup_name" : "Another_Workgroup",
-      "workspace_name" : "Another_Workspace"
-    }
-  }
-}
-```
-
-## DR summary
-{: #power-hadr-dr-automation-summary-cli}
-
-### `ibmcloud power-hadr pdr summary`
-{: #power-hadr-cli-summary-command}
-
-Retrieves the disaster recovery (DR) summary details for the specified service instance, including key configuration, status information and managed vm details.
-
-```sh
-ibmcloud power-hadr pdr summary --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
-```
-
-
-#### Command options
-{: #power-hadr-summary-cli-options}
-
-`--instance-id` (string)
-:   instance id of instance to provision. Required.
-
-`--accept-language` (string)
-:   The language requested for the return document.
-
-#### Example
-{: #power-hadr-summary-examples}
-
-```sh
-ibmcloud power-hadr pdr summary \
-    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
-    --accept-language exampleString
-```
-
-#### Example output
-{: #power-hadr-summary-cli-output}
+{: #power-hadr-deployment-get-cli-output}
 
 ```json
 {
@@ -464,9 +184,561 @@ ibmcloud power-hadr pdr summary \
   }
 }
 ```
+{: screen}
+
+### `ibmcloud power-hadr pdr deployment create`
+{: #power-hadr-cli-deployment-create-command}
+
+Creates DR Deployment by creating Orchestrator instance in the given PowerVS workspace and configuration. Orchestrator instance can be used to manage multiple virtual servers and ensure continuous availability. For more details, refer Deploying the Orchestrator - /docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch.
+
+```sh
+ibmcloud power-hadr pdr deployment create --instance-id INSTANCE-ID --location-id LOCATION-ID --machine-type MACHINE-TYPE --orchestrator-location-type ORCHESTRATOR-LOCATION-TYPE --orchestrator-name ORCHESTRATOR-NAME --orchestrator-password ORCHESTRATOR-PASSWORD --orchestrator-workspace-id ORCHESTRATOR-WORKSPACE-ID [--api-key API-KEY] [--managed-apikey MANAGED-APIKEY] [--client-id CLIENT-ID] [--client-secret CLIENT-SECRET] [--guid GUID] [--orchestrator-ha=ORCHESTRATOR-HA] [--orchestrator-network-ids ORCHESTRATOR-NETWORK-IDS] [--orchestrator-workspace-location ORCHESTRATOR-WORKSPACE-LOCATION] [--proxy-ip PROXY-IP] [--region-id REGION-ID] [--resource-instance RESOURCE-INSTANCE] [--secondary-workspace-id SECONDARY-WORKSPACE-ID] [--secret SECRET] [--secret-group SECRET-GROUP] [--ssh-key-name SSH-KEY-NAME] [--standby-machine-type STANDBY-MACHINE-TYPE] [--standby-orchestrator-name STANDBY-ORCHESTRATOR-NAME] [--standby-orchestrator-network-ids STANDBY-ORCHESTRATOR-NETWORK-IDS] [--standby-ssh-key-name STANDBY-SSH-KEY-NAME] [--standby-orchestrator-workspace-id STANDBY-ORCHESTRATOR-WORKSPACE-ID] [--standby-orchestrator-workspace-location STANDBY-ORCHESTRATOR-WORKSPACE-LOCATION] [--standby-tier STANDBY-TIER] [--tenant-name TENANT-NAME] [--tier TIER] [--stand-by-redeploy STAND-BY-REDEPLOY] [--accept-language ACCEPT-LANGUAGE] [--accepts-incomplete=ACCEPTS-INCOMPLETE]
+```
 
 
-##  Machine types
+#### Command options
+{: #power-hadr-deployment-create-cli-options}
+
+`--instance-id` (string)
+:   instance id of instance to provision. Required.
+
+    The maximum length is `512` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_:\/.]+$/`.
+
+`--location-id` (string)
+:   The location or data center identifier where the service instance is deployed. Required.
+
+    The maximum length is `32` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--machine-type` (string)
+:   The machine type used for deploying orchestrator. Required.
+
+    The maximum length is `32` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--orchestrator-location-type` (string)
+:   The cloud location where your orchestator need to be created. Required.
+
+    The maximum length is `32` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--orchestrator-name` (string)
+:   The username used for the orchestrator. Required.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--orchestrator-password` (string)
+:   The password that you can use to access your orchestrator. Required.
+
+    The maximum length is `256` characters. The minimum length is `1` character. The value must match regular expression `/^[\\x20-\\x7E]*$/`.
+
+`--orchestrator-workspace-id` (string)
+:   The unique identifier orchestrator workspace. Required.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--api-key` (string)
+:   The api Key of the service instance for deploying the disaster recovery service.
+
+    The maximum length is `256` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--managed-apikey` (string)
+:   APIKey used to manage the workloads by adding the PowerVS instances to the orchestrator.
+
+    The maximum length is `256` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--client-id` (string)
+:   The Client Id created for MFA authentication API.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--client-secret` (string)
+:   The client secret created for MFA authentication API.
+
+    The maximum length is `256` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--guid` (string)
+:   The global unique identifier of the service instance.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--orchestrator-ha` (bool)
+:   Indicates whether the orchestrator High Availability (HA) is enabled for the service instance.
+
+`--orchestrator-network-ids` ([]string)
+:   List of network IDs for primary orchestrator VM.
+
+    The list items must match regular expression `/^[a-zA-Z0-9\\-_]+$/`. The maximum length is `10` items. The minimum length is `0` items.
+
+`--orchestrator-workspace-location` (string)
+:   The location of the orchestrator workspace.
+
+    The maximum length is `32` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--proxy-ip` (string)
+:   Proxy IP for the Communication between Orchestrator and Service broker.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9.\\-_:]+$/`.
+
+`--region-id` (string)
+:   The power virtual server region where the service instance is deployed.
+
+    The maximum length is `32` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--resource-instance` (string)
+:   The uniquie identifier of the associated IBM Cloud resource instance.
+
+    The maximum length is `512` characters. The minimum length is `1` character. The value must match regular expression `/^crn:v1:[a-zA-Z0-9\\-_]+:public:resource-controller:[a-zA-Z0-9\\-_]+:[a-zA-Z0-9\\-_\/]+:[a-zA-Z0-9\\-_]+::$/`.
+
+`--secondary-workspace-id` (string)
+:   The unique identifier of the secondary workspace used for the disaster recovery.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--secret` (string)
+:   The secret name or identifier used for retrieving credentials from secrets manager.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--secret-group` (string)
+:   The secret group name in IBM Cloud Secrets Manager containing sensitive data for the service instance.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--ssh-key-name` (string)
+:   The name of the SSH key used for deploying the orchestator.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--standby-machine-type` (string)
+:   The machine type used for deploying standby virtual machines.
+
+    The maximum length is `32` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--standby-orchestrator-name` (string)
+:   The username for the standby orchestrator management interface.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--standby-orchestrator-network-ids` ([]string)
+:   List of network IDs for standby orchestrator VM.
+
+    The list items must match regular expression `/^[a-zA-Z0-9\\-_]+$/`. The maximum length is `10` items. The minimum length is `0` items.
+
+`--standby-ssh-key-name` (string)
+:   The name of the SSH key used for deploying the standby orchestator.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--standby-orchestrator-workspace-id` (string)
+:   The unique identifier of the standby orchestrator workspace.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--standby-orchestrator-workspace-location` (string)
+:   The location of the standby orchestrator workspace.
+
+    The maximum length is `32` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--standby-tier` (string)
+:   The storage tier used for deploying standby orchestrator.
+
+    The maximum length is `32` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--tenant-name` (string)
+:   The tenant name for MFA authentication API.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9.\\-]+$/`.
+
+`--tier` (string)
+:   The storage tier used for deploying primary orchestrator.
+
+    The maximum length is `32` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--stand-by-redeploy` (string)
+:   Flag to indicate if standby should be redeployed (must be "true" or "false").
+
+    The maximum length is `5` characters. The minimum length is `1` character. The value must match regular expression `/^(true|false)$/`.
+
+`--accept-language` (string)
+:   The language requested for the return document.
+
+    The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
+
+`--accepts-incomplete` (bool)
+:   A value of true indicates that both the IBM Cloud platform and the requesting client support asynchronous deprovisioning.
+
+    The default value is `true`.
+
+#### Example
+{: #power-hadr-deployment-create-examples}
+
+```sh
+ibmcloud power-hadr pdr deployment create \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --location-id dal10 \
+    --machine-type bx2-4x16 \
+    --orchestrator-location-type off-premises \
+    --orchestrator-name adminUser \
+    --orchestrator-password exampleString \
+    --orchestrator-workspace-id orch-workspace-01 \
+    --api-key exampleString \
+    --managed-apikey exampleString \
+    --client-id abcd-97d2-1234-bf62-8eaecc67a1234 \
+    --client-secret abcd1234xM1y123wK6qR9123456789bE2jG0pabcdefgh \
+    --guid 123e4567-e89b-12d3-a456-426614174000 \
+    --orchestrator-ha=true \
+    --orchestrator-network-ids d9c7f1ab-47b2-4e6f-b0a8-9d2e5d7f5678,8ab29d71-8321-44d4-9cae-119fdc30a8ab \
+    --orchestrator-workspace-location us-south \
+    --proxy-ip 10.40.30.10:8888 \
+    --region-id us-south \
+    --resource-instance crn:v1:bluemix:public:resource-controller:us-south:a/123456fb04ceebfb4a9fd38c22334455:resource-instance:: \
+    --secondary-workspace-id secondary-workspace789 \
+    --secret exampleString \
+    --secret-group default-secret-group \
+    --ssh-key-name sshkey-name \
+    --standby-machine-type bx2-8x32 \
+    --standby-orchestrator-name standbyAdmin \
+    --standby-orchestrator-network-ids d9c7f1ab-47b2-4e6f-b0a8-9d2e5d7f5678,8ab29d71-8321-44d4-9cae-119fdc30a8ab \
+    --standby-ssh-key-name standby-sshkey-name \
+    --standby-orchestrator-workspace-id orch-standby-02 \
+    --standby-orchestrator-workspace-location us-east \
+    --standby-tier Premium \
+    --tenant-name xxx.ibm.com \
+    --tier Standard \
+    --stand-by-redeploy exampleString \
+    --accept-language exampleString \
+    --accepts-incomplete=true
+```
+{: pre}
+
+#### Example output
+{: #power-hadr-deployment-create-cli-output}
+
+```json
+{
+  "dashboard_url" : "https://power-dra.cloud.ibm.com/power-dra-ui?instance_id=crn:v1:bluemix:public:power-dr-automation:us-south:a/fe3c2ccd058e407c81e1dba2b5c0e0d6:e3d09875-bbf8-4d8a-b52c-abefb67a53c5::",
+  "id" : "crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9::"
+}
+```
+{: screen}
+
+## Event
+{: #power-hadr-event-cli}
+
+Shows event that got generated during various DR Automation operations such as provision creation, ManageDR Creation, image download, virtual server instance creation, orchestrator cluster creation, API Key updation along with their corresponding actions and descriptions.
+
+```sh
+ibmcloud power-hadr pdr event --help
+```
+
+
+### `ibmcloud power-hadr pdr event list`
+{: #power-hadr-cli-event-list-command}
+
+Retrieves the list of events from the specified service instance ID.
+
+```sh
+ibmcloud power-hadr pdr event list --instance-id INSTANCE-ID [--from-time FROM-TIME] [--to-time TO-TIME] [--accept-language ACCEPT-LANGUAGE]
+```
+
+
+#### Command options
+{: #power-hadr-event-list-cli-options}
+
+`--instance-id` (string)
+:   instance id of instance to provision. Required.
+
+    The maximum length is `512` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_:\/.]+$/`.
+
+`--from-time` (string)
+:   A from query time in either ISO 8601 or unix epoch format.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^(\\d{10}|\\d{13}|\\d{4}-\\d{2}-\\d{2}[T ]\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+\\-]\\d{2}:\\d{2})?)$/`.
+
+`--to-time` (string)
+:   A to query time in either ISO 8601 or unix epoch format.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^(\\d{10}|\\d{13}|\\d{4}-\\d{2}-\\d{2}[T ]\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+\\-]\\d{2}:\\d{2})?)$/`.
+
+`--accept-language` (string)
+:   The language requested for the return document.
+
+    The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
+
+#### Example
+{: #power-hadr-event-list-examples}
+
+```sh
+ibmcloud power-hadr pdr event list \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --from-time 2025-06-19T00:00:00Z \
+    --to-time 2025-06-19T23:59:59Z \
+    --accept-language exampleString
+```
+{: pre}
+
+#### Example output
+{: #power-hadr-event-list-cli-output}
+
+```json
+{
+  "events" : [ {
+    "action" : "create",
+    "event_id" : "1cecfe43-43cd-4b1b-86be-30c2d3d2a25f",
+    "level" : "info",
+    "message" : "Service Instance '7222c899-a31a-4a0c-be03-75920d23cd16' has been created successfully.",
+    "messageData" : {
+      "InstanceID" : {
+        "id" : "7222c899-a31a-4a0c-be03-75920d23cd16"
+      }
+    },
+    "metadata" : { },
+    "resource" : "ProvisionID",
+    "time" : "2025-06-23T07:12:49.840Z",
+    "timestamp" : "1750662769",
+    "user" : {
+      "user_id" : "admin"
+    }
+  }, {
+    "action" : "create",
+    "event_id" : "c49f0ced-2a78-48a6-929c-6b824555ddc6",
+    "level" : "info",
+    "message" : "Disaster recovery for Service Instance '7222c899-a31a-4a0c-be03-75920d23cd16' has been managed successfully.",
+    "messageData" : {
+      "InstanceID" : {
+        "id" : "7222c899-a31a-4a0c-be03-75920d23cd16"
+      }
+    },
+    "metadata" : { },
+    "resource" : "managedr",
+    "time" : "2025-06-23T07:14:53.871Z",
+    "timestamp" : "1750662893",
+    "user" : {
+      "email" : "abcuser@ibm.com",
+      "user_id" : "IBMid-695000ab7E"
+    }
+  } ]
+}
+```
+{: screen}
+
+### `ibmcloud power-hadr pdr event get`
+{: #power-hadr-cli-event-get-command}
+
+Retrieves the details of a specific event for the given service instance provision ID.
+
+```sh
+ibmcloud power-hadr pdr event get --instance-id INSTANCE-ID --event-id EVENT-ID [--accept-language ACCEPT-LANGUAGE]
+```
+
+
+#### Command options
+{: #power-hadr-event-get-cli-options}
+
+`--instance-id` (string)
+:   instance id of instance to provision. Required.
+
+    The maximum length is `512` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_:\/.]+$/`.
+
+`--event-id` (string)
+:   Event ID. Required.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
+
+`--accept-language` (string)
+:   The language requested for the return document.
+
+    The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
+
+#### Example
+{: #power-hadr-event-get-examples}
+
+```sh
+ibmcloud power-hadr pdr event get \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --event-id 00116b2a-9326-4024-839e-fb5364b76898 \
+    --accept-language exampleString
+```
+{: pre}
+
+#### Example output
+{: #power-hadr-event-get-cli-output}
+
+```json
+{
+  "action" : "create",
+  "api_source" : "dr-automation-api",
+  "event_id" : "1cecfe43-43cd-4b1b-86be-30c2d3d2a25f",
+  "level" : "info",
+  "message" : "Service Instance created successfully",
+  "message_data" : {
+    "InstanceID" : {
+      "id" : "7222c899-a31a-4a0c-be03-75920d23cd16"
+    },
+    "request_id" : {
+      "id" : "req-12345"
+    }
+  },
+  "metadata" : { },
+  "resource" : "ProvisionID",
+  "time" : "2025-06-23T07:12:49.840Z",
+  "timestamp" : "1750662769",
+  "user" : {
+    "user_email" : "example.user@ibm.com",
+    "user_id" : "IBMid-123456"
+  }
+}
+```
+{: screen}
+
+## Dr Automation Config
+{: #power-hadr-dr-automation-config-cli}
+
+### `ibmcloud power-hadr pdr grs-location-pairs`
+{: #power-hadr-cli-grs-location-pairs-command}
+
+Retrieves the (GRS) location pairs associated with the specified service instance based on managed VMs.
+
+```sh
+ibmcloud power-hadr pdr grs-location-pairs --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
+```
+
+
+#### Command options
+{: #power-hadr-grs-location-pairs-cli-options}
+
+`--instance-id` (string)
+:   instance id of instance to provision. Required.
+
+    The maximum length is `512` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_:\/.]+$/`.
+
+`--accept-language` (string)
+:   The language requested for the return document.
+
+    The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
+
+#### Example
+{: #power-hadr-grs-location-pairs-examples}
+
+```sh
+ibmcloud power-hadr pdr grs-location-pairs \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --accept-language exampleString
+```
+{: pre}
+
+### `ibmcloud power-hadr pdr locations`
+{: #power-hadr-cli-locations-command}
+
+Retrieves the list of disaster recovery (DR) locations available for the specified service instance.
+
+```sh
+ibmcloud power-hadr pdr locations --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
+```
+
+
+#### Command options
+{: #power-hadr-locations-cli-options}
+
+`--instance-id` (string)
+:   instance id of instance to provision. Required.
+
+    The maximum length is `512` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_:\/.]+$/`.
+
+`--accept-language` (string)
+:   The language requested for the return document.
+
+    The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
+
+#### Example
+{: #power-hadr-locations-examples}
+
+```sh
+ibmcloud power-hadr pdr locations \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --accept-language exampleString
+```
+{: pre}
+
+#### Example output
+{: #power-hadr-locations-cli-output}
+
+```json
+{
+  "dr_locations" : [ {
+    "id" : "loc-001",
+    "name" : "us-south"
+  }, {
+    "id" : "loc-002",
+    "name" : "eu-de"
+  } ]
+}
+```
+{: screen}
+
+### `ibmcloud power-hadr pdr managed-vms`
+{: #power-hadr-cli-managed-vms-command}
+
+Retrieves the list of disaster recovery (DR) managed virtual machines for the specified service instance.
+
+```sh
+ibmcloud power-hadr pdr managed-vms --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
+```
+
+
+#### Command options
+{: #power-hadr-managed-vms-cli-options}
+
+`--instance-id` (string)
+:   instance id of instance to provision. Required.
+
+    The maximum length is `512` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_:\/.]+$/`.
+
+`--accept-language` (string)
+:   The language requested for the return document.
+
+    The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
+
+#### Example
+{: #power-hadr-managed-vms-examples}
+
+```sh
+ibmcloud power-hadr pdr managed-vms \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --accept-language exampleString
+```
+{: pre}
+
+#### Example output
+{: #power-hadr-managed-vms-cli-output}
+
+```json
+{
+  "managed_vm_list" : {
+    "3f2e1a09-1234-4d56-7890-abcd1234ef56" : {
+      "core" : "0.50",
+      "dr_average_time" : "10",
+      "dr_region" : "nyc02",
+      "memory" : "4",
+      "region" : "nyc01",
+      "vm_name" : "example_vm",
+      "workgroup_name" : "Example_Workgroup",
+      "workspace_name" : "Example_Workspace"
+    },
+    "9b8a7c65-4321-0fed-cba9-87654321abcd" : {
+      "core" : "1.00",
+      "dr_average_time" : "5",
+      "dr_region" : "sfo04",
+      "memory" : "8",
+      "region" : "sfo03",
+      "vm_name" : "another_vm",
+      "workgroup_name" : "Another_Workgroup",
+      "workspace_name" : "Another_Workspace"
+    }
+  }
+}
+```
+{: screen}
+
+## Dr Automation Ibm Cloud
 {: #power-hadr-dr-automation-ibm-cloud-cli}
 
 ### `ibmcloud power-hadr pdr machine-types`
@@ -485,14 +757,22 @@ ibmcloud power-hadr pdr machine-types --instance-id INSTANCE-ID --primary-worksp
 `--instance-id` (string)
 :   instance id of instance to provision. Required.
 
+    The maximum length is `512` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_:\/.]+$/`.
+
 `--primary-workspace-name` (string)
 :   The primary Power virtual server workspace name. Required.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
 
 `--accept-language` (string)
 :   The language requested for the return document.
 
+    The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
+
 `--standby-workspace-name` (string)
 :   The standby Power virtual server workspace name.
+
+    The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
 
 #### Example
 {: #power-hadr-machine-types-examples}
@@ -504,9 +784,7 @@ ibmcloud power-hadr pdr machine-types \
     --accept-language exampleString \
     --standby-workspace-name Test-workspace-wdc07
 ```
-
-## PowerVS workspaces
-{: #power-hadr-dr-automation-config-cli}
+{: pre}
 
 ### `ibmcloud power-hadr pdr powervs-workspaces`
 {: #power-hadr-cli-powervs-workspaces-command}
@@ -524,8 +802,12 @@ ibmcloud power-hadr pdr powervs-workspaces --instance-id INSTANCE-ID --location-
 `--instance-id` (string)
 :   instance id of instance to provision. Required.
 
+    The maximum length is `512` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_:\/.]+$/`.
+
 `--location-id` (string)
 :   Location ID value. Required.
+
+    The maximum length is `32` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
 
 #### Example
 {: #power-hadr-powervs-workspaces-examples}
@@ -535,7 +817,7 @@ ibmcloud power-hadr pdr powervs-workspaces \
     --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
     --location-id exampleString
 ```
-
+{: pre}
 
 #### Example output
 {: #power-hadr-powervs-workspaces-cli-output}
@@ -570,132 +852,10 @@ ibmcloud power-hadr pdr powervs-workspaces \
   } ]
 }
 ```
+{: screen}
 
-
-## Create DR deployment
-{: #power-hadr-dr-automation-manage-dr-cli}
-
-### `ibmcloud power-hadr pdr create`
-{: #power-hadr-cli-create-command}
-
-Creates DR Deployment by creating Orchestrator instance in the given PowerVS workspace and configuration. Orchestrator instance can be used to manage multiple virtual servers and ensure continuous availability. For more details, refer Deploying the Orchestrator - /docs/dr-automation-powervs?topic=dr-automation-powervs-idep-the-orch.
-
-```sh
-ibmcloud power-hadr pdr create --instance-id INSTANCE-ID --location-id LOCATION-ID --machine-type MACHINE-TYPE --orchestrator-location-type ORCHESTRATOR-LOCATION-TYPE --orchestrator-name ORCHESTRATOR-NAME --orchestrator-password ORCHESTRATOR-PASSWORD --orchestrator-workspace-id ORCHESTRATOR-WORKSPACE-ID [--api-key API-KEY] [--client-id CLIENT-ID] [--client-secret CLIENT-SECRET] [--guid GUID] [--orchestrator-ha=ORCHESTRATOR-HA] [--proxy-ip PROXY-IP] [--region-id REGION-ID] [--resource-instance RESOURCE-INSTANCE] [--secret SECRET] [--secret-group SECRET-GROUP] [--ssh-key-name SSH-KEY-NAME] [--standby-machine-type STANDBY-MACHINE-TYPE] [--standby-orchestrator-name STANDBY-ORCHESTRATOR-NAME] [--standby-orchestrator-workspace-id STANDBY-ORCHESTRATOR-WORKSPACE-ID] [--standby-tier STANDBY-TIER] [--tenant-name TENANT-NAME] [--tier TIER] [--stand-by-redeploy STAND-BY-REDEPLOY] [--accept-language ACCEPT-LANGUAGE] [--accepts-incomplete=ACCEPTS-INCOMPLETE]
-```
-
-
-#### Command options
-{: #power-hadr-create-cli-options}
-
-`--instance-id` (string)
-:   instance id of instance to provision. Required.
-
-`--location-id` (string)
-:   The location or data center identifier where the service instance is deployed. Required.
-
-`--machine-type` (string)
-:   The machine type used for deploying orchestrator. Required.
-
-`--orchestrator-location-type` (string)
-:   The cloud location where your orchestator need to be created. Required.
-
-`--orchestrator-name` (string)
-:   The username used for the orchestrator. Required.
-
-`--orchestrator-password` (string)
-:   The password that you can use to access your orchestrator. Required.
-
-`--orchestrator-workspace-id` (string)
-:   The unique identifier orchestrator workspace. Required.
-
-`--api-key` (string)
-:   The api Key of the service instance for deploying the disaster recovery service.
-
-`--client-id` (string)
-:   The Client Id created for MFA authentication API.
-
-`--client-secret` (string)
-:   The client secret created for MFA authentication API.
-
-`--guid` (string)
-:   The global unique identifier of the service instance.
-
-`--orchestrator-ha` (bool)
-:   Indicates whether the orchestrator High Availability (HA) is enabled for the service instance.
-
-`--proxy-ip` (string)
-:   Proxy IP for the Communication between Orchestrator and Service broker.
-
-`--region-id` (string)
-:   The power virtual server region where the service instance is deployed.
-
-`--resource-instance` (string)
-:   The uniquie identifier of the associated IBM Cloud resource instance.
-
-`--secret` (string)
-:   The secret name or identifier used for retrieving credentials from secrets manager.
-
-`--secret-group` (string)
-:   The secret group name in IBM Cloud Secrets Manager containing sensitive data for the service instance.
-
-`--ssh-key-name` (string)
-:   The name of the SSH key used for deploying the orchestator.
-
-`--standby-machine-type` (string)
-:   The machine type used for deploying standby virtual machines.
-
-`--standby-orchestrator-name` (string)
-:   The username for the standby orchestrator management interface.
-
-`--standby-orchestrator-workspace-id` (string)
-:   The unique identifier of the standby orchestrator workspace.
-
-`--standby-tier` (string)
-:   The storage tier used for deploying standby orchestrator.
-
-`--tenant-name` (string)
-:   The tenant name for MFA authentication API.
-
-`--tier` (string)
-:   The storage tier used for deploying primary orchestrator.
-
-`--stand-by-redeploy` (string)
-:   Flag to indicate if standby should be redeployed (must be "true" or "false").
-
-`--accept-language` (string)
-:   The language requested for the return document.
-
-`--accepts-incomplete` (bool)
-:   A value of true indicates that both the IBM Cloud platform and the requesting client support asynchronous deprovisioning.
-
-    The default value is `true`.
-
-#### Example
-{: #power-hadr-create-examples}
-
-Example request for non-HA Deployment
-
-```sh
-ibmcloud power-hadr dr create --instance-id instance1 --orchestrator-name non-HA-deployment --orchestrator-password abcabc --orchestrator-workspace-id "workspace1-abc-19304" --orchestrator-location-type locationType --location-id dal13 --machine-type s922
-
-ibmcloud power-hadr dr create --instance-id instance1 --orchestrator-name HA-Deployment --orchestrator-password abcabc --orchestrator-workspace-id "workspace1-abc-19304" --orchestrator-location-type locationType --location-id dal13 --machine-type machineType --standby-orchestrator-name standby --standby-orchestrator-workspace-id workspace-abc-wewe --standby-machine-type s922 --orchestrator-ha true
-```
-{: pre}
-
-#### Example output
-{: #power-hadr-create-cli-output}
-
-```json
-{
-  "dashboard_url" : "https://power-dra.ibm.com/power-dra-ui?instance_id=crn:v1:bluemix:public:power-dr-automation:us-south:a/fe3c2ccd058e407c81e1dba2b5c0e0d6:e3d09875-bbf8-4d8a-b52c-abefb67a53c5::",
-  "id" : "crn:v1:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9::"
-}
-```
-
-## Last operation
+## Dr Automation Service Instance
 {: #power-hadr-dr-automation-service-instance-cli}
-
 
 ### `ibmcloud power-hadr pdr last-operation`
 {: #power-hadr-cli-last-operation-command}
@@ -713,8 +873,12 @@ ibmcloud power-hadr pdr last-operation --instance-id INSTANCE-ID [--accept-langu
 `--instance-id` (string)
 :   instance id of instance to provision. Required.
 
+    The maximum length is `512` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_:\/.]+$/`.
+
 `--accept-language` (string)
 :   The language requested for the return document.
+
+    The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
 
 #### Example
 {: #power-hadr-last-operation-examples}
@@ -724,7 +888,7 @@ ibmcloud power-hadr pdr last-operation \
     --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
     --accept-language exampleString
 ```
-
+{: pre}
 
 #### Example output
 {: #power-hadr-last-operation-cli-output}
@@ -737,6 +901,8 @@ ibmcloud power-hadr pdr last-operation \
   "last_updated_standby_orchestrator_deployment_time" : "2025-10-30T11:40:00Z",
   "mfa_enabled" : "false",
   "orch_ext_connectivity_status" : "Connected",
+  "primary_error_description" : "sample errror message",
+  "standby_error_description" : "sample error message",
   "orch_standby_node_addtion_status" : "Completed",
   "orchestrator_cluster_message" : "Cluster healthy",
   "orchestrator_config_status" : "Configured",
@@ -753,3 +919,4 @@ ibmcloud power-hadr pdr last-operation \
   "status" : "Running"
 }
 ```
+{: screen}

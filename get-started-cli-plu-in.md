@@ -1,19 +1,20 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-25"
+lastupdated: "2026-04-02"
 
 subcollection: dr-automation-powervs
 
-keywords: cloud regions
+keywords: dr automation cli, plug-in
 
 ---
 
-# Getting started with the {{site.data.keyword.DR_full}} CLI plug-in
+# Getting started with the {{site.data.keyword.DR_full}} DR Automation CLI plug-in
+{: #dr-getting-started}
 
-The {{site.data.keyword.DR_full_notm}} Command Line Interface (CLI) provides a set of commands that are grouped by namespace to help you interact with {{site.data.keyword.DR_full_notm}} in both IBM data center and client location environments. For more information, see the following topics:
+The {{site.data.keyword.DR_full_notm}} DR Automation Command Line Interface (CLI) provides a set of commands that are grouped by namespace to help you interact with DR Automation in both IBM data center and client location environments. For more information, see the following topics:
 
-- [**{{site.data.keyword.DR_full_notm}} CLI version 0.0.1**](/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version)
+- [**{{site.data.keyword.DR_full_notm}} DR Automation CLI](/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version)
 
 
-You can also use the application programming interfaces (APIs) to interact with {{site.data.keyword.DR_full_notm}}. For more information, see [**API references**](https://cloud.ibm.com/apidocs/dr-automation-powervs).
+You can also use the application programming interfaces (APIs) to interact with DR Automation. For more information, see [**API references**](https://cloud.ibm.com/apidocs/dr-automation-powervs).
