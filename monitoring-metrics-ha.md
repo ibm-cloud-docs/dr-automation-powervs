@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-03-31"
+lastupdated: "2026-04-03"
 
 subcollection: dr-automation-powervs
 
@@ -85,6 +85,17 @@ To access the dashboard, complete the following steps:
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption=" Number of PowerHA SystemMirror Cluster Nodes Count" caption-side="top"}
+
+### Average time of Disaster Recovery
+{: #ibm_power_ha_automation-average-time}
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_power_dr_automation_dr_average_time` |
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Average time of Disaster Recovery metric metadata" caption-side="top"}
 
 ## Attributes for Segmentation
 {: attributes}
