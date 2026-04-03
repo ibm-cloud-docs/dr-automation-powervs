@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-03-30"
+lastupdated: "2026-04-03"
 
 subcollection: dr-automation-powervs
 
@@ -19,7 +19,10 @@ Efficiently set up and manage virtual machine sessions by creating new sessions,
 ## Create a new VM session
 {: #create-vm-ses}
 
-After adding the sites, you must create a new VM session if you are managing the virtual machine for the first time. If the virtual machine is already managed, you can proceed directly to [manage VM](#vm-ses) and [unmanage VM](#um-manage-ses) sessions.
+After adding the sites, you must create a new VM session if you are managing the virtual machine for the first time.
+
+## Manage VM
+{: #manage-vm-session}
 
 ### Procedure
 {: #new-vm-ses}
@@ -93,43 +96,77 @@ To configure dedicated hostgroup and dedicated host, complete the following step
 
 6. Review the configuration in the **Summary** page and click **Submit & Deploy** to apply the changes.
 
+## Network pairing
+{: #network-pairing}
 
-## Manage VM
-{: #vm-ses}
+Network pairing establishes communication links between network devices or systems to ensure seamless data transmission and operational connectivity. This is an **optional setup** and is typically performed after managing virtual machines (VMs) and organizing them into WorkGroups. After completing the VM management process, the GUI navigates you to the **Network Pairing** page.
+{:shortdesc: .shortdesc}
 
-You can view and manage virtual machines by using the Power Virtual Server DR Automation UI. Managing a virtual machine and monitor effectively.
+All VMs that are added to the WorkGroup are automatically populated on the **Network Pairing** page.
 
-### Procedure
-{: #ma-vm-se}
+## Procedure
+{: #network-proce}
 
-To manage the additonal new virtual machines, complete the following steps:
+To complete the network pairing, follow these steps:
 
-1. In the Power Virtual Server DR Automation navigation page, click **Cluster Name > Site > Workgroup > Managed VM**.
-2. Select the unmanged VM.
-3. Click **Manage VM**.
-4. You are redirected to the Managed VM tab, where you can view the following details:
-   - VM Name
-   - Workgroup
-   - Source workspace
-   - Target workspace
-5. Complete the deployment flow to manage selected VM.
+1. Select the VM that requires network pairing from the list.
+2. Select the source network from the **Source Network** drop-down menu and the corresponding target network from the **Target Network** drop-down menu, and you can now map multiple networks for each VM as part of the network selection process.
+3. If you need to create a new target network, click **Create New Target Network** and configure the required settings.
+4. Click **Save & Next** to finalize the network pairing.
+5. To review the paired networks, click **Show Network Pairs**.
+6. To clear the pairing, click **Clear Selection** and confirm to unpair the network configuration.
 
-## Unmanage VM
-{: #um-manage-ses}
+> **Note**: When confirming network pairings for one VM within a shared workspace and network setup, the confirmation is automatically applied to other VMs with similar configurations.
 
-You can view and virtual machines by using the Power Virtual Server DR Automation UI. Unmanaging a virtual machine removes the virtual machine from disaster recovery operations and monitoring.
+## IP mapping
+{: #ip-mapping}
 
-### Procedure
-{: #un-vm-manage}
 
-To unmanage virtual machines, complete the following steps:
+IP mapping allows you to define the mapping between source and target IP addresses for the selected virtual machines. This is an **optional setup** and is available only when Static IP is enabled during VM session creation. After completing the network pairing process, the GUI navigates you to the **IP Map** page.
+{:shortdesc: .shortdesc}
 
-1. In the navigation page of the Power Virtual Server DR Automation, click **Site > Workspace > Worksgroup>Managed VM**.
-2. Select the VM.
-3. Click **Unmanage this VM**.
-4. After this operation, the workgroup is removed and virtual machine is deleted.
+All VMs that are added to the WorkGroup are automatically populated on the **IP Map** page.
 
-   > **Note:**
-   >
-   > - Each workgroup is associated with only one virtual machine.
-   > - You can unmanage a virtual machine even if it not managed previously.
+## Procedure
+{: #ip-mapping-procedure}
+
+To configure IP mapping, follow these steps:
+
+1. Select the VM that requires IP mapping from the list.
+
+2. Verify that **Static IP Enable** is set to **Yes**.
+
+3. In the **Static IP Map** section, enter the following details:
+   - **Source IP Address**
+   - **IP Address to Map**
+
+4. Click **Add IP** to add the mapping.
+
+5. You can add multiple IP mappings for each VM as part of the configuration.
+
+6. Click **Save** to retain the IP mapping configuration.
+
+7. To remove the mapping, use the available option to clear the selected entries.
+
+> **Note**: If no IP mapping is configured, the default network configuration is applied.
+
+## Summary
+{: #summary}
+
+The Summary page provides an overview of the configuration details for the selected virtual machines before deployment. This includes information such as VM name, source and target workspaces, workgroup, target VM details, configured IP mappings, and processor pool settings.
+{:shortdesc: .shortdesc}
+
+Review all the configured details carefully to ensure accuracy.
+
+## Procedure
+{: #summary-procedure}
+
+To review and complete the configuration, follow these steps:
+
+1. Verify the VM configuration details displayed in the **Configuration Summary** section.
+
+2. Click **Export Summary** to download the configuration details, if required.
+
+3. Click **Back** to modify any configuration settings.
+
+4. Click **Submit & Deploy** to apply the configuration and initiate deployment.
