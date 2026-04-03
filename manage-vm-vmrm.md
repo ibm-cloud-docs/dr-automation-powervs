@@ -78,7 +78,7 @@ To configure Flex capacity, complete the following steps:
 5. Review the configuration in the **Summary** page and click **Submit & Deploy** to apply the changes.
 6. In the dashboard page, select the VM. The **Summary** and **Flex Capacity** tabs are displayed. Click **Flex Capacity** to review and modify **Target Flex Memory (%)**, **Target Flex CPU (%)**, **Inactive VM Memory**, and **Inactive VM CPU** as required.
 
-> **Note**: If no values are specified for **Flex Capacity**, the **Target Flex Memory (%)** and **Target Flex CPU (%)** are set to 50% by default.
+> **Note**: If no values are specified for **Flex Capacity**, the **Target Flex Memory (%)** and **Target Flex CPU (%)** are set to 100% by default.
 
 ### Modify Dedicated Hostgroup and Dedicated Host
 
