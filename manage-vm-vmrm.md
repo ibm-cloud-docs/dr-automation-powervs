@@ -158,7 +158,7 @@ The Summary page provides an overview of the configuration details for the selec
 
 Review all the configured details carefully to ensure accuracy.
 
-## Procedure
+### Procedure
 {: #summary-procedure}
 
 To review and complete the configuration, follow these steps:
