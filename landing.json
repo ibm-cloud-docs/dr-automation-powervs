@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "title": "Power Virtual Server DR Automation",
-  "introduction": "Power Virtual Server DR Automation is a cloud solution to enable Disaster Recovery capability for your power virtual servers.",
+  "title": "HA and DR Automation for IBM® Power™ Virtual Server",
+  "introduction": "HA and DR Automation for IBM® Power™ Virtual Server enables High Availability (HA) and Disaster Recovery (DR) for Power Virtual Server environments.",
   "console_page": "/catalog/services/power-virtual-server-dr-automation",
   "section_topics": {
     "links": [
