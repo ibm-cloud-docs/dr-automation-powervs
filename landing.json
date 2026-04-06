@@ -1,7 +1,7 @@
 {
   "version": 2,
   "title": "HA and DR Automation for IBM® Power™ Virtual Server",
-  "introduction": "HA and DR Automation for IBM® Power™ Virtual Server enables High Availability (HA) and Disaster Recovery (DR) for Power Virtual Server environments.",
+  "introduction": "HA and DR Automation for IBM® Power™ Virtual Server enables High Availability (HA) and Disaster Recovery (DR) for Power Virtual Server.",
   "console_page": "/catalog/services/power-virtual-server-dr-automation",
   "section_topics": {
     "links": [
