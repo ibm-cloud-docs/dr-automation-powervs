@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-03"
+lastupdated: "2026-04-06"
 
 subcollection: dr-automation-powervs
 
@@ -104,7 +104,7 @@ Network pairing establishes communication links between network devices or syste
 
 All VMs that are added to the WorkGroup are automatically populated on the **Network Pairing** page.
 
-## Procedure
+### Procedure
 {: #network-proce}
 
 To complete the network pairing, follow these steps:
@@ -127,7 +127,7 @@ IP mapping allows you to define the mapping between source and target IP address
 
 All VMs that are added to the WorkGroup are automatically populated on the **IP Map** page.
 
-## Procedure
+### Procedure
 {: #ip-mapping-procedure}
 
 To configure IP mapping, follow these steps:
@@ -170,3 +170,14 @@ To review and complete the configuration, follow these steps:
 3. Click **Back** to modify any configuration settings.
 
 4. Click **Submit & Deploy** to apply the configuration and initiate deployment.
+
+The following details are displayed in the summary page:
+
+- **VM Name**: The unique identifier assigned to each virtual machine for management and configuration purposes.  
+- **Source Workspace**: The workspace from which the virtual machine originates.  
+- **Target Workspace**: The workspace where the virtual machine is deployed or managed.  
+- **Workgroup Name**: The name assigned to the group of virtual machines for collective management. 
+- **Target System**: The network configuration to which the virtual machine is connected after pairing.
+- **Static IP Map**: Displays the mapping between the source IP address and the target IP address, if static IP was enabled.  
+- **Enable Shared Procpool**: Indicates whether virtual machines are configured to share processor capacity dynamically through a shared processor pool (SPP).
+- **Target Procpool**: The designated shared processor pool (SPP) that is assigned to the virtual machines.
