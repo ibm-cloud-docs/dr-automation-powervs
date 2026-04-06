@@ -5,7 +5,7 @@ toc:
     href: /docs/dr-automation-powervs
     service-name: service-name
     category: virtualservers
-    label: Power Virtual Server DR Automation
+    label: HA and DR Automation for IBM® Power™ Virtual Server
   entries:
   - navgroup:
       id: learn
