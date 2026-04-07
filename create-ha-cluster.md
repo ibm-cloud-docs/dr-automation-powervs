@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-03-26"
+lastupdated: "2026-04-07"
 
 subcollection: dr-automation-powervs
 
@@ -76,7 +76,7 @@ After adding nodes, download and install the agent on each virtual machine (VM).
 1. On the **Service details** page, go to the **Cluster nodes** section.
 2. Click **Download agent**.
 
-   The agent file set (`powerha-agent.rte`) is downloaded to your local system.
+   The agent file set (`powerhaagent.rte`) is downloaded to your local system.
 
 3. Copy the downloaded file set to each VM that is added to the cluster.
 
@@ -136,16 +136,14 @@ Note: Ensure API_KEY and SERVICE_INSTANCE_ID are exported as environment variabl
 Example output:
 
 ```text
+bash-5.2# /opt/IBM/powerha-agent/powerha-agent -l
 INFO: API_KEY and SERVICE_INSTANCE_ID are not provided as arguments, continuing with environment variables...
 INFO: Starting PowerHA Agent...
 INFO: Fetching supported PowerHA versions...
 INFO: PowerHA supported versions:
-
-- 7210SP1
-- 729SP1
-- 728SP3
-- 727SP3
-
+ - 7.2.10_SP1
+ - 7.2.9_SP2
+ - 7.2.8_SP4
 INFO: Agent job is Completed
 ```
 
@@ -170,41 +168,48 @@ To install a PowerHA version on the VM, run:
 Alternatively, if the API key and service instance ID are set as environment variables:
 
 ```bash
-./powerha-agent -i PHA_VERSION=<value>
+./powerha-agent -i PHA_VERSION=7.2.9_SP2 DOWNLOAD_DIR=/home
 ```
 
 Example:
 
 ```bash
-./powerha-agent -i PHA_VERSION=729SP1
+./powerha-agent -i API_KEY=<value> SERVICE_INSTANCE_ID=<value> PHA_VERSION=<value> DOWNLOAD_DIR=<value>
 ```
 
 Example output:
 
 ```text
-Starting PowerHA Agent...
-Performing pre-validation...
-Fetching supported PowerHA versions...
-PowerHA version '729SP1' is supported for the deployment
-Checking whether PowerHA is already installed or not...
-PowerHA is not installed on this system
-Checking disk space...
-Available disk space in root filesystem: 2.04 GB
-Available disk space in user filesystem: 5.39 GB
-Sufficient space is available to install the PowerHA
-Starting download, extraction, and installation process...
-Downloading PowerHA file for VM: phametering, Version: 729SP1
-Successfully downloaded PowerHA version 729SP1 for VM: phametering
-Extracting file: 729SP1.tar.gz
-Successfully extracted the tar file
-Installing AIX filesets...
-Installing PowerHA filesets...
-Successfully installed PowerHA filesets from: /729SP1/inst.images
-Installing PowerHA SP filesets...
-Successfully installed PowerHA SP filesets from: /729SP1/update.images
-Cleaning up temporary files
-Performing post-installation validations...
-Agent job is Completed
+bash-5.2# /opt/IBM/powerha-agent/powerha-agent -i PHA_VERSION=7.2.9_SP2 DOWNLOAD_DIR=/home/temp
+INFO: API_KEY and SERVICE_INSTANCE_ID are not provided as arguments, continuing with environment variables...
+INFO: Starting PowerHA Agent...
+INFO: Performing pre-validation...
+INFO: Fetching supported PowerHA versions...
+INFO: PowerHA version 7.2.9_SP2 is supported for the deployment.
+INFO: Checking whether PowerHA is already installed or not...
+INFO: PowerHA is not installed on this system.
+INFO: Checking disk space...
+INFO: Available disk space in /home/temp filesystem: 3.03 GB
+INFO: Available disk space in /usr filesystem: 3.85 GB
+INFO: Sufficient space is available to install PowerHA on the VM.
+INFO: Starting download  extraction  and installation process...
+INFO: Downloading PowerHA file for VM: powerha-agent  Version: 7.2.9_SP2
+[==================================================]   100.0%  780.88 MB / 780.88 MB  19.75 MB/s  ETA --:--
+Download complete: 780.88 MB at avg 19.75 MB/s
+INFO: Successfully downloaded PowerHA version.
+INFO: Extracting PowerHA files...
+INFO: Successfully extracted PowerHA files.
+INFO: Installing AIX filesets...
+INFO: Successfully installed AIX filesets.
+INFO: Installing PowerHA filesets...
+INFO: Successfully installed PowerHA filesets.
+INFO: Installing PowerHA SP filesets...
+INFO: Successfully installed PowerHA SP filesets.
+INFO: Cleaning up temporary files...
+INFO: Successfully cleaned up temporary files.
+INFO: Performing post-installation validations...
+INFO: Installed PowerHA SystemMirror version is 7.2.9_SP2
+INFO: Agent job is Completed
 ```
 
 ### Uninstall PowerHA
@@ -244,11 +249,20 @@ The **Cluster nodes** table displays:
 
 Example values:
 
-- AGENT_DOWNLOAD_REQUIRED  
-- AGENT_DOWNLOADED  
-- POWERHA_FILESETS_DOWNLOAD_STARTED  
-- POWERHA_INSTALLATION_COMPLETED  
-- FAILED  
+Agent downloaded
+
+  - Powerha filesets download started
+  - Powerha filesets download failed
+  - Powerha filesets download completed
+  - Powerha installation started
+  - Powerha installation failed
+  - Powerha installation completed
+  - Powerha migration started
+  - Powerha migration failed
+  - Powerha migration completed
+  - Powerha uninstallation started
+  - Powerha uninstallation failed
+  - Powerha uninstallation completed
 
 ### Next steps
 {: #next-steps-ha}
