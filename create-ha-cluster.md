@@ -249,8 +249,8 @@ The **Cluster nodes** table displays:
 
 Example values:
 
-Agent downloaded
-
+  - Agent download required
+  - Agent downloaded
   - Powerha filesets download started
   - Powerha filesets download failed
   - Powerha filesets download completed
