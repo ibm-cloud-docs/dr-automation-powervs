@@ -74,6 +74,7 @@ To access the dashboard, complete the following steps:
 | [Number of Managed VMs count](#ibm_power_ha_managed_vm_count) |
 | [PowerHA SystemMirror Cluster Nodes Count](#ibm_power_ha_cluster_nodes_count) |
 | [Average time of Disaster Recovery metric metadata](#ibm_power_ha_automation-average-time) |
+
 {: caption="Metrics available by service plan" caption-side="top"}
 
 ### Number of managed VM's count
