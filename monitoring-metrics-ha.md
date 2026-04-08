@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-03"
+lastupdated: "2026-04-08"
 
 subcollection: dr-automation-powervs
 
@@ -21,7 +21,7 @@ Create an IBM Cloud Monitoring instance and enable the platform metrics to captu
 To monitor platform metrics, select the region where your Power Virtual Server workspace is provisioned.
 
 1. Log in to the [IBM Cloud console](https://cloud.ibm.com/).
-2. Search for **IBM Cloud Monitoring** and select it.
+2. Search for **Cloud Monitoring** and select it.
 3. Select your location and enter your custom values for the **Service name** field and other fields.
 4. Select the **Enable** indicator for IBM platform metrics.
 5. Select the license agreements indicator and click **Create**.
@@ -71,12 +71,23 @@ To access the dashboard, complete the following steps:
 
 | Metric Name |
 |-----------|
-| [Number of Managed VMs](#ibm_power_dr_automation_managed_vm_count) |
-| [PowerHA cluster node count](#ibm_power_dr_automation_ha_cluster_node_count) |
-| [Average disaster recovery time](#ibm_power_dr_automation_dr_average_time) |
+| [Number of Managed VMs](#ibm_power_ha_managed_vm_count) |
+| [PowerHA SystemMirror Cluster Nodes Count](#ibm_power_ha_cluster_nodes_count) |
+| [Average time of Disaster Recovery metric metadata](#ibm_power_ha_automation-average-time) |
+
+### Number of managed_vm_count
+{: #ibm_power_ha_managed_vm_count}
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_power_dr_automation_managed_vm_count` |
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Number of managed vm count" caption-side="top"}
 
 ### Number of PowerHA SystemMirror Cluster Nodes Count
-{: #ibm_power_dr_automation_managed_vm_count}
+{: #ibm_power_ha_cluster_nodes_count}
 
 | Metadata | Description |
 |----------|-------------|
@@ -86,7 +97,7 @@ To access the dashboard, complete the following steps:
 | `Segment By` | `Service instance, Service instance name` |
 {: caption=" Number of PowerHA SystemMirror Cluster Nodes Count" caption-side="top"}
 
-### Average time of Disaster Recovery
+### Average time of Disaster Recovery metric metadata
 {: #ibm_power_ha_automation-average-time}
 
 | Metadata | Description |

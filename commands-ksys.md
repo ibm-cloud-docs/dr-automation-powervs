@@ -1122,7 +1122,7 @@ An output that is similar to the following example is displayed:
 ksysmgr modify notify oldcontact=User newcontact=sssssss
 successfully modified user info
 (0) root @ ksys804p: /
-# ksysmgr q notify
+ - ksysmgr q notify
 Contact details:
 User: sssssss
 Contact: user.test.com
@@ -1555,6 +1555,7 @@ CGState:             consistent_copying
 Progress:            99.0
 DiskIDs:             volume-vmrm_rhel-8852d59e-000269ee-boot-0-34b22e2b-0aaf -> 34b22e2b-0aaf-4124-ad8e-4f76cdfb4cf8
 Volume Details:
+
 | Volume                                                                      | State                 | Progress (%) |
 |----------------------------------------------------------------------------|-----------------------|--------------|
 | volume-vmrm_rhel-8852d59e-000269... <-> aux_mrm_rhel-8852d59e-000269ee-b... | consistent_copying    | 99           |
@@ -2230,7 +2231,7 @@ DR Rehearsal network pairing can be verified at query workspace:
 
 ```
 (0) root @ pbrazos01-ksys01: /opt/IBM/ksys/powervs
-# ksysmgr query workspace vmrm-dal12 ; ksysmgr query workspace powervs-dr-wdc06
+#ksysmgr query workspace vmrm-dal12 ; ksysmgr query workspace powervs-dr-wdc06
 Name:                vmrm-dal12
 ID:                  1d6118b5-bd77-4100-a655-754453558d9d
 Region:              dal12
