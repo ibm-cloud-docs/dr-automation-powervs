@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-01"
+lastupdated: "2026-04-08"
 
 subcollection: dr-automation-powervs
 
@@ -348,7 +348,7 @@ cat /opt/IBM/ksys/ui/server/node_modules/vmrui-common/lib/configuration/server/u
 ### What's happening  
 {: #suspended-billing-whats-happening}  
 
-The provision status automatically changes to **suspended_billing** after 12 hours. A notification is displayed in the UI indicating a billing-related communication issue.  
+The provision status changes to **suspended_billing** during billing validation.. A notification is displayed in the UI indicating a billing-related communication issue.  
 
 Access to the UI may be restricted for the provision.  
 
