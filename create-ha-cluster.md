@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-08"
 
 subcollection: dr-automation-powervs
 
@@ -122,6 +122,8 @@ Optional parameters:
   SERVICE_INSTANCE_ID=<value>
   PHA_VERSION=<value>
   DOWNLOAD_DIR=<path>
+
+Example: powerha-agent -i API_KEY=abc123xyz34adf SERVICE_INSTANCE_ID=fgg34xy224adfa46 PHA_VERSION=7.2.8 SP4 DOWNLOAD_DIR=/tmp
 
 Note: Ensure API_KEY and SERVICE_INSTANCE_ID are exported as environment variables when arguments are not passed
 ```

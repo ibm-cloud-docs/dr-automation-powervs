@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-02"
+lastupdated: "2026-04-08"
 
 subcollection: dr-automation-powervs
 
@@ -10,15 +10,15 @@ keywords: events
 
 ---
 
-# Activity tracker events for  PowerHA SystemMirror
+# Activity tracker events for PowerHA SystemMirror
 {: #ha-ate-for-automation} 
 
 Activity tracking events report on activities that change the state of a service in IBM Cloud. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
 {:shortdesc: .shortdesc}
 
-You can use IBM Cloud Activity Tracker Event Routing, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see [Getting started tutorial for Activity Tracker Event Routing](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-getting-started).
+You can use IBM Cloud Activity Tracker event routing, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see the [Getting started tutorial for Activity Tracker Event Routing](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-getting-started).
 
-You can use IBM Cloud Logs to visualize and alert on events that are generated in your account and routed by IBM Cloud Activity Tracker Event Routing to an IBM Cloud Logs instance.
+You can use IBM Cloud Logs to visualize and alert on events that are generated in your account and routed by IBM Cloud Activity Tracker event routing to an IBM Cloud Logs instance.
 
 > **Important**: As of <strong>28 March 2024</strong>, the IBM Cloud Activity Tracker service is deprecated and will no longer be supported as of <strong>30 March 2025</strong>. Customers will need to migrate to IBM Cloud Logs before <strong>30 March 2025</strong>. During the migration period, customers can use IBM Cloud Activity Tracker along with IBM Cloud Logs. Activity tracking events are the same for both services. For information about migrating from IBM Cloud Activity Tracker to IBM Cloud Logs and running the services in parallel, see [link_to_migration_planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
 
@@ -40,9 +40,9 @@ This document provides details of the key events and their respective API operat
 Activity tracking events report on activities that change the state of a service in IBM Cloud. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
 {:shortdesc: .shortdesc}
 
-You can use IBM Cloud Activity Tracker Event Routing, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent.
+You can use IBM Cloud Activity Tracker event routing, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent.
 
-You can use IBM Cloud Logs to visualize and alert on events that are generated in your account and routed by IBM Cloud Activity Tracker Event Routing to an IBM Cloud Logs instance.
+You can use IBM Cloud Logs to visualize and alert on events that are generated in your account and routed by IBM Cloud Activity Tracker event routing to an IBM Cloud Logs instance.
 
 > **Important**: As of <strong>28 March 2024</strong>, the IBM Cloud Activity Tracker service is deprecated and will no longer be supported as of <strong>30 March 2025</strong>. Customers must migrate to IBM Cloud Logs before <strong>30 March 2025</strong>.
 
@@ -139,7 +139,7 @@ For a comprehensive list of locations where PowerHA SystemMirror
  events are enabled to send logs to IBM Cloud Logs, see [IBM Cloud services that generate Activity Tracker events](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-cloud_services_locations&interface=cli#cloud_services_locations_power-iaas).
 
 The Activity Tracker service supports only one instance per location. To view {{site.data.keyword.DR_short}}
- events, you must access the Activity Tracker web UI in the same location where your HA service instance is deployed. For additional guidance, see [Launching the web UI through the IBM Cloud UI](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-launch).
+ events, you must access the Activity Tracker web UI in the same location where your HA service instance is deployed. For extra guidance, see [starting the web UI through the IBM Cloud UI](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-launch).
 
 ## Activity tracker sample response format
 {: #ha-at tracker}
@@ -235,14 +235,14 @@ The following code snippets show the differences between the old and new activit
 
 You can create an activity tracker instance and provision it in the same region where your data center is located.
 
-> **Important:** The PowerHA SystemMirror workspaces that run in various regions or data centers will send events to activity tracker instances in their respective regions effective from 29 January 2024. You must create and provision instances of activity tracker in the respective regions where your workspaces reside for continued access to PowerHA SystemMirror activity tracker events. If you want to export activity tracker events, see [Exporting Activity Tracker events](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-export).
+> **Important:** The PowerHA SystemMirror workspaces that run in various regions or data centers will send events to activity tracker instances in their respective regions effective from 29 January 2024. Create and provision instances of activity tracker in the respective regions where your workspaces reside for continued access to PowerHA SystemMirror activity tracker events. If you want to export activity tracker events, see [Exporting Activity Tracker events](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-export).
 
 The following table shows the data center and its corresponding regions where you can deploy an activity tracker instance:
 
 ## Data center
 {: #ha-data-cents}
 
-| Datacenter | Activity Tracker Region |
+| Data center | Activity Tracker Region |
 |------------|-------------------------|
 | WDC04      | us-east                 |
 | WDC06      | us-east                 |

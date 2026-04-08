@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-03-11"
+lastupdated: "2026-04-08"
 
 subcollection: dr-automation-powervs
 
@@ -709,7 +709,15 @@ ksysmgr modify vm VMRM_test target_flex_mem=190 target_flex_cpu=80 inactive_vm_m
 
 An output that is similar to the following example is displayed:
 
-<output>
+```bash
+For Vm VMRM_test attribute(s) FlexMemCapacityTable was successfully modified.
+For Vm VMRM_test attribute(s) FlexProcCapacityTable was successfully modified.
+For Vm VMRM_test attribute(s) InactiveConfigCapacity was successfully modified.
+For Vm VMRM_test attribute(s) InactiveConfigCapacity was successfully modified.
+Target flex value(s) configured will be considered in next move operation.
+Inactive vm value(s) configured will be considered in next discovery operation.
+
+```
 
 To verify the VM configuration, run the following command:
 
@@ -717,7 +725,28 @@ To verify the VM configuration, run the following command:
 
 An output that is similar to the following example is displayed:
 
-<output>
+```bash
+Name:                test_vm1
+UUID:                45122x73-xxxx-xxx3-8d0d-9xx619xx04xx
+State:               READY_TO_MOVE
+Dr Test State:       INIT
+Status:              ACTIVE
+Partner:             test_vm1_BackUp
+ActiveVM:            yes
+IPAddresses:         xx.40.xx.19x
+memory_capacity:     4
+Processors:          1
+ProcessorMode:       'shared'
+SharedProcPool:      yes
+TargetProcPool:      vmrm_s922
+WorkSpace:           vmrm-dal12
+Networks:            dal12-network01
+SystemType:          s922
+Target_Flex_Mem:     150
+Target_Flex_Cpu:     75
+Inactive_VM_Cpu:     0.5
+Inactive_VM_Mem:     3
+```bash
 
 > **Note:** If the VM configuration is modified after it is managed, run discovery again to validate and apply the updated configuration.
 
