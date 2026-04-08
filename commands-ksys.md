@@ -1576,7 +1576,7 @@ ksysmgr manage disk diskid=<diskid1[,diskid2,...]>
 {: #unmanage-disk-vm}
 
 ```
-# ksysmgr unmanage disk -h
+ #ksysmgr unmanage disk -h
  
 ksysmgr unmanage disk diskid=<diskid1[,diskid2,...]> workgroup=<workgroup_name>
     unmanage => unman*, umg
