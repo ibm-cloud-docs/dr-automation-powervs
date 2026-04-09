@@ -18,7 +18,7 @@ After the service instance is created, deploy PowerHA SystemMirror for IBM Power
 During the deployment, you can select the region and workspace where your Power Virtual Server instances are located. After you select the workspace, you can choose the instances on which to enable PowerHA SystemMirror for your applications.
 {:shortdesc: .shortdesc}
 
-### Procedure
+## Procedure
 {: #procedure-ha-cluster}
 
 To configure the HA deployment, complete the following steps:
@@ -128,7 +128,7 @@ Example: powerha-agent -i API_KEY=abc123xyz34adf SERVICE_INSTANCE_ID=fgg34xy224a
 Note: Ensure API_KEY and SERVICE_INSTANCE_ID are exported as environment variables when arguments are not passed
 ```
 
-### List supported PowerHA versions
+## List supported PowerHA versions
 {: #list-powerha-versions}
 
 ```bash
@@ -150,7 +150,7 @@ INFO: Agent job is Completed
 ```
 
 
-### Set authentication parameters
+## Set authentication parameters
 {: #set-authentication}
 
 ```bash
@@ -158,7 +158,7 @@ export API_KEY=<value>
 export SERVICE_INSTANCE_ID=<value>
 ```
 
-### Install PowerHA
+## Install PowerHA
 {: #install-powerha}
 
 To install a PowerHA version on the VM, run:
@@ -214,21 +214,21 @@ INFO: Installed PowerHA SystemMirror version is 7.2.9_SP2
 INFO: Agent job is Completed
 ```
 
-### Uninstall PowerHA
+## Uninstall PowerHA
 {: #uninstall-powerha}
 
 ```bash
 ./powerha-agent -u
 ```
 
-### Upgrade PowerHA
+## Upgrade PowerHA
 {: #upgrade-powerha}
 
 ```bash
 ./powerha-agent -ug PHA_VERSION=<value>
 ```
 
-### Register existing PowerHA
+## Register existing PowerHA
 {: #register-powerha}
 
 ```bash
@@ -241,7 +241,7 @@ Force register:
 ./powerha-agent -r -f
 ```
 
-### Monitoring status in the UI
+## Monitoring status in the UI
 {: #agent-status}
 
 The **Cluster nodes** table displays:
@@ -266,7 +266,7 @@ Example values:
   - Powerha uninstallation failed
   - Powerha uninstallation completed
 
-### Next steps
+## Next steps
 {: #next-steps-ha}
 
 After the agent installation is complete:
