@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-09"
 
 subcollection: dr-automation-powervs
 
@@ -123,7 +123,7 @@ Optional parameters:
   PHA_VERSION=<value>
   DOWNLOAD_DIR=<path>
 
-Example: powerha-agent -i API_KEY=abc123xyz34adf SERVICE_INSTANCE_ID=fgg34xy224adfa46 PHA_VERSION=7.2.8 SP4 DOWNLOAD_DIR=/tmp
+Example: powerha-agent -i API_KEY=abc123xyz34adf SERVICE_INSTANCE_ID=fgg34xy224adfa46 PHA_VERSION=728SP4 DOWNLOAD_DIR=/tmp
 
 Note: Ensure API_KEY and SERVICE_INSTANCE_ID are exported as environment variables when arguments are not passed
 ```
@@ -170,7 +170,7 @@ To install a PowerHA version on the VM, run:
 Alternatively, if the API key and service instance ID are set as environment variables:
 
 ```bash
-./powerha-agent -i PHA_VERSION=7.2.9_SP2 DOWNLOAD_DIR=/home
+./powerha-agent -i PHA_VERSION=729SP2 DOWNLOAD_DIR=/home
 ```
 
 Example:
@@ -182,7 +182,7 @@ Example:
 Example output:
 
 ```text
-bash-5.2# /opt/IBM/powerha-agent/powerha-agent -i PHA_VERSION=7.2.9_SP2 DOWNLOAD_DIR=/home/temp
+bash-5.2# /opt/IBM/powerha-agent/powerha-agent -i PHA_VERSION=729SP2 DOWNLOAD_DIR=/home/temp
 INFO: API_KEY and SERVICE_INSTANCE_ID are not provided as arguments, continuing with environment variables...
 INFO: Starting PowerHA Agent...
 INFO: Performing pre-validation...
