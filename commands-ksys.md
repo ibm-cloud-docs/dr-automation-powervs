@@ -747,7 +747,7 @@ Target_Flex_Mem:     150
 Target_Flex_Cpu:     75
 Inactive_VM_Cpu:     0.5
 Inactive_VM_Mem:     3
-```bash
+```
 
 > **Note:** If the VM configuration is modified after it is managed, run discovery again to validate and apply the updated configuration.
 
@@ -967,7 +967,7 @@ NETWORK_CONFIGURATION_FAILED warning Network configuration has failed.
 ```
 ```
 
-### To query the system-wide persistent attribute for the ksysmgr command, use the following command syntax:
+#### query the system-wide persistent attribute for the ksysmgr command, use the following command syntax:
 {: #que-sys-wide}
 
 ```
