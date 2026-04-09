@@ -773,9 +773,11 @@ ksysmgr manage vm <vmname>
 ```
 
 **Example**:
+
 ```
 ksysmgr manage vm test_vm targethost=s922Host
 ```
+
 An output that is similar to the following example is displayed:
 
 <output>
@@ -831,7 +833,19 @@ ksysmgr manage vm test_vm targetvmname=test_vm_backup
 
 An output that is similar to the following example is displayed:
 
-<output>
+
+```
+ksysmgr manage vm test2node targetvmname=test2node_BackUp 
+Refresh VMs list of Test_mad04_workspace workspace started
+Refresh VMs list of Test_mad04_workspace workspace completed
+Refresh Networks list of Test_mad04_workspace workspace started
+Refresh Networks list of Test_mad04_workspace workspace completed
+Refresh Host list of Test_mad04_workspace workspace started
+Refresh Host list of Test_mad04_workspace workspace completed
+Refresh Host Group list of Test_mad04_workspace workspace started
+Refresh Host Group list of Test_mad04_workspace workspace completed
+```
+
 
 ## Discovery examples
 {: #disvery}
