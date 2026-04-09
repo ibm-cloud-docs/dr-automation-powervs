@@ -64,7 +64,6 @@ toc:
               label: PowerHA AIX
               topics:
               - create-ha-cluster.md
-              - ha-automation-events.md
       - topicgroup:
           label: External orchestrator
           topics:
