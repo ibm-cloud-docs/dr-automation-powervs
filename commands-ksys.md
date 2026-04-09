@@ -46,7 +46,7 @@ The basic format for using the ksysmgr command is as follows:
 ## Description
 {: #des}
 
-All ksysmgr command operations are logged in the ```/var/ksys/log/ksysmgr.oplog``` file, including the name of the executed command, start time, process ID for the ksysmgr operation, the command with arguments, and overall return code.
+All ksysmgr command operations are logged in the ```/var/ksys/log/ksysmgr.oplog``` file, including the name of the run command, start time, process ID for the ksysmgr operation, the command with arguments, and overall return code.
 
 ## ACTION
 {: #act-ion}
@@ -55,7 +55,7 @@ The ```ACTION``` flags are not case-sensitive. All ```ACTION``` flags provide a 
 
 The following ```ACTION``` flags are available:
 
->**Note**: The asterisk ```(*)``` in the aliases signify wildcard characters. For example, for the modify ACTION, the alias value is ```modd```. If you type ```mod*```, the command still works.
+>**Note**: The asterisk ```(*)``` in the aliases signify wildcard characters. For example, for the modified ACTION, the alias value is ```modd```. If you type ```mod*```, the command still works.
 
 ```query (alias: q*, ls, get, sh*)```
 
@@ -121,7 +121,7 @@ The following ```CLASS``` objects are supported:
 ## NAME
 {: #nam}
 
-Specifies the particular object, of type **CLASS** , on which the **ACTION** must be performed. The NAME flags are case-sensitive.
+Specifies the particular object, of type **CLASS, on which the **ACTION** must be performed. The NAME flags are case-sensitive.
 
 **ATTR=VALUE**
 
@@ -168,7 +168,7 @@ Displays maximum verbosity in the output.
 
 **RC_UNKNOWN (Exit value = -1)**
 
-Result is not known. This value is used as an initializer.
+The result is not known. This value is used as an initializer.
 
 **RC_SUCCESS (Exit value = 0)**
 
@@ -306,7 +306,7 @@ delete => de*, remove, rm, erase
 ksyscluster => ksysclu*, clu*
 ```
 
-When you delete a KSYS cluster, the **ksysmgr** command prompts for your confirmation. The **ksysmgr** command also recommends to create a snapshot at this point. 
+When you delete a KSYS cluster, the **ksysmgr** command prompts for your confirmation. The **ksysmgr** command also recommends creating a snapshot. 
 
 An output that is similar to the following example is displayed:
 
@@ -371,7 +371,7 @@ ksyscluster => ksysclu*, clu*
 ### To add a site in the KSYS subsystem:
 {: #subsyste}
 
-#### To add a site in the kSYS sub sytem for Public Cloud:
+#### To add a site in the kSYS sub system for Public Cloud:
 {: #subsyste-public-cloud}
 
 ```
@@ -397,7 +397,7 @@ Site dal10 added successfully
 Note: dal10 partner GRS Region is us-east.
 ```
 
-#### To add a site in the KSYS sub sytem Private cloud:
+#### To add a site in the KSYS sub system Private cloud:
 {: #subsyste-private-cloud}
 
 ```
@@ -432,7 +432,7 @@ Note: satloc_dal_clp2joc20ppo19876n50 partner GRS Region(s) satloc_dal_cq8884h20
 
 ```
 
-### To query the details about a specific sites:
+### To query the details about specific sites:
 {: #details}
 
 ```
@@ -501,7 +501,7 @@ Site home was removed
 Workgroup configuration example
 ```
 
-### Manage virtual machine:
+### Manage a virtual machine:
 {: #manage-vm}
 
 ```
@@ -681,7 +681,7 @@ ksysmgr modify vm <vmname>
 
 Flex capacity enables the disaster recovery automation service to dynamically adjust the CPU and memory resources of the backup VM during failover or disaster recovery rehearsal operations.
 
-Flex capacity allows the orchestrator (KSYS) to control the compute capacity allocated to the backup VM deployed in the target PowerVS workspace. Instead of provisioning the backup VM with the same configuration as the source VM at all times, the system can start the backup VM with minimal resources and increase the CPU and memory allocation during failover or rehearsal operations.
+Flex capacity allows the orchestrator (KSYS) to control the compute capacity that is allocated to the backup VM deployed in the target PowerVS workspace. Instead of provisioning the backup VM with the same configuration as the source VM always, the system can start the backup VM with minimal resources and increase the CPU and memory allocation during failover or rehearsal operations.
 
 > **Note**: Before configuring flex capacity, ensure that the VM is already managed.
 
@@ -697,8 +697,8 @@ ksysmgr modify vm <vmname>
 
 | Parameter | Description |
 |---|---|
-| `target_flex_mem` | Specifies the percentage of memory capacity allocated to the backup VM during failover or rehearsal operations. |
-| `target_flex_cpu` | Specifies the percentage of CPU capacity allocated to the backup VM during failover or rehearsal operations. |
+| `target_flex_mem` | Specifies the percentage of memory capacity that is allocated to the backup VM during failover or rehearsal operations. |
+| `target_flex_cpu` | Specifies the percentage of CPU capacity that is allocated to the backup VM during failover or rehearsal operations. |
 | `inactive_vm_mem` | Specifies the minimum memory allocation for the inactive backup VM. The minimum supported value is **2 GB**. |
 | `inactive_vm_cpu` | Specifies the minimum CPU allocation for the inactive backup VM. The value must be specified in multiples of **0.25 cores**. |
 
@@ -1018,7 +1018,7 @@ custom_script_timeout: none
 notification_level: low
 dup_event_processing: yes
 User Scripts for Site: None
-User Scripts for Workgroup: None
+User Scripts for workgroup: None
 User Scripts for VM: None
 where,
 auto_discovery_time
