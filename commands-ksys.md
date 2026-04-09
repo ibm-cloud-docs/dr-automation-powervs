@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-09"
 
 subcollection: dr-automation-powervs
 
@@ -452,6 +452,7 @@ Note: Active indicates the site where a WorkGroup's VMs are running. The same Wo
 ```
 
 An output that is similar to the following example is displayed for Private cloud:
+
 ```
 ksysmgr query site
 Name:               backup
@@ -907,7 +908,6 @@ An output that is similar to the following example is displayed:
 ksysmgr q event type=error
 Current Notification Level: Low
 Event Name Event Type Description
---------------------------------------------------------------------------------
 | Location  | Replication Site | Is Active |
 |-----------|-----------------|-----------|
 | DISCOVERY_STARTED | info | true |
@@ -963,13 +963,11 @@ Event Name Event Type Description
 | SCRIPT_FAILURE_EVENT | error | true |
 | SCRIPT_SUCCESS_EVENT | info | true |
 | NETWORK_CREATION_COMPLETED | info | true |
-
-
 NETWORK_CONFIGURATION_FAILED warning Network configuration has failed.
-
+```
 ```
 
-#### To query the system-wide persistent attribute for the ksysmgr command, use the following command syntax:
+### To query the system-wide persistent attribute for the ksysmgr command, use the following command syntax:
 {: #que-sys-wide}
 
 ```
@@ -981,7 +979,9 @@ system => sys*
 ```
 ksysmgr q system
 ```
+
 An output that is similar to the following example is displayed:
+
 ```
 System-Wide Persistent Attributes
 BaseUrl: test.cloud.test.com
@@ -1182,6 +1182,7 @@ ksysmgr add notify script=full_path_script event=event_name
 ```
 
 For example,
+
 ```
 ksysmgr add notify script=/User_test/a.sh event=DISCOVERY_STARTED successfully added script for event
 ```
@@ -1231,6 +1232,7 @@ ksysmgr query system [ properties | status ]
 ```
 
 An output that is similar to the following example is displayed:
+
 ```
 ksysmgr query system
 System-Wide Persistent Attributes
@@ -1258,9 +1260,11 @@ dup_event_processing:        yes
 User Scripts for Site: None
 User Scripts for Workgroup: None
 User Scripts for VM: None
+
 ```
 An output that is similar to the following example is displayed for private cloud:
 ```
+
 ksysmgr query system
 System-Wide Persistent Attributes
 BaseUrl:                     cloud.ibm.com
@@ -1441,6 +1445,7 @@ snapshot => snap*
 
 An output that is similar to the following example is displayed:
 ```
+
 ---- Snapshot Contents ----
 File: /var/ksys/snapshots/oldclust_DETAILED_2024-07-29_06:35:30.xml
 VMRM Version:1.8.0.1
