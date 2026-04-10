@@ -1852,7 +1852,7 @@ ksysmgr pair ws SVT-SMALL-Q3.2-mano-GRS pair=SVT_3Q2_XSPoD_25
 Workspace SVT-SMALL-Q3.2-mano-GRS was paired with SVT_3Q2_XSPoD_25
 ```
 
-## To refresh a workspace, run the following command:
+### To refresh a workspace, run the following command:
 {: #refereshert}
 
 ```
