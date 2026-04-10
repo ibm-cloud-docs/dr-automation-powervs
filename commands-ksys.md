@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-09"
+lastupdated: "2026-04-10"
 
 subcollection: dr-automation-powervs
 
@@ -681,7 +681,7 @@ ksysmgr modify vm <vmname>
 
 Flex capacity enables the disaster recovery automation service to dynamically adjust the CPU and memory resources of the backup VM during failover or disaster recovery rehearsal operations.
 
-Flex capacity allows the orchestrator (KSYS) to control the compute capacity that is allocated to the backup VM deployed in the target PowerVS workspace. Instead of provisioning the backup VM with the same configuration as the source VM always, the system can start the backup VM with minimal resources and increase the CPU and memory allocation during failover or rehearsal operations.
+Flex capacity allows the orchestrator (KSYS) to control the compute capacity that is allocated to the backup VM deployed in the target PowerVS workspace. Instead of provisioning the backup VM with the same configuration as the source VM always, backup vm iscreated with minimal resources and increase the CPU and memory allocation during failover or rehearsal operations.
 
 > **Note**: Before configuring flex capacity, ensure that the VM is already managed.
 
@@ -705,7 +705,7 @@ ksysmgr modify vm <vmname>
 **Example**:
 
 ```bash
-ksysmgr modify vm VMRM_test target_flex_mem=190 target_flex_cpu=80 inactive_vm_mem=2 inactive_vm_cpu=0.25
+ksysmgr modify vm test_vm1 target_flex_mem=190 target_flex_cpu=80 inactive_vm_mem=2 inactive_vm_cpu=0.25
 ```
 
 An output that is similar to the following example is displayed:
@@ -743,8 +743,8 @@ TargetProcPool:      vmrm_s922
 WorkSpace:           vmrm-dal12
 Networks:            dal12-network01
 SystemType:          s922
-Target_Flex_Mem:     150
-Target_Flex_Cpu:     75
+Target_Flex_Mem:     190
+Target_Flex_Cpu:     80
 Inactive_VM_Cpu:     0.5
 Inactive_VM_Mem:     3
 ```
@@ -779,17 +779,40 @@ ksysmgr manage vm test_vm targethost=s922Host
 ```
 
 An output that is similar to the following example is displayed:
-
-<output>
+```
+> ksysmgr manage vm test_VM targethost=dedicated_host1
+Refresh VMs list of test_dal10 workspace started
+Refresh VMs list of test_dal10 workspace completed
+Refresh Networks list of test_dal10 workspace started
+Refresh Networks list of test_dal10 workspace completed
+Refresh Host list of test_dal10 workspace started
+Refresh Host list of test_dal10 workspace completed
+Refresh Host Group list of test_dal10 workspace started
+Refresh Host Group list of test_dal10 workspace completed
+VM test_dh03 was successfully managed.
+Workgroup test_dh03_WG added successfully
+```
 
 Example (host group):
+
 ```
 ksysmgr manage vm test_vm targethg=testHostGroup
 ```
 
 An output that is similar to the following example is displayed:
-
-<output>
+```
+> ksysmgr manage vm test_dh03 targethg=dedicated_hg1
+Refresh VMs list of test_dal10 workspace started
+Refresh VMs list of test_dal10 workspace completed
+Refresh Networks list of test_dal10 workspace started
+Refresh Networks list of test_dal10 workspace completed
+Refresh Host list of test_dal10 workspace started
+Refresh Host list of test_dal10 workspace completed
+Refresh Host Group list of test_dal10 workspace started
+Refresh Host Group list of test_dal10 workspace completed
+VM test_dh03 was successfully managed.
+Workgroup test_dh03_WG added successfully
+```
 
 ### Backup VM rename
 {: #backup-vm-rename}
@@ -828,14 +851,14 @@ Where:
 
 Example:
 ```
-ksysmgr manage vm test_vm targetvmname=test_vm_backup
+ksysmgr manage vm test_vm targetvmname=test_vm2
 ```
 
 An output that is similar to the following example is displayed:
 
 
 ```
-ksysmgr manage vm test2node targetvmname=test2node_BackUp 
+ksysmgr manage vm test_vm targetvmname=test_vm2
 Refresh VMs list of Test_mad04_workspace workspace started
 Refresh VMs list of Test_mad04_workspace workspace completed
 Refresh Networks list of Test_mad04_workspace workspace started
@@ -1460,14 +1483,13 @@ snapshot => snap*
 An output that is similar to the following example is displayed:
 ```
 
+```
 ---- Snapshot Contents ----
 File: /var/ksys/snapshots/oldclust_DETAILED_2024-07-29_06:35:30.xml
 VMRM Version:1.8.0.1
 Date: 2024-07-29
 Time: 06:35:30
---------------------------
 Cluster:
---------
 Name: pvs_dr
 Node: hostname.com
 Type: IBM_PVS_DR
@@ -1506,7 +1528,7 @@ Starting VMR daemon...
 Successfully restored snapshot:/var/ksys/snapshots/snap.xml_DETAILED_2024-07-28_01:15:14.xml!
 Please run discovery to apply changes.
 INFO: Restore completed successfully
- ```
+```
 
 
 This command decompresses and unarchives the snapshot file, and then applies the configuration settings to the KSYS node.
