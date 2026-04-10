@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-02"
+lastupdated: "2026-04-10"
 
 subcollection: dr-automation-powervs
 
@@ -9,7 +9,7 @@ keywords: dr automation cli, plug-in
 
 ---
 
-# Getting started with the {{site.data.keyword.DR_full}} DR Automation CLI plug-in
+# Getting started with CLI plug-in
 {: #dr-getting-started}
 
 The {{site.data.keyword.DR_full_notm}} DR Automation Command Line Interface (CLI) provides a set of commands that are grouped by namespace to help you interact with DR Automation in both IBM data center and client location environments. For more information, see the following topics:

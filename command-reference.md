@@ -1,16 +1,16 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-02"
+lastupdated: "2026-04-10"
 
 subcollection: dr-automation-powervs
 
-keywords: power-hadr, cli, pdr
+keywords: power-hadr, cli, pdr, commands
 
 ---
 
 
-# {{site.data.keyword.DR_full}} DR Automation CLI 
+# DR Automation CLI commands
 {: #dr-automation-cli-version}
 
 ## Available Commands:

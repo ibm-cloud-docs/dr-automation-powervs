@@ -7,7 +7,7 @@ keywords: powerhaautomation service, cli, plugin
 
 ---
 
-# {{site.data.keyword.DR_full}} PowerHA AIX CLI
+# PowerHA AIX CLI commands
 {: #powerha-cli-version}
 
 ## Available commands

@@ -9,7 +9,7 @@ keywords: plugin-cli plugin
 
 ---
 
-# Installing the {{site.data.keyword.DR_full_notm}} DR Automation CLI plug-in
+# Installing the CLI plug-in
 {: #plun-in}
 
 To install, update, or view the DR Automation CLI plug-in, complete the following steps:
