@@ -23,9 +23,9 @@ completion-time: 10m
 {: toc-services=""}
 {: toc-completion-time="10m"}
 
-Set up {{site.data.keyword.DR_full}} **DR Automation** to automate disaster recovery processes for virtualized environments and ensure business continuity with minimal manual intervention. Deploy DR automation from the IBM Cloud Catalog UI, which provides an intuitive interface for selecting and configuring recovery services. The solution automates the recovery of virtual machines (VMs) and workloads, synchronizing data and managing replication between sites to protect critical operations.
+Set up {{site.data.keyword.DR_full}} **DR Automation** to automate disaster recovery processes for virtualized environments and ensure business continuity with minimal manual intervention. Deploy DR automation from the IBM Cloud catalog UI, which provides an intuitive interface for selecting and configuring recovery services. The solution automates the recovery of virtual machines (VMs) and workloads, synchronizing data, and managing replication between sites to protect critical operations.
 
-IBM Power Virtual Server Public Cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers and configuring them as managed virtual machines to enable DR. With robust automation, DR Automation minimizes downtime, reduces manual tasks, and enhances business resilience. Leveraging IBM Cloud's global regions, it offers low-latency failover and high availability options to effectively meet your DR requirements.
+IBM Power Virtual Server Public Cloud officially supports Red Hat Enterprise Linux (RHEL), IBM i, and IBM AIX® operating systems for creating virtual servers and configuring them as managed virtual machines to enable DR. With robust automation, DR Automation minimizes downtime, reduces manual tasks, and enhances business resilience. Using IBM Cloud's global regions, it offers low-latency failover and high availability options to effectively meet your DR requirements.
 {: shortdesc}
 
 ## Before you begin
@@ -33,13 +33,13 @@ IBM Power Virtual Server Public Cloud officially supports Red Hat Enterprise Lin
 
 Complete the following prerequisites:
 
-1. **IBM Cloud account**: Ensure you have an IBM Cloud account, [Sign up for IBM Cloud](https://cloud.ibm.com/registration) if needed.
+1. **IBM Cloud account**: Ensure that you have an IBM Cloud account, [Sign up for IBM Cloud](https://cloud.ibm.com/registration) if needed.
 2. **IAM setup**: Configure Identity and Access Management (IAM) roles. See [Managing DR Automation (IAM)](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage).
-3. **SSH keys or Secret Manager**: Generate a public and private SSH key or choose a **Public SSH key** from the Secrets Manager . For details, see [Adding an SSH key](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui).
+3. **SSH keys or Secret Manager**: Generate a public and private SSH key or choose a **Public SSH key** from the Secrets Manager. For details, see [Adding an SSH key](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui).
 
 4. **VPC Landing Zone schematic ID**: Ensure that a Power Virtual Server with a VPC Landing Zone schematic ID is available to enable connectivity to the orchestrator UI. You can either use an existing Power Virtual Server with a VPC Landing Zone schematic ID created through the catalog or create a new one. You can also import your existing VPC into Power Virtual Server with a VPC Landing Zone and generate a new schematic ID and use it. See [Power Virtual Server with VPC Landing Zone](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-automation-solution-overview) document.
 
-5. **Plan infrastructure**: Define your DR requirements and estimate costs using the [DR Automation Estimate pricing tool](https://cloud.ibm.com/estimator).
+5. **Plan infrastructure**: Define your DR requirements and estimate costs by using the [DR Automation Estimate pricing tool](https://cloud.ibm.com/estimator).
 
 ## Lifecycle of Power Virtual Server DR Automation
 {: #lpvsdrauto}
@@ -50,10 +50,10 @@ Complete the following prerequisites:
 {: #setup-orchestrator}
 
 1. On the **Manage** tab, configure the **orchestrator name** and set a password to secure access.
-2. Provide a valid **IBM Cloud API key**, then complete additional fields, including the **DR location**, **DR Orchestrator networks** and **Public SSH key** or keys from **Secrets Manager**.
-   > **Note**: The schematic workspace is available if the VPC is created using the Power Virtual Server with VPC landing zone option from the catalog. If VPC is created manually, you can still generate a schematic ID using the Import option in the "Power Virtual Server with VPC landing zone" catalog or use the custom VPC option to provide the VPC details that are Transit Gateway, VPC name and Proxy IP details.
+2. Provide a valid **IBM Cloud API key**, then complete other fields, including the **DR location**, **DR Orchestrator networks** and **Public SSH key** or keys from **Secrets Manager**.
+   > **Note**: The schematic workspace is available if the VPC is created by using the Power Virtual Server with VPC landing zone option from the catalog. If VPC is created manually, you can still generate a schematic ID by using the Import option in the "Power Virtual Server with VPC landing zone" catalog or use the custom VPC option to provide the VPC details that are Transit Gateway, VPC name, and Proxy IP details.
    
-   > **Note**: Make sure provided API Key has permissions listed in the [Access role requirements for DR Automation for PowerVS](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto) for completing the configuration.
+   > **Note**: Make sure that provided API Key has permissions that are listed in the [Access role requirements for DR Automation for PowerVS](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto) for completing the configuration.
 
 3. (Optional) Expand the **Advanced orchestrator configuration** to modify the default values of storage tier and machine type for the Orchestrator VM, by default **Tier1** is selected for Storage tier and **s922** is selected for machine type.
 
