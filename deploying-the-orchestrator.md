@@ -52,7 +52,7 @@ follow the steps:
 
     > **Note**: The SSH Key dropdown displays the Account and workspace level SSH-keys and  you can choose the key from the list of ssh keys in the account level or workspace level
 
-11. In **Configure standby orchestrator (for HA)**, enter the **Standby Orchestrator name**, select a **Standby Power Virtual Server workspace** and select a **Standby SSH key name** and **Standby Orchestrator networks** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in config page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
+11. In **Configure standby orchestrator (for HA)**, enter the **Standby Orchestrator name**, select a **Standby Power Virtual Server workspace** and select a **Standby SSH key name** and **Standby Orchestrator networks** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in **Manage** page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
     > **Note**: Select a **Standby SSH key name** for the standby Orchesrator created at the account level or the workspace level SSH key.
 12. (Optional) Configure Multi Factor Authentication (MFA) in the **Advanced orchestrator configuration** section .
