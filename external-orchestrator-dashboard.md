@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-13"
 
 subcollection: dr-automation-powervs
 
@@ -225,14 +225,14 @@ To view details about Active and Partner VMs for a Workgroup, follow these steps
 ## Manage VM in dashboard
 {: #vm-ses-dashboard}
 
-You can view and manage virtual machines by using the Power Virtual Server DR Automation UI. Managing a virtual machine and monitor effectively.
+You can view and manage virtual machines by using the DR Automation UI. Managing a virtual machine and monitor effectively.
 
 ### Procedure
 {: #ma-vm-se-das}
 
 To manage the additonal new virtual machines, complete the following steps:
 
-1. In the Power Virtual Server DR Automation navigation page, click **Cluster Name > Site > Workgroup > Managed VM**.
+1. In the DR Automation navigation page, click **Cluster Name > Site > Workgroup > Managed VM**.
 2. Select the unmanged VM.
 3. Click **Manage VM**.
 4. You are redirected to the Managed VM tab, where you can view the following details:
@@ -245,14 +245,14 @@ To manage the additonal new virtual machines, complete the following steps:
 ## Unmanage VM in dashboard
 {: #um-manage-ses-dashboard}
 
-You can view and virtual machines by using the Power Virtual Server DR Automation UI. Unmanaging a virtual machine removes the virtual machine from disaster recovery operations and monitoring.
+You can view and virtual machines by using the DR Automation UI. Unmanaging a virtual machine removes the virtual machine from disaster recovery operations and monitoring.
 
 ### Procedure
 {: #un-vm-manage-das}
 
 To unmanage virtual machines, complete the following steps:
 
-1. In the navigation page of the Power Virtual Server DR Automation, click **Site > Workspace > Worksgroup>Managed VM**.
+1. In the navigation page of the DR Automation, click **Site > Workspace > Worksgroup>Managed VM**.
 2. Select the VM.
 3. Click **Unmanage this VM**.
 4. After this operation, the workgroup is removed and virtual machine is deleted.

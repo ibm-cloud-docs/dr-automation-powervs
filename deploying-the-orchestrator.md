@@ -91,7 +91,7 @@ By following this process, you can ensure that your orchestrator is fully equipp
 ## Power Edge Router and non Power Edge Router
 {: #pow-ed-ro-non-pow-ed-rou}
 
-Power Virtual Server DR Automation supports both Power Edge Router(PER) and non Power Edge Router(PER) workspaces.
+DR Automation supports both Power Edge Router(PER) and non Power Edge Router(PER) workspaces.
 
 ### Procedure 
 {: #procedure-non-per}
