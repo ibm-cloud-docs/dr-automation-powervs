@@ -12,7 +12,7 @@ keywords: deploying the orchestrator,
 # Deploying the orchestrator
 {: #idep-the-orch}
 
-After creating the resource, deploying the orchestrator for DR automation is essential to ensure that your Power Virtual Server environment is protected against disaster events. The orchestrator coordinates disaster recovery operations, including replication, failover, and failback of virtual machines. This screen displays high availability (HA) settings, authentication keys and resource allocation. Once deployed, the orchestrator can manage multiple virtual servers and help ensure continuous availability.
+After creating the resource, deploying the orchestrator for DR automation is essential to ensure that your Power Virtual Server environment is protected against disaster events. The orchestrator coordinates disaster recovery operations, including replication, failover, and failback of virtual machines. This screen displays high availability (HA) settings, authentication keys, and resource allocation. After deployed, the orchestrator can manage multiple virtual servers and help ensure continuous availability.
 {:shortdesc: .shortdesc}
 
 >**Note**:
@@ -34,7 +34,7 @@ follow the steps:
 2. In the **Orchestrator HA** section, click **Enable** to configure both a primary and standby orchestrator in high availability mode, or click **Disable** to configure only the primary orchestrator.
 3. In the Configure primary orchestrator section, enter the **DR Orchestrator name**.
 
-4. Set a password in the **DR Orchestrator password** field and re-enter the password in **Confirm DR Orchestrator password** section to secure access to the external orchestrator interface.
+4. Set a password in the **DR Orchestrator password** field and reenter the password in the **Confirm DR Orchestrator password** section to secure access to the external orchestrator interface.
    > **Note**: This password is set for the root user of the Orchestrator VM and is used to log in to the Orchestrator VM UI. The password must contain at least one uppercase letter, one lowercase letter, and one number.
 
 5. Provide a valid **IBM Cloud API key**.
@@ -47,15 +47,15 @@ follow the steps:
     > **Note**: If you select **Chennai (in-che)** or **Montréal (ca-mon)** for the primary or standby (secondary) workspace, you must provide proxy details in the **Advanced orchestrator configuration** section. These regions require a proxy for orchestrator communication with IBM Cloud services.
 
 8. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location**.
-9. Select the required subnets from the avalible list in the **DR Orchestrator networks** section.
-10. To create ksys VM with secrets, enable **Use a secret** button and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the  **Use a secret** toggle button and select the SSH key from **SSH key name**.
+9. Select the required subnets from the available list in the **DR Orchestrator networks** section.
+10. To create ksys VM with secrets, enable **Use a secret** button and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the **Use a secret** toggle button and select the SSH key from **SSH key name**.
 
-    > **Note**: The SSH Key dropdown displays the Account and workspace level SSH-keys and  you can choose the key from the list of ssh keys in the account level or workspace level
+    > **Note**: The SSH Key dropdown displays the Account and workspace level SSH-keys and you can choose the key from the list of ssh keys in the account level or workspace level
 
-11. In **Configure standby orchestrator (for HA)**, enter the **Standby Orchestrator name**, select a **Standby Power Virtual Server workspace** and select a **Standby SSH key name** and **Standby Orchestrator networks** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in **Manage** page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
+11. In **Configure standby orchestrator (for HA)**, enter the **Standby Orchestrator name**, select a **Standby Power Virtual Server workspace** and select a **Standby SSH key name** and **Standby Orchestrator networks** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in the **Manage** page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
-    > **Note**: Select a **Standby SSH key name** for the standby Orchesrator created at the account level or the workspace level SSH key.
-12. (Optional) Configure Multi Factor Authentication (MFA) in the **Advanced orchestrator configuration** section .
+    > **Note**: Select a **Standby SSH key name** for the standby Orchesrator that is created at the account level or the workspace level SSH key.
+12. (Optional) Configure Multi Factor Authentication (MFA) in the **Advanced orchestrator configuration** section.
 
     > **Prerequisite**: To Enable MFA, you must complete the MFA tenant setup and obtain the **Client id**, **Client secret**, and **Tenant name** from [IBM Security Verify](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197).
     > - For more information on MFA configuration, see [Setting up Multifactor Authentication](/docs/dr-automation-powervs?topic=dr-automation-powervs-multifactor-authentication).
@@ -64,14 +64,14 @@ follow the steps:
     > - **Note:** MFA status is displayed in the **Orchestrator Details** page and MFA events are captured in the **Events** log for auditing.
 
 
-13. Enter the proxy details if you have selected **Chennai (in-che, che01)** or **Montréal (ca-mon)** as the DR location. For more information, see [How to get ProxyIP details which is configured for Virtual Server Instance for VPC](https://cloud.ibm.com/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab).
+13. Enter the proxy details if you have selected **Chennai (in-che, che01)** or **Montréal (ca-mon)** as the DR location. For more information, see [How to get ProxyIP details that is configured for Virtual Server Instance for VPC](https://cloud.ibm.com/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab).
 
 
 14. (Optional) Expand the **Advanced orchestrator configuration** to change the Storage tier and Machine type configuration based on the **Orchestrator HA** selection.
 
 15. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 
-16. **Finish** button is enabled once the orchestrator VM is deployed and now Click **Finish** to complete the setup.
+16. **Finish** button is enabled once the orchestrator VM is deployed and now click **Finish** to complete the setup.
 
 17. Configure and manage the Power Virtual Server instances through the **External orchestrator interface** for disaster recovery.
 
@@ -103,7 +103,7 @@ To use a non PER enabled workspace, complete the following manual steps before u
 3. Attach the Cloud connection to the Transit gateway.
 4. Select the **Transit gateway** -> **Add connection** -> Select Direct Link and select the newly created direct link -> click **Add**.
 
-You can now use a non-PER enabled Power Virtual Server workspace by following the steps above. The setup ensures that your workspace is ready for network communication.
+You can now use a non-PER enabled Power Virtual Server workspace by following the preceding steps. The setup ensures that your workspace is ready for network communication.
 
 ## Enable communication via VPC
 {: #procedure-ena-ppro-comm}
@@ -111,7 +111,7 @@ You can now use a non-PER enabled Power Virtual Server workspace by following th
 1. Open [IBM Cloud console](https://cloud.ibm.com).
 2. Click **Navigation menu** icon > **Infrastructure** > **Network** > **VPCs**, and select your VPC from the list.
 3. Create a **Virtual Server Instance (VSI)** under the **Compute** section.
-4. Enable public gateway for the VSI subnet. Click **Navigation menu** icon > **Infrastructure** > **Network** > **Subnets** > Enable **Detached** in Public gateway > Click **Attach** and this enables the public gateway for VPC subnet.
+4. Enable a public gateway for the VSI subnet. Click **Navigation menu** icon > **Infrastructure** > **Network** > **Subnets** > Enable **Detached** in Public gateway > Click **Attach** and this enables the public gateway for VPC subnet.
 5. Configure the Squid proxy on the VSI by running the following commands:
    ```
    yum -y install squid
@@ -135,9 +135,9 @@ You can now use a non-PER enabled Power Virtual Server workspace by following th
       Active: active (running) since Mon 2025-07-07 11:19:52 UTC; 2 days ago
     ```
 
-    **Note:** Ensure that Squid configuration is in Active and running state.
+    **Note:** Ensure that the Squid configuration is in an Active and running state.
 
-7. To verify port number is up and running:
+7. To verify the port number is up and running:
     `sudo netstat -tulnp | grep 3128`
 
 
