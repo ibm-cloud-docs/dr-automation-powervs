@@ -137,7 +137,7 @@ You can now use a non-PER enabled Power Virtual Server workspace by following th
 
     **Note:** Ensure that the Squid configuration is in an Active and running state.
 
-7. To verify the port number is up and running:
+7. To verify that the port number is up and running:
     `sudo netstat -tulnp | grep 3128`
 
 
