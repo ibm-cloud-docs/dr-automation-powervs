@@ -86,10 +86,6 @@ toc:
           topics:
           - data-isolation.md
       - topicgroup:
-          label: AIX
-          topics:
-          - aix-vm.md
-      - topicgroup:
           label: Observability
           topics:
           - topicgroup:
