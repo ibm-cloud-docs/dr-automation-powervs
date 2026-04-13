@@ -50,7 +50,7 @@ follow the steps:
 9. Select the required subnets from the avalible list in the **DR Orchestrator networks** section.
 10. To create ksys VM with secrets, enable **Use a secret** button and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the  **Use a secret** toggle button and select the SSH key from **SSH key name**.
 
-    > **Note**: The SSH Key dropdown displays only the Account and workspace level SSH-keys and by default, you can choose the key from the list of ssh keys in the account level only. You should enable the toggle to select the key from secret manager.
+    > **Note**: The SSH Key dropdown displays the Account and workspace level SSH-keys and  you can choose the key from the list of ssh keys in the account level or workspace level
 
 11. In **Configure standby orchestrator (for HA)**, enter the **Standby Orchestrator name**, select a **Standby Power Virtual Server workspace** and select a **Standby SSH key name** and **Standby Orchestrator networks** to define the Power Virtual Server workspace in which the standby orchestrator is deployed, when Orchestrator HA is enabled in config page. These settings enable the orchestrator to provide continuous recovery capabilities if the primary site fails.
 
