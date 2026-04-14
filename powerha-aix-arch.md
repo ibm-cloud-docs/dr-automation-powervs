@@ -11,7 +11,7 @@ keywords: private pod, client location
 # Architecture for {{site.data.keyword.DR_full}} for PowerHA
 {: #arch-powerha-aix}
 
-{{site.data.keyword.DR_full}} **PowerHA** provides high availability for workloads running on IBM Power Virtual Server (PowerVS). The compute, storage, and network resources are deployed and managed by the IBM Cloud platform. PowerHA continuously monitors application and system health and automatically performs failover between cluster nodes when a failure occurs. This ensures minimal disruption to applications and helps maintain continuous availability without manual intervention.
+{{site.data.keyword.DR_full}} **PowerHA** provides high availability for workloads running on IBM Power Virtual Server (PowerVS). The compute, storage, and network resources deployed and managed by the IBM Cloud platform. PowerHA continuously monitors application and system health and automatically performs failover between cluster nodes when a failure occurs. This ensures minimal disruption to applications and helps maintain continuous availability without manual intervention.
 {: shortdesc}
 
 Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} PowerHA architecture, features, hardware requirements, and network configurations.
@@ -44,7 +44,7 @@ This architecture enables customers to run mission-critical workloads with built
 
 IBM Cloud provides a managed service layer that provisions and manages PowerHA deployments on Power Virtual Server. This service layer integrates with the IBM Cloud catalog and automates the setup, configuration, and lifecycle management of high availability resources.
 
-You interact with the service through the IBM Cloud console, APIs, or automation tools, while IBM Cloud manages the underlying orchestration and operational workflows. Failover operations are handled by PowerHA SystemMirror to ensure application availability during system or application failures.
+You interact with the service through the IBM Cloud console, APIs, or automation tools, while IBM Cloud manages the underlying orchestration and operational workflows. Failover operations handled by PowerHA SystemMirror to ensure application availability during system or application failures.
 
 
 ## Key Features
@@ -54,13 +54,13 @@ You interact with the service through the IBM Cloud console, APIs, or automation
 PowerHA continuously monitors application and system health. When a system or application failure occurs, workloads are automatically moved to a healthy node, minimizing downtime and maintaining service availability.
 
 - **Data consistency with shared storage**
-PowerHA uses shared storage to ensure application data remains consistent across cluster nodes. This allows workloads to resume quickly after a failover without data corruption or manual recovery steps.
+PowerHA uses shared storage to ensure that application data remains consistent across cluster nodes. This allows workloads to resume quickly after a failover without data corruption or manual recovery steps.
 
 - **Centralized management through IBM Cloud**
-High availability configurations are managed through the IBM Cloud platform. Customers can deploy and manage PowerHA-enabled environments using the IBM Cloud console, APIs, or automation tools.
+High availability configurations are managed through the IBM Cloud platform. Customers can deploy and manage PowerHA-enabled environments by using the IBM Cloud console, APIs, or automation tools.
 
 - **Usage-based billing**
-PowerHA on PowerVS follows a usage-based pricing model. You are billed only for the compute and storage resources used, providing cost efficiency without the need to provision idle standby capacity.
+PowerHA on PowerVS follows a usage-based pricing model. You are billed only for the compute and storage resources that are used, providing cost efficiency without the need to provision idle standby capacity.
 
 - **Native IBM Cloud integration**
 PowerHA is tightly integrated with IBM Cloud infrastructure, including networking, identity and access management, and monitoring services. This integration ensures a consistent operational experience across PowerVS environments.
