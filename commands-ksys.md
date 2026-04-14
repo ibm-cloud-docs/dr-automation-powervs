@@ -255,11 +255,17 @@ Note: By default, the value of type variable is DR cluster type.
 {: #stats-modi}
 
 ```
-ksysmgr modify vm -h
+# ksysmgr modify vm -h
 
-ksysmgr modify vm <vmname>
-      [targetsystem=<target_system_type>]
+ksysmgr modify vm <vmname> | name=<vmname> | vmuuid=<uuid>
+      [targetsystemtype=<target_system_type>]
       [staticIPMap=<srcip1-tgtip1,[srcip2-tgtip2,...]>]
+      [sharedprocpool=<yes|no>]
+      [targetprocpool=<sharedprocpoolname>]
+      [target_flex_mem=<(1-1000)%>]
+      [target_flex_cpu=<(1-1000)%>]
+      [inactive_vm_mem=<integer value with minimum of 2 | none>]
+      [inactive_vm_cpu=<multiples of 0.25 cores | none>]
     modify => mod*, ch*, set
     vm => lp*, vm*
 ```
@@ -779,8 +785,9 @@ ksysmgr manage vm test_vm targethost=s922Host
 ```
 
 An output that is similar to the following example is displayed:
+
 ```
-> ksysmgr manage vm test_VM targethost=dedicated_host1
+ksysmgr manage vm test_VM targethost=dedicated_host1
 Refresh VMs list of test_dal10 workspace started
 Refresh VMs list of test_dal10 workspace completed
 Refresh Networks list of test_dal10 workspace started
@@ -789,8 +796,8 @@ Refresh Host list of test_dal10 workspace started
 Refresh Host list of test_dal10 workspace completed
 Refresh Host Group list of test_dal10 workspace started
 Refresh Host Group list of test_dal10 workspace completed
-VM test_dh03 was successfully managed.
-Workgroup test_dh03_WG added successfully
+VM test_VM was successfully managed.
+Workgroup test_VM_WG added successfully
 ```
 
 Example (host group):
@@ -1360,7 +1367,7 @@ Note: Not advisable to modify `quick_discovery_interval` with values less than `
 Note: If `custom_script_timeout` value is set to `0`, it will be considered as no timeout is set.
 Note: Supported locales for `ksys_lang` are `DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_ES, IT_IT, ZH_CN, en_US`, by default language is considered to be `en_US`
 ```
-```
+
 ### To enable the KSYS subsystem to rediscover the resources every day automatically:
 {: #asd}
 
