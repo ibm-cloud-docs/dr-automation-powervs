@@ -1002,7 +1002,7 @@ Event Name Event Type Description
 | NETWORK_CREATION_COMPLETED | info | true |
 NETWORK_CONFIGURATION_FAILED warning Network configuration has failed.
 ```
-```
+
 
 #### query the system-wide persistent attribute for the ksysmgr command, use the following command syntax:
 {: #que-sys-wide}
@@ -1468,6 +1468,7 @@ Taking snapshot...
 Created: /var/ksys/snapshots/snap.xml_DETAILED_2024-07-30_05:37:50.xml.tar.gz
 Successfully created a configuration snapshot: /var/ksys/snapshots/snap.xml_DETAILED_2024-07-30_05:37:50.xml.tar.gz
 ```
+```
 
 ### To view a snapshot, use the following command syntax:
 {: #visnuse}
@@ -1494,7 +1495,7 @@ Name: pvs_dr
 Node: hostname.com
 Type: IBM_PVS_DR
 ```
-
+```
 ### To restore the configuration data on a KSYS node:
 {: #data}
 
@@ -1531,7 +1532,7 @@ INFO: Restore completed successfully
 ```
 
 ```
-
+```
 This command decompresses and unarchives the snapshot file, and then applies the configuration settings to the KSYS node.
 
 ## Disk group example
