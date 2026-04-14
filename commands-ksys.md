@@ -1360,7 +1360,7 @@ Note: Not advisable to modify `quick_discovery_interval` with values less than `
 Note: If `custom_script_timeout` value is set to `0`, it will be considered as no timeout is set.
 Note: Supported locales for `ksys_lang` are `DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_ES, IT_IT, ZH_CN, en_US`, by default language is considered to be `en_US`
 ```
-
+```
 ### To enable the KSYS subsystem to rediscover the resources every day automatically:
 {: #asd}
 
@@ -1468,7 +1468,7 @@ Taking snapshot...
 Created: /var/ksys/snapshots/snap.xml_DETAILED_2024-07-30_05:37:50.xml.tar.gz
 Successfully created a configuration snapshot: /var/ksys/snapshots/snap.xml_DETAILED_2024-07-30_05:37:50.xml.tar.gz
 ```
-```
+
 
 ### To view a snapshot, use the following command syntax:
 {: #visnuse}
