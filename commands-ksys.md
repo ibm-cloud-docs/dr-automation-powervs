@@ -1065,7 +1065,7 @@ Sets the quick_discovery variable to enable/disable.
 deep_discovery
 Sets the deep_discovery variable to enable/disable.
 ```
-```
+
 
 #### To modify the system wide persistent attribute for the ksysmgr command:
 {: #mod-sys-wide}
