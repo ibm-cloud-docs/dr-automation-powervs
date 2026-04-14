@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-10"
+lastupdated: "2026-04-14"
 
 subcollection: dr-automation-powervs
 
@@ -1065,7 +1065,7 @@ Sets the quick_discovery variable to enable/disable.
 deep_discovery
 Sets the deep_discovery variable to enable/disable.
 ```
-
+```
 
 #### To modify the system wide persistent attribute for the ksysmgr command:
 {: #mod-sys-wide}
@@ -1530,6 +1530,7 @@ Please run discovery to apply changes.
 INFO: Restore completed successfully
 ```
 
+```
 
 This command decompresses and unarchives the snapshot file, and then applies the configuration settings to the KSYS node.
 
