@@ -1079,32 +1079,34 @@ Sets the deep_discovery variable to enable/disable.
 
 ```
 ksysmgr modify system
-[auto_discovery_time=<hh:mm>]
-hh - hour: 00 to 23
-mm - minute: 00 to 59
-[quick_discovery_interval=<mm>]
-mm - minute: 5 to 480
-[quick_discovery=<enable | disable>]
-[deep_discovery=<enable | disable>]
-[trace_file_size=<MB>]
-MB - Megabyte: Between 1 and 50 for single node KSYS cluster
-Between 1 and 25 for Multiple node KSYS cluster
-[ksys_spooling=<enable | disable>]
-[spool_dest_dir=<path>]
-[spool_dir_max_size=<MB>]
-MB - Megabyte: Between 1 and 10240
-[cleanup_files_interval=<disable | (1-30) days>]
-[ksys_lang=<language>]
-[notification_level=<low | medium | high | disable>]
-[dup_event_processing=<yes | no>]
-[custom_script_timeout=<sec>]
-sec - seconds: Any positive integer
-modify => mod*, ch*, set
-system => sys*
-Note: Not advisable to modify quick_discovery_interval with values less than 60 mins.
-Note: If custom_script_timeout value is set to 0, it will be considered as no timeout is set.
-Note: Supported locales for ksys_lang are DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_ES, IT_IT, ZH_CN, en_US
-By default language is considered to be en_US
+      [auto_discovery_time=<hh:mm>]
+        hh - hour:   00 to 23
+        mm - minute: 00 to 59
+      [quick_discovery_interval=<mm>]
+        mm - minute: 5 to 480
+      [quick_discovery=<enable | disable>]
+      [deep_discovery=<enable | disable>]
+      [trace_file_size=<MB>]
+        MB - Megabyte: Between 1 and 50 for single node KSYS cluster
+                       Between 1 and 25 for Multiple node KSYS cluster
+      [ksys_spooling=<enable | disable>]
+      [spool_dest_dir=<path>]
+      [spool_dir_max_size=<MB>]
+        MB - Megabyte: Between 1 and 10240
+      [cleanup_files_interval=<disable | (1-30) days>]
+      [ksys_lang=<language>]
+      [notification_level=<low | medium | high | disable>]
+      [dup_event_processing=<yes | no>]
+      [custom_script_timeout=<sec>]
+        sec - seconds: Any positive integer
+      [staticipenable=<yes|no|default>]
+    modify => mod*, ch*, set
+    system => sys*
+
+    Note: Not advisable to modify quick_discovery_interval with values less than 60 mins.
+    Note: If custom_script_timeout value is set to 0, it will be considered as no timeout is set.
+    Note: Supported locales for ksys_lang are DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_ES, IT_IT, ZH_CN, en_US
+          By default language is considered to be en_US
 ```
 
 ### Quick discovery example
@@ -1124,6 +1126,8 @@ KSYS quick_discovery_interval has been updated
 
 ## Notification configuration examples
 {: #asf}
+
+Event notifications are triggered when the event severity is equal to or higher than the configured notification level.
 
 ### To add an email for a specific user:
 {: #ghj}
@@ -1278,16 +1282,22 @@ ksysmgr query system [ properties | status ]
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr query system
-System-Wide Persistent Attributes
-BaseUrl:                     cloud.test.com
-Regions:                     wdc06
-                             dal12
-                             tok04
-                             sao04
-                             sao01
-api_key:                     #####59E1857FA85240FDD689AC8AD81BC0F4CBBA447E7745DE85DFCD9DFEAB2D65D2B5 CB19CA18DEC1AC6E6A640BD2738ED9A 346C315CD9
+
+BaseUrl:                     cloud.ibm.com
+Region:                      eu-de-2 - mad04
+                             tok04 - osa21
+                             wdc06 - dal14
+                             us-east - us-south
+                             syd05 - syd04
+                             eu-de-1 - mad02
+                             lon04 - lon06
+                             mon01 - tor01
+                             wdc06 - dal12
+                             sao01 - sao04
+                             dal10 - wdc07
+api_key:                     #####C320FA5E83B2AA71CD9C7FF916F3337A55EE6EF45B7B987D116B 3 FDAEB2D 4F82B31C3CA3C8321925951 636C269337F1EAB9D8B5C B22
 staticipenable:              default
+cloud_init_execution:        enable
 trace_file_size:             not set
 ksys_spooling:               not set
 spool_dest_dir:              not set
@@ -1302,7 +1312,9 @@ custom_script_timeout:       none
 notification_level:          low
 dup_event_processing:        yes
 User Scripts for Site: None
+
 User Scripts for Workgroup: None
+
 User Scripts for VM: None
 
 ```
@@ -1731,7 +1743,11 @@ ksysmgr modify system spool_dir_max_size=10240
 
 An output that is similar to the following example is displayed:
 ```
-trace_file_size: 25 MB ksys_spooling: enable spool_dest_dir: /S1 spool_dir_max_size: 10240 MB hmc_ping_timer: 0 seconds
+trace_file_size: 25 MB
+ksys_spooling: enable
+spool_dest_dir: /S1
+spool_dir_max_size: 10240 MB
+hmc_ping_timer: 0 seconds
 ```
 
 >**Note**: You will get an error message if the spool_dir_max_size value is greater than 10240 MB (10 GB).
