@@ -83,7 +83,7 @@ ibmcloud power-hadr pdr api-key update --instance-id INSTANCE-ID --api-key API-K
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-api-key-update-examples}
 
 ```sh
@@ -916,7 +916,7 @@ ibmcloud power-hadr pdr machine-types --instance-id INSTANCE-ID --primary-worksp
 
     The maximum length is `64` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-machine-types-examples}
 
 ```sh
@@ -986,7 +986,7 @@ ibmcloud power-hadr pdr powervs-workspaces --instance-id INSTANCE-ID --location-
 
     The maximum length is `32` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-powervs-workspaces-examples}
 
 ```sh

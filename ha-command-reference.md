@@ -190,7 +190,7 @@ ibmcloud power-hadr powerhasm cluster-node add --instance-id INSTANCE-ID --prima
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-cluster-node-add-cli-options}
 
 `--instance-id` (string)
@@ -264,7 +264,7 @@ ibmcloud power-hadr powerhasm cluster-node delete --instance-id INSTANCE-ID --vm
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-cluster-node-delete-cli-options}
 
 `--instance-id` (string)
@@ -282,7 +282,7 @@ ibmcloud power-hadr powerhasm cluster-node delete --instance-id INSTANCE-ID --vm
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-cluster-node-delete-examples}
 
 ```sh
