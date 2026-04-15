@@ -12,8 +12,6 @@ keywords: powerhaautomation service, cli, plugin
 
 ## Available commands
 {: #powerha-available-commands}
-
-
 `api-key` - Manage the API key for the PowerHA Automation service instance.  
 `cluster-node` - Manage PowerHA cluster nodes including add, get, and delete operations.  
 `deployment` - Manage PowerHA deployment lifecycle including create and get operations.  
@@ -23,8 +21,6 @@ keywords: powerhaautomation service, cli, plugin
 `locations` - List supported PowerVS locations for PowerHA.  
 `last-operation` - Retrieve the most recent operation details for the service instance.
 {{site.data.keyword.attribute-definition-list}}
-
-
 ## Api Key
 {: #power-hadr-api-key-cli}
 

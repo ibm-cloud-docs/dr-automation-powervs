@@ -56,7 +56,7 @@ GLOBAL OPTIONS:
 Use "ibmcloud power-hadr pdr api-key <command> --help" for more information about a command.
 ```
 
-#### `ibmcloud power-hadr pdr api-key update`
+### `ibmcloud power-hadr pdr api-key update`
 {: #power-hadr-cli-api-key-update-command}
 
 Updating the current API key details for the specified service instance.
@@ -66,7 +66,7 @@ ibmcloud power-hadr pdr api-key update --instance-id INSTANCE-ID --api-key API-K
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-api-key-update-cli-options}
 
 `--instance-id` (string)
@@ -134,7 +134,7 @@ Use "ibmcloud power-hadr pdr deployment <command> --help" for more information a
 ```
 
 
-#### `ibmcloud power-hadr pdr deployment get`
+### `ibmcloud power-hadr pdr deployment get`
 {: #power-hadr-cli-deployment-get-command}
 
 Retrieves the disaster recovery (DR) summary details for the specified service instance, including key configuration, status information and managed vm details.
@@ -144,7 +144,7 @@ ibmcloud power-hadr pdr deployment get --instance-id INSTANCE-ID [--accept-langu
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-deployment-get-cli-options}
 
 `--instance-id` (string)
@@ -157,7 +157,7 @@ ibmcloud power-hadr pdr deployment get --instance-id INSTANCE-ID [--accept-langu
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-deployment-get-examples}
 
 ```sh
@@ -227,7 +227,7 @@ ibmcloud power-hadr pdr deployment create --instance-id INSTANCE-ID --location-i
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-deployment-create-cli-options}
 
 `--instance-id` (string)
@@ -398,7 +398,7 @@ ibmcloud power-hadr pdr deployment create --instance-id INSTANCE-ID --location-i
 
     The default value is `true`.
 
-#### Example
+### Example
 {: #power-hadr-deployment-create-examples}
 
 ```sh
@@ -488,7 +488,7 @@ ibmcloud power-hadr pdr event list --instance-id INSTANCE-ID [--from-time FROM-T
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-event-list-cli-options}
 
 `--instance-id` (string)
@@ -511,7 +511,7 @@ ibmcloud power-hadr pdr event list --instance-id INSTANCE-ID [--from-time FROM-T
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-event-list-examples}
 
 ```sh
@@ -571,7 +571,7 @@ ibmcloud power-hadr pdr event get --instance-id INSTANCE-ID --event-id EVENT-ID 
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-event-get-cli-options}
 
 `--instance-id` (string)
@@ -589,7 +589,7 @@ ibmcloud power-hadr pdr event get --instance-id INSTANCE-ID --event-id EVENT-ID 
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-event-get-examples}
 
 ```sh
@@ -633,7 +633,7 @@ ibmcloud power-hadr pdr grs-location-pairs --instance-id INSTANCE-ID [--accept-l
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-grs-location-pairs-cli-options}
 
 `--instance-id` (string)
@@ -681,7 +681,7 @@ ibmcloud power-hadr pdr locations --instance-id INSTANCE-ID [--accept-language A
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-locations-cli-options}
 
 `--instance-id` (string)
@@ -694,7 +694,7 @@ ibmcloud power-hadr pdr locations --instance-id INSTANCE-ID [--accept-language A
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-locations-examples}
 
 ```sh
@@ -733,7 +733,7 @@ ibmcloud power-hadr pdr managed-vms --instance-id INSTANCE-ID [--accept-language
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-managed-vms-cli-options}
 
 `--instance-id` (string)
@@ -746,7 +746,7 @@ ibmcloud power-hadr pdr managed-vms --instance-id INSTANCE-ID [--accept-language
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-managed-vms-examples}
 
 ```sh
@@ -786,7 +786,7 @@ ibmcloud power-hadr pdr machine-types --instance-id INSTANCE-ID --primary-worksp
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-machine-types-cli-options}
 
 `--instance-id` (string)
@@ -841,7 +841,7 @@ ibmcloud power-hadr pdr powervs-workspaces --instance-id INSTANCE-ID --location-
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-powervs-workspaces-cli-options}
 
 `--instance-id` (string)
@@ -909,7 +909,7 @@ ibmcloud power-hadr pdr last-operation --instance-id INSTANCE-ID [--accept-langu
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-last-operation-cli-options}
 
 `--instance-id` (string)
@@ -922,7 +922,7 @@ ibmcloud power-hadr pdr last-operation --instance-id INSTANCE-ID [--accept-langu
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-last-operation-examples}
 
 ```sh
