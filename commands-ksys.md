@@ -255,7 +255,7 @@ Note: By default, the value of type variable is DR cluster type.
 {: #stats-modi}
 
 ```
-# ksysmgr modify vm -h
+## ksysmgr modify vm -h
 
 ksysmgr modify vm <vmname> | name=<vmname> | vmuuid=<uuid>
       [targetsystemtype=<target_system_type>]
@@ -389,18 +389,20 @@ site => sit*
 An output that is similar to the following example is displayed:
 
 ```
+# ksysmgr add site site1 region=dal12
 Waiting for update of Workspaces ...
 Update of Workspaces are successful
-Refresh VMs list of VMRM-Dal10 workspace started
-Refresh VMs list of VMRM-Dal10 workspace completed
-Refresh Networks list of VMRM-Dal10 workspace started
-Refresh Networks list of VMRM-Dal10 workspace completed
-Refresh VMs list of VMRM-TEST-DAL10 workspace started
-Refresh VMs list of VMRM-TEST-DAL10 workspace completed
-Refresh Networks list of VMRM-TEST-DAL10 workspace started
-Refresh Networks list of VMRM-TEST-DAL10 workspace completed
-Site dal10 added successfully
-Note: dal10 partner GRS Region is us-east.
+Refresh VMs list of vmrm-dal12 workspace started
+Refresh VMs list of vmrm-dal12 workspace completed
+Refresh Networks list of vmrm-dal12 workspace started
+Refresh Networks list of vmrm-dal12 workspace completed
+Refresh Host list of vmrm-dal12 workspace started
+Refresh Host list of vmrm-dal12 workspace completed
+Refresh Host Group list of vmrm-dal12 workspace started
+Refresh Host Group list of vmrm-dal12 workspace completed
+Site site1 added successfully
+Note: dal12 partner GRS Region(s) wdc06
+
 ```
 
 #### To add a site in the KSYS sub system Private cloud:
@@ -490,10 +492,9 @@ site => sit*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr delete site us-east
-Workspace VMRM-wdc was removed
-Site us-east was removed
-Workgroup configuration example
+# ksysmgr delete site us-east
+Workspace powervs-dr-wdc06 was removed
+Site us-east was removed.
 ```
 An output that is similar to the following example is displayed for Private cloud:
 ```
@@ -507,41 +508,69 @@ Site home was removed
 Workgroup configuration example
 ```
 
-### Manage a virtual machine:
+### Manage a disk:
 {: #manage-vm}
 
 ```
 # ksysmgr manage disk -h
- 
+
 ksysmgr manage disk diskid=<diskid1[,diskid2,...]>
-    manage => man*, mg
+    manage => man*, mg
 ```
 An output that is similar to the following example is displayed:
-
-
+```
+# ksysmgr manage vm vmrm_vm1
+Refresh VMs list of vmrm-dal12 workspace started
+Refresh VMs list of vmrm-dal12 workspace completed
+Refresh Networks list of vmrm-dal12 workspace started
+Refresh Networks list of vmrm-dal12 workspace completed
+Refresh Host list of vmrm-dal12 workspace started
+Refresh Host list of vmrm-dal12 workspace completed
+Refresh Host Group list of vmrm-dal12 workspace started
+Refresh Host Group list of vmrm-dal12 workspace completed
+VM vmrm_vm1 was successfully managed.
+Workgroup vmrm_vm1_WG added successfully
+```
 
 ### To move a workgroup from one site to another site, run the following command:
 {: #move-work}
 
 ```
-ksysmgr move workgroup <name>
-to=<site_name>
-[force=<true|false>]
-[dr_type=<planned|unplanned>]
-move => mov*, mv, swi*
-workgroup => workg*, work_g*, wg
+# ksysmgr move wg -h
+
+ksysmgr [-f] move workgroup <name>
+      to=<site_name>
+      [force=<true|false>]
+      [dr_type=<planned|unplanned>]
+      [dr_test=<yes|no>]
+    move => mov*, mv, swi*
+    workgroup => workg*, work_g*, wg
+
+Note: dr_type=planned is the default
+      When dr_test=yes, should not give dr_type attribute
+
 ```
 
 ### To query the details about a specific workgroup:
 {: #quer}
 
 ```
-ksysmgr query workgroup -h
-
-ksysmgr query workgroup [ name ]
-      [status [monitor=<no|yes>]]
-    query => q*, ls, get, sh*
-    workgroup => workg*, work_g*, wg
+# ksysmgr q wg
+Name:                vmrm_vm1_WG
+ID:                  1
+VMs:                 vmrm_vm1
+PartnerVM:           vmrm_vm1_BackUp
+State:               READY_TO_MOVE
+Dr Test State:       INIT
+Priority:            Medium
+SkipAutoResync:      OFF
+HomeWorkSpace:       vmrm-dal12
+BackupWorkSpace:     powervs-dr-wdc06
+ActiveWorkspace:     vmrm-dal12
+Home Site:           site1
+Active Site:         site1
+Networks:            dal12-network01 <-> dal12-network01
+CGName:              rccg-33fd-209b3
 ```
 
 An output that is similar to the following example is displayed: 
@@ -673,12 +702,18 @@ The preceding command syntax can be used for targeted VM management. The exclude
 {: #provirt}
 
 ```
-ksysmgr modify vm -h
+# ksysmgr modify vm -h
 
-ksysmgr modify vm <vmname>
-      [targetsystem=<target_system_type>]
+ksysmgr modify vm <vmname> | name=<vmname> | vmuuid=<uuid>
+      [targetsystemtype=<target_system_type>]
       [staticIPMap=<srcip1-tgtip1,[srcip2-tgtip2,...]>]
-    modify => mod*, ch*, set
+      [sharedprocpool=<yes|no>]
+      [targetprocpool=<sharedprocpoolname>]
+      [target_flex_mem=<(1-1000)%>]
+      [target_flex_cpu=<(1-1000)%>]
+      [inactive_vm_mem=<integer value with minimum of 2 | none>]
+      [inactive_vm_cpu=<multiples of 0.25 cores | none>]
+    modify => mod*, ch*, se
     vm => lp*, vm*
 ```
 
@@ -1523,9 +1558,13 @@ Type: IBM_PVS_DR
 
 ```
 ksysmgr restore snapshot
-filepath=<full file prefix path>
-restore => resto*
-snapshot => snap*
+      filepath=<full file prefix path>
+      [download_from_cos=<yes | no>]
+      [region=<cos_region>]
+      [bucketname=<cos_bucket_name>]
+      [apikey=<apikey>]
+    restore => resto*
+    snapshot => snap*
 ```
 
 An output that is similar to the following example is displayed:
@@ -1613,17 +1652,14 @@ query => q*, ls, get, sh*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr query disk vm=vmrm_rhel
-VM:                  vmrm_rhel <-> vmrm_rhel_BackUp
-CGName:              rccg-a382-d35ba
+ksysmgr query disk vm=vmrm_aix_vm2
+VM:                  vmrm_aix_vm2 <-> vmrm_aix_vm2_BackUp
+CGName:              rccg-aca6-1507e
 CGState:             consistent_copying
-Progress:            99.0
-DiskIDs:             volume-vmrm_rhel-8852d59e-000269ee-boot-0-34b22e2b-0aaf -> 34b22e2b-0aaf-4124-ad8e-4f76cdfb4cf8
-Volume Details:
-
-| Volume                                                                      | State                 | Progress (%) |
-|----------------------------------------------------------------------------|-----------------------|--------------|
-| volume-vmrm_rhel-8852d59e-000269... <-> aux_mrm_rhel-8852d59e-000269ee-b... | consistent_copying    | 99           |
+Progress:            99.66666666666667
+DiskIDs:             volume-aix_vol2-2d5ff23a-13bb -> 2d5ff23a-13bb-43d8-b354-51603dee5e50
+                     volume-aix_vol3-6a958988-9745 -> 6a958988-9745-4fee-8942-f8b80118e8e7
+                     volume-vmrm_aix_vm2-bc477fa9-00046b90-boot-0-a69d29f9-bc3a -> a69d29f9-bc3a-424e-a91e-3edad82348a4
 
 ```
 
@@ -1651,22 +1687,11 @@ ksysmgr unmanage disk diskid=<diskid1[,diskid2,...]> workgroup=<workgroup_name>
 {: #query-vm-disk}
 
 ```
- ksysmgr query disk vm=vmrm_aix_vm2
-VM:                  vmrm_aix_vm2 <-> vmrm_aix_vm2_BackUp
-CGName:              rccg-aca6-1507e
-CGState:             consistent_copying
-Progress:            99.66666666666667
-DiskIDs:             volume-aix_vol2-2d5ff23a-13bb -> 2d5ff23a-13bb-43d8-b354-51603dee5e50
-                     volume-aix_vol3-6a958988-9745 -> 6a958988-9745-4fee-8942-f8b80118e8e7
-                     volume-vmrm_aix_vm2-bc477fa9-00046b90-boot-0-a69d29f9-bc3a -> a69d29f9-bc3a-424e-a91e-3edad82348a4
-
-Volume Details:
-
 | Volume | State | Progress (%) |
-|---------|--------|--------------|
-| `volume-aix_vol2-2d5ff23a-13bb <-> aux_volume-aix_vol2-2d5ff23a-13b...` | consistent_copying | 100 |
-| `volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974...` | consistent_copying | 100 |
-| `volume-vmrm_aix_vm2-bc477fa9-000... <-> aux__aix_vm2-bc477fa9-00046b90-b...` | consistent_copying | 100 |
+|--------|-------|--------------|
+| volume-aix_vol2-2d5ff23a-13bb <-> aux_volume-aix_vol2-2d5ff23a-13b... | consistent_copying | 100 |
+| volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974... | consistent_copying | 100 |
+| volume-vmrm_aix_vm2-bc477fa9-000... <-> aux__aix_vm2-bc477fa9-00046b90-b... | consistent_copying | 100 |
 ```
 
 ### To unmanage a disk on virtual machine:
@@ -1682,19 +1707,18 @@ DiskID(s) was successfully unmanaged
 
 ```
 ksysmgr query disk vm=vmrm_aix_vm2
-VM:                  vmrm_aix_vm2 <-> vmrm_aix_vm2_BackUp
-CGName:              rccg-aca6-1507e
-CGState:             consistent_copying
-Progress:            99.5
-DiskIDs:             volume-aix_vol3-6a958988-9745 -> 6a958988-9745-4fee-8942-f8b80118e8e7
-                     volume-vmrm_aix_vm2-bc477fa9-00046b90-boot-0-a69d29f9-bc3a -> a69d29f9-bc3a-424e-a91e-3edad82348a4
-                     2d5ff23a-13bb-43d8-b354-51603dee5e50 -> Unmanaged
+VM:                  vmrm_aix_vm2 <-> vmrm_aix_vm2_BackUp
+CGName:              rccg-aca6-1507e
+CGState:             consistent_copying
+Progress:            99.5
+DiskIDs:             volume-aix_vol3-6a958988-9745 -> 6a958988-9745-4fee-8942-f8b80118e8e7
+                     volume-vmrm_aix_vm2-bc477fa9-00046b90-boot-0-a69d29f9-bc3a -> a69d29f9-bc3a-424e-a91e-3edad82348a4
+                     2d5ff23a-13bb-43d8-b354-51603dee5e50 -> Unmanaged
 Volume Details
 
 | Volume | State | Progress (%) |
 |---------|--------|--------------|
-| `volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974...` | consistent_copying | 100 |
-| `volume-vmrm_aix_vm2-bc477fa9-000... <-> aux__aix_vm2-bc477fa9-00046b90-b...` | consistent_copying | 100 |
+| volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974... | consistent_copying | 100 | 
 ```
 
 ## KSYS spooling
