@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-02"
+lastupdated: "2026-04-15"
 
 subcollection: dr-automation-powervs
 
@@ -158,15 +158,6 @@ The platform includes features for DR drills, where users can simulate failovers
 {: #scaling}  
 
 Yes, users can scale resources dynamically based on workload demands. Additional cores can be provisioned through the IBM Cloud UI.
-
-### **What are the key components of DR Automation of {{site.data.keyword.DR_short}}?**
-{: #compe}  
-
-- **KSYS Orchestrator:** Manages failover/failback workflows.  
-- **Service Broker:** Handles resource provisioning.  
-- **Cloud Object Storage:** IBM Cloud services like Cloud Object Storage, CloudantDB, BSS, Activity Tracker, Cloud logs, Sendgrid/ACS.
-- **PowerHA SystemMirror (for PowerHA plans)**: Provides native high availability capabilities for AIX workloads running on PowerVS.
-- **PowerHA Agent (for PowerHA plans)**: Installs and manages HA filesets on selected PowerVS instances and reports status to the service.
 
 ### **What resources should be planned before implementing DR Automation?**
 {: #implementt}   
@@ -439,7 +430,7 @@ After you provision a service instance, you must configure the HA cluster to ena
 The HA cluster coordinates nodes within the selected high availability location and workspace to help ensure workload continuity during planned or unplanned outages and to support automatic failover.
 
 
-### What information is required to configure the HA cluster?
+### What information is required to deploy the HA cluster?
 {: #faq-ha-required-info}
 
 To configure the HA cluster, provide the following information:
@@ -451,7 +442,7 @@ To configure the HA cluster, provide the following information:
 Ensure that the API key has the required permissions to access the selected workspace.
 
 
-### Is adding nodes mandatory after configuring the HA cluster?
+### Is adding nodes mandatory after deploy the HA cluster?
 {: #faq-ha-add-node-mandatory}
 
 Yes. After you configure the HA cluster, you must add one or more virtual server instances as cluster nodes.  
@@ -497,9 +488,16 @@ Depending on the assigned role (Administrator, Editor, Operator, or Viewer), use
 ### What versions of PowerHA SystemMirror are supported?
 {: #faq-powerha-supported-versions}
 
-The service supports the latest supported versions of IBM PowerHA SystemMirror that are compatible with the selected AIX levels on Power Virtual Server.
+The service supports the following versions of IBM PowerHA SystemMirror on AIX running in Power Virtual Server environments:
+
+7.2.8 SP4 (728SP4)
+7.2.9 SP3 (729SP3)
+7.2.10 SP1 (7210SP1)
+
+These versions are validated for compatibility with the supported AIX levels on Power Virtual Server.
 
 You can also register environments that use earlier or unsupported versions. However, such versions might have limited support and compatibility.
+
 
 
 ### When does billing start for HA Automation for PowerVS?
