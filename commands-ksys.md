@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-14"
+lastupdated: "2026-04-15"
 
 subcollection: dr-automation-powervs
 
@@ -1454,13 +1454,16 @@ ksysmgr modify system dup_event_processing=no
 
 ```
 ksysmgr [-f] move site
-from=<sitename>
-to=<sitename>
-[force=<true|false>]
-[dr_type=<planned|unplanned>]
-move => mov*, mv, swi*
-site => sit*
+      from=<sitename>
+      to=<sitename>
+      [force=<true|false>]
+      [dr_type=<planned|unplanned>]
+      [dr_test=<yes|no>]
+    move => mov*, mv, swi*
+    site => sit*
+
 Note: dr_type=planned is the default
+      When dr_test=yes, should not give dr_type attribute
 ```
 
 If you do not specify the cleanup attribute, for a planned disaster recovery operation, the KSYS subsystem automatically cleans up the source site from where the site-switch operation was initiated.
