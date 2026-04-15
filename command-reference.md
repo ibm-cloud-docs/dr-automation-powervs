@@ -16,7 +16,6 @@ keywords: power-hadr, cli, pdr, commands
 ## Available Commands:
 {: #avalible-cmd}
 
-
 `api-key` - Manage the API key for the DR Automation service instance.  
 `deployment` - Manage disaster recovery deployment configuration and lifecycle operations.  
 `event` - Retrieve events generated during DR Automation operations.  
@@ -95,7 +94,7 @@ ibmcloud power-hadr pdr api-key update \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-api-key-update-cli-output}
 
 ```
@@ -167,7 +166,7 @@ ibmcloud power-hadr pdr deployment get \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-deployment-get-cli-output}
 
 ```
@@ -440,7 +439,7 @@ ibmcloud power-hadr pdr deployment create \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-deployment-create-cli-output}
 
 ```
@@ -523,7 +522,7 @@ ibmcloud power-hadr pdr event list \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-event-list-cli-output}
 
 ```
@@ -600,7 +599,7 @@ ibmcloud power-hadr pdr event get \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-event-get-cli-output}
 
 ```
@@ -626,6 +625,32 @@ User
 ### `ibmcloud power-hadr pdr grs-location-pairs`
 {: #power-hadr-cli-grs-location-pairs-command}
 
+```
+ibmcloud power-hadr pdr grs-location-pairs --help
+NAME:
+  grs-location-pairs - Retrieves the (GRS) location pairs associated with the specified service instance based on managed VMs.
+
+USAGE:
+  ibmcloud power-hadr pdr grs-location-pairs --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
+
+EXAMPLE:
+  ibmcloud power-hadr pdr grs-location-pairs \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --accept-language exampleString
+
+OPTIONS:
+      --accept-language string   The language requested for the return document. The maximum length is 50 characters. The
+                                 minimum length is 1 character.
+      --instance-id string       Required. instance id of instance to provision. The maximum length is 512 characters. The
+                                 minimum length is 1 character.
+
+GLOBAL OPTIONS:
+  -h, --help                Show help
+  -j, --jmes-query string   Provide a JMESPath query to customize output.
+      --output string       Choose an output format - can be 'json', 'yaml', 'tui', or 'table'. (default "table")
+  -q, --quiet               Suppresses verbose messages.
+
+```
 Retrieves the (GRS) location pairs associated with the specified service instance based on managed VMs.
 
 ```sh
@@ -646,7 +671,7 @@ ibmcloud power-hadr pdr grs-location-pairs --instance-id INSTANCE-ID [--accept-l
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-grs-location-pairs-examples}
 
 ```sh
@@ -658,7 +683,7 @@ ibmcloud power-hadr pdr grs-location-pairs \
 
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-grs-location-pairs-cli-output}
 
 ```
@@ -704,7 +729,7 @@ ibmcloud power-hadr pdr locations \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-locations-cli-output}
 
 ```
@@ -756,7 +781,7 @@ ibmcloud power-hadr pdr managed-vms \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-managed-vms-cli-output}
 
 ```
@@ -864,7 +889,7 @@ ibmcloud power-hadr pdr powervs-workspaces \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-powervs-workspaces-cli-output}
 
 ``
@@ -894,14 +919,14 @@ Dr Workspaces
                         Name       Test2
                         Status     active
 ```
-{: screen}
+```
 
 ## Last Operation
 {: #power-hadr-last-operation-cli}
 
 ### `ibmcloud power-hadr pdr last-operation`
 {: #power-hadr-cli-last-operation-command}
-
+```
 Retrieves the status of the last operation performed on the specified service instance, such as provisioning, updating, or deprovisioning.
 
 ```sh
@@ -932,7 +957,7 @@ ibmcloud power-hadr pdr last-operation \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-last-operation-cli-output}
 
 ```
