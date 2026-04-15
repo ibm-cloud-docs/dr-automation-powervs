@@ -20,6 +20,7 @@ keywords: powerhaautomation service, cli, plugin
 `powervs-workspaces` - Retrieve PowerVS workspaces for the specified service instance.  
 `locations` - List supported PowerVS locations for PowerHA.  
 `last-operation` - Retrieve the most recent operation details for the service instance.
+`deployment` - 
 
 ## Api Key
 {: #power-hadr-api-key-cli}
@@ -95,7 +96,6 @@ ibmcloud power-hadr powerhasm api-key update \
 Description   Key is valid.
 Status        Key Updated Successfully
 ```
-
 
 ## Cluster Node
 {: #power-hadr-cluster-node-cli}
@@ -282,7 +282,7 @@ ID                       crn:v1:staging:public:power-dr-automation:us-south:a/12
 Primary Node Details    -
 Secondary Node Details   -
 
-```
+
 ```
 {: screen}
 

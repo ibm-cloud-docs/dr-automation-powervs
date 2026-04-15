@@ -113,7 +113,6 @@ ibmcloud power-hadr pdr deployment --help
 ```
 
 ```
-ibmcloud power-hadr pdr deployment --help
 NAME:
   deployment - Provide options to manage the DR configuration through deployment and fetching existing deployment details.
 
