@@ -20,7 +20,7 @@ keywords: powerhaautomation service, cli, plugin
 `powervs-workspaces` - Retrieve PowerVS workspaces for the specified service instance.  
 `locations` - List supported PowerVS locations for PowerHA.  
 `last-operation` - Retrieve the most recent operation details for the service instance.
-{{site.data.keyword.attribute-definition-list}}
+
 ## Api Key
 {: #power-hadr-api-key-cli}
 
