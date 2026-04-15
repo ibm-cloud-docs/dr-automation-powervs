@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-10"
+lastupdated: "2026-04-15"
 
 subcollection: dr-automation-powervs
 
@@ -29,7 +29,6 @@ keywords: power-hadr, cli, pdr, commands
 
 >**Note**: All the cli example outputs are shown below in `json` format.By default, cli output display in table format.To change the output format of cli, add `--output <format>` at  the end of command.
 
-
 ## Api Key
 {: #power-hadr-api-key-cli}
 
@@ -39,8 +38,25 @@ Manage apikey.
 ibmcloud power-hadr pdr api-key --help
 ```
 
+```
+[hema@dra-sb dra-cli-plugin]$  ibmcloud power-hadr pdr api-key help
+NAME:
+  api-key - Manage apikey.
 
-### `ibmcloud power-hadr pdr api-key update`
+USAGE:
+  ibmcloud power-hadr pdr api-key [action]
+
+COMMANDS:
+  update   Updates the API key for the specified service instance.
+
+GLOBAL OPTIONS:
+  -h, --help    Show help
+  -q, --quiet   Suppresses verbose messages.
+
+Use "ibmcloud power-hadr pdr api-key <command> --help" for more information about a command.
+```
+
+#### `ibmcloud power-hadr pdr api-key update`
 {: #power-hadr-cli-api-key-update-command}
 
 Updating the current API key details for the specified service instance.
@@ -82,11 +98,9 @@ ibmcloud power-hadr pdr api-key update \
 #### Example output
 {: #power-hadr-api-key-update-cli-output}
 
-```json
-{
-  "description" : "Key is valid.",
-  "status" : "Active"
-}
+```
+Description   Key is valid.
+Status        Key Updated Successfully
 ```
 {: screen}
 
@@ -99,8 +113,28 @@ Provide options to manage the DR configuration through deployment and fetching e
 ibmcloud power-hadr pdr deployment --help
 ```
 
+```
+ibmcloud power-hadr pdr deployment --help
+NAME:
+  deployment - Provide options to manage the DR configuration through deployment and fetching existing deployment details.
 
-### `ibmcloud power-hadr pdr deployment get`
+USAGE:
+  ibmcloud power-hadr pdr deployment [action]
+
+COMMANDS:
+  create   Create DR Deployment.
+  get      Disaster recovery deployment details.
+
+GLOBAL OPTIONS:
+  -h, --help    Show help
+  -q, --quiet   Suppresses verbose messages.
+
+Use "ibmcloud power-hadr pdr deployment <command> --help" for more information about a command.
+
+```
+
+
+#### `ibmcloud power-hadr pdr deployment get`
 {: #power-hadr-cli-deployment-get-command}
 
 Retrieves the disaster recovery (DR) summary details for the specified service instance, including key configuration, status information and managed vm details.
@@ -136,53 +170,50 @@ ibmcloud power-hadr pdr deployment get \
 #### Example output
 {: #power-hadr-deployment-get-cli-output}
 
-```json
-{
-  "managed_vm_list" : [ {
-    "id" : "vm-01-1234-5678-90ab",
-    "name" : "test-aix-vm1"
-  }, {
-    "id" : "vm-02-2234-5678-90cd",
-    "name" : "test-aix-vm2"
-  } ],
-  "orchestrator_details" : {
-    "location_id" : "dal10",
-    "mfa_enabled" : "false",
-    "orch_ext_connectivity_status" : "Connected",
-    "orch_standby_node_addition_status" : "Success",
-    "orchestrator_cluster_message" : "Cluster operational",
-    "orchestrator_config_status" : "Configured",
-    "orchestrator_group_leader" : "primary0906",
-    "orchestrator_location_type" : "off-premises",
-    "orchestrator_name" : "primary0906",
-    "orchestrator_status" : "Active",
-    "orchestrator_workspace_name" : "vpcdr6-abc-power-workspace",
-    "proxy_ip" : "10.0.0.5",
-    "schematic_workspace_name" : "us-south.workspace.projects-service.3ae96a02",
-    "schematic_workspace_status" : "Available",
-    "ssh_key_name" : "mani_key",
-    "standby_orchestrator_name" : "standby0906",
-    "standby_orchestrator_status" : "Active",
-    "standby_orchestrator_workspace_name" : "Test_workspace_frankfurt",
-    "transit_gateway_name" : "dra-tg-01",
-    "vpc_name" : "vpc-primary-us-south"
-  },
-  "service_details" : {
-    "crn" : "crn:v1:staging:public:power-dr-automation:global:a/b68c234e719144b18598ae4a7b80c44c:03e32707-1234-zzsd-kkjh-4d790e863d5a09061::",
-    "deployment_name" : "defect_testing6abc0906",
-    "description" : "5/5: Primary orchestrator primary0906 is successfully deployed in 3m17s",
-    "orchestrator_ha" : true,
-    "primary_ip_address" : "10.51.0.123",
-    "primary_orchestrator_dashboard_url" : "",
-    "recovery_location" : "eu-de",
-    "resource_group" : "default-rg",
-    "standby_description" : "4/4: Standby orchestrator standby0906 is successfully deployed in 5m37s",
-    "standby_ip_address" : "10.0.9.123",
-    "standby_orchestrator_dashboard_url" : "",
-    "standby_status" : "Active",
-    "status" : "Active"
-  }
-}
+```
+Managed VM List        -
+Orchestrator Details
+                       Last Updated Orchestrator Deployment Time           2026-04-13T11:59:10.597Z
+                       Last Updated Standby Orchestrator Deployment Time   0001-01-01T00:00:00.000Z
+                       Latest Orchestrator Time                            2026-04-13T11:08:55.000Z
+                       Location ID                                         syd04
+                       Mfa Enabled                                         false
+                       Orch Ext Connectivity Status                        Active
+                       Orch Standby Node Addition Status
+                       Orchestrator Cluster Message                        ksys is running fine
+                       Orchestrator Config Status                          KSYS-DISCOVERY-SUCCESS
+                       Orchestrator Group Leader
+                       Orchestrator Location Type                          off-premises
+                       Orchestrator Name                                   TestVM1
+                       Orchestrator Status                                 ACTIVE
+                       Orchestrator Workspace Name                         Test-workspace
+                       Proxy IP
+                       Schematic Workspace Name
+                       Schematic Workspace Status
+                       SSH Key Name                                        sshkeyname
+                       Standby Orchestrator Name
+                       Standby Orchestrator Status
+                       Standby Orchestrator Workspace Name
+                       Standby SSH Key Name
+                       Transit Gateway Name
+                       VPC Name
+
+Service Details
+                       CRN                                  crn:v1:staging:public:power-dr-automation:global:a/123:123::
+                       Deployment Name                      TestCLI
+                       Description                          5/5: Primary orchestrator Test-CLI is successfully deployed in 34m42s
+                       Orchestrator Ha                      false
+                       Plan Name                            DR Automation Public Plan
+                       Primary IP Address                   10.0.47.197
+                       Primary Orchestrator Dashboard URL   https://10.0.47.197:3000/login?byCloud=true
+                       Recovery Location
+                       Resource Group                       crn:v1:staging:public:resource-controller::a/123::resource-group:123
+                       Standby Description
+                       Standby IP Address
+                       Standby Orchestrator Dashboard URL
+                       Standby Status
+                       Status                               ACTIVE
+
 ```
 {: screen}
 
@@ -412,11 +443,10 @@ ibmcloud power-hadr pdr deployment create \
 #### Example output
 {: #power-hadr-deployment-create-cli-output}
 
-```json
-{
-  "dashboard_url" : "https://power-dra.cloud.ibm.com/power-dra-ui?instance_id=crn:v1:bluemix:public:power-dr-automation:us-south:a/fe3c2ccd058e407c81e1dba2b5c0e0d6:e3d09875-bbf8-4d8a-b52c-abefb67a53c5::",
-  "id" : "crn:v1:staging:public:power-dr-automation:global:a/a123456fb04ceebfb4a9fd38c22334455:123456d3-1122-3344-b67d-4389b44b7bf9::"
-}
+```
+  Dashboard Url  https://power-dra.cloud.ibm.com/power-dra-ui?instance_id=crn:v1:bluemix:public:power-dr-automation:us-south:a/123:123::",
+  Id  crn:v1:staging:public:power-dr-automation:global:a/123:123::
+
 ```
 {: screen}
 
@@ -429,6 +459,24 @@ Shows event that got generated during various DR Automation operations such as p
 ibmcloud power-hadr pdr event --help
 ```
 
+```
+NAME:
+  event - Shows event that got generated during various DR Automation operations such as provision creation, ManageDR Creation, image download, virtual server instance creation, orchestrator cluster creation, API Key updation along with their corresponding actions and descriptions.
+
+USAGE:
+  ibmcloud power-hadr pdr event [action]
+
+COMMANDS:
+  get    Get a single event.
+  list   Get events from the cloud instance since a specific timestamp.
+
+GLOBAL OPTIONS:
+  -h, --help    Show help
+  -q, --quiet   Suppresses verbose messages.
+
+Use "ibmcloud power-hadr pdr event <command> --help" for more information about a command.
+
+```
 
 ### `ibmcloud power-hadr pdr event list`
 {: #power-hadr-cli-event-list-command}
@@ -478,45 +526,38 @@ ibmcloud power-hadr pdr event list \
 #### Example output
 {: #power-hadr-event-list-cli-output}
 
-```json
-{
-  "events" : [ {
-    "action" : "create",
-    "event_id" : "1cecfe43-43cd-4b1b-86be-30c2d3d2a25f",
-    "level" : "info",
-    "message" : "Service Instance '7222c899-a31a-4a0c-be03-75920d23cd16' has been created successfully.",
-    "messageData" : {
-      "InstanceID" : {
-        "id" : "7222c899-a31a-4a0c-be03-75920d23cd16"
-      }
-    },
-    "metadata" : { },
-    "resource" : "ProvisionID",
-    "time" : "2025-06-23T07:12:49.840Z",
-    "timestamp" : "1750662769",
-    "user" : {
-      "user_id" : "admin"
-    }
-  }, {
-    "action" : "create",
-    "event_id" : "c49f0ced-2a78-48a6-929c-6b824555ddc6",
-    "level" : "info",
-    "message" : "Disaster recovery for Service Instance '7222c899-a31a-4a0c-be03-75920d23cd16' has been managed successfully.",
-    "messageData" : {
-      "InstanceID" : {
-        "id" : "7222c899-a31a-4a0c-be03-75920d23cd16"
-      }
-    },
-    "metadata" : { },
-    "resource" : "managedr",
-    "time" : "2025-06-23T07:14:53.871Z",
-    "timestamp" : "1750662893",
-    "user" : {
-      "email" : "abcuser@ibm.com",
-      "user_id" : "IBMid-695000ab7E"
-    }
-  } ]
-}
+```
+Events
+         Action         update
+         Event ID       e4c62998-b17a-4f52-b1e1-16283d619077-1776087630124372248
+         Level          info
+         Message        API key for service instance 'e4c62998-b17a-4f52-b1e1-16283d619077' has been updated successfully.
+         Message Data
+                        Instanceid   e4c62998-b17a-4f52-b1e1-16283d619077
+
+         Resource       APIkey
+         Time           2026-04-13T13:40:30.124Z
+         Timestamp      1776087630
+         User
+                        Email     xxx1@ibm.com
+                        User ID   IBMid-2020
+
+
+         Action         update
+         Event ID       e4c62998-b17a-4f52-b1e1-16283d619077-1776087579978693418
+         Level          error
+         Message        Failed to update API key for service instance 'e4c62998-b17a-4f52-b1e1-16283d619077', the provided API key is invalid.
+         Message Data
+                        Instanceid   e4c62998-b17a-4f52-b1e1-16283d619077
+
+         Resource       APIkey
+         Time           2026-04-13T13:39:39.978Z
+         Timestamp      1776087579
+         User
+                        Email     xxx1@ibm.com
+                        User ID   IBMid-2020
+
+
 ```
 {: screen}
 
@@ -562,35 +603,25 @@ ibmcloud power-hadr pdr event get \
 #### Example output
 {: #power-hadr-event-get-cli-output}
 
-```json
-{
-  "action" : "create",
-  "api_source" : "dr-automation-api",
-  "event_id" : "1cecfe43-43cd-4b1b-86be-30c2d3d2a25f",
-  "level" : "info",
-  "message" : "Service Instance created successfully",
-  "message_data" : {
-    "InstanceID" : {
-      "id" : "7222c899-a31a-4a0c-be03-75920d23cd16"
-    },
-    "request_id" : {
-      "id" : "req-12345"
-    }
-  },
-  "metadata" : { },
-  "resource" : "ProvisionID",
-  "time" : "2025-06-23T07:12:49.840Z",
-  "timestamp" : "1750662769",
-  "user" : {
-    "user_email" : "example.user@ibm.com",
-    "user_id" : "IBMid-123456"
-  }
-}
+```
+Action         create
+Event ID       e4c62998-b17a-4f52-b1e1-16283d619077-1776079343268534848
+Level          info
+Message        Service Instance 'e4c62998-b17a-4f52-b1e1-16283d619077' has been created successfully.
+Message Data
+               Instanceid   e4c62998-b17a-4f52-b1e1-16283d619077
+
+Resource       ProvisionID
+Time           2026-04-13T11:22:23.268Z
+Timestamp      1776079343
+User
+               User ID   admin
+
 ```
 {: screen}
 
-## Dr Automation Config
-{: #power-hadr-dr-automation-config-cli}
+## GRS Location Pairs
+{: #power-hadr-grs-location-pairs-cli}
 
 ### `ibmcloud power-hadr pdr grs-location-pairs`
 {: #power-hadr-cli-grs-location-pairs-command}
@@ -623,7 +654,22 @@ ibmcloud power-hadr pdr grs-location-pairs \
     --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
     --accept-language exampleString
 ```
+
+
 {: pre}
+
+#### Example output
+{: #power-hadr-grs-location-pairs-cli-output}
+
+```
+Location Pairs
+                 Syd04   syd05
+
+```
+{: screen}
+
+## DR Locations
+{: #power-hadr-dr-locations-cli}
 
 ### `ibmcloud power-hadr pdr locations`
 {: #power-hadr-cli-locations-command}
@@ -661,18 +707,21 @@ ibmcloud power-hadr pdr locations \
 #### Example output
 {: #power-hadr-locations-cli-output}
 
-```json
-{
-  "dr_locations" : [ {
-    "id" : "loc-001",
-    "name" : "us-south"
-  }, {
-    "id" : "loc-002",
-    "name" : "eu-de"
-  } ]
-}
+```
+Dr Locations
+               ID     wdc07
+               Name   Washington DC 07
+
+               ID     wdc06
+               Name   Washington DC 06
+
+               ID     us-south
+               Name   Dallas 13
 ```
 {: screen}
+
+## Managed Vms
+{: #power-hadr-managed-vms-cli}
 
 ### `ibmcloud power-hadr pdr managed-vms`
 {: #power-hadr-cli-managed-vms-command}
@@ -710,35 +759,21 @@ ibmcloud power-hadr pdr managed-vms \
 #### Example output
 {: #power-hadr-managed-vms-cli-output}
 
-```json
-{
-  "managed_vm_list" : {
-    "3f2e1a09-1234-4d56-7890-abcd1234ef56" : {
-      "core" : "0.50",
-      "dr_average_time" : "10",
-      "dr_region" : "nyc02",
-      "memory" : "4",
-      "region" : "nyc01",
-      "vm_name" : "example_vm",
-      "workgroup_name" : "Example_Workgroup",
-      "workspace_name" : "Example_Workspace"
-    },
-    "9b8a7c65-4321-0fed-cba9-87654321abcd" : {
-      "core" : "1.00",
-      "dr_average_time" : "5",
-      "dr_region" : "sfo04",
-      "memory" : "8",
-      "region" : "sfo03",
-      "vm_name" : "another_vm",
-      "workgroup_name" : "Another_Workgroup",
-      "workspace_name" : "Another_Workspace"
-    }
-  }
-}
+```
+Managed VM List
+                  D5b858d1-cf0e-431d-8934-b78443cfc473
+                                                         Core              0.25
+                                                         Dr Average Time   -1
+                                                         Dr Region         syd05
+                                                         Memory            2
+                                                         Region            syd04
+                                                         VM Name           TestVm1
+                                                         Workgroup Name    TestVm1-wd02
+                                                         Workspace Name    Test-workspace
 ```
 {: screen}
 
-## Dr Automation Ibm Cloud
+## Machine Types
 {: #power-hadr-dr-automation-ibm-cloud-cli}
 
 ### `ibmcloud power-hadr pdr machine-types`
@@ -786,10 +821,20 @@ ibmcloud power-hadr pdr machine-types \
 ```
 {: pre}
 
+```
+Workspaces
+             Test-workspace-syd04   s922, e980, s1022
+
+```
+{: screen}
+
+## Powervs Workspaces
+{: #power-hadr-cli-powervs-workspace-command}
+
 ### `ibmcloud power-hadr pdr powervs-workspaces`
 {: #power-hadr-cli-powervs-workspaces-command}
 
-Retrieves the power virtual server workspaces for primary and standby orchestrator based on location id.
+Retrieves the Power Virtual Server workspaces associated with the primary and standby orchestrators for the given instance ID and location ID.
 
 ```sh
 ibmcloud power-hadr pdr powervs-workspaces --instance-id INSTANCE-ID --location-id LOCATION-ID
@@ -822,40 +867,37 @@ ibmcloud power-hadr pdr powervs-workspaces \
 #### Example output
 {: #power-hadr-powervs-workspaces-cli-output}
 
-```json
-{
-  "dr_standby_workspaces" : [ {
-    "details" : {
-      "crn" : "crn:v1:bluemix:public:power-iaas:us-south:abc123:8aac93a4-f0cf-4b19-8d6d-9ba10883985d::"
-    },
-    "id" : "8aac93a4-f0cf-4b19-8d6d-9ba10883985d",
-    "location" : {
-      "region" : "us-south",
-      "type" : "region",
-      "url" : "https://us-south.power-iaas.cloud.ibm.com"
-    },
-    "name" : "ws-dallas-standby",
-    "status" : "active"
-  } ],
-  "dr_workspaces" : [ {
-    "details" : {
-      "crn" : "crn:v1:bluemix:public:power-iaas:us-south:abc123:9a9688a8-57e1-40b5-8c7d-f07e0a1cb305::"
-    },
-    "id" : "9a9688a8-57e1-40b5-8c7d-f07e0a1cb305",
-    "location" : {
-      "region" : "us-south",
-      "type" : "region",
-      "url" : "https://us-south.power-iaas.cloud.ibm.com"
-    },
-    "name" : "ws-dallas-primary",
-    "status" : "active"
-  } ]
-}
+``
+Dr Standby Workspaces
+                        Details
+                                   CRN   crn:v1:bluemix:public:power-iaas:che01:a/094f4214c75941f991da601b001df1fe:0afdb5d1-1a1d-4f9b-bc39-45913ce173be90::
+
+                        ID         0afdb5d1-1a1d-4f9b-bc39-45913ce173be90
+                        Location
+                                   Region   che01
+                                   Type     data-center
+                                   URL      https://che.power-iaas.cloud.ibm.com
+
+                        Name       Test1
+                        Status     active
+
+Dr Workspaces
+                        Details
+                                   CRN   crn:v1:bluemix:public:power-iaas:us-south:a/094f4214c75941f991da601b001df1fe:0fb44e20-9042-44d7-aec8-b745251ba9cb90::
+
+                        ID         0fb44e20-9042-44d7-aec8-b745251ba9cb90
+                        Location
+                                   Region   us-south
+                                   Type     region
+                                   URL      https://us-south.power-iaas.cloud.ibm.com
+
+                        Name       Test2
+                        Status     active
 ```
 {: screen}
 
-## Dr Automation Service Instance
-{: #power-hadr-dr-automation-service-instance-cli}
+## Last Operation
+{: #power-hadr-last-operation-cli}
 
 ### `ibmcloud power-hadr pdr last-operation`
 {: #power-hadr-cli-last-operation-command}
@@ -893,30 +935,29 @@ ibmcloud power-hadr pdr last-operation \
 #### Example output
 {: #power-hadr-last-operation-cli-output}
 
-```json
-{
-  "crn" : "crn:v1:staging:public:power-dr-automation:global:a/2c5d7270091f495795350e9adfa8399c:86e0c9a9-80f4-4fcf-88a0-07643de01bb8::",
-  "deployment_name" : "dr-deployment-instance-1",
-  "last_updated_orchestrator_deployment_time" : "2025-10-30T11:25:00Z",
-  "last_updated_standby_orchestrator_deployment_time" : "2025-10-30T11:40:00Z",
-  "mfa_enabled" : "false",
-  "orch_ext_connectivity_status" : "Connected",
-  "primary_error_description" : "sample errror message",
-  "standby_error_description" : "sample error message",
-  "orch_standby_node_addtion_status" : "Completed",
-  "orchestrator_cluster_message" : "Cluster healthy",
-  "orchestrator_config_status" : "Configured",
-  "orchestrator_ha" : true,
-  "plan_name" : "standard",
-  "primary_description" : "2/5: Creating primary orchestrator VM.",
-  "primary_ip_address" : "192.168.1.10",
-  "primary_orchestrator_status" : "orchestrator-VM-creation-in-progress",
-  "recovery_location" : "us-east",
-  "resource_group" : "Default",
-  "standby_description" : "1/4: Service instance is downloading orchestrator image for standby VM creation.",
-  "standby_ip_address" : "192.168.1.11",
-  "standby_status" : "downloading-orchestrator-image",
-  "status" : "Running"
-}
+```
+CRN                                                 crn:v1:staging:public:power-dr-automation:global:a/123-123::
+Deployment Name                                     TestCLI
+Last Updated Orchestrator Deployment Time           2026-04-13T11:59:10.597Z
+Last Updated Standby Orchestrator Deployment Time   0001-01-01T00:00:00.000Z
+Mfa Enabled                                         false
+Orch Ext Connectivity Status                        Active
+Orch Standby Node Addtion Status                    -
+Orchestrator Cluster Message                        ksys is running fine
+Orchestrator Config Status                          KSYS-DISCOVERY-SUCCESS
+Orchestrator Ha                                     false
+Plan Name                                           DR Automation Public Plan
+Primary Description                                 5/5: Primary orchestrator Test-CLI is successfully deployed in 34m42s
+Primary Error Description
+Primary IP Address                                  10.0.47.197
+Primary Orchestrator Status                         ACTIVE
+Recovery Location
+Resource Group                                      crn:v1:staging:public:resource-controller::a/123::resource-group:123
+Standby Description
+Standby Error Description
+Standby IP Address
+Standby Status
+Status                                              Active
+Is API Key Expired                                  false
 ```
 {: screen}
