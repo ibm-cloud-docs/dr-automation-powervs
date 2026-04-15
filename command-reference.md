@@ -693,11 +693,37 @@ Location Pairs
 ```
 {: screen}
 
-## DR Locations
+## Locations
 {: #power-hadr-dr-locations-cli}
 
 ### `ibmcloud power-hadr pdr locations`
 {: #power-hadr-cli-locations-command}
+
+```
+ibmcloud power-hadr pdr locations --help
+NAME:
+  locations - Retrieves the list of disaster recovery (DR) locations available for the specified service instance.
+
+USAGE:
+  ibmcloud power-hadr pdr locations --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
+
+EXAMPLE:
+  ibmcloud power-hadr pdr locations \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --accept-language exampleString
+
+OPTIONS:
+      --accept-language string   The language requested for the return document. The maximum length is 50 characters. The
+                                 minimum length is 1 character.
+      --instance-id string       Required. instance id of instance to provision. The maximum length is 512 characters. The
+                                 minimum length is 1 character.
+
+GLOBAL OPTIONS:
+  -h, --help                Show help
+  -j, --jmes-query string   Provide a JMESPath query to customize output.
+      --output string       Choose an output format - can be 'json', 'yaml', 'tui', or 'table'. (default "table")
+  -q, --quiet               Suppresses verbose messages.
+```
 
 Retrieves the list of disaster recovery (DR) locations available for the specified service instance.
 
@@ -750,6 +776,33 @@ Dr Locations
 
 ### `ibmcloud power-hadr pdr managed-vms`
 {: #power-hadr-cli-managed-vms-command}
+
+```
+ibmcloud power-hadr pdr <command> --help" for more information about a command.
+PS C:\Users\mabale>  ibmcloud power-hadr pdr managed-vms --help
+NAME:
+  managed-vms - Retrieves the list of disaster recovery (DR) managed virtual machines for the specified service instance.
+
+USAGE:
+  ibmcloud power-hadr pdr managed-vms --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
+
+EXAMPLE:
+  ibmcloud power-hadr pdr managed-vms \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --accept-language exampleString
+
+OPTIONS:
+      --accept-language string   The language requested for the return document. The maximum length is 50 characters. The
+                                 minimum length is 1 character.
+      --instance-id string       Required. instance id of instance to provision. The maximum length is 512 characters. The
+                                 minimum length is 1 character.
+
+GLOBAL OPTIONS:
+  -h, --help                Show help
+  -j, --jmes-query string   Provide a JMESPath query to customize output.
+      --output string       Choose an output format - can be 'json', 'yaml', 'tui', or 'table'. (default "table")
+  -q, --quiet               Suppresses verbose messages.
+```
 
 Retrieves the list of disaster recovery (DR) managed virtual machines for the specified service instance.
 
@@ -858,6 +911,31 @@ Workspaces
 
 ### `ibmcloud power-hadr pdr powervs-workspaces`
 {: #power-hadr-cli-powervs-workspaces-command}
+
+```
+ibmcloud power-hadr pdr powervs-workspaces --help
+NAME:
+  powervs-workspaces - Retrieves the power virtual server workspaces for primary and standby orchestrator based on location id.
+
+USAGE:
+  ibmcloud power-hadr pdr powervs-workspaces --instance-id INSTANCE-ID --location-id LOCATION-ID
+
+EXAMPLE:
+  ibmcloud power-hadr pdr powervs-workspaces \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --location-id exampleString
+
+OPTIONS:
+      --instance-id string   Required. instance id of instance to provision. The maximum length is 512 characters. The minimum
+                             length is 1 character.
+      --location-id string   Required. Location ID value. The maximum length is 32 characters. The minimum length is 1 character.
+
+GLOBAL OPTIONS:
+  -h, --help                Show help
+  -j, --jmes-query string   Provide a JMESPath query to customize output.
+      --output string       Choose an output format - can be 'json', 'yaml', 'tui', or 'table'. (default "table")
+  -q, --quiet               Suppresses verbose messages.
+```
 
 Retrieves the Power Virtual Server workspaces associated with the primary and standby orchestrators for the given instance ID and location ID.
 
