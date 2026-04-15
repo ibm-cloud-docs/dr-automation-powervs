@@ -38,7 +38,7 @@ ibmcloud power-hadr pdr api-key --help
 ```
 
 ```
-[hema@dra-sb dra-cli-plugin]$  ibmcloud power-hadr pdr api-key help
+ibmcloud power-hadr pdr api-key help
 NAME:
   api-key - Manage apikey.
 
@@ -112,6 +112,9 @@ Provide options to manage the DR configuration through deployment and fetching e
 ibmcloud power-hadr pdr deployment --help
 ```
 
+### `ibmcloud power-hadr pdr deployment get`
+{: #power-hadr-cli-deployment-get-command}
+
 ```
 NAME:
   deployment - Provide options to manage the DR configuration through deployment and fetching existing deployment details.
@@ -130,10 +133,6 @@ GLOBAL OPTIONS:
 Use "ibmcloud power-hadr pdr deployment <command> --help" for more information about a command.
 
 ```
-
-
-### `ibmcloud power-hadr pdr deployment get`
-{: #power-hadr-cli-deployment-get-command}
 
 Retrieves the disaster recovery (DR) summary details for the specified service instance, including key configuration, status information and managed vm details.
 

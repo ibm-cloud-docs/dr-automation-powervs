@@ -20,7 +20,7 @@ keywords: powerhaautomation service, cli, plugin
 `powervs-workspaces` - Retrieve PowerVS workspaces for the specified service instance.  
 `locations` - List supported PowerVS locations for PowerHA.  
 `last-operation` - Retrieve the most recent operation details for the service instance.
-`deployment` - 
+
 
 ## Api Key
 {: #power-hadr-api-key-cli}
@@ -109,6 +109,25 @@ ibmcloud power-hadr powerhasm cluster-node --help
 
 ### `ibmcloud power-hadr powerhasm cluster-node get`
 {: #power-hadr-cli-cluster-node-get-command}
+
+```
+NAME:
+  cluster-node - Manage the PowerHA cluster node configuration, options to add PowerVS node to PowerHA configuration, fetch and delete the existing PowerHA node details.
+
+USAGE:
+  ibmcloud power-hadr powerhasm cluster-node [action]
+
+COMMANDS:
+  add      Add a new cluster node.
+  delete   Delete a cluster node.
+  get      Retrive cluster node information.
+
+GLOBAL OPTIONS:
+  -h, --help    Show help
+  -q, --quiet   Suppresses verbose messages.
+
+Use "ibmcloud power-hadr powerhasm cluster-node <command> --help" for more information about a command.
+```
 
 Retrieves details of all cluster nodes configured for the given PowerHA service instance.
 
@@ -281,10 +300,7 @@ ibmcloud power-hadr powerhasm cluster-node delete \
 ID                       crn:v1:staging:public:power-dr-automation:us-south:a/123:123
 Primary Node Details    -
 Secondary Node Details   -
-
-
 ```
-{: screen}
 
 ## Deployment
 {: #power-hadr-deployment-cli}
@@ -294,7 +310,23 @@ Provide options to manage the PowerHA configuration on PowerVS through deploymen
 ```sh
 ibmcloud power-hadr powerhasm deployment --help
 ```
+```
+NAME:
+  deployment - Provide options to manage the PowerHA configuration on PowerVS through deployment and fetching existing deployment details.
 
+USAGE:
+  ibmcloud power-hadr powerhasm deployment [action]
+
+COMMANDS:
+  create   Create a new deployment.
+  get      Retrieves deployment details.
+
+GLOBAL OPTIONS:
+  -h, --help    Show help
+  -q, --quiet   Suppresses verbose messages.
+
+Use "ibmcloud power-hadr powerhasm deployment <command> --help" for more information about a command.
+```
 
 ### `ibmcloud power-hadr powerhasm deployment get`
 {: #power-hadr-cli-deployment-get-command}
@@ -488,12 +520,28 @@ Shows event that got generated during various PowerHA operations such as provisi
 ```sh
 ibmcloud power-hadr powerhasm event --help
 ```
+```
+NAME:
+  event - Shows event that got generated during various PowerHA operations such as provision creation, PHA Deployment Creation and Updation along with their corresponding actions and descriptions.
 
+USAGE:
+  ibmcloud power-hadr powerhasm event [action]
+
+COMMANDS:
+  get    Get a single PowerHA automation event.
+  list   Get PowerHA automation events since a specific timestamp
+
+GLOBAL OPTIONS:
+  -h, --help    Show help
+  -q, --quiet   Suppresses verbose messages.
+
+Use "ibmcloud power-hadr powerhasm event <command> --help" for more information about a command.
 
 ### `ibmcloud power-hadr powerhasm event list`
 {: #power-hadr-cli-event-list-command}
 
 Get PowerHA automation events since a specific timestamp.
+```
 
 ```sh
 ibmcloud power-hadr powerhasm event list --instance-id INSTANCE-ID [--time TIME] [--from-time FROM-TIME] [--to-time TO-TIME] [--accept-language ACCEPT-LANGUAGE] [--if-none-match IF-NONE-MATCH]
@@ -786,6 +834,9 @@ Output written to powerha_agent.rte
 
 ```
 ibmcloud power-hadr phasm powervs-workspaces -help
+```
+```
+ibmcloud power-hadr phasm powervs-workspaces -help
 NAME:
   powervs-workspaces - Retrieves list of powerVS workspaces related to the PowerHA service instance based on location.
 
@@ -882,6 +933,9 @@ Workspaces
 
 ```
 ibmcloud power-hadr phasm locations -help
+```
+
+```
 NAME:
   locations - Retrieves the list of PowerVS locations where PowerHA service is supported.
 
@@ -958,6 +1012,9 @@ Locations
 
 ```
 ibmcloud power-hadr phasm last-operation -help
+```
+
+```
 NAME:
   last-operation - Retrieves the most recent operation performed on the PowerHA service instance.
 
