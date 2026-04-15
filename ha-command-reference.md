@@ -105,11 +105,6 @@ Manage the PowerHA cluster node configuration, options to add PowerVS node to Po
 ```sh
 ibmcloud power-hadr powerhasm cluster-node --help
 ```
-
-
-### `ibmcloud power-hadr powerhasm cluster-node get`
-{: #power-hadr-cli-cluster-node-get-command}
-
 ```
 NAME:
   cluster-node - Manage the PowerHA cluster node configuration, options to add PowerVS node to PowerHA configuration, fetch and delete the existing PowerHA node details.
@@ -128,6 +123,10 @@ GLOBAL OPTIONS:
 
 Use "ibmcloud power-hadr powerhasm cluster-node <command> --help" for more information about a command.
 ```
+
+### `ibmcloud power-hadr powerhasm cluster-node get`
+{: #power-hadr-cli-cluster-node-get-command}
+
 
 Retrieves details of all cluster nodes configured for the given PowerHA service instance.
 
