@@ -7,7 +7,7 @@ keywords: powerhaautomation service, cli, plugin
 
 ---
 
-# PowerHA AIX CLI commands
+# PowerHA CLI commands
 {: #powerha-cli-version}
 
 ## Available commands
@@ -21,7 +21,8 @@ keywords: powerhaautomation service, cli, plugin
 `agent` - Download PowerHA agent and track download status.  
 `powervs-workspaces` - Retrieve PowerVS workspaces for the specified service instance.  
 `locations` - List supported PowerVS locations for PowerHA.  
-`last-operation` - Retrieve the most recent operation details for the service instance.  
+`last-operation` - Retrieve the most recent operation details for the service instance.
+{{site.data.keyword.attribute-definition-list}}
 
 
 ## Api Key
@@ -33,6 +34,23 @@ Manage apikey.
 ibmcloud power-hadr powerhasm api-key --help
 ```
 
+```
+NAME:
+  api-key - Manage apikey.
+
+USAGE:
+  ibmcloud power-hadr powerhasm api-key [action]
+
+COMMANDS:
+  update   Update apikey for the specified PowerHA service instance.
+
+GLOBAL OPTIONS:
+  -h, --help    Show help
+  -q, --quiet   Suppresses verbose messages.
+
+Use "ibmcloud power-hadr powerhasm api-key <command> --help" for more information about a command.
+
+```
 
 ### `ibmcloud power-hadr powerhasm api-key update`
 {: #power-hadr-cli-api-key-update-command}
@@ -76,13 +94,11 @@ ibmcloud power-hadr powerhasm api-key update \
 #### Example output
 {: #power-hadr-api-key-update-cli-output}
 
-```json
-{
-  "description" : "API key created successfully",
-  "example" : "adfadfdsafsdfdsf",
-  "id" : "12345",
-  "status" : "Success"
-}
+```
+
+Description   Key is valid.
+Status        Key Updated Successfully
+```
 ```
 {: screen}
 
@@ -104,7 +120,6 @@ Retrieves details of all cluster nodes configured for the given PowerHA service 
 ```sh
 ibmcloud power-hadr powerhasm cluster-node get --instance-id INSTANCE-ID [--if-none-match IF-NONE-MATCH]
 ```
-
 
 #### Command options
 {: #power-hadr-cluster-node-get-cli-options}
@@ -132,32 +147,22 @@ ibmcloud power-hadr powerhasm cluster-node get \
 #### Example output
 {: #power-hadr-cluster-node-get-cli-output}
 
-```json
-{
-  "id" : "123498690689",
-  "primary_node_details" : [ {
-    "cores" : 0,
-    "ip_addresses" : [ "10.0.0.11", "192.168.1.11" ],
-    "memory" : 16,
-    "region" : "us-south",
-    "vm_id" : "vm-primary-001",
-    "vm_name" : "primary-node-1",
-    "vm_status" : "active",
-    "workspace_id" : "workspace-primary-001",
-    "agent_status" : "running"
-  } ],
-  "secondary_node_details" : [ {
-    "cores" : 0,
-    "ip_addresses" : [ "10.1.0.11" ],
-    "memory" : 16,
-    "region" : "us-east",
-    "vm_id" : "vm-secondary-001",
-    "vm_name" : "secondary-node-1",
-    "vm_status" : "standby",
-    "workspace_id" : "workspace-secondary-001",
-    "agent_status" : "running"
-  } ]
-}
+```
+
+ID                       crn:v1:staging:public:power-dr-automation:us-south:a/123333:123::
+Primary Node Details
+                         Agent Status   Powerha installation completed
+                         Cores          0.5
+                         IP Addresses   10.0.0.1
+                         Memory         5
+                         Pha Level      728SP4
+                         Region         osa21
+                         VM ID          f35327d7-4463-43dc-82ef-b63b1c19000
+                         VM Name        TestVM1
+                         VM Status      ACTIVE
+                         Workspace ID   e03d1b8d-1cc1-4842-bf9e-9088282
+
+Secondary Node Details   -
 ```
 {: screen}
 
@@ -215,32 +220,23 @@ ibmcloud power-hadr powerhasm cluster-node add \
 #### Example output
 {: #power-hadr-cluster-node-add-cli-output}
 
-```json
-{
-  "id" : "cluster-node-001",
-  "primary_node_details" : [ {
-    "cores" : 0,
-    "ip_addresses" : [ "10.0.0.11", "192.168.1.11" ],
-    "memory" : 16,
-    "region" : "us-south",
-    "vm_id" : "vm-primary-001",
-    "vm_name" : "primary-node-1",
-    "vm_status" : "active",
-    "workspace_id" : "workspace-primary-001",
-    "agent_status" : "running"
-  } ],
-  "secondary_node_details" : [ {
-    "cores" : 0,
-    "ip_addresses" : [ "10.1.0.11" ],
-    "memory" : 16,
-    "region" : "us-east",
-    "vm_id" : "vm-secondary-001",
-    "vm_name" : "secondary-node-1",
-    "vm_status" : "standby",
-    "workspace_id" : "workspace-secondary-001",
-    "agent_status" : "running"
-  } ]
-}
+```
+
+ID                       crn:v1:staging:public:power-dr-automation:us-south:a/8fd34108ddcf45e6a38adeb6a9d85e2c:e19e1de1-ab9f-46e6-aa1
+                         5-77a7ac0f6eda::
+Primary Node Details
+                         Agent Status   Agent download required
+                         Cores          0.25
+                         IP Addresses   10.200.0.33
+                         Memory         2
+                         Region         us-south
+                         VM ID          7a06d387-dcf8-4b88-a67f-bd9e3b8b89b1
+                         VM Name        VM1
+                         VM Status      ACTIVE
+                         Workspace ID   30efa804-1364-43c1-b91c-123444444
+
+Secondary Node Details   -
+
 ```
 {: screen}
 
@@ -286,32 +282,12 @@ ibmcloud power-hadr powerhasm cluster-node delete \
 #### Example output
 {: #power-hadr-cluster-node-delete-cli-output}
 
-```json
-{
-  "id" : "123498690689",
-  "primary_node_details" : [ {
-    "cores" : 0,
-    "ip_addresses" : [ "10.0.0.11", "192.168.1.11" ],
-    "memory" : 16,
-    "region" : "us-south",
-    "vm_id" : "vm-primary-001",
-    "vm_name" : "primary-node-1",
-    "vm_status" : "active",
-    "workspace_id" : "workspace-primary-001",
-    "agent_status" : "running"
-  } ],
-  "secondary_node_details" : [ {
-    "cores" : 0,
-    "ip_addresses" : [ "10.1.0.11" ],
-    "memory" : 16,
-    "region" : "us-east",
-    "vm_id" : "vm-secondary-001",
-    "vm_name" : "secondary-node-1",
-    "vm_status" : "standby",
-    "workspace_id" : "workspace-secondary-001",
-    "agent_status" : "running"
-  } ]
-}
+```
+ID                       crn:v1:staging:public:power-dr-automation:us-south:a/123:123
+Primary Node Details    -
+Secondary Node Details   -
+
+```
 ```
 {: screen}
 
@@ -361,59 +337,39 @@ ibmcloud power-hadr powerhasm deployment get \
 #### Example output
 {: #power-hadr-deployment-get-cli-output}
 
-```json
-{
-  "cloud_account_id" : "cloud-acc-0001",
-  "connectivity_type" : "vpc",
-  "creation_time" : "2024-10-20T14:55:00Z",
-  "custom_network" : [ "10.0.0.0/24", "10.0.1.0/24" ],
-  "deprovision_time" : "2025-06-23T07:15:00Z",
-  "guid" : "123e4567-e89b-12d3-a456-426614174000",
-  "is_duplicate" : false,
-  "plan_id" : "plan-456",
-  "plan_name" : "standard-plan",
-  "powerha_cluster_name" : "pha-cluster-prod",
-  "powerha_cluster_type" : "standard",
-  "powerha_level" : "7.2.4",
-  "primary_cluster_nodes_details" : [ {
-    "agent_status" : "active",
-    "cores" : 8,
-    "ip_address" : "10.0.0.11",
-    "memory" : 16,
-    "region" : "us-south",
-    "vm_id" : "vm-primary-002",
-    "vm_name" : "primary-node-2",
-    "vm_status" : "running",
-    "workspace_id" : "ws-primary-123"
-  } ],
-  "primary_location" : "DAL10",
-  "primary_workspace" : "us-south",
-  "provision_end_time" : "2024-10-21T09:10:12Z",
-  "id" : "prov-987654321",
-  "provision_start_time" : "2024-10-21T08:23:45Z",
-  "provision_status" : "completed",
-  "region_id" : "us-south",
-  "resource_group" : "prod-rg",
-  "resource_group_crn" : "crn:v1:staging:public:resource-group:global:a/123456::",
-  "resource_instance" : "pha-instance-001",
-  "secondary_cluster_nodes" : [ {
-    "agent_status" : "active",
-    "cores" : 8,
-    "ip_address" : "10.0.1.10",
-    "memory" : 16,
-    "region" : "us-east",
-    "vm_id" : "vm-secondary-001",
-    "vm_name" : "secondary-node-1",
-    "vm_status" : "running",
-    "workspace_id" : "ws-secondary-999"
-  } ],
-  "secondary_location" : "WDC06",
-  "secondary_workspace" : "us-east",
-  "service_description" : "Primary DR Automation Service",
-  "service_id" : "service-123",
-  "service_name" : "powerha",
-  "user_tags" : "env:prod,team:ha"
-}
+```
+
+Cloud Account ID                111233
+Creation Time                   2026-04-08T09:42:07Z
+Custom Network                  -
+Plan ID                         6903b758-58c6-4217-8124-2029
+Powerha Cluster Name            TestCluster
+Primary Cluster Nodes Details
+                                Agent Status   Powerha installation completed
+                                Cores          0.5
+                                IP Address     10.0.0.1
+                                Memory         5
+                                Pha Level      728SP4
+                                Region         osa21
+                                VM ID          f35327d7-4463-43dc-82ef-b63123
+                                VM Name        TestVM1
+                                VM Status      ACTIVE
+                                Workspace ID   e03d1b8d-1cc1-4842-bf9e-90122288
+
+Primary Region Name             Osaka 21
+Primary Workspace               e03d1b8d-1cc1-4842-bf9e-90288
+Primary Workspace Name          TestWorkspace
+Provision End Time              0001-01-01 00:00:00 +0000 UTC
+ID                              crn:123
+Provision Start Time            2026-04-08 09:43:17.859158898 +0000 UTC
+Provision Status                Active
+Region ID                       osa21
+Resource Group                  crn:v1:staging:public:resource-controller::a/2333::resource-group:1233
+Secondary Cluster Nodes         -
+Service Description             Service instance is in active state
+Service ID                      1234
+Service Name                    TestService1
+
 ```
 {: screen}
 
@@ -519,60 +475,14 @@ ibmcloud power-hadr powerhasm deployment create \
 #### Example output
 {: #power-hadr-deployment-create-cli-output}
 
-```json
-{
-  "cloud_account_id" : "cloud-acc-0001",
-  "connectivity_type" : "vpc",
-  "creation_time" : "2024-10-20T14:55:00Z",
-  "custom_network" : [ "10.0.0.0/24", "10.0.1.0/24" ],
-  "deprovision_time" : "2099-12-31T23:59:59Z",
-  "guid" : "123e4567-e89b-12d3-a456-426614174000",
-  "is_duplicate" : false,
-  "plan_id" : "plan-456",
-  "plan_name" : "standard-plan",
-  "powerha_cluster_name" : "pha-cluster-prod",
-  "powerha_cluster_type" : "standard",
-  "powerha_level" : "7.2.4",
-  "primary_cluster_nodes_details" : [ {
-    "agent_status" : "active",
-    "cores" : 8,
-    "ip_address" : "10.0.0.11",
-    "memory" : 16,
-    "region" : "us-south",
-    "vm_id" : "vm-primary-002",
-    "vm_name" : "primary-node-2",
-    "vm_status" : "running",
-    "workspace_id" : "ws-primary-123"
-  } ],
-  "primary_location" : "DAL10",
-  "primary_workspace" : "us-south",
-  "provision_end_time" : "2024-10-21T09:10:12Z",
-  "provision_id" : "prov-987654321",
-  "provision_start_time" : "2024-10-21T08:23:45Z",
-  "provision_status" : "completed",
-  "region_id" : "us-south",
-  "resource_group" : "prod-rg",
-  "resource_group_crn" : "crn:v1:staging:public:resource-group:global:a/123456::",
-  "resource_instance" : "pha-instance-001",
-  "secondary_cluster_nodes" : [ {
-    "agent_status" : "active",
-    "cores" : 8,
-    "ip_address" : "10.0.1.10",
-    "memory" : 16,
-    "region" : "us-east",
-    "vm_id" : "vm-secondary-001",
-    "vm_name" : "secondary-node-1",
-    "vm_status" : "running",
-    "workspace_id" : "ws-secondary-999"
-  } ],
-  "secondary_location" : "WDC06",
-  "secondary_workspace" : "us-east",
-  "service_description" : "Primary DR Automation Service",
-  "service_id" : "service-123",
-  "service_name" : "powerha",
-  "user_tags" : "env:prod,team:ha"
-}
 ```
+ 
+Custom Network                  -
+Primary Cluster Nodes Details   -
+ID                              crn:v1:staging:public:power-dr-automation:us-south:a/123:123::
+Secondary Cluster Nodes         -
+```
+
 {: screen}
 
 ## Event
@@ -645,51 +555,23 @@ ibmcloud power-hadr powerhasm event list \
 #### Example output
 {: #power-hadr-event-list-cli-output}
 
-```json
-{
-  "events" : [ {
-    "action" : "create",
-    "event_id" : "1cecfe43-43cd-4b1b-86be-30c2d3d2a25f",
-    "level" : "info",
-    "message" : "Service Instance 7222c899-a31a-4a0c-be03-75920d23cd16 has been created successfully",
-    "minLength" : 1,
-    "maxLength" : 128,
-    "pattern" : "^[A-Za-z0-9 .,_:!?'"-]+$",
-    "message_Data" : {
-      "InstanceID" : {
-        "id" : "7222c899-a31a-4a0c-be03-75920d23cd16"
-      }
-    },
-    "metadata" : { },
-    "resource" : "ProvisionID",
-    "time" : "2025-06-23T07:12:49.840Z",
-    "time_stamp" : "2025-06-23T07:12:49Z",
-    "user" : {
-      "user_id" : "admin"
-    }
-  }, {
-    "action" : "create",
-    "event_id" : "c49f0ced-2a78-48a6-929c-6b824555ddc6",
-    "level" : "info",
-    "message" : "Service Instance 7222c899-a31a-4a0c-be03-75920d23cd16 has been created successfully",
-    "minLength" : 1,
-    "maxLength" : 128,
-    "pattern" : "^[A-Za-z0-9 .,_:!?'"-]+$",
-    "message_Data" : {
-      "InstanceID" : {
-        "id" : "7222c899-a31a-4a0c-be03-75920d23cd16"
-      }
-    },
-    "metadata" : { },
-    "resource" : "managedr",
-    "time" : "2025-06-23T07:14:53.871Z",
-    "time_stamp" : "2025-06-23T07:12:49Z",
-    "user" : {
-      "email" : "abcuser@ibm.com",
-      "user_id" : "IBMid-695000ab7E"
-    }
-  } ]
-}
+```
+
+Events
+         Action         installation
+         Event ID       337bad51-8191-4379-b732-4b3c062322068147-17756468232287129182
+         Level          info
+         Message        PowerHA installation for instance 'crn:123' on node ' TestVm-1' has completed.
+         Message Data
+                        Instanceid   crn:123
+                        Nodename     TestVm-1
+
+         Resource       Agent
+         Time           2026-04-08T11:13:43.228Z
+         Time Stamp     -
+         User
+                        Email     xxx@ibm.com
+                        User ID   IBMid-123
 ```
 {: screen}
 
@@ -741,30 +623,21 @@ ibmcloud power-hadr powerhasm event get \
 #### Example output
 {: #power-hadr-event-get-cli-output}
 
-```json
-{
-  "action" : "create",
-  "api_source" : "pha-automation-api",
-  "event_id" : "1cecfe43-43cd-4b1b-86be-30c2d3d2a25f",
-  "level" : "info",
-  "message" : "Service Instance created successfully",
-  "message_Data" : {
-    "InstanceID" : {
-      "id" : "7222c899-a31a-4a0c-be03-75920d23cd16"
-    },
-    "request_id" : {
-      "id" : "req-12345"
-    }
-  },
-  "metadata" : { },
-  "resource" : "ProvisionID",
-  "time" : "2025-06-23T07:12:49.840Z",
-  "time_stamp" : "2025-06-23T07:12:49Z",
-  "user" : {
-    "user_email" : "example.user@ibm.com",
-    "user_id" : "IBMid-123456"
-  }
-}
+```
+
+Action         create
+Event ID       337bad51-8191-4379-b732-4b3c06068147-17756909
+Level          info
+Message        Service Instance '337bad51-8191-4379-b732-4b3c060909' has been created successfully.
+Message Data
+               Instanceid   37bad51-8191-4379-b732-4b3c06068147-17756909
+
+Resource       ProvisionID
+Time           2026-04-08T09:42:07.919Z
+Time Stamp     -
+User
+               User ID   admin
+
 ```
 {: screen}
 
@@ -776,7 +649,23 @@ Provide options to download the powerHA agent file and track the download progre
 ```sh
 ibmcloud power-hadr powerhasm agent --help
 ```
+```
+NAME:
+  agent - Provide options to download the powerHA agent file and track the download progress through the job ID. The downloaded agent file can then be used to install PowerHA on a Power Virtual Server instance.
 
+USAGE:
+  ibmcloud power-hadr powerhasm agent [action]
+
+COMMANDS:
+  download          Downloads PowerHA Agent file.
+  download-status   Get the Job status of the downloaded powerHA agent file.
+
+GLOBAL OPTIONS:
+  -h, --help    Show help
+  -q, --quiet   Suppresses verbose messages.
+
+Use "ibmcloud power-hadr powerhasm agent <command> --help" for more information about a command.
+```
 
 ### `ibmcloud power-hadr powerhasm agent download-status`
 {: #power-hadr-cli-agent-download-status-command}
@@ -826,17 +715,17 @@ ibmcloud power-hadr powerhasm agent download-status \
 #### Example output
 {: #power-hadr-agent-download-status-cli-output}
 
-```json
-{
-  "bytes_downloaded" : 1024,
-  "creation_at" : "2025-01-12T10:00:00Z",
-  "job_id" : "job-12345",
-  "last_updated_at" : "2025-01-12T10:45:30Z",
-  "service_instance_id" : "service-instance-12345",
-  "status" : "running",
-  "total_bytes" : 1024,
-  "vm_id" : "vm-abcd1234"
-}
+```
+
+Bytes Downloaded      590848
+Creation At           2026-04-13T08:48:21.856Z
+File Name             powerhaagent.rte
+Job ID                f35327d7-4463-43dc-82ef-b63123
+Last Updated At       2026-04-13T08:48:22.554Z
+Service Instance ID   337bad51-8191-4379-b732-423333
+Status                completed
+Total Bytes           590848
+VM ID                 f35327d7-4463-43dc-82ef-b2322
 ```
 {: screen}
 
@@ -886,8 +775,16 @@ ibmcloud power-hadr powerhasm agent download \
 ```
 {: pre}
 
-## Powerha Automation Config
-{: #power-hadr-powerha-automation-config-cli}
+#### Example output
+{: #power-hadr-powervs-agent-download-output}
+
+```
+Output written to powerha_agent.rte
+```
+{: screen}
+
+## Powervs-workspaces
+{: #power-hadr--powervs-workspaces-cli}
 
 ### `ibmcloud power-hadr powerhasm powervs-workspaces`
 {: #power-hadr-cli-powervs-workspaces-command}
@@ -937,21 +834,20 @@ ibmcloud power-hadr powerhasm powervs-workspaces \
 #### Example output
 {: #power-hadr-powervs-workspaces-cli-output}
 
-```json
-{
-  "workspaces" : [ {
-    "id" : "ws-001",
-    "name" : "Primary-Workspace"
-  }, {
-    "id" : "ws-002",
-    "name" : "Secondary-Workspace"
-  } ]
-}
+```
+
+Workspaces
+             ID     0fb44e20-9042-44d7-aec8-b745251ba9cb100
+             Name   Test1_workspace
+
+             ID     3ecdf4d9-542e-45f1-9317-eae3cbee031b088
+             Name   Test2_workspace
+
 ```
 {: screen}
 
-## Powerha Automation Ibm Cloud
-{: #power-hadr-powerha-automation-ibm-cloud-cli}
+## Locations
+{: #power-hadr-locations-cli}
 
 ### `ibmcloud power-hadr powerhasm locations`
 {: #power-hadr-cli-locations-command}
@@ -989,21 +885,19 @@ ibmcloud power-hadr powerhasm locations \
 #### Example output
 {: #power-hadr-locations-cli-output}
 
-```json
-{
-  "locations" : [ {
-    "id" : "loc-001",
-    "name" : "us-south"
-  }, {
-    "id" : "loc-002",
-    "name" : "eu-de"
-  } ]
-}
+```
+
+Locations
+            ID     wdc07
+            Name   Washington DC 07
+
+            ID     wdc06
+            Name   Washington DC 06
 ```
 {: screen}
 
-## Powerha Automation Service Instance
-{: #power-hadr-powerha-automation-service-instance-cli}
+## Last Operation
+{: #power-hadr-last-operation-cli}
 
 ### `ibmcloud power-hadr powerhasm last-operation`
 {: #power-hadr-cli-last-operation-command}
@@ -1047,12 +941,12 @@ ibmcloud power-hadr powerhasm last-operation \
 #### Example output
 {: #power-hadr-last-operation-cli-output}
 
-```json
-{
-  "deployment_name" : "pha-deployment-123",
-  "provision_id" : "prov-987654321",
-  "resource_group" : "prod-rg",
-  "status" : "in-progress"
-}
+```
+
+Deployment Name   Test_PHA_Provision
+Provision ID      crn:v1:staging:public:power-dr-automation:us-south:a/1244:123::
+Resource Group    crn:v1:staging:public:resource-controller::a/123::resource-group:1223
+Status            Active
+
 ```
 {: screen}
