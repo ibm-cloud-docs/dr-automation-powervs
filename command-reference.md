@@ -778,8 +778,7 @@ Dr Locations
 {: #power-hadr-cli-managed-vms-command}
 
 ```
-ibmcloud power-hadr pdr <command> --help" for more information about a command.
-PS C:\Users\mabale>  ibmcloud power-hadr pdr managed-vms --help
+ibmcloud power-hadr pdr managed-vms --help
 NAME:
   managed-vms - Retrieves the list of disaster recovery (DR) managed virtual machines for the specified service instance.
 
@@ -856,6 +855,38 @@ Managed VM List
 
 ### `ibmcloud power-hadr pdr machine-types`
 {: #power-hadr-cli-machine-types-command}
+
+```
+ibmcloud power-hadr pdr machine-types --help
+NAME:
+  machine-types - Retrieves the list of supported machine types for the given workspace. This endpoint is used to identify machine types available for disaster recovery automation.
+
+USAGE:
+  ibmcloud power-hadr pdr machine-types --instance-id INSTANCE-ID --primary-workspace-name PRIMARY-WORKSPACE-NAME [--accept-language ACCEPT-LANGUAGE] [--standby-workspace-name STANDBY-WORKSPACE-NAME]
+
+EXAMPLE:
+  ibmcloud power-hadr pdr machine-types \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --primary-workspace-name Test-workspace-wdc06 \
+    --accept-language exampleString \
+    --standby-workspace-name Test-workspace-wdc07
+
+OPTIONS:
+      --accept-language string          The language requested for the return document. The maximum length is 50 characters.
+                                        The minimum length is 1 character.
+      --instance-id string              Required. instance id of instance to provision. The maximum length is 512 characters.
+                                        The minimum length is 1 character.
+      --primary-workspace-name string   Required. The primary Power virtual server workspace name. The maximum length is 64
+                                        characters. The minimum length is 1 character.
+      --standby-workspace-name string   The standby Power virtual server workspace name. The maximum length is 64 characters.
+                                        The minimum length is 1 character.
+
+GLOBAL OPTIONS:
+  -h, --help                Show help
+  -j, --jmes-query string   Provide a JMESPath query to customize output.
+      --output string       Choose an output format - can be 'json', 'yaml', 'tui', or 'table'. (default "table")
+  -q, --quiet               Suppresses verbose messages.
+```
 
 Retrieves the list of supported machine types for the given workspace. This endpoint is used to identify machine types available for disaster recovery automation.
 
@@ -1004,6 +1035,31 @@ Dr Workspaces
 
 ### `ibmcloud power-hadr pdr last-operation`
 {: #power-hadr-cli-last-operation-command}
+
+```
+ibmcloud power-hadr pdr last-operation --help
+NAME:
+  last-operation - Retrieves the status of the last operation performed on the specified service instance, such as provisioning, updating, or deprovisioning.
+
+USAGE:
+  ibmcloud power-hadr pdr last-operation --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE]
+
+EXAMPLE:
+  ibmcloud power-hadr pdr last-operation \
+    --instance-id 123456d3-1122-3344-b67d-4389b44b7bf9 \
+    --accept-language exampleString
+
+OPTIONS:
+      --accept-language string   The language requested for the return document. The maximum length is 50 characters. The
+                                 minimum length is 1 character.
+      --instance-id string       Required. instance id of instance to provision. The maximum length is 512 characters. The
+                                 minimum length is 1 character.
+
+GLOBAL OPTIONS:
+  -h, --help                Show help
+  -j, --jmes-query string   Provide a JMESPath query to customize output.
+      --output string       Choose an output format - can be 'json', 'yaml', 'tui', or 'table'. (default "table")
+  -q, --quiet               Suppresses verbose messages.
 ```
 Retrieves the status of the last operation performed on the specified service instance, such as provisioning, updating, or deprovisioning.
 

@@ -87,7 +87,7 @@ ibmcloud power-hadr powerhasm api-key update \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-api-key-update-cli-output}
 
 ```
@@ -95,8 +95,7 @@ ibmcloud power-hadr powerhasm api-key update \
 Description   Key is valid.
 Status        Key Updated Successfully
 ```
-```
-{: screen}
+
 
 ## Cluster Node
 {: #power-hadr-cluster-node-cli}
@@ -117,7 +116,7 @@ Retrieves details of all cluster nodes configured for the given PowerHA service 
 ibmcloud power-hadr powerhasm cluster-node get --instance-id INSTANCE-ID [--if-none-match IF-NONE-MATCH]
 ```
 
-#### Command options
+### Command options
 {: #power-hadr-cluster-node-get-cli-options}
 
 `--instance-id` (string)
@@ -130,7 +129,7 @@ ibmcloud power-hadr powerhasm cluster-node get --instance-id INSTANCE-ID [--if-n
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-cluster-node-get-examples}
 
 ```sh
@@ -140,7 +139,7 @@ ibmcloud power-hadr powerhasm cluster-node get \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-cluster-node-get-cli-output}
 
 ```
@@ -200,7 +199,7 @@ ibmcloud power-hadr powerhasm cluster-node add --instance-id INSTANCE-ID --prima
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-cluster-node-add-examples}
 
 ```sh
@@ -213,7 +212,7 @@ ibmcloud power-hadr powerhasm cluster-node add \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-cluster-node-add-cli-output}
 
 ```
@@ -275,7 +274,7 @@ ibmcloud power-hadr powerhasm cluster-node delete \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-cluster-node-delete-cli-output}
 
 ```
@@ -320,7 +319,7 @@ ibmcloud power-hadr powerhasm deployment get --instance-id INSTANCE-ID [--if-non
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-deployment-get-examples}
 
 ```sh
@@ -330,7 +329,7 @@ ibmcloud power-hadr powerhasm deployment get \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-deployment-get-cli-output}
 
 ```
@@ -447,7 +446,7 @@ ibmcloud power-hadr powerhasm deployment create --instance-id INSTANCE-ID --loca
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-deployment-create-examples}
 
 ```sh
@@ -468,7 +467,7 @@ ibmcloud power-hadr powerhasm deployment create \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-deployment-create-cli-output}
 
 ```
@@ -534,7 +533,7 @@ ibmcloud power-hadr powerhasm event list --instance-id INSTANCE-ID [--time TIME]
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-event-list-examples}
 
 ```sh
@@ -548,7 +547,7 @@ ibmcloud power-hadr powerhasm event list \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-event-list-cli-output}
 
 ```
@@ -604,7 +603,7 @@ ibmcloud power-hadr powerhasm event get --instance-id INSTANCE-ID --event-id EVE
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-event-get-examples}
 
 ```sh
@@ -616,7 +615,7 @@ ibmcloud power-hadr powerhasm event get \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-event-get-cli-output}
 
 ```
@@ -708,7 +707,7 @@ ibmcloud power-hadr powerhasm agent download-status \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-agent-download-status-cli-output}
 
 ```
@@ -758,7 +757,7 @@ ibmcloud power-hadr powerhasm agent download --instance-id INSTANCE-ID --vm-name
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-agent-download-examples}
 
 ```sh
@@ -771,7 +770,7 @@ ibmcloud power-hadr powerhasm agent download \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-powervs-agent-download-output}
 
 ```
@@ -784,6 +783,39 @@ Output written to powerha_agent.rte
 
 ### `ibmcloud power-hadr powerhasm powervs-workspaces`
 {: #power-hadr-cli-powervs-workspaces-command}
+
+```
+ibmcloud power-hadr phasm powervs-workspaces -help
+NAME:
+  powervs-workspaces - Retrieves list of powerVS workspaces related to the PowerHA service instance based on location.
+
+USAGE:
+  ibmcloud power-hadr powerhasm powervs-workspaces --instance-id INSTANCE-ID --location-id LOCATION-ID [--accept-language ACCEPT-LANGUAGE] [--if-none-match IF-NONE-MATCH]
+
+EXAMPLE:
+  ibmcloud power-hadr powerhasm powervs-workspaces \
+    --instance-id 8eefautr-4c02-0009-0086-8bd4d8cf61b6 \
+    --location-id us-south \
+    --accept-language en-US \
+    --if-none-match abcdef
+
+OPTIONS:
+      --accept-language string   The language requested for the return document. The maximum length is 50 characters. The
+                                 minimum length is 1 character.
+      --if-none-match string     ETag for conditional requests (optional). The maximum length is 50 characters. The minimum
+                                 length is 1 character.
+      --instance-id string       Required. Unique identifier of the provisioned instance. The maximum length is 50 characters.
+                                 The minimum length is 1 character.
+      --location-id string       Required. Location ID value. The maximum length is 20 characters. The minimum length is 5
+                                 characters.
+
+GLOBAL OPTIONS:
+  -h, --help                Show help
+  -j, --jmes-query string   Provide a JMESPath query to customize output.
+      --output string       Choose an output format - can be 'json', 'yaml', 'tui', or 'table'. (default "table")
+  -q, --quiet               Suppresses verbose messages.
+
+```
 
 Retrieves list of powerVS workspaces related to the PowerHA service instance based on location.
 
@@ -827,7 +859,7 @@ ibmcloud power-hadr powerhasm powervs-workspaces \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-powervs-workspaces-cli-output}
 
 ```
@@ -847,6 +879,32 @@ Workspaces
 
 ### `ibmcloud power-hadr powerhasm locations`
 {: #power-hadr-cli-locations-command}
+
+```
+ibmcloud power-hadr phasm locations -help
+NAME:
+  locations - Retrieves the list of PowerVS locations where PowerHA service is supported.
+
+USAGE:
+  ibmcloud power-hadr powerhasm locations --instance-id INSTANCE-ID [--if-none-match IF-NONE-MATCH]
+
+EXAMPLE:
+  ibmcloud power-hadr powerhasm locations \
+    --instance-id 8eefautr-4c02-0009-0086-8bd4d8cf61b6 \
+    --if-none-match abcdef
+
+OPTIONS:
+      --if-none-match string   ETag for conditional requests (optional). The maximum length is 50 characters. The minimum
+                               length is 1 character.
+      --instance-id string     Required. Unique identifier of the provisioned instance. The maximum length is 50 characters.
+                               The minimum length is 1 character.
+
+GLOBAL OPTIONS:
+  -h, --help                Show help
+  -j, --jmes-query string   Provide a JMESPath query to customize output.
+      --output string       Choose an output format - can be 'json', 'yaml', 'tui', or 'table'. (default "table")
+  -q, --quiet               Suppresses verbose messages.
+```
 
 Retrieves the list of PowerVS locations where PowerHA service is supported.
 
@@ -868,7 +926,7 @@ ibmcloud power-hadr powerhasm locations --instance-id INSTANCE-ID [--if-none-mat
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-locations-examples}
 
 ```sh
@@ -878,7 +936,7 @@ ibmcloud power-hadr powerhasm locations \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-locations-cli-output}
 
 ```
@@ -897,6 +955,36 @@ Locations
 
 ### `ibmcloud power-hadr powerhasm last-operation`
 {: #power-hadr-cli-last-operation-command}
+
+```
+ibmcloud power-hadr phasm last-operation -help
+NAME:
+  last-operation - Retrieves the most recent operation performed on the PowerHA service instance.
+
+USAGE:
+  ibmcloud power-hadr powerhasm last-operation --instance-id INSTANCE-ID [--accept-language ACCEPT-LANGUAGE] [--if-none-match IF-NONE-MATCH]
+
+EXAMPLE:
+  ibmcloud power-hadr powerhasm last-operation \
+    --instance-id 8eefautr-4c02-0009-0086-8bd4d8cf61b6 \
+    --accept-language en-US \
+    --if-none-match abcdef
+
+OPTIONS:
+      --accept-language string   The language requested for the return document. The maximum length is 50 characters. The
+                                 minimum length is 1 character.
+      --if-none-match string     ETag for conditional requests (optional). The maximum length is 50 characters. The minimum
+                                 length is 1 character.
+      --instance-id string       Required. Unique identifier of the provisioned instance. The maximum length is 50 characters.
+                                 The minimum length is 1 character.
+
+GLOBAL OPTIONS:
+  -h, --help                Show help
+  -j, --jmes-query string   Provide a JMESPath query to customize output.
+      --output string       Choose an output format - can be 'json', 'yaml', 'tui', or 'table'. (default "table")
+  -q, --quiet               Suppresses verbose messages.
+
+```
 
 Retrieves the most recent operation performed on the PowerHA service instance.
 
@@ -923,7 +1011,7 @@ ibmcloud power-hadr powerhasm last-operation --instance-id INSTANCE-ID [--accept
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-last-operation-examples}
 
 ```sh
@@ -934,7 +1022,7 @@ ibmcloud power-hadr powerhasm last-operation \
 ```
 {: pre}
 
-#### Example output
+### Example output
 {: #power-hadr-last-operation-cli-output}
 
 ```
