@@ -832,7 +832,6 @@ Output written to powerha_agent.rte
 ibmcloud power-hadr phasm powervs-workspaces -help
 ```
 ```
-ibmcloud power-hadr phasm powervs-workspaces -help
 NAME:
   powervs-workspaces - Retrieves list of powerVS workspaces related to the PowerHA service instance based on location.
 

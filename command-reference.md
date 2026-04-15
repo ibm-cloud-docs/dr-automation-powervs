@@ -625,6 +625,8 @@ User
 
 ```
 ibmcloud power-hadr pdr grs-location-pairs --help
+```
+```
 NAME:
   grs-location-pairs - Retrieves the (GRS) location pairs associated with the specified service instance based on managed VMs.
 
@@ -699,6 +701,8 @@ Location Pairs
 
 ```
 ibmcloud power-hadr pdr locations --help
+```
+```
 NAME:
   locations - Retrieves the list of disaster recovery (DR) locations available for the specified service instance.
 
@@ -777,6 +781,8 @@ Dr Locations
 
 ```
 ibmcloud power-hadr pdr managed-vms --help
+```
+```
 NAME:
   managed-vms - Retrieves the list of disaster recovery (DR) managed virtual machines for the specified service instance.
 
@@ -856,6 +862,8 @@ Managed VM List
 
 ```
 ibmcloud power-hadr pdr machine-types --help
+```
+```
 NAME:
   machine-types - Retrieves the list of supported machine types for the given workspace. This endpoint is used to identify machine types available for disaster recovery automation.
 
@@ -943,6 +951,8 @@ Workspaces
 
 ```
 ibmcloud power-hadr pdr powervs-workspaces --help
+```
+```
 NAME:
   powervs-workspaces - Retrieves the power virtual server workspaces for primary and standby orchestrator based on location id.
 
@@ -1036,6 +1046,9 @@ Dr Workspaces
 
 ```
 ibmcloud power-hadr pdr last-operation --help
+```
+
+```
 NAME:
   last-operation - Retrieves the status of the last operation performed on the specified service instance, such as provisioning, updating, or deprovisioning.
 
