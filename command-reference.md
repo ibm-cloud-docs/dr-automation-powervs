@@ -38,7 +38,6 @@ ibmcloud power-hadr pdr api-key --help
 ```
 
 ```
-ibmcloud power-hadr pdr api-key help
 NAME:
   api-key - Manage apikey.
 

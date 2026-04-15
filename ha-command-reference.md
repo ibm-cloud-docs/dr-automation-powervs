@@ -829,8 +829,9 @@ Output written to powerha_agent.rte
 {: #power-hadr-cli-powervs-workspaces-command}
 
 ```
-ibmcloud power-hadr phasm powervs-workspaces -help
+ibmcloud power-hadr phasm powervs-workspaces --help
 ```
+
 ```
 NAME:
   powervs-workspaces - Retrieves list of powerVS workspaces related to the PowerHA service instance based on location.
@@ -927,7 +928,7 @@ Workspaces
 {: #power-hadr-cli-locations-command}
 
 ```
-ibmcloud power-hadr phasm locations -help
+ibmcloud power-hadr phasm locations --help
 ```
 
 ```
@@ -1006,7 +1007,7 @@ Locations
 {: #power-hadr-cli-last-operation-command}
 
 ```
-ibmcloud power-hadr phasm last-operation -help
+ibmcloud power-hadr phasm last-operation --help
 ```
 
 ```
