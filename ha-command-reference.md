@@ -59,7 +59,7 @@ ibmcloud power-hadr powerhasm api-key update --instance-id INSTANCE-ID [--api-ke
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-api-key-update-cli-options}
 
 `--instance-id` (string)
@@ -77,7 +77,7 @@ ibmcloud power-hadr powerhasm api-key update --instance-id INSTANCE-ID [--api-ke
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-api-key-update-examples}
 
 ```sh
@@ -105,6 +105,7 @@ Manage the PowerHA cluster node configuration, options to add PowerVS node to Po
 ```sh
 ibmcloud power-hadr powerhasm cluster-node --help
 ```
+
 ```
 NAME:
   cluster-node - Manage the PowerHA cluster node configuration, options to add PowerVS node to PowerHA configuration, fetch and delete the existing PowerHA node details.
@@ -251,7 +252,7 @@ Primary Node Details
 Secondary Node Details   -
 
 ```
-{: screen}
+
 
 ### `ibmcloud power-hadr powerhasm cluster-node delete`
 {: #power-hadr-cli-cluster-node-delete-command}
@@ -290,7 +291,7 @@ ibmcloud power-hadr powerhasm cluster-node delete \
     --vm-id r006-2f3b3ab9-2149-49cc-83a1-30a5d93d59b2 \
     --if-none-match abcdef
 ```
-{: pre}
+
 
 ### Example output
 {: #power-hadr-cluster-node-delete-cli-output}
@@ -309,6 +310,7 @@ Provide options to manage the PowerHA configuration on PowerVS through deploymen
 ```sh
 ibmcloud power-hadr powerhasm deployment --help
 ```
+
 ```
 NAME:
   deployment - Provide options to manage the PowerHA configuration on PowerVS through deployment and fetching existing deployment details.
@@ -337,7 +339,7 @@ ibmcloud power-hadr powerhasm deployment get --instance-id INSTANCE-ID [--if-non
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-deployment-get-cli-options}
 
 `--instance-id` (string)
@@ -364,7 +366,6 @@ ibmcloud power-hadr powerhasm deployment get \
 {: #power-hadr-deployment-get-cli-output}
 
 ```
-
 Cloud Account ID                111233
 Creation Time                   2026-04-08T09:42:07Z
 Custom Network                  -
@@ -395,9 +396,8 @@ Secondary Cluster Nodes         -
 Service Description             Service instance is in active state
 Service ID                      1234
 Service Name                    TestService1
-
 ```
-{: screen}
+
 
 ### `ibmcloud power-hadr powerhasm deployment create`
 {: #power-hadr-cli-deployment-create-command}
@@ -409,7 +409,7 @@ ibmcloud power-hadr powerhasm deployment create --instance-id INSTANCE-ID --loca
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-deployment-create-cli-options}
 
 `--instance-id` (string)
@@ -496,13 +496,11 @@ ibmcloud power-hadr powerhasm deployment create \
     --accept-language en-US \
     --if-none-match abcdef
 ```
-{: pre}
 
 ### Example output
 {: #power-hadr-deployment-create-cli-output}
 
 ```
- 
 Custom Network                  -
 Primary Cluster Nodes Details   -
 ID                              crn:v1:staging:public:power-dr-automation:us-south:a/123:123::
@@ -547,7 +545,7 @@ ibmcloud power-hadr powerhasm event list --instance-id INSTANCE-ID [--time TIME]
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-event-list-cli-options}
 
 `--instance-id` (string)
@@ -627,7 +625,7 @@ ibmcloud power-hadr powerhasm event get --instance-id INSTANCE-ID --event-id EVE
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-event-get-cli-options}
 
 `--instance-id` (string)
@@ -691,6 +689,7 @@ Provide options to download the powerHA agent file and track the download progre
 ```sh
 ibmcloud power-hadr powerhasm agent --help
 ```
+
 ```
 NAME:
   agent - Provide options to download the powerHA agent file and track the download progress through the job ID. The downloaded agent file can then be used to install PowerHA on a Power Virtual Server instance.
@@ -719,7 +718,7 @@ ibmcloud power-hadr powerhasm agent download-status --instance-id INSTANCE-ID --
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-agent-download-status-cli-options}
 
 `--instance-id` (string)
@@ -742,7 +741,7 @@ ibmcloud power-hadr powerhasm agent download-status --instance-id INSTANCE-ID --
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-agent-download-status-examples}
 
 ```sh
@@ -752,13 +751,12 @@ ibmcloud power-hadr powerhasm agent download-status \
     --accept-language en-US \
     --if-none-match abcdef
 ```
-{: pre}
+
 
 ### Example output
 {: #power-hadr-agent-download-status-cli-output}
 
 ```
-
 Bytes Downloaded      590848
 Creation At           2026-04-13T08:48:21.856Z
 File Name             powerhaagent.rte
@@ -769,7 +767,7 @@ Status                completed
 Total Bytes           590848
 VM ID                 f35327d7-4463-43dc-82ef-b2322
 ```
-{: screen}
+
 
 ### `ibmcloud power-hadr powerhasm agent download`
 {: #power-hadr-cli-agent-download-command}
@@ -781,7 +779,7 @@ ibmcloud power-hadr powerhasm agent download --instance-id INSTANCE-ID --vm-name
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-agent-download-cli-options}
 
 `--instance-id` (string)
@@ -815,7 +813,6 @@ ibmcloud power-hadr powerhasm agent download \
     --if-none-match abcdef \
     --output-file tempdir/example-output.txt
 ```
-{: pre}
 
 ### Example output
 {: #power-hadr-powervs-agent-download-output}
@@ -823,7 +820,7 @@ ibmcloud power-hadr powerhasm agent download \
 ```
 Output written to powerha_agent.rte
 ```
-{: screen}
+
 
 ## Powervs-workspaces
 {: #power-hadr--powervs-workspaces-cli}
@@ -874,7 +871,7 @@ ibmcloud power-hadr powerhasm powervs-workspaces --instance-id INSTANCE-ID --loc
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-powervs-workspaces-cli-options}
 
 `--instance-id` (string)
@@ -897,7 +894,7 @@ ibmcloud power-hadr powerhasm powervs-workspaces --instance-id INSTANCE-ID --loc
 
     The maximum length is `50` characters. The minimum length is `1` character. The value must match regular expression `/^[a-zA-Z0-9\\-_,;=.*]+$/`.
 
-#### Example
+### Example
 {: #power-hadr-powervs-workspaces-examples}
 
 ```sh
@@ -907,7 +904,7 @@ ibmcloud power-hadr powerhasm powervs-workspaces \
     --accept-language en-US \
     --if-none-match abcdef
 ```
-{: pre}
+
 
 ### Example output
 {: #power-hadr-powervs-workspaces-cli-output}
@@ -922,7 +919,7 @@ Workspaces
              Name   Test2_workspace
 
 ```
-{: screen}
+
 
 ## Locations
 {: #power-hadr-locations-cli}
@@ -966,7 +963,7 @@ ibmcloud power-hadr powerhasm locations --instance-id INSTANCE-ID [--if-none-mat
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-locations-cli-options}
 
 `--instance-id` (string)
@@ -987,7 +984,7 @@ ibmcloud power-hadr powerhasm locations \
     --instance-id 8eefautr-4c02-0009-0086-8bd4d8cf61b6 \
     --if-none-match abcdef
 ```
-{: pre}
+
 
 ### Example output
 {: #power-hadr-locations-cli-output}
@@ -1001,7 +998,7 @@ Locations
             ID     wdc06
             Name   Washington DC 06
 ```
-{: screen}
+
 
 ## Last Operation
 {: #power-hadr-last-operation-cli}
@@ -1049,7 +1046,7 @@ ibmcloud power-hadr powerhasm last-operation --instance-id INSTANCE-ID [--accept
 ```
 
 
-#### Command options
+### Command options
 {: #power-hadr-last-operation-cli-options}
 
 `--instance-id` (string)
@@ -1089,4 +1086,3 @@ Resource Group    crn:v1:staging:public:resource-controller::a/123::resource-gro
 Status            Active
 
 ```
-{: screen}
