@@ -37,7 +37,7 @@ Complete the following prerequisites:
 2. **IAM setup**: Configure Identity and Access Management (IAM) roles. See [Managing DR Automation (IAM)](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage).
 3. **SSH keys or Secret Manager**: Generate a public and private SSH key or choose a **Public SSH key** from the Secrets Manager. For details, see [Adding an SSH key](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui).
 
-4. **VPC Landing Zone schematic ID(Optional)**: A VPC Landing Zone schematic ID is not required to deploy the orchestrator. By default, the orchestrator uses a private endpoint for connectivity. Use a VPC Landing Zone schematic ID only if external connectivity to the orchestrator UI is needed. You can use an existing Power Virtual Server with a VPC Landing Zone schematic ID, create a new one from the catalog, or import an existing VPC and generate a schematic ID. See [Power Virtual Server with VPC Landing Zone](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-automation-solution-overview) document.
+4. **VPC Landing Zone schematic ID (Optional)**: A VPC Landing Zone schematic ID is not required to deploy the orchestrator. By default, the orchestrator uses a private endpoint for connectivity. Use a VPC Landing Zone schematic ID only if external connectivity to the orchestrator UI is needed. You can use an existing Power Virtual Server with a VPC Landing Zone schematic ID, create a new one from the catalog, or import an existing VPC and generate a schematic ID. See [Power Virtual Server with VPC Landing Zone](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-automation-solution-overview) document.
 
 5. **Plan infrastructure**: Define your DR requirements and estimate costs by using the [DR Automation Estimate pricing tool](https://cloud.ibm.com/estimator).
 
@@ -49,14 +49,13 @@ Complete the following prerequisites:
 ### Step 1: Set up the orchestrator
 {: #setup-orchestrator}
 
-1. On the **Manage** tab, configure the **orchestrator name** and set a password to secure access.
+1. On the **Manage tab**, enable or disable Orchestrator HA, configure the orchestrator name, and set a password to secure access.
 2. Provide a valid **IBM Cloud API key**, then complete other fields, including the **DR location**, **DR Orchestrator networks** and **Public SSH key** or keys from **Secrets Manager**.
-   > **Note**: The schematic workspace is available if the VPC is created by using the Power Virtual Server with VPC landing zone option from the catalog. If VPC is created manually, you can still generate a schematic ID by using the Import option in the "Power Virtual Server with VPC landing zone" catalog or use the custom VPC option to provide the VPC details that are Transit Gateway, VPC name, and Proxy IP details.
+   > **Note**: The schematic workspace is not required for orchestrator deployment. It is created automatically when you use the Power Virtual Server with VPC landing zone catalog option. For manually created VPCs, you can generate a schematic ID by using the Import option or provide custom VPC details such as Transit Gateway, VPC name, and Proxy IP.
    
-   > **Note**: Make sure that provided API Key has permissions that are listed in the [Access role requirements for DR Automation for PowerVS](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto) for completing the configuration.
+   > **Note**: The provided API key must have the required permissions as listed in the [Access role requirements for DR Automation for PowerVS](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto).
 
-3. (Optional) Expand the **Advanced orchestrator configuration** to enable MFA, proxy details and modify the default values of storage tier and machine type for the Orchestrator VM, by default **Tier1** is selected for Storage tier and **s922** is selected for machine type.
-
+3. (Optional) Expand the **Advanced Orchestrator configuration** to enable MFA and provide proxy details. In the DR Orchestrator sections, select the required storage tier and machine type for the Orchestrator VMs. By default, Tier 1 storage and s922 machine type are selected.
 4. If you have enabled **Orchestrator HA**, Provide standby orchestrator details.
 5. Review all settings and click **Deploy Orchestrator** to begin the deployment.
 
