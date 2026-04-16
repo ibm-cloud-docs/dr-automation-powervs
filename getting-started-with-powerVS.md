@@ -51,9 +51,6 @@ Complete the following prerequisites:
 
 1. On the **Manage tab**, enable or disable Orchestrator HA, configure the orchestrator name, and set a password to secure access.
 2. Provide a valid **IBM Cloud API key**, then complete other fields, including the **DR location**, **DR Orchestrator networks** and **Public SSH key** or keys from **Secrets Manager**.
-   > **Note**: The schematic workspace is not required for orchestrator deployment. It is created automatically when you use the Power Virtual Server with VPC landing zone catalog option. For manually created VPCs, you can generate a schematic ID by using the Import option or provide custom VPC details such as Transit Gateway, VPC name, and Proxy IP.
-   
-   > **Note**: The provided API key must have the required permissions as listed in the [Access role requirements for DR Automation for PowerVS](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage#ser-acc-role-dr-auto).
 
 3. (Optional) Expand the **Advanced Orchestrator configuration** to enable MFA and provide proxy details. In the DR Orchestrator sections, select the required storage tier and machine type for the Orchestrator VMs. By default, Tier 1 storage and s922 machine type are selected.
 4. If you have enabled **Orchestrator HA**, Provide standby orchestrator details.
