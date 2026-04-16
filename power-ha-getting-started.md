@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-13"
+lastupdated: "2026-04-16"
 
 subcollection: dr-automation-powervs
 
@@ -33,7 +33,7 @@ You can deploy PowerHA from the IBM Cloud catalog. The UI catalog guides you thr
 
 Before you deploy HA automation, ensure that the following requirements are met:
 
-1. **IBM Cloud account**: You must have an active IBM Cloud account. If required, sign up at https://cloud.ibm.com/registration.
+1. **IBM Cloud account**: You must have an active IBM Cloud account. If required, sign up at [Sign up for IBM Cloud](https://cloud.ibm.com/registration).
 
 2. **IAM access** : Configure the required Identity and Access Management (IAM) roles and permissions for PowerHA.  
 For more information, see [Managing PowerHA IAM access](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage).
@@ -41,11 +41,10 @@ For more information, see [Managing PowerHA IAM access](/docs/dr-automation-powe
 3. **API key** : An IBM Cloud API key is required for service provisioning and ongoing operations.
 
 
-## Lifecycle of {{site.data.keyword.DR_full_notm}}
+## Lifecycle of PowerHA
 {: #lpvsdrauto}
 
 ![PowerHA life Cycle](images/Power-ha-suits-flow-diagram.svg "PowerHA life Cycle"){: caption="HA Automation life Cycle" caption-side="bottom"}
-
 
 
 ## Next steps
