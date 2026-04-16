@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-14"
+lastupdated: "2026-04-16"
 
 subcollection: dr-automation-powervs
 
@@ -82,7 +82,9 @@ IBM Power servers that are supported by {{site.data.keyword.DR_full_notm}} inclu
 - **IBM Power E1080**
 - **IBM Power S1022**
 - **IBM Power E1050**
-
+- **IBM Power S1122**
+- **IBM Power E1150**
+- **IBM Power S1124**
 
 For more details, refer to the specific data sheets and hardware overview table.
 
@@ -131,7 +133,7 @@ In PowerHA, user can set up cross-account API keys to allow secure and restricte
 ## Setting up PowerHA
 {: #setup}
 
+
 1. Log in to your [IBM Cloud account](https://cloud.ibm.com/).
-2. Locate the {{site.data.keyword.DR_full_notm}}, PowerHA tile.
-3. Set up storage, compute, and network resources according to HA needs.
-4. Schedule HA tests and monitor system health.
+2. From the **Catalog**, search for and select **{{site.data.keyword.DR_full_notm}}**.
+3. Select the required **location** and **plan**, and click **Create**.

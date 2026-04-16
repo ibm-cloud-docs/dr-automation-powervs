@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-13"
+lastupdated: "2026-04-16"
 
 subcollection: dr-automation-powervs
 
@@ -68,6 +68,8 @@ follow the steps:
 
 
 14. (Optional) Expand the **Advanced orchestrator configuration** to change the Storage tier and Machine type configuration based on the **Orchestrator HA** selection.
+
+15. If the VM workloads are hosted in a different IBM Cloud account, enable the **Select if the VM workloads use a separate IBM Cloud account** toggle and provide the required **IBM Cloud Managed VM API key**.
 
 15. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 

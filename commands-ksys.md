@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-15"
+lastupdated: "2026-04-16"
 
 subcollection: dr-automation-powervs
 
@@ -495,6 +495,7 @@ An output that is similar to the following example is displayed:
 # ksysmgr delete site us-east
 Workspace powervs-dr-wdc06 was removed
 Site us-east was removed.
+
 ```
 An output that is similar to the following example is displayed for Private cloud:
 ```
@@ -508,14 +509,31 @@ Site home was removed
 Workgroup configuration example
 ```
 
-### Manage a disk:
+### Manage a vm:
 {: #manage-vm}
 
 ```
-# ksysmgr manage disk -h
+# ksysmgr manage vm -h
 
-ksysmgr manage disk diskid=<diskid1[,diskid2,...]>
-    manage => man*, mg
+ksysmgr manage vm <vmname> | name=<vmname> | vmuuid=<uuid>
+      [home_workspace=<home_workspacename | ID>]
+      [target_workspace=<target_workspacename | ID>]
+      [workgroup=<workgroupname>]
+      [ip_list=<ip_address1,ip_address2,...>]
+      [targetsystemtype=<target_system_type>]
+      [staticIPMap=<srcip1-tgtip1,[srcip2-tgtip2,...]>]
+      [sharedprocpool=<yes|no>]
+      [targetprocpool=<sharedprocpoolname>]
+      [targetvmname=<target_vm_name>]
+      [targethost=<dedicated_host_name | ID>]
+      [targethg=<dedicated_hg_name | ID>]
+      [force=<yes|no>]
+    manage => man*, mg
+    vm => lp*, vm*
+    ip_list => IPList
+
+    Note: TargetHost or Targethg only one option supported at a time
+    Note: TargetHost or TargetSystemType only one option supported at a time.
 ```
 An output that is similar to the following example is displayed:
 ```
@@ -1162,7 +1180,7 @@ KSYS quick_discovery_interval has been updated
 ## Notification configuration examples
 {: #asf}
 
-Event notifications are triggered when the event severity is equal to or higher than the configured notification level.
+Event notifications are triggered only when the `notification_level` is set to `high`.
 
 ### To add an email for a specific user:
 {: #ghj}
@@ -1539,7 +1557,6 @@ snapshot => snap*
 ```
 
 An output that is similar to the following example is displayed:
-```
 
 ```
 ---- Snapshot Contents ----
@@ -1552,7 +1569,7 @@ Name: pvs_dr
 Node: hostname.com
 Type: IBM_PVS_DR
 ```
-```
+
 ### To restore the configuration data on a KSYS node:
 {: #data}
 
