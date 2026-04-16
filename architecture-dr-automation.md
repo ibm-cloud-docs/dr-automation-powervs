@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-14"
+lastupdated: "2026-04-16"
 
 subcollection: dr-automation-powervs
 
@@ -57,7 +57,7 @@ The Service Broker deploys the DR Orchestrator (KSYS) VM within the PowerVS work
 ### Connectivity and communication
 {: #Conn}
 
-Through IBM Cloud VPN and VPC services, the DR Orchestrator communicates securely with the Service Broker. Connections from external clients or users are routed through IBM’s secure networking layers to ensure high availability and low latency during DR operations.
+Communication between the Orchestrator and the Service Broker is established through a private endpoint. To access the Orchestrator UI from external environments, users must use IBM Cloud VPN and VPC services, ensuring secure connectivity for IBM Cloud clients.
 
 ### Resource management and billing integration
 {: #resource}
