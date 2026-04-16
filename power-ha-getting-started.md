@@ -44,7 +44,7 @@ For more information, see [Managing PowerHA IAM access](/docs/dr-automation-powe
 ## Lifecycle of PowerHA
 {: #lpvsdrauto}
 
-![PowerHA life Cycle](images/Power-ha-suits-flow-diagram.svg "PowerHA life Cycle"){: caption="HA Automation life Cycle" caption-side="bottom"}
+![PowerHA life Cycle](images/Power-ha-suits-flow-diagram.svg "PowerHA life Cycle"){: caption="PowerHA life Cycle" caption-side="bottom"}
 
 
 ## Next steps
