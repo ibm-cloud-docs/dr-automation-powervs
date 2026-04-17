@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-15"
+lastupdated: "2026-04-17"
 
 subcollection: dr-automation-powervs
 
@@ -343,7 +343,7 @@ Before you deploy HA Automation for PowerVS, ensure that the following requireme
 
 - **IBM Cloud account** - You must have an active IBM Cloud account. If required, sign up at https://cloud.ibm.com/registration.
 - **IAM access** - Configure the required Identity and Access Management (IAM) roles and permissions for HA Automation for PowerVS.
-- **PowerVS environment** - A supported Power Virtual Server workspace with AIX virtual machines must already be available in the selected location.
+
 - **Infrastructure planning** - Plan your high availability topology based on your business requirements and supported HA Automation configurations.
 - **API key** - An IBM Cloud API key is required for service provisioning and orchestration operations.
 
