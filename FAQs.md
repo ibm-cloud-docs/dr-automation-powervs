@@ -350,10 +350,10 @@ Yes. The solution provides automation for both:
 Both offerings are available through a single IBM Cloud catalog experience.
 
 
-### How is HA software installed on PowerVS virtual machines?
+### How is HA configured on PowerVS virtual machines?
 {: #faq-ha-installation}
 
-HA software is installed by using an agent that runs on each selected PowerVS instance.
+HA software is configured by using an agent that runs on each selected PowerVS instance.
 
 The agent performs the following actions:
 
@@ -363,19 +363,6 @@ The agent performs the following actions:
 - Reports installation status back to the service
 
 Each HA node must run the agent to complete the installation.
-
-
-
-### **What resources should be planned before implementing HA Automation for PowerVS?**
-{: #implementt-powerha}
-
-Before implementing HA Automation for PowerVS, ensure that you have the following resources planned and ready:
-
-- **PowerVS AIX virtual machines**: Existing AIX virtual machines on PowerVS that will participate in the HA Automation cluster.
-- **HA cluster nodes**: Identify the PowerVS instances that will form the HA cluster.
-- **Network connectivity**: Reliable network connectivity between HA nodes to support cluster communication and failover.
-- **HA availability**: HA Automation SystemMirror filesets must be available for installation on each HA node using the PowerHA agent.
-- **Cluster configuration planning**: Plan resource groups, application dependencies, and failover behavior according to your high availability requirements.
 
 
 ### How is billing calculated for HA Automation?
@@ -469,3 +456,20 @@ You can also register environments that use earlier or unsupported versions. How
 Billing starts when the PowerHA installation process is initiated on the selected virtual machines.
 
 Charges begin when the PowerHA agent starts installing the required filesets and are calculated based on the number of CPU cores of the managed virtual machines, billed hourly.
+
+
+
+### Why is the agent required after adding nodes?
+The agent is required to install and manage the supported PowerHA SystemMirror version on each node. It prepares the nodes for cluster configuration and enables automated failover operations.
+
+---
+
+### Do I need to manually install PowerHA on each node?
+No. The agent automates the download and installation of the supported PowerHA SystemMirror version on each node. Manual installation is not required when using the agent.
+
+### How do I download and install the agent on nodes?
+From the **Service details** page, go to the **Cluster nodes** section and click **Download agent**. Copy the downloaded file set to each virtual machine, and install it by using the `smit` or `installp` command. After installation, verify the agent by running:
+
+```bash
+./powerha-agent -h
+```
