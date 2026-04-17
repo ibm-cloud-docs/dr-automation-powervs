@@ -1553,10 +1553,13 @@ Successfully created a configuration snapshot: /var/ksys/snapshots/snap.xml_DETA
 
 
 ```
-ksysmgr query snapshot
-[filepath=<full file prefix path>]
-query => q*, ls, get, sh*
-snapshot => snap*
+ksysmgr add snapshot
+      [filepath=<full file prefix path | file prefix>]
+      [upload_to_cos=<yes | no>]
+      [region=<cos_region>]
+      [bucketname=<cos_bucket_name>]
+    add => ad*, cr*, make, mk
+    snapshot => snap*
 ```
 
 An output that is similar to the following example is displayed:
