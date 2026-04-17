@@ -22,14 +22,13 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 {: release-note-april}
 
 
-- The service is renamed from DR Automation for Power Virtual Server to {{site.data.keyword.DR_full}}. This update reflects the addition of high-availability capabilities along with existing disaster recovery features. No changes are required for existing deployments.For more information, see ()[]
+- The service is renamed from DR Automation for Power Virtual Server to {{site.data.keyword.DR_full}}. This update reflects the addition of high-availability capabilities along with existing disaster recovery features. No changes are required for existing deployments.
 
-- PowerHA is now available as part of HA and DR Automation for Power Virtual Server, enabling you to deploy and manage high-availability clusters by using PowerHA SystemMirror. The solution uses multiple PowerVS virtual machines configured as a cluster with shared storage and dedicated networking, while IBM Cloud manages the orchestration layer for monitoring and failover operations.For more information, see ()[]
+- PowerHA is now available as part of HA and DR Automation for Power Virtual Server, enabling you to deploy and manage high-availability clusters by using PowerHA SystemMirror. The solution uses multiple PowerVS virtual machines configured as a cluster with shared storage and dedicated networking, while IBM Cloud manages the orchestration layer for monitoring and failover operations.
 
-- You can now configure VM Flex capacity by using the external orchestrator UI and CLI, allowing the orchestrator (KSYS) to dynamically adjust CPU and memory allocation for backup VMs during failover and disaster recovery rehearsal operations. Backup VMs are initially provisioned with minimal resources and scaled based on configured flex values during operations, optimizing resource utilization in the target PowerVS workspace. For more information, see ()[]
+- You can now configure VM Flex capacity by using the external orchestrator UI and CLI, allowing the orchestrator (KSYS) to dynamically adjust CPU and memory allocation for backup VMs during failover and disaster recovery rehearsal operations. Backup VMs are initially provisioned with minimal resources and scaled based on configured flex values during operations, optimizing resource utilization in the target PowerVS workspace.
 
-- CLI support is now available for PowerHA operations, enabling you to manage service instance configuration, cluster nodes, and deployment lifecycle by using supported commands. You can also retrieve events, download agents, and view PowerVS workspaces and locations for the service instance, allowing better automation and operational control. For more information, see ()[]
-.
+- CLI support is now available for PowerHA operations, enabling you to manage service instance configuration, cluster nodes, and deployment lifecycle by using supported commands. You can also retrieve events, download agents, and view PowerVS workspaces and locations for the service instance, allowing better automation and operational control.
 
 ## 05 December 2025
 {: #subcollection-december1225}
