@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-09"
+lastupdated: "2026-04-17"
 
 subcollection: dr-automation-powervs
 
@@ -275,6 +275,5 @@ After the agent installation is complete:
 
 - The **PowerHA version** and **Agent status** fields are updated for the node.
 
-- Events are generated and recorded in the **Events** section of the service instance.
 
   These events provide details about the PowerHA installation activity and status for each node.
