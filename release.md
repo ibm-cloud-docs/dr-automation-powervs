@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-02-21"
+lastupdated: "2026-04-17"
 subcollection: dr-automation-powervs
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -15,6 +15,13 @@ keywords: release-notes, new features, enhancements, latest release
 
 Use these release notes to learn about the latest updates to **{{site.data.keyword.DR_short}}** grouped by release date. Release notes are available for a minimum of three years.
 {: shortdesc}
+
+
+## 30 April 2026
+{: #subcollection-april30206}
+{: release-note-april}
+
+
 
 ## 05 December 2025
 {: #subcollection-december1225}
