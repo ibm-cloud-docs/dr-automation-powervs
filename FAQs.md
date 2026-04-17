@@ -90,12 +90,7 @@ Yes. High availability is supported through the HA Automation for PowerVS plan, 
 {: #monitor}  
 
 IBM Cloud Monitoring provides dashboards for tracking DR health metrics, failover progress and potential anomalies, can ensure real-time visibility.  
-
-### **How does {{site.data.keyword.DR_full_notm}} handle data isolation?**
-{: #dataisol}  
-
-- **VPC Networks:** Can ensure private IP configurations.  
-- **Encryption:** Uses AES-256 for data at rest and TLS for data in transit.  
+ 
 
 ### **Can users customize recovery priorities?**
 {: #drcp}  
@@ -140,7 +135,6 @@ KSYS as orchestrator (VM) DR operations by managing the sequence of recovery, ca
 
 - **IBM Cloud Account:** Create and log in to an IBM Cloud account.  
 - **SSH Keys:** Configure keys for secure communication with PowerVS instances.  
-- **VPC Configurations:** Define virtual private cloud settings for data isolation.  
 - **Infrastructure Plan:** Review capacity needs that use IBM's cost estimator.
 For more details, refer to [Before you begin](/docs/dr-automation-powervs?topic=dr-automation-powervs-getting-started).
 
@@ -343,7 +337,6 @@ Before you deploy HA Automation for PowerVS, ensure that the following requireme
 
 - **IBM Cloud account** - You must have an active IBM Cloud account. If required, sign up at https://cloud.ibm.com/registration.
 - **IAM access** - Configure the required Identity and Access Management (IAM) roles and permissions for HA Automation for PowerVS.
-
 - **API key** - An IBM Cloud API key is required for service provisioning and orchestration operations.
 
 ### Does HA Automation support both High Availability and Disaster Recovery?

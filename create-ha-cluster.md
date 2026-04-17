@@ -15,7 +15,8 @@ keywords: create instance for PowerHA , powerha instance, add node, download age
 
 After the service instance is created, deploy PowerHA SystemMirror for IBM Power Virtual Server to enable high availability for your environment. This deployment establishes coordinated nodes that help ensure workload continuity during planned or unplanned outages.
 
-During the deployment, you can select the region and workspace where your Power Virtual Server instances are located. After you select the workspace, you can choose the instances on which to enable PowerHA SystemMirror for your applications.
+During the deployment, you can select the region and workspace where your Power Virtual Server instances are located. After selecting the region and workspace, submit the configuration. Once submitted, the Add Node panel allows you to choose the available virtual server instances on which to enable PowerHA SystemMirror for your applications.
+
 {:shortdesc: .shortdesc}
 
 ## Procedure
@@ -27,7 +28,7 @@ To configure the HA deployment, complete the following steps:
 2. In the **Edit configuration** page, enter the required **API key** and it validates the API key.
 3. Select the **High availability location**.
 4. Select the appropriate **Power Virtual Server workspace**.
-5. Click **Save** to apply the configuration.
+5. Click **Submit** to apply the configuration.
 
 ## Add Node
 {: #add-node}
