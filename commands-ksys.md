@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-16"
+lastupdated: "2026-04-17"
 
 subcollection: dr-automation-powervs
 
@@ -1530,9 +1530,12 @@ If you do not specify the cleanup attribute, for a planned disaster recovery ope
 
 ```
 ksysmgr add snapshot
-[filepath=<full file prefix path | file prefix>]
-add => ad*, cr*, make, mk
-snapshot => snap*
+      [filepath=<full file prefix path | file prefix>]
+      [upload_to_cos=<yes | no>]
+      [region=<cos_region>]
+      [bucketname=<cos_bucket_name>]
+    add => ad*, cr*, make, mk
+    snapshot => snap
 ```
 
 An output that is similar to the following example is displayed:
