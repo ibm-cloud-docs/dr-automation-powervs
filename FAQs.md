@@ -344,7 +344,6 @@ Before you deploy HA Automation for PowerVS, ensure that the following requireme
 - **IBM Cloud account** - You must have an active IBM Cloud account. If required, sign up at https://cloud.ibm.com/registration.
 - **IAM access** - Configure the required Identity and Access Management (IAM) roles and permissions for HA Automation for PowerVS.
 
-- **Infrastructure planning** - Plan your high availability topology based on your business requirements and supported HA Automation configurations.
 - **API key** - An IBM Cloud API key is required for service provisioning and orchestration operations.
 
 ### Does HA Automation support both High Availability and Disaster Recovery?
@@ -372,10 +371,7 @@ The agent performs the following actions:
 
 Each HA node must run the agent to complete the installation.
 
-### **What are the main API endpoints for HA Automation for PowerVS?**
-{: #apiendd}  
 
-Key endpoints include provisioning APIs for VMs, monitoring APIs for health metrics, and deprovisioning APIs for tearing down configurations. Some APIs and workflows apply only to HA Automation plans.
 
 ### **What resources should be planned before implementing HA Automation for PowerVS?**
 {: #implementt-powerha}
@@ -395,32 +391,6 @@ Before implementing HA Automation for PowerVS, ensure that you have the followin
 Billing follows a usage-based (“Pay as you use”) model.
 
 Charges are calculated based on the number of CPU cores used by the managed virtual machines in the cluster. Usage is collected hourly and reported for billing purposes.
-
-### What APIs are available for this service?
-{: #api-powerha}
-
-The service provides the following APIs:
-
-- **Provision API** – Creates or deletes a service instance.  
-- **PHA Workspace Region API** – Retrieves available workspaces for a specified region.  
-- **PVM Instances API** – Lists PowerVM instances within a selected workspace.  
-- **API Key API** – Adds or retrieves the API key used for authentication.  
-- **Cluster Node API** – Adds, updates, retrieves, or deletes cluster node details.  
-- **PHA Deployment API** – Configures and retrieves deployment details.  
-- **Deployment Update API** – Updates an existing deployment configuration and tracks status.  
-- **Supported Locations API** – Lists all supported DR locations.  
-- **Events API** – Retrieves lifecycle events for a service instance.  
-- **Last Operation API** – Displays the status of the most recent operation performed on the service instance.  
-
-### How do I provision or deprovision a service instance using the API?
-{: #api-provision-powerha}
-
-To provision a service instance, use the **Provision API (PUT)** and provide the required parameters, including the `crn`, `plan_id`, `service_id`, and context details such as the service name, resource group, and target.
-
-After successful provisioning, the API response includes a `dashboard_url` that you can use to access the service instance.
-
-To deprovision a service instance, use the **DELETE** operation with the corresponding `plan_id` and `service_id`. The response confirms that the deprovisioning process has been initiated.
-
 
 ### Why is HA cluster configuration required after creating the service instance?
 {: #faq-ha-required}
