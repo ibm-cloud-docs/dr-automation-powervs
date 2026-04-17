@@ -66,7 +66,7 @@ PowerHA on PowerVS follows a usage-based pricing model. You are billed only for 
 PowerHA is tightly integrated with IBM Cloud infrastructure, including networking, identity and access management, and monitoring services. This integration ensures a consistent operational experience across PowerVS environments.
 
 - **Support for enterprise workloads**
-PowerHA supports enterprise operating systems available on PowerVS, including IBM AIX®, IBM i, and Linux. This flexibility allows customers to protect a wide range of mission-critical workloads.
+PowerHA supports enterprise operating systems available on PowerVS, including IBM AIX®. This flexibility allows customers to protect a wide range of mission-critical workloads.
 
 - **Enhanced resiliency options**
 For environments that require additional resilience, PowerHA supports advanced configurations that can span multiple availability zones within a region, further improving application availability.
@@ -133,7 +133,7 @@ In PowerHA, user can set up cross-account API keys to allow secure and restricte
 ## Setting up PowerHA
 {: #setup}
 
-
 1. Log in to your [IBM Cloud account](https://cloud.ibm.com/).
 2. From the **Catalog**, search for and select **{{site.data.keyword.DR_full_notm}}**.
 3. Select the required **location** and **plan**, and click **Create**.
+4. Select the PowerHA cluster nodes where your application workloads are running.

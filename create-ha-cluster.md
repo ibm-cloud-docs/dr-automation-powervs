@@ -32,7 +32,10 @@ To configure the HA deployment, complete the following steps:
 ## Add Node
 {: #add-node}
 
+After adding the required nodes that are going to be part of the PowerHA cluster, ensure that you download the agent. The agent downloads the required PowerHA SystemMirror version and installs it on the nodes.
+
 After you complete the HA deployment configuration, add nodes to the deployment.
+
 
 ### Procedure
 {: #procedur-add-node}
@@ -56,9 +59,6 @@ To add nodes, complete the following steps:
 
 5. Click **Add instance** to add the selected nodes to the cluster.
 
-6. If there are no virtual servers instances added, complete the following step.
-Click **Navigation menu** > **Infratructer** > **Power Virtual Server** > **Workspace** > **Create a Workspace**.
-
 After the nodes are added, they appear in the **Cluster nodes** table, where you can monitor their status and continue with agent installation and failover configuration.
 
 Once the all the nodes are configured, you can enable the PowerHA cluster configuration that supports failover and resilient operations to maintain the application high availability. 
@@ -80,7 +80,7 @@ After adding nodes, download and install the agent on each virtual machine (VM).
 
 3. Copy the downloaded file set to each VM that is added to the cluster.
 
-4. Log in to each VM and install the file set by using the `installp` command.
+4. Log in to each VM and install the file set by using the `smit` or `installp` command.
 
 5. After installation, go to the agent installation directory:
 
@@ -274,6 +274,7 @@ After the agent installation is complete:
 - The node status is updated in the **Cluster nodes** table with the corresponding PowerHA installation state.
 
 - The **PowerHA version** and **Agent status** fields are updated for the node.
+
 
 
   These events provide details about the PowerHA installation activity and status for each node.
