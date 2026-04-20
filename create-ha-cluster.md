@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-17"
+lastupdated: "2026-04-20"
 
 subcollection: dr-automation-powervs
 
@@ -124,7 +124,7 @@ Optional parameters:
   PHA_VERSION=<value>
   DOWNLOAD_DIR=<path>
 
-Example: powerha-agent -i API_KEY=abc123xyz34adf SERVICE_INSTANCE_ID=fgg34xy224adfa46 PHA_VERSION=728SP4 DOWNLOAD_DIR=/tmp
+Example: powerha-agent -i API_KEY=abc123xyz34adf SERVICE_INSTANCE_ID=fgg34xy224adfa46 PHA_VERSION="7.2.8 SP4" DOWNLOAD_DIR=/tmp
 
 Note: Ensure API_KEY and SERVICE_INSTANCE_ID are exported as environment variables when arguments are not passed
 ```
@@ -144,9 +144,9 @@ INFO: API_KEY and SERVICE_INSTANCE_ID are not provided as arguments, continuing 
 INFO: Starting PowerHA Agent...
 INFO: Fetching supported PowerHA versions...
 INFO: PowerHA supported versions:
- - 7.2.10_SP1
- - 7.2.9_SP2
- - 7.2.8_SP4
+ - 7.2.10 SP1
+ - 7.2.9 SP2
+ - 7.2.8 SP4
 INFO: Agent job is Completed
 ```
 
@@ -162,6 +162,8 @@ export SERVICE_INSTANCE_ID=<value>
 ## Install PowerHA
 {: #install-powerha}
 
+To install PowerHA, ensure that you have 3 GB of available space in the `DOWNLOAD_DIR` path or the `$HOME` path, and 2 GB of available space in the `/usr` filesystem.
+
 To install a PowerHA version on the VM, run:
 
 ```bash
@@ -171,7 +173,7 @@ To install a PowerHA version on the VM, run:
 Alternatively, if the API key and service instance ID are set as environment variables:
 
 ```bash
-./powerha-agent -i PHA_VERSION=729SP2 DOWNLOAD_DIR=/home
+./powerha-agent -i PHA_VERSION=``7.2.9 SP2`` DOWNLOAD_DIR=/home
 ```
 
 Example:
@@ -183,12 +185,12 @@ Example:
 Example output:
 
 ```text
-bash-5.2# /opt/IBM/powerha-agent/powerha-agent -i PHA_VERSION=729SP2 DOWNLOAD_DIR=/home/temp
+bash-5.2# /opt/IBM/powerha-agent/powerha-agent -i PHA_VERSION=``7.2.9 SP2`` DOWNLOAD_DIR=/home/temp
 INFO: API_KEY and SERVICE_INSTANCE_ID are not provided as arguments, continuing with environment variables...
 INFO: Starting PowerHA Agent...
 INFO: Performing pre-validation...
 INFO: Fetching supported PowerHA versions...
-INFO: PowerHA version 7.2.9_SP2 is supported for the deployment.
+INFO: PowerHA version 7.2.9 SP2 is supported for the deployment.
 INFO: Checking whether PowerHA is already installed or not...
 INFO: PowerHA is not installed on this system.
 INFO: Checking disk space...
@@ -196,7 +198,7 @@ INFO: Available disk space in /home/temp filesystem: 3.03 GB
 INFO: Available disk space in /usr filesystem: 3.85 GB
 INFO: Sufficient space is available to install PowerHA on the VM.
 INFO: Starting download  extraction  and installation process...
-INFO: Downloading PowerHA file for VM: powerha-agent  Version: 7.2.9_SP2
+INFO: Downloading PowerHA file for VM: powerha-agent  Version: 7.2.9 SP2
 [==================================================]   100.0%  780.88 MB / 780.88 MB  19.75 MB/s  ETA --:--
 Download complete: 780.88 MB at avg 19.75 MB/s
 INFO: Successfully downloaded PowerHA version.
@@ -211,7 +213,7 @@ INFO: Successfully installed PowerHA SP filesets.
 INFO: Cleaning up temporary files...
 INFO: Successfully cleaned up temporary files.
 INFO: Performing post-installation validations...
-INFO: Installed PowerHA SystemMirror version is 7.2.9_SP2
+INFO: Installed PowerHA SystemMirror version is 7.2.9 SP2
 INFO: Agent job is Completed
 ```
 
