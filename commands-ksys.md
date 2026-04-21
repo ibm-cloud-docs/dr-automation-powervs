@@ -840,6 +840,7 @@ ksysmgr manage vm test_vm targethost=s922Host
 An output that is similar to the following example is displayed:
 
 ```
+
 ksysmgr manage vm test_VM targethost=dedicated_host1
 Refresh VMs list of test_dal10 workspace started
 Refresh VMs list of test_dal10 workspace completed
@@ -2347,7 +2348,7 @@ Ksysmgr pair network <source_nw_name> pair =<target_nw_name> dr_test=yes
 DR Rehearsal network pairing can be verified at query workspace:
 
 ```
-(0) root @ pbrazos01-ksys01: /opt/IBM/ksys/powervs
+/opt/IBM/ksys/powervs
 #ksysmgr query workspace vmrm-dal12 ; ksysmgr query workspace powervs-dr-wdc06
 Name:                vmrm-dal12
 ID:                  1d6118b5-bd77-4100-a655-754453558d9d

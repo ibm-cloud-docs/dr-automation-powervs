@@ -320,7 +320,7 @@ To update the API key in orchestrator ,run the following command:
    ```ksysmgr modify ksyscluster <ksysclustername> apikey=<apikey>```
 > **Note:** Use the same API key in both the deployment and orchestrator to ensure proper synchronization.
 
-## PowerHA AIX faq
+## PowerHA faq
 {: #powerha-faq}
 
 ### What is HA Automation for Power Virtual Server?
@@ -341,26 +341,14 @@ Before you deploy HA Automation for PowerVS, ensure that the following requireme
 - **API key** – An IBM Cloud API key is required for service provisioning and orchestration operations.
 
 
-### Does HA Automation support both High Availability and Disaster Recovery?
-{: #faq-ha-dr-support}
-
-Yes. The solution provides automation for both:
-
-- **High Availability (HA)** – Cluster-based protection within or across environments.
-- **Disaster Recovery (DR)** – Automated failover and replication to recovery sites.
-
-Both offerings are available through a single IBM Cloud catalog experience.
-
-
 ### How is HA configured on PowerVS virtual machines?
 {: #faq-ha-installation}
 
-HA software is configured by using an agent that runs on each selected PowerVS instance.
+HA is configured by using an agent that runs on each selected PowerVS instance.
 
 The agent performs the following actions:
 
 - Connects securely to the service
-- Downloads the required software files
 - Installs dependencies and service packs
 - Reports installation status back to the service
 
@@ -373,18 +361,6 @@ Each HA node must run the agent to complete the installation.
 After you provision a service instance, you must configure the HA cluster to enable high availability for your Power Virtual Server environment.  
 
 The HA cluster coordinates nodes within the selected environment to ensure workload continuity during failures and supports automatic failover.
-
-
-### What information is required to deploy the HA cluster?
-{: #faq-ha-required-info}
-
-To configure the HA cluster, provide the following information:
-
-- **API key** – Must have required permissions
-- **High availability location** – The deployment location
-- **Power Virtual Server workspace** – Workspace containing the virtual server instances
-
-Ensure that the API key has the required permissions to access the selected workspace.
 
 
 ### Is adding nodes mandatory after deploy the HA cluster?
@@ -466,9 +442,9 @@ Charges are calculated based on the number of CPU cores used by the managed virt
 ### When does billing start for HA Automation for PowerVS?
 {: #faq-powerha-billing-start}
 
-Billing starts when the PowerHA installation process is initiated on the selected virtual machines.
+Billing starts when the PowerHA installation process is completed on the selected virtual machines.
 
-Charges begin when the agent starts installing the required files.
+Charges begin when the agent is downloaded the required files.
 
 
 ### Why is the agent required after adding nodes?
@@ -499,3 +475,11 @@ After installation, verify the agent by running:
 
 ```bash
 ./powerha-agent -h
+```
+
+### How many nodes can I add to an HA cluster?
+{: #faq-ha-node-limit}
+
+You can add up to **Eight nodes** to a single HA cluster.  
+
+Ensure that all nodes meet the required prerequisites and are in a healthy running state before adding them to the cluster.
