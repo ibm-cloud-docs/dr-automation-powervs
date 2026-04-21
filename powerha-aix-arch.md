@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-17"
+lastupdated: "2026-04-21"
 
 subcollection: dr-automation-powervs
 
@@ -94,10 +94,25 @@ For more details, refer to the specific data sheets and hardware overview table.
 
 To deploy and use PowerHA SystemMirror on IBM Power Virtual Server (PowerVS), ensure that your environment meets the following software requirements.
 
-- **Supported operating systems**
-PowerHA supports enterprise operating systems available on PowerVS, including IBM AIX®. Ensure that your virtual server instances are running a PowerHA-supported operating system level.
+- **Supported operating systems**  
+PowerHA supports enterprise operating systems available on PowerVS, including IBM AIX®. Ensure that your virtual server instances are running a supported AIX level.
 
-> **Note:** The agent installation script requires `curl` command, which is not supported for installation on **AIX 7.1**. Agent installation is supported on **AIX 7.2** and later version.
+The following AIX levels are supported on Power Virtual Server:
+
+- AIX 7.2 TL5 and later  
+- AIX 7.3 (recommended)
+
+The following PowerHA SystemMirror versions are supported:
+
+- 7.2.10 SP1  
+- 7.2.9 SP2  
+- 7.2.8 SP4  
+
+These versions are validated for compatibility with the supported AIX levels on Power Virtual Server.
+
+> **Note**: Supported AIX and PowerHA combinations for Power Virtual Server might differ from on-prem environments. Ensure that your environment matches the supported combinations listed above.
+
+> **Note**: The agent installation script requires the `curl` command, which is not supported on AIX 7.1. Agent installation is supported on AIX 7.2 and AIX 7.3.
 
 - **PowerHA System Mirror software**
 PowerHA System Mirror must be installed and configured on all virtual server instances that participate in the high availability cluster. The software enables health monitoring, failover, and recovery operations.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-17"
+lastupdated: "2026-04-21"
 
 keywords: getting started, disaster recovery, PowerVS, start
 
@@ -41,16 +41,13 @@ In traditional setups, disaster recovery involves multiple manual steps such as 
 ## Before you begin
 {: #prereqs}
 
-
 Complete the following prerequisites:
 
 1. **IBM Cloud account**: Ensure that you have an IBM Cloud account, [Sign up for IBM Cloud](https://cloud.ibm.com/registration) if needed.
 2. **IAM setup**: Configure Identity and Access Management (IAM) roles. See [Managing DR Automation (IAM)](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage).
 3. **SSH keys or Secret Manager**: Generate a public and private SSH key or choose a **Public SSH key** from the Secrets Manager. For details, see [Adding an SSH key](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui).
 
-4. **VPC Landing Zone schematic ID (Optional)**: A VPC Landing Zone schematic ID is not required to deploy the orchestrator. By default, the orchestrator uses a private endpoint for connectivity. Use a VPC Landing Zone schematic ID only if external connectivity to the orchestrator UI is needed. You can use an existing Power Virtual Server with a VPC Landing Zone schematic ID, create a new one from the catalog, or import an existing VPC and generate a schematic ID. See [Power Virtual Server with VPC Landing Zone](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-automation-solution-overview) document.
-
-5. **Plan infrastructure**: Define your DR requirements and estimate costs by using the [DR Automation Estimate pricing tool](https://cloud.ibm.com/estimator).
+4. **Plan infrastructure**: Define your DR requirements and estimate costs by using the [DR Automation Estimate pricing tool](https://cloud.ibm.com/estimator).
 
 ## Lifecycle of Power Virtual Server DR Automation
 {: #lpvsdrauto}

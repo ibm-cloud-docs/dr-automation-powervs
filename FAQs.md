@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-17"
+lastupdated: "2026-04-21"
 
 subcollection: dr-automation-powervs
 
@@ -323,6 +323,9 @@ To update the API key in orchestrator ,run the following command:
 ## PowerHA AIX faq
 {: #powerha-faq}
 
+## PowerHA AIX faq
+{: #powerha-faq}
+
 ### What is HA Automation for Power Virtual Server?
 {: #faq-ha-automation-overview}
 
@@ -330,14 +333,16 @@ HA Automation enables high availability for IBM Power Virtual Server workloads b
 
 It ensures continuous application availability and supports automatic failover during outages.
 
-### **What are the prerequisites for setting up HA Automation for PowerVS?**
+
+### What are the prerequisites for setting up HA Automation for PowerVS?
 {: #preque-powerha}
 
 Before you deploy HA Automation for PowerVS, ensure that the following requirements are met:
 
-- **IBM Cloud account** - You must have an active IBM Cloud account. If required, sign up at https://cloud.ibm.com/registration.
-- **IAM access** - Configure the required Identity and Access Management (IAM) roles and permissions for HA Automation for PowerVS.
-- **API key** - An IBM Cloud API key is required for service provisioning and orchestration operations.
+- **IBM Cloud account** – You must have an active IBM Cloud account.
+- **IAM access** – Configure the required Identity and Access Management (IAM) roles and permissions.
+- **API key** – An IBM Cloud API key is required for service provisioning and orchestration operations.
+
 
 ### Does HA Automation support both High Availability and Disaster Recovery?
 {: #faq-ha-dr-support}
@@ -365,19 +370,12 @@ The agent performs the following actions:
 Each HA node must run the agent to complete the installation.
 
 
-### How is billing calculated for HA Automation?
-{: #faq-ha-billing}
-
-Billing follows a usage-based (“Pay as you use”) model.
-
-Charges are calculated based on the number of CPU cores used by the managed virtual machines in the cluster. Usage is collected hourly and reported for billing purposes.
-
 ### Why is HA cluster configuration required after creating the service instance?
 {: #faq-ha-required}
 
 After you provision a service instance, you must configure the HA cluster to enable high availability for your Power Virtual Server environment.  
 
-The HA cluster coordinates nodes within the selected high availability location and workspace to help ensure workload continuity during planned or unplanned outages and to support automatic failover.
+The HA cluster coordinates nodes within the selected environment to ensure workload continuity during failures and supports automatic failover.
 
 
 ### What information is required to deploy the HA cluster?
@@ -385,9 +383,9 @@ The HA cluster coordinates nodes within the selected high availability location 
 
 To configure the HA cluster, provide the following information:
 
-- **API key** – A valid API key that is used for authentication. The key must be validated before you can save the configuration.
-- **High availability location** – The location where the HA cluster is deployed.
-- **Power Virtual Server workspace** – The workspace that contains the virtual server instances to be protected.
+- **API key** – Must have required permissions
+- **High availability location** – The deployment location
+- **Power Virtual Server workspace** – Workspace containing the virtual server instances
 
 Ensure that the API key has the required permissions to access the selected workspace.
 
@@ -397,57 +395,75 @@ Ensure that the API key has the required permissions to access the selected work
 
 Yes. After you configure the HA cluster, you must add one or more virtual server instances as cluster nodes.  
 
-High availability protection is not enabled until at least one node is added to the cluster.
+High availability protection is not enabled until nodes are added.
 
 
 ### What if no virtual server instances are available to add as nodes?
 {: #faq-ha-no-instances}
 
-If no virtual server instances are listed in the **Cluster nodes** section, you must first create a Power Virtual Server workspace and provision virtual server instances.
+If no virtual server instances are listed:
 
-To create a workspace, navigate to:
+- Ensure that a Power Virtual Server workspace exists
+- Ensure that virtual server instances are provisioned in that workspace
 
-**Navigation menu > Infrastructure > Power Virtual Server > Workspace > Create a workspace**
-
-After you provision the virtual server instances, return to the **Cluster nodes** section and add the instances to the HA cluster.
-
-
-### Do I need to manually configure the HA cluster?
-{: #faq-ha-cluster-configuration}
-
-Yes. After the software installation is complete, you must configure the HA cluster based on your workload requirements.
+After provisioning, return and add the instances as cluster nodes.
 
 
+### Why are PowerVS workspaces not listed?
+{: #faq-ha-workspace-not-listed}
 
-### Can I upgrade to a newer HA version after deployment?
-{: #faq-ha-upgrade}
+PowerVS workspaces might not be listed if:
 
-Yes. When a newer version is available, you can initiate a migration from the UI.
+- The API key does not have required permissions
+- No workspaces are available in the selected account
 
-The system downloads and installs the updated software and reports the migration status.
+Ensure that the API key has access to PowerVS and the required workspace.
 
 
+### Why am I not seeing locations after providing the API key?
+{: #faq-ha-location-missing}
 
-### What roles are required to manage HA Automation?
-{: #faq-ha-roles}
+If locations are not displayed, the API key might not have sufficient permissions.
 
-IBM Cloud platform and service roles determine what actions a user can perform.
+Ensure that the API key has access to the required services and resources.
 
-Depending on the assigned role (Administrator, Editor, Operator, or Viewer), users can provision, configure, or view service instances.
 
-### What versions of PowerHA SystemMirror are supported?
-{: #faq-powerha-supported-versions}
+### Why can't I use an existing VM for the HA cluster?
+{: #faq-ha-vm-not-usable}
 
-The service supports the following versions of IBM PowerHA SystemMirror on AIX running in Power Virtual Server environments:
+A virtual machine cannot be added as a cluster node if it is:
 
-7.2.8 SP4 (728SP4)
-7.2.9 SP3 (729SP3)
-7.2.10 SP1 (7210SP1)
+- In a **shutdown state**
+- In an **error state**
 
-These versions are validated for compatibility with the supported AIX levels on Power Virtual Server.
+Ensure that the VM is running and in a healthy state before adding it.
 
-You can also register environments that use earlier or unsupported versions. However, such versions might have limited support and compatibility.
 
+### I am not seeing the PowerHA plan in the catalog. Why?
+{: #faq-ha-plan-missing}
+
+The PowerHA plan might not be visible if:
+
+- The selected region does not support the plan
+- The service is not enabled for your account
+
+Verify supported regions and ensure that your account has access.
+
+
+### How can I estimate the cost before creating the service?
+{: #faq-ha-cost-estimation}
+
+You can use the cost estimator available in the IBM Cloud catalog.
+
+Provide inputs such as the number of CPU cores to view the estimated cost before deployment.
+
+
+### How is billing calculated for HA Automation?
+{: #faq-ha-billing}
+
+Billing follows a usage-based (“Pay as you use”) model.
+
+Charges are calculated based on the number of CPU cores used by the managed virtual machines in the cluster. Usage is collected hourly.
 
 
 ### When does billing start for HA Automation for PowerVS?
@@ -455,21 +471,34 @@ You can also register environments that use earlier or unsupported versions. How
 
 Billing starts when the PowerHA installation process is initiated on the selected virtual machines.
 
-Charges begin when the PowerHA agent starts installing the required filesets and are calculated based on the number of CPU cores of the managed virtual machines, billed hourly.
-
+Charges begin when the agent starts installing the required files.
 
 
 ### Why is the agent required after adding nodes?
-The agent is required to install and manage the supported PowerHA SystemMirror version on each node. It prepares the nodes for cluster configuration and enables automated failover operations.
+{: #faq-ha-agent-required}
 
----
+The agent is required to install and manage the supported PowerHA SystemMirror version on each node.
+
+It prepares nodes for cluster configuration and enables automated failover operations.
+
 
 ### Do I need to manually install PowerHA on each node?
-No. The agent automates the download and installation of the supported PowerHA SystemMirror version on each node. Manual installation is not required when using the agent.
+{: #faq-ha-manual-install}
+
+No. The agent automates the download and installation of the supported PowerHA version on each node.
+
 
 ### How do I download and install the agent on nodes?
-From the **Service details** page, go to the **Cluster nodes** section and click **Download agent**. Copy the downloaded file set to each virtual machine, and install it by using the `smit` or `installp` command. After installation, verify the agent by running:
+{: #faq-ha-agent-install}
+
+From the **Service details** page:
+
+1. Go to the **Cluster nodes** section  
+2. Click **Download agent**  
+3. Copy the file set to each virtual machine  
+4. Install it using `smit` or `installp`  
+
+After installation, verify the agent by running:
 
 ```bash
 ./powerha-agent -h
-```

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-17"
+lastupdated: "2026-04-21"
 
 subcollection: dr-automation-powervs
 
@@ -1537,6 +1537,7 @@ ksysmgr add snapshot
     add => ad*, cr*, make, mk
     snapshot => snap
 ```
+>**Note**: Ensure your Power virtual server instance has connectivity to IBM Cloud Object Storage(COS).
 
 An output that is similar to the following example is displayed:
 
