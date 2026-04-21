@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-16"
+lastupdated: "2026-04-21"
 
 subcollection: dr-automation-powervs
 
@@ -63,30 +63,28 @@ follow the steps:
     > - The root user is prompted to enter their password first and then an OTP during the first login.
     > - **Note:** MFA status is displayed in the **Orchestrator Details** page and MFA events are captured in the **Events** log for auditing.
 
-
 13. Enter the proxy details if you have selected **Chennai (in-che, che01)** or **Montréal (ca-mon)** as the DR location. For more information, see [How to get ProxyIP details that is configured for Virtual Server Instance for VPC](https://cloud.ibm.com/docs/dr-automation-powervs?topic=dr-automation-powervs-faqs#vpc-vsi-enab).
-
 
 14. (Optional) Expand the **Advanced orchestrator configuration** to change the Storage tier and Machine type configuration based on the **Orchestrator HA** selection.
 
-15. If the VM workloads are hosted in a different IBM Cloud account, enable the **Select if the VM workloads use a separate IBM Cloud account** toggle and provide the required **IBM Cloud Managed VM API key**.
+15. If the VM workloads are hosted in a different IBM Cloud account, enable the **separate IBM Cloud account** toggle and provide the required **IBM Cloud Managed VM API key**.
 
-15. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
+16. After verifying all settings, click **Deploy orchestrator** to start the deployment process, which creates the orchestrator VMs.
 
-16. **Finish** button is enabled once the orchestrator VM is deployed and now click **Finish** to complete the setup.
+17. **Finish** button is enabled once the orchestrator VM is deployed and now click **Finish** to complete the setup.
 
-17. Configure and manage the Power Virtual Server instances through the **External orchestrator interface** for disaster recovery.
+18. Configure and manage the Power Virtual Server instances through the **External orchestrator interface** for disaster recovery.
 
   >**Note**: The orchestrator interface (UI) is launched at https://`<Orchestrator IP>`:3000/login. The `<Orchestrator IP>` address is the system on which the orchestrator UI is installed and it is loaded automatically.
 
-18. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby orchestrator for redundancy and resilience, following the steps:
+19. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby orchestrator for redundancy and resilience, following the steps:
 
       a. Complete the [External orchestrator interface setup](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter).  
       b. Hover over the **External standby orchestrator interface** button to view the standby orchestrator IP, for example, `IP:xx.x.x.xxx`.  
       c. Use the standby orchestrator IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.  
       d. Click the **External standby orchestrator interface** button to enable the interface.
       e. Click the **Refresh** icon to update the status, enabling the **External standby orchestrator interface button** for use.
-19. If any error occurs during deployment, follow on-screen prompts or events to troubleshoot and retry the deployment.
+20. If any error occurs during deployment, follow on-screen prompts or events to troubleshoot and retry the deployment.
 
 By following this process, you can ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers.
 

@@ -110,8 +110,6 @@ The following PowerHA SystemMirror versions are supported:
 
 These versions are validated for compatibility with the supported AIX levels on Power Virtual Server.
 
-> **Note**: Supported AIX and PowerHA combinations for Power Virtual Server might differ from on-prem environments. Ensure that your environment matches the supported combinations listed above.
-
 > **Note**: The agent installation script requires the `curl` command, which is not supported on AIX 7.1. Agent installation is supported on AIX 7.2 and AIX 7.3.
 
 - **PowerHA System Mirror software**

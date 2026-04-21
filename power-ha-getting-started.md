@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-17"
+lastupdated: "2026-04-21"
 
 subcollection: dr-automation-powervs
 
@@ -30,13 +30,15 @@ You can deploy PowerHA from the IBM Cloud catalog. The UI catalog guides you thr
 ## Why use PowerHA?
 {: #why-use-powerha}
 
-“If a node in my cluster fails, how does my application remain continuously available?”
+Why use PowerHA?
+
+“If a node in my cluster fails in an IBM Power Virtual Server environment, how does my application remain continuously available?”
 
 Without automation, failover requires manual intervention to switch resources, mount storage, and restart applications, leading to service disruption.
 
-**PowerHA** solves this by using a clustered environment with shared storage and heartbeat networks to monitor node health. When a failure is detected, PowerHA automatically moves the resource group to a standby node, imports volume groups, mounts file systems, and brings up the service IP and applications.
+PowerHA addresses this by using a clustered environment with shared storage and heartbeat networks to monitor node health. When a failure is detected, PowerHA automatically moves the resource group to a standby node, imports volume groups, mounts file systems, and brings up the service IP and applications.
 
-This ensures minimal downtime and continuous availability for critical workloads.
+This ensures minimal downtime and continuous availability for applications running on IBM Power Virtual Server.
 
 ## Before you begin
 {: #prereqs}

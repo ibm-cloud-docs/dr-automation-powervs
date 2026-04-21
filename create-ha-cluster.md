@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-20"
+lastupdated: "2026-04-21"
 
 subcollection: dr-automation-powervs
 
@@ -33,9 +33,7 @@ To configure the HA deployment, complete the following steps:
 ## Add Node
 {: #add-node}
 
-After adding the required nodes that are going to be part of the PowerHA cluster, ensure that you download the agent. The agent downloads the required PowerHA SystemMirror version and installs it on the nodes.
-
-After you complete the HA deployment configuration, add nodes to the deployment.
+After you complete the HA deployment configuration, add nodes to the deployment.To add nodes follow the instruction:
 
 
 ### Procedure
@@ -67,7 +65,7 @@ Once the all the nodes are configured, you can enable the PowerHA cluster config
 ## Download agent
 {: #download-agent}
 
-After adding nodes, download and install the agent on each virtual machine (VM). To add and install complete the following steps:
+After adding the nodes to the PowerHA cluster, download the agent. The agent downloads and installs the required PowerHA SystemMirror version on each node and prepares them for cluster configuration.
 
 {:shortdesc: .shortdesc}
 
