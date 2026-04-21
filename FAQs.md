@@ -323,9 +323,6 @@ To update the API key in orchestrator ,run the following command:
 ## PowerHA AIX faq
 {: #powerha-faq}
 
-## PowerHA AIX faq
-{: #powerha-faq}
-
 ### What is HA Automation for Power Virtual Server?
 {: #faq-ha-automation-overview}
 
