@@ -817,6 +817,29 @@ Inactive_VM_Mem:     3
 
 Dedicated host support enables you to deploy the backup VM on a specific PowerVS dedicated host or host group at the target site. This feature provides better control over VM placement and resource isolation in the backup environment.
 
+If dedicated hosts or host groups are available, you can identify them using the `query workspace` command. The command displays the names of the available dedicated hosts and host groups.. While managing a VM, you can specify the required host or host group name to control where the backup VM is deployed, ensuring better resource management and availability, as shown in the output below:
+
+```
+  > ksysmgr query workspace vmrm-dal12
+  Name:                vmrm-dal12
+  ID:                  dc35accc-f83f-436f-9308-9f3150123727
+  Region:              dal12
+  Type:                off-premises
+  Family:              data-center
+  CRN:                 crn:v1:staging:public:power-iaas:dal12:a/9505da25fa8744e9883990383b72ff6e:dc35accc-f83f-436f-9308-9f3150123727::
+  Status:
+  Default_Partner:     vmrm_test_dal10
+  staticIPEnable:      default
+  VMs:                 vmrm_dhins, vmrm_dhins123, dd_test01, VMRM_DEV_AUTOSYNC_BackUp
+                      vmrm_devdh_test01_BackUp, dishant_dh01_BackUp, vmrm_dev01_dh, VMRM_DEV_AUTO_SYNC_1_BackUp
+                      VMRM_Test_DEV_BackUp, glvm_dal12, Test_Vol_BackUp
+  Networks:            dal12_network01, dal10_private_network01, public-192_168_193_56-29-VLAN_2019
+  Network pair:        dal12_network01 - dal10_private_network01 (Workspace: vmrm_test_dal10)
+  RehearsalNetworkPair dal12_network01 - dal10_private_network01 (Workspace: vmrm_test_dal10)
+  Dedicated_Hosts:     dedicated_host1
+  Dedicated_HGs:       dedicated_hg1
+```
+
 > **Note**: Ensure that the virtual machine is already managed by using the `ksysmgr manage vm` command before modifying VM configuration attributes.
 
 You can specify the dedicated host or host group while managing the VM.
@@ -874,6 +897,56 @@ Refresh Host Group list of test_dal10 workspace completed
 VM test_dh03 was successfully managed.
 Workgroup test_dh03_WG added successfully
 ```
+
+Once the discovery is completed, the backup VM is updated with the host or host group attribute, as shown in the output below:
+
+
+```
+(1) root @ pbrazos01-ksys40: /
+> date; ksysmgr query vm dishant_dh01
+Thu Apr  9 08:48:23 CDT 2026
+Name:                test_dh01
+UUID:                xxxx01x3-3xx1-4xx8-b8x1-3x638x3x1510
+State:               READY_TO_MOVE
+Dr Test State:       INIT
+Status:              ACTIVE
+Partner:             dishant_dh01_BackUp
+ActiveVM:            yes
+IPAddresses:         x0.xx.x0.1xx
+memory_capacity:     4
+Processors:          0.5
+ProcessorMode:       shared
+SharedProcPool:      yes
+TargetProcPool:      spp_ded_host
+WorkSpace:           vmrm_test_dal10
+Networks:            dal10_private_network01
+SystemType:          s922
+Target_Flex_Mem:     50
+Target_Flex_Cpu:     50
+Inactive_VM_Cpu:     0.25
+Inactive_VM_Mem:     2
+
+
+(0) root @ pbrazos01-ksys40: /
+> date; ksysmgr query vm test_dh01_BackUp
+Thu Apr  9 08:48:40 CDT 2026
+Name:                test_dh01_BackUp
+UUID:                8x62411x-1370-4xx2-8xx5-40xx6f514257
+State:               DISCOVERED
+Dr Test State:       INIT
+Status:              SHUTOFF
+Partner:             test_dh01
+ActiveVM:            no
+IPAddresses:         3x.x0.xx.72
+memory_capacity:     2
+Processors:          0.25
+ProcessorMode:       shared
+WorkSpace:           test-dal12
+Networks:            dal12_network01
+SystemType:          s922
+Dedicated_Host:      dedicated_host1
+```
+
 
 ### Target VM name
 {: #backup-vm-rename}
