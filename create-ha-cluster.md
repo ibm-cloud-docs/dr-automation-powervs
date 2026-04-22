@@ -72,26 +72,27 @@ After adding the nodes to the PowerHA cluster, download the agent. The agent dow
 ### Procedure
 {: #procedure-download-agent}
 
-1. On the **Service details** page, go to the **Cluster nodes** section.
-2. Click **Download agent**.
 
-   The agent file set (`powerhaagent.rte`) is downloaded to your local system.
-
-3. Copy the downloaded file set to each VM that is added to the cluster.
-
-4. Log in to each VM and install the file set by using the `smit` or `installp` command.
-
-5. After installation, go to the agent installation directory:
-
-  ```
-  /opt/IBM/powerha-agent/
-  ```
-
-6. Verify that the agent is installed:
-
-  ```bash
-  ./powerha-agent -h
-  ```
+> 1. On the **Service details** page, go to the **Cluster nodes** section.
+>
+> 2. Click **Download agent**.  
+>    The agent file set (`powerhaagent.rte`) is downloaded to your local system.
+>
+> 3. Copy the downloaded file set to each VM that is added to the cluster.
+>
+> 4. Log in to each VM and install the file set by using the `smit` or `installp` command.
+>
+> 5. After installation, go to the agent installation directory:
+>
+>    ```bash
+>    /opt/IBM/powerha-agent/
+>    ```
+>
+> 6. Verify that the agent is installed:
+>
+>    ```bash
+>    ./powerha-agent -h
+>    ```
 
 Example output:
 
