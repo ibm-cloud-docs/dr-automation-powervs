@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-22"
 
 subcollection: dr-automation-powervs
 
@@ -48,21 +48,18 @@ You can use IBM Cloud Logs to visualize and alert on events that are generated i
 
 Activity Tracker Event Routing records user-initiated activities that change the state of a service in IBM Cloud. The events comply with the Cloud Auditing Data Federation (CADF) standard.
 
----
 
 ## Management events
 {: #ha-manage-events-powerha}
 
 This document provides details on various events relevant to PowerHA SystemMirror. These events help administrators manage and monitor high availability (HA) environments.
 
----
 
 ## PowerHA SystemMirror service events documentation
 {: #ha-powerha-events}
 
 This section lists the key Activity Tracker events and their corresponding API operations for the **PowerHA SystemMirror service**.
 
----
 
 ## Dashboard
 {: #ha-dashboard-events}
@@ -72,7 +69,7 @@ This section lists the key Activity Tracker events and their corresponding API o
 | `power-dr-automation.dashboard.view` | View the PowerHA dashboard for the service instance. |
 {: caption="dashboard" caption-side="bottom"}
 
----
+
 
 ## PowerHA settings
 {: #ha-powerha-settings-events}
@@ -83,7 +80,7 @@ This section lists the key Activity Tracker events and their corresponding API o
 | `power-dr-automation.powerha-settings.update` | Update PowerHA configuration settings for the service instance. |
 {: caption="powerha-settings" caption-side="bottom"}
 
----
+
 
 ## PowerHA operation
 {: #ha-powerha-operation-events}
@@ -93,7 +90,7 @@ This section lists the key Activity Tracker events and their corresponding API o
 | `power-dr-automation.powerha-operation.read` | Retrieve PowerHA operational details for the service instance. |
 {: caption="powerha-operation" caption-side="bottom"}
 
----
+
 
 ## PowerHA summary
 {: #ha-powerha-summary-events}
@@ -103,7 +100,6 @@ This section lists the key Activity Tracker events and their corresponding API o
 | `power-dr-automation.powerha-summary.read` | Retrieve summary information for PowerHA environments. |
 {: caption="powerha-summary" caption-side="bottom"}
 
----
 
 ## Event
 {: #ha-powerha-event-events}
@@ -114,7 +110,6 @@ This section lists the key Activity Tracker events and their corresponding API o
 | `power-dr-automation.powerha-event.read` | Retrieve details of a specific PowerHA event. |
 {: caption="powerha-event" caption-side="bottom"}
 
----
 
 ## PowerHA virtual machines
 {: #ha-powerha-vm-events}

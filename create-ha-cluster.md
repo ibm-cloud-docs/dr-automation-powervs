@@ -86,7 +86,7 @@ After adding the nodes to the PowerHA cluster, download the agent. The agent dow
   ```
   /opt/IBM/powerha-agent/
   ```
-  
+
 6. Verify that the agent is installed:
 
   ```bash
@@ -275,7 +275,3 @@ After the agent installation is complete:
 - The node status is updated in the **Cluster nodes** table with the corresponding PowerHA installation state.
 
 - The **PowerHA version** and **Agent status** fields are updated for the node.
-
-
-
-  These events provide details about the PowerHA installation activity and status for each node.
