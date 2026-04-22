@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-21"
+lastupdated: "2026-04-22"
 
 subcollection: dr-automation-powervs
 
@@ -820,27 +820,25 @@ Dedicated host support enables you to deploy the backup VM on a specific PowerVS
 If dedicated hosts or host groups are available, you can identify them using the `query workspace` command. The command displays the names of the available dedicated hosts and host groups.. While managing a VM, you can specify the required host or host group name to control where the backup VM is deployed, ensuring better resource management and availability, as shown in the output below:
 
 ```
-  > ksysmgr query workspace vmrm-dal12
-  Name:                vmrm-dal12
-  ID:                  dc35accc-f83f-436f-9308-9f3150123727
+  > ksysmgr query workspace test-dal12
+  Name:                test-dal12
+  ID:                  xx35xxxx-x83x-000x-9308-9x3150123727
   Region:              dal12
   Type:                off-premises
   Family:              data-center
-  CRN:                 crn:v1:staging:public:power-iaas:dal12:a/9505da25fa8744e9883990383b72ff6e:dc35accc-f83f-436f-9308-9f3150123727::
+  CRN:                 crn:x1:public:power-xxxx:xx000:x/9505xx25fx8744x9883990383b72xx6x:xx35axxx-x83x-436x-9308-9x3150123727::
   Status:
-  Default_Partner:     vmrm_test_dal10
+  Default_Partner:     xxxx_test_dal10
   staticIPEnable:      default
-  VMs:                 vmrm_dhins, vmrm_dhins123, dd_test01, VMRM_DEV_AUTOSYNC_BackUp
-                      vmrm_devdh_test01_BackUp, dishant_dh01_BackUp, vmrm_dev01_dh, VMRM_DEV_AUTO_SYNC_1_BackUp
-                      VMRM_Test_DEV_BackUp, glvm_dal12, Test_Vol_BackUp
-  Networks:            dal12_network01, dal10_private_network01, public-192_168_193_56-29-VLAN_2019
-  Network pair:        dal12_network01 - dal10_private_network01 (Workspace: vmrm_test_dal10)
-  RehearsalNetworkPair dal12_network01 - dal10_private_network01 (Workspace: vmrm_test_dal10)
+  VMs:                 test, test123, dd_test01, DEV_AUTOSYNC_BackUp
+                      devdh_test01_BackUp, _dh01_BackUp, dev01_dh, DEV_AUTO_SYNC_1_BackUp
+                      Test_DEV_BackUp, glvm_dal12, Test_Vol_BackUp
+  Networks:            dal12_network01, dal10_private_network01, public-0000_000_193_00-29-xxxx_0000
+  Network pair:        dal12_network01 - dal10_private_network01 (Workspace: test_dal10)
+  RehearsalNetworkPair dal12_network01 - dal10_private_network01 (Workspace: test_dal10)
   Dedicated_Hosts:     dedicated_host1
   Dedicated_HGs:       dedicated_hg1
 ```
-
-> **Note**: Ensure that the virtual machine is already managed by using the `ksysmgr manage vm` command before modifying VM configuration attributes.
 
 You can specify the dedicated host or host group while managing the VM.
 
@@ -903,14 +901,14 @@ Once the discovery is completed, the backup VM is updated with the host or host 
 
 ```
 (1) root @ pbrazos01-ksys40: /
-> date; ksysmgr query vm dishant_dh01
+> date; ksysmgr query vm test_dh01
 Thu Apr  9 08:48:23 CDT 2026
 Name:                test_dh01
 UUID:                xxxx01x3-3xx1-4xx8-b8x1-3x638x3x1510
 State:               READY_TO_MOVE
 Dr Test State:       INIT
 Status:              ACTIVE
-Partner:             dishant_dh01_BackUp
+Partner:             dh01_BackUp
 ActiveVM:            yes
 IPAddresses:         x0.xx.x0.1xx
 memory_capacity:     4
@@ -918,7 +916,7 @@ Processors:          0.5
 ProcessorMode:       shared
 SharedProcPool:      yes
 TargetProcPool:      spp_ded_host
-WorkSpace:           vmrm_test_dal10
+WorkSpace:           test_dal10
 Networks:            dal10_private_network01
 SystemType:          s922
 Target_Flex_Mem:     50
@@ -928,9 +926,9 @@ Inactive_VM_Mem:     2
 
 
 (0) root @ pbrazos01-ksys40: /
-> date; ksysmgr query vm test_dh01_BackUp
+> date; ksysmgr query vm test_BackUp
 Thu Apr  9 08:48:40 CDT 2026
-Name:                test_dh01_BackUp
+Name:                test_BackUp
 UUID:                8x62411x-1370-4xx2-8xx5-40xx6f514257
 State:               DISCOVERED
 Dr Test State:       INIT
@@ -1628,22 +1626,18 @@ Successfully created a configuration snapshot: /var/ksys/snapshots/snap.xml_DETA
 
 
 ```
-ksysmgr add snapshot
-      [filepath=<full file prefix path | file prefix>]
-      [upload_to_cos=<yes | no>]
-      [region=<cos_region>]
-      [bucketname=<cos_bucket_name>]
-    add => ad*, cr*, make, mk
-    snapshot => snap*
+ksysmgr query snapshot filepath=full_file_prefix_path
 ```
+
+> **Note**: Ensure your Power virtual server instance has connectivity to IBM Cloud Object Storage(COS).
 
 An output that is similar to the following example is displayed:
 
 ```
 ---- Snapshot Contents ----
 File: /var/ksys/snapshots/oldclust_DETAILED_2024-07-29_06:35:30.xml
-VMRM Version:1.8.0.1
-Date: 2024-07-29
+VMRM Version:1.9.0.1
+Date: 0000-00-00
 Time: 06:35:30
 Cluster:
 Name: pvs_dr
@@ -2424,18 +2418,18 @@ DR Rehearsal network pairing can be verified at query workspace:
 /opt/IBM/ksys/powervs
 #ksysmgr query workspace vmrm-dal12 ; ksysmgr query workspace powervs-dr-wdc06
 Name:                vmrm-dal12
-ID:                  1d6118b5-bd77-4100-a655-754453558d9d
+ID:                  1x6118b5-xx77-4100-x655-754453558x9x
 Region:              dal12
 Type:                off-premises
 Family:              data-center
-CRN:                 crn:v1:bluemix:public:power-iaas:dal12:a/fe3c2ccd058e407c81e1dba2b5c0e0d6:1d6118b5-bd77-4100-a655-754453558d9d::
+CRN:                 crn:v1:bluemix:public:power-xxxx:xxl12:a/xx3x2xxd058x407x81x1xxx2b5x0x0x6:1d6118b5-xx77-4100-x655-754453558x9x::
 Status:
 Default_Partner:     powervs-dr-wdc06
 staticIPEnable:      default
-VMs:                 ksysnode_dishant, vmrm_IBMi1, vmrm_test03, vmrm_test01
-                     vmrm_test02, VMRM_DEV_TEST2_BackUp, vmrm_test05, vmrm_test04
-                     VMRM_DEV-3, VMRM_DEV-2, aix_pub_vm, ksysnode01
-                     VMRM_DEV-1
+VMs:                 ksysnode, vmrm_IBMi1, test03, test01
+                     test02, DEV_TEST2_BackUp, test05, test04
+                     DEV-3, DEV-2, aix_pub_vm, ksysnode01
+                     DEV-1
 Networks:            dal12-network01, public-192_168_198_80-29-VLAN_2070, dal12_network01
 Network pair:        dal12_network01 - wdc06_network01 (Workspace: powervs-dr-wdc06)
                      dal12-network01 - dal12-network01 (Workspace: powervs-dr-wdc06)
@@ -2447,13 +2441,13 @@ ID:                  xx2f37ac-xxxx-4e13-xxxx-7a9ba511xxxx
 Region:              wdc06
 Type:                off-premises
 Family:              data-center
-CRN:                 crn:v1:bluemix:public:power-iaas:wdc06:a/fe3c2ccd058e407c81e1dba2b5c0e0d6:912f37ac-918d-4e13-866a-7a9ba511c047::
+CRN:                 crn:v1:bluemix:public:power-xxxx:xxx06:a/xx3x2xxx058x407x81e1xxx2b5c0e0d6:912f37xx-918d-4x13-866x-7x9xx511x047::
 Status:
 Default_Partner:     vmrm-dal12
 staticIPEnable:      default
-VMs:                 VMRM_DEV_TEST2, oracle_test01_BackUp, vmrm_test05_BackUp, glvm_wdc06
-                     aix_pub_test, VMRM_DEV-1_BackUp, vmrm_IBMi1_BackUp
-Networks:            test_network01, public-000_168_000_80-29-VLAN_2070, test-network01
+VMs:                 DEV_TEST2, test01_BackUp, test05_BackUp, glvm_wdc06
+                     aix_pub_test, DEV-1_BackUp, IBMi1_BackUp
+Networks:            test_network01, public-000_168_000_80-00-VLAN_2070, test-network01
 Network pair:        wdc06_network01 - test_network01 (Workspace: test-dal12)
                      test-network01 - test-network01 (Workspace: test-dal12)
 RehersalNetworkPair: test_network01 - test_network01 (Workspace: test-dal12)
