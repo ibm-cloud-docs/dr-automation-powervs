@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-17"
+lastupdated: "2026-04-22"
 
 subcollection: dr-automation-powervs
 
@@ -16,7 +16,7 @@ The {{site.data.keyword.DR_full_notm}} DR Automation Command Line Interface (CLI
 
 - [DR Automation CLI](/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version)
 
-- [PowerHA CLI](docs/dr-automation-powervs?topic=dr-automation-powervs-powerha-cli-version)
+- [PowerHA CLI](/docs/dr-automation-powervs?topic=dr-automation-powervs-powerha-cli-version)
 
 
 You can also use the application programming interfaces (APIs) to interact with DR Automation. For more information, see [**API references**](https://cloud.ibm.com/apidocs/dr-automation-powervs).

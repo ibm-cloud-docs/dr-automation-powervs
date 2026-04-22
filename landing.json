@@ -6,15 +6,15 @@
   "section_topics": {
     "links": [
       {
-        "title": "Architecture for HA and DR Automation for IBM® Power™ Virtual Server DR Automation in IBM Data Center",
+        "title": "Architecture for HA and DR Automation for IBM® Power™ Virtual Server for DR automationin IBM Data Center",
         "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-arch"
       },
       {
-        "title": "Architecture for HA and DR Automation for IBM® Power™ Virtual Server DR Automation in Client Location (Private Cloud)",
+        "title": "Architecture for HA and DR Automation for IBM® Power™ Virtual Server for DR automation in Client Location (Private Cloud)",
         "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-arch-private-pod"
       },
       {
-        "title": "Architecture for HA and DR Automation for IBM® Power™ Virtual Server PowerHA AIX",
+        "title": "Architecture for HA and DR Automation for IBM® Power™ Virtual Server for PowerHA",
         "href": "/docs/dr-automation-powervs-arch-powerha-aix"
       },
       {

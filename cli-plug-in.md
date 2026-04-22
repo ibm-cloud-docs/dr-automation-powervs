@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-10"
+lastupdated: "2026-04-22"
 
 subcollection: dr-automation-powervs
 
@@ -64,4 +64,4 @@ To install, update, or view the DR Automation CLI plug-in, complete the followin
 
 4. You can use the CLI commands available for DR Automation.
 
-Refer to the full {{site.data.keyword.DR_full}} CLI documentation [DR Automation CLI](/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version),[PowerHA CLI](/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version) .
+Refer to the full {{site.data.keyword.DR_full}} CLI documentation [DR Automation CLI](/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version),[PowerHA CLI](/docs/dr-automation-powervs?topic=dr-automation-powervs-powerha-cli-version) .

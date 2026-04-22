@@ -61,7 +61,7 @@ toc:
               - manage-vm.md
               - dr-automation-events.md
           - topicgroup:
-              label: PowerHA AIX
+              label: PowerHA
               topics:
               - create-ha-cluster.md
       - topicgroup:
@@ -94,7 +94,7 @@ toc:
               - monitor-metrics.md
               - dr-activity-tracker-events.md
           - topicgroup:
-              label: PowerHA AIX
+              label: PowerHA
               topics:
               - monitoring-metrics-ha.md
               - activity-tracker-events-ha.md

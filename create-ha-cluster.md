@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-21"
+lastupdated: "2026-04-22"
 
 subcollection: dr-automation-powervs
 
@@ -83,15 +83,15 @@ After adding the nodes to the PowerHA cluster, download the agent. The agent dow
 
 5. After installation, go to the agent installation directory:
 
-```bash
-/opt/IBM/powerha-agent/
-```
-
+  ```
+  /opt/IBM/powerha-agent/
+  ```
+  
 6. Verify that the agent is installed:
 
-```bash
-./powerha-agent -h
-```
+  ```bash
+  ./powerha-agent -h
+  ```
 
 Example output:
 
