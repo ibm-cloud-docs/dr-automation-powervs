@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-21"
+lastupdated: "2026-04-22"
 
 subcollection: dr-automation-powervs
 
@@ -108,7 +108,6 @@ The following PowerHA SystemMirror versions are supported:
 - 7.2.9 SP2  
 - 7.2.8 SP4  
 
-These versions are validated for compatibility with the supported AIX levels on Power Virtual Server.
 
 > **Note**: The agent installation script requires the `curl` command, which is not supported on AIX 7.1. Agent installation is supported on AIX 7.2 and AIX 7.3.
 
