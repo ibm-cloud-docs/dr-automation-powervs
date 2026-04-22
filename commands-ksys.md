@@ -908,7 +908,7 @@ UUID:                xxxx01x3-3xx1-4xx8-b8x1-3x638x3x1510
 State:               READY_TO_MOVE
 Dr Test State:       INIT
 Status:              ACTIVE
-Partner:             dh01_BackUp
+Partner:             test_dh01_BackUp
 ActiveVM:            yes
 IPAddresses:         x0.xx.x0.1xx
 memory_capacity:     4
@@ -926,9 +926,9 @@ Inactive_VM_Mem:     2
 
 
 (0) root @ pbrazos01-ksys40: /
-> date; ksysmgr query vm test_BackUp
+> date; ksysmgr query vm test_dh01_BackUp
 Thu Apr  9 08:48:40 CDT 2026
-Name:                test_BackUp
+Name:                test_dh01_BackUp
 UUID:                8x62411x-1370-4xx2-8xx5-40xx6f514257
 State:               DISCOVERED
 Dr Test State:       INIT
@@ -1634,15 +1634,19 @@ ksysmgr query snapshot filepath=full_file_prefix_path
 An output that is similar to the following example is displayed:
 
 ```
+ksysmgr query snapshot filepath=/home/test_snap_DETAILED_2026-04-22_00:14:30.xml.tar.gz
 ---- Snapshot Contents ----
-File: /var/ksys/snapshots/oldclust_DETAILED_2024-07-29_06:35:30.xml
-VMRM Version:1.9.0.1
-Date: 0000-00-00
-Time: 06:35:30
+File:        /home/test_snap_DETAILED_2026-04-22_00:14:30.xml
+VMRM Version:1.9.0.2
+Date:        0000-00-00
+Time:        00:14:30
+---------------------------
+
 Cluster:
-Name: pvs_dr
-Node: hostname.com
-Type: IBM_PVS_DR
+--------
+Name:       test_cluster
+Node:       ksysnode01
+Type:       IBM_PVS_DR
 ```
 
 ### To restore the configuration data on a KSYS node:
