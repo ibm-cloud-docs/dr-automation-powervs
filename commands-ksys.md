@@ -2422,7 +2422,7 @@ ID:                  1x6118b5-xx77-4100-x655-754453558x9x
 Region:              dal12
 Type:                off-premises
 Family:              data-center
-CRN:                 crn:v1:bluemix:public:power-xxxx:xxl12:a/xx3x2xxd058x407x81x1xxx2b5x0x0x6:1d6118b5-xx77-4100-x655-754453558x9x::
+CRN:                 crn:v1:bluemix:public:power-xxxx:xxl12:a/xx3x2xxd058x407x81x1xxx2b5x0x0x6:1d6118b5-xx77-4100-x655-754453558x9x:
 Status:
 Default_Partner:     powervs-dr-wdc06
 staticIPEnable:      default
@@ -2441,7 +2441,7 @@ ID:                  xx2f37ac-xxxx-4e13-xxxx-7a9ba511xxxx
 Region:              wdc06
 Type:                off-premises
 Family:              data-center
-CRN:                 crn:v1:bluemix:public:power-xxxx:xxx06:a/xx3x2xxx058x407x81e1xxx2b5c0e0d6:912f37xx-918d-4x13-866x-7x9xx511x047::
+CRN:                 crn:v1:bluemix:public:power-xxxx:xxx06:a/xx3x2xxx058x407x81e1xxx2b5c0e0d6:912f37xx-918d-4x13-866x-7x9xx511x047:
 Status:
 Default_Partner:     vmrm-dal12
 staticIPEnable:      default
