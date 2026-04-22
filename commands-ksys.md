@@ -300,7 +300,7 @@ State:               Online
 Type:                IBM_PVS_PRIVATE_DR
 Ksysnodes:           testpriv1:1:Online
 KsysState:           testpriv1:1:Online
-Proxy:               10.30.40.4:3128
+
 ```
 
 ### To remove a KSYS cluster:

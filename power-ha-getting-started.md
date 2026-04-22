@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-21"
+lastupdated: "2026-04-22"
 
 subcollection: dr-automation-powervs
 
@@ -30,7 +30,6 @@ You can deploy PowerHA from the IBM Cloud catalog. The UI catalog guides you thr
 ## Why use PowerHA?
 {: #why-use-powerha}
 
-Why use PowerHA?
 
 “If a node in my cluster fails in an IBM Power Virtual Server environment, how does my application remain continuously available?”
 
@@ -47,8 +46,7 @@ Before you deploy HA automation, ensure that the following requirements are met:
 
 1. **IBM Cloud account**: You must have an active IBM Cloud account. If required, sign up at [Sign up for IBM Cloud](https://cloud.ibm.com/registration).
 
-2. **IAM access** : Configure the required Identity and Access Management (IAM) roles and permissions for PowerHA.  
-For more information, see [Managing PowerHA IAM access](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage).
+2. **IAM access** : Configure the required Identity and Access Management (IAM) roles and permissions for PowerHA. For more information, see [Managing PowerHA IAM access](/docs/dr-automation-powervs?topic=dr-automation-powervs-iam-manage).
 
 3. **API key** : An IBM Cloud API key is required for service provisioning and ongoing operations.
 
@@ -69,5 +67,3 @@ After provisioning PowerHA, you can:
 2. Add the node and download the agent.
 
 HA cluster administration, application resource groups, and failover policies continue to be managed by using PowerHA SystemMirror tools.
-
-These advanced configurations help you optimize your disaster recovery setup for business resilience.

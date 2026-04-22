@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-16"
+lastupdated: "2026-04-22"
 
 subcollection: dr-automation-powervs
 
@@ -190,6 +190,6 @@ Additionally, the system automatically adds all default networks configured for 
 {: #setup}
 
 1. Log in to your [IBM Cloud account](https://cloud.ibm.com/).
-2. Locate the DR Automation tile.
-3. Set up storage, compute, and network resources according to DR needs.
-4. Schedule DR tests and monitor system health.
+2. Locate the {{site.data.keyword.DR_full_notm}} tile.
+3. Complete the setup according to DR needs.
+4. Deploy the Orchestrator.

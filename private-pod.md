@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-14"
+lastupdated: "2026-04-22"
 
 subcollection: dr-automation-powervs
 
@@ -138,7 +138,6 @@ IBM Power servers supported by {{site.data.keyword.DR_full_notm}} include the fo
 - **IBM Power E1150**
 - **IBM Power S1124**
 
-For more details, see to the specific data sheets and hardware overview table.
 
 ## Software requirements
 {: #srprivate}
@@ -210,5 +209,5 @@ For example, you can determine the support for the following capabilities in you
 
 1. Log in to your [IBM Cloud account](https://cloud.ibm.com/).
 2. Locate the {{site.data.keyword.DR_full_notm}} tile.
-3. Set up storage, compute, and network resources according to DR needs.
-4. Schedule DR tests and monitor system health.
+3. Complete the setup according to DR needs.
+4. Deploy the Orchestrator.
