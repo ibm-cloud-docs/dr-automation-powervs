@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-22"
+lastupdated: "2026-04-23"
 
 subcollection: dr-automation-powervs
 
@@ -30,6 +30,7 @@ You can deploy PowerHA from the IBM Cloud catalog. The UI catalog guides you thr
 ## Why use PowerHA?
 {: #why-use-powerha}
 
+HA Automation for Power Virtual Server is a service that automates high availability for workloads running on IBM Power Virtual Server, ensuring minimal downtime and fast failover.
 
 “If a node in my cluster fails in an IBM Power Virtual Server environment, how does my application remain continuously available?”
 

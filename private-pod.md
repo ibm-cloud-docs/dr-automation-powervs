@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-22"
+lastupdated: "2026-04-23"
 
 subcollection: dr-automation-powervs
 
@@ -179,20 +179,7 @@ The Satellite location is where the private cloud VM is hosted, for which the Po
 ## Network configurations
 {: #nsprivate}
 
-### Connectivity for Orchestrator UI:
-{: #cfouiprivate}
 
-As part of the DR Automation deployment, the system creates the Orchestrator (KSYS) virtual server with private networks only, preventing direct access to the Power Virtual Server. To access this virtual server, you must use a VPN that is connected to the VPC or manually enable the public network after deployment.
-
-DR Automation uses **custom VPC** and **VPC schematic** through the Power Virtual Server with VPC landing zone , VPC Schematic internally creates an optional VPN  and in case of Custom VPC, VPN need to be configured manually. This VPN allows you to connect the Power Virtual Server and Virtual Server Instances (VSI) by downloading the VPN profile.
-
-After deployment, you can launch the **External Orchestrator UI** when you connect to the VPN, or when the public network is explicitly enabled.
-
-When KSYSHA is enabled, a standby Orchestrator is created in the user selected workspace, and the workspace is added to the Transit Gateway to establish connectivity with the VPC. When selecting the standby workspace, ensure that no duplicate subnet range is configured across the workspaces that are connected to the Transit Gateway. If multiple Power Virtual Servers have the same subnet range, the subnets they might fail to communicate with the VPC.
-
-Additionally, the system automatically adds all default networks that are configured for Power Virtual Servers to the security group to enable communication during the **Power Virtual Server with VPC landing zone** creation. If you create new subnets in the Power Virtual Server workspace, you must add them to the security group to enable communication with the VPC. For more information about VPC, see [VPC Security](https://cloud.ibm.com/docs/vpc?topic=vpc-security-in-your-vpc).
-
- For detailed steps on connecting to the Power Virtual Server with VPC, see [Connect using a client-to-site VPN](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-solution-connect-client-vpn).
 
 ## Data center capabilities
 {: #datacapability}

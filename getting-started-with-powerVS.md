@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-21"
+lastupdated: "2026-04-23"
 
 keywords: getting started, disaster recovery, PowerVS, start
 
@@ -30,6 +30,8 @@ IBM Power Virtual Server Public Cloud officially supports Red Hat Enterprise Lin
 
 ## Why use DR Automation?
 {: #why-use-dr-automation}
+
+DR Automation for Power Virtual Server is a service that automates disaster recovery for workloads running on IBM Power Virtual Server, ensuring minimal downtime and fast failover.
 
 “If a site failure occurs in an IBM Power Virtual Server environment, how are my virtual machines and applications recovered without manual intervention?”
 
