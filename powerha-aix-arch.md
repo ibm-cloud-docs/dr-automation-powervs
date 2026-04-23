@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-22"
+lastupdated: "2026-04-23"
 
 subcollection: dr-automation-powervs
 
@@ -24,7 +24,6 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 - [Key Features](#keypro)
 - [Hardware Specifications](#hspower)
 - [Software Requirements](#sstpowerha)
-- [Supported Storage Tiers](#sstpowerha)
 - [Network Configurations](#nsaix)
 - [API key](#apikey)
 
@@ -122,19 +121,6 @@ Virtual server instances must be configured with compatible networking and share
 
 After the software requirements are met, you can configure your PowerVS virtual server instances as a PowerHA cluster to enable high availability for your workloads.
 
-
-## Supported storage tiers
-{: #sst}
-
- PowerHA offers storage with configurable IOPS levels to meet diverse HA requirements:
-
-| Tier Level | IOPS       | Performance                                |
-|------------|------------|--------------------------------------------|
-| **Tier 1** | 10 IOPS/GB | Balanced performance for general workloads |
-| **Tier 3** | 3 IOPS/GB  | Cost-effective for noncritical applications |
-{: caption="Tier and IOPS mapping" caption-side="bottom"}
-
-Storage is allocated based on deployment needs, ensuring efficient usage of resources and seamless management.
 
 ## API key
 {: #apikey}
