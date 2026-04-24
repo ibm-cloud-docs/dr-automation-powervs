@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-03-11"
+lastupdated: "2026-04-24"
 
 subcollection: dr-automation-powervs
 
@@ -22,7 +22,9 @@ IBM® strives to keep issues in {{site.data.keyword.DR_full}} to a minimum, but 
 ## April 2026
 {: #april-26}
 
-1. The agent installation script requires `curl` command, which is not supported for installation on AIX 7.1. Agent installation is supported on AIX 7.2 and later version.
+1. The backup VM name must be different from the home site VM name. Using the same name as the source VM is not supported.
+
+2. The agent installation script requires `curl` command, which is not supported for installation on AIX 7.1. Agent installation is supported on AIX 7.2 and later version.
 
 ## December 2025
 {: #december-25}
