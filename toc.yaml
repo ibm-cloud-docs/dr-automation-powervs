@@ -64,6 +64,7 @@ toc:
               label: PowerHA
               topics:
               - create-ha-cluster.md
+              - powerha-mfa-enable.md
       - topicgroup:
           label: External orchestrator
           topics:
