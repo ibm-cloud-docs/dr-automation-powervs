@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-23"
+lastupdated: "2026-04-24"
 subcollection: dr-automation-powervs
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -28,7 +28,7 @@ Use these release notes to learn about the latest updates to **{{site.data.keywo
 
 - Monitoring and Activity Tracker support is now available for PowerHA SystemMirror in IBM Cloud.For more information, see [PowerHA observability](/docs/dr-automation-powervs?group=powerha-aix)
 
-- CLI support is now available for PowerHA operations, enabling you to manage service instance configuration, cluster nodes, and deployment lifecycle by using supported commands. You can also retrieve events, download agents, and view PowerVS workspaces and locations for the service instance, allowing better automation and operational control. For more information, see [HA and DR Automation for IBM® Power™ Virtual Server command reference](/docs/dr-automation-powervs?group=ha-and-dr-automation-for-ibm-power-virtual-server-command-reference).
+- API, SDK, CLI, Terraform support is now available for PowerHA operations, enabling you to manage service instance configuration, cluster nodes, and deployment lifecycle by using supported commands. You can also retrieve events, download agents, and view PowerVS workspaces and locations for the service instance, allowing better automation and operational control. For more information, see [HA and DR Automation for IBM® Power™ Virtual Server command reference](/docs/dr-automation-powervs?group=ha-and-dr-automation-for-ibm-power-virtual-server-command-reference).
 
 - You can now configure VM Flex capacity by using the external orchestrator UI and CLI, allowing the orchestrator (KSYS) to dynamically adjust CPU and memory allocation for backup VMs during failover and disaster recovery rehearsal operations. Backup VMs are initially provisioned with minimal resources and scaled based on configured flex values during operations, optimizing resource utilization in the target PowerVS workspace. For more information, see [Flex capacity support](/docs/dr-automation-powervs?topic=dr-automation-powervs-comm#flex-capacity-support).
 
