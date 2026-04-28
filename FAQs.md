@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-21"
+lastupdated: "2026-04-28"
 
 subcollection: dr-automation-powervs
 
@@ -153,10 +153,10 @@ The platform includes features for DR drills, where users can simulate failovers
 
 Yes, users can scale resources dynamically based on workload demands. Additional cores can be provisioned through the IBM Cloud UI.
 
-### **What resources should be planned before implementing DR Automation?**
-{: #implementt}   
+### **What resources be planned before implementing DR Automation?**
+{: #implementt}
 
-Before implementing the DR Automation solution, can ensure that you have the following resources planned and ready:  
+Before implementing the DR Automation solution, can ensure that you have the following resources planned and ensure that the following resources are planned and available::  
 
 - **KSYS Node**: Identify the virtual machine runs IBM AIX 7.3 with Technology Level 1 Service Pack 1 (7300-01-01) or later, capable of communication with both active and backup sites through HTTPS.
 
@@ -165,10 +165,6 @@ Before implementing the DR Automation solution, can ensure that you have the fol
 - **LPARs**: Can ensure LPARs are part of the active site and not set for automatic restart.  
 - **Cloud Storage**: Set up cloud storage compatible with cloud storage APIs to manage data replication between sites.
 
-### **What are the main API endpoints for PowerVS DR Automation?**
-{: #apiendd}  
-
-Key endpoints include provisioning APIs for deploying KSYS VMs, monitoring APIs for health metrics, and deprovisioning APIs for tearing down configurations. Some APIs and workflows apply only to DR Automation plans.
 
 
 ### **What is the role of the KSYS node in DR operations for PowerVS?**
@@ -320,10 +316,10 @@ To update the API key in orchestrator ,run the following command:
    ```ksysmgr modify ksyscluster <ksysclustername> apikey=<apikey>```
 > **Note:** Use the same API key in both the deployment and orchestrator to ensure proper synchronization.
 
-## PowerHA faq
+## HA Automation (PowerHA) faq
 {: #powerha-faq}
 
-### What is HA Automation for Power Virtual Server?
+### What is HA Automation(PowerHA)?
 {: #faq-ha-automation-overview}
 
 HA Automation enables high availability for IBM Power Virtual Server workloads by deploying and managing clustered environments in the cloud.  
@@ -331,14 +327,14 @@ HA Automation enables high availability for IBM Power Virtual Server workloads b
 It ensures continuous application availability and supports automatic failover during outages.
 
 
-### What are the prerequisites for setting up HA Automation for PowerVS?
+### What are the prerequisites for setting up HA Automation?
 {: #preque-powerha}
 
-Before you deploy HA Automation for PowerVS, ensure that the following requirements are met:
+Before you deploy HA Automation for PowerVS, ensure that you meet the following requirements:
 
-- **IBM Cloud account** – You must have an active IBM Cloud account.
-- **IAM access** – Configure the required Identity and Access Management (IAM) roles and permissions.
-- **API key** – An IBM Cloud API key is required for service provisioning and orchestration operations.
+- **IBM Cloud account** : You must have an active [IBM Cloud account](https://cloud.ibm.com/registration).
+- **IAM access**: Configure the required Identity and Access Management (IAM) roles and permissions.
+- **API key** : You must have an IBM Cloud API key for service provisioning and orchestration operations.
 
 
 ### How is HA configured on PowerVS virtual machines?
@@ -366,7 +362,7 @@ The HA cluster coordinates nodes within the selected environment to ensure workl
 ### Is adding nodes mandatory after deploy the HA cluster?
 {: #faq-ha-add-node-mandatory}
 
-Yes. After you configure the HA cluster, you must add one or more virtual server instances as cluster nodes.  
+Yes. After you configure the HA cluster, you must add one or more virtual server instances as delpoy the cluster nodes.  
 
 High availability protection is not enabled until nodes are added.
 
@@ -444,7 +440,7 @@ Charges are calculated based on the number of CPU cores used by the managed virt
 
 Billing starts when the PowerHA installation process is completed on the selected virtual machines.
 
-Charges begin when the agent is downloaded the required files.
+Billing begin when the agent is downloaded the required files.
 
 
 ### Why is the agent required after adding nodes?
@@ -483,3 +479,18 @@ After installation, verify the agent by running:
 You can add up to **Eight nodes** to a single HA cluster.  
 
 Ensure that all nodes meet the required prerequisites and are in a healthy running state before adding them to the cluster.
+
+
+### What versions of PowerHA SystemMirror are supported?
+{: #faq-power-ha-supported}
+
+
+The service supports the following versions of IBM PowerHA SystemMirror on AIX running in Power Virtual Server environments:
+
+- 7.2.10 SP1
+
+- 7.2.9 SP2
+
+- 7.2.8 SP4
+
+You can also register environments that use earlier or unsupported versions. However, such versions might have limited support and compatibility.

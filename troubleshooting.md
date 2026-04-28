@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-28"
 
 subcollection: dr-automation-powervs
 
@@ -151,7 +151,7 @@ Dependencies, such as active VMs or storage volumes, may prevent the service fro
 1. Access the **DR Automation GUI**.  
 2. Navigate to the **Events** tab and review the detailed logs.  
 3. Verify the API connectivity by running a test command (for example, ping or curl) to the service endpoint.  
-4. Check for active resources that are associated with the service and ensure that there are no dependencies.  
+4. Check for active resources that are associated with the service and verify that there are no dependencies.  
 5. Regenerate the API key from the **policies** tab and update the system with the new key.  
 6. Retry the deleted operation and monitor for success.  
 
@@ -249,7 +249,7 @@ This issue occurs when no PowerVS workspace is available in the selected locatio
 
 2. From the Disaster Recovery Location drop down list, select either IBM Cloud or Client location.
 
-3. If you select a Client location, ensure that you have at least one PowerVS workspace available in your location.
+3. If you select a Client location, verify that you have at least one PowerVS workspace available in your location.
 
 4. After selecting the plan, wait for the list of available workspaces to appear.
 
@@ -274,7 +274,7 @@ The system assumes that the KSYS image already exists in the workspace and skips
 ### How to fix it
 {: tsResolve}
 
-1. Redeploy the DR Automation environment and ensure that the KSYS image is downloaded successfully.  
+1. Redeploy the DR Automation environment and verify that the KSYS image is downloaded successfully.  
 2. Avoid performing multiple deployments simultaneously in the same workspace to prevent deployment failures.
 
 **Recommendation:** Perform sequential deployments by using separate workspaces or wait until the first deployment completes before starting a new one.
@@ -341,16 +341,16 @@ cat /opt/IBM/ksys/ui/server/node_modules/vmrui-common/lib/configuration/server/u
 6. In case registration success and still OTP is not generated, it means that the communication is not happening with IBM secure verify. In this case, verify whether the proxy IP that you have provided is properly configured or not?
 7. In this case, either can open a support ticket for resolution or disable the MFA by following the steps that are mentioned in above.
 
-## Why does the provision move to **suspended_billing** status?  
+## Why does the provision move to the suspended_billing status?  
 {: #suspended-billing}  
 {: troubleshoot}  
 
 ### What's happening  
 {: #suspended-billing-whats-happening}  
 
-The provision status changes to **suspended_billing** during billing validation. A notification is displayed in the UI indicating a billing-related communication issue.  
+The provision status changes to suspended_billing during billing validation. A notification is displayed in the UI that indicating a billing-related communication issue.  
 
-Access to the UI may be restricted for the provision.  
+Access to the UI might be restricted during the suspended_billing status.
 
 ### Why it's happening  
 {: #suspended-billing-why}  
@@ -358,16 +358,21 @@ Access to the UI may be restricted for the provision.
 This issue occurs when the system is unable to receive the required usage data for billing. Possible reasons include:  
 
 - Usage data is not received from the KSYS orchestrator within 12 hours.  
-- Deployment time exceeds 12 hours without usage reporting.  
-- Communication failure between the orchestrator and the Service Broker.  
+- The deployment exceeds 12 hours without usage reporting.  
+- The Communication failure between the orchestrator and the Service Broker. 
+
 
 The service is not fully blocked, and you can continue to perform **get** operations by using API, SDK, or Terraform.  
 
 ### How to fix it  
 {: tsResolve}  
 
-1. Verify that the **Orchestrator** is active and running.  
+1. Verify that the Orchestrator is active and running.  
 2. Check the external connectivity status of the orchestrator.  
-3. Ensure that there are no network or proxy configuration issues.  
+3. Verify that there are no network or proxy configuration issues.  
 4. Confirm that the orchestrator can communicate with IBM Cloud services.  
-5. If the issue persists, open a support ticket for further investigation.  
+5. If the issue persists, open a support ticket for further investigation.
+
+
+Verify that no network or proxy configuration issues exist.
+If the issue persists, open a support ticket for further investigation.

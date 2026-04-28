@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-23"
+lastupdated: "2026-04-28"
 
 subcollection: dr-automation-powervs
 
@@ -34,7 +34,7 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 ## High-Level architecture
 {: #high}
 
-The **{{site.data.keyword.DR_full_notm}}**, DR automation, system operates within IBM Power Virtual data centers, which are isolated from the core IBM Cloud environment. Using dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
+The **{{site.data.keyword.DR_full_notm}}**, DR automation, system operates within IBM Power Virtual data centers, which are isolated from the core IBM Cloud environment. Using dedicated networks and direct-attached storage verify secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
 
 Central to this architecture is the **Service Broker**, which manages compute, storage, and network resources to streamline and automate DR processes. It simplifies recovery setup, enabling customers to quickly deploy and manage DR services through an intuitive interface.
 

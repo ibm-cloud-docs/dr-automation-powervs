@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-24"
+lastupdated: "2026-04-28"
 
 subcollection: dr-automation-powervs
 
@@ -75,7 +75,7 @@ useradd test
 passwd test
 ```
 
-## Step 3: Configure sudo (optional)
+## Step 3: Configure sudo
 {: #mfa-step3-sudo}
 
 If your workflow requires elevated privileges for GUI operations or supporting commands, configure `sudo` based on your organization's policy.
@@ -84,28 +84,6 @@ To safely edit the sudoers file, run:
 
 ```bash
 visudo
-```
-
-Example:
-
-```bash
-User_Alias POWERHA_GUI_USERS = ajay, sumantra
-
-```
-The following is the output for the preceding example:
-
-```bash
-# lspv
-hdisk0   00cde1b7528d66f2   None
-hdisk1   00cde1b7528d6732   None
-hdisk2   00cde1b7528d6771   None
-hdisk3   00cde1b7528d67c1   None
-hdisk4   00cde1b7528d6805   None
-hdisk5   00cde1b7527593ca   rootvg   active
-
-# hostname
-rlrm4p32.phalab.local
-# visudo
 ```
 
 After opening the `sudoers` file, add or update user aliases as needed. For example:
@@ -166,10 +144,10 @@ Add the following configuration:
 
 ```json
 "mfaConfiguration": {
-  "proxy": "http://10.30.40.4:3128",
+  "proxy": "http://00.00.00.0:0000",
   "client_id": "<client_id>",
   "client_secret": "<client_secret>",
-  "tenant": "tenantname.verify.ibm.com"
+  "tenant": "test.verify.xxx.com"
 }
 ```
 Replace the placeholder values with your actual configuration.
@@ -215,7 +193,7 @@ After successful creation, the user is listed with MFA enabled.
 
 1. MFA enrollment must be performed by a non-root user. Use the account that you created in [Step 2](#mfa-step2-user).
 
-2. Log in to the PowerHA GUI using the non-root user credentials. <stagging>comment :which credentials</stagging>
+2. Log in to the PowerHA GUI using the non-root user credentials.
 
 If MFA is enabled for the user, the system prompts for MFA enrollment instead of displaying the dashboard.
 
