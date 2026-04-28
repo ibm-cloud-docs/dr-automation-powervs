@@ -50,23 +50,23 @@
     "tiles": [
       {
         "date": "30 April 2026",
-        "title": ""
+        "title": "The service is renamed from DR Automation for Power Virtual Server to {{site.data.keyword.DR_full}}. This update reflects the addition of high-availability capabilities along with existing disaster recovery features. No changes are required for existing deployments."
       },
       {
         "date": "30 April 2026",
-        "title": ""
+        "title": "PowerHA is now available as part of HA and DR Automation for Power Virtual Server, enabling you to deploy and manage high-availability clusters by using PowerHA SystemMirror. This capability is available through the PowerHA AIX for PowerVS plan. The solution uses multiple PowerVS virtual machines that are configured as a cluster with shared storage and dedicated networking, while IBM Cloud manages the orchestration layer for monitoring and failover operations."
       },
       {
         "date": "30 April 2026",
-        "title": ""
+        "title": "Monitoring and Activity Tracker support is now available for PowerHA SystemMirror in IBM Cloud."
       },
       {
         "date": "30 April 2026",
-        "title": ""
+        "title": "API, SDK, CLI, Terraform support is now available for PowerHA operations, You can manage service instance configuration, cluster nodes, and deployment lifecycle by using supported commands. You can also retrieve events, download agents, and view PowerVS workspaces and locations for the service instance, allowing better automation and operational control."
       },
       {
         "date": "30 April 2026",
-        "title": ""
+        "title": "You can now configure VM Flex capacity by using the external orchestrator UI and CLI, allowing the orchestrator (KSYS) to dynamically adjust CPU and memory allocation for backup VMs during failover and disaster recovery rehearsal operations. Backup VMs are initially provisioned with minimal resources and scaled based on configured flex values during operations, optimizing resource utilization in the target PowerVS workspace."
       }
     ]
   }
