@@ -48,7 +48,7 @@ follow the steps:
 
 8. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location**.
 
-   > **Note**: If you are using a non-PER workspace, complete the required network configuration steps to enable communication. See [Supporting and configuring network communication for PER and non-PER workspaces](<link>).
+   > **Note**: If you are using a non-PER workspace, complete the required network configuration steps to enable communication. See [PER and non-PER workspace networking](/docs/dr-automation-powervs?topic=dr-automation-powervs-supp-power-edge).
 
 9. Select the required subnets from the available list in the **DR Orchestrator networks** section.
 

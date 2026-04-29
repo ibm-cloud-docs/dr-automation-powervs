@@ -40,7 +40,8 @@ You can now use a non-PER enabled Power Virtual Server workspace by following th
 Configure a VPC and proxy to enable outbound communication from a non-PER workspace.
 
 ### Procedure 
-{: #procedure-commun-cpv}
+{: #procedure-commun-vpc}
+
 
 1. Open [IBM Cloud console](https://cloud.ibm.com).
 2. Click **Navigation menu** icon > **Infrastructure** > **Network** > **VPCs**, and select your VPC from the list.
@@ -81,7 +82,7 @@ An output that is similar to the following example is displayed:
    ```
  For more information, see Configuring the [Squid proxy server](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server) in the Red Hat documentation.
 
-  > **Note (PowerHA only):** Ensure that the Squid proxy IP is exported on the PowerHA node to enable connectivity for downloading the PowerHA filesets:  
+> **Note (PowerHA only):** Ensure that the Squid proxy IP is exported on the PowerHA node to enable connectivity for downloading the PowerHA filesets:  
 > `http_proxy=http://<squid_proxy_ip>:<port>`  
 > `https_proxy=http://<squid_proxy_ip>:<port>`  
 >
