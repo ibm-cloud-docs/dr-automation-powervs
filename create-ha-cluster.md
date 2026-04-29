@@ -29,7 +29,7 @@ To configure the HA deployment, complete the following steps:
 3. Select the **High availability location**.
 4. Select the appropriate **Power Virtual Server workspace**.
 
-   > **Note**: If you are using a non-PER workspace, complete the required network configuration steps to enable communication. See [PER and non-PER workspace networking](/docs/dr-automation-powervs?topic=dr-automation-powervs-supp-power-edge).
+   > **Note**: If you are using a non-PER workspace, complete the required network configuration steps to enable communication with ibm Cloud network which is required for initial setup. See [PER and non-PER workspace networking](/docs/dr-automation-powervs?topic=dr-automation-powervs-supp-power-edge).
 
 5. Click **Submit** to apply the configuration.
 

@@ -82,7 +82,7 @@ An output that is similar to the following example is displayed:
    ```
  For more information, see Configuring the [Squid proxy server](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server) in the Red Hat documentation.
 
-> **Note (PowerHA only):** Ensure that the Squid proxy IP is exported on the PowerHA node to enable connectivity for downloading the PowerHA filesets:  
+> **Note (PowerHA only):** Ensure that the Squid proxy IP is exported on the PowerHA node to enable connectivity for downloading the PowerHA file sets:  
 > `http_proxy=http://<squid_proxy_ip>:<port>`  
 > `https_proxy=http://<squid_proxy_ip>:<port>`  
 >
@@ -90,4 +90,4 @@ An output that is similar to the following example is displayed:
 > `http_proxy=http://10.30.40.4:3128`  
 > `https_proxy=http://10.30.40.4:3128`  
 >
-> If these variables are not set, the PowerHA agent cannot download the filesets and fails with connectivity errors.
+> If these variables are not set, the PowerHA agent cannot download the file sets and fails with connectivity errors.
