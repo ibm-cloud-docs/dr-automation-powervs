@@ -50,7 +50,7 @@
     "tiles": [
       {
         "date": "30 April 2026",
-        "title": "The service is renamed from DR Automation for Power Virtual Server to {{site.data.keyword.DR_full}}. This update reflects the addition of high-availability capabilities along with existing disaster recovery features. No changes are required for existing deployments."
+        "title": "The service is renamed from DR Automation for Power Virtual Server to HA and DR Automation for IBM® Power™ Virtual Server. This update reflects the addition of high-availability capabilities along with existing disaster recovery features. No changes are required for existing deployments."
       },
       {
         "date": "30 April 2026",
