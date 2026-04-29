@@ -47,8 +47,12 @@ follow the steps:
     > **Note**: If you select **Chennai (in-che)** or **Montréal (ca-mon)** for the primary or standby (secondary) workspace, you must provide proxy details in the **Advanced orchestrator configuration** section. These regions require a proxy for orchestrator communication with IBM Cloud services.
 
 8. Select the **DR Power Virtual Server workspace** that is listed based on the selected **DR location**.
+
+   > **Note**: If you are using a non-PER workspace, complete the required network configuration steps to enable communication. See [Supporting and configuring network communication for PER and non-PER workspaces](<link>).
+
 9. Select the required subnets from the available list in the **DR Orchestrator networks** section.
-10. To create ksys VM with secrets, enable **Use a secret** button and select **Service Instances**, **Secret Groups**, and **Secrets** or disable the **Use a secret** toggle button and select the SSH key from **SSH key name**.
+
+10. To create ksys VM with secrets, enable the **Use a secret** toggle and select **Service Instances**, **Secret Groups**, and **Secrets**, or disable the **Use a secret** toggle and select the SSH key from **SSH key name**.
 
     > **Note**: The SSH Key dropdown displays the Account and workspace level SSH-keys and you can choose the key from the list of ssh keys in the account level or workspace level
 

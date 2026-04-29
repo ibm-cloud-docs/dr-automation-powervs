@@ -28,6 +28,9 @@ To configure the HA deployment, complete the following steps:
 2. In the **Edit configuration** page, enter the required **API key** and it validates the API key.
 3. Select the **High availability location**.
 4. Select the appropriate **Power Virtual Server workspace**.
+
+   > **Note**: If you are using a non-PER workspace, complete the required network configuration steps to enable communication. See [Supporting and configuring network communication for PER and non-PER workspaces](<link>).
+
 5. Click **Submit** to apply the configuration.
 
 ## Add Node
