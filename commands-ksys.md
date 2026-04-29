@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-24"
+lastupdated: "2026-04-29"
 
 subcollection: dr-automation-powervs
 
@@ -738,13 +738,13 @@ ksysmgr modify vm <vmname> | name=<vmname> | vmuuid=<uuid>
 ### Flex capacity support
 {: #flex-capacity}
 
-Flex capacity enables the disaster recovery automation service to dynamically adjust the CPU and memory resources of the backup VM during failover or disaster recovery rehearsal operations.
+Flex capacity enables the disaster recovery automation service to dynamically adjust the CPU and memory resources of the backup VM during failover or disaster recovery rehearsal.
 
-Flex capacity allows the orchestrator (KSYS) to control the compute capacity that is allocated to the backup VM deployed in the target PowerVS workspace. Instead of provisioning the backup VM with the same configuration as the source VM always, backup vm iscreated with minimal resources and increase the CPU and memory allocation during failover or rehearsal operations.
+Flex capacity allows the orchestrator (KSYS) to control the compute capacity that is allocated to the backup VM hat is deployed in the target PowerVS workspace. Instead of provisioning the backup VM with the same configuration as the source VM, backup vm is created with minimal resources and increase the CPU and memory allocation during failover or rehearsal operations.
 
-> **Note**: Before configuring flex capacity, ensure that the VM is already managed.
+> **Note**: Verify that the VM is already managed, before configuring flex capacity.
 
-To configure flex capacity for a managed VM, run the following command:
+To configure the flex capacity for a managed VM, run the following command:
 
 ```bash
 ksysmgr modify vm <vmname>
@@ -756,10 +756,10 @@ ksysmgr modify vm <vmname>
 
 | Parameter | Description |
 |---|---|
-| `target_flex_mem` | Specifies the percentage of memory capacity that is allocated to the backup VM during failover or rehearsal operations. |
-| `target_flex_cpu` | Specifies the percentage of CPU capacity that is allocated to the backup VM during failover or rehearsal operations. |
-| `inactive_vm_mem` | Specifies the minimum memory allocation for the inactive backup VM. The minimum supported value is **2 GB**. |
-| `inactive_vm_cpu` | Specifies the minimum CPU allocation for the inactive backup VM. The value must be specified in multiples of **0.25 cores**. |
+| `target_flex_mem` | Specifies the percentage of memory capacity that is allocated to the backup VM during failover or rehearsal operations |
+| `target_flex_cpu` | Specifies the percentage of CPU capacity that is allocated to the backup VM during failover or rehearsal operations |
+| `inactive_vm_mem` | Specifies the minimum memory allocation for the inactive backup VM. The minimum supported value is 2 GB |
+| `inactive_vm_cpu` | Specifies the minimum CPU allocation for the inactive backup VM. The value must be specified in multiples of 0.25 cores |
 
 **Example**:
 
@@ -840,9 +840,7 @@ If dedicated hosts or host groups are available, you can identify them using the
   Dedicated_HGs:       dedicated_hg1
 ```
 
-You can specify the dedicated host or host group while managing the VM.
-
-> **Note:** Only one option can be specified at a time: `targethost` or `targethg`.
+You can specify the dedicated host or host group while managing the VM. Only one option is specified at a time: `targethost` or `targethg`.
 
 To specify a dedicated host or host group for the backup VM, run the following command:
 

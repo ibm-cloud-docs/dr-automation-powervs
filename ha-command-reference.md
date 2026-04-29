@@ -12,13 +12,13 @@ keywords: powerhaautomation service, cli, plugin
 
 ## Available commands
 {: #powerha-available-commands}
-`api-key` - Manage the API key for the PowerHA Automation service instance.  
-`cluster-node` - Manage PowerHA cluster nodes including add, get, and delete operations.  
-`deployment` - Manage PowerHA deployment lifecycle including create and get operations.  
-`agent` - Download PowerHA agent and track download status.  
-`powervs-workspaces` - Retrieve PowerVS workspaces for the specified service instance.  
-`locations` - List supported PowerVS locations for PowerHA.  
-`last-operation` - Retrieve the most recent operation details for the service instance.
+`api-key` - Manage the API key for the PowerHA Automation service instance:
+`cluster-node` - Manage PowerHA cluster nodes including add, get, and delete operations:  
+`deployment` - Manage PowerHA deployment lifecycle including create and get operations:  
+`agent` - Download PowerHA agent and track download status: 
+`powervs-workspaces` - Retrieve PowerVS workspaces for the specified service instance:  
+`locations` - List supported PowerVS locations for PowerHA:
+`last-operation` - Retrieve the most recent operation details for the service instance:
 
 
 ## Api Key
@@ -95,6 +95,7 @@ ibmcloud power-hadr powerhasm api-key update \
 Description   Key is valid.
 Status        Key Updated Successfully
 ```
+{: screen}
 
 ## Cluster Node
 {: #power-hadr-cluster-node-cli}
@@ -161,7 +162,6 @@ ibmcloud power-hadr powerhasm cluster-node get \
 {: #power-hadr-cluster-node-get-cli-output}
 
 ```
-
 ID                       crn:v1:staging:public:power-dr-automation:us-south:a/123333:123::
 Primary Node Details
                          Agent Status   Powerha installation completed
@@ -177,6 +177,7 @@ Primary Node Details
 
 Secondary Node Details   -
 ```
+
 {: screen}
 
 ### `ibmcloud power-hadr powerhasm cluster-node add`
@@ -249,8 +250,8 @@ Primary Node Details
                          Workspace ID   30efa804-1364-43c1-b91c-123444444
 
 Secondary Node Details   -
-
 ```
+{: screen}
 
 
 ### `ibmcloud power-hadr powerhasm cluster-node delete`
@@ -290,7 +291,7 @@ ibmcloud power-hadr powerhasm cluster-node delete \
     --vm-id r006-2f3b3ab9-2149-49cc-83a1-30a5d93d59b2 \
     --if-none-match abcdef
 ```
-
+{: pre}
 
 ### Example output
 {: #power-hadr-cluster-node-delete-cli-output}
@@ -300,6 +301,7 @@ ID                       crn:v1:staging:public:power-dr-automation:us-south:a/12
 Primary Node Details    -
 Secondary Node Details   -
 ```
+{: screen}
 
 ## Deployment
 {: #power-hadr-deployment-cli}
@@ -396,6 +398,7 @@ Service Description             Service instance is in active state
 Service ID                      1234
 Service Name                    TestService1
 ```
+{: screen}
 
 
 ### `ibmcloud power-hadr powerhasm deployment create`
@@ -495,6 +498,7 @@ ibmcloud power-hadr powerhasm deployment create \
     --accept-language en-US \
     --if-none-match abcdef
 ```
+{: pre}
 
 ### Example output
 {: #power-hadr-deployment-create-cli-output}
@@ -505,6 +509,8 @@ Primary Cluster Nodes Details   -
 ID                              crn:v1:staging:public:power-dr-automation:us-south:a/123:123::
 Secondary Cluster Nodes         -
 ```
+{: screen}
+
 ## Agent
 {: #power-hadr-agent-cli}
 
@@ -535,7 +541,7 @@ Use "ibmcloud power-hadr powerhasm agent <command> --help" for more information 
 ### `ibmcloud power-hadr powerhasm agent download-status`
 {: #power-hadr-cli-agent-download-status-command}
 
-Returns the current status of the job associated with a PowerHA agent file download. It indicates whether the download job is in running, completed, or failed, along with relevant metadata such as job ID, Job creation time and last updated time.
+Returns the current status of a PowerHA agent file download job. The status indicates whether the job is running, completed, or failed, along with metadata such as the job ID, creation time, and last updated time.
 
 ```sh
 ibmcloud power-hadr powerhasm agent download-status --instance-id INSTANCE-ID --job-id JOB-ID [--accept-language ACCEPT-LANGUAGE] [--if-none-match IF-NONE-MATCH]
@@ -575,6 +581,7 @@ ibmcloud power-hadr powerhasm agent download-status \
     --accept-language en-US \
     --if-none-match abcdef
 ```
+{: pre}
 
 
 ### Example output
@@ -591,6 +598,7 @@ Status                completed
 Total Bytes           590848
 VM ID                 f35327d7-4463-43dc-82ef-b2322
 ```
+{: screen}
 
 
 ### `ibmcloud power-hadr powerhasm agent download`
@@ -637,6 +645,7 @@ ibmcloud power-hadr powerhasm agent download \
     --if-none-match abcdef \
     --output-file tempdir/example-output.txt
 ```
+{: pre}
 
 ### Example output
 {: #power-hadr-powervs-agent-download-output}
@@ -644,7 +653,7 @@ ibmcloud power-hadr powerhasm agent download \
 ```
 Output written to powerha_agent.rte
 ```
-
+{: screen}
 
 ## Powervs-workspaces
 {: #power-hadr--powervs-workspaces-cli}
@@ -728,7 +737,7 @@ ibmcloud power-hadr powerhasm powervs-workspaces \
     --accept-language en-US \
     --if-none-match abcdef
 ```
-
+{: pre}
 
 ### Example output
 {: #power-hadr-powervs-workspaces-cli-output}
@@ -743,6 +752,7 @@ Workspaces
              Name   Test2_workspace
 
 ```
+{: screen}
 
 
 ## Locations
@@ -808,6 +818,7 @@ ibmcloud power-hadr powerhasm locations \
     --instance-id 8eefautr-4c02-0009-0086-8bd4d8cf61b6 \
     --if-none-match abcdef
 ```
+{: pre}
 
 
 ### Example output
@@ -822,7 +833,7 @@ Locations
             ID     wdc06
             Name   Washington DC 06
 ```
-
+{: screen}
 
 ## Last Operation
 {: #power-hadr-last-operation-cli}
@@ -908,5 +919,5 @@ Deployment Name   Test_PHA_Provision
 Provision ID      crn:v1:staging:public:power-dr-automation:us-south:a/1244:123::
 Resource Group    crn:v1:staging:public:resource-controller::a/123::resource-group:1223
 Status            Active
-
 ```
+{: screen}

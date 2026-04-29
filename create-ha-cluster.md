@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-22"
+lastupdated: "2026-04-29"
 
 subcollection: dr-automation-powervs
 
@@ -276,3 +276,5 @@ After the agent installation is complete:
 - The node status is updated in the **Cluster nodes** table with the corresponding PowerHA installation state.
 
 - The **PowerHA version** and **Agent status** fields are updated for the node.
+
+- Enable Multi-Factor Authentication (MFA) for secure access to the PowerHA GUI by using IBM Security Verify. For more information, see [Enabling MFA for PowerHA Cloud](/docs/dr-automation-powervs?topic=dr-automation-powervs-mfa-enablement-powerha)
