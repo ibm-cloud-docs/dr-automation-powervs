@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-21"
+lastupdated: "2026-04-29"
 
 subcollection: dr-automation-powervs
 
@@ -57,7 +57,7 @@ follow the steps:
     > **Note**: Select a **Standby SSH key name** for the standby Orchesrator that is created at the account level or the workspace level SSH key.
 12. (Optional) Configure Multi Factor Authentication (MFA) in the **Advanced orchestrator configuration** section.
 
-    > **Prerequisite**: To Enable MFA, you must complete the MFA tenant setup and obtain the **Client id**, **Client secret**, and **Tenant name** from [IBM Security Verify](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197).
+    > **Prerequisite**: To Enable MFA, you must complete the MFA tenant setup and obtain the **Client ID**, **Client secret**, and **Tenant name** from [IBM Security Verify](https://www.ibm.com/account/reg/us-en/signup?formid=urx-30041&_ga=2.41335909.671467744.1669106438-1806696627.1657020197).
     > - For more information on MFA configuration, see [Setting up Multifactor Authentication](/docs/dr-automation-powervs?topic=dr-automation-powervs-multifactor-authentication).
     > - Select the **Enable MFA** checkbox and enter the **Client ID**, **Client Secret**, and **Tenant Name** that you generated during the MFA tenant setup. When deployment completes, the orchestrator is registered with IBM Security Verify.
     > - The root user is prompted to enter their password first and then an OTP during the first login.
@@ -75,7 +75,7 @@ follow the steps:
 
 18. Configure and manage the Power Virtual Server instances through the **External orchestrator interface** for disaster recovery.
 
-  >**Note**: The orchestrator interface (UI) is launched at https://`<Orchestrator IP>`:3000/login. The `<Orchestrator IP>` address is the system on which the orchestrator UI is installed and it is loaded automatically.
+  >**Note**: The orchestrator interface (UI) is launched at https://`<Orchestrator IP>`: 3000/login. The `<Orchestrator IP>` address is the system on which the orchestrator UI is installed and it is loaded automatically.
 
 19. Enable the **External standby orchestrator interface** to allow the orchestrator to manage failover operations by recognizing a standby orchestrator for redundancy and resilience, following the steps:
 
@@ -87,6 +87,8 @@ follow the steps:
 20. If any error occurs during deployment, follow on-screen prompts or events to troubleshoot and retry the deployment.
 
 By following this process, you can ensure that your orchestrator is fully equipped to manage disaster recovery operations for your virtual servers.
+
+
 
 ## Power Edge Router and non Power Edge Router
 {: #pow-ed-ro-non-pow-ed-rou}

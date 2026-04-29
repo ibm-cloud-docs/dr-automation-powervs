@@ -65,6 +65,7 @@ toc:
               topics:
               - create-ha-cluster.md
               - powerha-mfa-enable.md
+          - power-edge-router-communica-vpc.md
       - topicgroup:
           label: External orchestrator
           topics:
