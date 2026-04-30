@@ -15,7 +15,7 @@
       },
       {
         "title": "Architecture for HA and DR Automation for IBM® Power™ Virtual Server for PowerHA",
-        "href": "/docs/dr-automation-powervs-arch-powerha-aix"
+        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-arch-powerha-aix"
       },
       {
         "title": "External Orchestrator",
@@ -42,7 +42,7 @@
   ],
   "section_devtools": {
     "api": "/apidocs/dr-automation-powervs",
-    "cli": "/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version",
+    "cli": "/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-getting-started",
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/iam_access_group"
   },
   "section_updates": {
