@@ -25,7 +25,7 @@ Use the release notes to learn about the latest updates to **{{site.data.keyword
 
 - PowerHA is now available as part of HA and DR Automation for Power Virtual Server, enabling you to deploy and manage high-availability clusters by using PowerHA SystemMirror. This capability is available through the PowerHA AIX for PowerVS plan. The solution uses multiple PowerVS virtual machines that are configured as a cluster with shared storage and dedicated networking, while IBM Cloud manages the orchestration layer for monitoring and failover operations. For more information, see [Architecture for HA and DR Automation for IBM® Power™ Virtual Server for PowerHA](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch-powerha-aix).
 
-- Monitoring and Activity Tracker support is now available for PowerHA SystemMirror in IBM Cloud.For more information, see [PowerHA observability](/docs/dr-automation-powervs?group=powerha-aix)
+- Monitoring and Activity Tracker support is now available for PowerHA SystemMirror in IBM Cloud.For more information, see [PowerHA observability](/docs/dr-automation-powervs?topic=dr-automation-powervs-monitoring-metrics-for-powerha-systemmirror)
 
 - API, SDK, CLI, Terraform support is now available for PowerHA operations, You can manage service instance configuration, cluster nodes, and deployment lifecycle by using supported commands. You can also retrieve events, download agents, and view PowerVS workspaces and locations for the service instance, allowing better automation and operational control. For more information, see [HA and DR Automation for IBM® Power™ Virtual Server command reference](/docs/dr-automation-powervs?group=ha-and-dr-automation-for-ibm-power-virtual-server-command-reference).
 

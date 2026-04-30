@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-22"
+lastupdated: "2026-04-30"
 
 subcollection: dr-automation-powervs
 
@@ -12,7 +12,7 @@ keywords: plugin-cli plugin
 # Installing the CLI plug-in
 {: #plun-in}
 
-To install, update, or view the DR Automation CLI plug-in, complete the following steps:
+To install, update, or view the HA and DR Automation CLI plug-in, complete the following steps:
 
 1. Install the [IBM Cloud® CLI](https://cloud.ibm.com/docs/cli).
 
@@ -62,6 +62,6 @@ To install, update, or view the DR Automation CLI plug-in, complete the followin
         [user@host cli-plugin]
     ```
 
-4. You can use the CLI commands available for DR Automation.
+4. You can use the CLI commands available for HA and DR Automation.
 
 Refer to the full {{site.data.keyword.DR_full}} CLI documentation [DR Automation CLI](/docs/dr-automation-powervs?topic=dr-automation-powervs-dr-automation-cli-version),[PowerHA CLI](/docs/dr-automation-powervs?topic=dr-automation-powervs-powerha-cli-version) .
