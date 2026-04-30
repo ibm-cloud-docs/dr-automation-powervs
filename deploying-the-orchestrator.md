@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-29"
+lastupdated: "2026-04-30"
 
 subcollection: dr-automation-powervs
 
@@ -85,7 +85,7 @@ follow the steps:
 
       a. Complete the [External orchestrator interface setup](/docs/dr-automation-powervs?topic=dr-automation-powervs-manage-exter).  
       b. Hover over the **External standby orchestrator interface** button to view the standby orchestrator IP, for example, `IP:xx.x.x.xxx`.  
-      c. Use the standby orchestrator IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-nav-pan#ksys-set-tab-detai) section.  
+      c. Use the standby orchestrator IP and add it in the [**Add Node**](/docs/dr-automation-powervs?topic=dr-automation-powervs-dashboard-view#ksys-set-tab-detai) section.  
       d. Click the **External standby orchestrator interface** button to enable the interface.
       e. Click the **Refresh** icon to update the status, enabling the **External standby orchestrator interface button** for use.
 20. If any error occurs during deployment, follow on-screen prompts or events to troubleshoot and retry the deployment.
