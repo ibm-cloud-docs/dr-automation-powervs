@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-29"
+lastupdated: "2026-04-30"
 subcollection: dr-automation-powervs
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -23,7 +23,7 @@ Use the release notes to learn about the latest updates to **{{site.data.keyword
 
 - The service is renamed from DR Automation for Power Virtual Server to {{site.data.keyword.DR_full}}. This update reflects the addition of high-availability capabilities along with existing disaster recovery features. No changes are required for existing deployments. For more information, see [Getting started with PowerHA Automation for Power Virtual Server](/docs/dr-automation-powervs?topic=dr-automation-powervs-getting-started-with-powerha-automation-for-power-virtual-server).
 
-- PowerHA is now available as part of HA and DR Automation for Power Virtual Server, enabling you to deploy and manage high-availability clusters by using PowerHA SystemMirror. This capability is available through the PowerHA AIX for PowerVS plan. The solution uses multiple PowerVS virtual machines that are configured as a cluster with shared storage and dedicated networking, while IBM Cloud manages the orchestration layer for monitoring and failover operations. For more information, see [Architecture for HA and DR Automation for IBM® Power™ Virtual Server for PowerHA](/docs/dr-automation-powervs?topic=dr-automation-powervs-monitoring-metrics-for-powerha-systemmirror).
+- PowerHA is now available as part of HA and DR Automation for Power Virtual Server, enabling you to deploy and manage high-availability clusters by using PowerHA SystemMirror. This capability is available through the PowerHA AIX for PowerVS plan. The solution uses multiple PowerVS virtual machines that are configured as a cluster with shared storage and dedicated networking, while IBM Cloud manages the orchestration layer for monitoring and failover operations. For more information, see [Architecture for HA and DR Automation for IBM® Power™ Virtual Server for PowerHA](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch-powerha-aix).
 
 - Monitoring and Activity Tracker support is now available for PowerHA SystemMirror in IBM Cloud.For more information, see [PowerHA observability](/docs/dr-automation-powervs?group=powerha-aix)
 
