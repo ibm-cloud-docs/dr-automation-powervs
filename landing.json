@@ -1,21 +1,21 @@
 {
   "version": 2,
-  "title": "Power Virtual Server DR Automation",
-  "introduction": "Power Virtual Server DR Automation is a cloud solution to enable Disaster Recovery capability for your power virtual servers.",
+  "title": "HA and DR Automation for IBM® Power™ Virtual Server",
+  "introduction": "HA and DR Automation for IBM® Power™ Virtual Server enables High Availability (HA) and Disaster Recovery (DR) for Power Virtual Server.",
   "console_page": "/catalog/services/power-virtual-server-dr-automation",
   "section_topics": {
     "links": [
       {
-        "title": "Architecture for Power Virtual Server DR Automation in IBM Data Center",
+        "title": "Architecture for HA and DR Automation for IBM® Power™ Virtual Server for DR automation in IBM Data Center",
         "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-arch"
       },
       {
-        "title": "Architecture for Power Virtual Server DR Automation in Client Location (Private Cloud)",
+        "title": "Architecture for HA and DR Automation for IBM® Power™ Virtual Server for DR automation in Client Location (Private Cloud)",
         "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-arch-private-pod"
       },
       {
-        "title": "Pricing",
-        "href": "/docs/dr-automation-powervs?topic=dr-automation-powervs-price"
+        "title": "Architecture for HA and DR Automation for IBM® Power™ Virtual Server for PowerHA",
+        "href": "/docs/dr-automation-powervs-arch-powerha-aix"
       },
       {
         "title": "External Orchestrator",
@@ -49,24 +49,24 @@
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote",
     "tiles": [
       {
-        "date": "05 December 2025",
-        "title": "You can now deploy the orchestrator with minimal inputs. You no longer need to provide schematic or custom VPC details. The orchestrator uses a private endpoint to communicate with all required IBM Cloud services."
+        "date": "30 April 2026",
+        "title": "The service is renamed from DR Automation for Power Virtual Server to HA and DR Automation for IBM® Power™ Virtual Server. This update reflects the addition of high-availability capabilities along with existing disaster recovery features. No changes are required for existing deployments."
       },
       {
-        "date": "05 December 2025",
-        "title": "You can now enable Multi-Factor Authentication (MFA) for the DR automation orchestrator to enhance login security."
+        "date": "30 April 2026",
+        "title": "PowerHA is now available as part of HA and DR Automation for Power Virtual Server, enabling you to deploy and manage high-availability clusters by using PowerHA SystemMirror. This capability is available through the PowerHA AIX for PowerVS plan. The solution uses multiple PowerVS virtual machines that are configured as a cluster with shared storage and dedicated networking, while IBM Cloud manages the orchestration layer for monitoring and failover operations."
       },
       {
-        "date": "05 December 2025",
-        "title": "You can now assign roles to users and manage permissions through the new User Role Management feature, which introduces role-based access control (RBAC) for creating users, defining roles, and controlling access to DR automation operations."
+        "date": "30 April 2026",
+        "title": "Monitoring and Activity Tracker support is now available for PowerHA SystemMirror in IBM Cloud."
       },
       {
-        "date": "05 December 2025",
-        "title": "You can now generate consolidated operational reports for the external orchestrator, including Discovery, Move, Failover Rehearsal, and Cleanup activities."
+        "date": "30 April 2026",
+        "title": "API, SDK, CLI, Terraform support is now available for PowerHA operations, You can manage service instance configuration, cluster nodes, and deployment lifecycle by using supported commands. You can also retrieve events, download agents, and view PowerVS workspaces and locations for the service instance, allowing better automation and operational control."
       },
       {
-        "date": "05 December 2025",
-        "title": "You can now manage custom SSL certificates and private-key pairs for GUI communication."
+        "date": "30 April 2026",
+        "title": "You can now configure VM Flex capacity by using the external orchestrator UI and CLI, allowing the orchestrator (KSYS) to dynamically adjust CPU and memory allocation for backup VMs during failover and disaster recovery rehearsal operations. Backup VMs are initially provisioned with minimal resources and scaled based on configured flex values during operations, optimizing resource utilization in the target PowerVS workspace."
       }
     ]
   }

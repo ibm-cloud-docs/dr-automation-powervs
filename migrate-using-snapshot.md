@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-04"
+lastupdated: "2026-04-22"
 
 subcollection: dr-automation-powervs
 
@@ -11,6 +11,9 @@ keywords: migrate, snapshot, ksys, orchestrator, upgrade, migration
 
 # Migrate using snapshot backup and restore
 {: #snapshot-mig}
+
+## Restore snapshot on existing deployment
+{: #snapshot-mig-exi}
 
 To Migrate your current orchestrator to the latest version, complete the following steps:
 

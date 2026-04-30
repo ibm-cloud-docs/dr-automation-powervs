@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-28"
+lastupdated: "2026-04-28"
 
 subcollection: dr-automation-powervs
 
@@ -14,139 +14,171 @@ keywords: faqs, help, FAQ, answers
 The FAQ section provides concise answers to common questions about {{site.data.keyword.DR_full}} for PowerVS, covering its features, billing model, components, deployment across regions, prerequisites, monitoring tools, security and more. It aims to help users understand and efficiently use DR Automation for disaster recovery in IBM Power Virtual Server environments.
 {:shortdesc: .shortdesc}
 
-## **What is {{site.data.keyword.DR_full}} for PowerVS?**  
+## {{site.data.keyword.DR_full_notm}} faq's
+
+### **What is {{site.data.keyword.DR_full}} ?**  
  {: #how-to-power-vs}
 
-DR Automation for PowerVS is a solution for automating disaster recovery operations for IBM Power Virtual Server environments. It can ensure seamless failover, failback and data synchronization between primary and backup sites. This service is integrated with the IBM Cloud catalog UI, enabling users to deploy and manage DR solutions efficiently.  
+{{site.data.keyword.DR_full_notm}} is an IBM Cloud service that helps you automate high availability (HA) and disaster recovery (DR) for workloads running on IBM Power Virtual Server (PowerVS).
+The service simplifies how you protect PowerVS workloads by automating:
+
+- Failover and recovery workflows
+- Monitoring of protected environments
+- Coordination between primary and secondary systems
+
+It reduces manual intervention and helps improve application availability and resilience.
 [Learn more about {{site.data.keyword.DR_short}}](/docs/dr-automation-powervs)
 
-## **How does {{site.data.keyword.DR_full_notm}} simplify DR processes?**
+### What are the different plans available for {{site.data.keyword.DR_full_notm}}?
+
+{{site.data.keyword.DR_full_notm}} is offered as a single service with multiple plans, each designed for a specific deployment model. The available plans are:
+
+- **PowerVS Public DR Automation**
+
+This plan is designed for Power Virtual Server instances running in IBM Cloud public regions.
+It enables disaster recovery automation for workloads hosted and managed within IBM Cloud PowerVS data centers.
+
+Use this plan when your PowerVS instances are deployed in IBM Cloud public locations.
+
+- **PowerVS Private DR Automation**
+
+This plan is intended for private or client-owned PowerVS environments.
+It supports disaster recovery automation where PowerVS infrastructure is deployed in a dedicated or private setup, outside of IBM Cloud public regions.
+
+Use this plan when your PowerVS environment is deployed in a private or client location.
+
+- **HA Automation for PowerVS**
+
+This plan provides HA Automation enablement for AIX workloads running on PowerVS.
+It is focused on high availability (HA) rather than disaster recovery and is available only in locations that support HA Automation for PowerVS.
+
+Use this plan when you require high availability for AIX workloads on PowerVS.
+
+
+
+### **How does {{site.data.keyword.DR_full_notm}} processes?**
  {: #how-to}  
 
-The solution minimizes manual intervention by automating DR workflows by using tools like the DR Service Broker and the KSYS orchestrator. These components synchronize resources, manage failover priorities and optimize RPOs and RTOs, can ensure high availability and business continuity.
+The solution reduces manual effort by automating high availability (HA) and disaster recovery (DR) workflows for PowerVS environments. It helps coordinate resources, manage failover operations, and maintain recovery objectives, enabling improved application availability and business continuity with minimal manual intervention.
 
-## **What billing model does DR Automation use?**
+### **What billing model does {{site.data.keyword.DR_full_notm}} use?**
  {: #bill}
 
-DR Automation is billed based on the **number of cores provisioned** for disaster recovery per hour. Unlike traditional setups that can include storage and more configuration costs, DR Automation for PowerVS focuses solely on compute cores. Use the IBM Cloud estimator tool to calculate costs.  
+Power Virtual Server HA and DR Automation is billed based on the **number of cores provisioned** for disaster recovery per hour. Unlike traditional setups that can include storage and more configuration costs. Use the IBM Cloud estimator tool to calculate costs.  
 
 
-## **What is the role of the DR Orchestrator (KSYS)?**
-{: #role}  
+### **Can {{site.data.keyword.DR_full_notm}} be deployed across multiple regions?**
+{: #dep}
 
-KSYS as orchestrator (VM) DR operations by managing the sequence of recovery, can ensure that workloads are restored in a logical order. It handles failover and failback processes across regions, optimizing resource usage during disasters.  
-  
-## **What is the DR Service Broker?**
-{: #srd}  
+Yes, {{site.data.keyword.DR_full_notm}} can be deployed across multiple supported IBM Cloud regions. You can select supported regions as primary and secondary sites based on your availability and recovery requirements.
 
-This component provides a centralized interface for provisioning and managing DR resources. It can ensure seamless integration with IBM Cloud services and securely updates billing metrics and usage data for each instance.  
-  
-## **Can DR Automation be deployed across multiple regions?**
-{: #dep}  
+The service is designed to operate across regions while respecting region-specific capabilities and compliance requirements. Actual latency and recovery behavior depend on the selected regions and network configuration.
 
-Yes, DR Automation supports global IBM Cloud regions, allowing users to select the primary and backup sites. It can ensure low-latency failovers and adheres to region-specific compliance requirements.  
 
-## **What are the prerequisites for setting up DR Automation?**
-{: #preque}  
-
-- **IBM Cloud Account:** Create and log in to an IBM Cloud account.  
-- **SSH Keys:** Configure keys for secure communication with PowerVS instances.  
-- **VPC Configurations:** Define virtual private cloud settings for data isolation.  
-- **Infrastructure Plan:** Review capacity needs that use IBM's cost estimator.
-For more details, refer to [Before you begin](/docs/dr-automation-powervs?topic=dr-automation-powervs-getting-started).
-
-## **What steps are involved in provisioning {{site.data.keyword.DR_short}}?**
-{: #hekp}
-
-   The provisioning workflow starts with the Service Broker deploying KSYS VMs in the source workspace. Data synchronization and resource replication are initiated automatically, with real-time updates visible in the UI.
-
-## **What storage tiers are supported for {{site.data.keyword.DR_short}}?**
+### **What storage tiers are supported for {{site.data.keyword.DR_short}}?**
 {: #suppt}  
 
-   DR Automation focuses on compute resources, but if storage is required, it supports flexible configurations like Tier 1 (10 IOPS/GB) and Tier 3 (3 IOPS/GB) for different workload requirements.
+   {{site.data.keyword.DR_full_notm}} focuses on compute resources, but if storage is required, it supports flexible configurations like Tier 1 (10 IOPS/GB) and Tier 3 (3 IOPS/GB) for different workload requirements.
 
-## **Does DR Automation support High Availability (HA)?**
-{: #hadr}  
+   > **Note**:For PowerHA AIX for PowerVS, storage is managed as part of the existing PowerVS environment.
 
-Yes, optional HA configurations can be enabled for orchestrators, can ensure resilience against single points of failure during disasters.  
+### **Does {{site.data.keyword.DR_full_notm}} High Availability (HA)?**
 
-## **What monitoring tools are available?**
+Yes. High availability is supported through the HA Automation for PowerVS plan, which provides native HA capabilities for AIX workloads.
+
+### **What monitoring tools are available?**
 {: #monitor}  
 
 IBM Cloud Monitoring provides dashboards for tracking DR health metrics, failover progress and potential anomalies, can ensure real-time visibility.  
+ 
 
-## **How does DR Automation handle data isolation?**
-{: #dataisol}  
-
-- **VPC Networks:** Can ensure private IP configurations.  
-- **Encryption:** Uses AES-256 for data at rest and TLS for data in transit.  
-
-## **Can users customize recovery priorities?**
+### **Can users customize recovery priorities?**
 {: #drcp}  
 
 Yes, recovery configurations are customizable, allowing users to prioritize critical workloads and define VM-specific failover settings.
 
-## **Is there a way to test DR readiness?**
-{: #drread}    
-
-The platform includes features for DR drills, where users can simulate failovers to verify recovery workflows and can ensure system readiness.
-
-## **What are the main API endpoints for {{site.data.keyword.DR_short}}?**
-{: #apiendd}  
-
-Key endpoints include provisioning APIs for deploying KSYS VMs, monitoring APIs for health metrics, and deprovisioning APIs for tearing down configurations.  
-
-## **Does DR Automation support scaling?**
-{: #scaling}  
-
-Yes, users can scale resources dynamically based on workload demands. Additional cores can be provisioned through the IBM Cloud UI.
-
-## **How is security can ensure in {{site.data.keyword.DR_short}}?**
-{: #secui}   
+### **How security can be ensured in {{site.data.keyword.DR_short}}?**
+{: #secui}
 
 - **IAM Roles:** Role-based access control for resource operations.  
 - **Data Encryption:** Protects sensitive recovery data in transit and at rest.  
 
-## **What are the key components of {{site.data.keyword.DR_short}}?**
+### **What are the key components of {{site.data.keyword.DR_short}}?**
 {: #compe}  
 
 - **KSYS Orchestrator:** Manages failover/failback workflows.  
 - **Service Broker:** Handles resource provisioning.  
-- **Cloud Object Storage:** IBM Cloud services like Cloud Object Storage, CloudantDB, BSS, Activity Tracker, Cloud logs, Sendgrid/ACS.  
+- **Cloud Object Storage:** IBM Cloud services like Cloud Object Storage, CloudantDB, BSS, Activity Tracker, Cloud logs, Sendgrid/ACS.
+- **HA Automation (for PowerHA plans)**: Provides native high availability capabilities for AIX workloads running on PowerVS.
+- **HA Agent (for PowerHA plans)**: Installs and manages HA Automation filesets on selected PowerVS instances and reports status to the service.
 
-## **How can users track billing for {{site.data.keyword.DR_short}}?**
+### **How can users track billing for {{site.data.keyword.DR_short}}?**
 {: #implemen}  
 
 Billing is transparent and tied to the number of cores. Usage metrics are updated in real time in the IBM Cloud billing dashboard.  
 
-## **What support options are available for {{site.data.keyword.DR_short}}?**
+### **What support options are available for {{site.data.keyword.DR_short}}?**
 {: #supo}  
 
 IBM offers 24/7 technical support, comprehensive documentation and guided assistance for setting up and managing DR Automation.  
 
-## **What resources should be planned before implementing DR Automation?**
-{: #implementt}   
+## DR Automation faq
+{: #power-vs-dr-auto-faq} 
 
-Before implementing the DR Automation solution, can ensure that you have the following resources planned and ready:  
+### **What is the role of the DR Orchestrator (KSYS)?**
+{: #role}  
+
+KSYS as orchestrator (VM) DR operations by managing the sequence of recovery, can ensure that workloads are restored in a logical order. It handles failover and failback processes across regions, optimizing resource usage during disasters.  
+
+### **What are the prerequisites for setting up DR Automation?**
+{: #preque}  
+
+- **IBM Cloud Account:** Create and log in to an IBM Cloud account.  
+- **SSH Keys:** Configure keys for secure communication with PowerVS instances.  
+- **Infrastructure Plan:** Review capacity needs that use IBM's cost estimator.
+For more details, refer to [Before you begin](/docs/dr-automation-powervs?topic=dr-automation-powervs-getting-started).
+
+### **What is the DR Service Broker?**
+{: #srd}  
+
+This component provides a centralized interface for provisioning and managing DR resources. It can ensure seamless integration with IBM Cloud services and securely updates billing metrics and usage data for each instance.
+
+### **Is there a way to test DR readiness?**
+{: #drread}
+
+The platform includes features for DR drills, where users can simulate failovers to verify recovery workflows and can ensure system readiness.
+
+### **Does DR Automation support scaling?**
+{: #scaling}  
+
+Yes, users can scale resources dynamically based on workload demands. Additional cores can be provisioned through the IBM Cloud UI.
+
+### **What resources be planned before implementing DR Automation?**
+{: #implementt}
+
+Before implementing the DR Automation solution, can ensure that you have the following resources planned and ensure that the following resources are planned and available::  
 
 - **KSYS Node**: Identify the virtual machine runs IBM AIX 7.3 with Technology Level 1 Service Pack 1 (7300-01-01) or later, capable of communication with both active and backup sites through HTTPS.
 
 - **KSYS Cluster**: Choose a name for your cluster with the type set to IBM_PVS_DR.  
 - **Active and Backup Sites**: Identify and name both sites for proper failover configuration.  
 - **LPARs**: Can ensure LPARs are part of the active site and not set for automatic restart.  
-- **Cloud Storage**: Set up cloud storage compatible with cloud storage APIs to manage data replication between sites.  
+- **Cloud Storage**: Set up cloud storage compatible with cloud storage APIs to manage data replication between sites.
 
-## **What is the role of the KSYS node in DR operations for PowerVS?**
+
+
+### **What is the role of the KSYS node in DR operations for PowerVS?**
 {: #roleksys}  
 
-The KSYS node is responsible for managing disaster recovery operations across active and backup sites. It must be a virtual machine runs IBM AIX 7.3 or later, capable of communicating with both sites through HTTPS. The node handles failover and can ensure data replication between sites by interacting with cloud storage and VMs.  
+The KSYS node is responsible for managing disaster recovery operations across active and backup sites. It must be a virtual machine runs IBM AIX 7.3 or later, capable of communicating with both sites through HTTPS. The node handles failover and can ensure data replication between sites by interacting with cloud storage and VMs.
 
-## **What configurations are required for cloud storage in DR Automation for PowerVS?**
+### **What configurations are required for cloud storage in DR Automation for PowerVS?**
 {: #what-conf} 
 
-Cloud storage must be configured with versions from AIX 7.3 TL2 onwards to can ensure that the KSYS node can interact with the cloud APIs for data replication and availability. This is critical to can ensure smooth failover and recovery between the active and backup sites.  
+Cloud storage must be configured with versions from AIX 7.3 TL2 onwards to can ensure that the KSYS node can interact with the cloud APIs for data replication and availability. This is critical to can ensure smooth failover and recovery between the active and backup sites. 
 
-## **When orchestrator deployment is not completed and the finish button is not enabled in UI?**
+
+### **When orchestrator deployment is not completed and the finish button is not enabled in UI?**
 {: #orch-fini-enab} 
 
 Once the orchestrator VM is deployed and active, the cluster configuration starts automatically. Once it is completed, KSYS sends an event, and the UI enables the **Finish** button to launch the external orchestrator UI.
@@ -157,7 +189,7 @@ To know more about [why is the **Finish** button not enabled in the UI after orc
 
 
 
-## How to get ProxyIP details which is configured for Virtual Server Instance for VPC?
+### How to get ProxyIP details which is configured for Virtual Server Instance for VPC?
 {: #vpc-vsi-enab}
 
 The proxy IP is the private IP address assigned to a Virtual Server Instance (VSI) in a Virtual Private Cloud (VPC). It enables secure communication with other resources. Follow these steps to retrieve the proxy IP from the IBM Cloud console:
@@ -183,7 +215,7 @@ To enable communication to external services, export the following variables on 
 > **Note**: Exporting these variables is automatic with the DR Deployment, you can validate the configuration using these variables.
 > **Note**: The updated proxy details are not reflected in the DR Automation UI. The UI continues to display only the initially configured proxy IP.
 
-## Why is IBM Data Center not displayed as the location type during provisioning?
+### Why is IBM Data Center not displayed as the location type during provisioning?
 {: #location-type}
 
 The location type displayed during provisioning depends on the selected plan. This behavior is expected and reflects the infrastructure that is associated with each deployment model.
@@ -194,12 +226,12 @@ The location type displayed during provisioning depends on the selected plan. Th
 
 This mapping is intentional and helps distinguish between public and private (on-premises, Private Pod environments) cloud deployments.
 
-## **What should I do if I accidentally delete a KSYS Cluster?**
+### **What should I do if I accidentally delete a KSYS Cluster?**
 {: #delete-ksys}
 
 If a KSYS Cluster is deleted, you must re-create the cluster in the external orchestror GUI:
 
-### Procedure
+#### Procedure
 {: #pro-proxy}
 
 1. Log in to the GUI.  
@@ -212,7 +244,7 @@ If a KSYS Cluster is deleted, you must re-create the cluster in the external orc
 6. (Optional) Enable **Add Proxy** if communication requires a proxy.  
 7. Save the configuration to restore orchestrator functionality.  
 
-## **How do I create a new KSYS Cluster in external orchestrator?**
+### **How do I create a new KSYS Cluster in external orchestrator?**
 {: #create-ksys-cluster}
 
 When you log in for the first time in external orchestror, or if no cluster exists, you are redirected to the **Add KSYS Subsystem** page. From there you can perform the following actions:  
@@ -223,18 +255,18 @@ When you log in for the first time in external orchestror, or if no cluster exis
 - (Optional) enable proxy support  
 - Click **Save & Next**  
 
-## **When should I choose IBM_PVS_DR vs IBM_PVS_PRIVATE_DR?**
+### **When should I choose IBM_PVS_DR vs IBM_PVS_PRIVATE_DR?**
 {: #ksys-types}
 
 - **IBM_PVS_DR** → For standard DR deployments across IBM Cloud regions.  
 - **IBM_PVS_PRIVATE_DR** → For private PowerVS cluster environments, such as on-premises or private pods.
 
-## **How do I update the Proxy IP in the Orchestrator?**
+### **How do I update the Proxy IP in the Orchestrator?**
 {: #proxy-ip}
 
 You can update the proxy IP in the orchestrator depending on whether the KSYS cluster has already been created. To update the Proxy IP, follow the steps below.
 
-### **Step 1: Cluster already created**
+#### **Step 1: Cluster already created**
 {: #proxy-existing}
 
 1. Verify the cluster status by running the following command:
@@ -245,7 +277,7 @@ You can update the proxy IP in the orchestrator depending on whether the KSYS cl
 
    ```ksysmgr modify ksyscluster <ksysclustername> proxy=ipaddress:portnumber```
 
-### **Step 2: Cluster not yet created**
+#### **Step 2: Cluster not yet created**
 {: #proxy-new}
 
 If the KSYS cluster is not yet created, you can update the proxy IP directly in the configuration file.
@@ -262,7 +294,7 @@ If the KSYS cluster is not yet created, you can update the proxy IP directly in 
 
 When the system reboots, it automatically attempts to recreate the cluster with the updated proxy configuration.
 
-## **How do I update the API Key in my DR Automation deployment?**
+### **How do I update the API Key in my DR Automation deployment?**
 {: #update-api-key}
 
 You can update the API Key for your deployment using the DR Automation UI and the KSYS Orchestrator. Ensure that the same key is used in both places to maintain proper synchronization.
@@ -274,7 +306,7 @@ You can update the API Key for your deployment using the DR Automation UI and th
 2. Click the **Update API Key** button.  
 3. The system updates the API key for your deployment automatically.
 
-### **Step 2: Update the API Key in Orchestrator**
+#### **Step 2: Update the API Key in Orchestrator**
 {: #update-api-orch}
 
 After updating the API key in the UI, update it in the orchestrator to keep both in sync:
@@ -283,3 +315,182 @@ To update the API key in orchestrator ,run the following command:
 
    ```ksysmgr modify ksyscluster <ksysclustername> apikey=<apikey>```
 > **Note:** Use the same API key in both the deployment and orchestrator to ensure proper synchronization.
+
+## HA Automation (PowerHA) faq
+{: #powerha-faq}
+
+### What is HA Automation(PowerHA)?
+{: #faq-ha-automation-overview}
+
+HA Automation enables high availability for IBM Power Virtual Server workloads by deploying and managing clustered environments in the cloud.  
+
+It ensures continuous application availability and supports automatic failover during outages.
+
+
+### What are the prerequisites for setting up HA Automation?
+{: #preque-powerha}
+
+Before you deploy HA Automation for PowerVS, ensure that you meet the following requirements:
+
+- **IBM Cloud account** : You must have an active [IBM Cloud account](https://cloud.ibm.com/registration).
+- **IAM access**: Configure the required Identity and Access Management (IAM) roles and permissions.
+- **API key** : You must have an IBM Cloud API key for service provisioning and orchestration operations.
+
+
+### How is HA configured on PowerVS virtual machines?
+{: #faq-ha-installation}
+
+HA is configured by using an agent that runs on each selected PowerVS instance.
+
+The agent performs the following actions:
+
+- Connects securely to the service
+- Installs dependencies and service packs
+- Reports installation status back to the service
+
+Each HA node must run the agent to complete the installation.
+
+
+### Why is HA cluster configuration required after creating the service instance?
+{: #faq-ha-required}
+
+After you provision a service instance, you must configure the HA cluster to enable high availability for your Power Virtual Server environment.  
+
+The HA cluster coordinates nodes within the selected environment to ensure workload continuity during failures and supports automatic failover.
+
+
+### Is adding nodes mandatory after deploy the HA cluster?
+{: #faq-ha-add-node-mandatory}
+
+Yes. After you configure the HA cluster, you must add one or more virtual server instances as delpoy the cluster nodes.  
+
+High availability protection is not enabled until nodes are added.
+
+
+### What if no virtual server instances are available to add as nodes?
+{: #faq-ha-no-instances}
+
+If no virtual server instances are listed:
+
+- Ensure that a Power Virtual Server workspace exists
+- Ensure that virtual server instances are provisioned in that workspace
+
+After provisioning, return and add the instances as cluster nodes.
+
+
+### Why are PowerVS workspaces not listed?
+{: #faq-ha-workspace-not-listed}
+
+PowerVS workspaces might not be listed if:
+
+- The API key does not have required permissions
+- No workspaces are available in the selected account
+
+Ensure that the API key has access to PowerVS and the required workspace.
+
+
+### Why am I not seeing locations after providing the API key?
+{: #faq-ha-location-missing}
+
+If locations are not displayed, the API key might not have sufficient permissions.
+
+Ensure that the API key has access to the required services and resources.
+
+
+### Why can't I use an existing VM for the HA cluster?
+{: #faq-ha-vm-not-usable}
+
+A virtual machine cannot be added as a cluster node if it is:
+
+- In a **shutdown state**
+- In an **error state**
+
+Ensure that the VM is running and in a healthy state before adding it.
+
+
+### I am not seeing the PowerHA plan in the catalog. Why?
+{: #faq-ha-plan-missing}
+
+The PowerHA plan might not be visible if:
+
+- The selected region does not support the plan
+- The service is not enabled for your account
+
+Verify supported regions and ensure that your account has access.
+
+
+### How can I estimate the cost before creating the service?
+{: #faq-ha-cost-estimation}
+
+You can use the cost estimator available in the IBM Cloud catalog.
+
+Provide inputs such as the number of CPU cores to view the estimated cost before deployment.
+
+
+### How is billing calculated for HA Automation?
+{: #faq-ha-billing}
+
+Billing follows a usage-based (“Pay as you use”) model.
+
+Charges are calculated based on the number of CPU cores used by the managed virtual machines in the cluster. Usage is collected hourly.
+
+
+### When does billing start for HA Automation for PowerVS?
+{: #faq-powerha-billing-start}
+
+Billing starts when the PowerHA installation process is completed on the selected virtual machines.
+
+Billing begin when the agent is downloaded the required files.
+
+
+### Why is the agent required after adding nodes?
+{: #faq-ha-agent-required}
+
+The agent is required to install and manage the supported PowerHA SystemMirror version on each node.
+
+It prepares nodes for cluster configuration and enables automated failover operations.
+
+
+### Do I need to manually install PowerHA on each node?
+{: #faq-ha-manual-install}
+
+No. The agent automates the download and installation of the supported PowerHA version on each node.
+
+
+### How do I download and install the agent on nodes?
+{: #faq-ha-agent-install}
+
+From the **Service details** page:
+
+1. Go to the **Cluster nodes** section  
+2. Click **Download agent**  
+3. Copy the file set to each virtual machine  
+4. Install it using `smit` or `installp`  
+
+After installation, verify the agent by running:
+
+```bash
+./powerha-agent -h
+```
+
+### How many nodes can I add to an HA cluster?
+{: #faq-ha-node-limit}
+
+You can add up to **Eight nodes** to a single HA cluster.  
+
+Ensure that all nodes meet the required prerequisites and are in a healthy running state before adding them to the cluster.
+
+
+### What versions of PowerHA SystemMirror are supported?
+{: #faq-power-ha-supported}
+
+
+The service supports the following versions of IBM PowerHA SystemMirror on AIX running in Power Virtual Server environments:
+
+- 7.2.10 SP1
+
+- 7.2.9 SP2
+
+- 7.2.8 SP4
+
+You can also register environments that use earlier or unsupported versions. However, such versions might have limited support and compatibility.

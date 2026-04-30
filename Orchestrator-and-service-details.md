@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-25"
+lastupdated: "2026-04-17"
 
 subcollection: dr-automation-powervs
 
@@ -66,7 +66,7 @@ Displays the location (for example, `dal10`) that hosts the DR orchestrator and 
 
 The name of the standby orchestrator that is configured to take over if the primary orchestrator fails.
 
-**DR orchestrator deployment time**:
+**DR Orchestrator deployment time**:
 
 Displays the date and time when the primary orchestrator is deployed. This helps you to plan for any upgrade or migrate of your orchestrator if you are not in the latest version. You can review the availability of latest levels through ksysmgr commands. For more details see [Upgrade your orchestrator](/docs/dr-automation-powervs?topic=dr-automation-powervs-Upgrade-fil-set).
 
@@ -77,6 +77,11 @@ Displays the orchestrator version status, and if a newer version is available fo
 **MFA Status**:
 
 The MFA Status displays whether MFA is enabled (**True**) or not enabled (**False**), based on your selection.
+
+**Standby SSH key names**:
+
+Displays the name of the IBM Cloud SSH key configured for the standby orchestrator to ensure secure access and encrypted communication with the backup Power Virtual Server infrastructure.
+
 
 ## Service details
 {: #service-det}

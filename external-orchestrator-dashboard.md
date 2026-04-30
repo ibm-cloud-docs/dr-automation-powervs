@@ -2,19 +2,19 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-04"
+lastupdated: "2026-04-13"
 
 subcollection: dr-automation-powervs
 
-keywords: navigation-panel, add node , node, ksys details, Inventory tab, Workgroup, tunables, disk mapping, events
-
+keywords: manage vm, modify vm, create vm, update vm, create virtual machine, add virtual machine, modify virtual machine
 ---
 
-# Navigation panel
-{: #nav-pan}
+# Dashboard View
+{: #dashboard-view}
 
 On the left of the dashboard, the navigation panel displays KSYS clusters, sites, workspaces, and site-specific details. This panel also provides the **overall count** of associated workspaces, workgroups, and unmanaged VMs, offering a quick overview of available resources.
 {:shortdesc: .shortdesc}
+
 
 - **KSYS Cluster Navigation**:
    - Displays the KSYS cluster type, cluster name (for example, `ksysclusterTest`), and the overall count of associated workspaces.
@@ -117,7 +117,7 @@ For each site, the associated **Consistency Group name** and **Volume Group name
    - **Disk ID**: Lists the disk identifiers for the target site.
    - **Partner VM**: Displays the name of the partner (backup) VM at the target site.
 
-### Procedure to access disk mapping
+### Procedure
 {: #user-scrip-disk-map}
 
 To access the disk mapping, follow the steps:
@@ -221,4 +221,43 @@ To view details about Active and Partner VMs for a Workgroup, follow these steps
 2. View the details under the Workgroup Summary section.
 3. Check for the **Active VM** (currently running VM) and **Partner VM** (backup VM for failover).
 
----
+
+## Manage VM in dashboard
+{: #vm-ses-dashboard}
+
+You can view and manage virtual machines by using the DR Automation UI. Managing a virtual machine and monitor effectively.
+
+### Procedure
+{: #ma-vm-se-das}
+
+To manage the additonal new virtual machines, complete the following steps:
+
+1. In the DR Automation navigation page, click **Cluster Name > Site > Workgroup > Managed VM**.
+2. Select the unmanged VM.
+3. Click **Manage VM**.
+4. You are redirected to the Managed VM tab, where you can view the following details:
+   - VM Name
+   - Workgroup
+   - Source workspace
+   - Target workspace
+5. Complete the deployment flow to manage selected VM.
+
+## Unmanage VM in dashboard
+{: #um-manage-ses-dashboard}
+
+You can view and virtual machines by using the DR Automation UI. Unmanaging a virtual machine removes the virtual machine from disaster recovery operations and monitoring.
+
+### Procedure
+{: #un-vm-manage-das}
+
+To unmanage virtual machines, complete the following steps:
+
+1. In the navigation page of the DR Automation, click **Site > Workspace > Worksgroup>Managed VM**.
+2. Select the VM.
+3. Click **Unmanage this VM**.
+4. After this operation, the workgroup is removed and virtual machine is deleted.
+
+   > **Note:**
+   >
+   > - Each workgroup is associated with only one virtual machine.
+   > - You can unmanage a virtual machine even if it not managed previously.

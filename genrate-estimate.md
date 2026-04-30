@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-21"
+lastupdated: "2026-04-02"
 
 subcollection: dr-automation-powervs
 
@@ -23,7 +23,7 @@ Use the cost estimator tool to evaluate potential costs for DR Automation resour
 - Exporting estimates for record-keeping
 
 
-## Generate an estimate for DR Automation
+## Generate an estimate for {{site.data.keyword.DR_short}}
 {: #stg}
 
 ### Step 1: Accessing the cost estimator

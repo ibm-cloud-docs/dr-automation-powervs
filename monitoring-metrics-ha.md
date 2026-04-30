@@ -1,27 +1,27 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-03-31"
+lastupdated: "2026-04-08"
 
 subcollection: dr-automation-powervs
 
-keywords: monitor
+keywords: monitor metrics ha
 
 ---
 
-# Monitoring metrics for DR Automation
-{: monitor met-ibm}
+# Monitoring metrics for PowerHA SystemMirror
+{: monitor-ha-met-ibm}
 
 Create an IBM Cloud Monitoring instance and enable the platform metrics to capture various performance metrics.
 {:shortdesc: .shortdesc}
 
 ## Steps to Create an IBM cloud monitoring instance
-{: instance}
+{: instance-ha}
 
 To monitor platform metrics, select the region where your Power Virtual Server workspace is provisioned.
 
 1. Log in to the [IBM Cloud console](https://cloud.ibm.com/).
-2. Search for **IBM Cloud Monitoring** and select it.
+2. Search for **Cloud Monitoring** and select it.
 3. Select your location and enter your custom values for the **Service name** field and other fields.
 4. Select the **Enable** indicator for IBM platform metrics.
 5. Select the license agreements indicator and click **Create**.
@@ -29,17 +29,17 @@ To monitor platform metrics, select the region where your Power Virtual Server w
 You can also create the IBM Cloud Monitoring instance from the **Integration (Optional)** section when you create a workspace, if no IBM Cloud Monitoring instance is already created for that region.
 
 ## Viewing metrics
-{: view-metrics}
+{: ha-view-metrics}
 
 To view the metrics dashboards, access the user interface of IBM Cloud Monitoring in the following ways:
 
-- Access the IBM Cloud Monitoring user interface from your [**DR Automation for PowerVS**](#accessing-metrics-from-dr-automation-workspace) workspace.
+- Access the IBM Cloud Monitoring user interface from your [**PowerHA SystemMirror**](#accessing-metrics-from-dr-automation-workspace) workspace.
 - Access the IBM Cloud Monitoring user interface from the [**Observability**](#accessing-metrics-from-the-observability-page) page.
 
 To view metrics in your dashboard, you must enable the platform metrics of the IBM Cloud Monitoring instance.
 
-### Accessing metrics from DR Automation workspace
-{: metrics-workspace}
+### Accessing metrics from PowerHA SystemMirror workspace
+{: metrics-ha-workspace}
 
 From the left navigation menu of the Power Virtual Server user interface, complete the following steps:
 
@@ -49,7 +49,7 @@ From the left navigation menu of the Power Virtual Server user interface, comple
 4. Click **Dashboards > Dashboard Library > IBM** and select your dashboard to view.
 
 ### Accessing metrics from the observability page
-{: access-metric}
+{: access-metric-ha}
 
 To access the dashboard, complete the following steps:
 
@@ -67,23 +67,48 @@ To access the dashboard, complete the following steps:
 
 
 ## Metrics available by service plan
-{: metrics-by-plan}
+{: metrics-by-plan-ha}
 
 | Metric Name |
 |-----------|
-| [Number of Managed VMs](#ibm_power_dr_automation_managed_vm_count) | 
-{: caption="Metrics Available by Plan Names" caption-side="top"}
+| [Number of Managed VMs count](#ibm_power_ha_managed_vm_count) |
+| [PowerHA SystemMirror Cluster Nodes Count](#ibm_power_ha_cluster_nodes_count) |
+| [Average time of Disaster Recovery metric metadata](#ibm_power_ha_automation-average-time) |
 
-### Number of Managed VMs count
-{: #ibm_power_dr_automation_managed_vm_count}
+{: caption="Metrics available by service plan" caption-side="top"}
+
+### Number of managed VM's count
+{: #ibm_power_ha_managed_vm_count}
 
 | Metadata | Description |
 |----------|-------------|
-| `Metric Name` | `ibm_power_dr_automation_managed_vm_count`|
+| `Metric Name` | `ibm_power_dr_automation_managed_vm_count` |
 | `Metric Type` | `gauge` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption=" Number of Managed VMs metric metadata" caption-side="top"}
+{: caption="Number of managed VM's count" caption-side="top"}
+
+### Number of PowerHA SystemMirror Cluster Nodes Count
+{: #ibm_power_ha_cluster_nodes_count}
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_power_dr_automation_ha_cluster_node_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption=" Number of PowerHA SystemMirror Cluster Nodes Count" caption-side="top"}
+
+### Average time of Disaster Recovery metric metadata
+{: #ibm_power_ha_automation-average-time}
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_power_dr_automation_dr_average_time` |
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Average time of Disaster Recovery metric metadata" caption-side="top"}
 
 ## Attributes for Segmentation
 {: attributes}

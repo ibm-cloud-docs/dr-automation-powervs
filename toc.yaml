@@ -5,12 +5,13 @@ toc:
     href: /docs/dr-automation-powervs
     service-name: service-name
     category: virtualservers
-    label: Power Virtual Server DR Automation
+    label: HA and DR Automation for IBM® Power™ Virtual Server
   entries:
   - navgroup:
       id: learn
       topics:
       - getting-started-with-powerVS.md
+      - power-ha-getting-started.md
       - release.md
       - topicgroup:
           label: Locations
@@ -22,6 +23,7 @@ toc:
           topics:
           - architecture-dr-automation.md
           - private-pod.md
+          - powerha-aix-arch.md
       - topicgroup:
           label: Pricing
           topics:
@@ -50,20 +52,27 @@ toc:
           topics:
           - iam-autoamtion.md
           - create-instance-powervs.md
-          - deploying-the-orchestrator.md
-          - Orchestrator-and-service-details.md
-          - monitoring-vm-status.md
-          - manage-vm.md
-          - dr-automation-events.md
+          - topicgroup:
+              label: DR Automation
+              topics:
+              - deploying-the-orchestrator.md
+              - Orchestrator-and-service-details.md
+              - monitoring-vm-status.md
+              - manage-vm.md
+              - dr-automation-events.md
+          - topicgroup:
+              label: PowerHA
+              topics:
+              - create-ha-cluster.md
+              - powerha-mfa-enable.md
+          - power-edge-router-communica-vpc.md
       - topicgroup:
           label: External orchestrator
           topics:
           - manage-external-orch.md
           - setting-target-source.md
           - manage-vm-vmrm.md
-          - network-paring.md
-          - configure-summary.md
-          - navigation-panel.md
+          - external-orchestrator-dashboard.md
           - disocvery-operation.md
           - advance-operation.md
           - discover-operation.md
@@ -79,24 +88,32 @@ toc:
           topics:
           - data-isolation.md
       - topicgroup:
-          label: AIX
-          topics:
-          - aix-vm.md
-      - topicgroup:
           label: Observability
           topics:
-          - monitor-metrics.md
-          - activity-tracker-events.md
+          - topicgroup:
+              label: DR Automation
+              topics:
+              - monitor-metrics.md
+              - dr-activity-tracker-events.md
+          - topicgroup:
+              label: PowerHA
+              topics:
+              - monitoring-metrics-ha.md
+              - activity-tracker-events-ha.md
   - navgroup:
       id: reference
       topics:
-      - commands-ksys.md
       - topicgroup:
-          label: command reference
+          label: External orchestrator command reference
+          topics:
+          - commands-ksys.md
+      - topicgroup:
+          label: HA and DR Automation for IBM Power Virtual Server command reference
           topics:
           - get-started-cli-plu-in.md
           - cli-plug-in.md
           - command-reference.md
+          - ha-command-reference.md
       - topicgroup:
           label: Roles and Responsibility
           topics:

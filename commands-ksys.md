@@ -1,14 +1,14 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-05"
+lastupdated: "2026-04-29"
 
 subcollection: dr-automation-powervs
 
 keywords: commands
 
 ---
-# ksysmgr commands(Orchestrator)
+# ksysmgr commands (Orchestrator)
 {: #comm}
 
 The command provides a consistent interface to configure the controller system (KSYS) and to perform {{site.data.keyword.DR_full}} operations by using a terminal or script.
@@ -46,7 +46,7 @@ The basic format for using the ksysmgr command is as follows:
 ## Description
 {: #des}
 
-All ksysmgr command operations are logged in the ```/var/ksys/log/ksysmgr.oplog``` file, including the name of the executed command, start time, process ID for the ksysmgr operation, the command with arguments, and overall return code.
+All ksysmgr command operations are logged in the ```/var/ksys/log/ksysmgr.oplog``` file, including the name of the run command, start time, process ID for the ksysmgr operation, the command with arguments, and overall return code.
 
 ## ACTION
 {: #act-ion}
@@ -55,7 +55,7 @@ The ```ACTION``` flags are not case-sensitive. All ```ACTION``` flags provide a 
 
 The following ```ACTION``` flags are available:
 
->**Note**: The asterisk ```(*)``` in the aliases signify wildcard characters. For example, for the modify ACTION, the alias value is ```modd```. If you type ```mod*```, the command still works.
+>**Note**: The asterisk ```(*)``` in the aliases signify wildcard characters. For example, for the modified ACTION, the alias value is ```modd```. If you type ```mod*```, the command still works.
 
 ```query (alias: q*, ls, get, sh*)```
 
@@ -121,7 +121,7 @@ The following ```CLASS``` objects are supported:
 ## NAME
 {: #nam}
 
-Specifies the particular object, of type **CLASS** , on which the **ACTION** must be performed. The NAME flags are case-sensitive.
+Specifies the particular object, of type **CLASS, on which the **ACTION** must be performed. The NAME flags are case-sensitive.
 
 **ATTR=VALUE**
 
@@ -168,7 +168,7 @@ Displays maximum verbosity in the output.
 
 **RC_UNKNOWN (Exit value = -1)**
 
-Result is not known. This value is used as an initializer.
+The result is not known. This value is used as an initializer.
 
 **RC_SUCCESS (Exit value = 0)**
 
@@ -255,11 +255,17 @@ Note: By default, the value of type variable is DR cluster type.
 {: #stats-modi}
 
 ```
-ksysmgr modify vm -h
+## ksysmgr modify vm -h
 
-ksysmgr modify vm <vmname>
-      [targetsystem=<target_system_type>]
+ksysmgr modify vm <vmname> | name=<vmname> | vmuuid=<uuid>
+      [targetsystemtype=<target_system_type>]
       [staticIPMap=<srcip1-tgtip1,[srcip2-tgtip2,...]>]
+      [sharedprocpool=<yes|no>]
+      [targetprocpool=<sharedprocpoolname>]
+      [target_flex_mem=<(1-1000)%>]
+      [target_flex_cpu=<(1-1000)%>]
+      [inactive_vm_mem=<integer value with minimum of 2 | none>]
+      [inactive_vm_cpu=<multiples of 0.25 cores | none>]
     modify => mod*, ch*, set
     vm => lp*, vm*
 ```
@@ -294,7 +300,7 @@ State:               Online
 Type:                IBM_PVS_PRIVATE_DR
 Ksysnodes:           testpriv1:1:Online
 KsysState:           testpriv1:1:Online
-Proxy:               10.30.40.4:3128
+
 ```
 
 ### To remove a KSYS cluster:
@@ -306,7 +312,7 @@ delete => de*, remove, rm, erase
 ksyscluster => ksysclu*, clu*
 ```
 
-When you delete a KSYS cluster, the **ksysmgr** command prompts for your confirmation. The **ksysmgr** command also recommends to create a snapshot at this point. 
+When you delete a KSYS cluster, the **ksysmgr** command prompts for your confirmation. The **ksysmgr** command also recommends creating a snapshot. 
 
 An output that is similar to the following example is displayed:
 
@@ -371,7 +377,7 @@ ksyscluster => ksysclu*, clu*
 ### To add a site in the KSYS subsystem:
 {: #subsyste}
 
-#### To add a site in the kSYS sub sytem for Public Cloud:
+#### To add a site in the kSYS sub system for Public Cloud:
 {: #subsyste-public-cloud}
 
 ```
@@ -383,21 +389,23 @@ site => sit*
 An output that is similar to the following example is displayed:
 
 ```
+# ksysmgr add site site1 region=dal12
 Waiting for update of Workspaces ...
 Update of Workspaces are successful
-Refresh VMs list of VMRM-Dal10 workspace started
-Refresh VMs list of VMRM-Dal10 workspace completed
-Refresh Networks list of VMRM-Dal10 workspace started
-Refresh Networks list of VMRM-Dal10 workspace completed
-Refresh VMs list of VMRM-TEST-DAL10 workspace started
-Refresh VMs list of VMRM-TEST-DAL10 workspace completed
-Refresh Networks list of VMRM-TEST-DAL10 workspace started
-Refresh Networks list of VMRM-TEST-DAL10 workspace completed
-Site dal10 added successfully
-Note: dal10 partner GRS Region is us-east.
+Refresh VMs list of vmrm-dal12 workspace started
+Refresh VMs list of vmrm-dal12 workspace completed
+Refresh Networks list of vmrm-dal12 workspace started
+Refresh Networks list of vmrm-dal12 workspace completed
+Refresh Host list of vmrm-dal12 workspace started
+Refresh Host list of vmrm-dal12 workspace completed
+Refresh Host Group list of vmrm-dal12 workspace started
+Refresh Host Group list of vmrm-dal12 workspace completed
+Site site1 added successfully
+Note: dal12 partner GRS Region(s) wdc06
+
 ```
 
-#### To add a site in the KSYS sub sytem Private cloud:
+#### To add a site in the KSYS sub system Private cloud:
 {: #subsyste-private-cloud}
 
 ```
@@ -432,7 +440,7 @@ Note: satloc_dal_clp2joc20ppo19876n50 partner GRS Region(s) satloc_dal_cq8884h20
 
 ```
 
-### To query the details about a specific sites:
+### To query the details about specific sites:
 {: #details}
 
 ```
@@ -452,6 +460,7 @@ Note: Active indicates the site where a WorkGroup's VMs are running. The same Wo
 ```
 
 An output that is similar to the following example is displayed for Private cloud:
+
 ```
 ksysmgr query site
 Name:               backup
@@ -483,10 +492,10 @@ site => sit*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr delete site us-east
-Workspace VMRM-wdc was removed
-Site us-east was removed
-Workgroup configuration example
+# ksysmgr delete site us-east
+Workspace powervs-dr-wdc06 was removed
+Site us-east was removed.
+
 ```
 An output that is similar to the following example is displayed for Private cloud:
 ```
@@ -500,41 +509,86 @@ Site home was removed
 Workgroup configuration example
 ```
 
-### Manage virtual machine:
+### Manage a vm:
 {: #manage-vm}
 
 ```
-# ksysmgr manage disk -h
- 
-ksysmgr manage disk diskid=<diskid1[,diskid2,...]>
-    manage => man*, mg
+# ksysmgr manage vm -h
+
+ksysmgr manage vm <vmname> | name=<vmname> | vmuuid=<uuid>
+      [home_workspace=<home_workspacename | ID>]
+      [target_workspace=<target_workspacename | ID>]
+      [workgroup=<workgroupname>]
+      [ip_list=<ip_address1,ip_address2,...>]
+      [targetsystemtype=<target_system_type>]
+      [staticIPMap=<srcip1-tgtip1,[srcip2-tgtip2,...]>]
+      [sharedprocpool=<yes|no>]
+      [targetprocpool=<sharedprocpoolname>]
+      [targetvmname=<target_vm_name>]
+      [targethost=<dedicated_host_name | ID>]
+      [targethg=<dedicated_hg_name | ID>]
+      [force=<yes|no>]
+    manage => man*, mg
+    vm => lp*, vm*
+    ip_list => IPList
+
+    Note: TargetHost or Targethg only one option supported at a time
+    Note: TargetHost or TargetSystemType only one option supported at a time.
 ```
 An output that is similar to the following example is displayed:
-
-
+```
+# ksysmgr manage vm vmrm_vm1
+Refresh VMs list of vmrm-dal12 workspace started
+Refresh VMs list of vmrm-dal12 workspace completed
+Refresh Networks list of vmrm-dal12 workspace started
+Refresh Networks list of vmrm-dal12 workspace completed
+Refresh Host list of vmrm-dal12 workspace started
+Refresh Host list of vmrm-dal12 workspace completed
+Refresh Host Group list of vmrm-dal12 workspace started
+Refresh Host Group list of vmrm-dal12 workspace completed
+VM vmrm_vm1 was successfully managed.
+Workgroup vmrm_vm1_WG added successfully
+```
 
 ### To move a workgroup from one site to another site, run the following command:
 {: #move-work}
 
 ```
-ksysmgr move workgroup <name>
-to=<site_name>
-[force=<true|false>]
-[dr_type=<planned|unplanned>]
-move => mov*, mv, swi*
-workgroup => workg*, work_g*, wg
+# ksysmgr move wg -h
+
+ksysmgr [-f] move workgroup <name>
+      to=<site_name>
+      [force=<true|false>]
+      [dr_type=<planned|unplanned>]
+      [dr_test=<yes|no>]
+    move => mov*, mv, swi*
+    workgroup => workg*, work_g*, wg
+
+Note: dr_type=planned is the default
+      When dr_test=yes, should not give dr_type attribute
+
 ```
 
 ### To query the details about a specific workgroup:
 {: #quer}
 
 ```
-ksysmgr query workgroup -h
-
-ksysmgr query workgroup [ name ]
-      [status [monitor=<no|yes>]]
-    query => q*, ls, get, sh*
-    workgroup => workg*, work_g*, wg
+# ksysmgr q wg
+Name:                vmrm_vm1_WG
+ID:                  1
+VMs:                 vmrm_vm1
+PartnerVM:           vmrm_vm1_BackUp
+State:               READY_TO_MOVE
+Dr Test State:       INIT
+Priority:            Medium
+SkipAutoResync:      OFF
+HomeWorkSpace:       vmrm-dal12
+BackupWorkSpace:     powervs-dr-wdc06
+ActiveWorkspace:     vmrm-dal12
+Home Site:           site1
+Active Site:         site1
+Networks:            dal12-network01 <-> dal12-network01
+CGName:              rccg-33fd-209b3
 ```
 
 An output that is similar to the following example is displayed: 
@@ -666,14 +720,288 @@ The preceding command syntax can be used for targeted VM management. The exclude
 {: #provirt}
 
 ```
-ksysmgr modify vm -h
+# ksysmgr modify vm -h
 
-ksysmgr modify vm <vmname>
-      [targetsystem=<target_system_type>]
+ksysmgr modify vm <vmname> | name=<vmname> | vmuuid=<uuid>
+      [targetsystemtype=<target_system_type>]
       [staticIPMap=<srcip1-tgtip1,[srcip2-tgtip2,...]>]
-    modify => mod*, ch*, set
+      [sharedprocpool=<yes|no>]
+      [targetprocpool=<sharedprocpoolname>]
+      [target_flex_mem=<(1-1000)%>]
+      [target_flex_cpu=<(1-1000)%>]
+      [inactive_vm_mem=<integer value with minimum of 2 | none>]
+      [inactive_vm_cpu=<multiples of 0.25 cores | none>]
+    modify => mod*, ch*, se
     vm => lp*, vm*
 ```
+
+### Flex capacity support
+{: #flex-capacity}
+
+Flex capacity enables the disaster recovery automation service to dynamically adjust the CPU and memory resources of the backup VM during failover or disaster recovery rehearsal.
+
+Flex capacity allows the orchestrator (KSYS) to control the compute capacity that is allocated to the backup VM hat is deployed in the target PowerVS workspace. Instead of provisioning the backup VM with the same configuration as the source VM, backup vm is created with minimal resources and increase the CPU and memory allocation during failover or rehearsal operations.
+
+> **Note**: Verify that the VM is already managed, before configuring flex capacity.
+
+To configure the flex capacity for a managed VM, run the following command:
+
+```bash
+ksysmgr modify vm <vmname>
+[target_flex_mem=<(1-1000)%>]
+[target_flex_cpu=<(1-1000)%>]
+[inactive_vm_mem=<integer value with minimum of 2 | none>]
+[inactive_vm_cpu=<multiples of 0.25 cores | none>]
+``` 
+
+| Parameter | Description |
+|---|---|
+| `target_flex_mem` | Specifies the percentage of memory capacity that is allocated to the backup VM during failover or rehearsal operations |
+| `target_flex_cpu` | Specifies the percentage of CPU capacity that is allocated to the backup VM during failover or rehearsal operations |
+| `inactive_vm_mem` | Specifies the minimum memory allocation for the inactive backup VM. The minimum supported value is 2 GB |
+| `inactive_vm_cpu` | Specifies the minimum CPU allocation for the inactive backup VM. The value must be specified in multiples of 0.25 cores |
+
+**Example**:
+
+```bash
+ksysmgr modify vm test_vm1 target_flex_mem=190 target_flex_cpu=80 inactive_vm_mem=2 inactive_vm_cpu=0.25
+```
+
+An output that is similar to the following example is displayed:
+
+```bash
+For Vm VMRM_test attribute(s) FlexMemCapacityTable was successfully modified.
+For Vm VMRM_test attribute(s) FlexProcCapacityTable was successfully modified.
+For Vm VMRM_test attribute(s) InactiveConfigCapacity was successfully modified.
+For Vm VMRM_test attribute(s) InactiveConfigCapacity was successfully modified.
+Target flex value(s) configured will be considered in next move operation.
+Inactive vm value(s) configured will be considered in next discovery operation.
+
+```
+
+To verify the VM configuration, run the following command:
+
+```ksysmgr query vm```
+
+An output that is similar to the following example is displayed:
+
+```bash
+Name:                test_vm1
+UUID:                45122x73-xxxx-xxx3-8d0d-9xx619xx04xx
+State:               READY_TO_MOVE
+Dr Test State:       INIT
+Status:              ACTIVE
+Partner:             test_vm1_BackUp
+ActiveVM:            yes
+IPAddresses:         xx.40.xx.19x
+memory_capacity:     4
+Processors:          1
+ProcessorMode:       'shared'
+SharedProcPool:      yes
+TargetProcPool:      vmrm_s922
+WorkSpace:           vmrm-dal12
+Networks:            dal12-network01
+SystemType:          s922
+Target_Flex_Mem:     190
+Target_Flex_Cpu:     80
+Inactive_VM_Cpu:     0.5
+Inactive_VM_Mem:     3
+```
+
+> **Note:** If the VM configuration is modified after it is managed, run discovery again to validate and apply the updated configuration.
+
+`ksysmgr discover workgroup <workgroup_name>`
+
+### Dedicated host support
+{: #dedicated-host}
+
+Dedicated host support enables you to deploy the backup VM on a specific PowerVS dedicated host or host group at the target site. This feature provides better control over VM placement and resource isolation in the backup environment.
+
+If dedicated hosts or host groups are available, you can identify them using the `query workspace` command. The command displays the names of the available dedicated hosts and host groups.. While managing a VM, you can specify the required host or host group name to control where the backup VM is deployed, ensuring better resource management and availability, as shown in the output below:
+
+```
+  > ksysmgr query workspace test-dal12
+  Name:                test-dal12
+  ID:                  xx35xxxx-x83x-000x-9308-9x3150123727
+  Region:              dal12
+  Type:                off-premises
+  Family:              data-center
+  CRN:                 crn:x1:public:power-xxxx:xx000:x/9505xx25fx8744x9883990383b72xx6x:xx35axxx-x83x-436x-9308-9x3150123727::
+  Status:
+  Default_Partner:     xxxx_test_dal10
+  staticIPEnable:      default
+  VMs:                 test, test123, dd_test01, DEV_AUTOSYNC_BackUp
+                      devdh_test01_BackUp, _dh01_BackUp, dev01_dh, DEV_AUTO_SYNC_1_BackUp
+                      Test_DEV_BackUp, glvm_dal12, Test_Vol_BackUp
+  Networks:            dal12_network01, dal10_private_network01, public-0000_000_193_00-29-xxxx_0000
+  Network pair:        dal12_network01 - dal10_private_network01 (Workspace: test_dal10)
+  RehearsalNetworkPair dal12_network01 - dal10_private_network01 (Workspace: test_dal10)
+  Dedicated_Hosts:     dedicated_host1
+  Dedicated_HGs:       dedicated_hg1
+```
+
+You can specify the dedicated host or host group while managing the VM. Only one option is specified at a time: `targethost` or `targethg`.
+
+To specify a dedicated host or host group for the backup VM, run the following command:
+
+```
+ksysmgr manage vm <vmname>
+[targethost=<dedicated_host_name | ID>]
+[targethg=<dedicated_hostgroup_name | ID>]
+```
+
+**Example**:
+
+```
+ksysmgr manage vm test_vm targethost=s922Host
+```
+
+An output that is similar to the following example is displayed:
+
+```
+
+ksysmgr manage vm test_VM targethost=dedicated_host1
+Refresh VMs list of test_dal10 workspace started
+Refresh VMs list of test_dal10 workspace completed
+Refresh Networks list of test_dal10 workspace started
+Refresh Networks list of test_dal10 workspace completed
+Refresh Host list of test_dal10 workspace started
+Refresh Host list of test_dal10 workspace completed
+Refresh Host Group list of test_dal10 workspace started
+Refresh Host Group list of test_dal10 workspace completed
+VM test_VM was successfully managed.
+Workgroup test_VM_WG added successfully
+```
+
+Example (host group):
+
+```
+ksysmgr manage vm test_vm targethg=testHostGroup
+```
+
+An output that is similar to the following example is displayed:
+```
+> ksysmgr manage vm test_dh03 targethg=dedicated_hg1
+Refresh VMs list of test_dal10 workspace started
+Refresh VMs list of test_dal10 workspace completed
+Refresh Networks list of test_dal10 workspace started
+Refresh Networks list of test_dal10 workspace completed
+Refresh Host list of test_dal10 workspace started
+Refresh Host list of test_dal10 workspace completed
+Refresh Host Group list of test_dal10 workspace started
+Refresh Host Group list of test_dal10 workspace completed
+VM test_dh03 was successfully managed.
+Workgroup test_dh03_WG added successfully
+```
+
+Once the discovery is completed, the backup VM is updated with the host or host group attribute, as shown in the output below:
+
+
+```
+(1) root @ pbrazos01-ksys40: /
+> date; ksysmgr query vm test_dh01
+Thu Apr  9 08:48:23 CDT 2026
+Name:                test_dh01
+UUID:                xxxx01x3-3xx1-4xx8-b8x1-3x638x3x1510
+State:               READY_TO_MOVE
+Dr Test State:       INIT
+Status:              ACTIVE
+Partner:             test_dh01_BackUp
+ActiveVM:            yes
+IPAddresses:         x0.xx.x0.1xx
+memory_capacity:     4
+Processors:          0.5
+ProcessorMode:       shared
+SharedProcPool:      yes
+TargetProcPool:      spp_ded_host
+WorkSpace:           test_dal10
+Networks:            dal10_private_network01
+SystemType:          s922
+Target_Flex_Mem:     50
+Target_Flex_Cpu:     50
+Inactive_VM_Cpu:     0.25
+Inactive_VM_Mem:     2
+
+
+(0) root @ pbrazos01-ksys40: /
+> date; ksysmgr query vm test_dh01_BackUp
+Thu Apr  9 08:48:40 CDT 2026
+Name:                test_dh01_BackUp
+UUID:                8x62411x-1370-4xx2-8xx5-40xx6f514257
+State:               DISCOVERED
+Dr Test State:       INIT
+Status:              SHUTOFF
+Partner:             test_dh01
+ActiveVM:            no
+IPAddresses:         3x.x0.xx.72
+memory_capacity:     2
+Processors:          0.25
+ProcessorMode:       shared
+WorkSpace:           test-dal12
+Networks:            dal12_network01
+SystemType:          s922
+Dedicated_Host:      dedicated_host1
+```
+
+
+### Target VM name
+{: #backup-vm-rename}
+
+The Target VmM name feature allows you to specify a custom name for the backup VM created at the target site.
+
+Previously, the backup VM name was automatically generated by appending `_BackUp` to the source VM name. With this feature, you can provide a user-defined name for the backup VM during the VM management operation.
+
+> **Note:** 
+
+> - Ensure that the virtual machine is available in the workspace and can be managed by using the `ksysmgr manage vm` command.  
+> - The backup VM name must be different from the home site VM name. Using the same name as the source VM is not supported.
+
+To specify a custom name for the backup VM, run the following command:
+```
+ksysmgr manage vm -h
+```
+
+An output that is similar to the following example is displayed:
+
+```
+ksysmgr manage vm <vmname> | name=<vmname> | vmuuid=<uuid>
+[home_workspace=<home_workspacename | ID>]
+[target_workspace=<target_workspacename | ID>]
+[workgroup=<workgroupname>]
+[ip_list=<ip_address1,ip_address2,...>]
+[targetsystemtype=<target_system_type>]
+[staticIPMap=<srcip1-tgtip1,[srcip2-tgtip2,...]>]
+[sharedprocpool=<yes|no>]
+[targetprocpool=<sharedprocpoolname>]
+[targetvmname=<target_vm_name>]
+```
+
+Where:
+
+| Parameter | Description |
+|---|---|
+| `targetvmname` | Specifies the custom name for the backup VM that will be created at the target site. |
+
+Example:
+```
+ksysmgr manage vm test_vm targetvmname=test_vm2
+```
+
+An output that is similar to the following example is displayed:
+
+
+```
+ksysmgr manage vm test_vm targetvmname=test_vm2
+Refresh VMs list of Test_mad04_workspace workspace started
+Refresh VMs list of Test_mad04_workspace workspace completed
+Refresh Networks list of Test_mad04_workspace workspace started
+Refresh Networks list of Test_mad04_workspace workspace completed
+Refresh Host list of Test_mad04_workspace workspace started
+Refresh Host list of Test_mad04_workspace workspace completed
+Refresh Host Group list of Test_mad04_workspace workspace started
+Refresh Host Group list of Test_mad04_workspace workspace completed
+```
+
 
 ## Discovery examples
 {: #disvery}
@@ -750,7 +1078,6 @@ An output that is similar to the following example is displayed:
 ksysmgr q event type=error
 Current Notification Level: Low
 Event Name Event Type Description
---------------------------------------------------------------------------------
 | Location  | Replication Site | Is Active |
 |-----------|-----------------|-----------|
 | DISCOVERY_STARTED | info | true |
@@ -806,14 +1133,11 @@ Event Name Event Type Description
 | SCRIPT_FAILURE_EVENT | error | true |
 | SCRIPT_SUCCESS_EVENT | info | true |
 | NETWORK_CREATION_COMPLETED | info | true |
-
-
 NETWORK_CONFIGURATION_FAILED warning Network configuration has failed.
-
 ```
- 
 
-#### To query the system-wide persistent attribute for the ksysmgr command, use the following command syntax:
+
+#### query the system-wide persistent attribute for the ksysmgr command, use the following command syntax:
 {: #que-sys-wide}
 
 ```
@@ -825,7 +1149,9 @@ system => sys*
 ```
 ksysmgr q system
 ```
+
 An output that is similar to the following example is displayed:
+
 ```
 System-Wide Persistent Attributes
 BaseUrl: test.cloud.test.com
@@ -848,7 +1174,7 @@ custom_script_timeout: none
 notification_level: low
 dup_event_processing: yes
 User Scripts for Site: None
-User Scripts for Workgroup: None
+User Scripts for workgroup: None
 User Scripts for VM: None
 where,
 auto_discovery_time
@@ -879,32 +1205,34 @@ Sets the deep_discovery variable to enable/disable.
 
 ```
 ksysmgr modify system
-[auto_discovery_time=<hh:mm>]
-hh - hour: 00 to 23
-mm - minute: 00 to 59
-[quick_discovery_interval=<mm>]
-mm - minute: 5 to 480
-[quick_discovery=<enable | disable>]
-[deep_discovery=<enable | disable>]
-[trace_file_size=<MB>]
-MB - Megabyte: Between 1 and 50 for single node KSYS cluster
-Between 1 and 25 for Multiple node KSYS cluster
-[ksys_spooling=<enable | disable>]
-[spool_dest_dir=<path>]
-[spool_dir_max_size=<MB>]
-MB - Megabyte: Between 1 and 10240
-[cleanup_files_interval=<disable | (1-30) days>]
-[ksys_lang=<language>]
-[notification_level=<low | medium | high | disable>]
-[dup_event_processing=<yes | no>]
-[custom_script_timeout=<sec>]
-sec - seconds: Any positive integer
-modify => mod*, ch*, set
-system => sys*
-Note: Not advisable to modify quick_discovery_interval with values less than 60 mins.
-Note: If custom_script_timeout value is set to 0, it will be considered as no timeout is set.
-Note: Supported locales for ksys_lang are DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_ES, IT_IT, ZH_CN, en_US
-By default language is considered to be en_US
+      [auto_discovery_time=<hh:mm>]
+        hh - hour:   00 to 23
+        mm - minute: 00 to 59
+      [quick_discovery_interval=<mm>]
+        mm - minute: 5 to 480
+      [quick_discovery=<enable | disable>]
+      [deep_discovery=<enable | disable>]
+      [trace_file_size=<MB>]
+        MB - Megabyte: Between 1 and 50 for single node KSYS cluster
+                       Between 1 and 25 for Multiple node KSYS cluster
+      [ksys_spooling=<enable | disable>]
+      [spool_dest_dir=<path>]
+      [spool_dir_max_size=<MB>]
+        MB - Megabyte: Between 1 and 10240
+      [cleanup_files_interval=<disable | (1-30) days>]
+      [ksys_lang=<language>]
+      [notification_level=<low | medium | high | disable>]
+      [dup_event_processing=<yes | no>]
+      [custom_script_timeout=<sec>]
+        sec - seconds: Any positive integer
+      [staticipenable=<yes|no|default>]
+    modify => mod*, ch*, set
+    system => sys*
+
+    Note: Not advisable to modify quick_discovery_interval with values less than 60 mins.
+    Note: If custom_script_timeout value is set to 0, it will be considered as no timeout is set.
+    Note: Supported locales for ksys_lang are DE_DE, FR_FR, JA_JP, PT_BR, ZH_TW, ES_ES, IT_IT, ZH_CN, en_US
+          By default language is considered to be en_US
 ```
 
 ### Quick discovery example
@@ -924,6 +1252,8 @@ KSYS quick_discovery_interval has been updated
 
 ## Notification configuration examples
 {: #asf}
+
+Event notifications are triggered only when the `notification_level` is set to `high`.
 
 ### To add an email for a specific user:
 {: #ghj}
@@ -966,7 +1296,7 @@ An output that is similar to the following example is displayed:
 ksysmgr modify notify oldcontact=User newcontact=sssssss
 successfully modified user info
 (0) root @ ksys804p: /
-# ksysmgr q notify
+ - ksysmgr q notify
 Contact details:
 User: sssssss
 Contact: user.test.com
@@ -1026,6 +1356,7 @@ ksysmgr add notify script=full_path_script event=event_name
 ```
 
 For example,
+
 ```
 ksysmgr add notify script=/User_test/a.sh event=DISCOVERY_STARTED successfully added script for event
 ```
@@ -1075,17 +1406,24 @@ ksysmgr query system [ properties | status ]
 ```
 
 An output that is similar to the following example is displayed:
+
 ```
-ksysmgr query system
-System-Wide Persistent Attributes
-BaseUrl:                     cloud.test.com
-Regions:                     wdc06
-                             dal12
-                             tok04
-                             sao04
-                             sao01
-api_key:                     #####59E1857FA85240FDD689AC8AD81BC0F4CBBA447E7745DE85DFCD9DFEAB2D65D2B5 CB19CA18DEC1AC6E6A640BD2738ED9A 346C315CD9
+
+BaseUrl:                     cloud.ibm.com
+Region:                      eu-de-2 - mad04
+                             tok04 - osa21
+                             wdc06 - dal14
+                             us-east - us-south
+                             syd05 - syd04
+                             eu-de-1 - mad02
+                             lon04 - lon06
+                             mon01 - tor01
+                             wdc06 - dal12
+                             sao01 - sao04
+                             dal10 - wdc07
+api_key:                     #####C320FA5E83B2AA71CD9C7FF916F3337A55EE6EF45B7B987D116B 3 FDAEB2D 4F82B31C3CA3C8321925951 636C269337F1EAB9D8B5C B22
 staticipenable:              default
+cloud_init_execution:        enable
 trace_file_size:             not set
 ksys_spooling:               not set
 spool_dest_dir:              not set
@@ -1100,11 +1438,15 @@ custom_script_timeout:       none
 notification_level:          low
 dup_event_processing:        yes
 User Scripts for Site: None
+
 User Scripts for Workgroup: None
+
 User Scripts for VM: None
+
 ```
 An output that is similar to the following example is displayed for private cloud:
 ```
+
 ksysmgr query system
 System-Wide Persistent Attributes
 BaseUrl:                     cloud.ibm.com
@@ -1238,13 +1580,16 @@ ksysmgr modify system dup_event_processing=no
 
 ```
 ksysmgr [-f] move site
-from=<sitename>
-to=<sitename>
-[force=<true|false>]
-[dr_type=<planned|unplanned>]
-move => mov*, mv, swi*
-site => sit*
+      from=<sitename>
+      to=<sitename>
+      [force=<true|false>]
+      [dr_type=<planned|unplanned>]
+      [dr_test=<yes|no>]
+    move => mov*, mv, swi*
+    site => sit*
+
 Note: dr_type=planned is the default
+      When dr_test=yes, should not give dr_type attribute
 ```
 
 If you do not specify the cleanup attribute, for a planned disaster recovery operation, the KSYS subsystem automatically cleans up the source site from where the site-switch operation was initiated.
@@ -1258,10 +1603,14 @@ If you do not specify the cleanup attribute, for a planned disaster recovery ope
 
 ```
 ksysmgr add snapshot
-[filepath=<full file prefix path | file prefix>]
-add => ad*, cr*, make, mk
-snapshot => snap*
+      [filepath=<full file prefix path | file prefix>]
+      [upload_to_cos=<yes | no>]
+      [region=<cos_region>]
+      [bucketname=<cos_bucket_name>]
+    add => ad*, cr*, make, mk
+    snapshot => snap
 ```
+>**Note**: Ensure your Power virtual server instance has connectivity to IBM Cloud Object Storage(COS).
 
 An output that is similar to the following example is displayed:
 
@@ -1272,30 +1621,33 @@ Created: /var/ksys/snapshots/snap.xml_DETAILED_2024-07-30_05:37:50.xml.tar.gz
 Successfully created a configuration snapshot: /var/ksys/snapshots/snap.xml_DETAILED_2024-07-30_05:37:50.xml.tar.gz
 ```
 
+
 ### To view a snapshot, use the following command syntax:
 {: #visnuse}
 
 
 ```
-ksysmgr query snapshot
-[filepath=<full file prefix path>]
-query => q*, ls, get, sh*
-snapshot => snap*
+ksysmgr query snapshot filepath=full_file_prefix_path
 ```
 
+> **Note**: Ensure your Power virtual server instance has connectivity to IBM Cloud Object Storage(COS).
+
 An output that is similar to the following example is displayed:
+
 ```
+ksysmgr query snapshot filepath=/home/test_snap_DETAILED_2026-04-22_00:14:30.xml.tar.gz
 ---- Snapshot Contents ----
-File: /var/ksys/snapshots/oldclust_DETAILED_2024-07-29_06:35:30.xml
-VMRM Version:1.8.0.1
-Date: 2024-07-29
-Time: 06:35:30
---------------------------
+File:        /home/test_snap_DETAILED_2026-04-22_00:14:30.xml
+VMRM Version:1.9.0.2
+Date:        0000-00-00
+Time:        00:14:30
+---------------------------
+
 Cluster:
 --------
-Name: pvs_dr
-Node: hostname.com
-Type: IBM_PVS_DR
+Name:       test_cluster
+Node:       ksysnode01
+Type:       IBM_PVS_DR
 ```
 
 ### To restore the configuration data on a KSYS node:
@@ -1303,9 +1655,13 @@ Type: IBM_PVS_DR
 
 ```
 ksysmgr restore snapshot
-filepath=<full file prefix path>
-restore => resto*
-snapshot => snap*
+      filepath=<full file prefix path>
+      [download_from_cos=<yes | no>]
+      [region=<cos_region>]
+      [bucketname=<cos_bucket_name>]
+      [apikey=<apikey>]
+    restore => resto*
+    snapshot => snap*
 ```
 
 An output that is similar to the following example is displayed:
@@ -1331,9 +1687,10 @@ Starting VMR daemon...
 Successfully restored snapshot:/var/ksys/snapshots/snap.xml_DETAILED_2024-07-28_01:15:14.xml!
 Please run discovery to apply changes.
 INFO: Restore completed successfully
- ```
+```
 
-
+```
+```
 This command decompresses and unarchives the snapshot file, and then applies the configuration settings to the KSYS node.
 
 ## Disk group example
@@ -1392,16 +1749,14 @@ query => q*, ls, get, sh*
 An output that is similar to the following example is displayed:
 
 ```
-ksysmgr query disk vm=vmrm_rhel
-VM:                  vmrm_rhel <-> vmrm_rhel_BackUp
-CGName:              rccg-a382-d35ba
+ksysmgr query disk vm=vmrm_aix_vm2
+VM:                  vmrm_aix_vm2 <-> vmrm_aix_vm2_BackUp
+CGName:              rccg-aca6-1507e
 CGState:             consistent_copying
-Progress:            99.0
-DiskIDs:             volume-vmrm_rhel-8852d59e-000269ee-boot-0-34b22e2b-0aaf -> 34b22e2b-0aaf-4124-ad8e-4f76cdfb4cf8
-Volume Details:
-| Volume                                                                      | State                 | Progress (%) |
-|----------------------------------------------------------------------------|-----------------------|--------------|
-| volume-vmrm_rhel-8852d59e-000269... <-> aux_mrm_rhel-8852d59e-000269ee-b... | consistent_copying    | 99           |
+Progress:            99.66666666666667
+DiskIDs:             volume-aix_vol2-2d5ff23a-13bb -> 2d5ff23a-13bb-43d8-b354-51603dee5e50
+                     volume-aix_vol3-6a958988-9745 -> 6a958988-9745-4fee-8942-f8b80118e8e7
+                     volume-vmrm_aix_vm2-bc477fa9-00046b90-boot-0-a69d29f9-bc3a -> a69d29f9-bc3a-424e-a91e-3edad82348a4
 
 ```
 
@@ -1419,7 +1774,7 @@ ksysmgr manage disk diskid=<diskid1[,diskid2,...]>
 {: #unmanage-disk-vm}
 
 ```
-# ksysmgr unmanage disk -h
+ #ksysmgr unmanage disk -h
  
 ksysmgr unmanage disk diskid=<diskid1[,diskid2,...]> workgroup=<workgroup_name>
     unmanage => unman*, umg
@@ -1429,22 +1784,11 @@ ksysmgr unmanage disk diskid=<diskid1[,diskid2,...]> workgroup=<workgroup_name>
 {: #query-vm-disk}
 
 ```
- ksysmgr query disk vm=vmrm_aix_vm2
-VM:                  vmrm_aix_vm2 <-> vmrm_aix_vm2_BackUp
-CGName:              rccg-aca6-1507e
-CGState:             consistent_copying
-Progress:            99.66666666666667
-DiskIDs:             volume-aix_vol2-2d5ff23a-13bb -> 2d5ff23a-13bb-43d8-b354-51603dee5e50
-                     volume-aix_vol3-6a958988-9745 -> 6a958988-9745-4fee-8942-f8b80118e8e7
-                     volume-vmrm_aix_vm2-bc477fa9-00046b90-boot-0-a69d29f9-bc3a -> a69d29f9-bc3a-424e-a91e-3edad82348a4
-
-Volume Details:
-
 | Volume | State | Progress (%) |
-|---------|--------|--------------|
-| `volume-aix_vol2-2d5ff23a-13bb <-> aux_volume-aix_vol2-2d5ff23a-13b...` | consistent_copying | 100 |
-| `volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974...` | consistent_copying | 100 |
-| `volume-vmrm_aix_vm2-bc477fa9-000... <-> aux__aix_vm2-bc477fa9-00046b90-b...` | consistent_copying | 100 |
+|--------|-------|--------------|
+| volume-aix_vol2-2d5ff23a-13bb <-> aux_volume-aix_vol2-2d5ff23a-13b... | consistent_copying | 100 |
+| volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974... | consistent_copying | 100 |
+| volume-vmrm_aix_vm2-bc477fa9-000... <-> aux__aix_vm2-bc477fa9-00046b90-b... | consistent_copying | 100 |
 ```
 
 ### To unmanage a disk on virtual machine:
@@ -1460,19 +1804,18 @@ DiskID(s) was successfully unmanaged
 
 ```
 ksysmgr query disk vm=vmrm_aix_vm2
-VM:                  vmrm_aix_vm2 <-> vmrm_aix_vm2_BackUp
-CGName:              rccg-aca6-1507e
-CGState:             consistent_copying
-Progress:            99.5
-DiskIDs:             volume-aix_vol3-6a958988-9745 -> 6a958988-9745-4fee-8942-f8b80118e8e7
-                     volume-vmrm_aix_vm2-bc477fa9-00046b90-boot-0-a69d29f9-bc3a -> a69d29f9-bc3a-424e-a91e-3edad82348a4
-                     2d5ff23a-13bb-43d8-b354-51603dee5e50 -> Unmanaged
+VM:                  vmrm_aix_vm2 <-> vmrm_aix_vm2_BackUp
+CGName:              rccg-aca6-1507e
+CGState:             consistent_copying
+Progress:            99.5
+DiskIDs:             volume-aix_vol3-6a958988-9745 -> 6a958988-9745-4fee-8942-f8b80118e8e7
+                     volume-vmrm_aix_vm2-bc477fa9-00046b90-boot-0-a69d29f9-bc3a -> a69d29f9-bc3a-424e-a91e-3edad82348a4
+                     2d5ff23a-13bb-43d8-b354-51603dee5e50 -> Unmanaged
 Volume Details
 
 | Volume | State | Progress (%) |
 |---------|--------|--------------|
-| `volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974...` | consistent_copying | 100 |
-| `volume-vmrm_aix_vm2-bc477fa9-000... <-> aux__aix_vm2-bc477fa9-00046b90-b...` | consistent_copying | 100 |
+| volume-aix_vol3-6a958988-9745 <-> aux_volume-aix_vol3-6a958988-974... | consistent_copying | 100 | 
 ```
 
 ## KSYS spooling
@@ -1524,7 +1867,11 @@ ksysmgr modify system spool_dir_max_size=10240
 
 An output that is similar to the following example is displayed:
 ```
-trace_file_size: 25 MB ksys_spooling: enable spool_dest_dir: /S1 spool_dir_max_size: 10240 MB hmc_ping_timer: 0 seconds
+trace_file_size: 25 MB
+ksys_spooling: enable
+spool_dest_dir: /S1
+spool_dir_max_size: 10240 MB
+hmc_ping_timer: 0 seconds
 ```
 
 >**Note**: You will get an error message if the spool_dir_max_size value is greater than 10240 MB (10 GB).
@@ -1654,7 +2001,7 @@ ksysmgr pair ws SVT-SMALL-Q3.2-mano-GRS pair=SVT_3Q2_XSPoD_25
 Workspace SVT-SMALL-Q3.2-mano-GRS was paired with SVT_3Q2_XSPoD_25
 ```
 
-## To refresh a workspace, run the following command:
+### To refresh a workspace, run the following command:
 {: #refereshert}
 
 ```
@@ -2073,21 +2420,21 @@ Ksysmgr pair network <source_nw_name> pair =<target_nw_name> dr_test=yes
 DR Rehearsal network pairing can be verified at query workspace:
 
 ```
-(0) root @ pbrazos01-ksys01: /opt/IBM/ksys/powervs
-# ksysmgr query workspace vmrm-dal12 ; ksysmgr query workspace powervs-dr-wdc06
+/opt/IBM/ksys/powervs
+#ksysmgr query workspace vmrm-dal12 ; ksysmgr query workspace powervs-dr-wdc06
 Name:                vmrm-dal12
-ID:                  1d6118b5-bd77-4100-a655-754453558d9d
+ID:                  1x6118b5-xx77-4100-x655-754453558x9x
 Region:              dal12
 Type:                off-premises
 Family:              data-center
-CRN:                 crn:v1:bluemix:public:power-iaas:dal12:a/fe3c2ccd058e407c81e1dba2b5c0e0d6:1d6118b5-bd77-4100-a655-754453558d9d::
+CRN:                 crn:v1:bluemix:public:power-xxxx:xxl12:a/xx3x2xxd058x407x81x1xxx2b5x0x0x6:1d6118b5-xx77-4100-x655-754453558x9x:
 Status:
 Default_Partner:     powervs-dr-wdc06
 staticIPEnable:      default
-VMs:                 ksysnode_dishant, vmrm_IBMi1, vmrm_test03, vmrm_test01
-                     vmrm_test02, VMRM_DEV_TEST2_BackUp, vmrm_test05, vmrm_test04
-                     VMRM_DEV-3, VMRM_DEV-2, aix_pub_vm, ksysnode01
-                     VMRM_DEV-1
+VMs:                 ksysnode, vmrm_IBMi1, test03, test01
+                     test02, DEV_TEST2_BackUp, test05, test04
+                     DEV-3, DEV-2, aix_pub_vm, ksysnode01
+                     DEV-1
 Networks:            dal12-network01, public-192_168_198_80-29-VLAN_2070, dal12_network01
 Network pair:        dal12_network01 - wdc06_network01 (Workspace: powervs-dr-wdc06)
                      dal12-network01 - dal12-network01 (Workspace: powervs-dr-wdc06)
@@ -2099,13 +2446,13 @@ ID:                  xx2f37ac-xxxx-4e13-xxxx-7a9ba511xxxx
 Region:              wdc06
 Type:                off-premises
 Family:              data-center
-CRN:                 crn:v1:bluemix:public:power-iaas:wdc06:a/fe3c2ccd058e407c81e1dba2b5c0e0d6:912f37ac-918d-4e13-866a-7a9ba511c047::
+CRN:                 crn:v1:bluemix:public:power-xxxx:xxx06:a/xx3x2xxx058x407x81e1xxx2b5c0e0d6:912f37xx-918d-4x13-866x-7x9xx511x047:
 Status:
 Default_Partner:     vmrm-dal12
 staticIPEnable:      default
-VMs:                 VMRM_DEV_TEST2, oracle_test01_BackUp, vmrm_test05_BackUp, glvm_wdc06
-                     aix_pub_test, VMRM_DEV-1_BackUp, vmrm_IBMi1_BackUp
-Networks:            test_network01, public-000_168_000_80-29-VLAN_2070, test-network01
+VMs:                 DEV_TEST2, test01_BackUp, test05_BackUp, glvm_wdc06
+                     aix_pub_test, DEV-1_BackUp, IBMi1_BackUp
+Networks:            test_network01, public-000_168_000_80-00-VLAN_2070, test-network01
 Network pair:        wdc06_network01 - test_network01 (Workspace: test-dal12)
                      test-network01 - test-network01 (Workspace: test-dal12)
 RehersalNetworkPair: test_network01 - test_network01 (Workspace: test-dal12)

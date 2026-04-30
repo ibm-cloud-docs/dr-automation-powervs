@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-20"
+lastupdated: "2026-04-23"
 
 subcollection: dr-automation-powervs
 
@@ -12,16 +12,18 @@ keywords: private pod, client location
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Architecture for {{site.data.keyword.DR_full_notm}} in Client Location (Private Cloud)
+# Architecture for {{site.data.keyword.DR_full_notm}} for DR automation in Client Location (Private Cloud)
 {: #arch-private-pod}
 
-{{site.data.keyword.DR_full}} automatically orchestrates disaster recovery for managed workloads from your data center (Client location). The infrastructure, compute, storage, and network are physically deployed at your location (Client location) and managed by IBM Cloud platform. DR automation is available only if your environment supports Geo-Redundant Storage (GRS), which replicates data across geographically separated sites. With GRS configured, the solution automatically triggers failover and recovery operations, reducing downtime and ensuring business continuity without manual intervention.
+{{site.data.keyword.DR_full}}, **DR automation**, orchestrates disaster recovery for workloads running in your data center (client location). Infrastructure resources, including compute, storage, and network, are deployed at the client location and managed by the IBM Cloud platform.
+
+DR automation requires Geo-Redundant Storage (GRS) to replicate data across geographically separated sites and automatically trigger failover and recovery operations, ensuring business continuity with minimal downtime.
 {: shortdesc}
 
 
 
 
-Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} for client location architecture, features, hardware requirements, and network configurations.
+Explore the following sections to understand the **DR automation** for client location architecture, features, hardware requirements, and network configurations.
 
 
 ## Table of contents
@@ -39,7 +41,7 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 ## High-Level architecture
 {: #highprivate}
 
-The **{{site.data.keyword.DR_full_notm}}** system operates within IBM Power Virtual data centers, which are isolated from the core IBM Cloud environment. Using dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
+The {{site.data.keyword.DR_full_notm}}, DR automation, system operates within IBM Power Virtual data centers, which are isolated from the core IBM Cloud environment. Using dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
 
 Central to this architecture is the **Service Broker**, which manages compute, storage, and network resources to streamline and automate DR processes. The Service Broker simplifies recovery setup, enabling customers to quickly deploy and manage DR services through an intuitive interface.
 
@@ -72,7 +74,7 @@ The Service WebSphere Message Broker updates DR metrics to IBM’s billing syste
 ### Interface accessibility
 {: #interprivate}
 
-The {{site.data.keyword.DR_short}} Service Broker, accessible by using the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with the IBM broader catalog for resource provisioning.
+The DR automation Service Broker, accessible by using the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with the IBM broader catalog for resource provisioning.
 
 ## DR Orchestrator (KSYS) architecture
 {: #ksysarchprivate}
@@ -136,7 +138,6 @@ IBM Power servers supported by {{site.data.keyword.DR_full_notm}} include the fo
 - **IBM Power E1150**
 - **IBM Power S1124**
 
-For more details, see to the specific data sheets and hardware overview table.
 
 ## Software requirements
 {: #srprivate}
@@ -178,20 +179,7 @@ The Satellite location is where the private cloud VM is hosted, for which the Po
 ## Network configurations
 {: #nsprivate}
 
-### Connectivity for Orchestrator UI:
-{: #cfouiprivate}
 
-As part of the DR Automation deployment, the system creates the Orchestrator (KSYS) virtual server with private networks only, preventing direct access to the Power Virtual Server. To access this virtual server, you must use a VPN that is connected to the VPC or manually enable the public network after deployment.
-
-DR Automation uses **custom VPC** and **VPC schematic** through the Power Virtual Server with VPC landing zone , VPC Schematic internally creates an optional VPN  and in case of Custom VPC, VPN need to be configured manually. This VPN allows you to connect the Power Virtual Server and Virtual Server Instances (VSI) by downloading the VPN profile.
-
-After deployment, you can launch the **External Orchestrator UI** when you connect to the VPN, or when the public network is explicitly enabled.
-
-When KSYSHA is enabled, a standby Orchestrator is created in the user selected workspace, and the workspace is added to the Transit Gateway to establish connectivity with the VPC. When selecting the standby workspace, ensure that no duplicate subnet range is configured across the workspaces that are connected to the Transit Gateway. If multiple Power Virtual Servers have the same subnet range, the subnets they might fail to communicate with the VPC.
-
-Additionally, the system automatically adds all default networks that are configured for Power Virtual Servers to the security group to enable communication during the **Power Virtual Server with VPC landing zone** creation. If you create new subnets in the Power Virtual Server workspace, you must add them to the security group to enable communication with the VPC. For more information about VPC, see [VPC Security](https://cloud.ibm.com/docs/vpc?topic=vpc-security-in-your-vpc).
-
- For detailed steps on connecting to the Power Virtual Server with VPC, see [Connect using a client-to-site VPN](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-solution-connect-client-vpn).
 
 ## Data center capabilities
 {: #datacapability}
@@ -208,5 +196,5 @@ For example, you can determine the support for the following capabilities in you
 
 1. Log in to your [IBM Cloud account](https://cloud.ibm.com/).
 2. Locate the {{site.data.keyword.DR_full_notm}} tile.
-3. Set up storage, compute, and network resources according to DR needs.
-4. Schedule DR tests and monitor system health.
+3. Complete the setup according to DR needs.
+4. Deploy the Orchestrator.

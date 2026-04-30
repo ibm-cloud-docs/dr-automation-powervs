@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-11-26"
+lastupdated: "2026-04-16"
 
 subcollection: dr-automation-powervs
 
@@ -54,4 +54,10 @@ Amount of memory that is allocated to the virtual machine.
 Number of processor cores that are assigned to the virtual machine.  
 
 - **Workgroup name**:
-Workgroup to which the virtual machine belongs for DR operations.  
+Workgroup to which the virtual machine belongs for DR operations.
+
+- **Region**:
+  Geographic location where the virtual machine is deployed for disaster recovery.
+
+- **PowerVS workspace name**:
+Name of the workspace where the virtual machine is configured for disaster recovery.

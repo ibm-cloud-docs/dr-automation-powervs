@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-10-14"
+lastupdated: "2026-04-28"
 
 subcollection: dr-automation-powervs
 
@@ -11,13 +11,13 @@ keywords: architecture
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Architecture for {{site.data.keyword.DR_full_notm}} in IBM Data Center
+# Architecture for {{site.data.keyword.DR_full_notm}} for DR automationin IBM Data Center
 {: #arch}
 
-{{site.data.keyword.DR_full}} located in IBM data centers, is a robust disaster recovery solution designed for IBM data centers, distinct from general IBM Cloud resources. This solution uses dedicated network configurations and direct-attached storage to provide secure, reliable disaster recovery (DR) capabilities.
+{{site.data.keyword.DR_full}}, DR automation, is a robust disaster recovery solution designed for IBM data center environments, distinct from general IBM Cloud resources. It uses dedicated network configurations and direct-attached storage to provide secure and reliable disaster recovery (DR) capabilities.
 {: shortdesc}
 
-Explore the following sections to understand the {{site.data.keyword.DR_full_notm}} architecture, features, hardware requirements, and network configurations.
+Explore the following sections to understand the {{site.data.keyword.DR_full_notm}}, DR automation,architecture, features, hardware requirements, and network configurations.
 
 ## Table of contents
 {: #toc}
@@ -34,7 +34,7 @@ Explore the following sections to understand the {{site.data.keyword.DR_full_not
 ## High-Level architecture
 {: #high}
 
-The **{{site.data.keyword.DR_full_notm}}** system operates within IBM Power Virtual data centers, which are isolated from the core IBM Cloud environment. Using dedicated networks and direct-attached storage ensures secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
+The **{{site.data.keyword.DR_full_notm}}**, DR automation, system operates within IBM Power Virtual data centers, which are isolated from the core IBM Cloud environment. Using dedicated networks and direct-attached storage verify secure, high-performance disaster recovery (DR) capabilities tailored for fast, reliable workload recovery.
 
 Central to this architecture is the **Service Broker**, which manages compute, storage, and network resources to streamline and automate DR processes. It simplifies recovery setup, enabling customers to quickly deploy and manage DR services through an intuitive interface.
 
@@ -57,7 +57,7 @@ The Service Broker deploys the DR Orchestrator (KSYS) VM within the PowerVS work
 ### Connectivity and communication
 {: #Conn}
 
-Through IBM Cloud VPN and VPC services, the DR Orchestrator communicates securely with the Service Broker. Connections from external clients or users are routed through IBM’s secure networking layers to ensure high availability and low latency during DR operations.
+Communication between the Orchestrator and the Service Broker is established through a private endpoint. To access the Orchestrator UI from external environments, users must use IBM Cloud VPN and VPC services, ensuring secure connectivity for IBM Cloud clients.
 
 ### Resource management and billing integration
 {: #resource}
@@ -67,7 +67,7 @@ The Service WebSphere Message Broker updates DR metrics to IBM’s billing syste
 ### Interface accessibility
 {: #inter}
 
-The {{site.data.keyword.DR_short}} Service Broker, accessible via the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with IBM’s broader catalog for resource provisioning.
+The DR Automation Service Broker, accessible via the IBM Cloud GUI, allows users to manage DR settings through a standardized interface. This design enhances user experience and aligns with IBM’s broader catalog for resource provisioning.
 
 ## DR Orchestrator (KSYS) architecture
 {: #ksys-arch}
@@ -100,7 +100,7 @@ For enhanced resilience, KSYS supports High Availability (HA) setup, ensuring co
 ### Simplified disaster recovery management
 {: #simplify}
 
-{{site.data.keyword.DR_short}} provides a single interface to manage DR processes for IBM PowerVS environments. Key features include:
+DR Automation provides a single interface to manage DR processes for IBM PowerVS environments. Key features include:
 
 Automated failover and failback
 :   Automate the failover process, ensuring that workloads resume quickly in the backup environment.
@@ -114,7 +114,7 @@ Customizable recovery settings
 ### Flexible billing model
 {: #flex}
 
-{{site.data.keyword.DR_short}} follows a usage-based billing model, with flexible options based on the selected resources and configurations.
+DR Automation follows a usage-based billing model, with flexible options based on the selected resources and configurations.
 The IBM Cloud catalog supports accurate billing and comprehensive reporting, ensuring that customers have clear visibility into DR-related costs.
 
 
@@ -123,7 +123,7 @@ The IBM Cloud catalog supports accurate billing and comprehensive reporting, ens
 ## Hardware specifications
 {: #hs}
 
-IBM Power servers that are supported by {{site.data.keyword.DR_full_notm}} include:
+IBM Power servers that are supported by DR Automation include:
 
 - **IBM Power S922**
 - **IBM Power E980**
@@ -152,12 +152,12 @@ The configuration is complete, you can add all the supported Power Virtual Serve
 ## API key
 {: #apikey}
 
-In {{site.data.keyword.DR_short}}, user can set up cross-account API keys to allow secure and restricted access between different IBM Cloud accounts. Cross-account API keys enable scenarios where resources or services in one account need to interact with those in another account, ensuring proper identity and access management with [IBM cloud guidelines](https://cloud.ibm.com/docs/account?topic=account-create-trusted-profile&interface=ui).
+In DR Automation, user can set up cross-account API keys to allow secure and restricted access between different IBM Cloud accounts. Cross-account API keys enable scenarios where resources or services in one account need to interact with those in another account, ensuring proper identity and access management with [IBM cloud guidelines](https://cloud.ibm.com/docs/account?topic=account-create-trusted-profile&interface=ui).
 
 ## Supported storage tiers
 {: #sst}
 
-{{site.data.keyword.DR_short}} offers storage with configurable IOPS levels to meet diverse DR requirements:
+DR Automation offers storage with configurable IOPS levels to meet diverse DR requirements:
 
 | Tier Level | IOPS       | Performance                                |
 |------------|------------|--------------------------------------------|
@@ -171,25 +171,12 @@ Storage is allocated based on deployment needs, ensuring efficient usage of reso
 ## Network configurations
 {: #ns}
 
-### Connectivity for Orchestrator UI:
-{: #cfoui}
 
-As part of the DR Automation deployment, the system creates the Orchestrator (KSYS) virtual server with private networks only, preventing direct access to the Power Virtual Server. To access this virtual server, you must use a VPN connected to the VPC or manually enable the public network after deployment.
 
-DR Automation use a VPC schematic through the **Power Virtual Server with VPC landing zone**, this internally creates an optional VPN. This VPN allows you to connect the Power Virtual Server and Virtual Server Instances (VSI) by downloading the VPN profile.
-
-After deployment, you can launch the "External Orchestrator UI" when you connect to the VPN, or when the public network is explicitly enabled.
-
-When KSYSHA is enabled, a standby Orchestrator is created in the user selected workspace, and it automatically adds this workspace to the Transit Gateway to establish connectivity with the VPC. When selecting the standby workspace, ensure that no duplicate subnet range is configured across the workspaces connected to the Transit Gateway. If multiple Power Virtual Servers have the same subnet range, they may fail to communicate with the VPC.
-
-Additionally, the system automatically adds all default networks configured for Power Virtual Servers to the security group to enable communication during the **Power Virtual Server with VPC landing zone** creation. If you create new subnets in the Power Virtual Server workspace, you must add them to the security group to enable communication with the VPC. For more details, refer to [VPC Security](https://cloud.ibm.com/docs/vpc?topic=vpc-security-in-your-vpc).
-
- For detailed steps on connecting to the Power Virtual Server with VPC, refer to [Connect using a client-to-site VPN](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-solution-connect-client-vpn).
-
-## Setting up {{site.data.keyword.DR_short}}
+## Setting up DR Automation
 {: #setup}
 
 1. Log in to your [IBM Cloud account](https://cloud.ibm.com/).
 2. Locate the {{site.data.keyword.DR_full_notm}} tile.
-3. Set up storage, compute, and network resources according to DR needs.
-4. Schedule DR tests and monitor system health.
+3. Complete the setup according to DR needs.
+4. Deploy the Orchestrator.

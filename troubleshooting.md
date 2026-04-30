@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2025-12-05"
+lastupdated: "2026-04-28"
 
 subcollection: dr-automation-powervs
 
@@ -28,7 +28,7 @@ The API key might be expired or improperly configured, leading to a failure in r
 {: tsResolve}
 
 1. Access the **External orchestrator GUI**.  
-2. Navigate to the **Policies** tab from the top navigation bar.  
+2. Navigate to the **policies** tab from the top navigation bar.  
 3. Locate the **API Key** field in the list of tunable attributes.  
 4. Click **Regenerate** to create a new API key.  
 5. Save the changes to securely apply the new key.  
@@ -40,21 +40,21 @@ The API key might be expired or improperly configured, leading to a failure in r
 ### What's happening
 {: #how-service-works-whats-happening}
 
-Users are unclear about how the service automates disaster recovery operations.  
+You are unclear about how the service automates disaster recovery operations.  
 
 ### Why it's happening
 {: #how-service-works-why}
 
-The architecture and components of the service may not be fully understood.  
+The architecture and components of the service are not be fully understood.  
 
 ### How to fix it  
 {: tsResolve}  
 
 - The service automates failover and failback processes across sites.  
 - The **Service Broker** manages resource provisioning and billing.  
-- The **KSYS orchestrator** handles VM orchestration, ensuring resources are activated in the correct sequence.  
+- The **KSYS orchestrator** handles VM orchestration, ensuring that resources are activated in the correct sequence.  
 - **Global Replication Services (GRS)** facilitates data replication between primary and backup sites.  
-- Users can configure and monitor the DR environment through the **IBM Cloud GUI** and manage VMs via the **External orchestrator UI**.  
+- you can configure and monitor the DR environment through the **IBM Cloud GUI** and manage VMs through the **External orchestrator UI**.  
 
 ## Why am I unable to perform IAM actions with the service?  
 {: #iam-actions}  
@@ -77,9 +77,9 @@ This issue occurs due to insufficient permissions or improper configurations in 
 2. Review the roles that are assigned to the DR automation service under the **Access Groups** tab.  
 3. Enable **Activity Tracker** under the **Monitoring** tab to track IAM actions.  
 4. Simulate an IAM action (for example, assigning a role) and check logs in the **Activity Tracker** for details.  
-5. If issues persist, rotate the API key in the **Policies** tab by clicking **Regenerate** and save the changes.  
+5. If issues persist, rotate the API key in the **policies** tab by clicking **Regenerate** and save the changes.  
 
-## Why is there an error retrieving the access token during provisioning?  
+## Why is there an error in retrieving the access token during provisioning?  
 {: #access-token-error}  
 {: troubleshoot}  
 
@@ -98,7 +98,7 @@ The service is unable to authenticate due to an expired or invalid API key, or i
 {: tsResolve}
 
 1. Access the **DR Automation GUI**.  
-2. Navigate to the **Policies** tab.  
+2. Navigate to the **policies** tab.  
 3. Verify that the API key is valid and not expired.  
 4. Regenerate the API key by clicking **Regenerate**, then save the changes.  
 5. Confirm that IAM roles and permissions for the DR automation service are correctly assigned.  
@@ -122,7 +122,7 @@ The password that is provided does not comply with the security standards that a
 {: tsesolve}  
 
 1. Access the **DR Automation GUI**.  
-2. Navigate to the **Policies** tab.  
+2. Navigate to the **policies** tab.  
 3. Locate the **Orchestrator Password** field under tunable attributes.  
 4. Update the password to meet these requirements:  
    - At least 8 characters.  
@@ -151,11 +151,11 @@ Dependencies, such as active VMs or storage volumes, may prevent the service fro
 1. Access the **DR Automation GUI**.  
 2. Navigate to the **Events** tab and review the detailed logs.  
 3. Verify the API connectivity by running a test command (for example, ping or curl) to the service endpoint.  
-4. Check for active resources that are associated with the service and ensure that there are no dependencies.  
-5. Regenerate the API key from the **Policies** tab and update the system with the new key.  
-6. Retry the delete operation and monitor for success.  
+4. Check for active resources that are associated with the service and verify that there are no dependencies.  
+5. Regenerate the API key from the **policies** tab and update the system with the new key.  
+6. Retry the deleted operation and monitor for success.  
 
-## Why is the **Finish** button not enabled in the UI after orchestrator deployment ?  
+## Why is the **Finish** button not enabled in the UI after orchestrator deployment?  
 {: #orch-fini-enab}  
 {: troubleshoot}  
 
@@ -169,14 +169,14 @@ The **Finish** button in the UI remains disabled, preventing you from starting t
 
 Once the orchestrator VM is deployed and active, the cluster configuration starts automatically. Once it is completed, KSYS sends an event, and the UI enables the **Finish** button to start the external orchestrator UI.
 
-If there are any communication issues preventing the orchestrator VM from sending the event, the **Finish** button is not enabled, you can not enable DR for managed VM's using the External Orchestrator UI.
+If there are any communication issues preventing the orchestrator VM from sending the event, the **Finish** button is not enabled, you cannot enable DR for managed VM's using the External Orchestrator UI.
 
 ### How to fix it  
 {: tsResolve}  
 
 1. Log in to the orchestrator VM from the IBM Cloud UI or through the jump server VSI created during the VPC landing zone deployment.
 
-2. Validate the communication using the following link:
+2. Validate the communication by using the following link:
 
 > `curl -v power-dra.cloud.ibm.com`
 
@@ -221,21 +221,21 @@ The External Connectivity status of the Orchestrator appears as Inactive in the 
 ### Why it's happening
  {: why-it-hap}
 
-The Orchestrator is unable to establish a connection with any IBM Cloud services, which prevents it from effectively managing failover scenarios in the event of a workload failure.
+The Orchestrator is unable to establish a connection with any IBM Cloud services, which prevents it from effectively managing failover scenarios when of a workload failure.
 
 ### How to fix it
  {: fix-it}
 
 Refer to the topic [How to fix it](#how-to-fix-it-7) for guidance on resolving the inactive state of the Orchestrator's external connectivity.
 
-## Why are no workspaces listed after selecting Client location?
+## Why are no workspaces listed after selecting the Client location?
 {: #select-dr-loca}
 {: troubleshoot}
 
 ### What's happening
 {: #select-dr-locatio}
 
-The user is unable to select a Disaster Recovery location or does not see any workspaces listed in the external orchestrator UI.
+The user is unable to select a Disaster Recovery location or does not see any workspaces that are listed in the external orchestrator UI.
 
 ### Why it's happening
 {: #select-dr-loca}
@@ -247,13 +247,13 @@ This issue occurs when no PowerVS workspace is available in the selected locatio
 
 1. In the external orchestrator UI, go to the section where you configure the DR plan.
 
-2. From the Disaster Recovery Location drop-down list, select either IBM Cloud or Client location.
+2. From the Disaster Recovery Location drop down list, select either IBM Cloud or Client location.
 
-3. If you select Client location, ensure that you have at least one PowerVS workspace available in your location.
+3. If you select a Client location, verify that you have at least one PowerVS workspace available in your location.
 
 4. After selecting the plan, wait for the list of available workspaces to appear.
 
-5. From the list, choose the appropriate workspace and enable the workload you want to protect with disaster recovery.
+5. From the list, choose the appropriate workspace and enable the workload that you want to protect with disaster recovery.
 
 ## Why does a simultaneous deployment fail when using the same PowerVS workspace?
 {: #ksys-image-deploy}  
@@ -264,22 +264,22 @@ This issue occurs when no PowerVS workspace is available in the selected locatio
 
 During a DR Automation deployment, the KSYS image is downloaded to the selected workspace where the orchestrator is to be created. Once the deployment is completed, this image is automatically deleted.
 
-If the same workspace is used for a subsequent deployment, the image download is not re-initiated because the system detects that the image previously existed. Since the image may have been deleted during the first deployment, the second deployment can fail when creating the orchestrator.
+If the same workspace is used for a subsequent deployment, the image download is not reinitiated because the system detects that the image previously existed. Since the image may have been deleted during the first deployment, the second deployment can fail when creating the orchestrator.
 
 ### Why it's happening
 {: #trou-sh-deploy}
 
-The system assumes the KSYS image already exists in the workspace and skips downloading it. If the image was removed after the first deployment, the orchestrator creation cannot proceed.
+The system assumes that the KSYS image already exists in the workspace and skips downloading it. If the image was removed after the first deployment, the orchestrator creation cannot proceed.
 
 ### How to fix it
 {: tsResolve}
 
-1. Redeploy the DR Automation environment and ensure the KSYS image is downloaded successfully.  
+1. Redeploy the DR Automation environment and verify that the KSYS image is downloaded successfully.  
 2. Avoid performing multiple deployments simultaneously in the same workspace to prevent deployment failures.
 
-**Recommendation:** Perform sequential deployments using separate workspaces or wait until the first deployment completes before starting a new one.
+**Recommendation:** Perform sequential deployments by using separate workspaces or wait until the first deployment completes before starting a new one.
 
-## Why MFA is not enabled even though it was selected during deployment ?
+## Why MFA is not enabled even though it was selected during deployment?
 {: #mfa-deploy}  
 {: troubleshoot}
 
@@ -296,7 +296,7 @@ During the deployment process, if any of the values are incorrect, the deploymen
 ### How to fix it
 {: #trou-sh-fix}
 
-You can verify the MFA tenant, client id and secret details by logging into the orchestrator with root credentials.
+You can verify the MFA tenant, client id, and secret details by logging in to the orchestrator with root credentials.
 
 1. Open the file `"userMfaConfig.json"`, verify the details of your MFA and confirm if anything need to be modified.
 2. Verify the events and identify if the registration failed.
@@ -338,5 +338,41 @@ cat /opt/IBM/ksys/ui/server/node_modules/vmrui-common/lib/configuration/server/u
 
 5. Log in to the orchestrator vm.
 
-6. In case registration success and still OTP is not generated, it means the communication is not happening with IBM secure verify. In this case, verify whether the proxy IP which you have provided is properly configured or not ?
-7. In this case, either can open a support ticket for resolution or disable the MFA by following the steps mentioned in above.
+6. In case registration success and still OTP is not generated, it means that the communication is not happening with IBM secure verify. In this case, verify whether the proxy IP that you have provided is properly configured or not?
+7. In this case, either can open a support ticket for resolution or disable the MFA by following the steps that are mentioned in above.
+
+## Why does the provision move to the suspended_billing status?  
+{: #suspended-billing}  
+{: troubleshoot}  
+
+### What's happening  
+{: #suspended-billing-whats-happening}  
+
+The provision status changes to suspended_billing during billing validation. A notification is displayed in the UI that indicating a billing-related communication issue.  
+
+Access to the UI might be restricted during the suspended_billing status.
+
+### Why it's happening  
+{: #suspended-billing-why}  
+
+This issue occurs when the system is unable to receive the required usage data for billing. Possible reasons include:  
+
+- Usage data is not received from the KSYS orchestrator within 12 hours.  
+- The deployment exceeds 12 hours without usage reporting.  
+- The Communication failure between the orchestrator and the Service Broker. 
+
+
+The service is not fully blocked, and you can continue to perform **get** operations by using API, SDK, or Terraform.  
+
+### How to fix it  
+{: tsResolve}  
+
+1. Verify that the Orchestrator is active and running.  
+2. Check the external connectivity status of the orchestrator.  
+3. Verify that there are no network or proxy configuration issues.  
+4. Confirm that the orchestrator can communicate with IBM Cloud services.  
+5. If the issue persists, open a support ticket for further investigation.
+
+
+Verify that no network or proxy configuration issues exist.
+If the issue persists, open a support ticket for further investigation.
