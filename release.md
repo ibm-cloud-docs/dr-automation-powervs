@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2025
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-03"
 subcollection: dr-automation-powervs
 "section_updates": {
     "view_more": "/docs/dr-automation-powervs?topic=dr-automation-powervs-relnote"
@@ -25,6 +25,8 @@ Use the release notes to learn about the latest updates to **{{site.data.keyword
 
 - PowerHA is now available as part of HA and DR Automation for IBM® Power™ Virtual Server, you can now deploy and manage high-availability clusters by using PowerHA SystemMirror. This capability is available through the PowerHA AIX for PowerVS plan. The solution uses multiple PowerVS virtual machines that are configured as a cluster with shared storage and dedicated networking, while IBM Cloud manages the orchestration layer for monitoring and failover operations. For more information, see [Architecture for HA and DR Automation for IBM® Power™ Virtual Server for PowerHA](/docs/dr-automation-powervs?topic=dr-automation-powervs-arch-powerha-aix).
 
+- HA and DR Automation for IBM® Power™ Virtual Server supports IBM i environments with large-volume support and Independent Auxiliary Storage Pool (IASP) support, enabling scalable storage configurations and resilient high availability and disaster recovery operations.
+
 - Monitoring and Activity Tracker support is now available for PowerHA SystemMirror in IBM Cloud. For more information, see [PowerHA observability](/docs/dr-automation-powervs?topic=dr-automation-powervs-monitoring-metrics-for-powerha-systemmirror)
 
 - API, SDK, CLI, Terraform support is now available for PowerHA operations. You can manage service instance configuration, cluster nodes, and deployment lifecycle by using CLI commands. You can also retrieve events, download agents, and view PowerVS workspaces and locations for the service instance, allowing better automation and operational control. For more information, see [HA and DR Automation for IBM® Power™ Virtual Server command reference](/docs/dr-automation-powervs?group=ha-and-dr-automation-for-ibm-power-virtual-server-command-reference).
@@ -34,6 +36,7 @@ Use the release notes to learn about the latest updates to **{{site.data.keyword
 - Dedicated host support is now available in {{site.data.keyword.DR_full}}, you can deploy backup VMs on a specific PowerVS dedicated host or host group at the target site by using the UI and CLI. This enhancement provides better control over VM placement, improved resource isolation, and optimized resource utilization in the backup environment. You can identify available dedicated hosts and host groups and specify the required host or host group while managing a VM. For more information, see [Dedicated host support](/docs/dr-automation-powervs?topic=dr-automation-powervs-comm#dedicated-host).
 
 - Target VM name support is now available in {{site.data.keyword.DR_full}}, enabling you to specify a custom name for the backup VM created at the target site by using the UI and CLI. This enhancement provides greater flexibility in naming conventions and improves VM identification and management across environments. You can define the target VM name during the VM management operation instead of using the default_BackUp suffix. For more information, see [Target VM name support](/docs/dr-automation-powervs?topic=dr-automation-powervs-comm#backup-vm-rename).
+
 
 
 ## 05 December 2025
